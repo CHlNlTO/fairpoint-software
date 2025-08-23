@@ -2,7 +2,6 @@ import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
 import { InfoIcon } from "lucide-react";
-import { FetchDataSteps } from "@/components/tutorial/fetch-data-steps";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -28,8 +27,10 @@ export default async function ProtectedPage() {
         </pre>
       </div>
       <div>
-        <h2 className="font-bold text-2xl mb-4">Next steps</h2>
-        <FetchDataSteps />
+        <h2 className="font-bold text-2xl mb-4">Dashboard</h2>
+        <p className="text-muted-foreground">
+          Welcome to your Fairpoint dashboard. Here you can manage your tax and accounting needs.
+        </p>
       </div>
     </div>
   );

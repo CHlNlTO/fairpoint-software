@@ -1,105 +1,229 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# Fairpoint Software - Tax & Accounting Platform
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+A modern, scalable tax and accounting software platform built with Next.js 15, featuring a feature-based architecture with strict architectural boundaries.
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+## 🚀 Quick Start
 
-## Features
+```bash
+# Install dependencies
+pnpm install
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+# Run development server
+pnpm dev
 
-## Demo
+# Build for production
+pnpm build
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+# Start production server
+pnpm start
+```
 
-## Deploy to Vercel
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-Vercel deployment will guide you through creating a Supabase account and project.
+## 📋 Available Scripts
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+| Command             | Description               |
+| ------------------- | ------------------------- |
+| `pnpm dev`          | Start development server  |
+| `pnpm build`        | Build for production      |
+| `pnpm start`        | Start production server   |
+| `pnpm lint`         | Run ESLint                |
+| `pnpm lint:fix`     | Fix ESLint issues         |
+| `pnpm format`       | Format code with Prettier |
+| `pnpm format:check` | Check code formatting     |
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+## 🏗️ Architecture Overview
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### Feature-Based Architecture with Boundaries
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+This project enforces a strict **feature-based architecture** using ESLint boundaries plugin to prevent architectural violations and ensure maintainable, scalable code.
 
-## Clone and run locally
+#### Architectural Layers
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+```
+src/
+├── app/                    # Next.js App Router (pages, layouts)
+├── components/             # Shared UI components
+├── features/               # Feature modules (isolated)
+├── lib/                    # Shared utilities
+├── hooks/                  # Shared custom hooks
+├── server/                 # Server-side logic
+├── drizzle/                # Database schema and migrations
+└── data/                   # Static data and constants
+```
 
-2. Create a Next.js app using the Supabase Starter template npx command
+#### Boundary Rules
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+| Layer          | Can Import From            | Purpose                                      |
+| -------------- | -------------------------- | -------------------------------------------- |
+| **Shared**     | Other shared modules only  | Reusable utilities, components, server logic |
+| **Feature**    | Shared + same feature only | Self-contained feature modules               |
+| **App**        | Shared + any feature       | Next.js pages and layouts                    |
+| **Restricted** | Nothing                    | Root files and task utilities                |
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+### Feature Structure Example
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+```
+src/features/business-registration/
+├── components/
+│   ├── business-registration-wizard.tsx
+│   ├── steps/
+│   └── ui/
+├── hooks/
+├── lib/
+│   ├── schemas.ts
+│   └── types.ts
+└── index.ts
+```
 
-3. Use `cd` to change into the app's directory
+## 🛠️ Technology Stack
 
-   ```bash
-   cd with-supabase-app
-   ```
+### Core Framework
 
-4. Rename `.env.example` to `.env.local` and update the following:
+- **Next.js 15.4.6** - React framework with App Router
+- **React 19.1.0** - UI library
+- **TypeScript 5** - Type safety
 
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
+### Styling & UI
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **shadcn/ui** - Modern component library (New York style)
+- **Radix UI** - Accessible component primitives
+- **Framer Motion** - Animation library
 
-5. You can now run the Next.js local development server:
+### State Management
 
-   ```bash
-   npm run dev
-   ```
+- **TanStack Query v5** - Server state management
+- **Zustand** - Client-side global state
+- **React Hook Form** - Form state management
+- **Zod** - Schema validation
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+### Database & Backend
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+- **Drizzle ORM** - Type-safe database queries
+- **Clerk** - Authentication (inferred from business context)
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+### Development Tools
 
-## Feedback and issues
+- **ESLint** - Code linting with boundaries enforcement
+- **Prettier** - Code formatting
+- **Husky** - Git hooks
+- **lint-staged** - Staged file processing
+- **pnpm** - Package manager
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+## 📁 Project Structure
 
-## More Supabase examples
+```
+├── src/
+│   ├── app/                          # Next.js App Router
+│   │   ├── globals.css              # Global styles
+│   │   ├── layout.tsx               # Root layout
+│   │   └── page.tsx                 # Home page
+│   ├── components/                   # Shared components
+│   │   ├── ui/                      # shadcn/ui components
+│   │   ├── animate-ui/              # Custom animated components
+│   │   ├── providers/               # React providers
+│   │   └── theme-provider.tsx       # Theme management
+│   ├── features/                     # Feature modules
+│   │   └── [feature-name]/          # Individual features
+│   ├── hooks/                        # Shared custom hooks
+│   ├── lib/                          # Utility functions
+│   │   ├── utils.ts                 # Common utilities
+│   │   └── store.ts                 # Query client config
+│   ├── server/                       # Server-side logic
+│   │   └── [domain]/                # Domain-specific server code
+│   ├── drizzle/                      # Database schema
+│   │   └── schemas/                 # Table definitions
+│   └── data/                         # Static data
+├── components.json                   # shadcn/ui configuration
+├── eslint.config.mjs                # ESLint configuration
+├── next.config.ts                   # Next.js configuration
+├── package.json                     # Dependencies and scripts
+├── postcss.config.mjs               # PostCSS configuration
+├── prettier.config.js               # Prettier configuration
+├── tailwind.config.ts               # Tailwind configuration
+└── tsconfig.json                    # TypeScript configuration
+```
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+## 🔧 Configuration Files
+
+### ESLint Configuration
+
+- **Boundaries Plugin**: Enforces architectural rules
+- **TanStack Query**: Enforces query best practices
+- **Next.js**: Core web vitals and TypeScript support
+
+### Prettier Configuration
+
+- Single quotes, semicolons, 2-space indentation
+- 80 character line width
+- Arrow parentheses avoided when possible
+
+### Path Aliases
+
+```typescript
+{
+  "@/*": ["./src/*"],
+  "@/components": ["./src/components"],
+  "@/lib": ["./src/lib"],
+  "@/hooks": ["./src/hooks"]
+}
+```
+
+## 🔍 Code Quality
+
+### Git Hooks (Husky + lint-staged)
+
+- **Pre-commit**: Automatically lint and format staged files
+- **Commit-msg**: Enforce commit message conventions
+
+### ESLint Rules
+
+- Architectural boundaries enforcement
+- TanStack Query exhaustive dependencies
+- Next.js best practices
+- TypeScript strict mode
+
+## 🌟 Key Features
+
+### Component System
+
+- **shadcn/ui**: Modern, accessible components
+- **Animation System**: Framer Motion integration
+- **Theme Support**: Dark/light mode with CSS variables
+- **Responsive Design**: Mobile-first approach
+
+### State Management
+
+- **Server State**: TanStack Query with 5min stale time
+- **Client State**: Zustand for global state
+- **Form State**: React Hook Form with Zod validation
+- **URL State**: nuqs for search params
+
+### Developer Experience
+
+- **Type Safety**: Full TypeScript coverage
+- **Hot Reload**: Fast development feedback
+- **Code Generation**: Automatic type inference
+- **Error Boundaries**: Graceful error handling
+
+## 🚀 Getting Started with Development
+
+1. **Clone the repository**
+2. **Install dependencies**: `pnpm install`
+3. **Set up environment variables** (see `.env.example`)
+4. **Run database migrations** (if applicable)
+5. **Start development server**: `pnpm dev`
+
+## 📚 Additional Documentation
+
+- [Coding Standards](./CODING_STANDARDS.md) - Detailed coding guidelines and best practices
+- [Developer Mindset](./DEVELOPER_MINDSET.md) - Mental models and thinking frameworks for development
+
+## 🤝 Contributing
+
+Please read our coding standards and developer mindset documentation before contributing. All code must pass ESLint and Prettier checks before being committed.
+
+## 📄 License
+
+Private - Fairpoint Software Inc.
