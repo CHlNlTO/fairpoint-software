@@ -16,6 +16,7 @@ export function Providers({ children }: ProvidersProps) {
           queries: {
             staleTime: 60 * 1000, // 1 minute
             gcTime: 10 * 60 * 1000, // 10 minutes
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             retry: (failureCount, error: any) => {
               // Don't retry on 4xx errors
               if (error?.status >= 400 && error?.status < 500) {
