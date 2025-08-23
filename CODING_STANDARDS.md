@@ -24,7 +24,7 @@ This document outlines the coding standards, conventions, and best practices for
 #### ✅ DO: Organize by Feature
 
 ```
-src/features/business-registration/
+features/business-registration/
 ├── components/
 ├── hooks/
 ├── lib/
@@ -34,7 +34,7 @@ src/features/business-registration/
 #### ❌ DON'T: Organize by Type
 
 ```
-src/
+/
 ├── components/
 ├── hooks/
 ├── utils/
@@ -61,7 +61,7 @@ import { createBusiness } from '../../server/business/actions';
 #### Feature Export Pattern
 
 ```typescript
-// src/features/business-registration/index.ts
+// /features/business-registration/index.ts
 export { BusinessRegistrationWizard } from './components/business-registration-wizard';
 export { useBusinessRegistration } from './hooks/use-business-registration';
 export type { BusinessRegistrationData } from './lib/types';
@@ -72,14 +72,14 @@ export type { BusinessRegistrationData } from './lib/types';
 #### ❌ NEVER: Cross-Feature Imports
 
 ```typescript
-// In src/features/invoicing/
+// In /features/invoicing/
 import { useBusinessRegistration } from '@/features/business-registration'; // ❌
 ```
 
 #### ✅ DO: Use Shared Layer
 
 ```typescript
-// Move shared logic to src/hooks/ or src/lib/
+// Move shared logic to /hooks/ or /lib/
 import { useBusinessData } from '@/hooks/use-business-data'; // ✅
 ```
 
@@ -455,9 +455,9 @@ export function BusinessForm() {
 ### File Naming
 
 ```
-src/components/button.tsx
-src/components/button.test.tsx
-src/components/button.stories.tsx
+components/button.tsx
+components/button.test.tsx
+components/button.stories.tsx
 ```
 
 ### Test Structure

@@ -1,8 +1,8 @@
 import { EnvVarWarning } from "@/components/ui/env-var-warning";
 import { AuthButton } from "@/features/auth/auth-button";
-import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
+import { ThemeSwitch } from "@/components/ui/theme-switch";
 
 export default function ProtectedLayout({
   children,
@@ -36,7 +36,7 @@ export default function ProtectedLayout({
               CKDigitals
             </a>
           </p>
-          <ThemeSwitcher />
+          <ThemeSwitch />
         </footer>
       </div>
     </main>

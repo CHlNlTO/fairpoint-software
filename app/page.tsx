@@ -1,9 +1,9 @@
 import { EnvVarWarning } from "@/components/ui/env-var-warning";
 import { AuthButton } from "@/features/auth/auth-button";
 import { Hero } from "@/features/home/hero";
-import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
+import { ThemeSwitch } from "@/components/ui/theme-switch";
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
               CKDigitals
             </a>
           </p>
-          <ThemeSwitcher />
+          <ThemeSwitch />
         </footer>
       </div>
     </main>

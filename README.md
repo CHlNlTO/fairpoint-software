@@ -41,7 +41,7 @@ This project enforces a strict **feature-based architecture** using ESLint bound
 #### Architectural Layers
 
 ```
-src/
+/
 ├── app/                    # Next.js App Router (pages, layouts)
 ├── components/             # Shared UI components
 ├── features/               # Feature modules (isolated)
@@ -64,7 +64,7 @@ src/
 ### Feature Structure Example
 
 ```
-src/features/business-registration/
+/features/business-registration/
 ├── components/
 │   ├── business-registration-wizard.tsx
 │   ├── steps/
@@ -114,7 +114,7 @@ src/features/business-registration/
 ## 📁 Project Structure
 
 ```
-├── src/
+├── /
 │   ├── app/                          # Next.js App Router
 │   │   ├── globals.css              # Global styles
 │   │   ├── layout.tsx               # Root layout
@@ -163,10 +163,10 @@ src/features/business-registration/
 
 ```typescript
 {
-  "@/*": ["./src/*"],
-  "@/components": ["./src/components"],
-  "@/lib": ["./src/lib"],
-  "@/hooks": ["./src/hooks"]
+  "@/*": ["./*"],
+  "@/components": ["./components"],
+  "@/lib": ["./lib"],
+  "@/hooks": ["./hooks"]
 }
 ```
 

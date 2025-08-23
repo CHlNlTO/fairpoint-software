@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GoogleSignInButton } from "./google-signin-button";
+import Image from "next/image";
 
 export function LoginForm({
   className,
@@ -52,10 +53,23 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
+          <div className="flex flex-row justify-between">
+            <div className="flex flex-col">
+              <CardTitle className="text-2xl">Welcome Back!</CardTitle>
+              <CardDescription>
+                Let&apos;s take care of your business.
+              </CardDescription>
+            </div>
+            <div className="relative w-[120px] h-[60px] overflow-hidden">
+              <Image
+                src="/logo.png"
+                alt="Fairpoint Logo"
+                width={10000}
+                height={10000}
+                className="absolute top-[-50%] w-[120px] h-auto"
+              />
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin}>
@@ -99,7 +113,7 @@ export function LoginForm({
                   <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">
+                  <span className="bg-card px-2 text-muted-foreground">
                     Or continue with
                   </span>
                 </div>
