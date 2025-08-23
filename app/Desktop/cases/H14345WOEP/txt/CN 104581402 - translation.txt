@@ -1,0 +1,567 @@
+16-07-2025 - Page 1
+Patent Translate
+Powered by EPO and Google
+Notice
+This translation is machine-generated. It cannot be guaranteed that it is intelligible, accurate,
+complete, reliable or fit for specific purposes. Critical decisions, such as commercially
+relevant or financial decisions, should not be based on machine-translation output.
+DESCRIPTION CN104581402A
+Interactive control method and electronic device
+[0001]
+Technical Field
+[0002]
+The present invention relates to the field of electronic technology, and in particular to an
+interactive control method and electronic equipment.
+[0003]
+Background Art
+[0004]
+With the continuous development of science and technology, electronic technology has also
+developed rapidly. There are more and more types of electronic products, and people have
+also enjoyed the various conveniences brought by the development of science and
+technology.
+Nowadays, people can enjoy a comfortable life brought about by the development of science
+and technology through various types of electronic devices.
+[0005]
+16-07-2025 - Page 2
+Existing smart TVs have been used more and more widely, so smart TVs have more and
+more functions. For example, users can input content that users need to input into the smart
+TV through a remote control, which enables users to interact with the smart TV more
+conveniently.
+[0006]
+However, in the above implementation, if the user needs to interact with the smart terminal,
+the user must use a specific electronic device to interact with the smart terminal, which leads
+to the technical problem of a single interaction mode of the smart terminal and also leads to
+the problem of low convenience of use of the smart terminal.
+[0007]
+Summary of the invention
+[0008]
+The present invention provides an interactive control method and an electronic device to
+solve the technical problem of a single interactive mode of an intelligent terminal in the prior
+art. The specific technical solution is as follows:
+[0009]
+An interactive control method is applied to a first electronic device, wherein the first
+electronic device includes a first display unit, and a first display object corresponding to a
+first application is displayed on the first display unit, comprising:
+[0010]
+When the first application is a preset application, detecting and determining at least one
+second electronic device connected to the first electronic device;
+[0011]
+Determine an i-th second electronic device capable of interacting with the first electronic
+device from the at least one second electronic device;
+[0012]
+16-07-2025 - Page 3
+The information of the i-th second electronic device is output to the user, and the i-th second
+electronic device is determined as an interactive device that interacts with the first electronic
+device, where i is a positive integer.
+[0013]
+Optionally, before detecting and determining at least one second electronic device
+connected to the first electronic device, the method further includes:
+[0014]
+Detecting and determining whether there is an input area in the first display object;
+[0015]
+When the input area exists, the step of detecting and determining at least one second
+electronic device connected to the first electronic device is performed.
+[0016]
+Optionally, outputting the information of the i-th second electronic device to the user and
+determining the i-th second electronic device as an interactive device for interacting with the
+first electronic device includes:
+[0017]
+Generate a prompt message including the i-th second electronic device identifier;
+[0018]
+Displaying the generated prompt information on a first display unit of the first electronic
+device to prompt a user to select an interactive device to interact with the first electronic
+device; or
+[0019]
+The prompt information is sent to the at least one second electronic device so that the at
+least one second electronic device can output the prompt information to the user, and the
+user response information returned by the i-th second electronic device based on the
+prompt information is received. When the user response information is confirmation
+information, the i-th second electronic device is determined as the interactive device.
+16-07-2025 - Page 4
+[0020]
+Optionally, the generating of a prompt message is specifically:
+[0021]
+Generate a text prompt message and/or a voice prompt message including an identifier of
+the i-th second electronic device, wherein the text prompt message and the voice prompt
+message are used to prompt the user that the i-th second electronic device is an interactive
+device for interacting with the first electronic device.
+[0022]
+Optionally, after using the i-th second electronic device as an interaction device for
+interacting with the first electronic device, the method further includes:
+[0023]
+receiving input data sent by the i-th second electronic device;
+[0024]
+The input data is displayed in the input area on the first display sheet.
+[0025]
+An electronic device, comprising:
+[0026]
+A display screen, used to display a first display object corresponding to the first application;
+[0027]
+A processor is connected to the display screen and is used to detect and determine at least
+one second electronic device connected to the first electronic device when the first
+application is a preset application, determine the i-th second electronic device that can
+interact with the first electronic device from the at least one second electronic device, output
+information of the i-th second electronic device to a user, and determine the i-th second
+electronic device as an interactive device that interacts with the first electronic device.
+[0028]
+16-07-2025 - Page 5
+Optionally, the processor is further configured to detect and determine whether an input
+area exists in the first display object, and when the input area exists, perform the step of:
+detecting and determining at least one second electronic device connected to the first
+electronic device.
+[0029]
+Optionally, the processor is further used to generate a prompt message including an
+identification of the i-th second electronic device, and display the generated prompt
+message on a first display unit of the first electronic device to prompt a user to select an
+interactive device for interacting with the first electronic device; or send the prompt message
+to the at least one second electronic device so that the at least one second electronic device
+can output the prompt message to the user, receive user response information returned by
+the i-th second electronic device based on the prompt message, and when the user response
+information is confirmation information, determine the i-th second electronic device as the
+interactive device.
+[0030]
+Optionally, the processor is further used to receive input data sent by the i-th second
+electronic device, and display the input data in the input area on the display unit.
+[0031]
+One or more embodiments provided by the present invention have at least the following
+technical effects or advantages:
+[0032]
+In the above embodiment, the first electronic device detects that the currently running first
+application is a preset application. When the first application is the preset application, it
+detects and determines at least one second electronic device connected to the first electronic
+device; determines the i-th second electronic device that can interact with the first electronic
+device from the at least one second electronic device; outputs the information of the i-th
+second electronic device to the user, and determines the i-th second electronic device as an
+interactive device that interacts with the first electronic device.
+This prompts the user to use the terminal device for interaction, thereby increasing the
+interactive modes of the first electronic device and correspondingly increasing the
+convenience of input through the smart terminal, reducing the user's operations and
+improving the user's experience.
+16-07-2025 - Page 6
+[0033]
+In addition, in the embodiment of the present invention, the first electronic device can
+receive input data entered by the user on the smart terminal, and after parsing the input
+data, display the corresponding input data in the corresponding display area. Therefore, in
+the embodiment of the present invention, the user can select the input method in the
+terminal, which facilitates the user's operation and improves the input efficiency.
+[0034]
+BRIEF DESCRIPTION OF THE DRAWINGS
+[0035]
+FIG1 is a flow chart of an interactive control method according to an embodiment of the
+present invention;
+[0036]
+FIG2 is a schematic diagram of a display interface of a smart TV according to an embodiment
+of the present invention;
+[0037]
+FIG3 is a schematic diagram of a display interface of a smart terminal according to an
+embodiment of the present invention;
+[0038]
+FIG4 is a schematic diagram of a smart TV input interface according to an embodiment of the
+present invention;
+[0039]
+FIG. 5 is a schematic diagram showing a specific structure of an electronic device according
+to an embodiment of the present invention.
+[0040]
+DETAILED DESCRIPTION
+[0041]
+16-07-2025 - Page 7
+The present invention provides an interactive control method and an electronic device. The
+method is applied to a first electronic device, the first electronic device includes a first display
+unit, and a first display object corresponding to a first application is displayed on the first
+display unit. The method specifically includes: when the first application is a preset
+application, detecting and determining at least one second electronic device connected to
+the first electronic device, determining the i-th second electronic device that matches the
+current state from the at least one second electronic device, outputting information of the i-
+th second electronic device to a user, and using the i-th second electronic device as an
+interactive device for interacting with the first electronic device, where i is a positive integer.
+[0042]
+Simply put, if a user needs to interact with a smart terminal, the smart terminal will
+automatically detect whether there is an electronic device that can interact with the smart
+terminal in a preset area. When there is an electronic device that can interact with the smart
+terminal, the user can directly use the electronic device to interact with the smart terminal.
+This avoids the problem that the user can only use a user-specific device to interact with the
+smart terminal, and increases the interaction methods between the user and the smart
+terminal, making the interaction between the user and the smart terminal more convenient.
+[0043]
+The technical solution of the present invention is described in detail below through the
+accompanying drawings and specific embodiments. It should be understood that the
+embodiments of the present invention and the specific technical features in the
+embodiments are only detailed descriptions of the technical solution of the present
+invention, but not limitations of the technical solution of the present invention. In the
+absence of conflict, the embodiments of the present invention and the specific technical
+features in the embodiments can be combined with each other.
+[0044]
+FIG1 is a flow chart of an interactive control method according to an embodiment of the
+present invention, the method comprising:
+[0045]
+Step 101: When the first application is a preset application, at least one second electronic
+device connected to the first electronic device is detected and determined.
+16-07-2025 - Page 8
+[0046]
+Step 102: Determine an i-th second electronic device that can interact with the first electronic
+device from at least one second electronic device.
+[0047]
+Step 103: output the information of the i-th second electronic device to the user, and
+determine the i-th second electronic device as an interactive device for interacting with the
+first electronic device.
+[0048]
+First of all, the interactive control method in the embodiment of the present invention is
+applied to a first electronic device, which includes a first display unit, on which a first display
+object corresponding to a first application is displayed.
+[0049]
+In addition, before executing step 101, the first electronic device will detect whether there is
+an input area in the first display object displayed on the first display unit. When there is an
+input area, the first electronic device will detect and determine at least one second electronic
+device for input.
+[0050]
+Specifically, as shown in FIG2 , a web page is displayed on the smart TV in FIG2 , and then the
+smart TV will detect whether there is an input area in the web page where the user needs to
+input. Obviously, there is an input area in the web page, in which the user can input the data
+content that the user needs to input. At this time, the smart TV will detect and determine at
+least one second electronic device, and the user can input data content to the smart TV
+through the second electronic device.
+[0051]
+Therefore, in an embodiment of the present invention, the first electronic device may also
+detect and determine whether the first application is a preset application in the preset
+application list. If the first application is a preset application, at least one second electronic
+device connected to the first electronic device is detected and determined.
+[0052]
+16-07-2025 - Page 9
+Specifically, since the first electronic device is an electronic device that can interact with the
+user, the first electronic device will determine whether it needs to interact with the user, and
+then a preset list is saved in the first electronic device, namely: a preset application list. The
+preset application list saves the applications installed in the first electronic device, such as
+QQ, Weibo, WeChat and other applications. The applications in the above examples are all
+interactive applications. As long as they are instant messaging applications, they can be
+added to the preset application list. Of course, users can add corresponding applications to
+the preset application list according to their own needs.
+[0053]
+When it is determined that the first application is any one of QQ, Weibo or WeChat, the first
+electronic device will determine that interaction with the user is required, and at this time
+the first electronic device will detect and determine at least one second electronic device
+connected to the first electronic device.
+[0054]
+Then, an i-th second electronic device capable of interacting with the first electronic device is
+determined from the at least one second electronic device.
+That is, it is determined whether each second electronic device has an input device and
+corresponding software that can interact with the first electronic device.
+Then, an i-th second electronic device is selected from multiple second electronic devices
+that can interact with the first electronic device.
+[0055]
+Finally, the information of the i-th second electronic device is output to the user, and the i-th
+second electronic device is determined as an interactive device that interacts with the first
+electronic device.
+[0056]
+In actual applications, the first electronic device will first turn on the function of the detection
+device, and then the first electronic device will first detect whether there is a terminal device
+that can be connected within the preset area, such as a smart phone, tablet computer, smart
+remote control and other terminal devices. If the first electronic device detects that there is a
+terminal device that can be connected to the first electronic device within the preset area,
+16-07-2025 - Page 10
+the first electronic device will obtain the identification information of the detected terminal
+device, and then the first electronic device will save the identification information of the
+currently detected terminal device.
+[0057]
+For example, the first electronic device is a smart TV. When the smart TV detects that the
+currently running application is a preset application or that there is an input area in the
+currently running application, the smart TV will detect whether there are terminal devices
+such as smart phones and tablet computers within a preset distance range. When it is
+detected that multiple terminal devices are connected to the smart TV, the smart TV will
+obtain identification information of the mobile phone and the tablet computer and save the
+obtained identification information, wherein the identification information is used to identify
+the detected terminal device.
+[0058]
+In addition, if the first electronic device is in a network, the first electronic device will detect
+whether there are terminal devices in the same network. When there are terminal devices in
+the same network as the first electronic device, the first electronic device will obtain
+identification information of these terminal devices, and the obtained identification
+information is stored in the first electronic device.
+[0059]
+For example, the first electronic device is a smart TV, which is in a home wireless network,
+such as a WI-FI network. At this time, the smart TV will detect terminal devices in the wireless
+network. At this time, when the terminal devices in the wireless network include terminal
+devices such as smart phones and tablet computers, the smart TV will obtain identification
+information of the terminal devices such as smart phones and tablet computers, and the
+smart TV will save the obtained identification information in the smart TV.
+[0060]
+Of course, in addition to the above-mentioned implementation methods, the first electronic
+device can also detect whether there are terminal devices with the same operating system as
+the first electronic device currently running within the preset area. For example, if the first
+electronic device runs the Android operating system, the first electronic device will detect
+whether there are terminal devices with the Android operating system within the preset
+area. If there are terminal devices with the Android operating system, the first electronic
+16-07-2025 - Page 11
+device will obtain the identification information of these terminal devices and save the
+corresponding identification information in the first electronic device.
+[0061]
+After the first electronic device obtains the terminal device identification information within
+the preset area, it selects a terminal device from these terminal devices that can interact with
+the first electronic device.
+Finally, the identification information of the terminal device is output to the user and is
+determined as an interactive device that interacts with the first electronic device.
+[0062]
+For example, the first electronic device may generate a first prompt message, which may be
+displayed on the first display unit of the first electronic device, thereby prompting the user to
+use the matched second electronic device for interaction, or the first electronic device may
+send the prompt message to at least one detected second electronic device, and the first
+electronic device may send a prompt message to all determined terminal devices, wherein
+the prompt message is used to prompt the user to confirm whether the terminal device
+needs to be used for interaction.
+[0063]
+In addition, the prompt information is text prompt information and/or voice prompt
+information, wherein the text prompt information and the voice prompt information are
+used to prompt the user that the i-th second electronic device is an interactive device that
+interacts with the first electronic device, that is, according to the voice prompt information,
+the second electronic device will output the corresponding voice prompt information,
+thereby prompting the user to confirm.
+[0064]
+After all terminal devices receive the prompt information, the first electronic device will
+detect in real time whether it has received the response information returned by the
+terminal device. When the first electronic device receives the response information returned
+by the i-th second electronic device based on the prompt information, the first electronic
+device will use the i-th second electronic device as an interactive device based on the
+response information.
+[0065]
+16-07-2025 - Page 12
+Specifically, the first electronic device is described as a smart TV. After the smart TV obtains
+the identification information of the mobile phone terminal, it will generate text prompt
+information, and the smart TV will send the text prompt information to the mobile phone
+terminal. Then the mobile phone terminal will display the interactive interface shown in
+Figure 3. Of course, as long as it is a terminal device detected by the smart TV, a
+corresponding interactive interface will be generated. After the interactive interface is
+displayed on the mobile phone terminal, the user can perform corresponding selection
+operations on the interactive interface, and then the mobile phone will generate
+corresponding response information. The smart TV will receive the response information
+generated on the mobile phone terminal and determine whether the user selects "Confirm"
+or "Cancel" according to the response information. If the user selects "Cancel", the mobile
+phone terminal will not serve as an interactive device. If the user selects "Confirm", the smart
+TV will determine that the mobile phone terminal is an interactive device, establish a
+connection with the mobile phone terminal, and receive the data content sent by the mobile
+phone terminal in real time.
+[0066]
+After the connection is established, the i-th second electronic device will first display an input
+interface, through which the user can input the content to be input, and then the first
+electronic device will receive the input data sent by the i-th second electronic device in real
+time, and then parse the input data, and then display the input data in the input area on the
+first display unit.
+[0067]
+For example, the first electronic device is a smart TV, as shown in FIG2 . In FIG2 , there is an
+input area in the display interface of the smart TV. At this time, the smart TV is connected to
+the smart phone in FIG3 . At this time, the user can enter the content that the user needs to
+search in the input interface of the smart phone. For example, the user enters “today’s
+news”. At this time, the smart TV will receive the data content entered by the user in the
+smart phone, and then the smart TV will parse the data content and display the parsed data
+content in the input area. The specific display result is shown in FIG4 .
+[0068]
+Of course, the display process on the smart TV is synchronized with the user's input process,
+which makes it easy for the user to check whether the input content is accurate.
+[0069]
+16-07-2025 - Page 13
+In the above embodiment, when the smart TV detects that the currently running program is
+a preset application program, or there is an input area in the current display object, the
+smart TV will actively detect whether there is an interactive terminal device in the preset area
+of the smart TV. When there is a terminal device, a prompt message will be generated and
+sent to the terminal device to prompt the user to use the terminal device for interaction. In
+this way, the interactive modes of the smart TV are increased, and the convenience of input
+through the smart terminal is correspondingly increased, which reduces the user's
+operations and improves the user experience.
+[0070]
+In addition, in the embodiment of the present invention, the smart TV can receive input data
+input by the user on the smart terminal, and after parsing the input data, display the
+corresponding input data in the corresponding display area. Therefore, in the embodiment
+of the present invention, the user can select the input method in the terminal, which
+facilitates the user's operation and improves the input efficiency.
+[0071]
+In addition, the present invention further provides an embodiment, in which a smart TV is
+still used for explanation. For example, a smart TV in the prior art has a smart remote
+controller, through which a user can interact with the smart TV, that is, a user can input
+corresponding content into the smart TV through the smart remote controller, but the input
+method on the remote controller is single and the input operation process is complicated.
+Therefore, in an embodiment of the present invention, a "shortcut key" is provided on the
+smart remote controller. When the "shortcut key" is turned on, the smart TV will search
+whether there is a smart terminal within a preset area. When a smart terminal exists, the
+smart TV will directly establish a connection with the smart terminal, receive the data content
+input by the smart terminal, and then display the data content in the corresponding input
+area.
+[0072]
+It should be emphasized that the method of inputting data content and subsequently
+displaying data in this embodiment is exactly the same as the implementation method in the
+previous embodiment, and will not be repeated here.
+[0073]
+16-07-2025 - Page 14
+Corresponding to an interactive control method in an embodiment of the present invention,
+a terminal device is also provided in an embodiment of the present invention. FIG5 is a
+schematic diagram of a specific structure of an electronic device in an embodiment of the
+present invention. The electronic device includes:
+[0074]
+Display screen 501, used to display a first display object corresponding to a first application
+program;
+[0075]
+The processor 502 is connected to the display screen 501, and is used to detect and
+determine at least one second electronic device connected to the first electronic device when
+the first application is a preset application, determine the i-th second electronic device that
+can interact with the first electronic device from the at least one second electronic device,
+output information of the i-th second electronic device to the user, and determine the i-th
+second electronic device as an interactive device that interacts with the first electronic
+device.
+[0076]
+Furthermore, the processor 502 is further configured to detect whether there is an input
+area in the first display object, and when the input area exists, perform the step of: detecting
+and determining at least one second electronic device connected to the first electronic
+device.
+[0077]
+Furthermore, the processor 502 is also used to generate a prompt message including an
+identification of the i-th second electronic device, and display the generated prompt
+message on the first display unit of the first electronic device to prompt the user to select an
+interactive device for interacting with the first electronic device; or send the prompt message
+to the at least one second electronic device so that the at least one second electronic device
+can output the prompt message to the user, receive user response information returned by
+the i-th second electronic device based on the prompt message, and when the user response
+information is confirmation information, determine the i-th second electronic device as the
+interactive device.
+[0078]
+16-07-2025 - Page 15
+Furthermore, the processor 502 is also used to receive input data sent by the i-th second
+electronic device, and display the input data in the input area on the display unit.
+[0079]
+One or more embodiments provided by the present invention have at least the following
+technical effects or advantages:
+[0080]
+In the above embodiment, the first electronic device detects that the currently running first
+application is a preset application. When the first application is the preset application, it
+detects and determines at least one second electronic device connected to the first electronic
+device; determines the i-th second electronic device that can interact with the first electronic
+device from the at least one second electronic device; outputs the information of the i-th
+second electronic device to the user, and determines the i-th second electronic device as an
+interactive device that interacts with the first electronic device.
+This prompts the user to use the terminal device for interaction, thereby increasing the
+interactive modes of the first electronic device and correspondingly increasing the
+convenience of input through the smart terminal, reducing the user's operations and
+improving the user's experience.
+[0081]
+In addition, in the embodiment of the present invention, the first electronic device can
+receive input data entered by the user on the smart terminal, and after parsing the input
+data, display the corresponding input data in the corresponding display area. Therefore, in
+the embodiment of the present invention, the user can select the input method in the
+terminal, which facilitates the user's operation and improves the input efficiency.
+[0082]
+Those skilled in the art should appreciate that the embodiments of the present invention
+may be provided as a method, a system or a computer program product.
+Accordingly, the present invention may take the form of an entirely hardware embodiment,
+an entirely software embodiment, or an embodiment combining software and hardware
+aspects.
+Moreover, the present invention may take the form of a computer program product
+implemented on one or more computer-usable storage media (including but not limited to
+disk storage, CD-ROM, optical storage, etc.) containing computer-usable program codes.
+16-07-2025 - Page 16
+[0083]
+The present invention is described with reference to flowcharts and/or block diagrams of
+methods, apparatus (systems), and computer program products according to embodiments
+of the invention.
+It should be understood that each process and/or block in the flowchart and/or block
+diagram, and a combination of the processes and/or blocks in the flowchart and/or block
+diagram can be implemented by computer program instructions.
+These computer program instructions can be provided to a processor of a general-purpose
+computer, a special-purpose computer, an embedded processing machine or other
+programmable data processing device to produce a machine, so that the instructions
+executed by the processor of the computer or other programmable data processing device
+produce a device for implementing the functions specified in one or more processes in the
+flowchart and/or one or more boxes in the block diagram.
+[0084]
+These computer program instructions may also be stored in a computer-readable memory
+that can direct a computer or other programmable data processing device to operate in a
+specific manner, so that the instructions stored in the computer-readable memory produce a
+product including an instruction device that implements the functions specified in one or
+more processes in the flowchart and/or one or more boxes in the block diagram.
+[0085]
+These computer program instructions may also be loaded onto a computer or other
+programmable data processing device so that a series of operational steps are executed on
+the computer or other programmable device to produce a computer-implemented process,
+whereby the instructions executed on the computer or other programmable device provide
+steps for implementing the functions specified in one or more processes in the flowchart and
+/or one or more boxes in the block diagram.
+[0086]
+Obviously, those skilled in the art can make various changes and modifications to the
+present invention without departing from the spirit and scope of the present invention.
+Thus, if these modifications and variations of the present invention fall within the scope of
+the claims of the present invention and their equivalents, the present invention is intended
+to include these modifications and variations.
+16-07-2025 - Page 1
+Patent Translate
+Powered by EPO and Google
+Notice
+This translation is machine-generated. It cannot be guaranteed that it is intelligible, accurate,
+complete, reliable or fit for specific purposes. Critical decisions, such as commercially
+relevant or financial decisions, should not be based on machine-translation output.
+CLAIMS CN104581402A
+1.
+An interactive control method is applied to a first electronic device, wherein the first
+electronic device includes a first display unit, and a first display object corresponding to a
+first application is displayed on the first display unit, characterized by comprising:
+When the first application is a preset application, detecting and determining at least one
+second electronic device connected to the first electronic device;
+Determine an i-th second electronic device capable of interacting with the first electronic
+device from the at least one second electronic device;
+The information of the i-th second electronic device is output to the user, and the i-th second
+electronic device is determined as an interactive device that interacts with the first electronic
+device, where i is a positive integer.
+2.
+The method according to claim 1, characterized in that before detecting and determining at
+least one second electronic device connected to the first electronic device, it also includes:
+Detecting and determining whether there is an input area in the first display object;
+When the input area exists, the step of detecting and determining at least one second
+electronic device connected to the first electronic device is performed.
+3.
+16-07-2025 - Page 2
+The method according to claim 1, wherein the step of outputting information of the i-th
+second electronic device to the user and determining the i-th second electronic device as an
+interactive device for interacting with the first electronic device comprises:
+Generate a prompt message including the i-th second electronic device identifier;
+Displaying the generated prompt information on a first display unit of the first electronic
+device to prompt a user to select an interactive device to interact with the first electronic
+device; or
+The prompt information is sent to the at least one second electronic device so that the at
+least one second electronic device can output the prompt information to the user, and the
+user response information returned by the i-th second electronic device based on the
+prompt information is received. When the user response information is confirmation
+information, the i-th second electronic device is determined as the interactive device.
+4.
+The method according to claim 3, characterized in that the generating of a prompt message
+specifically comprises:
+Generate a text prompt message and/or a voice prompt message including the i-th second
+electronic device identifier.
+5.
+The method according to claim 1, characterized in that after the i-th second electronic device
+is used as an interaction device for interacting with the first electronic device, the method
+further comprises:
+receiving input data sent by the i-th second electronic device;
+The input data is displayed in the input area on the first display sheet.
+6.
+An electronic device, characterized in that the electronic device comprises:
+A display screen, used to display a first display object corresponding to the first application;
+A processor is connected to the display screen and is used to detect and determine at least
+one second electronic device connected to the first electronic device when the first
+application is a preset application, determine the i-th second electronic device that can
+interact with the first electronic device from the at least one second electronic device, output
+information of the i-th second electronic device to a user, and determine the i-th second
+electronic device as an interactive device that interacts with the first electronic device.
+7.
+16-07-2025 - Page 3
+The electronic device as claimed in claim 6, characterized in that the processor is further
+used to detect whether there is an input area in the first display object, and when the input
+area exists, perform the step of: detecting and determining at least one second electronic
+device connected to the first electronic device.
+8.
+The electronic device as described in claim 6 is characterized in that the processor is also
+used to generate a prompt message including an identification of the i-th second electronic
+device, and display the generated prompt message on the first display unit of the first
+electronic device to prompt a user to select an interactive device to interact with the first
+electronic device; or send the prompt message to the at least one second electronic device
+so that the at least one second electronic device can output the prompt message to the user,
+receive user response information returned by the i-th second electronic device based on the
+prompt message, and when the user response information is confirmation information,
+determine the i-th second electronic device as the interactive device.
+9.
+The electronic device as claimed in claim 7 is characterized in that the processor is also used
+to receive input data sent by the i-th second electronic device, and display the input data in
+the input area on the display unit.

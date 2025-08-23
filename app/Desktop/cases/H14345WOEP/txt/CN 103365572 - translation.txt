@@ -1,0 +1,756 @@
+16-07-2025 - Page 1
+Patent Translate
+Powered by EPO and Google
+Notice
+This translation is machine-generated. It cannot be guaranteed that it is intelligible, accurate,
+complete, reliable or fit for specific purposes. Critical decisions, such as commercially
+relevant or financial decisions, should not be based on machine-translation output.
+DESCRIPTION CN103365572A
+Remote control method of electronic equipment and electronic equipment
+[0001]
+Technical Field
+[0002]
+The present invention relates to the field of electronic technology, and in particular to a
+remote control method of an electronic device and the electronic device.
+[0003]
+Background Art
+[0004]
+Currently, the main control input methods for human-computer desktop interaction include
+mouse, keyboard, touch screen, gesture recognition device, etc.
+These control methods all require additional, specialized command input devices, resulting
+in a large amount of redundancy in computer input devices.
+Moreover, the input device is tightly coupled to the computer, and one input device usually
+corresponds to only one computer. Therefore, it is difficult to flexibly control multiple
+computers using one input device, and it is also difficult for multiple people to control one
+computer using multiple input devices.
+[0005]
+16-07-2025 - Page 2
+At the same time, in many cases, users hope to use computers conveniently and quickly, and
+the most effective way is to use the electronic devices that users carry with them as input
+devices.
+For example, a user uses a mobile phone to control a computer at a certain distance.
+[0006]
+The solution proposed in the prior art is to use a mobile phone as a remote control to control
+a PC, a TV or other computer equipment. The disadvantages of this solution are:
+[0007]
+1) The remote control method is monotonous, usually only including channel selection and
+basic settings; 2) The interoperability is poor, and the smart TV desktop cannot be
+interactively operated; 3) The flexibility is low, the mobile phone and TV are highly coupled,
+and users cannot quickly switch between multiple TVs; 4) It is impossible to achieve visible
+and controllable.
+[0008]
+Summary of the invention
+[0009]
+The present invention provides a remote control method of an electronic device and the
+electronic device. The method and device provided by the present invention can solve the
+problem in display technology that a computer or a non-touch display device cannot be
+flexibly controlled by using one input device.
+[0010]
+The present invention provides a remote control method for an electronic device, which is
+applied between a first electronic device and a second electronic device, wherein the first
+electronic device and the second electronic device are connected wirelessly, the first
+electronic device includes an image acquisition device and a touch display unit, and the
+second electronic device includes a display unit, and the method includes:
+[0011]
+16-07-2025 - Page 3
+The first electronic device acquires a real-time image including the first display content
+displayed by the display unit through the image acquisition device, and displays the real-time
+image on the touch display unit;
+[0012]
+Establishing a first display coordinate conversion relationship between the display
+coordinates corresponding to the real-time image and the display coordinates
+corresponding to the first display content;
+[0013]
+Detect touch operation information received by the touch display unit, and determine
+whether the touch point coordinates of the touch operation correspond to the first display
+content included in the real-time image according to the touch operation information; if so,
+convert the touch point coordinates corresponding to the touch operation into second
+coordinates in the display unit according to the first display coordinate conversion
+relationship, and send the touch command in the touch operation information to the second
+electronic device, so that the second electronic device can implement the operation on the
+second coordinate position through the touch command.
+[0014]
+Establishing a display coordinate conversion relationship between the display coordinates
+corresponding to the real-time image and the display coordinates corresponding to the first
+display content includes:
+[0015]
+Performing an image recognition operation on the real-time image to determine boundary
+information of a first display content in the real-time image, and acquiring a first display
+coordinate set included in an area determined by the boundary information;
+[0016]
+Determining a second display coordinate set corresponding to the first display content in the
+display unit;
+[0017]
+16-07-2025 - Page 4
+A display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set is established.
+[0018]
+Establishing a display coordinate conversion relationship between the display coordinates
+corresponding to the real-time image and the display coordinates corresponding to the first
+display content includes:
+[0019]
+Accepting image selection information input by a user, and determining boundary
+information of a first display content from the real-time image according to the selection
+information, and acquiring a first display coordinate set included in the area determined by
+the boundary information;
+[0020]
+Determining a second display coordinate set corresponding to the first display content in the
+display unit;
+[0021]
+A display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set is established.
+[0022]
+The first electronic device and the second electronic device are spaced apart by a set
+distance, the image acquisition device includes a panoramic camera and a zoom camera, and
+the first electronic device acquires a real-time image including the first display content
+displayed by the display unit through the image acquisition device, including:
+[0023]
+Acquire all display contents currently displayed by the display unit through the panoramic
+camera;
+[0024]
+The zoom camera is controlled by the received image zoom instruction to obtain a zoomed
+image of any area in the display unit.
+16-07-2025 - Page 5
+[0025]
+In a more optimized solution, the method further comprises:
+[0026]
+Detecting the distance between the first electronic device and the second electronic device, if
+the first distance currently detected is different from the second distance previously
+detected, acquiring a second real-time image currently displayed in the touch display unit,
+and determining that the second real-time image includes the second display content
+displayed by the display unit;
+[0027]
+A second display coordinate conversion relationship between the display coordinates
+corresponding to the second real-time image and the display coordinates corresponding to
+the second display content is established, and the first display coordinate conversion
+relationship is updated with the second display coordinate conversion relationship.
+[0028]
+According to the above method, the present invention also provides an electronic device,
+wherein the electronic device is connected to a second electronic device in a wireless
+manner, and the electronic device includes an image acquisition unit and a touch display
+unit, including:
+[0029]
+The image acquisition unit is used to acquire a real-time image including the first display
+content displayed by the display unit of the second electronic device, and send the real-time
+image to the touch display unit;
+[0030]
+a corresponding relationship establishing unit, configured to establish a first display
+coordinate conversion relationship between the display coordinates corresponding to the
+real-time image and the display coordinates corresponding to the first display content;
+[0031]
+16-07-2025 - Page 6
+A control unit is used to detect touch operation information received by the touch display
+unit, determine whether the touch point coordinates of the touch operation correspond to
+the first display content contained in the real-time image according to the touch operation
+information, and if so, convert the touch point coordinates corresponding to the touch
+operation into second coordinates in the display unit according to the first display coordinate
+conversion relationship, and send the touch command in the touch operation information to
+the second electronic device, so that the second electronic device implements the operation
+on the second coordinate position through the touch command.
+[0032]
+The correspondence establishing unit is further used to perform an image recognition
+operation on the real-time image, determine boundary information of the first display
+content in the real-time image, and obtain a first display coordinate set included in the area
+determined by the boundary information; determine a second display coordinate set
+corresponding to the first display content in the display unit; and establish a display
+coordinate conversion relationship between the first display coordinate set and the second
+display coordinate set.
+[0033]
+The correspondence establishing unit is also used to accept image selection information
+input by a user, and determine boundary information of a first display content from the real-
+time image according to the selection information, and obtain a first display coordinate set
+included in the area determined by the boundary information; determine a second display
+coordinate set corresponding to the first display content in the display unit; and establish a
+display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set.
+[0034]
+In a more optimized embodiment, the image acquisition unit comprises:
+[0035]
+A panoramic camera, used to obtain all display contents currently displayed by the display
+unit;
+[0036]
+16-07-2025 - Page 7
+The zoom camera is used to obtain a zoomed image of any area in the display content of the
+display unit through the received image zoom instruction.
+[0037]
+Furthermore, the electronic device also includes:
+[0038]
+A distance measuring unit is used to detect the distance between the first electronic device
+and the second electronic device. If the first distance detected last time is different from the
+second distance detected last time, a second real-time image displayed in the current touch
+display unit is obtained, and it is determined that the second real-time image contains the
+second display content displayed by the display unit; a second display coordinate conversion
+relationship between the display coordinates corresponding to the second real-time image
+and the display coordinates corresponding to the second display content is established, and
+the first display coordinate conversion relationship is updated with the second display
+coordinate conversion relationship.
+[0039]
+One or two of the above technical solutions have at least the following technical effects:
+[0040]
+The method and device provided by the embodiment of the present invention use an
+electronic device including a zoom camera and a touch screen to control another electronic
+device. When a user obtains the content displayed on the display unit of another electronic
+device through the camera, it is displayed on the touch screen.
+The user can control the desktop of the other electronic device within a certain distance
+range through the touch screen.
+It is possible to control electronic devices with non-touch display screens by touch.
+[0041]
+BRIEF DESCRIPTION OF THE DRAWINGS
+[0042]
+FIG1 is a schematic diagram of a remote control method of an electronic device according to
+an embodiment of the present invention;
+16-07-2025 - Page 8
+[0043]
+FIG2 is a diagram showing that the entire desktop display content of the controlled
+electronic device is included in the real-time image in an embodiment of the present
+invention;
+[0044]
+FIG3 is a diagram showing that part of the desktop display content of the controlled
+electronic device is included in the timely image in an embodiment of the present invention;
+[0045]
+FIG4 is a schematic diagram showing that a first electronic device has a certain inclination
+angle relative to a bottom edge of a second electronic device according to an embodiment of
+the present invention;
+[0046]
+FIG5 is a simplified diagram of the effect of the schematic diagram shown in FIG4 according
+to an embodiment of the present invention;
+[0047]
+FIG6 is a schematic diagram of displaying a selection box in a real-time image according to
+an embodiment of the present invention;
+[0048]
+FIG7 is a schematic diagram of a real-time image after enlarging the image according to an
+embodiment of the present invention;
+[0049]
+FIG8 is a schematic diagram of coordinate conversion performed by a second electronic
+device including two cameras according to an embodiment of the present invention;
+[0050]
+FIG9 is a schematic diagram of the structure of an electronic device according to an
+embodiment of the present invention;
+16-07-2025 - Page 9
+[0051]
+FIG. 10 is a schematic diagram of the structure of an image acquisition unit according to an
+embodiment of the present invention.
+[0052]
+DETAILED DESCRIPTION
+[0053]
+An embodiment of the present invention provides a remote control method for an electronic
+device, the method being applied between a first electronic device and a second electronic
+device, wherein the first electronic device and the second electronic device are connected
+wirelessly, the first electronic device comprises an image acquisition device and a touch
+display unit, and the second electronic device comprises a display unit, the method
+comprising: the first electronic device acquires a real-time image including a first display
+content displayed by the display unit through the image acquisition device, and displays the
+real-time image in the touch display unit; establishes a first display coordinate conversion
+relationship between display coordinates corresponding to the real-time image and display
+coordinates corresponding to the first display content; detects touch operation information
+received by the touch display unit, determines whether the touch point coordinates of the
+touch operation correspond to the first display content included in the real-time image
+according to the touch operation information, and if so, converts the touch point coordinates
+corresponding to the touch operation into second coordinates in the display unit according
+to the first display coordinate conversion relationship, and sends a touch command in the
+touch operation information to the second electronic device, so that the second electronic
+device implements an operation on the second coordinate position through the touch
+command.
+[0054]
+The method provided in the embodiment of the present invention is applied in a first
+electronic device and a second electronic device, wherein the first electronic device is
+connected to the second electronic device in a wireless manner, the first electronic device
+includes an image acquisition device and a touch display unit, and the second electronic
+device includes a display unit.
+The image acquisition device of the first electronic device may be a camera, and the camera
+captures all contents displayed on the display unit of the second electronic device, and
+displays the captured image contents in real time on the touch display unit.
+16-07-2025 - Page 10
+A coordinate correspondence between the image content and the display content of the
+display unit is established, so that the user can observe the desktop of the display unit on the
+touch display unit, and can also operate and control the second electronic device by
+operating the touch display unit.
+The operation control includes all mouse type control commands and some advanced
+commands, such as forward, backward, zoom, return, shutdown, copy and paste, etc.
+[0055]
+Furthermore, the distance between the first electronic device and the second electronic
+device is determined by means of a distance meter, so as to establish or update a conversion
+function between the touch display unit coordinates and the display unit desktop
+coordinates.
+In addition, two cameras are provided to realize digital zooming of the captured images
+through the zoom camera, presenting the details of the controlled desktop to the user for
+easy user control.
+[0056]
+Embodiment 1, as shown in FIG1 , an embodiment of the present invention provides a
+remote control method for an electronic device, the method being applied between a first
+electronic device and a second electronic device, wherein the first electronic device and the
+second electronic device are connected wirelessly, the first electronic device comprises an
+image acquisition device and a touch display unit, the second electronic device comprises a
+display unit, and in this embodiment, the image acquisition device comprises a camera.
+The specific implementation of the present invention is described in detail below with
+reference to the accompanying drawings:
+[0057]
+In the embodiment of the present invention, the display unit of the controlled electronic
+device (the second electronic device according to the above conditions) is within the
+scanning range of the image acquisition device.
+[0058]
+In this implementation, if the device camera or the display unit included in the second
+electronic device is also a touch display unit, reverse control of the first electronic device can
+also be achieved at the same time.
+16-07-2025 - Page 11
+[0059]
+Step 101: The first electronic device obtains a real-time image including the first display
+content displayed by the display unit through the image acquisition device, and displays the
+real-time image on the touch display unit;
+[0060]
+In an embodiment of the present invention, the first display content can be all the contents
+of the current desktop of the display unit (as shown in Figure 2, where the diameter of the
+scanned area of the image acquisition device of the first electronic device is a-b), or it can be
+a part of the contents of the current desktop of the display unit (as shown in Figure 3).
+In order to expand the scope of application of the method provided by the embodiment of
+the present invention, the first electronic device may be inclined at a certain angle to the
+horizontal plane (as shown in FIG. 4 , and a simplified diagram is shown in FIG. 5 , where the
+diameter of the scanned area of the image acquisition device of the first electronic device is
+a-b), with the lower left corner of the display unit of the second electronic device as the
+origin of the reference coordinate system, and the bottom edge as the reference line.
+The tilt angle is determined by the reference line.
+[0061]
+In the embodiment of the present invention, the image acquisition device acquires the
+image in real time and needs to perform an update operation on the real-time image once
+the display content of the display unit changes.
+[0062]
+In this implementation, the method for achieving real-time control of the display unit
+desktop content may be: periodically obtaining the content displayed on the display unit
+desktop.
+The display content currently acquired is compared with the display content previously
+acquired. If the different pixel values are greater than a preset value, it is determined that
+the desktop content of the display unit has changed, and the real-time image is updated.
+[0063]
+Step 102, establishing a first display coordinate conversion relationship between the display
+coordinates corresponding to the real-time image and the display coordinates
+corresponding to the first display content;
+16-07-2025 - Page 12
+[0064]
+This step also includes performing an image recognition operation on the real-time image or
+determining the first display content in the real-time image through selection information
+input by a user.
+[0065]
+The method provided in the present invention can be implemented in a variety of ways to
+determine the first content in the real-time image. The following is a further description of
+determining the first display content in the real-time image in two ways: image recognition
+and user selection, which specifically include:
+[0066]
+(1) performing an image recognition operation on the real-time image to determine
+boundary information of a first display content in the real-time image, and obtaining a first
+display coordinate set included in an area determined by the boundary information;
+[0067]
+Determining a second display coordinate set corresponding to the first display content in the
+display unit;
+[0068]
+A display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set is established.
+[0069]
+(2) accepting image selection information input by a user, and determining boundary
+information of a first display content from the real-time image according to the selection
+information, and acquiring a first display coordinate set included in the area determined by
+the boundary information;
+[0070]
+In this embodiment, when image recognition is performed, a selection box is displayed on
+the touch display unit (as shown in FIG. 6 ).
+16-07-2025 - Page 13
+By receiving the control information input by the user, the selection box is moved and
+scaled, so that the boundary of the first display content is overlapped with the boundary of
+the selection box, or the part of the first display content that needs corresponding operation
+control is selected in the selection box.
+[0071]
+Determining a second display coordinate set corresponding to the first display content in the
+display unit;
+[0072]
+A display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set is established.
+[0073]
+Step 103: Detect the touch operation information received by the touch display unit, and
+determine whether the touch point coordinates of the touch operation correspond to the
+first display content included in the real-time image according to the touch operation
+information; if so, convert the touch point coordinates corresponding to the touch operation
+into second coordinates in the display unit according to the first display coordinate
+conversion relationship, and send the touch command in the touch operation information to
+the second electronic device, so that the second electronic device can implement the
+operation on the second coordinate position through the touch command.
+[0074]
+In the implementation of the present invention, because the first electronic device can obtain
+a part of the desktop display content of the display unit, it is necessary to determine whether
+the coordinates of the touch point when the user performs a touch operation correspond to
+the first display image included in the real-time image. If so, it is determined that the touch
+operation is a touch operation performed on the display unit.
+[0075]
+The touch operation information includes touch point coordinates and touch operation
+instructions.
+[0076]
+16-07-2025 - Page 14
+In the embodiment of the present invention, the first electronic device is generally a
+handheld device with a touch display unit, so in a specific application, there may be a change
+in the relative displacement between the first electronic device and the second electronic
+device. Therefore, after the relative displacement changes, it is necessary to update the
+display coordinate conversion relationship in real time. The specific implementation method
+includes:
+[0077]
+Detecting the distance between the first electronic device and the second electronic device, if
+the first distance currently detected is different from the second distance previously
+detected, acquiring a second real-time image currently displayed in the touch display unit,
+and determining that the second real-time image includes the second display content
+displayed by the display unit;
+[0078]
+A second display coordinate conversion relationship between the display coordinates
+corresponding to the second real-time image and the display coordinates corresponding to
+the second display content is established, and the first display coordinate conversion
+relationship is updated with the second display coordinate conversion relationship.
+[0079]
+In step 102, the process of establishing a first display coordinate conversion relationship
+between the display coordinates corresponding to the real-time image and the display
+coordinates corresponding to the first display content may be implemented as follows:
+[0080]
+The first electronic device records the ratio of the horizontal and vertical coordinates of the
+user's touch point to the border of the display unit in the real-time image.
+That is, the ratio of the horizontal coordinate of the user's touch point to the horizontal
+border is XR, and the ratio of the vertical coordinate to the vertical border is YR.
+After obtaining these two values, they are transmitted to the second electronic device, and
+the second electronic device then knows the position of the user's touch point.
+Therefore, in this implementation, the second electronic device only needs to determine the
+horizontal inclination angle of the local device, the length of the controlled computer frame
+16-07-2025 - Page 15
+(calculated in pixels), and the coordinates of the user's touch point on the local device to
+determine the correspondence between the touch operation coordinates in the touch
+display unit and the coordinates in the display unit.
+The determination method in specific applications is:
+[0081]
+As shown in FIG5 , the correspondence between the desktop of the display unit 502 and the
+real-time image displayed by the touch display unit L, this method needs to convert the
+touch coordinates of the user on the touch screen into coordinates based on the display unit,
+and the conversion formula can be implemented by the following steps:
+[0082]
+In order to avoid loss of generality, it is necessary to record the tilt angle of the second
+electronic device, take the lower left corner of L as the origin of the reference coordinate
+system, record the origin coordinates of RL as (x0, y0), and the coordinates of the user touch
+point U as (xL, yL). Thus, the corresponding straight line function of the four sides of RL can
+be established, where the lengths of sides a and b can be recorded as la and lb (the pixels of
+L can be used as the unit):
+[0083]
+Let the straight line functions of sides a and b be: fa(x), fb(x);
+[0084]
+The distances from point U to edges a and b can be obtained, namely da and db,
+respectively. From this, the relative coordinates of point U in RL can be obtained, XR=db/lb
+and YR=da/la.
+[0085]
+Further, in order to facilitate the operation of the user, the image acquisition device of the
+first electronic device in the embodiment of the present invention may include two cameras,
+the two cameras are a panoramic camera and a zoom camera respectively, when the user
+performs a touch operation on the real-time image in the touch display unit, the first
+electronic device acquires the real-time image including the first display content displayed by
+the display unit through the image acquisition device, including:
+[0086]
+16-07-2025 - Page 16
+Acquire all display contents currently displayed by the display unit through the panoramic
+camera;
+[0087]
+The received image zoom instruction controls the adjustment zoom camera to obtain a
+zoomed image of any area in the display unit (the enlarged real-time image is shown in
+Figure 7).
+[0088]
+In this embodiment, in case of the panoramic camera dual camera, the two cameras are G-
+camera and Z-camera.
+Among them, G-camera is a fixed-focus camera (i.e. panoramic camera) that can capture the
+entire screen of the controlled computer.
+Z-camera is a zoom camera (i.e. a zoom camera), and users can change the Z-camera to
+perform zoom shooting.
+[0089]
+In the embodiment of the present invention, coordinate conversion refers to converting the
+coordinates of a click on the first electronic device into the corresponding coordinates on the
+desktop of the second electronic device (controlled device).
+The conversion formula is related to the distance between the first electronic device and the
+desktop of the second electronic device, the G-Camera angle, and the zoom multiple. The
+conversion formula can be implemented by the following steps:
+[0090]
+As shown in FIG8 , if the plane of the second electronic device is R1-R4, the user's G-Camera
+can take a panoramic photo of the desktop of the second electronic device and project it on
+G1-G2.
+When the user uses the Z-Camera to browse, the user moves forward and backward with the
+straight line x as the axis. It is assumed that the wide angle of the lens remains unchanged
+during the movement.
+[0091]
+When the Z-Camera moves to the position shown in the figure, the range displayed on the
+touch screen is the R2-R3 segment.
+16-07-2025 - Page 17
+The meanings of the symbols in Figure XX are shown in Table 1.
+[0092]
+<img file="BDA0000147098690000111.TIF" he="529" img-content="drawing" img-format="
+tif" inline="no" orientation="portrait" wi="700"/>
+[0093]
+Table 1
+[0094]
+Take the horizontal axis as an example to derive the conversion formula:
+[0095]
+The goal of coordinate conversion is to convert the coordinates of the user's operating point
+P on the Z-Camera to the corresponding point Q on the plane of the second electronic
+device.
+[0096]
+The relative position of the user touch point P satisfies
+[0098]
+Among them, R <sub> 2 </sub> R <sub> 3 </sub> is determined by the user adjusting the
+camera magnification, so R <sub> 2 </sub> R <sub> 3 </sub> is the product of the zoom ratio
+and the panoramic range OR <sub> 5 </sub>, so:
+[0099]
+R <sub> 2 </sub> R <sub> 3 </sub> =β*OR <sub> 5 </sub> ,
+[0100]
+so
+[0101]
+According to the above figure, we can also infer
+16-07-2025 - Page 18
+[0103]
+OR <sub> 2 </sub> =tanθ(x <sub> 0 </sub> x <sub> 2 </sub> -x <sub> 0 </sub> x <sub> 1 <
+/sub> )
+[0104]
+OR <sub> 5 </sub> =2tanθ*x <sub> 0 </sub> x <sub> 2 </sub> +G <sub> 0 </sub> G <sub> 2 <
+/sub>
+[0105]
+Since R <sub> 1 </sub> Q(R <sub> 2 </sub> O-R <sub> 1 </sub> O)+R <sub> 2 </sub> Q, after
+comprehensive arrangement, the horizontal coordinate R <sub> 1 </sub> Q of point Q is
+obtained as follows:
+[0107]
+As shown in FIG9 , according to the above method, the present invention further provides an
+electronic device, which is connected to a second electronic device by wireless means, and
+the electronic device includes an image acquisition unit 901 and a touch display unit 902,
+including:
+[0108]
+The image acquisition unit 901 is used to acquire a real-time image including the first display
+content displayed by the display unit of the second electronic device, and send the real-time
+image to the touch display unit;
+[0109]
+A corresponding relationship establishing unit 903, configured to establish a first display
+coordinate conversion relationship between the display coordinates corresponding to the
+real-time image and the display coordinates corresponding to the first display content;
+[0110]
+The control unit 904 is used to detect the touch operation information received by the touch
+display unit, and determine whether the touch point coordinates of the touch operation
+correspond to the first display content contained in the real-time image according to the
+touch operation information; if so, convert the touch point coordinates corresponding to the
+16-07-2025 - Page 19
+touch operation into second coordinates in the display unit according to the first display
+coordinate conversion relationship, and send the touch command in the touch operation
+information to the second electronic device, so that the second electronic device can
+implement the operation on the second coordinate position through the touch command.
+[0111]
+The correspondence establishing unit 903 is further configured to perform an image
+recognition operation on the real-time image or determine the first display content in the
+real-time image through selection information input by a user.
+[0112]
+The electronic device provided by the embodiment of the present invention can determine
+the first content in the real-time image in a variety of ways. The following further describes
+the determination of the first display content in the real-time image in two ways: image
+recognition and user selection, specifically including:
+[0113]
+The correspondence establishing unit 903 is further used to perform an image recognition
+operation on the real-time image, determine the boundary information of the first display
+content in the real-time image, and obtain a first display coordinate set included in the area
+determined by the boundary information; determine a second display coordinate set
+corresponding to the first display content in the display unit; and establish a display
+coordinate conversion relationship between the first display coordinate set and the second
+display coordinate set.
+[0114]
+The correspondence establishing unit 903 is also used to accept image selection information
+input by a user, and determine boundary information of the first display content from the
+real-time image according to the selection information, and obtain a first display coordinate
+set included in the area determined by the boundary information; determine a second
+display coordinate set corresponding to the first display content in the display unit; and
+establish a display coordinate conversion relationship between the first display coordinate
+set and the second display coordinate set.
+[0115]
+16-07-2025 - Page 20
+As shown in FIG10 , in order to facilitate the user's operation, the image acquisition unit 901
+of the first electronic device in the embodiment of the present invention may include two
+cameras, which are a panoramic camera 1001 and a zoom camera 1002:
+[0116]
+The panoramic camera 1001 is used to obtain all display contents currently displayed by the
+display unit;
+[0117]
+The zoom camera 1002 is used to obtain a zoomed image of any area in the display content
+of the display unit through the received image zoom instruction.
+[0118]
+In the embodiment of the present invention, the first electronic device is generally a
+handheld device with a touch display unit, so in a specific application, there may be a change
+in the relative displacement between the first electronic device and the second electronic
+device. Therefore, after the relative displacement changes, it is necessary to update the
+display coordinate conversion relationship in real time. The device provided by the
+embodiment of the present invention also includes:
+[0119]
+The distance measuring unit 905 is used to detect the distance between the first electronic
+device and the second electronic device. If the first distance detected currently is different
+from the second distance detected previously, a second real-time image displayed in the
+current touch display unit is obtained, and it is determined that the second real-time image
+contains the second display content displayed by the display unit; a second display
+coordinate transformation relationship between the display coordinates corresponding to
+the second real-time image and the display coordinates corresponding to the second display
+content is established, and the first display coordinate transformation relationship is
+updated with the second display coordinate transformation relationship.
+[0120]
+The above one or more technical solutions in the embodiments of the present application
+have at least the following technical effects:
+[0121]
+16-07-2025 - Page 21
+The method and device provided by the embodiment of the present invention use an
+electronic device including a zoom camera and a touch screen to control another electronic
+device. When a user obtains the content displayed on the display unit of another electronic
+device through the camera, it is displayed on the touch screen.
+The user can control the desktop of another electronic device within a certain distance range
+through the touch screen;
+[0122]
+This method can enable users to flexibly control multiple computers, and can also enable
+multiple users to control one computer;
+[0123]
+This method has no restrictions on the controlled computer desktop and can be applied to a
+variety of computer display modes, including CRT, LCD, LED, liquid crystal, capacitive screen,
+resistive screen, projection, etc.
+[0124]
+This method only requires the controlled computer to provide a wireless input interface,
+without other software and hardware requirements;
+[0125]
+Cameras and touch screens have become standard features of smartphones, and
+rangefinders can also be easily integrated into handheld devices such as mobile phones.
+Therefore, this method can be easily implemented on handheld devices such as mobile
+phones.
+[0126]
+The method described in the present invention is not limited to the embodiments described
+in the specific implementation manner. A person skilled in the art may derive other
+implementation manners based on the technical solution of the present invention, which
+also fall within the technical innovation scope of the present invention.
+[0127]
+Obviously, those skilled in the art can make various changes and modifications to the
+present invention without departing from the spirit and scope of the invention.
+16-07-2025 - Page 22
+Thus, if these modifications and variations of the present invention fall within the scope of
+the claims of the present invention and their equivalent technologies, the present invention
+is also intended to include these modifications and variations.
+16-07-2025 - Page 1
+Patent Translate
+Powered by EPO and Google
+Notice
+This translation is machine-generated. It cannot be guaranteed that it is intelligible, accurate,
+complete, reliable or fit for specific purposes. Critical decisions, such as commercially
+relevant or financial decisions, should not be based on machine-translation output.
+CLAIMS CN103365572A
+1.
+A remote control method for an electronic device, the method is applied between a first
+electronic device and a second electronic device, wherein the first electronic device and the
+second electronic device are connected wirelessly, the first electronic device includes an
+image acquisition device and a touch display unit, and the second electronic device includes
+a display unit, wherein the method includes:
+The first electronic device acquires a real-time image including the first display content
+displayed by the display unit through the image acquisition device, and displays the real-time
+image on the touch display unit;
+Establishing a first display coordinate conversion relationship between the display
+coordinates corresponding to the real-time image and the display coordinates
+corresponding to the first display content;
+Detect touch operation information received by the touch display unit, and determine
+whether the touch point coordinates of the touch operation correspond to the first display
+content included in the real-time image according to the touch operation information; if so,
+convert the touch point coordinates corresponding to the touch operation into second
+coordinates in the display unit according to the first display coordinate conversion
+relationship, and send the touch command in the touch operation information to the second
+electronic device, so that the second electronic device can implement the operation on the
+second coordinate position through the touch command.
+2.
+16-07-2025 - Page 2
+The method according to claim 1, wherein establishing a display coordinate conversion
+relationship between the display coordinates corresponding to the real-time image and the
+display coordinates corresponding to the first display content comprises:
+Performing an image recognition operation on the real-time image to determine boundary
+information of a first display content in the real-time image, and acquiring a first display
+coordinate set included in an area determined by the boundary information;
+Determining a second display coordinate set corresponding to the first display content in the
+display unit;
+A display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set is established.
+3.
+The method according to claim 1, wherein establishing a display coordinate conversion
+relationship between the display coordinates corresponding to the real-time image and the
+display coordinates corresponding to the first display content comprises:
+Accepting image selection information input by a user, and determining boundary
+information of a first display content from the real-time image according to the selection
+information, and acquiring a first display coordinate set included in the area determined by
+the boundary information;
+Determining a second display coordinate set corresponding to the first display content in the
+display unit;
+A display coordinate conversion relationship between the first display coordinate set and the
+second display coordinate set is established.
+4.
+The method according to claim 1, wherein the first electronic device and the second
+electronic device are separated by a set distance, the image acquisition device comprises a
+panoramic camera and a zoom camera, and the first electronic device acquires a real-time
+image including the first display content displayed by the display unit through the image
+acquisition device, comprising:
+Acquire all display contents currently displayed by the display unit through the panoramic
+camera;
+The zoom camera is controlled by the received image zoom instruction to obtain a zoomed
+image of any area in the display unit.
+5.
+16-07-2025 - Page 3
+The method according to any one of claims 1 to 4, characterized in that the method further
+comprises:
+Detecting the distance between the first electronic device and the second electronic device, if
+the first distance currently detected is different from the second distance previously
+detected, acquiring a second real-time image currently displayed in the touch display unit,
+and determining that the second real-time image includes the second display content
+displayed by the display unit;
+A second display coordinate conversion relationship between the display coordinates
+corresponding to the second real-time image and the display coordinates corresponding to
+the second display content is established, and the first display coordinate conversion
+relationship is updated with the second display coordinate conversion relationship.
+6.
+An electronic device is connected to a second electronic device in a wireless manner, the
+electronic device comprises an image acquisition unit and a touch display unit, and is
+characterized in that it comprises:
+The image acquisition unit is used to acquire a real-time image including the first display
+content displayed by the display unit of the second electronic device, and send the real-time
+image to the touch display unit;
+a corresponding relationship establishing unit, configured to establish a first display
+coordinate conversion relationship between the display coordinates corresponding to the
+real-time image and the display coordinates corresponding to the first display content;
+A control unit is used to detect touch operation information received by the touch display
+unit, determine whether the touch point coordinates of the touch operation correspond to
+the first display content contained in the real-time image according to the touch operation
+information, and if so, convert the touch point coordinates corresponding to the touch
+operation into second coordinates in the display unit according to the first display coordinate
+conversion relationship, and send the touch command in the touch operation information to
+the second electronic device, so that the second electronic device implements the operation
+on the second coordinate position through the touch command.
+7.
+The electronic device as claimed in claim 6, characterized in that the corresponding
+relationship establishing unit is further used to perform an image recognition operation on
+the real-time image, determine the boundary information of the first display content in the
+real-time image, and obtain a first display coordinate set included in the area determined by
+the boundary information; determine a second display coordinate set corresponding to the
+16-07-2025 - Page 4
+first display content in the display unit; and establish a display coordinate conversion
+relationship between the first display coordinate set and the second display coordinate set.
+8.
+The electronic device as described in claim 6 is characterized in that the correspondence
+establishing unit is also used to accept image selection information input by a user, and
+determine the boundary information of the first display content from the real-time image
+according to the selection information, and obtain the first display coordinate set included in
+the area determined by the boundary information; determine the second display coordinate
+set corresponding to the first display content in the display unit; and establish a display
+coordinate conversion relationship between the first display coordinate set and the second
+display coordinate set.
+9.
+The electronic device according to claim 6, wherein the image acquisition unit comprises:
+A panoramic camera, used to obtain all display contents currently displayed by the display
+unit;
+The zoom camera is used to obtain a zoomed image of any area in the display content of the
+display unit through the received image zoom instruction.
+10.
+The electronic device according to any one of claims 6 to 9, characterized in that the
+electronic device further comprises:
+A distance measuring unit is used to detect the distance between the first electronic device
+and the second electronic device. If the first distance detected currently is different from the
+second distance detected previously, a second real-time image displayed in the current
+touch display unit is obtained, and it is determined that the second real-time image contains
+the second display content displayed by the display unit; a second display coordinate
+conversion relationship between the display coordinates corresponding to the second real-
+time image and the display coordinates corresponding to the second display content is
+established, and the first display coordinate conversion relationship is updated with the
+second display coordinate conversion relationship.

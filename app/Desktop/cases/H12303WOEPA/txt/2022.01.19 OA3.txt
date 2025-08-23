@@ -1,0 +1,326 @@
+Datum  19.01.2022          Blatt                 Anmelde-Nr:                 19 160 813.2
+Date
+Date                       Sheet 1               ApplicationNo:
+
+                           Feuille               Demande n°:
+
+The examination is being carried out on the following application documents
+
+Description, Pages
+
+3-70                filed in electronic form on                              27-06-2019
+                                                                             05-05-2020
+1,2, 2a, 71         filed in electronic form on
+                                                                             05-07-2021
+Claims, Numbers     filed in electronic form on
+  1-23                                                                       27-06-2019
+
+Drawings, Sheets
+
+1/10-10/10          filed in electronic form on
+
+       The following document D1 is referred to in this communication; the numbering
+
+       will be adhered to in the rest of the procedure:
+
+D1           EP 2 595 344 A2 (HUAWEI TECH co LTD [CN]) 22 May 2013
+
+             (2013-05-22)
+
+          While the Applicant's observations submitted with the amended claims (letter of
+           05-07-2021) have been carefully considered, the Examining Division is of the
+           opinion, that the subject-matter of the independent claims 1, 8, 12, 19 and 23
+           still does not fulfill the requirements of Article 84 EPC and does not fulfill the
+          requirements of Articles 52(1) and 56 EPC.
+           It is maintained, that the subject-matter of claims 1, 8, 12 and 19 is so unclear,
+           that a meaningful and efficient assessment of inventive step appears only be
+          possible after these claims are rendered clear by the Applicant through further
+           amendments.
+          The details of all the objections can be found in the following under items 3 to 5
+          of this communication:
+
+          The application does not meet the requirements of Article 84 EPC, because
+           claims 1, 8, 12 and 19 are still not clear.
+
+EPO Form 2906 01.91TRI
+Datum  19.01.2022       Blatt            Anmelde-Nr:     19 160 813.2
+Date
+Date                    Sheet 2          ApplicationNo:
+
+                        Feuille          Demande n°:
+
+3.1    The expressions "3;th tracing detection" and "initiating tam detection" used in
+
+       independent claims 1, 8, 12 and 19 leave the reader in doubt as to the
+
+       meaning of the technical features to which they refer (it is not clear which M
+
+       are exactly to be detected resp. traced and how such a M detection is actually
+
+       achieved only by obtaining just one ID of an SF node?; why is such a request
+
+       packet sent?; | im 1 nl fin n ID
+
+       other nodes on the path?), thereby rendering the definition of the subject-matter
+
+       of said claims unclear (Article 84 EPC and Guidelines F-IV-4.1 and F-IV-4.3).
+
+       |in Irfrh        rnkillinhrh                      hmh                   fin
+
+       in|im1vnh hnrrfrvifninn                                         inwfin
+
+       fault in a planned orocessing order of the service function nodes shall and
+
+       actually can be determined.
+
+       It appears, that in best case it can m be determined, whether "the ID of the SF
+       node" obtained in the "fault tracing detection response packet" is included in the
+       intended "order of the plurality of service function nodes of the service chain" or
+       not. Apparently, no other faults may be detected. Hence, it appears, that there
+       are essential features missing to define this specific scenario. Furthermore it is
+       entirely unclear, what the feature "determining, by the SFE, to communicate
+       with a service function, SF, node" contributes to this "fault tracing/
+       detection" (see point 3.2 of this communication).
+
+       Therefore claims 1, 8, 12 and 19 do not meet the requirements of Article 84
+       EPC in that the matter for which protection is sought is not defined. The claims
+       attempt to define the subject-matter in terms of the result to be achieved.
+
+3.2    Moreover, the features " etermining, by the SFE, to communicate with a service
+
+       function, SF, node" and "obtaining, by the SFE, an ID of the SF node" used in
+
+       independent claims 1 and 12 are vague and leave the reader in doubt as to
+
+       the meaning of the technical features to which they refer (it is vague and
+
+       unclear, whether the SFE and SF node are actually communicating, how they
+
+       are communicating and what is the purpose resp. outcome of that
+
+       communication; in addition it is not clear, from where the SFE obtains the ID of
+
+       the SF), thereby rendering the definition of the subject-matter of said claims
+
+       unclear (Article 84 EPC and Guidelines F-IV-4.1 and F-IV-4.3).
+
+3.3 Claims 8 and 19 do not meet the requirements of Article 84 EPC in that the
+           matter for which protection is sought is not defined. The claims attempt to define
+          the subject-matter in terms of the result to be achieved. Such a definition is only
+           allowable under the conditions elaborated in the Guidelines F-IV, 4.10. In this
+
+EPO Form 2906 01.91TRI
+Datum  19.01.2022       Blatt                   Anmelde-Nr:     19 160 813.2
+Date
+Date                    Sheet 3                 ApplicationNo:
+
+                        Feuille                 Demande n°:
+
+       instance, however, such a formulation is not allowable because it appears
+       possible to define the subject-matter in more concrete terms, viz. in terms of
+       how the effect is to be achieved.
+
+       Claims 8 and 19 define "determining, by the device for initiating fault detection,
+       that forwarding between the SFE and the SF node is normal based on the
+       received ID of the SF node", without specifying how is actually achieved only by
+       obtaining just one ID of an SF node?
+
+       It appears, that in best case it can o_n|y be determined, whether "the ID of the SF
+       node" obtained in the "fault tracing detection response packet" is included in the
+       intended "order of the plurality of service function nodes of the service chain" or
+       not. Apparently, no other faults may be detected and "normal" operation only
+       with respect to the "order of service function nodes" may be determined. Hence,
+       it appears, that there are essential features missing to define this specific
+       scenario. In this context it is also pointed out, that independent claims 8 and
+       19 (in contrast to independent claims 1 and 12) do not refer to any
+       "communication between the SFE and the SF node", which appears as
+       essential to the definition of the invention.
+
+       The present application does not meet the requirements of Article 52(1) EPC,
+       because the subject-matter of the independent claims 1, 8, 12, 19 and 23, as
+       far as they can be understood, does not involve an inventive step in the sense
+       of Article 56 EPC.
+
+4.1    Document D1 (see in particular: paragraphs 1-11, 65-88, 103; claims 6-10;
+
+       Figure 3), which is considered to represent the most relevant state of the art
+
+       with respect to the subject-matter of claim 1, discloses (the references in
+
+       parentheses applying to this document):
+
+       A service chain fault detection method ('fault detection method': paragraph 7;
+       claims 6-10), wherein the service chain comprises a plurality of service function
+       nodes, and a packet passes through according to an order of the plurality of
+       service function nodes, ('an MPLS ring network is an MPLS LSP transport
+       ring network constructed by means of logical structure mapping, where a
+       group of nodes form a closed ring, each node is connected through a
+       bidirectional communication facility to two adjacent nodes, each node in
+       the ring may serve as a ring ingress node or may also serve as a ring
+       egress node, and the transport directions are opposite; each direction
+       includes working and protective ring channels, and provides redundant
+       bandwidth or redundant network devices or both; in this manner, after the
+
+EPO Form 2906 01.91TRI
+Datum  19.01.2022       Blatt       Anmelde-Nr:     19 160 813.2
+Date
+Date                    Sheet 4     ApplicationNo:
+
+                        Feuille     Demande n°:
+
+       network becomes invalid or deteriorates, distributed services are able to
+       automatically recover; to be simple, in the MPLS ring network scenario,
+       paths are rings, and services may be transferred clockwise or
+       counterclockwise; that is, two paths are able to protect each other; if a
+       path in one direction is interrupted, the protective path in the opposite
+       direction continues to transfer services to meet the objective that single-
+       point link faults in a ring do not affect services'; "an order of the plurality
+       of service function nodes" is considered, if not directly, at least implicitly
+       given in an 'MPLS ring network' as disclosed in D1: paragraphs 1-11;
+       claims 6-10; Figure 3), wherein the method comprises:
+
+       obtaining, by a service forwarding entity, SFE, a first fault tracing detection
+
+       request packet, and determining. by the SFE. to communicate with a service
+
+       fnin Fn          whrinhfirflrin              inr                          k
+
+       mri              hinifirID nh hIDi           inif     hf
+
+       service chain ('initiate a fault detection request packet; determine a ring
+
+       LSP FEC corresponding to the fault detection request packet, and
+
+       encapsulate the ring LSP FEC into the fault detection request packet; the
+
+       ring LSP FEC specifically includes the ring ingress node address, the ring
+
+       egress node address and a ring identity'; the 'ring identity' in D1 is
+
+       understood as a possible "path ID"; 'send the fault detection request
+
+       packet along to downstream nodes'; a 'downstream node` in D1 is
+
+       understood as an "SFE"; the aforementioned features of claim 1 are
+
+       considered to be at least implicitly disclosed in D1: paragraphs 65-88);
+
+       obtaining, by the SFE, an ID of the SF node; sending. by the SFE. a first fault
+
+       rin              inr n    k  vi friniiinfl                                in
+
+       whrinhfirflrin               inr n  k        mri   h                      hID
+
+       and the ID of the SF node ('the control plane queries a downstream
+
+       information mapping table of the ring LSP FEC to acquire downstream
+
+       information of LSR2, which includes the address of the downstream node
+
+       LSR3 and the outgoing label, encapsulates the downstream information of
+
+       LSR2 into a fault detection reply packet, and returns the fault detection
+
+       reply packet, Tracert echo reply, to LSR1; the fault detection reply packet
+
+       includes information of LSR2 and information of LSR3; LSR1 determines,
+
+       according to the returned information of LSR2 and information of LSR3,
+
+       that the LSR2 node of the ring LSP has no fault, and determines that the
+
+       next node of LSR2 is LSR3'; e.g. 'LSR3` in this particular scenario in D1 is
+
+       understood as a possibility of an "SF"; 'encapsulate the ring LSP FEC into
+
+       a fault detection reply packet, and send the fault detection reply packet
+
+EPO Form 2906 01.91TRI
+Datum  19.01.2022       Blatt    Anmelde-Nr:     19 160 813.2
+Date
+Date                    Sheet 5  ApplicationNo:
+
+                        Feuille  Demande n°:
+
+           after encapsulation to the ring ingress node 31'; the aforementioned
+          features of claim 1 are considered, if not directly, at least implicitly
+           disclosed in D1: paragraphs 65-88, 103).
+
+4.2 The subject matter of claim 1 differs (only the underlined feature) from the
+          method of D1 in that "after the obtaining, by the SFE, the first fault tracing
+           detection request packet, the method further comprises: sending, by the SFE, a
+           second fault tracino detection response packet to the device for initiatino fault
+           detection. wherein the second fault tracino detection response Dacket
+          comprises an ID of the SFE and the path ID", which is not explicitly disclosed in
+           D1, however not considered to contribute anything towards an inventive step for
+          the following reason. The proposed solution is considered an obvious, even
+          trivial possibility for the person skilled in the art, which he would choose
+           according to circumstances, namely depending on the requirements of
+           operation and maintenance and/or network design, without exercise of an
+           inventive skill. Moreover, the additional feature also does not result in an
+          additional surprising technical effect.
+
+          Therefore the subject-matter of claim 1 does not involve an inventive step and
+          does not satisfy the criterion set forth in Articles 52(1) and 56 EPC.
+
+4.3 The same objection of lack of inventive step also applies to independent
+           claims 8, 12, 19 and 23, which essentially contain or should contain the
+           corresponding combination of features as defined by claim 1.
+
+           Claims 8, 12, 19 and 23 are thus also not allowable under Articles 52(1) and 56
+           EPC for the same reasons set out above with respect to claim 1.
+
+           It is not at present apparent which part of the application could serve as a basis
+           for a new, allowable claim. Should the Applicant nevertheless regard some
+           particular matter as patentable, an independent claim should be filed taking
+           account of Rule 43(1) EPC. The Applicant should also indicate in the letter of
+           reply the difference of the subject-matter of the new claim vis-a-vis the state of
+          the art and the significance thereof, preferably using the problem-solution
+           approach.
+
+           Moreover when filing an amended set of claims, the Applicant is requested to
+           also take the following remarks into account:
+
+5.1 New independent claims should be drafted in the two-part form in accordance
+          with Rule 43(1) EPC.
+
+EPO Form 2906 01.91TRI
+Datum  19.01.2022       Blatt    Anmelde-Nr:     19 160 813.2
+Date
+Date                    Sheet 6  ApplicationNo:
+
+                        Feuille  Demande n°:
+
+5.2 When filing amended claims the Applicant should at the same time bring the
+           description into conformity with the amended claims in particular in
+           compliance with the w, F-IV 4.4 and C-V 1.1.0: in order
+          to meet the requirement of Article 84 EPC, that the claims have to be
+           supported by the description, all embodiments of the description should
+          fall into the scope of the claim set. Other embodiments should either be
+           excised or it should be stated that they do not fall into the scope of the
+          claim set ("... does not fall under the invention"). A mere renaming of such
+           other embodiments, such as for instance "examples" or "aspects" is not
+           sufficient.
+
+       Care should be taken during revision, especially of the introductory portion and
+       any statements of problem or advantage, not to add subject-matter which
+       extends beyond the content of the application as originally filed (Article 123(2)
+       EPC).
+
+       Further the attention of the Applicant is drawn to the fact that amended claims
+       may not relate to unsearched subject--matter (Rule 137(4) EPC).
+
+5.3    In order to facilitate the examination of the conformity of the amended
+
+       application with the requirements of Article 123(2) EPC, the Applicant is
+
+       requested to clearly identify the amendments carried out, irrespective of
+
+       whether they concern amendments by addition, replacement or deletion, and to
+
+       indicate the passages of the application as filed on which these
+
+       amendments are based.
+
+EPO Form 2906 01.91TRI
+

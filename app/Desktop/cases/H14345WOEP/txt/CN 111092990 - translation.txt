@@ -1,0 +1,920 @@
+16-07-2025 - Page 1
+Patent Translate
+Powered by EPO and Google
+Notice
+This translation is machine-generated. It cannot be guaranteed that it is intelligible, accurate,
+complete, reliable or fit for specific purposes. Critical decisions, such as commercially
+relevant or financial decisions, should not be based on machine-translation output.
+DESCRIPTION CN111092990A
+Application sharing method and electronic device
+[0001]
+Technical Field
+[0002]
+The present invention relates to the field of communication technology, and in particular to
+an application sharing method and electronic device.
+[0003]
+Background Art
+[0004]
+With the rapid development of computer technology, the functions of electronic devices are
+becoming more and more abundant, and the demand for sharing functions between
+different electronic devices is becoming more and more urgent. For example, application
+sharing is a common sharing demand.
+[0005]
+Currently, the most common way to share applications between electronic devices is to
+remotely control them through remote control software. That is, a remote control
+application can be used to connect two electronic devices, with one device controlling the
+16-07-2025 - Page 2
+desktop of the other device. At this time, the applications on the desktop can be viewed and
+used, thereby sharing the application in the above-mentioned one device with the other
+device for use. However, during the above-mentioned sharing process, the device on which
+the application is shared is controlled by another device and cannot be operated on this
+device, resulting in poor device utilization.
+[0006]
+Summary of the invention
+[0007]
+The embodiment of the present invention provides an application sharing method and an
+electronic device to solve the problem of poor device utilization during application sharing.
+[0008]
+In order to solve the above technical problems, the present invention is implemented as
+follows: In a first aspect, an embodiment of the present invention provides an application
+sharing method, which is applied to a first electronic device, comprising:
+[0009]
+receiving a first input;
+[0010]
+In response to the first input, displaying N second electronic device identifiers in the first
+display area, where N is a positive integer;
+[0011]
+receiving a second input;
+[0012]
+In response to the second input, displaying a running interface of the target application on
+the virtual screen;
+[0013]
+Sharing the running interface of the target application to L first target electronic devices;
+16-07-2025 - Page 3
+[0014]
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+[0015]
+In a second aspect, an embodiment of the present invention provides a first electronic
+device, including:
+[0016]
+A first receiving module, configured to receive a first input;
+[0017]
+A first display module, configured to display N second electronic device identifiers in a first
+display area in response to the first input, where N is a positive integer;
+[0018]
+A second receiving module, used for receiving a second input;
+[0019]
+A second display module, configured to display a running interface of the target application
+on a virtual screen in response to the second input;
+[0020]
+A sharing processing module, used for sharing the running interface of the target
+application to L first target electronic devices;
+[0021]
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+[0022]
+16-07-2025 - Page 4
+In a third aspect, an embodiment of the present invention provides an electronic device,
+comprising a processor, a memory, and a computer program stored in the memory and
+executable on the processor, wherein the computer program implements the steps of the
+above-mentioned application sharing method when executed by the processor.
+[0023]
+In a fourth aspect, an embodiment of the present invention provides a computer-readable
+storage medium having a computer program stored thereon, wherein the computer
+program implements the steps of the above-mentioned application sharing method when
+executed by a processor.
+[0024]
+An embodiment of the present invention receives a first input; in response to the first input,
+displays N second electronic device identifiers in a first display area, where N is a positive
+integer; receives a second input; in response to the second input, displays a running
+interface of a target application in a virtual screen; and shares the running interface of the
+target application to L first target electronic devices; wherein the electronic device identifiers
+corresponding to the L first target electronic devices are included in the N second electronic
+device identifiers.
+In this way, since the running interface of the application is displayed on the virtual screen to
+realize the sharing of the application, other functions of the first electronic device are not
+affected during the process of sharing the application, and the user can also operate other
+applications on the first electronic device, thereby improving the utilization rate of the first
+electronic device.
+At the same time, since N second electronic device identifiers are displayed in the first
+display area, the user can quickly select one or more second electronic device identifiers to
+share the application, thereby improving the convenience of application sharing.
+[0025]
+BRIEF DESCRIPTION OF THE DRAWINGS
+[0026]
+In order to more clearly illustrate the technical solutions of the embodiments of the present
+invention, the accompanying drawings required for use in the description of the
+embodiments of the present invention will be briefly introduced below. Obviously, the
+accompanying drawings in the following description are only some embodiments of the
+16-07-2025 - Page 5
+present invention. For ordinary technicians in this field, other accompanying drawings can
+be obtained based on these accompanying drawings without paying creative labor.
+[0027]
+FIG1 is a flowchart of a method for sharing an application program according to an
+embodiment of the present invention;
+[0028]
+FIG2 is a schematic diagram of a first electronic device interface in the application sharing
+method provided by an embodiment of the present invention;
+[0029]
+is a second schematic diagram of the interface of the first electronic device in the
+application sharing method provided by an embodiment of the present invention;
+[0030]
+FIG4 is a third schematic diagram of the interface of the first electronic device in the
+application sharing method provided by an embodiment of the present invention;
+[0031]
+is a fourth schematic diagram of the first electronic device interface in the application
+sharing method provided by an embodiment of the present invention;
+[0032]
+FIG6 is a fifth schematic diagram of an interface of a first electronic device in the application
+sharing method provided by an embodiment of the present invention;
+[0033]
+is a sixth schematic diagram of the interface of the first electronic device in the application
+sharing method provided by an embodiment of the present invention;
+[0034]
+FIG8 is a seventh schematic diagram of the interface of the first electronic device in the
+application sharing method provided by an embodiment of the present invention;
+16-07-2025 - Page 6
+[0035]
+is an eighth schematic diagram of an interface of a first electronic device in the application
+sharing method provided by an embodiment of the present invention;
+[0036]
+is a ninth schematic diagram of an interface of a first electronic device in an application
+sharing method provided in an embodiment of the present invention;
+[0037]
+is a tenth schematic diagram of the interface of the first electronic device in the
+application sharing method provided by an embodiment of the present invention;
+[0038]
+is a schematic diagram of an eleventh interface of a first electronic device in an
+application sharing method provided by an embodiment of the present invention;
+[0039]
+is a twelfth schematic diagram of the interface of the first electronic device in the
+application sharing method provided by an embodiment of the present invention;
+[0040]
+is a thirteenth schematic diagram of the interface of the first electronic device in the
+application sharing method provided in an embodiment of the present invention;
+[0041]
+is a structural diagram of a first electronic device provided in an embodiment of the
+present invention;
+[0042]
+FIG. 16 is a structural diagram of an electronic device provided in an embodiment of the
+present invention.
+[0043]
+DETAILED DESCRIPTION
+16-07-2025 - Page 7
+[0044]
+The technical solutions in the embodiments of the present invention will be described clearly
+and completely below in conjunction with the drawings in the embodiments of the present
+invention. Obviously, the described embodiments are only part of the embodiments of the
+present invention, rather than all of the embodiments.
+Based on the embodiments of the present invention, all other embodiments obtained by
+ordinary technicians in the field without making any creative work shall fall within the scope
+of protection of the present invention.
+[0045]
+Referring to FIG. 1 , FIG. 1 is a flow chart of an application sharing method provided by an
+embodiment of the present invention. As shown in FIG. 1 , the method includes the following
+steps:
+[0046]
+Step 101, receiving a first input;
+[0047]
+Step 102: In response to the first input, display N second electronic device identifiers in a first
+display area, where N is a positive integer;
+[0048]
+Optionally, the second electronic device identifier may include a device name, and further,
+may include a device icon.
+[0049]
+It should be understood that, in an optional embodiment, the first input may be a sliding
+gesture, such as a sliding operation of sliding upward from the bottom of the screen, or a
+sliding operation of sliding downward from the top of the screen.
+In other embodiments, it may also be voice input, or operation instructions input in other
+forms.
+The first input is used to trigger display of a first display area, in which one or more second
+electronic device identifiers are displayed.
+16-07-2025 - Page 8
+In this embodiment, the above-mentioned N second electronic device identifiers can be
+understood as electronic device identifiers corresponding to the receiving ends of
+application sharing, and the user can share the target application to some or all of the
+second electronic devices corresponding to the N second electronic device identifiers.
+[0050]
+It should be noted that the method of sharing the application can be set according to actual
+needs.
+For example, in an optional embodiment, the user may share only the application program
+running in the foreground, and in this case, only N second electronic device identifiers are
+displayed in the first display area.
+Specifically, as shown in Figure 2, when an application is running in the foreground of the
+first electronic device (in other words, it can be understood that the first electronic device is
+currently displaying the operating interface of the application), if the user clicks on the
+border area at the top of the display interface of the application and slides downward, the
+interface shown in Figure 3 is jumped to display.
+When sharing the foreground application, only N second electronic device identifiers are
+displayed in the first area, so that the user can operate the second electronic device identifier
+to achieve sharing of the currently running application, which can simplify the user's sharing
+operation.
+[0051]
+In another optional embodiment, the user may share preset applications installed on the
+first electronic device, and the preset applications may be all applications, or one or more
+applications that are pre-configured to allow application sharing.
+At this time, in addition to displaying the N second electronic device identifiers in the first
+display area, one or more application identifiers may also be displayed in the second display
+area.
+In other words, in this embodiment, after receiving the first input, the method further
+includes:
+[0052]
+In response to the first input, M application identifiers are displayed in the second display
+area, where M is a positive integer, and the application identifier of the target application is
+included in the M application identifiers.
+[0053]
+16-07-2025 - Page 9
+The application identification may include at least one of an application name and an
+application icon.
+Specifically, as shown in Figure 4, when an application is running in the foreground of the
+first electronic device, if a sliding operation is received from the user from the bottom of the
+screen to the upper side, the interface shown in Figure 5 will be displayed, and the second
+electronic device logo and the application logo will be displayed through a pop-up window in
+Figure 5.
+The first display area and the second display area are two different display areas of the pop-
+up window.
+In this embodiment, since the application program identifier and the second electronic
+device identifier are displayed simultaneously, the user does not need to exit the current
+application program, thereby improving the flexibility of application program sharing.
+[0054]
+Step 103, receiving a second input;
+[0055]
+Step 104, in response to the second input, displaying the running interface of the target
+application on the virtual screen;
+[0056]
+Step 105, sharing the running interface of the target application to L first target electronic
+devices;
+[0057]
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+[0058]
+In this embodiment, the second input may be understood as including a selection operation
+of selecting L first target electronic devices and a triggering operation of triggering the
+sharing of the target application to the first target electronic device.
+It should be noted that the trigger operation and the selection operation can be the same
+operation (that is, after completing the selection operation of L first target electronic devices,
+the first electronic device can be triggered to share the target application to the first target
+16-07-2025 - Page 10
+electronic device without further operation), or can be different operations (that is, after
+completing the selection operation of L first target electronic devices, further triggering
+operation is required before the first electronic device can be triggered to share the target
+application to the first target electronic device).
+Specifically, the second input may be a sliding input, a clicking input, or a voice input.
+For different application scenarios, the corresponding input methods may be different.
+[0059]
+The following will take the example of electronic device 1 sharing an application to electronic
+device 2 to describe in detail the specific implementation of the first electronic device sharing
+a target application to L first target electronic devices:
+[0060]
+When the electronic device 1 shares an application with the second electronic device 2, the
+electronic device 1 can be understood as a transmitter of the application sharing, and the
+electronic device 2 can be understood as a receiver of the application sharing.
+Electronic device 1 can run the target application and display the target application's running
+interface on the virtual screen; when electronic device 1 and electronic device 2 are
+connected, the target application's running interface displayed on the virtual screen is
+shared with electronic device 2.
+[0061]
+It should be understood that electronic device 1 sharing the running interface of the target
+application displayed on the virtual screen with electronic device 2 can be understood as:
+electronic device 1 records the virtual screen and the audio in the virtual screen to obtain
+target data, and shares the target data with electronic device 2, wherein the target data
+includes the display image sequence and audio sequence of the virtual screen.
+[0062]
+Furthermore, electronic device 2 can display the received running interface, and upon
+receiving the user's operation based on the displayed running interface, send corresponding
+operation instructions to electronic device 1 to control the target application to perform the
+operation corresponding to the operation instruction, thereby realizing the sharing of
+applications between electronic device 1 and electronic device 2.
+[0063]
+16-07-2025 - Page 11
+An embodiment of the present invention receives a first input; in response to the first input,
+displays N second electronic device identifiers in a first display area, where N is a positive
+integer; receives a second input; in response to the second input, displays a running
+interface of a target application in a virtual screen; and shares the running interface of the
+target application to L first target electronic devices; wherein the electronic device identifiers
+corresponding to the L first target electronic devices are included in the N second electronic
+device identifiers.
+In this way, since the running interface of the application is displayed on the virtual screen to
+realize the sharing of the application, other functions of the first electronic device are not
+affected during the process of sharing the application, and the user can also operate other
+applications on the first electronic device, thereby improving the utilization rate of the first
+electronic device.
+At the same time, since N second electronic device identifiers are displayed in the first
+display area, the user can quickly select one or more second electronic device identifiers to
+share the application, thereby improving the convenience of application sharing.
+[0064]
+In an optional embodiment, when the first display area and the second display area are
+displayed simultaneously, the receiving the second input includes:
+[0065]
+A drag operation for an application identifier corresponding to the target application is
+received, and an end position of the drag operation corresponds to a display position of the
+electronic device identifier of the first target electronic device.
+[0066]
+The dragging operation may be understood as a triggering operation for triggering the first
+electronic device to share the target application to the first target electronic device.
+Specifically, the above-mentioned dragging operation can be understood as a sliding
+operation. Specifically, as shown in Figures 6 and 7, the user can first touch the target
+application logo, and then slide toward the second electronic device logo corresponding to
+the first target electronic device that needs to be shared. The end point of the sliding can be
+associated with the display position corresponding to the second electronic device logo.
+[0067]
+16-07-2025 - Page 12
+It should be understood that during the sliding or dragging process, the application
+identifier of the target application can move along with the current touch position of the
+sliding operation, and then move to the display position corresponding to the second
+electronic device identifier 1 (for example, the overlapping area between the application
+identifier of the target application that follows the movement and the second electronic
+device identifier 1 is greater than a preset value), and terminate the sliding operation (for
+example, stop touching or stay for a time greater than a preset value), at which time the first
+electronic device can be triggered to share the target application to the first target electronic
+device.
+[0068]
+Optionally, the application identifier of the target application follows the movement of the
+current touch position of the sliding operation, which can be understood as: controlling the
+application identifier of the target application displayed in the second display area to follow
+the movement of the touch position; or, retaining the application identifier of the target
+application displayed in the second display area, and copying the application identifier of the
+target application to follow the movement of the touch position.
+[0069]
+Furthermore, in order to avoid misoperation, in the embodiment of the present invention,
+when the dragging operation ends, a prompt box may pop up for the user to select.
+Specifically, as shown in Figures 6 and 7, when application A (i.e., the target application) is
+shared to the electronic device corresponding to user 5 (the electronic device identifier of the
+first target electronic device), an application sharing confirmation prompt box (i.e., sharing
+confirmation prompt box) is output: whether "application A" needs to be shared (i.e., shared
+screen projection) to "user 5", and confirmation and cancel operation controls are provided
+in the application sharing prompt box.
+When the user clicks OK, "Application A" will be shared with "User 5", and the user can make
+a second input again, or end the application sharing operation and return to the interface
+before receiving the first input; when the user clicks Cancel, the user can make the second
+input again, or end the application sharing operation and return to the interface before
+receiving the first input.
+[0070]
+It should be noted that a drag operation can share the target application to a first target
+electronic device, as shown in Figures 6 and 7. At this time, the selection operation and
+16-07-2025 - Page 13
+trigger operation of the first target electronic device can be understood as the same
+operation, and the electronic device corresponding to the second electronic device identifier
+1 is the first target electronic device.
+When sharing to multiple first target electronic devices is required, multiple drag operations
+can be performed.
+Furthermore, in order to improve the convenience of operation, as shown in Figure 7, you
+can first select L first target electronic devices, and then trigger the first electronic device to
+share the target application to the L first target electronic devices through the above-
+mentioned drag operation. At this time, the selection operation and trigger operation of the
+first target electronic device can be understood as different operations, and the above-
+mentioned second electronic device identifier 1 is the selected L first target electronic
+devices.
+In other words, in the embodiment of the present invention, the receiving of the second
+input includes:
+[0071]
+receiving a first sliding operation within the first display area;
+[0072]
+The L first target electronic devices are electronic devices corresponding to the L second
+electronic device identifiers that the sliding track corresponding to the first sliding operation
+passes through.
+[0073]
+In an embodiment of the present invention, in the display state of Figure 5, the user can
+perform a first sliding operation in the first display area. The sliding trajectory corresponding
+to the first sliding operation is shown in Figure 8. At this time, the electronic devices
+corresponding to the five second electronic device identifiers (user 1, user 2, user 3, user 4
+and user 5) passed by the sliding trajectory can be determined as 5 first target electronic
+device identifiers.
+Then, by dragging the application identifier of the target application to be shared to a
+second device identifier (user 1, user 2, user 3, user 4 or user 5), the target application can be
+triggered to be shared with the electronic devices corresponding to user 1, user 2, user 3,
+user 4 and user 5.
+16-07-2025 - Page 14
+Since in the embodiment of the present invention, the same application can be shared with
+multiple electronic devices at the same time, the convenience of the application sharing
+operation is further improved.
+[0074]
+Further, in another embodiment, if only the first display area is displayed based on the first
+input, at this time, the selection operation and the triggering operation of the first target
+electronic device are the same operation.
+As shown in FIG. 9 , in one embodiment, the target application can be shared to a first target
+electronic device through a click operation.
+[0075]
+As shown in FIG. 10 , in another embodiment, the target application may also be shared to
+multiple first target electronic devices at one time through a sliding operation.
+In other words, in the embodiment of the present invention, the receiving of the second
+input includes:
+[0076]
+receiving a first sliding operation within the first display area;
+[0077]
+The L first target electronic devices are electronic devices corresponding to the L second
+electronic device identifiers that the sliding track corresponding to the first sliding operation
+passes through.
+[0078]
+Furthermore, in order to avoid misoperation, in an embodiment of the present invention,
+after selecting the first target electronic device, a corresponding application sharing
+confirmation prompt box can be output for the user to confirm the sharing. For the specific
+implementation process, please refer to the description of Figures 6 and 7, which will not be
+repeated here.
+[0079]
+Furthermore, after the application is shared, the application sharing of some or all electronic
+devices may be terminated.
+16-07-2025 - Page 15
+In the embodiment of the present invention, in the above step 105, the method further
+includes:
+[0080]
+receiving a third input;
+[0081]
+In response to the third input, K third electronic device identifiers are displayed in the third
+display area, where K is a positive integer, and the K third electronic device identifiers are
+included in the electronic device identifiers corresponding to the L first target electronic
+devices;
+[0082]
+receiving a fourth input for the third display area;
+[0083]
+In response to the fourth input, cancel sharing the running interface of the target application
+to the M second target electronic devices;
+[0084]
+The electronic device identifiers corresponding to the M second target electronic devices are
+included in the K third electronic device identifiers.
+[0085]
+In an optional embodiment, the third input may be a preset sliding gesture, for example, a
+sliding operation of sliding upward from the bottom of the screen.
+Specifically, when the first input and the third input are both sliding operations from the
+bottom of the screen upward, the first input and the third input can be distinguished
+according to parameters such as different sliding speeds or different sliding distances, and
+no further limitation is made here.
+In other embodiments, it may also be voice input, or operation instructions input in other
+forms.
+In this embodiment, the third input may be used to trigger display of the third display area
+and the second display area, as specifically shown in FIG. 11 .
+16-07-2025 - Page 16
+[0086]
+In another optional embodiment, the third input may be a one-click operation. For example,
+the third input may be performed after receiving the first input.
+Specifically, as shown in Figure 4, operation options are provided on the operation interface,
+and the operation options include two options: not shared and shared. The not shared
+option is used to control the display of an unshared second electronic device identifier in the
+first display area (which can be understood as the electronic device identifier corresponding
+to the electronic device that has not shared an application with the first electronic device),
+and the shared option is used to control the display of a shared third electronic device
+identifier in the third display area (which can be understood as the electronic device
+identifier corresponding to the first target electronic device that is sharing an application
+with the first electronic device).
+Based on what is shown in FIG. 4 , the third input may be an input operation of clicking on a
+shared operation option. After the third input is performed, an interface as shown in FIG. 11
+may be displayed.
+[0087]
+Optionally, the first display area and the third display area may be understood as the same
+display area, or may be understood as different display areas, and the display positions are
+the same.
+[0088]
+It should be noted that, in an optional implementation, the above-mentioned fourth input
+can be understood as including a first operation for selecting the electronic device
+identification of M second target electronic devices, and a second operation for triggering
+the cancellation of application sharing. For example, as shown in Figure 11, an operation
+control for stopping application sharing can be set in the third display area, and the above-
+mentioned second operation is the operation of clicking the operation control.
+In other embodiments, it can also be understood as including only the first operation, that is,
+after selecting the third electronic device identifier, directly triggering the stop application
+sharing operation.
+[0089]
+Optionally, the input method for the first operation of selecting the third electronic device
+identifier can be set according to actual needs, for example, it can be selected by clicking or
+by sliding.
+16-07-2025 - Page 17
+In other words, the receiving of the fourth input to the third display area may include any
+one of the following:
+[0090]
+receiving a click operation on the K third device identifiers, wherein the electronic device
+corresponding to the third device identifier corresponding to the click operation is the
+second target electronic device;
+[0091]
+A second sliding operation on the first display area is received, and an electronic device
+corresponding to a third electronic device identifier through which a sliding track
+corresponding to the second sliding operation passes is the second target electronic device.
+[0092]
+The above-mentioned receiving click operations for the K third electronic device identifiers
+can be understood as canceling the application sharing operation of one electronic device at
+a time. When it is necessary to cancel the application sharing operation of multiple electronic
+devices, the fourth input can be performed multiple times.
+The receiving of the second sliding operation on the third display area may be understood as
+canceling the application sharing operation on at least two electronic devices at one time.
+[0093]
+It should be noted that in order to prevent misoperation, a corresponding prompt box can
+also be output when the cancellation of application sharing is triggered. In the prompt box,
+the identifier of the third electronic device for which application sharing needs to be stopped
+is prompted, and confirmation and cancel operation options are provided. When the user
+chooses confirmation, the operation of stopping application sharing is executed; when
+canceling is selected, the identifier of the third electronic device for which application
+sharing needs to be stopped can be reselected.
+[0094]
+Furthermore, after selecting M third electronic device identifiers, the selected third electronic
+device identifiers may be marked and displayed to remind the user that the second target
+electronic device for which application sharing needs to be canceled is currently selected.
+For example, the user can select three third electronic device identifiers (user 1, user 2, and
+user 3) through a second sliding operation (the sliding track is shown in FIG12 ), and check
+16-07-2025 - Page 18
+the selected three third electronic device identifiers (in other embodiments, they can also be
+marked by enlarging or reducing or highlighting the color, etc.), as shown in FIG13 .
+When the user clicks the operation control to stop application sharing, a corresponding
+prompt box pops up, as shown in FIG. 14 . After the user selects the OK option, the
+application sharing function for user 1 , user 2 , and user 3 will be stopped.
+[0095]
+It should be noted that the above-mentioned second electronic device identification may
+specifically include at least one of the electronic device identification corresponding to the
+requesting application sharing list, the electronic device identification corresponding to the
+near-field discovered electronic device list, and the electronic device identification
+corresponding to the application sharing friend list.
+[0096]
+Referring to FIG. 15 , FIG. 15 is a structural diagram of a first electronic device provided by an
+embodiment of the present invention. As shown in FIG. 15 , the first electronic device 1500
+includes:
+[0097]
+A first receiving module 1501, configured to receive a first input;
+[0098]
+A first display module 1502, configured to display N second electronic device identifiers in a
+first display area in response to the first input, where N is a positive integer;
+[0099]
+The second receiving module 1503 is used to receive a second input;
+[0100]
+A second display module 1504, configured to display a running interface of a target
+application on a virtual screen in response to the second input;
+[0101]
+A sharing processing module 1505 is used to share the running interface of the target
+application to L first target electronic devices;
+16-07-2025 - Page 19
+[0102]
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+[0103]
+Optionally, the target application is an application running in the foreground.
+[0104]
+Optionally, the first display module 1502 is further used to: in response to the first input,
+display M application identifiers in the second display area, where M is a positive integer, and
+the application identifier of the target application is included in the M application identifiers.
+[0105]
+Optionally, the second receiving module 1503 includes:
+[0106]
+The first receiving unit is used to receive a drag operation on the application identifier
+corresponding to the target application, and the end position of the drag operation
+corresponds to the display position of the electronic device identifier of the first target
+electronic device.
+[0107]
+Optionally, the second receiving module 1503 includes:
+[0108]
+A second receiving unit, configured to receive a first sliding operation within the first display
+area;
+[0109]
+The L first target electronic devices are electronic devices corresponding to the L second
+electronic device identifiers that the sliding track corresponding to the first sliding operation
+passes through.
+[0110]
+16-07-2025 - Page 20
+Optionally, the first receiving module 1501 is further configured to receive a third input;
+[0111]
+The first display module 1502 is further configured to display K third electronic device
+identifiers in a third display area in response to the third input, where K is a positive integer
+and the K third electronic device identifiers are included in the electronic device identifiers
+corresponding to the L first target electronic devices;
+[0112]
+The second receiving module 1503 is further configured to receive a fourth input directed to
+the third display area;
+[0113]
+The sharing processing module 1505 is further configured to cancel sharing of the target
+application program's running interface to the M second target electronic devices in
+response to the fourth input;
+[0114]
+The electronic device identifiers corresponding to the M second target electronic devices are
+included in the K third electronic device identifiers.
+[0115]
+The first electronic device provided in the embodiment of the present invention can
+implement various processes implemented by the first electronic device in the method
+embodiments of Figures 1 to 14, and will not be described again here to avoid repetition.
+[0116]
+FIG. 16 is a schematic diagram of the hardware structure of an electronic device
+implementing various embodiments of the present invention.
+[0117]
+The electronic device 1600 includes but is not limited to: a radio frequency unit 1601, a
+network module 1602, an audio output unit 1603, an input unit 1604, a sensor 1605, a
+display unit 1606, a user input unit 1607, an interface unit 1608, a memory 1609, a processor
+1610, and a power supply 1611 and other components.
+16-07-2025 - Page 21
+Those skilled in the art will appreciate that the electronic device structure shown in FIG. 16
+does not constitute a limitation on the electronic device, and the electronic device may
+include more or fewer components than shown in the figure, or a combination of certain
+components, or a different arrangement of components.
+In the embodiment of the present invention, the electronic device includes but is not limited
+to a mobile phone, a tablet computer, a laptop computer, a PDA, a vehicle-mounted
+terminal, a wearable device, and a pedometer.
+[0118]
+Wherein, the user input unit 1607 is used to receive a first input;
+[0119]
+Processor 1610, configured to display N second electronic device identifiers in a first display
+area in response to the first input, where N is a positive integer;
+[0120]
+The user input unit 1607 is further used to receive a second input;
+[0121]
+The processor 1610 is further configured to display, in response to the second input, a
+running interface of the target application on the virtual screen; and share the running
+interface of the target application to L first target electronic devices;
+[0122]
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+[0123]
+It should be understood that in this embodiment, the above-mentioned processor 1610 and
+user input unit 1607 can implement various processes implemented by the first electronic
+device in the method embodiments of Figures 1 to 14, and to avoid repetition, they are not
+repeated here.
+[0124]
+16-07-2025 - Page 22
+It should be understood that in the embodiment of the present invention, the radio
+frequency unit 1601 can be used for receiving and sending signals during information
+transmission or calls. Specifically, after receiving the downlink data from the base station, it
+is sent to the processor 1610 for processing; in addition, the uplink data is sent to the base
+station.
+Typically, the radio frequency unit 1601 includes but is not limited to an antenna, at least one
+amplifier, a transceiver, a coupler, a low noise amplifier, a duplexer, and the like.
+In addition, the radio frequency unit 1601 can also communicate with the network and other
+devices through a wireless communication system.
+[0125]
+The electronic device provides users with wireless broadband Internet access through the
+network module 1602, such as helping users to send and receive emails, browse web pages,
+and access streaming media.
+[0126]
+The audio output unit 1603 may convert audio data received by the RF unit 1601 or the
+network module 1602 or stored in the memory 1609 into an audio signal and output it as
+sound.
+Moreover, the audio output unit 1603 can also provide audio output related to a specific
+function performed by the electronic device 1600 (eg, a call signal reception sound, a
+message reception sound, etc.).
+The audio output unit 1603 includes a speaker, a buzzer, a receiver, and the like.
+[0127]
+The input unit 1604 is used to receive audio or video signals.
+The input unit 1604 may include a graphics processing unit (GPU) 16041 and a microphone
+16042. The graphics processor 16041 processes image data of a still picture or a video
+obtained by an image capture device (such as a camera) in a video capture mode or an
+image capture mode.
+The processed image frames may be displayed on the display unit 1606 .
+The image frame processed by the graphics processor 16041 may be stored in the memory
+(or other storage medium) or transmitted via the radio frequency unit 1601 or the
+network module 1602 .
+Microphone 16042 can receive sound and can process such sound into audio data.
+16-07-2025 - Page 23
+The processed audio data may be converted into a format that can be transmitted to a
+mobile communication base station via the radio frequency unit 1601 in the case of a
+telephone call mode.
+[0128]
+The electronic device 1600 also includes at least one sensor 1605, such as a light sensor, a
+motion sensor, and other sensors.
+Specifically, the light sensor includes an ambient light sensor and a proximity sensor,
+wherein the ambient light sensor can adjust the brightness of the display panel 16061
+according to the brightness of the ambient light, and the proximity sensor can turn off the
+display panel 16061 and/or the backlight when the electronic device 1600 is moved to the
+ear.
+As a type of motion sensor, the accelerometer sensor can detect the magnitude of
+acceleration in all directions (generally three axes), and can detect the magnitude and
+direction of gravity when stationary. It can be used to identify the posture of electronic
+devices (such as horizontal and vertical screen switching, related games, magnetometer
+posture calibration), vibration recognition related functions (such as pedometer, tapping),
+etc.; sensor 1605 can also include fingerprint sensors, pressure sensors, iris sensors,
+molecular sensors, gyroscopes, barometers, hygrometers, thermometers, infrared sensors,
+etc., which will not be repeated here.
+[0129]
+The display unit 1606 is used to display information input by the user or information
+provided to the user.
+The display unit 1606 may include a display panel 16061 , and the display panel 16061 may
+be configured in the form of a liquid crystal display (LCD), an organic light-emitting diode
+(OLED), or the like.
+[0130]
+The user input unit 1607 may be used to receive input digital or character information, and
+to generate key signal input related to user settings and function control of the electronic
+device.
+Specifically, the user input unit 1607 includes a touch panel 16071 and other input devices
+.
+16-07-2025 - Page 24
+The touch panel 16071, also known as a touch screen, can collect user touch operations on
+or near it (such as operations performed by the user using a finger, a stylus, or any other
+suitable object or accessory on or near the touch panel 16071).
+The touch panel 16071 may include two parts: a touch detection device and a touch
+controller.
+Among them, the touch detection device detects the user's touch direction, detects the
+signal brought by the touch operation, and transmits the signal to the touch controller; the
+touch controller receives the touch information from the touch detection device, and
+converts it into contact point coordinates, and then sends it to the processor 1610, receives
+the command sent by the processor 1610 and executes it.
+In addition, the touch panel 16071 can be implemented using various types such as resistive,
+capacitive, infrared, and surface acoustic wave.
+In addition to the touch panel 16071 , the user input unit 1607 may further include other
+input devices 16072 .
+Specifically, other input devices 16072 may include but are not limited to a physical
+keyboard, function keys (such as volume control keys, switch keys, etc.), a trackball, a mouse,
+and a joystick, which will not be elaborated here.
+[0131]
+Furthermore, the touch panel 16071 may be overlaid on the display panel 16061. When the
+touch panel 16071 detects a touch operation on or near it, it is transmitted to the processor
+1610 to determine the type of touch event. Subsequently, the processor 1610 provides
+corresponding visual output on the display panel 16061 according to the type of touch event.
+Although in FIG. 16 , the touch panel 16071 and the display panel 16061 are two
+independent components to implement the input and output functions of the electronic
+device, in some embodiments, the touch panel 16071 and the display panel 16061 may be
+integrated to implement the input and output functions of the electronic device, which is not
+specifically limited here.
+[0132]
+The interface unit 1608 is an interface for connecting an external device to the electronic
+device 1600 .
+For example, the external device may include a wired or wireless headset port, an external
+power supply (or battery charger) port, a wired or wireless data port, a memory card port, a
+port for connecting a device with an identification module, an audio input/output (I/O) port,
+a video I/O port, a headphone port, and the like.
+16-07-2025 - Page 25
+The interface unit 1608 may be used to receive input (eg, data information, power, etc.) from
+an external device and transmit the received input to one or more elements within the
+electronic device 1600 or may be used to transmit data between the electronic device 1600
+and an external device.
+[0133]
+The memory 1609 may be used to store software programs and various data.
+The memory 1609 may mainly include a program storage area and a data storage area,
+wherein the program storage area may store an operating system, an application required
+for at least one function (such as a sound playback function, an image playback function,
+etc.), etc.; the data storage area may store data created according to the use of the mobile
+phone (such as audio data, a phone book, etc.), etc.
+In addition, the memory 1609 may include a high-speed random access memory and may
+also include a non-volatile memory, such as at least one disk storage device, a flash memory
+device, or other volatile solid-state storage devices.
+[0134]
+Processor 1610 is the control center of the electronic device. It uses various interfaces and
+lines to connect various parts of the entire electronic device. It performs various functions of
+the electronic device and processes data by running or executing software programs and/or
+modules stored in memory 1609 and calling data stored in memory 1609, thereby
+monitoring the electronic device as a whole.
+Processor 1610 may include one or more processing units; preferably, processor 1610 may
+integrate an application processor and a modem processor, wherein the application
+processor mainly processes an operating system, a user interface, and application programs,
+etc., and the modem processor mainly processes wireless communications.
+It is understandable that the above-mentioned modem processor may not be integrated into
+the processor 1610.
+[0135]
+The electronic device 1600 may also include a power supply 1611 (such as a battery) for
+supplying power to each component. Preferably, the power supply 1611 may be logically
+connected to the processor 1610 via a power management system, thereby implementing
+functions such as managing charging, discharging, and power consumption management
+through the power management system.
+[0136]
+16-07-2025 - Page 26
+In addition, the electronic device 1600 includes some functional modules not shown, which
+will not be described in detail here.
+[0137]
+Preferably, an embodiment of the present invention further provides an electronic device,
+comprising a processor 1610, a memory 1609, and a computer program stored in the
+memory 1609 and executable on the processor 1610. When the computer program is
+executed by the processor 1610, each process of the above-mentioned application sharing
+method embodiment is implemented, and the same technical effect can be achieved. To
+avoid repetition, it will not be described here.
+[0138]
+An embodiment of the present invention also provides a computer-readable storage
+medium, on which a computer program is stored. When the computer program is executed
+by a processor, the various processes of the above-mentioned application sharing method
+embodiment are implemented and the same technical effect can be achieved. To avoid
+repetition, it will not be repeated here.
+The computer-readable storage medium may be a read-only memory (ROM), a random
+access memory (RAM), a magnetic disk or an optical disk.
+[0139]
+It should be noted that, in this article, the terms "comprises", "includes" or any other
+variations thereof are intended to cover non-exclusive inclusion, so that a process, method,
+article or apparatus that includes a series of elements includes not only those elements, but
+also other elements not explicitly listed, or also includes elements inherent to such process,
+method, article or apparatus.
+Without more constraints, an element defined by the phrase "comprising a..." does not
+exclude the existence of other identical elements in the process, method, article or
+apparatus comprising the element.
+[0140]
+Through the description of the above implementation methods, those skilled in the art can
+clearly understand that the above embodiment methods can be implemented by means of
+software plus a necessary general hardware platform, and of course by hardware, but in
+many cases the former is a better implementation method.
+16-07-2025 - Page 27
+Based on this understanding, the technical solution of the present invention can essentially
+or contribute to the prior art in the form of a software product. The computer software
+product is stored in a storage medium (such as ROM/RAM, disk, or CD), and includes a
+number of instructions for enabling a terminal (which can be a mobile phone, computer,
+server, air conditioner, or network device, etc.) to execute the methods described in the
+various embodiments of the present invention.
+[0141]
+The embodiments of the present invention are described above in conjunction with the
+accompanying drawings, but the present invention is not limited to the above-mentioned
+specific implementation methods. The above-mentioned specific implementation methods
+are merely illustrative and not restrictive. Under the enlightenment of the present invention,
+ordinary technicians in this field can also make many forms without departing from the
+scope of protection of the present invention and the claims, all of which are within the
+protection of the present invention.
+16-07-2025 - Page 1
+Patent Translate
+Powered by EPO and Google
+Notice
+This translation is machine-generated. It cannot be guaranteed that it is intelligible, accurate,
+complete, reliable or fit for specific purposes. Critical decisions, such as commercially
+relevant or financial decisions, should not be based on machine-translation output.
+CLAIMS CN111092990A
+1.
+An application sharing method, applied to a first electronic device, is characterized by
+comprising:
+receiving a first input;
+In response to the first input, displaying N second electronic device identifiers in the first
+display area, where N is a positive integer;
+receiving a second input;
+In response to the second input, displaying a running interface of the target application on
+the virtual screen;
+Sharing the running interface of the target application to L first target electronic devices;
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+2.
+The method according to claim 1 is characterized in that the target application is an
+application running in the foreground.
+3.
+The method according to claim 1, characterized in that after receiving the first input, the
+method further comprises:
+16-07-2025 - Page 2
+In response to the first input, M application identifiers are displayed in the second display
+area, where M is a positive integer, and the application identifier of the target application is
+included in the M application identifiers.
+4.
+The method according to claim 3, wherein receiving the second input comprises:
+A drag operation for an application identifier corresponding to the target application is
+received, and an end position of the drag operation corresponds to a display position of the
+electronic device identifier of the first target electronic device.
+5.
+The method according to claim 1, wherein receiving a second input comprises:
+receiving a first sliding operation within the first display area;
+The L first target electronic devices are electronic devices corresponding to the L second
+electronic device identifiers that the sliding track corresponding to the first sliding operation
+passes through.
+6.
+The method according to claim 1, characterized in that after sharing the running interface of
+the target application to L first target electronic devices, the method further comprises:
+receiving a third input;
+In response to the third input, K third electronic device identifiers are displayed in the third
+display area, where K is a positive integer, and the K third electronic device identifiers are
+included in the electronic device identifiers corresponding to the L first target electronic
+devices;
+receiving a fourth input for the third display area;
+In response to the fourth input, cancel sharing the running interface of the target application
+to the M second target electronic devices;
+The electronic device identifiers corresponding to the M second target electronic devices are
+included in the K third electronic device identifiers.
+7.
+A first electronic device, comprising:
+A first receiving module, configured to receive a first input;
+A first display module, configured to display N second electronic device identifiers in a first
+display area in response to the first input, where N is a positive integer;
+16-07-2025 - Page 3
+A second receiving module, used for receiving a second input;
+A second display module, configured to display a running interface of the target application
+on a virtual screen in response to the second input;
+A sharing processing module, used for sharing the running interface of the target
+application to L first target electronic devices;
+The electronic device identifiers corresponding to the L first target electronic devices are
+included in the N second electronic device identifiers.
+8.
+The first electronic device according to claim 7 is characterized in that the target application
+is an application running in the foreground.
+9.
+The first electronic device according to claim 7 is characterized in that the first display
+module is also used to: in response to the first input, display M application identifiers in the
+second display area, M is a positive integer, and the application identifier of the target
+application is included in the M application identifiers.
+10.
+The first electronic device according to claim 9, wherein the second receiving module
+comprises:
+The first receiving unit is used to receive a drag operation on the application identifier
+corresponding to the target application, and the end position of the drag operation
+corresponds to the display position of the electronic device identifier of the first target
+electronic device.
+11.
+The first electronic device according to claim 7, wherein the second receiving module
+comprises:
+A second receiving unit, configured to receive a first sliding operation within the first display
+area;
+The L first target electronic devices are electronic devices corresponding to the L second
+electronic device identifiers that the sliding track corresponding to the first sliding operation
+passes through.
+12.
+16-07-2025 - Page 4
+The first electronic device according to claim 7, characterized in that the first receiving
+module is further used to receive a third input;
+The first display module is further configured to display K third electronic device identifiers in
+a third display area in response to the third input, where K is a positive integer and the K
+third electronic device identifiers are included in the electronic device identifiers
+corresponding to the L first target electronic devices;
+The second receiving module is further used to receive a fourth input directed to the third
+display area;
+The sharing processing module is further configured to cancel sharing of the running
+interface of the target application to the M second target electronic devices in response to
+the fourth input;
+The electronic device identifiers corresponding to the M second target electronic devices are
+included in the K third electronic device identifiers.
+13.
+An electronic device, characterized in that it includes a processor, a memory, and a computer
+program stored in the memory and executable on the processor, wherein when the
+computer program is executed by the processor, the steps of the application sharing
+method as described in any one of claims 1 to 6 are implemented.
+14.
+A computer-readable storage medium having a computer program stored thereon,
+characterized in that when the computer program is executed by a processor, the steps of
+the application sharing method described in any one of claims 1 to 6 are implemented.

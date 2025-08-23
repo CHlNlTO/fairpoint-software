@@ -1,0 +1,124 @@
+    H14345WOEP
+    EP 22 794 685.2
+
+                                                                                                      CLAIMS
+
+           1. A device discovery method, wherein the method comprises:
+
+           displaying, by a first device, a first interface provided by a first application, wherein at least
+
+    one control is displayed in the first interface;
+
+           detecting, by the first device, M second devices, wherein the second device comprises a device
+
+    that is located in a same network as the first device, and/or a device that logs in to a same user
+
+    account as the first device;
+
+           displaying, by the first device, identifiers of N second devices in response to an operation
+
+    performed on one of the at least one control, wherein the N second devices comprise a second
+
+    device in the M second devices on which a second application is installed-iewtheMseeendedevieee,
+
+10 and the second application and the first application provide a same resource;,wherein
+
+                         the N second devices snecificaii comprise a Second device on which a second application
+
+           of meset version is installed in the M second devices or
+
+                         the N second devices specifically comprise a second device on Which the second
+
+           abniication and an operatimI system of Dreset version are installed in the M second devices
+
+15         and
+
+           detecting, by the first device, a first operation performed on one of the identifiers of the N
+
+    second devices, and invoking a resource of a second device corresponding to the identifier on
+
+    which the first operation is performed.
+
+20              "Pia                          `4                Y`A"H                    1m           L1 1`" 1
+25                11              1 l. 1
+                                                      k.           l   é) L       11           L, V        1      [1
+
+           4+.                     ml                 3'! .           12 mi" 1 H               mi r"                  ~        A A r?!) n H in ~                                                  nA          2 2m »
+
+                     L/  0L            && klk                k                11      11           D. E} 10                L       K     1k» .1 U!                  VI  p l J.                    /\J L1H     t 1.) 1b {Ll  .L
+
+    i      1             WC"; Y"!                               i m L1                      ammrl Ant: (1
+    1.} k  L             U 1 D H L911                           1                 1            11                     9
+
+           ¥i`1 k numii 1                                              m1 1 im                                    (        unAJ          ~. in k`n «Ha                                            .mp1 11` H
+           L1/ . Q                 11                 8.. l                   1       l. j         l  1l                                 k\..                                           11 L1 km              1 {Vi  L» H,  11
+
+      m rum              1" w Vuzm                    m                           {a 3,                              an        1m Ha M!                             x A A :1
+
+    (All [£11            1.} / t   if)                   k/lll        }: IN.      rL     V. Q      Li (H.         ~ (11.1                                / VI.         1k                         9 U1
+
+                                   m4                 :1.             1r-             " "mix                                   AA H m kuhk                                                                 mrl H u `
+           111                                    `v            O k)          L1 L             U111           3k         kk l         /                         Uk                      \. OK"             1  PE} 1         lvll
+
+           m+thn4--in MK .nwiln »                                                            A+k+k                             (me-A                            m {a
+       1   L 1\.. i                               i .6. k U! k         h it;                                                   1l        l                                         t.)
+                                                                                             \y l t L \ukU t3
+
+              3:12". The method according to eiaimfiwflaim, wherein before the detecting, by the first
+        device, M second devices, the method further comprises: detecting, by the first device, a second
+3O operation.
+
+              4:31 The method according to meefieiai--meiwteficiaimwong, wherein the displaying, by
+        the first device, identifiers of N second devices specifically comprises: displaying, by the first
+        device, a second interface provided by the first application, wherein the identifiers of the N second
+35 devices are displayed in the second interface.
+       comprises at least one of an image, a service, a capability, and hardware.
+
+               65, The method according to any one of eiaimeteficiaimswing, wherein the resource
+       comprises an image; and
+
+             the invoking a resource of a second device corresponding to the identifier on which the first
+       operation is performed specifically comprises:
+
+              displaying a third interface provided by the first application, and displaying, in the third
+10 interface, an image of the second device corresponding to the identifier on which the first
+
+       operation is performed.
+
+    camera1193); and
+
+15  the invoking a resource of a second device corresponding to the identifier on which the first
+
+    operation is performed specifically comprises:
+
+    displaying a fourth interface provided by the first application, and displaying, in the fourth
+
+    interface, an image that is captured by a camerajlqg) of the second device corresponding to the
+
+    identifier on which the first operation is performed.
+
+20
+
+        comprises:
+              skipping displaying, by the first device, an identifier of a second device on which the second
+
+        application is not installed.
+25
+
+              9&3; An e1ectronicdevice(1oo 200 00 400 6 1 6 2 `21 821), comprising one or more
+        processors and one or more memories, wherein the one or more memories are coupled to the one
+        or more processors, the one or more memories are configured to store computer program code,
+        the computer program code comprises computer instructions, and when the one or more
+3O processors execute the computer instructions, the method according to any one of eiaims--i--te
+
+              18:9; A computer program product comprising instructions, wherein when the computer
+        program product runs on an electronic device (100 200 raoo 400 671 6 2 `Pgl 821), the
+35 electronic device 100 200 00 400 6 1 672 "u. 821) is enabled to perform the method
+        according to any one of eiaimsnastwclafins 1 tog.
+
+              «H7153; A computer-readable storage medium, comprising instructions, wherein when the
+         instructions are run on an electronic device 100.3 200 `00 400 6 1 6 2 21 821 ,the method
+
+                                                                                       2
+according to any one of 1~2rim3+tefiglaims 1 to z is performed.
+

@@ -1,0 +1,309 @@
+                                  MWEWHE" ifLAIMC -- mammwmp
+
+    What--i--Sei--aimed--é--aé--
+
+    1. A data backup method, wherein the method is applied to a data backup system, the data
+
+    backup system comprises a primary cluster, a secondary cluster, and a control device, and the
+
+    method comprises:
+
+    controlling, by the control device based on a first data backup policy, the primary cluster or
+
+    the secondary cluster to back up, to the secondary cluster, a plurality of data sets related to a first
+
+    service that are in the primary cluster and that are at a first moment, wherein the first data backup
+
+    policy comprises information about the plurality of data sets related to the first service and the first
+
+10 moment.
+
+    2. The method according to claim 1, wherein the controlling, by the control device based on
+
+    a first data backup policy, the primary cluster or the secondary cluster to back up, to the secondary
+
+    cluster, a plurality of data sets related to a first service that are in the primary cluster and that are
+
+    at a first moment comprises:
+
+15  sending, by the control device, a first instruction to the primary cluster, to instruct the primary
+
+    cluster to send, to the secondary cluster, data corresponding to snapshots of the plurality of data
+
+    sets related to the first service that are at the first moment, or
+
+    sending, by the control device, a second instruction to the secondary cluster, to instruct the
+
+    secondary cluster to replicate, from the primary cluster, data corresponding to snapshots of the
+
+2O plurality of data sets related to the first service that are at the first moment and that are in the
+
+    primary cluster.
+
+    3. The method according to claim 2, wherein before the sending, by the control device, a first
+
+    instruction to the primary cluster, or the sending, by the control device, a second instruction to the
+
+    secondary cluster, the method further comprises:
+
+25  sending, by the control device, a third instruction to the primary cluster, wherein the third
+
+    instruction comprises the information about the plurality of data sets related to the first service and
+
+    the first moment, and the third instruction instructs the primary cluster to obtain the snapshots of
+
+    the plurality of data sets related to the first service that are at the first moment.
+
+    4. The method according to any one of claims 1 to 3, wherein the method further comprises:
+
+3O  sending, by the control device, a fourth instruction to the primary cluster, wherein the fourth
+
+    instruction instructs the primary cluster to synchronize user data to the secondary cluster, or
+
+    obtaining, by the control device, user data stored in the primary cluster and the secondary
+
+    cluster, and adjusting, by the control device based on the user data stored in the primary cluster,
+    the user data stored in the secondary cluster.
+
+         5. The method according to any one of claims 1 to 4, wherein the method further comprises:
+
+         configuring, by the control device, the first data backup policy for the first service based on
+
+    the information that is about the plurality of data sets related to the first service and that is entered
+
+    by a user and the first moment.
+
+         6. The method according to any one of claims 1 to 5, wherein the method further comprises:
+
+         configuring, by the control device, a second data backup policy for a second service, wherein
+
+    the second data backup policy comprises information about a plurality of data sets related to the
+
+    second service and a second moment, and
+
+10       controlling, by the control device based on the second data backup policy, the primary cluster
+
+    or the secondary cluster to back up, to the secondary cluster, the plurality of data sets related to the
+
+    second service that are in the primary cluster and that are at the second moment.
+
+         7. The method according to any one of claims 1 to 6, wherein the plurality of data sets related
+
+    to the first service comprise a data set processed or stored by a first component in the primary
+
+15 cluster and a data set processed or stored by a second component in the primary cluster.
+
+         8. The method according to any one of claims 1 to 7, wherein the control device comprises a
+
+    primary client and a secondary client, the primary client is configured to detect first status
+
+    information of the primary cluster, the secondary client is configured to detect second status
+
+    information of the secondary cluster, and the method further comprises:
+
+20       obtaining, by the control device, the first status information obtained through detection of the
+
+    primary client and the second status information obtained through detection of the secondary client,
+
+    and
+
+         when the first status information indicates that the primary cluster is a secondary identity or
+
+    the cluster fails, and the second status information indicates that the secondary cluster is a primary
+
+25 identity, determining, by the control device, that the secondary client is a client accessed by an
+
+    application.
+
+         9. The method according to claim 8, wherein the method further comprises:
+
+         prompting, by the control device, the user with information indicating that the primary cluster
+
+    is faulty, and
+
+3O       adjusting, by the control device, an identity of the secondary cluster from the secondary
+
+    identity to the primary identity in response to an identity adjustment operation of the user for the
+
+    secondary cluster.
+
+         10. The method according to any one of claims 1 to 9, wherein the control device is deployed
+
+    in an isolated manner from the primary cluster.
+
+35       11. The method according to any one of claims 1 to 10, wherein a same clock source is set in
+
+                                                     2
+    the control device, the primary cluster, and the secondary cluster.
+
+    12. The method according to any one of claims 1 to 11, wherein the primary cluster and/or
+
+    the secondary cluster comprise/comprises a cluster constructed based on a hadoop architecture.
+
+    13. A data backup method, wherein the method is applied to a data backup system, the data
+
+    backup system comprises a primary cluster, a secondary cluster, and a control device, and the
+
+    method comprises:
+
+    obtaining, by the primary cluster, an instruction delivered by the control device, wherein the
+
+    instruction comprises information about a plurality of data sets related to a first service and a first
+
+    moment, and
+
+10  backing up, by the primary cluster to the secondary cluster based on the instruction, the
+
+    plurality of data sets related to the first service that are in the primary cluster and that are at the
+
+    first moment.
+
+    14. The method according to claim 13, wherein the backing up, by the primary cluster to the
+
+    secondary cluster based on the instruction, the plurality of data sets related to the first service that
+
+15 are in the primary cluster and that are at the first moment specifically comprises:
+
+    obtaining, by the primary cluster based on the information about the plurality of data sets
+
+    related to the first service and the first moment, snapshots of the plurality of data sets related to
+
+    the first service that are in the primary cluster and that are at the first moment, and
+
+    sending, by the primary cluster, data corresponding to the snapshots to the secondary cluster
+
+20 based on the snapshots.
+
+    15. The method according to claim 13 or 14, wherein the method further comprises:
+
+    synchronizing, by the primary cluster, user data to the secondary cluster.
+
+    16. The method according to any one of claims 13 to 15, wherein the primary cluster and/or
+
+    the secondary cluster comprise/comprises a cluster constructed based on a hadoop architecture.
+
+25               ~n               '  j,     .1            -v      '  tV     /     ,     ,             th/Q
+
+                           »             1  w    1     1                 w     4           a
+    ,xg.` 1.               Vx M             txm               M.     W                  "N, 9
+
+    ewmpfiém--E
+
+3O
+
+    thefi-rSHH--em--enh
+
+    ean--figwea--toa-
+
+35               w»
+
+    u,                 ,.     .5                    -     ,   k5         1.          .        NJ  31  1     3
+                   f:                                                .           .  F; f?  mm
+                                                               axyi
+
+am
+
+                                                                        ox
+                                                                             f»
+                                                                   l'                                                      1                2/                       z...)                             1'       /                                        s.                                2.2 2'          .1                                 l'
+                                                                                                                                                                                                                                                                                                                                   "i
+                                                                                                                                                                                                                                                                                       1                       2                                                                    2
+                                                                                                                                                                                                                                                                                            W
+                      W                             '1      W                                                               4')                 1                                                      M2 1                                              `1' 1
+    K                                                                                                                                                                                                                7                                                    " W h 21:")
+                                                                                                                                                                                                                                                                                                       2/            :3
+
+                                                                                      "
+
+    w 9"                                  i                 K,                        h- '         2 "`1                             V                              .1`        0                                              I 2'Vv                     2'                                                                     M2 2                 '2\                      .1 d        w
+
+                                       V                        1            .2 h. M 2 "` W                         V`                  "V             1"           0 VW                "`1 W "``          W       " W.                                "w                                          'W          w
+
+                                2            m M2 Mn 222 W`W       2                                                                        3w                      22                                          2W                                1'V                                                          2 "u.                .
+
+                                                                                                                                                                    > :32 w ""v                                                                                     M                                                           L *22222                                  2 25:"
+
+             '\                                     t                                       2                   w2                                                                2     w.        2s                                                                            r                  2       «t        J n22            w                              2
+       2                                                        2
+                                                                                                                                                                                                                                                                                                                                                                w1
+
+                                                                                                   J                                                                                                                                                                                                                      «.25
+
+    seemdaeywehenfimm
+
+                                                                                                      4                                                2                                                                                   2.                                                                                            2
+
+                                          u                                  k                     V2                         ., M                         X?) m                                                              2                                                                                                                      .2                                   2
+
+    W         `2'                                                                                                                l                                                                                                                                                                                                                                      `1' W)
+
+                                                 '                                                              2                                             2/                                   N221                                                         .3                                                                                        2
+                                                                                                                             2
+10                              n                                  "`1  2 .2    2                                                                                                    m                                                         y                    2       2m2                                      .2 2
+                                       2
+
+    w              1' 2                                     22                        M2 2                              '\                  222,
+
+                                ""3          '"                 '\ M                                                          2 ww                                  m, -»               w 2 m,                     a                                                   "\2                             2 1«w                          2w                                            22
+                                                                                                                                                                    w
+                                                                /'
+
+                            'W                                                     2                         w2                                                                                                 322` 22
+
+15                                                          M, m                      W                                          a                         22               21                             t              22                                                                           2                  .  m «2                               «.2
+
+                                                                                                      i»                                                          w            a                                                                      w                                                                               J                   1-.»                            M
+
+                                                                             M
+
+                                                                                                          2
+
+                                                                                                                                                               2.
+
+                                                                                                                                            w                       22:,
+
+          2/                                                                                                                         `"                                                                    m2.  W                      1.                                                                            `72           m              2
+
+                                «.2                                     `1'                                         "- r 2 V                                                            w .2 w 2                              2 'W 2t                                       .3                         2:32 " 2 W               m                               «i 2 w w 2"
+
+20                                 \7               "`1                         V2                        'W 4; WW                              ¢`         1. "`12                          ""12                   'V         ' 112.2
+25
+                                                               w                m                                   w. 2 n 2 b.                                w    :35?                                              h.      2                                        m    Wa                                  "<1                               w                                    w
+                                M
+                                                                                                                                                                                                                                                                                                       2
+          `w 2                               122, 2 q.                                                       '\ 3                       22                                              N         -.9                                  2t 2 w m u2 ,                                L
+                                                                                                                                                                                                                                                                                                       2w
+                                w '*   2                 w                                     2:                                m `2                      2                                                                              2                                 2-                                                                       2
+                                                                                                                                                                 :3,                                                                                                              2y
+                                                                                                                                                                                                                                                                                                                                                                     2
+                                                                        `                                 "-                                                   `m           V                                                                                                                                                                                              2
+
+                                          2 `m/          2                                                   K          M        2!                 2                       2           Km                            .1                                                               M
+
+    M2 ehmetm--e:
+
+    primary cluster, and a secondary cluster, wherein
+
+                   the control device is configured to perform the method according to any one of the method
+
+    claims 1 to 12;
+
+3O                 the primary cluster is configured to perform the method according to any one of the method
+
+    claims 13 to 16; and
+
+                   the secondary cluster is configured to obtain and store a data set backed up from the primary
+
+    cluster.
+
+35 wherein
+      the processor is configured to execute instructions stored in the memory, to enable the
+computing device to perform the method according to any one of claims 1 to 12.
+
+:3
+                     e
+
+                                                         {E
+
+                                                                         e
+

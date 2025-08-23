@@ -1,0 +1,2408 @@
+Printed: 24-07-2009              A1PAMPHLET'                                               EP 06 846 405
+
+                 W310--                                                W
+
+      @ Dacunext W0 2004/00l560 Ji5c/oSes Uhloc'u`ny 4 oval. screen arm
+
+               (etub`nj 500425 on rreJeCeo--wnineal areas in a. give). on/er.
+
+                                 TECHNICAL FIELD
+
+      [0002]  The disclosed embodiments relate generally to user interfaces that employ
+
+      touch-sensitive displays, and more particularly, to the unlocking of user interfaces on portable
+
+      electronic devices.
+
+10                               BACKGROUND
+
+      [0003]  Touch-sensitive displays (also known as "touch screens" or "touchscreens")
+
+      are well known ih the art. Touch screens are used in many electronic devices to display
+
+      graphics and text, and to provide a user interface through which a user may interact with the
+
+      devices. A touch screen detects and responds to contact on the touch screen. A device may
+
+15    display one or more soft keys, menus, and other user--interface objects on the touch screen. A
+
+      user may interact with the device by contacting the touch screen at locations corresponding to
+
+      the user--interface obj ects with which she wishes to interact.
+
+      [0004]  Touch screens are becoming more popular for use as displays and as user
+
+      input devices on portable devices, such as mobile telephones and personal digital assistants
+
+20    (PDAs). One problem associated With using touch screens on portable devices is the
+
+      unintentional activation or deactivation of functions due to unintentional contact with the
+
+      touch screen. Thus, portable devices, touch screens on such devices, and/or applications
+
+      running on such devices may be locked upon satisfaction of predefined lock conditions, such
+
+      as upon entering an active call, afier a predetermined time of idleness has elapsed, or upon
+
+25    manual locking by a user.
+
+      [0005]  Devices with touch screens and/or applications running on such devices may
+
+      be unlocked by any of several well--known unlocking procedures, such as pressing a
+
+      predefined set of buttons (simultaneously or sequentially) or entering a code or passwbrd. fla)
+
+      These unlock procedures, however, have drawbacks. The button combinations may be hard
+
+30    to perform. Creating, memorizing, and recalling passwords, codes, and the like can be quite
+
+3/50                                                                                      05-07-2007
+Printed: 24-07-2009                           A1PAMPHLET                                          EP 06 846 405
+
+                 W                                                            W
+
+      burdensome. These drawbacks may reduce the ease ofuse of the unlocking process and, as a
+      consequence, the ease of use of the device in general.
+
+      [0006]        Accordingly, there is a need for more efficient, user-friendly procedures for
+
+      unlocking such devices, touch screens, and/or applications. More generally, there is a need
+
+      for more eflicient, user-friendly procedures for transitioning such devices, touch screens,
+
+      and/or applications bctwccn user interface states (c.g., from a user interface state for a first
+
+      application to a user interface state for a second application, between user interface states in
+
+      the same application, or between locked and unlocked states). In addition, there is a need for
+
+      sensory feedback to the user regarding progress towards satisfaction of a user input condition
+
+10    that is required for the transition to occur.
+
+                                              SUMMARY
+
+      Ill           .,__"-V_r-_-----_.. .-.---.- .....                . ._-- -..-..        .-  .
+                    I  '3'-        D'i`ll  '  "'7'7'  'll...'  'III-  .u`  -.~v3~v-lvva        vv
+      'V'
+
+      touch--sensitive display includes: detecting contact With the touch-sensitive display while th
+
+      device is in a user--interface lock state; moving an image corresponding to a user--interfa -
+
+15    unlock state of the device in accordance with the contact; transitioning the device '. he user- '
+
+      interface unlock state if the detected contact corresponds to a predefined ges and
+
+      maintaining the device in the user--interface lock state if the detected con -ct does not
+
+      correspond to the predefined gesture.
+
+      [0008]        In some embodiments, a method of controllin »: device with a touch--sensitive
+
+20    display includes: displaying an image on the touch-sens' ' e display while the device is in a
+
+      user--interface lock state; detecting contact with the a ch--sensitive display; transitioning the
+
+      device to a user-interface unlock state if the de - cted contact corresponds to moving the
+
+      image to a predefined location on the tone a -sensitive display; and maintaining the device in
+
+      the user--interface lock state if the de - ted contact does not correspond to moving the image
+
+25    to the predefined location.
+
+      [0009]        In some e ._ odiments, a method of controlling a device with a touch-sensitive
+
+      display includes: dis . aying an image on the touch--scnsitivc display while the device is in a
+
+      user-interface 1- , state; detecting contact with the touch--sensitive display", and transitioning
+
+      the device . a user-interface unlock state if the detected contact corresponds to moving the
+
+30    imag- . n the touch--sensitive display according to a predefined path on the touch-sensitive
+
+      c ' play; and maintaining the device in the user-interface lock state if the detected contact
+
+      ..-.    - -.  -... _ v  _            2. "7. 3--1::;'* A,g,_,:_.e;-_ '.  "..--_--..v
+
+4/50                                                                                               05-07-2007
+Printed: 24-07-2009?             A1PAMPHLET§                                         EP 06.846405";
+
+       W                                                                      m
+
+            :5 Jefhu/ [7/ the wave; clai`hS.
+
+                                                               pertaue electmnic
+
+       [0010] AW method of controllainfi g ewcweith a touch--sensitive
+
+                                                                                        ='><
+
+                         -...-.  .--.--       ,        --      -. .-.         .~-.`- --.u-p'
+
+       transitioning the device to a first active state corresponding to the    ; 1 - the detected
+
+       contact corresponds to a predefined gesture .- .: - nect te first finage; and transitioning
+
+       the device to a sec . - - ' e state distinct from the first active state if the detected contact
+
+       ._...--..--..  n  .:.-.-.r. u--- -  n`- -`u.-.  -_::.,:_n.. in_hg,
+
+       [0011] - The aforementioned niethod7(may be performed by a portable electronic
+
+       device having a touch-sensitive display with a graphical user interface (GUI), one or more
+
+10     processors, memory and one or mine modules, programs or sets of instructions stored in the
+
+       memory for performing these methods. In some embodiments, the fiortable electronic device
+
+       provides a plurality of fimctions, including Wireless communication.
+
+       [0012] 1 . Instructions for permeing the aforementioned methods may be inciuded in a
+       computer program product configured for execution by one or more processors.
+
+15                       ' BRIEF DESCRIPTION OF THE DRAWINGS
+
+       [0013]            For a better understanding of the aforementioned embodiments of the
+
+       invention as well as additional embodiments thereof, reference should be made to the                  .
+
+       Description Whelow, in" conjunction with the following drawings in which like
+
+       reference numerals refer to corresponding parts throughout the figures.
+
+_2o    [0014]            Figure 1 is a block diagram illustrating a portable electronic device, according
+
+       to some embodiments of the invention.
+
+       [0015]            Figure 2 is a flow diagram illustrating a process for transitioning a device to a
+
+       user-interface unlock state, according to some embodiments ofthe invention.
+
+       [0016]            Figure 3 he flow diagram illustrating a pfocess for transitioning a device to a
+
+25     user-interface unlock state, according to some embodiments of the invention.
+
+       [0017]            Figures 4A -- 4B illustrate the GUI display of a device in a user--interface lock
+
+       state, according to some embodiments of the inVention.
+
+       [0018]            Figures 5A ---- 5D illustrate'the GUI display of a device at various points of the
+
+       performance of an unlock action gesture, according to some embodiments of the invention;
+
+52.50                                                                                         16514077752307}
+    [0019] . Figure 6 is a flow diagram illustrating a process for indicating progress
+    towards satisfaction of a userjnput condition according to some embodiments of the
+    invention.
+
+    [0020]      Figures 7A -- 7D illustrate the GUI display of a device that is transitioning the
+
+    optical intensity of user-interface objects, according to some embodiments of the invention.
+
+    [0021]      Figures 8A -- 8C are graphs illustrating optical intensity as a fianction of the
+
+    completion of the user input condition, according to 'some embodiments of the invention.
+
+    [0022]      Figure 9 is a flow diagram illustrating a process for transitioning a device to a
+
+    user interface active state, according to some embodiments of the invention.
+
+10  [0023]      I Figure 10 illustrates the GUI of a device in a user-interface lock state that
+
+    displays a plurality of unlock images, according to some embodiments of the invention.
+
+    [0024]      Figures 1 1A -- 11F illustrate the GUI display of a device at various points in
+
+    the performance of an unlock action gesture, according to some embodiments of the
+
+    invention.
+
+15              . DESCRIPTION WW
+
+    [0025]      Reference will now be made in detail to embodiments, examples of Which are
+
+    illustrated in the accompanying drawings.' In the following detailed, description, numerous
+
+    . specific details are set forth in order to provide a thoro ugh understanding of the present
+
+    invention. However, it Will be apparent to one of ordinary skill in the art that the present ,
+
+20  invention may be practiced without these specific details. In other instances, well--known
+
+    methods, procedures, components, and circuits have not been described in "detail so as not to
+
+    unnecessarily obscure aspects of the embodiments;
+
+    [0026]      Figure 1 illustrates a portable electronic device, according to some
+
+    embodiments of the invention. The device 100 includes a memory 102, a memory controller
+
+25  104, one or more processing units (CPU's) 106, a peripherals interface 108, RF circuitry 112,
+
+    audio eircuitry 114, a speaker 116, a microphone 1 18, an input/output (I/O) subsystem 120, a
+
+    touch screen 126, other input or control devices 128, and an external port 148. These
+
+    `components communicate over the one or more communication buses or signal lines 110.
+
+    The device 100 can be any portable electronic device, including but not limited to a handheld
+
+30  computer, a tablet computer, a mobile phone, a media player, a personal digital assistant ,
+
+    P(PDA), or the like, including a combination of two or more of these items. ~It should be
+
+                4
+Printed: 24-07-2009             A1PAMPHLET                                               EP 06 846 405
+
+               4940941016310--                                       m
+
+      appreciated that the device 100 is only one example of a portable electronic device 100, and
+      that the device 100 may have more or fewer components than shown, or a different
+
+      configuration of components. The various components shown in Figure 1 may be
+
+      implemented in hardware, sofiware or a combination of both hardware and sofiware,
+
+      including one or more signal processing and/or application specific integrated circuits.
+
+      [0027]  The memory 102 may include high speed random access memory and may
+
+      also include non-volatile memory, such as one or more magnetic disk storage devices, flash
+
+      memory devices, or other non--volatile solid state memory devices. In some embodiments, the
+
+      memory 102 may further include storage remotely located from the one or more processors
+
+10    106, for instance network attached storage accessed via the RF circuitry 1 12 or external port
+
+      148 and a communications network (not shown) such as the Internet, intranet(s), Local Area
+
+      Networks (LANs), Wide Local Area Networks (WLANs), Storage Area Networks (SANS)
+
+      and the like, or any suitable combination thereof. Access to the memory 102 by other
+
+      components of the device 100, such as the CPU 106 and the peripherals interface 108, may be
+
+15    controlled by the memory controller 1 04.
+
+      [0028]  The peripherals interface 108 couples the input and output peripherals of the
+
+      device to the CPU 106 and the memory 102. The one or more processors 106 run various
+
+      software programs and/or sets of instructions stored in the memory 102 to perform various
+
+      functions for the device 100 and to process data.
+
+20    [0029]  In some embodiments, the peripherals interface 108, the CPU 106, and the
+
+      memory controller 104 may be implemented on a single chip, such as a chip 111. In some
+
+      other embodiments, they may be implemented on separate chips.
+
+      [0030]  The RF (radio frequency) circuitry 112 receives and sends electromagnetic
+
+      waves. The RF circuitry 1 12 converts electrical signals to/fi'om electromagnetic waves and
+
+25    communicates with communications networks and other communications devices via the
+
+      electromagnetic waves. The RF circuitry 112 may include well--known circuitry for
+
+      performing these functions, including but not limited to an antenna system, an RF transceiver,
+
+      one or more amplifiers, a tuner, one or more oscillators, a digital signal processor, a CODEC
+
+      chipset, a subscriber identity module (SIM) card, memory, and so forth. The RF circuitry I
+
+30    112 may communicate with the networks, such as the Internet, also referred to as the World
+
+      Wide Web (WWW), an Intranet and/or a wireless network, such as a cellular telephone
+
+      network, a wireless local area network (LAN) and/or a metropolitan area network (MAN),
+
+                                                 5
+
+7/50                                                                                        05-07-2007
+Printed: 24-07-2009        A1PAMPHLET                 . EP 06 846 405
+
+                 W                     W
+
+      and other devices by wireless communication. The wireless communication may use any of a
+      plurality of communications standards, protocols and technologies, including but not limited
+      to Global System for Mobile Communications (GSM), Enhanced Data GSM Environment
+      (EDGE), wideband code division multiple access (W--CDMA), code division multiple access
+      (CDMA), time division multiple access (TDMA), Bluetooth, Wireless Fidelity (Wi-Fi) (e.g.,
+      IEEE 802.11a, IEEE 802.11b, IEEE 802.11g and/or IEEE 802.1 In), voice over Internet
+      Protocol (VoIP), Wi-MAX, a protocol for email, instant messaging, and/or Short Message
+      Service (SMS)), or any other suitable communication protocol, including communication
+      protocols not yet developed as of the filing date of this document.
+
+10    [0031]  The audio circuitry 114, the speaker 116, and the microphone 118 provide an
+
+      audio interface between a user and the device 100. The audio circuitry 1 14 receives audio
+
+      data from the peripherals interface 108, converts the audio data to an electrical signal, and
+
+      transmits the electrical signal to the speaker I 16. The speaker converts the electrical signal to
+
+      human--audible sound waves. The audio circuitry 114 also receives electrical signals
+
+15    converted by the microphone 11 6 from sound waves. The audio circuitry 114 converts the
+
+      electrical signal to audio data and transmits the audio data to the peripherals interface 108 for
+
+      processing. Audio data may be may be retrieved from and/or transmitted to the memory 102
+
+      and/or the RF circuitry 112 by the peripherals interface 108. In some embodiments, the audio
+
+      circuitry 114 also includes a headset jack (not shown). The headset j ack provides an interface
+
+20    between the audio circuitry 114 and removable audio input/output peripherals, such as
+
+      output--only headphones or a headset with both output (headphone for one or both ears) and
+
+      input (microphone).
+
+      [0032]  The U0 subsystem 120 provides the interface between input/output
+
+      peripherals on the device 100, such as the touch screen 126 and other input/control devices
+
+25    128, and the peripherals interface 108. The 1/0 subsystem 120 includes a touch--screen
+
+      controller 122 and one or more input controllers 124 for other input or control devices. The
+
+      one or more input controllers 124 receive/send electrical signals from/to other input or
+
+      control devices 128. The other input/control devices 128 may include physical buttons (e.g.,
+
+      push buttons, rocker buttons, etc.), dials, slider switches, sticks, and so forth.
+
+30    [0033]  The touch screen 126 provides both an output interface and an input interface
+
+      between the device and a user. The touch--screen controller 122 receives/sends electrical
+
+      signals f`rom/to the touch screen 126. The touch screen 126 displays visual output to the user.
+
+      The visual output may include text, graphics, video, and any combination thereof. Some or
+                                                                6
+
+8/50                                                                                            05-07-2007
+Printed: 24-07-2009;                     A1P_AMPHLETi     '                                EP 06 846 405;
+
+                                 .                     .     i`EilHE
+
+        all of the visual output may correspond to user-interface objects, finther details of which are
+        described below.
+
+        [0034]        The touch screen 126 also accepts input from the user based on haptic and/or
+
+        tactile contact. The touch screen 126 forms a touch-sensitive surface that accepts user input.
+
+        The touch Screen 126 and the touch screen controller 122(a10ng with any associated modules
+
+        and/oi' scts of instructions in the memory 102) detects contact (and any movcmcnt or break of
+
+        the contact) on the touch screen 126 and converts the detected contact into interaction with
+
+        user-interface objects, such as one or more soft keys, that are displayed on the touch screen.
+
+        , In an exemplary embodiment, a point of contact between the touch screen 126 and the usef
+
+   10   corresponds to one or more digits of the user. The touch sereen 126 may use LCD (liquid
+
+' _15   crystal display) technology, or LPD (light emitting polymer display) technology, although
+
+   20   other display technologies may be used in other embodiments. The touch screen 126 and
+   25
+   30   touch screen controller 122 may detect contact and any movement or break thereofusing any _
+
+        ' of a plurality oftouch sensitivity technologies,including but not limited to capacitive,
+
+        resistive, infrared, and surface acoustic wave technologies, as well as other proximity sensor
+
+        arrays or other elements for determining one or more points of contact with the touch screen
+
+        126. The touch-sensitive display may be analo gous to the multi-touch sensitive tablets I
+
+        described'111 the following U.S. Patents: 6,323, 846 (westerman et a1) 6,57,0557 (Westerman
+
+        et a1) and/or 6,677, 932 (Westerman), and/or U. S. Patent Publication 2002/0015 024A1+each--.l
+
+                      -- ` - - - 1 - - - - - =. .However, the touch screen 126 displays visual
+
+        output from the portable device, whereas touch sensitive tablets do not provide visual output.
+
+        The touch screen 126 may have a resolution in excess of 100 dpi. 111 an exemplary
+
+        embodiment, the touch screen 126 may have a resolution of approximately 168 dpi The user
+
+        may make contact with the touch screen 126 using any suitable object or appendage, such as
+
+        a stylus, finger, and so fotth.
+
+        [0035] _      In some embodiments, in addition. to the touch screen, the device 100 may
+
+        include a touehpad (not shown) for activating or deactivating particular functions; In Some
+
+        embodiments, the touchpad is a touch-sensitive area of the device that, unlike the touch
+
+        screen, does not display visual. output. The touchpad may be a touch--Sensitive surface that is
+
+        separate from the touch screen 126 or an extension of the touch-sensitive surface formed by
+
+        ' the touch screen 126.
+
+        [0036] .      The device 100 also includes a power system 130 for powering the various
+
+        components. The power system 130 may inelude a power management system, one or more,
+                                         7
+
+9/50}?                                                                                              "osibifriébb`fi
+Printed: 24-07-2009  A1PAMPHLET                                                         EP 06 846 405
+
+                 W                                                  W
+
+       power sources (e.g., battery, alternating current (AC)), a recharging system, a power failure
+       detection circuit, a power converter or inverter, a power status indicator (e.g., a light--emitting
+       diode (LED)) and any other components associated with the generation, management and
+       distribution of power in portable devices.
+
+       [0037]  In some embodiments, the software components include an operating system
+
+       132, a communication module (or set of instructions) 134, a contact/motion module (or set of
+
+       instructions) 138, a graphics module (or set of instructions) 140, a user interface state
+
+       module (or set of instructions) 144, and one or more applications (or set of instructions) 146.
+
+       [0038]  The operating system 132 (e.g., Darwin, RTXC, LINUX, UNIX, OS X,
+
+10     WINDOWS, or an embedded operating system such as VxWorks) includes various software
+
+       components and/or drivers for controlling and managing general system tasks (e.g., memory
+
+       management, storage device control, power management, etc .) and facilitates communication
+
+       between various hardware and sofiware components.
+
+       [0039]  The communication module 134 facilitates communication with other devices
+
+15     over one or more external ports 148 and also inoludes various sofiware compon ents for
+
+       handling data received by the RF circuitry 1 12 and/or the external port 148. The external
+
+       port 148 (e.g., Universal Serial Bus (USB), FIREWIRE, etc.) is adapted for coupling directly
+
+       to other devices or indirectly over a network (e.g., the Internet, wireless LAN, etc.).
+
+       [0040]  The contact/motion module 138 detects contact with the touch screen 126, in
+
+20     conjunction with the touch--screen controller 122. The contact/motion module 138 includes
+
+       various software components for performing various operations related to detection of
+
+       contact With the touch screen 122, such as determining if contact has occurred, determining if
+
+       there is movement of the contact and tracking the movement across the touch screen, and
+
+       determining if the contact has been broken (i.e., if the contact has ceased). Determining
+
+25     movement of the point of contact may include determining spccd (magnitude), velocity
+
+       (magnitude and direction), and/or an acceleration (including magnitude and/or direction) of
+
+       the point of contact. In some embodiments, the contact/motion module 126 and the touch
+
+       screen controller 122 also detects contact on the touchpad.
+
+       [0041]  The graphics module 140 includes various known software components for
+
+30     rendering and displaying graphics on the touch screen 126. Note that the term "graphics"
+
+       includes any object that can be displayed to a user, including without limitation text, web
+
+10/50                                                                                             05-07-2007
+Printed: 24-07-2009       A1PAMPHLET                                                EP 06 846 405
+
+                 W                                              W
+
+        pages, icons (such as user-interface objects including soft keys), digital images, videos,
+        animations and the like.
+
+        [0042]  In some embodiments, the graphics module 140 includes an optical intensity
+
+        module 142. The optical intensity module 142 controls the optical intensity of graphical
+
+        objects, such as user-interface objects, displayed on the touch screen 126. Controlling the
+
+        optical intensity may include increasing or decreasing the optical intensity of a graphical
+
+        object. In some embodiments, the increase or decrease may follow predefined flmctions.
+
+        [0043]  The user interface state module 144 controls the user interface state of the
+
+        device 100. The user interface state module 144 may include a lock module 150 and an
+
+10      unlock module 152. The lock module detects satisfaction of any of one or more conditions to
+
+        transition the device 100 to a user-interface lock state and to transition the device 100 to the
+
+        lock state. The unlock module detects satisfaction of any of one or more conditions to
+
+        transition the device to a user-interFace unlock state and to transition the device 100 to the
+
+        unlock state. Further details regarding the user interface states are described below.
+
+15      [0044]  The one or more applications 130 can include any applications installed on the
+
+        device 100, including without limitation, a browser, address book, contact list, email, Instant
+
+        messaging, word processing, keyboard emulation, widgets, JAVA-enabled applications,
+
+        encryption, digital rights management, voice recognition, voice replication, location
+
+        determination capability (such as that provided by the global positioning system (GP 8)), a
+
+20      music player (which plays back recorded music stored in one or more files, such as MP3 or
+
+        AAC files), etc.
+
+        [0045]  In some embodiments, the device 100 may include the fianctionality of an
+
+        MP3 player, such as an iPod (trademark of Apple Computer, Inc.). The device 100 may,
+
+        therefore, include a 36--pin connector that is compatible with the iPod. In some embodiments,
+
+25      the device 100 may include onc or more optional optical sensors (not shown), such as CMOS
+
+        or CCD image sensors, for use in imaging applications.
+
+        [0046]  In somc embodiments, the device 100 is a device where operation of a
+
+        predefined set of functions on the device is performed exclusively through the touch screen
+
+        126 and, if included on the device 100, the touchpad. By using the touch screen and
+
+30      touchpad as the pn'mary input/control device for operation of the device 100, the number of
+
+        physical input/control devices (such as push buttons, dials, and the like) on the device 100
+
+        may be reduced. In one embodiment, the device 100 includes the touch screen 126, the
+
+                          9
+
+1 1/50                                                                                              05-07-2007
+Printed: 24-07-2009                   A1PAMPHLET                                  EP 06 846 405
+
+                W                                            m
+
+       touchpad, a push button for powering the device on/off and locking the device, a volume
+       adjustment rocker button and a slider switch for toggling ringer profiles. The push button
+       may be used to turn the power on/off on the device by depressing the button and holding the
+       button in the depressed state for a predefined time interval, or may be used to lock the device
+       by depressing the button and releasing the button before the predefined time interval has
+       elapsed. In an alternative embodiment, the device 100 also may accept verbal input for
+       activation or deactivation of some fimctions through the microphone 1 1 8.
+
+       [0047]  The predefined set of functions that are performed exclusively through the
+
+       touch screen and the touchpad include navigation between user interfaces. In some
+
+10     embodiments, the touchpad, when touched by the user, navigates the device 100 to a main,
+
+       home, or root menu from any user interface that may be displayed on the devi ce 100. In such.
+
+       embodiments, the touchpad may be referred to as a "menu button." In some other
+
+       embodiments, the menu button may be a physical push button or other physical input/control
+
+       device instead of a touchpad.
+
+15                                    User Interface States
+
+       [0048]  The device 100 may have a plurality of user interface states. A user interface
+
+       state is a state in which the device 100 responds in a predefined manner to user input. In
+
+       some embodiments, the plurality of user interface states includes a user-interface lock state
+
+       and a user-interface unlock state. In some embodiments, the plurality of user interface states
+
+20 includes states for a plurality of applications.
+
+       [0049]  In the user-interface lock state (hereinafter the "lock state"), the device 100 is
+
+       powered on and operational but ignores most, if not all, user input. That is, the device 1 00
+
+       takes no action in response to user input and/or the device 100 is prevented from performing
+
+       a predefined set of operations in response to the user input. The predefined set of operations
+
+25     may include navigation between user interfaces and activation or deactivation of a predefined
+
+       set of functions. The lock state may be used to prevent unintentional or unauthorized use of
+
+       the device 100 or activation or deactivation of fimctions on the device 100. When the device
+
+       100 is in the lock state, the device 100 may be said to be locked. In some embodiments, the
+
+       device 100 in the lock state may respond to a limited set of user inputs, including input that
+
+30     corresponds to an attempt to transition the device 100 to the user-interface unlock state or
+
+       input that corresponds to powering the device 100 off. In other words, the locked device 100
+
+       responds to user input corre5pondin g to attempts to transiti on the device 100 to the user-
+
+                                                     10
+
+12/50                                                                                     05-07-2007
+     . interface unlock state or powering the device 1 00 off, but does not respond to user input
+      corresponding to attempts to navigate between user interfaces. It should be appreciated that
+      even if the device 100 ignores a user input, the device 100 may still provide sensory feedback
+       (such as visual, audio, or vibration feedback) to the user upon detection of the input to
+      indicate that the input will be ignored.
+
+     [0050]  In embodiments where the device 100 includes the touch screen 126, While the
+
+     device 100 is locked, a predefined set of operations, such as navigation between user
+
+     interfaces, is prevented from being performed in response to contact on the touch screen 126
+
+     when the device 1 00 is locked. In other words, when the contact is being ignored by the
+
+10   locked device 100, the touch screen may be said to be locked. A locked device 100,
+
+     however, may still rCSpond to a limited class of contact on the touch screen 126. The limited
+
+     class includes contact that is determined by the device 100 to correspond to an attempt to
+
+     transition the device 100 to the user--interface unlock state.
+
+     [0051]  In the user--interface unlock state (hereinafier the "unlock state"), the device
+
+15   100 is in its normal operating state, detecting and responding to uSer input corresponding to
+
+     interaction with the user interface. A device 100 that is in the unlock state may be described
+
+     as an unlocked devioe 100. An unlocked device 100 detects and responds to user input For
+
+     navigating between user interfaces, entry of data and activation or deactivation offunctions.
+
+     In embodimentswhere the device 100 includes the touch screen 126, the unlocked device 100
+
+20 . detects and responds to contact corresponding to navigation between user interfaces, entry of .
+
+     data and activation or deactivation of functions through the touch screen 126.
+
+             Unlocking a Device via Gestures
+
+     [0052]  Figure 2 is a flow diagram illustrating a process 200 for transitioning a device
+
+     to a` user--interface unlock state, according to some embodiments ofthe invention. As used
+
+'25  herein, transitioning from one state to another refers to the process of going fi'om one state to
+
+     another, The process may be, as perceived by the user, instantaneous, near-instantaneous,
+
+     gradual or at any suitable rate. The progifcssion of the process may bc controlled
+
+     automatically by the device, such as the device 100 (Figure 1), independent of the user, once
+
+     the process is activated; or it may be controlled by the user. While the process flow 200
+
+30   described below includes a number of operations that appear to occur in a specific order, it
+
+     shonld be apparent that these processes may include more or fewer operations, which may be
+
+             '11
+Printed: 24-07-2009  A1PAMPHLET                                                         EP 06 846 405
+
+              W                                                     W
+
+       executed serially or in parallel (e.g., using parallel processors or a multi-threading
+       environment).
+
+       [0053]   A device is set to the lock state (202). The device may be set (that is,
+
+       transition completely to the lock state from any other state) to the locked state upon
+
+       satisfaction of any of one or more lock conditions. The lock conditions may include events
+
+       such as tho clapsing of a predefined time of inactivity, entry into an active call, or powering
+
+       on the device. The lock conditions may also include user intervention, namely the user
+
+       locking the device by a predefined user input. In some embodiments, the user may be
+
+       allowed to specify the events that serve as lock conditions. For example, the user may
+
+10     configure the device to transition to the lock state upon the elapsing of a predefined time of
+
+       inactivity but not upon powering on the devi 66.
+
+       [005 4]  In some embodiments, the lockeddevice displays on the touch screen one or
+
+       more visual cues of an unlock action that the user may perform to unlock the device (204).
+
+       The visual cue(s) provide hints or reminders of the unlock action to the user. The visual cues
+
+15     may be textual, graphical or any combination thereof. In some embodiments, the visual cues
+
+       are displayed upon particular events occurring while the device is locked. The particular
+
+       events that trigger display of the visual cues may include an incoming call, incoming
+
+       message, or some other event that may require the user's attention. In some embodiments,
+
+       the visual cues may also be displayed upon particular user inputs, such as the user interacting
+
+20     with the menu button, the user making contact with the locked touch screen and/or the user
+
+       interacting with any other input/control dcvicc. Thc locked device, when not displaying the
+
+       visual cues, may power down the touch screen (which helps to conserve power) or disPlay
+
+       other objects on the touch screen, such as a screen saver or information that may be of
+
+       interest to the user (e.g., battery charge remaining, date and time, network strength, etc.).
+
+25     [0055]   The unlock action includes contact With the touch screen. In some
+
+       embodiments, the unlock action is a predefined gesture performed on the touch screen. As
+
+       used herein, a gesture is a motion of thc objcct/appcndagc making contact with the touch
+
+       screen. For example, the predefined gesture may include a contact of the touch screen on the
+
+       left edge (to initialize the gesture), a horizontal movement of the point of contact to the
+
+30     opposite edge while maintaining continuous contact with the touch screen, and a breaking of
+
+       the contact at the opposite edge (to complete the gesture).
+
+14/50                12
+                                                                         05-07-2007
+Printed: 24-07-2009  A1PAMPHLET                                          EP 06 846 405
+
+                 W                                  mammo--
+
+       [0056]  While the touch screen is locked, the user may initiate contact with the touch
+
+       screen, i.e., touch the touch screen (206). For convenience of explanation, contact on the
+
+       touch screen in the process 200 and in other embodiments described below will be described
+
+       as performed by the user using at least one hand using one or more fingers. However, it
+
+       should be appreciated that the contact may be made using any suitable object or appendage,
+
+       such as a stylus, finger, etc. The contact may include one or more taps on the touch screen,
+
+       maintaining continuous contact with the touch screen, movement of the point of contact while
+
+       maintaining continuous contact, a breaking of the contact, or any combination thereof.
+
+       [0057]  The device detects the contact on the touch screen (208). If the contact does
+
+10     not correspond to an attempt to perform the unlock action, or if the contact corresponds to a
+
+       failed or aborted attempt by the user to perform the unlock action (210 -- no), then the device
+
+       remains locked (212). For example, if the unlock action is a horizontal movement of the
+
+       point of contact across the touch screen while maintaining continuous contact with the touch
+
+       screen, and the detected contact is a series of random taps on the touch screen, then the
+
+15     device Will remain locked because the contact does not correspond to the unlock action.
+
+       [0058]  If the contact corresponds to a successfiil performance of the unlock action,
+
+       1' .e., the user performed the unlock action successfiilly (210 -- yes), the device transitions to
+
+       the unlock state (214). For example, if the unlock action is a horizontal movement of the
+
+       point of contact across the touch screen while maintaining continuous contact with the touch
+
+20     screen, and the detected contact is the horizontal movement with the continuous contact, then
+
+       the device transitions to the unlock state.
+
+       [0059]  In some embodiments, the device begins the process of transitioning to the
+
+       unlock state upon detection of any contact on the touch scrccn and aborts the transition as
+
+       soon as the device determines that the contact does not correspond to an unlock action or is a
+
+25     failed/aborted unlock action. For example, if the unlock action is a predefined gesture, the
+
+       device may begin the process of transitioning to the unlock state as soon as it detects the
+
+       initial contact of the gesture and continues the progression ofthe transition as the gesture is
+
+       performed. If the user aborts the gesture before it is completed, the device aborts the
+
+       transition and remains inthe lock state. If the gesture is completed, the tlevice completes the
+
+30     transition to the unlock state and becomes unlocked. As another example, if the unlock
+
+       action is a horizontal movement of the point of contact across the touch screen while
+
+       maintaining continuous contact with the touch screen, and the user taps the touch screen
+
+       once, the device begins the process of the state transition as soon as it detects the tap but also
+                                                                      13
+
+15/50                                                                                             05-07-2007
+Printed: 24-07-2009                  A1PAMPHLET                                                EP 06 846 405
+
+                W--                                                       W
+
+       aborts the process soon after because it realizes that the tap is just a tap and does not
+       correspond to the unlock action.
+
+       [0060]  While the device is unlocked, the device may display on the touch screen user-
+
+       interface objects corresponding to one or more functions of the device and/or information that
+
+       may be of interest to the user. The user--interface obj cots are objects that make up the user
+
+       interface of the device and may include, without limitation, text, images, icons, soft keys (or
+
+       "virtual buttons"), pqu-down menus, radio buttons, check boxes, selectable lists, and so forth.
+
+       The displayed user--interface objebts may include non-interacu've obj ects that convey
+
+       information or contribute to the look and feel of5the user interface, interactive objects with
+
+10     which the user may interact, or any combination thereof. The user may interact with the user--
+
+       interface objects by making contact with the touch screen at one or more touch screen
+
+       locations corresponding to the interactive objects with which she wishes to interact. The
+
+       device detects the contact and responds to the detected contact by performing the operation(s)
+
+       corresponding to the interaction With the interactive obj ect(s).
+
+15     [0061]  While the device is locked, the user may still make contact on the touch
+
+       screen. However, the locked device is prevented from performing a predefined set of actions
+
+       in response to any detected contact until the device is unlocked. The prevented predefined'set
+
+       of action may include navigating between user interfaces and entry of data by the user.
+
+       [0062]  While the device is locked, the device may display one or more visual cues of
+
+20     the unlock action, as described above. In some embodiments, the device may also "display,
+
+       along with the visual cues, an unlock image. The unlock image is a graphical, interactive
+
+       user--interface obj ect with Which the user interacts in order to unlock the device. In other
+
+       words, the unlock action is performed with respect to the unlock image. In some
+
+       embodiments, performing the unlock action with respect to the image includes dragging the
+
+25     unlock image in a predefined manner, which moves the unlock image across the touch screen.
+
+       In some embodiments, if the unlock action is not completed, the GUI display can show
+
+       reverse progress towards the locked state by gradually returning the unlock image to its
+
+       position in the locked state              i
+
+       [0063] ` In some embodiments, in addition to visual feedback, the electronic device
+
+30     supplies non-visual feedback to indicate progress towards completion of the unlock action. In
+
+       some embodiments, in addition to visual feedback, the electronic device supplies non-visual
+
+16/50                                14
+                                                                                         05-07-2007
+Printed: 24-07-2009  A1PAMPHLET                                                      . EP 06 846 405
+            W                                                        maya--
+
+       feedback to indicate completion of the unlock action. The additional feedback may include
+       audible feedback (e.g., sound(s)) or physical feedback (e.g., vibration(s)).
+
+       [0064]        Figure 3 is a flow diagram illustrating a process 300 for transitioning a device
+
+       to a user-interface unloek state using an unlock image, according to some embodiments of the
+
+       invention. The process 300 is similar to the process 200 (Figure 2) with the addition of an
+
+       unlock image that is displayed with the visual cues. Thc unlock action in the process 300 is
+
+       performed with respect to the unlock image, i.e., the unlock action includes interaction with
+
+       the unlock image. While the process flow 300 described below includes a number of
+
+       operations that appear to occur in a specific order, it should be apparent that these processes
+
+10     can include more or fewer operations, which can be executed serially or in parallel (e.g.,
+
+       using parallel processors or a multi-threading environment).
+
+       [0065]        The device is locked upon satisfaction of a lock condition (302), similar to the
+
+       operation 202 (Figure 2). An unlock image and visual cues of the unlock action usin g the
+
+       unlock image are displayed (304). The operation 304 is the same as the operation 204
+
+15     (Figure 2), except that in the operation 304 an unlock image is displayed in addition to the
+
+       visual cues.
+
+       [0066]        As described above, the unlock action includes interaction with the unlock
+
+       image. In some embodiments, the unlock action includes the user perfomn'ng a predefined
+
+       gesture with respect to the unlock image. In some embodiments, the gesture includes
+
+20     dragging the unlock image to a location on the touch screen that meets one or more
+
+       predefined unlock criteria. In other words, the user makes contact with the touch screen at a
+
+       location corresponding to the unlock image and then performs the predefined gesture while
+
+       maintaining continuous contact with the touch screen, dragging the image to the location that
+
+       meets the predefined unlock criteria. In some embodiments, the unlock action is completed
+
+25     by breaking the contact with the touch screen (thus releasing the unlock image) upon
+
+       completion of the predefined gesture.
+
+       [0067]        A location meeting one or more predefined unlock criteria is simply a location
+
+       on the touch screen that is predefined as a location to which the unlock image is to be
+
+       dragged in order to unlock the device. The location(s) may be defined narrowly or broadly,
+
+30     and may be one or more particular locations on the touch screen, one or more regions on the
+
+       touch screen, or any combination thereof. For example, the location may be defined as a
+
+17/50                                         15
+                                                                                                  05-07-2007
+Printed: 24-07-2009  A1PAMPHLET'                                                    EP 06 846 405
+
+           W                                                   W
+
+       particular marked location, areas at each of the four corners of the touch screen, or a quadrant
+       of the touch screen, etc.
+
+       [0068]  In some embodiments, the interaction includes dragging the unlock image to a
+
+       predefined location on the touch screen. For example, the unlock action may include
+
+       dragging the unlock image fi'om one corner of the touch screen to another comer of the touch
+
+       screen. As another example, the unlock action may include dragging the unlock image from
+
+       one edge ofthe touch screen to the opposite edge. The emphasis here is on the final
+
+       destination of the unlock image (and of the finger). Thus, the user can drag the unlock image
+
+       from its initial location along any desired path. As long as the unlock image reaches the
+
+10     predefined location and is released at that location, the device is unlocked. It should be
+
+       appreciated that the predefined location may be, as described above, defined narrowly or
+
+       broadly and may be one or more particular locations on the touch screen, one or more regions
+
+       on the touch screen, or any combination thereof.
+
+       [0069]  In some other embodiments, the unlock action includes dragging the unlock
+
+15     image along a predefined path. For example, the unlock action may include dragging the
+
+       unlock image clockwise along the perimeter of the touch screen (the path being the perimeter
+
+       of the touch screen), From one of the comers and back. As another example, the unlock
+
+       action may include dragging the unlock image from one edge of the touch screen to the
+
+       opposite edge in a linear path. The emphasis here is on the path along which the unlock
+
+20     image (and the finger) moves. Because of the emphasis on the path, the final location to
+
+       which the unlo ck image is to be moved may be defined broadly. For example, the unlock
+
+       action may be to drag the unlock image from its initial location, along the predefined path, to
+
+       any spot within a predefined region on the touch screen. The predefined path may include one
+
+       or more straight lines or lines with twists and turns.
+
+25     [0070]  The user makes contact with the touch screen (306), similar to the operation
+
+       206 (Figure 2). The device detects the contact with the touch screen (308), similar to the
+
+       operation 208 (Figure 2). If the contact does not correspond to successful performance of the
+
+       unlock action with respect to the image (3 10 -- no), the device remains locked~ If the contact
+
+       does correspond to successful performance of the unlock action with respect to the image
+
+30     (310 -- yes), the device is unlocked (314).             .
+
+       [0071]  Figures 4A -- 4B illustrate the GUI display of a device in a user-interface lock
+
+       state, according to some embodiments of the invention. In Figure 4A, device 400 includes a
+
+                                                    16
+
+18/50                                                                                              05-07-2007
+Printed: 24-07-2009                 A1PAMPHLET                                                  EP 06 846 405
+
+           W                                                              W
+
+       touch screen 408 and a menu button 410. The device 400 is locked and the touch screen 408
+
+       is displaying an unlock image 402 and visual cues. The visual cues shown include a channel
+
+       404 indicating the path of the gesture/movement along which the unlock image 402 is to be
+
+       dragged, similar to a groove along which a slider switch moves; and one or more arrows 406
+
+       indicating the direction of the gesture/movement. The end of the channe1404 (in Figures 4A
+
+       -- 4B and 5A --' 5D, the "en " of the channel is the right end) also serves as a predefined .
+
+       location to which the unlock image 402 is to be dragged. The unlock image 402 may also
+
+       include an arrow to further remind the user the direction ofthe gesture/movement. As
+
+       described above, the visual cues and the unlock image may be displayed by the device 400
+
+10     upon an event that may require the user's attention (e.g., incoming call or message) or upon
+
+       user intervention (e.g., the user pressing the menu button 410 while the device is locked).
+
+       [0072]  In some embodiments, the arrows 406 and the arrow on the unlock image 402
+
+       may be animated. For example, the arrow on the unlock image 402 may appear and
+
+       disappear in a pulse--like manner and the arrows 406 may emanate fiom one end of the
+
+15     channel 406 in sync with the pulsing of the arrow on the unlock image 402. As shown in
+
+       Figure 4B, the arrow 406 may move along the channel 404 and disappear when it moves to
+
+       the end of the channel 404.
+
+       [0073]  The visual cues illustrated in Figures 4A and 4B remind the user that the
+
+       unlock action is a predefined gesture that includes a horizontal movement of the finger (and
+
+20     thus moving the point of contact) along the channel 404, fi'om the beginning of the channel
+
+       404, whcrc the unlock imagc is initially located, to the end of the channel 404. It should be
+
+       appreciated, however, that the visual cues shown in Figures 4A -- 4B are merely exemplary
+
+       and that more or fewer visual cues, or alternative visual cues may be used. The content of the
+
+       visual cues may be based on the particulars of the unlock action.
+
+25     [0074]  Figures 5A --- 5D illustrate the GUI display of a device at various points ofthe
+
+       performance of an unlock action gesture, according to some embodiments of the invention.
+
+       In Figure 5A, the user, represented by the hand and finger 502 (not drawn to scale), begins
+
+       the unlock action by touching the touch screen 408 of device 400 with her finger 502. In
+
+       some embodiments, the touch screen 408 is initially in sleep mode and/or dark, and the
+
+30     screen 408 displays the unlock image 402 when touched. The user touches the touch screen
+
+       408 at the location corresponding to the unlock image 402, which is located initially at the
+
+       lefi end of the channel 404. The contact, either overlapping with the unlock image 402 or in
+
+       proximity to the unlock image 402, is detected by the device 400 and is determined to be an
+
+       '                            17
+
+19/50                                                                                          05-07-2007
+Printed: 24-07-2009                 A1 PAMPHLET                          EP 06 846 405
+
+              4040014046240--                      W
+
+       attempt to unlock the touch screen, based on the fact that the user 502 is interacting with the
+       unlock image 402.
+
+       [0075]  In Figure 5B, the user is in the process of performing the gesture by moving
+
+       her finger, which is in continuous contact with the touch screen 408, in the direction of
+
+       movement 504. The unlock image 402 is dragged along the channel 404 as a result of the
+
+       gesture. The channel 404 reminds the user that the unlock gesture is a horizontal motion. In
+
+       some embodiments, the channel 404 indicates the predefined location (in Figures 5A ---- 5D,
+
+       the right end of the channel) to which the user drags the unlock image 402 to complete the
+
+       unlock action and/or the predefined path along which the user drags the unlock image 402 to
+
+10     complete the unlock action.
+
+       [0076]  In Figure 5C, the user has dragged the unlock image 402 to the right end of the
+
+       channel 404. Once the user releases the unlock image 402 at the right end of the channel 404,
+
+       the unlock action is complete. Upon completion of the unlock gesture, the device unlocks
+
+       and displays on the touch screen 408 user-interface objects associated with normal operation
+
+15     of the device 400. Figure 5D illustrates an example of user-interface obj ects that may be
+
+       displayed when the device 400 is unlocked. In Figure 5D, the device 400 displays a menu
+
+       506. The menu 506 includes interactive user-interface objects correspondin g to various
+
+       applications or operations. A user may interact With the user--interface objects to activate an
+
+       application or perform an operation. It should be appreciated, however, that the device 400,
+
+20     upon being unlocked, may display additional or alternative user--interface obj ects.
+
+       [0077]  In some embodiments, the unlock image 402 may also be used to indicate
+
+       failure of performance of the unlock action. For example, if the user breaks the contact with
+
+       the touch screen before the unlock image reaches the right end of the channel 404, the unlock
+
+       action has failed. The device 400 may display the unlock image 402 returning to its initial
+
+25     position on the left end of the channel 404, allowing the user to attempt the unlock action
+
+       again, if she so chooses. In some embodiments, the device goes back to sleep if no gesture is
+
+       applied in a predetermined period of time.
+
+       [0078]  In some embodiments, the user may unlock the device 400 by contacting the
+
+       touch screen 408 and moving the point of contact horizontally along a fiaction of the channel
+
+30     404, i.e., the user need not move all the way to the right end of the channel. In some
+
+       embodiments,- the user may unlock the device 400 by making contact anywhere on the touch
+
+20/50                                              18
+                                                                                                     05-07-2007
+Printed: 24-07-2009  A1PAMPHLET                                                EP 06 846 405
+
+               W                                          W
+
+       screen 408 and moving the point of contact horizontally as if he or she were following the
+       channel 404.
+
+       [0079]  In some embodiments, the lock/unlock feature may apply to specific
+
+       applications that are executing on the device 400 as opposed to the device 400 as a Whole. In
+
+       some embodiments, an unlock gesture transitions from one application to another, for
+
+       cxamplc, from a telephone application to a music player or vice vcrsa. The lock/unlock
+
+       feature may include a hold or pause feature. In some embodiments, as the user transitions
+
+       from a first application and to a second application, a user interface for the second application
+
+       may fade in (i.e., increase in intensity) and a user interface for the first application may fade
+
+10     out (i.e., decrease in intensity). The fade in and fade out may occur smoothly over a pre-
+
+       determined time interval, such as 0.2 s, is or 25. The predetermined time interval may be in
+
+       accordance with the unlock gesture, such as the time it takes the user to perform the gesture.
+
+               Indication ofProgress Towards Satisfaction ofa User Input Condition
+
+       [0080]  Figure 6 is a flow diagram illustrating a process 600 for indicating progress
+
+15     towards satisfaction of a user input condition according to some embodiments of the                _
+
+       invention. While the process flow 600 described below includes a number of operations that
+
+       appear to occur in a specific order, it should be apparent that these processes can include
+
+       more or fewer operations, which can be executed serially or in parallel (e.g., using parallel
+
+       processors or a multi-threading environment).
+
+20     [0081]  ` While an electronic device is in a first user--interface state, progress is detected
+
+       (602) towards satisfaction of a user input condition needed to transition to a second user-
+
+       interface state. In some embodiments, the first user-interface state is for a first application and
+
+       the second user-interface state is for a second application. In some embodiments, the first
+
+       user-interface state is a lock state and the second user-interface state is an unlock state.
+
+25     [0082]  While the dcvicc is in thc first uscr--intcrfacc state, progress is indicated (604)
+
+       towards satisfaction of the condition by transitioning an optical intensity of one or more user
+
+       interface obj ects associated with the second uset-interface state. The change in optical
+
+       intensity of the user--interface obj ects provides a user with sensory feedback of the progress in
+
+       transitioning bctwccn user interface states.
+
+30     [0083]  In some embodiments, in addition to visual feedback, the device supplies non--
+
+       visual feedback to indicate progress towards satisfaction of the user input condition. The
+
+                                                      19
+
+21/50                                                                                                05-07-2007
+Printed: 24-07-2009  .  A1PAMPHLET                                                  EP 06 846 405
+
+       W                                                     W
+
+       additional feedback may include audible feedback (e.g., sound(s)) or physical feedback (e.g.,
+       vibration(s)).
+
+       [0084]        The device transitions (606) to the second user--interface state if the condition
+
+       is satisfied. In some embodiments, in addition to visual feedback, the device supplies non-
+
+       viSual feedback to indicate satisfaction of the user input condition. The additional feedback
+
+       may include audible feedback (e.g., sound(s)) or physical feedback (e.g., vibration(s)).
+
+       [0085]        The optical intensity of a user-interface object, as used herein, is the object's
+
+       degree of visual materialization. The optical intensity may be measured along a scale
+
+       between a`predefined minimum and a predefined maximnm. In some embodiments, the
+
+10     optical intensity may be measured along a logarithmic scale. In some embodiments, the
+
+       optical intensity may be perceived by users as a transparency effect (or lack thereof) applied
+
+       to the user--interface obj ect. In some embodiments, the minimum optical intensity means that
+
+       the object is not displayed at all (i.e., the object is not perceptible to the user), and the
+
+       maximum optical intensity means that the object is displayed witho ut any transparency efiect
+
+15     (i.e., the object has completely materialized visually and is perceptible to the user). In some
+
+       other embodiments, the optical intensity may be the visual differentiation between the user--
+
+       interface object and the background, based on color, hue, color saturation, brightness,
+
+       contrast, transparency, and any combination thereof.
+
+       [0086]        In some embodiments, the optical intensity of the userainterface obj ects to be
+
+20     displayed in the second user-interface state is increased smoothly. Smoothly may include a
+
+       transition time that is greater than a pre-defined threshold, for example, 0.2 3, Is or 23. The
+
+       rate of the transition of the optical intensity may be any predefined rate.
+
+       [0087]        In some embodiments, the indication of progress towards completion of the
+
+       user input condition is a function of the user's satisfaction of the condition. For example, for
+
+25     a transition to an unlock state, the indication of progress towards completion is a fimction of
+
+       the user's performance of an unlock action. For a linear function, the indication of progress
+
+       is 10% complete when the unlock action is 10% complete; the indication of progress is 50%
+
+       complete when the unlock action is 50% complete, and so forth, up to 100% completion of
+
+       the unlock action, at which point the transition to the unlock state occurs. Correspondingly,
+
+30     for a linear fimction, the transition of the optical intensity from an initial value to a final value
+
+       is 10% complete when the unlock action is>10% complete; the transition is 50% complete
+
+       when the unlock action is 50% complete, and so forth, up to 100% completion of the unlock
+
+                        20
+
+22/50                                                                                                 05-07-2007
+Printed: 24-07-2009              A1PAMPHLET                                 EP 06 846 405
+
+                 4040074046240-                         W0--
+
+         action, at Which point the optical intensity is at its final value. In some embodiments, the user
+         may perceive the optical intensity transition as a fading in of the user-interface objects as the
+         unlock action is performed. It should be appreciated that the function need not be linear and
+         alternative fimctions may be used, further details of which are described below, in relation to
+         Figures 8A -- 8C.
+
+         [0088]  If the user input condition includes a prcdcfincd gesture then the indication of
+
+         progress of the gesture may be defmed in terms of how much of the gesture is completed and
+
+         how much of the gesture is remaining. For example, if the gesture includes moving the finger
+
+         from one edge of the screen to the opposite edge horizontally, then the indication of progress
+
+     10  may be defined in terms of the distance between the two edges because the distance
+     15
+     20  remaining objectively measures how much further the user has to move her finger to
+     25
+     30  complete the gesture.
+23/50
+         [0089]  If the user input condition includes dragging an image to a predefined
+
+         location, then the indication 'of progress may be defined in terms of the distance between the
+
+         initial location of the image and the predefined location to which the image is to be dragged
+
+         in order to complete the input condition.
+
+         [0090]  If the user input condition includes dragging an image along a predefined path,
+
+         then the indication of progress may be defined in terms of the length of the predefined path.
+
+         [0091]  Figures 7A -- 7D illustrate the GUI display of a device that is transitioning the
+
+         optical intensity of user-interface obj ects concurrent with a transition from a first user
+
+         interface state to a second user interface state, according to some embodiments of the
+
+         invention. In Figure 7A, the device 700 is locked and has received an incoming call. The
+
+         device 700 is displaying a prompt 706 to the user, informing the user of the incoming call, on
+
+         the touch screen 714. The device is also displaying the unlock image 702 and channel 704 so
+
+         that thc user can unlock the device 700 in order to accept or decline the incoming call. The
+
+         user begins the unlock action by making contact on the touch screen With her finger 710 on
+
+         the unlock image 702.
+
+         [0092]  In Figure 7B, the user is in the process of dragging the unlock image 702
+
+         along the channel 704 in the direction of movement 712. As the user drags the unlock image,
+
+         a set of virtual buttons 708 appears and increases in Optical intensity. The virtual buttons 708
+
+         are shown with dotted outlines to indicate that they are not yet at their final optical intensity
+
+         levels. The virtual buttons 708 are associated with the prompt 706; the'virtual buttons shown
+
+                                                    21
+
+                                                                                                      05-07-2007
+Printed: 24-07-2009  A1PAMPHLET                                                             EP 06 846 405
+
+                W                                                       W
+
+       in Figure 7B -- 7D allow the user to decline or accept the incoming call. However, the user
+       cannot interact with the vittual buttons 708 until the device is unlocked and the virtual
+       buttons have reached their final optical intensity. In Figure 7C, the user drags the unlock
+       image 702 further along the channel 704 in the direction of movement 712. The virtual
+       buttons 708 have increased further in optical intensity relative to their optical intensity in
+       Figure 73, as illustrated by their different style of dotted outlines. The increases in optical
+       intensity indicate to the user progress towards completion of the unlock action.
+
+       [0093]  In Figure 7D, the user completes the unlock action by dragging the unlock
+
+       image to the right end of the channel 704 and releasing the unlock image 702. The device
+
+10     700 transitions to the unlock state. The unlock image 702 and the channel 704 disappear
+
+       From the display and the virtual buttons 708 are at their final optical intensity levels, as
+
+       illustrated by their solid outlines. At this point the user may interact with the virtual buttons
+
+       708 and accept or decline the incoming call.
+
+       [0094]  As described above in relation to Figures 5A -- 5D, if the unlock action fails
+
+15     because the user releases the unlock image prematurely, the unlock image may return to its
+
+       initial location. In some embodiments, the optical intensity of the virtual buttons 708 or other
+
+       user-interface objects that were increasing in optical intensity as the unlock action was
+
+       berformed may, concurrent with the return of the unlock image to its initial location, have
+
+       their optical intensity decreased smoothly, back to their initial levels.
+
+20     [0095]  Figures 8A -- 8C are graphs illustrating optical intensity as a function of the
+
+       completion of the user input condition, according to some embodiments of the invention. In
+
+       Figure 8A, the optical intensity is a linear function of the completion of the user input
+
+       condition. At 0% completion, the optical intensity is at an initial value (in this case, the
+
+       initial value is 0). As the completion percentage increases, the optical intensity increases
+
+25     linearly with the completion percentage, until it reaches the final value at 100% completion.
+
+       [0096]  In Figure 8B, the optical intensity is a nonlinear function of the completion of
+
+       the user input condition. At 0% completion, the optical intensity is at an initial value (in this
+
+       case, the initial value is 0). As the completion percentage increases, the optical intensity
+
+       increases gradually at first, but the increase becomes steeper as the completion percentage
+
+30     increases, until it reaches the final value at 100% completion.
+
+       [0097]  In Figure 8C, the optical intensity is another nonlinear function of the
+
+       completion of the user input condition. At 0% completion, the opti cal intensity is at an initial
+
+                                                     22
+
+24/50                                                                                                05-07-2007
+Printed: 24,07_2009;     A1PAMPHLET`;                      EP 06 846 405}
+
+               W                       W
+
+          value (in this case, the initial value is 0). As the completion percentage increases, the optical
+          intensity increases steeply at first, but the increase becomes more gradual as the completion
+          percentage increases, until it reaches the final value at 100% completion. In some
+          embodiments, the optical intensity may increase according to a logarithmic scale.
+
+          [0098]         In some embodiments, the optical intensity may reach its final value prior to
+
+          100 % completion of thc user input condition (c.g., at 90% completion).
+
+                   User Interface Active States Corresponding to Events or Applications
+
+          [0099]         Figurc'9 is a flow diagram illustrating a process 900 for transitioning a device
+
+          to a user interface active state corresponding to one of a plurality of unlock images, according
+
+      10  to some embodiments of the invention. In some embodiments, the device may have one or
+      15
+      20  more active applications running when the device becomes locked. Additionally, while
+   `25
+      30  locked, the device may continue to receive events, such as incoming calls, messages,
+
+25/501"   voicemail notifications, and so forth. The device may display multiple unlock images on the
+
+          touch screen, each unlock image corresponding to an active application or incoming event.
+
+          Performing the unlock action using one of the multiple unlock images unlocks the device and
+
+          displays the applieation and/or event corresponding to the unlock image. The user interface
+
+          active state, as used herein, means that the device is unlocked and a corresponding
+
+          application or event is displayed on the touch screen to the user. While the process flow 900
+
+          described below includes a number of operationsthat appear to occur in a specific order, it
+
+          should be apparent that these processes can include more or fewer operations, which can be '
+
+          executed serially or in parallel (e.g., using parallel processors or a multi-threading
+
+          environment).
+
+          [00100]        The device is locked upo'n satisfaction of a predefined lock condition (902).
+
+          The device may have active applicatiens nmning when it is locked and the active applications
+
+          may continue running while the device is locked. Additionally, while the device is locked, '
+
+          the device may receive events, such as incoming calls, messages, and Voicemail notifiCations.
+
+          [00101] ' The device displays a plurality of unlock images, each displayed unlock image
+          corresponding to an active application running or an event received while the device is locked
+          (904). In some cmbodimcnts, the device also displays visual cues of the unlock action with
+          respect to each unlock image. The device may display additional unlock images and visual
+          cues as additional events are received. The user makes contact with the touch screen (906).
+          The device detects the contact gesture (908). If the detected contact gesture does not '
+
+                                                                         23
+
+                                                                                                  ' .Ofirbiiéébfi
+Printed: 24-07-2009   A1PAMPHLET'                                                         EP 06 846 405
+
+                 W                                                    W
+
+    10  correspond to successful performance of the unlock action with respect to any one of the
+    15  displayed unlock images (e.g., because the contact is not an attempt to perform the unlock
+    20  action or the unlock action failed/was aborted) (910 -- no), the device remains locked (912).
+    25  If the detected contact gesture does correspond to successful performance of the unlock
+    30  action with respect to one of the displayed unlock images (910 -- yes), the touch screen is
+26/50   unlocked and the running application or event corresponding to the one of the unlock images
+        is displayed on the touch screen (914). In other words, the device transitions to a first active
+        state corresponding to the first image if the detected contact corresponds to a predefined
+        gesture with respect to the first image; the device transitions to a second active state distinct
+        from the first active state and corresponding to the second image if the detected contact
+        corresponds to a predefined gesture with respect to the second image; and so on.
+
+        [00102]       The device becomes unlocked and makes the corresponding event or
+
+        application visible to the user, active, or running in the foreground, as opposed to running in
+
+        the background, upon performance of the unlock action With respect to the particular unlock
+
+        image. The user-interface active state includes the running application or incoming event
+
+        corresponding to the particular unlock image with which the user interacted being displayed
+
+        prominently on the touch screen, in addition to the device being unlocked. Thus, unlocking
+
+        using a first unlock image (ifmultiple unlock images are displayed) transitions the device to a
+
+        first user--interface active state, in which the device is unlocked and the application/event '
+
+        corresponding to the first unlock image is displayed prominently. Unlocking using a second
+
+        image transitions the device to a second user-interface active state, in which the device is
+
+        unlocked and the application/event corresponding to the second unlock image is displayed
+
+        prominently.
+
+        [00103]       In some embodiments, the device may prioritize which unlock images to
+
+        display. The device may display a subset of the corresponding unlock images on the touch
+
+        screen at one time. The device may decide which subset to display based on one or more
+
+        predefined criteria. For example, the device may display only unlock images corresponding
+
+        to the most recent events and/or running applications. As another example, the device may
+
+        display only unlock images corresponding to incoming events.
+
+        [00104]       Figure 10 illustrates the GUI of a device 1000 in a user--interface lock state
+
+        that displays a plurality ofunlock images, according to some embodiments of the invention.
+
+        In Figure 10, the touch screen 1014 of the device 1000 is locked. A first unlock image 1002
+
+        is displayed with corresponding visual cues, such as the first channel 1004 and arrow 1006.
+                                                                       24
+
+                                                                                        05-07-2007
+Printed: 24-07-2009  A1PAMPHLET'                                                              EP 06 846 405
+
+               W                                                          W0-
+
+       A second unlock image 1008 is displayed with corresponding visual cues, such as the second
+       channel 1010 and arrow 1012. The touch screen 1014 may display additional unlock images
+       and visual cues. The first unlock image 1002 corresponds to a first running application or
+       received event. The second unlock image 1008 corresponds to a second running application
+       or received event. The first and second unlock images and visual cues are similar to the
+       unlock image and visual cues described above, in relation to Figures 4A and 4B. The arrows
+       1006 and 1012 may be animated to move from one end of the channels 1004 and/or 1010 to
+       the other end, in order to indicate the proper direction of the predefined gesture or movement
+       of the unlock image.
+
+10     [00105]  Figures 11A -- 11F illustrate the GUI display of a device at vaIious points in
+
+       the performance of an unlock action gesture corresponding to one of a plurality ofunlock
+
+       images, according to some embodiments of the invention. In Figure 11A, the user makes
+
+       contact with the touch screen 1014 using her finger 1102 (not shown to scale), at the location
+
+       corresponding to the second unlock image 1008. The user performs the unlock action gesture
+
+15     by moving the point of contact, dragging the second unlock image 1008. Figure 1 13 shows a
+
+       snapshot of the device 1000 during the pendency ofthe unlock action. The second unlock
+
+       image 1008 is moved along in the channel 1010 in the direction of movement 1104.
+
+       [00106]  Figure 11C shows the second unlock iInage 1008 moved to the end of the
+
+       channel 1 010, where the unlock action with respect to the second unlock image 1 008 will be
+
+20     completed once the user breaks the contact (and releases the second unlock image 1008). In
+
+       some embodiments, the unlock action is completed when the unlock image 1008 is moved to
+
+       the end of the channel 1010, with or without the user breaking contact, and the second unlock
+
+       image 1 008 disappears. As shown in Figure 1 1D, upon completion of the unlock action with
+
+       respect to the second unlock image 1008, the device displays on the touch screen the user--
+
+25     interface objects 1 106 associated with the application or event corresponding to the second
+
+       unlock image 1008. In Figure 11D, the event corresponding to the second unlock image is an
+
+       incoming text message event and a prompt for the user to read it.
+
+       [00107]  The user, instead of performing the unlock action with respect to the second
+
+       unlock image 1108, may instead perform the unlock action gesture with respect to the first
+
+30     unlock image 1002. In Figure 11E, the user does so and performs the unlock action with
+
+       respect to the first unlock image 1002 by dragging the first unlock image, in the direction
+
+       1 104, to the right end of the channel 1004. Upon completion of the unlock action, the device
+
+       1000 displays the user--interface objects 1108 associated with the application or event
+                                                                25
+
+27/50                                                                                           05-07-2007
+Printed: 24-07-2009   A1PAMPHLET                                                            EP 06 846 405
+
+           W                                                           W
+
+       corresponding to the first unlock image 1002. In Figure 11F, the application corresponding
+       to the first unlock image is a music player application.
+
+       [00108]        In some embodiments, the transition to a user interface active state, as
+
+       described in Figures 9 and 11A -- 11E, may also include a concurrent transition in the optical
+
+       intensity of us'er-interface objects, similar to that described above in relation to Figures 6, 7A
+
+       -- 7D, and 8A -- 8C. Concurrcnt with the transition to a user interface active state, the user-
+
+       interface objects associated with the application or event corresponding to the unlock image
+
+       with which the user interacted to unlock the device increase in intensity. For example, the
+
+       optical intensity of the user--interface objects 1106 associated with the text message prompt in
+
+10     Figure 11D may be increased smoothly, as a function of the progress towards completion of
+
+       the unlock action with respect to the second unlock image 1008. As another example, the
+
+       optical intensity of the user--interface objects 1108 associated with music player application in
+
+       Figure 11F may be increased smoothly, as a fimction of the progress towards completion of
+
+       the unlock action with respect to the first unlock image 1002.
+
+15     [00109]        The foregoing description, for purpose of explanation, has been described with
+
+       reference to specific embodiments. However, the illustrative discussions above are not
+
+       intended to be exhaustive or to limit the invention to the precise forms disclosed. Many
+
+       modifications and variations are possible in view of the above teachings. The embodiments
+
+       were chosen and described in order to best explain the principles of the invention and its
+
+20     practical applications, to thereby enable others skilled in the art to best utilize the invention
+
+       and various embodiments with various modifications as are suited to the particular use
+
+       contemplated.
+
+28/50                 26
+
+                                                                  05-07-2007
+Printed: 06-07-2009  CLMS  EP 06 846 405
+
+             l.      A computer-implemented method of contro11ing a portable electronic de-
+      5              vice (400, 1000) comprising a touch-sensitive display (408, 1014), com-
+                     prising:
+     10              detecting (308, 908) contact with the touch-sensitive display (408, 1014)
+                     while the device is in a user-interface lock state;
+     15              transitioning (314, 914) the device (400, 1000) to a user-interface unlock
+                     state if the detected contact corresponds to a predefined gesture; and
+                     maintaining (312, 912) the device (400, 1000) in the user-interface lock
+                     state if the detected contact does not correspond to the predefined gesture;
+                     characterized by
+                     moving an unlock image (402, 1002, 1008) along a predefined displayed
+                     path on the touch-sensitive display (408, 1014) in accordance with the con-
+                     tact, wherein the unlock image (402, 1002, 1008) is a graphical, interac-
+                     tive user-interface object with which a user interacts in order to unlock the
+                     device (400, 1000).
+
+     20 2.           The computer-implemented method of claim 1, further comprising dis-
+     25              playing (304) the unlock image (402) and one or more visual cues on the
+                     touch-sensitive display (408) while the portable electronic device (400) is
+                     in a user-interface lock state, wherein the one or more visual cues indicate
+                     a movement of the unlock image (402) along the touch-sensitive display
+                     (408) that will unlock the device (400).
+
+1/6                        16-06-2009
+Printed: 06-07-2009  CLMS                                                                  EP 06 846 405
+
+_                       -2-
+
+        b.)          The computer-implemented method of claim 1, further comprising dis-
+
+                     playing (304) the unlock image (402) on the touch-sensitive display (408)
+
+                     while the device (400) is in a user-interface lock state; and
+
+                     wherein the predefined gesture corresponds to moving the unlock image
+
+     5               (402) along the predefined displayed path on the touch-sensitive display
+
+                     (408) to a predefined location on the touch-sensitive display (408).
+
+            4.       The computer-implemented method of claim 1, further comprising dis-
+     10              playing (304) the unlock image (402) on the touch-sensitive display (408)
+                     while the device (400) is in a user-interface lock state; and
+                     wherein the predefined gesture corresponds to moving the unlock image
+                     (402) across the touch-sensitive display (408) according to the predefined
+                     displayed path on the touch-sensitive display (408).
+
+     15 5.           The computer-implemented method of claim 1, fithher comprising.
+     20                       displaying (904) a first unlock image (1002) and a second unlock
+     25
+                     image (1008) on the touch-sensitive display (1014) while the device
+                     (1000) is in a user-interface lock state; and
+                     wherein transitioning the device (1000) to a user-interface unlock state
+                     comprises:
+                     transitioning (914) the device (1000) to a first active state corresponding to
+                     the first unlock image (1002) ifthe detected contact corresponds to a pre-
+                     defined gesture with respect to the first unlock image (1002); and
+                     transitioning (914) the device (1000) to a second active state distinct from
+                     the first active state if the detected contact corresponds to a predefined ges-
+                     ture with respect to the second unlock image (1008).
+
+             6.      A portable electronic device (100, 400, 1000), comprising:
+     30              a touch-sensitive display (126, 408, 1014);
+                     one or more processors (106);
+                                                                                           H 102
+                     memory (M; and
+
+2/6                  '                                                                     16-06-2009
+Printed: 06-07-2009     CLMS       EP 06 846 405
+
+_                             -3-
+
+      5              one or more programs (132 to 146), wherein the one or more programs
+                     (132 to 146) are stored in the memory M and configured to be executed H I02.
+     10 '            by the one or more processors (106), the programs (132 to 146) including
+                     instructions for:
+     15              detecting (308, 908) contact with the touch-sensitive display (126, 408,
+                     1014) while the device (100, 400, 1000) is in a user-interface lock state;
+     20              transitioning (314, 914) the device (100, 400, 1000) to a user-interface
+             7.      unlock state if the detected contact corresponds to a predefined gesture;
+                     and
+                     maintaining (312, 912) the device (100, 400, 1000) in the user-interface
+                     lock state if the detected contact does not correspond to the predefined ges-
+                     ture;
+                     characterized in that
+                     the programs (132 to 146) fithher include instructions for moving an
+                     unlock image (402, 1002, 1008) along a predefined displayed path on the
+                     touch-sensitive display (126, 408, 1014) in accordance with the contact,
+                     wherein the unlock image (402, 1002, 1008) is a graphical, interactive
+                     user-interface object with which a user interacts in order to unlock the de-
+                     vice (100, 400, 1000).
+
+                     The portable electronic device of claim 6, wherein the device (100, 400,
+
+                      1000) is a portable multifunction device.
+
+            8.       The portable electronic device of claim 6, further comprising instructions
+     25              for preventing (302, 310, 312) the device (100, 400) from performing a
+                     predefined set of actions in response to detecting any contact with the
+                     touch-sensitive display (126, 408) that does not correspond to the prede-
+                     fined gesture while the device (100, 400) is in the uéer-interface lock state.
+
+3/6                  '             16-06-2009
+Printed: 06-07-2009                        CLMS          EP 06 846 405
+
+                                                 -4-
+
+         9. The portable electronic device of claim 6, wherein the predefined dis-
+                  played path is a channel (404).
+
+         [0. The portable electronic device of claim 6, wherein the detected contact is a
+
+     5               movement of a point of contact across the touch-sensitive display (126,
+
+                     408) while maintaining continuous contact with the touch-sensitive display
+
+                     (126, 408).
+
+         11. The portable electronic device of claim 10, wherein the movement of the
+
+     10              point of contact across the touch-sensitive display (126, 408) while main-
+
+                     taining continuous contact with the touch-sensitive display (126, 408) is a
+
+                     horizontal movement.
+
+         12. The portable electronicdevice of claim 6,
+
+     13              wherein the one or more programs (132 to 146) further comprise instruc-
+
+                     tions for displaying (304) the unlock image (402) and one or more visual
+
+                     cues on the touch-sensitive display (126, 408) while the portable electronic
+
+                     device (100, 400) is in a user-interface Iock state,'wherein the one or more
+
+                     visual cues indicate a movement of the unlock image (402) along the
+
+     20              touch-sensitive display (126, 408) that willl-tel unlock the device (100,
+
+                     400 .'
+
+             1.). The portable electronic device of claim 12, wherein the one or more visual
+                        cues include an arrow.
+
+     25
+
+             14. The portable electronic device of claim 12, wherein the one or more visual
+                      cues include text.
+
+         15. The portable electronic device of claim 6,
+
+     30              wherein the one or more programs (132 to 146) further comprise instruc-
+
+                     tions for displaying (304) the unlock image (402) on the touch-sensitive
+
+4/6                                              '       . 16-06-2009;
+Printed: 06-07-2009                             CLMS                                     EP 06 846 405
+
+                                                      -5-
+
+                     display (126, 408) while the device (100, 400) is in a user-interface lock
+
+                     state; and
+
+                     wherein the predefined gesture corresponds to moving the unlock image
+
+                     (402) along the predefined displayed path on the touch-sensitive display
+
+     5               (126, 408) to a predefined location on the toueh-sensitive display (126,
+
+                     408).
+
+         16. The portable electronic device of claim 6, whe'reinthe one or more pro-
+
+                     grams (132 to 146) further comprise instructions for displaying (304) the
+
+     IO              unlock image on the touch-sensitive display while the device is in a user-
+
+                     interface lock state; and
+
+                     wherein the predefined gesture corresponds to moving the unlock image
+                     (402) across the touch-sensitive display (126, 408) according to a prede-
+
+                     fined displayed path on the touch-sensitive display (126, 408).
+
+     15                                                                               `
+
+         17. The portable electronic device of claim 6, wherein the one or more pro-
+                  grams further comprise instructions for displaying (904) a first unlock im-
+
+                     age (1002) and a second unlock image (1008) on the touch-sensitive dis-
+
+                     play (1014) while the device (1000) is in a user-interface lock state; and
+
+     20              wherein the instructions for transitioning the device to a user-interface
+
+                     unlock state comprise:
+                     instructions for transitioning the device (1000) to a first active state corre-
+
+                     sponding to the first unlock image (1002) if the detected contact corre-
+
+                     sponds to a predefined gesture with respect to the first unlock image
+
+     25              (1002), and
+
+                     instructions for transitioning the device (1000) to a second active state dis-
+                     tinct from the first active state if the detected contact corresponds`to a pre-
+
+                     defined gesture with respect to the second unlock image (1008).
+
+     30
+
+5/6                                                                                                   1 6-06-2009
+Printed: 06-07-2009                  CLMS       -     EP 06 846 405
+
+                                           -6-
+
+           18. A computer program product with instructions configured for execution by
+
+                     one or more processors (106), which when executed by a portable elec-
+
+                     tronic device (100, 400, 1000) with a touch-sensitive display (126, 408,
+
+                     1014), cause the device (100, 400, 1000) to perform the method of any of
+
+     5               claims 1 to 5.
+
+6/6     `                                          `  16-06-2009
+Memory 102 \ .- Figure l                                     Device 100
+
+Operating System               -            1'1 32                         130
+                                                            Power
+Communication Module                        f134            System
+
+ContactIMotion Module`                      f138
+
+Graphics Module                             f140
+
+Optical Intensity Module                    .1442
+
+User Interface State Module                 .1444
+                                            f150
+          Lock Module
+                                            f152
+            Unlock Module
+                                            f146
+Application(s)
+
+      1 10Av                             {1 03 110                     T
+
+  10\ 4 _ Memory            `                          110  RF C1ir1c2uitry
+                Controller                                         A
+
+111                            Penp- herals                 External Port
+
+             110-" g            Interface                         143 . . Spe1a1k6er
+
+ 106\ CPU                                     "0            Audio _[fl/
+
+         _                            4                     Circuitry  fl
+
+                                                              114
+
+                            - 1 10 1     `                                   Micr1o1p8hone
+
+                                  HO Subsystem 120
+
+ToUch-Screen                                          Other Input
+Controller 122                                    Controller(s) 124
+
+     4                                                  4
+
+110                                               110
+
+Touch Screen                                        Other Input /
+        126
+                                                  Control Devices
+                                                            1 28
+
+                                            1/15
+     ser                            2m
+
+206  l                          Device set to user
+                             interface lock state by
+
+                                    any predefined
+                                  manner; prevent
+
+                                    device from
+                             performing predefined
+
+                                  _ set of actions
+
+                           l
+
+                   204
+
+                            Display visual cue(s)
+
+                              of unlock action (9.9.,
+                                         gesture)
+
+ \                 208
+
+Contact the touch
+sensitive display
+
+                   vf   Detect contact with
+
+                           touch sensitive
+                                display
+
+                   Yes    Does contact
+                         correspond to
+                        unlock gesture?
+
+Figure 2                     212
+
+                                          Maintain device in
+                                          user interface lock
+
+                                                        state
+
+                             214
+
+                                         Transition device to
+
+                               > user interface unlock
+
+                                                    state
+
+                   2/15
+                     300 --\           Dev' e
+
+                                       Device set to user
+
+                                 302 ' interface lock state by
+
+                              .        ' any predefined
+
+                                 K. manner, prevent H------`
+
+                                       device from
+
+                                       performing predefined
+
+                                       set of actions
+
+                                 304   l
+                                 \- Display unlock image
+
+                                       and visual cue(s) of
+
+                                       unlock action using the
+
+306                                    image (e.g.. gesture.
+
+ \                                     moving image to
+
+  Contact the touch                    location. moving
+  sensitive display
+                                       image along path)
+
+                                 308
+
+                                          Detect contact with
+                                       touch sensitive display
+
+                                            Does contact
+                                       correspond to unlock
+
+                                         gesture using the
+                                                 image?
+
+                                 312   Maintain device in
+                                   \4  user interface lock
+
+Figure '3 I                                      state
+
+                           314
+
+                                         Transition device to
+                     --------> user interface unlock
+
+                                                         state
+
+                              3/15
+Device
+  400
+
+        Touc Screen 408
+
+                                         Figure 4A
+
+             j: K 1
+             406
+        402                     `404
+
+                 Menu
+             Button 41 0
+
+        W
+
+Device
+  400
+
+                         1*           D  Figure 4B
+
+             406 J K 404
+
+        402                  `
+
+                 Menu
+             Button 41 0
+
+             4/15
+Device  0 ch Screen 408
+  400
+                   402
+                                          Figure 5A
+
+                                   \ 404
+
+        i502
+
+                  Menu
+              Button 410
+
+Device  -W
+  400
+
+        404   .               402
+
+                         cr-       .Q     Figure 5B
+
+             /           3Mov5e0m4ent`
+
+        502 .
+
+                  Menu
+
+              mm
+
+              5/15
+Device    Touch Scree 08
+  400                      404
+
+                                402  Figure 5C
+
+          Movement
+               504 2
+
+                         Menu
+
+                  w
+
+Device I  ouc Screen 408             Figure SD
+
+%                   `
+     '
+           aaaa
+     508   aaaa
+           aaam`
+
+          6/15
+     600 \
+
+602    While an electronic device is in a first user-
+          interface state, detect prog ress towards
+ \
+     satisfaction of a user input condition needed to
+        transition to a second user-interface state
+
+604  While the device is in the first user-interface
+
+     state, indicate progress towards satisfaction of
+
+     the condition by transitioning an optical intensity
+
+     of one: or more user interface objects associated
+
+     with the second user-interface state
+
+606
+
+     Transition the device tothe second user-
+     interface state if the condition is satisfied
+
+     Figure 6
+
+            7/15
+Device   W                                 Figure 7A
+  700 `
+                      Incoming call from:
+                             John Doe
+                                 mobile
+
+                706 J
+
+           I  702 704 j
+
+         71D
+
+         Touch screen 714  \ 706
+
+Device        Incoming call from:             Figure 7B
+  700'               John Doe
+                      mobile               Movement
+
+              (Eecling) . wficcefiD            712 E
+
+         c Br 710 -:
+
+              7 7041
+
+                    702
+
+              8/15
+        Touch screen 714  706 \
+
+Device         Incoming call from:   Figure 7C
+                      John Doe
+  700                    mobile     Movement
+
+   K.        (132359 (53%}:9} 708       712 E
+
+             710-1 .
+
+        704               702
+
+        Touch screen 714  706\
+
+Device       Incoming call from:    Figure 7D
+  700              John Dde
+                     mobile
+
+                       -} 708
+
+                          9/15
+Figure 8A                       Optical Intensity
+
+                              0%                                 Completion 1 60%
+
+Figure 8B  Optical Intensity `
+
+                                                   0% '          Completion  1d0%
+
+Figure 8C  Optical Intensity
+
+                                                   0 M'          Completion  1 d0%
+
+                                                          10/15
+       User        900 --\       Devicg
+
+                                          Device set to user
+                            902 interface lock state by
+
+                                      any predefined manner,
+                                         prevent device from
+
+                                       performing predefined
+                                             set of actions
+
+                            904      1
+
+                             k   Display 2 (or more)
+
+                                 .unlock images and
+
+\ 906  1                         visual cue(s) of manner
+
+                                 of transitioning to active
+
+Contact the touch                state using the images
+sensitive display
+                            908
+                             K
+
+                                         ~ Detect contact with
+                                        touch sensitive display
+
+       Figure 9                                   Does contact
+                                            correspond to unlock
+
+                                               gesture using an
+                                                       image?
+
+                             912
+
+                                          Maintain device in user
+                                             interface lock state
+
+                             914
+
+                          k Transition device to
+
+                                                active state
+                                          corresponding to the
+                                         image used (e.g., first
+                                             image -> first active
+                                      state, seodnd image ->
+                                         second active_ state, ...)
+
+                   11/15
+        1 )-P                 J
+
+Device     2] \1005           k1004
+
+ 1000    100                          D
+
+             2 )r>            K4010 '
+
+                       \1012
+
+        100
+
+        Touch Screen 1014
+
+        Figure 10
+
+               12/15
+        Touch Screen 1014
+
+        100                       1004
+
+Device                                       Figure 11A
+
+ 1 000  '         V 008           1010
+        j
+   K.
+
+             102
+
+        MW
+
+              /'\
+                 1
+
+Device                   1008      004
+ 1 000
+        100
+                  (2) )                      Figure 113
+            C
+
+                                        010
+
+                         Movement
+
+        110              a 1104
+
+                         13/15 ,
+            S Touc ch ree0n 4       3
+
+                    rk4004     10°
+
+De1v0i0c0e                                        Figure 1 1C
+
+     \      101                (1
+
+                 Movement                   1 02
+
+                 1 104 E
+
+            Touch Scregn 1015
+
+                         New text message!
+                          Read messag'e?`
+
+D'                      J
+13336       0    110,6                      '     Figure 11D
+
+K.
+
+                 14/15
+        Touch Screen 1014 1 002
+
+Device  1O                          ) 102  Figure 11E
+ 1 000   100 `
+                           10101
+
+        Movement
+            1104 2
+
+Device                     Music Player
+                             Song A
+ 1 000                       Artist X
+
+   \,   L®®®®@@®J
+
+                                           Figure 11F
+
+        Touch Screen 1014
+
+                    15/15
+

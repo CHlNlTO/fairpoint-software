@@ -1,0 +1,250 @@
+                                       PATENT COOPERATION TREATY
+
+                                                PCT
+
+              INTERNATIONAL PRELIMINARY REPORT ON PATENTABILITY
+                                   (Chapter I of the Patent Cooperation Treaty)
+
+                                                     (PCT Rule 44bis)
+
+Applicant's 0r agent's file reference  FOR FURTHER ACTION                          See item 4 below
+87086495PCT2
+                                                                                   Priority date (day/monlh/year)
+International application No.          International filing date (day/monlh/year)  26 April 2021 (26.04.2021)
+PCT/CN2022/087722                      19 April 2022 (19.04.2022)
+
+International Patent Classification (IPC) or national classification and IPC
+See relevant information in Form PCT/lSA/237
+
+Applicant
+HUAWEI TECHNOLOGIES CO., LTD.
+
+I. This international preliminary report on patentability (Chapter I) is issued by the International Bureau on behalf of the
+       International Searching Authority under Rule 44 bis. 1(a).
+
+2. This REPORT consists of a total of 5 sheets, including this cover sheet.
+
+       In the attached sheets, any reference to the written opinion of the International Searching Authority should be read as a reference
+       to the international preliminary report on patentability (Chapter I) instead.
+
+3. This report contains indications relating to the following items:
+
+EDD ED Dflfi  Box No. I                Basis of the report
+
+              Box No. II               Priority
+
+              Box No. III              Non-establishment of opinion With regard to novelty, inventive step and industrial
+                                       applicability
+
+              Box No. IV               Lack of unity of invention
+
+              Box No. V                Reasoned statement under Article 35(2) With regard to novelty, inventive step and industrial
+                                       applicability; citations and explanations supportng such statement
+
+              Box No. VI               Certain documents cited
+
+              Box No. VII              Certain defects in the international application
+
+              Box No. VIII             Certain observations on the international application
+
+4. The International Bureau Will communicate this report to designated Offices in accordance With Rules 44bis.3(c) and 93bis.l but
+       not, except Where the applicant makes an express request under Article 23(2), before the expiration of 30 months from the priority
+       date (Rule 44bis .2).
+
+                        The International Bureau of WIPO              Date of issuance of this report
+                             34, chemin des Colombettes               24 October 2023 (24.10.2023)
+                            1211 Geneva 20, Switzerland               Authorized officer
+
+Form PCT/IB/373 (revised January 2020)                                                                 XlaOfan Tang
+                                                                      e-mail pct.team2@wipo.int
+                                      PATENT COOPERATION TREATY TRANSLATION
+
+From the INTERNATIONAL SEARCHING AUTHORITY                                            PCT
+
+To:
+
+                                                                                   WRITTEN OPINION OF THE
+                                                                       INTERNATIONAL SEARCHING AUTHORITY
+
+                                                                                      (PCT Rule 43bis.1)
+
+                                               Date of mailing                        19 July 2022
+                                                (day/month/year)
+
+Applicant's or agents file reference                                   FOR FURTHER ACTION
+                            87086495PCT2                                                       See paragraph 2 below
+
+International application No.             International filing date (day/month/year)  Priority date (day/month/year)
+         PCT/CN2022/087722                                19 April 2022                               26 April 2021
+
+International Patent Classification (IPC) or both national Classification and IPC
+        G06F 3/0481(2022.01)i; G06F 3/0484(2022.01)i; G06F 3/0488(2022.01)i
+
+Apphcam                               HUAWEI TECHNOLOGIES C0., LTD.
+
+1. This opinion contains indications relating to the following items:
+
+         Box No. I  Basis of the opinion
+
+D Box No. 11 Priority
+
+D Box N0. 111 Non-establishment of opinion with regard to novelty, inventive step and industrial applicability
+
+D Box No. IV Lack of unity of invention
+
+         Box No. V  Reasoned statement under Rule 43bis.1(a)(i) with regard to novelty, inventive step and industrial applicability;
+                    Citations and explanations supporting such statement
+
+D Box No. VI Certain documents Cited
+
+D Box No. VII Certain defects in the international application
+
+D Box No. VIII Certain observations on the international application
+
+2. FURTHER ACTION
+
+     If a demand for international preliminary examination is made, this opinion will be considered to be a written opinion of the
+     International Preliminary Examining Authority ("IPEA") except that this does not apply where the applicant Chooses an Authority
+     other than this one to be the IPEA and the Chosen IPEA has notified the International Bureau under Rule 66.1bis(b) that written
+     opinions of this International Searching Authority will not be so considered.
+
+     If this opinion is, as provided above, considered to be a written opinion of the IPEA, the applicant is invited to submit to the IPEA
+     a written reply together, where appropriate, with amendments, before the expiration of 3 months from the date of mailing of Form
+     PCT/ISA/220 or before the expiration of 22 months from the priority date, whichever expires later.
+
+     For further options, see Form PCT/ISA/220.
+
+Name and mailing address of the ISA/      Date of completion of this opinion          Authorized officer
+
+Form PCT/ISA/237 (cover sheet) (JanuaIy 2015)
+                                                                                              TRANSLATION
+
+                       WRITTEN OPINION OF THE                                                 International application No.
+           INTERNATIONAL SEARCHING AUTHORITY                                                              PCT/CN2022/087722
+
+Box No. I  Basis of the opinion
+
+1. With regard to the language, this opinion has been established on the basis of:            which is the language of a translation
+             the international application in the language in which it was filed.
+
+    D a translation of the international application into
+             furnished for the purposes of international search (Rules 12.3(a) and 23.1(b)).
+
+2. D This opinion has been established taking into account the rectification of an obvious mistake authorized by or notified to
+             this Authority under Rule 91 (Rule 43bis.1(a)).
+
+3. D With regard to any nucleotide and/or amino acid sequence disclosed in the international application, this opinion has been
+           established on the basis of a sequence listing:
+
+     a. D forming part of the international application as filed:
+                          in the form of an Annex C/ST.25 text file.
+
+                 D on paper or in the form of an image file.
+     b. D furnished together with the international application under PCT Rule 13ter.1(a) for the purposes of international search
+
+                  only in the form of an Annex C/ST.25 text file.
+     C. D furnished subsequent to the international filing date for the purposes of international search only:
+
+                 D in the form of an Annex C/ST.25 text file (Rule 13ter.1(a)).
+                 D on paper or in the form of an image file (Rule 13ter.1(b) and Administrative Instructions, Section 713).
+
+4. D       In addition, in the case that more than one version or copy of a sequence listing has been filed or furnished, the required
+           statements that the information in the subsequent or additional copies is identical to that forming part of the application as
+           filed or does not go beyond the application as filed, as appropriate, were furnished.
+
+5. Additional comments:
+
+Form PCT/ISA/237 (BOX No. 1) (January 2015)
+                                                    TRANSLATION
+
+                       WRITTEN OPINION OF THE       International application No.
+           INTERNATIONAL SEARCHING AUTHORITY                    PCT/CN2022/087722
+
+Box No. V  Reasoned statement uhder Rule 43his.1(a)(i) with regard to novelty, inventive step and industrial applicability;
+           c1tat10ns and explanatlons supportlng such statement
+
+1. Statement                         Claims  1-11   YES
+      Novelty (N)                    Claims  None   NO
+                                     Claims  None   YES
+      Inventive step (IS)            Claims  1-1 1  NO
+                                     Claims  1-11   YES
+      Industrial applicability (IA)  Claims  None   NO
+
+   2. Citations and explanations:t_l
+
+        [1] The following documents are Cited:
+
+        [2] D1: CN 111684778 A, 18 September 2020
+
+         [3 D2: CN 110958475 A, 03 April 2020
+
+        [4] D3: CN 104581402 A, 29 Apri12015
+
+        [5] 1. Claim 1 relates to a device discovery method. D1 discloses an application function implementation
+
+                method, and discloses (Claims 1-4): a first electronic device establishing a first Wireless link by using a
+                first Wireless communications protocol; the first electronic device displaying a first interface, wherein the
+                first interface comprises: a first control associated With data that a user of the first electronic device wants
+                to share; in response to the first operation, the first electronic device displaying a shortcut menu, wherein
+                the shortcut menu comprises a second control; the first electronic device receiving a second operation for
+                the second control; in response to the second operation, the first electronic device displaying a discovery
+                device list, wherein the discovery device list comprises an identifier of a second electronic device; the first
+                electronic device receiving a third operation for the identifier of the second electronic device; in response
+                to the third operation, the first electronic device establishing a second Wireless link With the second
+                electronic device by means of a second Wireless communications protocol, wherein the first electronic
+                  device and the second electronic device are associated With each other; and the first electronic device
+                sending first information to the second electronic device by means of the second Wireless link, wherein the
+                first information comprises data to be shared and an identifier, and the identifier is used for indicating an
+                application module.
+
+        [6] Comparing Claim 1 With D1, the differences lie in: (1) the first device detecting M second devices, wherein
+
+                each second device comprises: a device in the same network as the first device, and/or a device logging in
+                t0 the same user account as the first device; and (2) the N second devices comprising the M second devices
+                installed With a second application program among the M second devices; the second application program
+                and the first application program providing the same resource; and the first device calling a resource of
+                a second device corresponding to an identifier on Which the first operation acts. The technical problems
+                actually to be solved thereby are: (1) the specific means for selecting a discovery device; and (2) the
+                specific interaction means after a device is discovered. Therefore, Claims 1-8 comply With PCT Article
+                33(2).
+
+                  With regard to difference (1), D2 discloses the same features (as provided in Claim 12) and provides the
+                  motivation for combination.
+
+                With regard to difference (2), D3 discloses (description, paragraphs [0047]-[0049]): determining Whether
+                there is an input device and corresponding software in each second electronic device and Whether the
+                second electronic device can interact With a first electronic device. Furthermore, calling a resource is
+                merely a selection of customary means.
+
+                In summary, it would have been obvious to arrive at Claim 1 by combining D1-D3 and the above-
+                mentioned customary means. Therefore, Claim 1 does not comply With PCT Article 33(3).
+
+       [10] 2. With regard to Claims 2-8, the additional features of Claim 2 are disclosed in D3 (see description,
+
+                paragraph [0055]).
+
+Form PCT/ISA/237 (BOX N0. V) (January 2015)
+                       WRITTEN OPINION OF THE                                     TRANSLATION
+           INTERNATIONAL SEARCHING AUTHORITY
+                                                                     International application No.
+                                                                                 P CT/CN2022/087722
+
+BOX NO' V  Reasoned statement under Rule 43bis.1(a)(i) with regard to novelty, inventive step and industrial applicability;
+           citations and explanations supporting such statement
+
+[ 11] The third operation of D1 is the second operation of Claim 3.
+
+[ 12] The additional features of Claim 4 are disclosed in D1 (see the comments on Claim 1).
+
+[13] The additional features of Claims 5-8 are customary means.
+
+[14] Therefore, Claims 2-8 do not comply With PCT Article 33(3).
+
+[ 15] 6. On the basis of similar reasoning, Claims 9-11 comply With PCT Article 33(2), but do not comply With
+
+       PCT Article 33(3).
+
+[16] 7. Claims 1-11 are industrially applicable and comply With PCT Article 33(4).
+
+Form PCT/ISA/237 (BOX N0. V) (January 2015)
+

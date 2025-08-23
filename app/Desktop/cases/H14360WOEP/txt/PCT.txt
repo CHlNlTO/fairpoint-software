@@ -1,0 +1,1990 @@
+                                                                                                                                           (12) 1Efifi§1flé1§éfififififfiflfi [51% E131?
+
+                                                                                                                    (19) fififll iRF1RéflZR                          \ |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+                                                                                                                                 |3sz E1                             :&                                                (10) lB/fx/Afi???
+
+                                                                                                                                      I317/\ El                      WI P0 ` PCT                          WO 2022/227719 A1
+
+                                                                                                                   2022 4:11; 3TE|A(07$3.11.2022)
+
+                                                                                                                   (51)lB/1%1~I151%%:                                                        (72) 735111: 35 fig (HUANG, Shuang): EB f 1: 66` 1%
+                                                                                                                                                                                                  film? 1? a E 111 133 449 1313 E13 13x 4; 1%, Guangdong
+                                                                                                                   G06F 11/14 (2006.01) G06F 11/20 (2006.01)
+
+                                                                                                                   (21) lBfi_Efiiffl"'? :                            PCT/CN2022/072427       B5r18a1h2m9ake(dCaN)y°); EEFlIFfiEfi`ég`iflfifi'lalfifijmfiAfiTlTZUfiLiABfl'
+
+                                                                                                                   (22) leEfilfiEl: 2022 E 1 H 17 El (17.01.2022)                                $h?%fl£1%Gmngdong 518129 (CN), BE
+
+                                                                                                                   (25) $lfiifig-                                    1:131                    $H(CHEN,Q1); EFIFE`é/fifillfiijfifigififlflflé
+                                                                                                                                                                                                 x 1:6 , A `                                              o
+
+                                                                                                                   (30) 111151--31`X:                                                            EI/IE. 51             El # i 13                                  fl
+                                                                                                                                                                                                 5'--L'-  /\           EH 7           \\/--A#
+                                                                                                                        2021104544777 2021$4 H 26 El (26.04.2021) CN                                                                                      /\ \EW
+                                                                                                                        202110961109.1 2021$8H20 El (20.08.2021) CN
+                                                                                                                                                                                              1%?) : AE, AG, AL, AM, A0, AT, AU, AZ, BA, BB, BG,
+                                                                                                                   (71) Efifiaak: 1.12 i1 2`: 11' E E 7K 751 BE 'A a (HUAWEI
+                                                                                                                        CLOUD COMPUTING TECHNOLOGIES C0., LTD.)                              BH, BN, BR, BW, BY, BZ, CA, CH, CL, CN, CO, CR, CU,
+                                                                                                                         [CN/CN]; E13 5&111 `é` fiffi`fi 13% :1: jag? )`JJJJ
+                                                                                                                        11144913 iifitfifimb, Guizhou 550025 (CN) 0                           cz, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, Es, FI, GB,
+
+                                                                                                                                                                                              GD, GE, GH, GM, GT, HN, HR, HU, ID, IL, IN, IR, 18, IT,
+
+                                                                                                                                                                                             JO, JP, KE, KG, KH, KN, KP, KR, KW, KZ, LA, LC, LK,
+
+                                                                                                                                                                                             LR,LS,LU,LY,MA,1VJD,ME,MG,1VJK,MN,MW,1V1X,
+                                                                                                                                                                                             MY, MZ, NA, NG, NI, NO, NZ, OM, PA, PE, PG, PH, PL,
+
+                                                                                                                                                                                             PT, QA, RO, RS, RU, RW, SA, SC, SD, SE, SG, SK, SL,
+
+WO 2022/227719 A1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  (54) Title: DATA BACKUP METHOD AND SYSTEM, AND RELATED DEVICE
+                                                                                                                   (54) £511 431/1: fifi§1fi7§ifi §fi£fi$fi§éfl§
+
+                                                                                                                                                                                                          101 Master cluster
+
+                                                                                                                                                                                                 1011, 1021 Backup managementapparatus
+
+                                                                                                                                                                                                          102 Standby cluster
+
+                                                                                                                                                                                                          103 Master control device
+
+                                                                                                                                                                                                          104 Standby control device
+
+                                                                                                                                                                                                          105 Application server
+
+                                                                                                                                                                                             1            1051 Master client
+
+                                                                                                                                           . igafimi 66                              '"      1`           1052 Standby client
+                                                                                                                                                                  0                                       1053 Arbitration module
+                                                                                                                                                                     Ge 'éggg`ilw '
+                                                                                                                                           01:11 1145104                     112511111 6105  1            300 Data backup system
+
+                                                                                                                                                                                                          AA First state information
+
+                                                                                                                                                                                                          BB Application
+
+                                                                                                                                                                                                          CC Second state information
+
+                                                                                                                                                                                                          DD Mastersile
+
+                                                                                                                                                                                                          EE Standby site
+
+                                                                                                                                                                                                          FF Register
+
+                                                                                                                                                                                                          GG Distributed application program coordination service
+
+                                                                                                                                                                                                          HH Assembly
+
+                                                                                                                                                                                                          || Back up data according to a first snapshot
+
+                                                                                                                                                                                                          JJ Back up data according to a second snapshot
+
+                                                                                                                                                                                                          KK User data (users, permissions and tenants)
+
+                                                                                                                                                                                                          LL Back up the user data
+
+                                                                                                                                                                                                          MM Snapshot task
+
+                                                                                                                                                                                                          NN Process
+
+                                                                                                                                                                                                          00 At least one actuator
+
+                                                                                                                                                                                                          PP Third instruction
+
+                                                                                                                                                                                                          QQ Second instruction
+
+                                                                                                                                                                                                          RR Replicatethe task
+
+                                                                                                                                                                                                          SS Program software
+
+                                                                                                                                                                                     E05
+
+                                                                                                                   (57) Abstract: Provided in the present application is a data backup method. The method is applied to a data backup system Which
+                                                                                                                   comprises a master cluster, a standby cluster and a control device, wherein the control device controls, according to a first data backup
+                                                                                                                   policy, the master cluster or the standby cluster to back up, to the standby cluster, a plurality of data sets in the master cluster that
+                                                                                                                   are related to a first business at a first moment, With the first data backup policy comprising information of the plurality of data sets
+                                                                                                                   related to the first business, and the first moment. In this way, data backup can be realized between a master cluster and a standby
+
+                                                                                                                                                                                                                                                                   [fiéifi]
+                   WO 2022/227719 A1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+       ST, SV, SY, TH, TJ, TM, TN, TR, TT, TZ, UA, UG, US,
+       UZ, VC, VN, WS, ZA, ZM, ZWo
+
+$®fi$flfifififi%,fiiiefiH%%WflE
+      1%?) : ARIPO (BW, GH, GM, KE, LR, Ls, MW, MZ,
+      NA, RW, SD, SL, ST, sz, TZ, UG, ZM, ZW), 13m (AM,
+
+      AZ, BY, KG, KZ, RU, TJ, TM), IXK`IJ'H (AL, AT, BE, BG,
+      CH,CY;CZ,DE,DK3EE,ESJH,FR,GB,GR,HR,HU,
+      IE, IS, IT, LT, LU, LV, MC, MK, MT, NL, NO, PL, PT,
+      RO, RS, SE, SI, SK, SM, TR), OAPI (BF, BJ, CF, CG, CI,
+      CM, GA, GN, GQ, GW, KM, ML, MR, NE, SN, TD, TG)0
+
+2!: [51% 'A7Ffi :
+-- @fifl%fi%fi%fl%%%m%6flo
+
+cluster by taking a business as the granularity, and thus, a plurality of data sets, Which are backed up to the standby cluster and are
+related to a first business, can be kept consistent in the time dimension, so that When the master cluster fails, the standby cluster can
+restore, on the basis of business data in the same time period, the running of a business, such that the quality of a data backup system
+providing a business service can be improved. In addition, further provided in the present application are a corresponding data backup
+system and a related device.
+
+fiflfig:$$fififi7efififi§%fi%,fifi%fl%¥@fii%fi\%%fimfifi%fi%fifi
+fi%%%é,E%fl§fifi¥#fifi%%%%fi%i%fififi%%fififiefi%Wififi¢§¥e
+fl%fi%%§+fifi%%fi§%%fi,E¢,¥efifi§%%%@fi§%efl%fi%%§4fifi%
+Wfiflflfiefi%omfl,HH;%E$%§H&%%§ZW,ufl%%fifififififi%fi,Mfi
+%%§%%fii%5%efl%fi%W%+fifi%%%fififififii%fiefi,Hfi§fififlfl
+$%fifi$fl%fi%%%¥@efififififl%fifi%§fl%fifi,flfiflflfifififi%fi§%fifi
+fl%%%%fi§oflfl,$$fifififi7fiflfififi%%fifiufifififi%o
+                                                                                  I
+
+fl?%%M%%+%%¥W%Ww%E%E¢E?%`@§?%%¥fi%?@¥W£`fi2
+
+¢%Ti%¥#%%@%¥¢%«%%¥fi%?@%mwfi`$¥$%fi%%kfiwfl
+
+                                                                                                                      °¥E
+@%%%%fi%fi%flfi%%¥¥fi%$%fl`¥¥%¢%%¥fi%%®%¥fi%$®fi@
+
+mk%m%fl`ww°fifi$flwflwwwflwéfl%%fiw£%¥W%W«%é¢#%$
+wéfifi$wfi%%%%m`¢Sf%%¥#%%®%mwfi`%¥°#§%§%¥%fiw
+ngwWmeifl%%fivé%¥%%w«%fla%#%$%%m`¢%«%%Efi%
+
+E@%fl%fi%flh%fi`M#%%§%%%%fiwQW¥W%W#%%$#%EW%M#
+$%fi%%%¥fi%$%fl%¥%§%fiw$flfl§flfifl`$¥¥%fi%%fi&wfl
+
+                           °%Q%M%W%%`Efl£%%fi%fi%fi4w¥%%%%fifi%%fl
+£%%`%mW%$%%%Wfi%$¥%fiwiTE%@mflfifi%WWT#%%gfl%%
+
+E%%%%%%%fiflk%w`%@%WQEM%%%W%¥@MW@%§flhfi%%`fl
+§fi$¥#%?%`fi?"EwfiwTE%@Hfl%%fiflfivé%¥%%%«%awT#
+%%§%%%W`%%%%Q%Efl¥%fifl@?fi%%fiflfi%$flmfiflk`%%
+
+                                  °fimw%#3%%%%fiv?%%W%W«%%%E%¥%%
+fifiwi`$fi`fi%%§%%%%fivé%¥%%w«%é¢fi%?wwmwg%fifi%
+
+%¥#%$W£%E@%flfiwéfifl%flfifi`%%£Mi`%%%%%fi%%flwfifi
+mfifi%`#§$%@4wyagm`%g@%%w&wfi%wwfi%¢¢`@$«%
+
+                                              °%££3wfifiwwyw%fifi£WEH`%m
+
+E#`%flwfi`%%%%%fiwflflifififi%$i°%E%%m%w%fi%%%i%%
+
+%W%fi%%§%§ifi%`%$%fi%%%¥%fiwifi%flfi%flfl`%%%fi%¥3
+%¥%Ww`H%%%%fl%$fl`%$%%%fi%wxfifiw%fi%¢Y`wéfii
+
+                                                                                                zwmy
+
+                                                                                    °fimwmwiafi
+E¥¥`%Q%%W%Wfi%%%%fi%w%#%%§%%%@%£fiw%`gfimfififi
+ `wfl°%M%Wfi%4w¥fi%%fi%ww%%&%%%fi%%`g§fi$¥#%$flw
+fl`?%%§%%fifi%fi%fi¥fifi+§%%flfiQWfifi¥$`iM%%E°%%%%
+W%¥%%¥%4wfi%fiififiww`%%%W%H§`%W%%4w%&¢fiEMWflk
+fi%$`%m°flfi%fi%fiiai%4wwaawmfifiwwai`%%fi%%%%%%
+%%W%4wflflfiwww#`%%%W%4wfiwfiwwwmgfifi$°fi§§wmfi§
+?%E%%fi%fififl`E§%%%W4MMW£%%%%%#E@$$%$¥`EE
+
+               °¥%$¥%$%fi%flw$$fifi¥£%fidflflfifi%fl$¥%§fi%fl$¥
+
+39$fifi¥fifim`igfi¥@fi¥%xfi%$$fifi¥%flgw`Wflw`%fi%§$
+%%%¥Efi¥%fi%fi%4%<%fi@w)4w%%@¥@`%¥%¥fifi%¥%w
+
+                                                                                                ??%fi
+
+            °%%¥WY%%`%¥@%%fi%wfiflfi¥`fifi¥fi%fi¥flfl%$$
+                                                                                                EE¥E
+
+                             §§¥Wfi%%`%¥%%%fi
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                  Z
+
+                                              °%%%¥#%%¥%mk%§%f$$$$§flwfl%
+
+`%E?¥fi%?%%mfiaa§wwgwwfi%mwfi`fl?§fifi%?fl`%fl@g
+
+                                                                                  °fimrvgfigvmai
+?%w`fimgfi%agwfi%M%w%E`M%¥$¥%%%¥%fifi%fiflfifiififl
+
+£§¥fifi`%%°%42%H%M3¥%4§%E%%m%fi`%%%?¥fi%%¥%fi
+
+fl§$f$fi%%¥¥%EWE#%?%)¥¥fi§¥¥fi§¥fi§$¥%fifl§%w%
+§`H%`%a§w:%wEgmw%42%vmfia§%wgwwfimwwaziwfiw
+
+£§%mw3m`Ea§%:%wfi%%mw;w%4§%%`fia§%«g%#%$ma
+
+%w%42?`$fi`%4§%WW%JEE%E%%%@`¢¥¥%£%%h%vfl
+                                                                                               °%¥fifi
+
+wk`fi%%%%%%%flai%fi%¥fiw°%%%fi%fi¥¥%fififi?iw$fi%$
+$¥w%%%%%fi%¥%fififif%%$fifii$`%%%W%QEEW#W«%W$#
+%?$%Emh`%%%+§%¥W%Wf%5%#%%§%%$%%fi%fifi`%%
+
+                                                                            °fi§§§fi§§fifigi
+%%W«Q&%%%fi%¥fiw#wgi$$fi¥$$fifi«é%mfimk`%%°%%¥
+?%fiflWfififiwwmfgywfimwé%¥`¥%wai¥%%%wéwm£#%:g
+fififiwi`Wflw%°%%fi%%%%¥%flfififi%$fi§$$%%%fi%%fi¥fi
+w#ww%w¢#%?$%@%%fiv£%¥W%W«%%`¢¥¥%£%%g&wfl
+
+                                                                  °%W%E%%%WW%%¥%
+iWfl`%%%%%Efl%wwfig¥%wwgi+§¥m£mg%%@%%fi`ww°§
+
+%W@i%4wai%a%mh%¥`ywaxwamwa4a%m£Wfi`ywai4a
+
+%W¢%%%Wf%`¢fi°fi§§$fl§fl§¥fifiv§%¥W%Wféfi$fifiiwfi
+MT%%fi%%¥fi%?wfi%%fl%fififififl§flWfi`gwffiMf%#E%%%
+%#+%%¥W%WT%Q%E%%@%%#T%Q`%%@%%#T%Emgwjggm
+fl?`%%%%%%«%EW%ng%mkwi%m%fi`¢¥$%fi%%kwwfl
+
+                                                             °fifi$¥wawaafi%mgw%
+¥`&«4§%¢myrJw~ww4w`flfiJM%wkwm%%4me`me%
+
+                                                                            °%E@%EM%%%
+@%%fi+fl¥i%fi`fi%`Y¥%@%§v%@&w%w£wi`%%°%fiawgm
+TV9?T#%%?EV%E$$¥%W`%M%W%EW%%JM¥%%JMW§¥%§
+@%%$wk`%%%%¢fi%?%fifi%%§`#E°E«%%4m%%fl¢#%%afi
+¥?flww`%%Q¥%fi4WW%£$#¥%¥%§JWW%%$#¥E%¥%`fifiJ
+w%%%¢#%%ww#%$w$mfi%mwfl`%¥ffi§§§4gfifigw%§%?¥
+%%M$%m%fi`¢%mé%¥fi%$@flkfi%m%fi`$¥$%fi%%£flwfl
+
+                                                                              °%m%£«iwm
+w%%%%$%%ma@&$i%fi`fiflfiwwmwéflw%%wfiw%fifiwh`¥¥
+wwwy$fifiw+é%¥fl%w«%awwmwgww%fig°%%%V£%%W%Ww
+éfi$fi%?%MH"?¥$%%%V§%T¥%%§%§H%`fi%%§@%%%fi¢é
+W¥W%Ww%%$fi%$%mfi`fifiwEMMngfiflflflkfifi%gvfifiifig
+`fiE°fifiwfififivQW¥W%W#%%%MM#%?wfifi%?%%%w`Mflfiifi
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                         5
+
+¥?é`$§?%?¥fi%$®`fl?¢%i%%¥#%%®%mwfi`%¥`¢%«%%
+
+¥fi§$®§fififlfl®éw`fififl?=%B%%m%fi`$¥¥%fi%%kflwfl
+                                                                                                °fi%%fl#%fi%%
+
+%«%?%%%+%%¥W%ngé$%%?wéfifi$wfi%%%%`¢%:%%¥#
+%%@`%¥`fi%%§%¥%fi%flfl%fi%fiflw%fl%fifiv§W¥W%W*%é%
+
+#%$%%`$%wfi%¥#%?@=%M%fi`%fiwfi`$¥$%fi%%kflwfl
+                                  °fiM'%%E%W%%fiv§W¥W%Ww%%fi@%¥%%%fi
+
+~é`$i`fi%%§w%%%%+é%¥%%w~%%¢fi%?www~%%fi%%¥#
+
+§?%E%¥%§%fiw%%fléw`fifiw@=%@%m%fi`fi%%fiflfifi?%fifi
+%%%%%fi`%%@%flfi£fl%mwfifl`%fl%£fiw£fifl%¢$`®i?%
+
+         °fi%%£%%$®ww%¥%®fi%%¥@fi%i`¢¥z%£%%h@«fl
+
+                                                                              °fifi$¥$4fl§3fi¥flk?%
+¥`%*4§%$wfif4%"flflgw`mfi4M%W£%M%%4MET`WflM¥
+
+                                       °fiEEflEfiW%%%§%fiWV¥i$W`H%`Y?
+$EWEV$E%W%W£HX`%%°%%4MEWTY%%T#%%§EV%E$$¥
+%W`XW%W%EWfi%4W¥fifi4$Wfi§§§fl§flflflh`M%W%Tfi%?%
+
+fifi§§§`#E°#%%E%%fifigw%flkfififii`$¥¥%£%%fiwwfl
+
+                                    °fi¥§§$§§fifivéW¥W%W*%E$fi%$W%%
+«i%mfiwm`fi%%§%¥(%%fi+é%¥fl%fi«fiéfi%)fifiWflwwfifl%
+`flfifififlfifi?%w*flfi%fiflrififififiv§W¥W%Ww%é$fi¥?fi¥`M
+
+%«%%E%W%%fivéW¥W%W¢%§%fl%flhwfi`M#%%§@%%%#+%
+
+W¥W%W«%E¢#%Ewmmwg%`¢%%w#%$`$¥$%fi%%gwwfl
+                                                            °wwfiwrzmwmfi@%%%fivé
+
+W¥W%Wr%%%Tfi¥%§%%%W`fi%%%%¥§fl¥%flfl`@?fi%%fiflfi
+§??mfimk`ww°fi§§§$§¥fifi+é%¥fl%%«%%¢fi%$%%%wé%
+
+  `¢%fl%fifi%$%w`M%*%%E%W%fifivQW¥W%W«%E%E?3¢%Q
+`$fi`¢%%¥i%flwflw¥fi%$`Mfififlfi°%fi%fiyw#%%"fi%?%fi%
+
+%%%%%fi`%%%%%%%wflfiifl`fiifi%%fi#wfi¥%$$`@¥f%
+        °fi%wa%w%®ww&%%@fifi%w#fi%$`¢¥¥%£%%h%wfl
+                                                                                               °fl¥ww
+
+m%w%%fiififl°%m%%m%%%fifi%%w%iflfim¥fl%awm`fi«%%%
+fi%%%%w%£#%%%¥fi%ié`Mm%%%%fi%%fi%%¥#%iwfi%fiwfi
+
+`%#`%%%%@Wi§fl$fi%%fiflfi%?`%¥Wfi`$¥¥%fi%%h%gfi
+
+                                                            °fifi$§fi£flfl£`§fi¥¥%i%
+flWfi`%§fifi%$§`L%E%%%$°%?%E%%gfi%$%`?fi%é%fifl%
+
+#fi%%wh§fi%fl`fim`%%%%fi%$%§fi%fi`¢¥$%f%%kflwfl
+                                                                                                   °fi%$%¥¥%%
+
+%$%#%%wflfi%imm%%%%@£a¥fl%%%%%fi%fi%kfiflk`%fl%
+Qfifi%%fiflfifiifiw¥wfiivfifi`%%°%%E¥%%@%%$@%Wfi%%%
+`%fi%%&%%#§%flfifi4M%E%m£%fi%fi%w"§fi$¥fi§$¥%%%fl%
+?waw`anawfi%$%%4w@mgfi%ywfi`¢¥$%£%%h&wfl
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                  17
+
+fivwmgymgmwwwfigfifififii`¢fi`#§ifiwfifi%¢$`@$%%
+
+                                                                                       °¥$fi§fifiw$¥fimfi
+wraw@gr%¥@gr%wgw%mwangwm`¢%w%@¢§%agw+w§
+
+fifi?%°§%%`§fi¥%@%fl%fi`$fi`%§%%%wfi%$$$`@¥¥%
+                                                                          °%%fi%%%#%?w%fi%wfi&
+
+mfi%%`%%@%%fiw¢¥$mfi&wa%@$:%¥@$tg%gw+Mfifii`%
+gw%%%w$¥gmfiwwaW@z«%¥@gwg%gw%w%mwa`¢%°#%%
+Yflfifi?`%fl%fl%@%%w%%fifi`%%@%%fi%wfi¥%$$`@¥¥%
+
+         °fi§$£WW$®WW%%%E#%%E%#%E`$¥¥%fi%%£%wfl
+                  °fi¥§§éafifiaw%4mg`fifiw%`$¥$%fi%%£fiwfl
+                                                                    °fi%%§%¥%%%3%%%%
+
+  `wfififlf%%%MM#%?%%%+§W¥W%W*%é$fi%?wfi`MM#%#E
+
+aw%%%+?%¥W%Wwééfiw&MME`%fi@%`$¥¥%fiw%k%wfl
+                                  °fi§§§fi§¥fifivéW¥W%W«%é¢#§$wfimw
+
+%%`@%%fl&w`%fi%%5MM«%#E%%%%%V£W¥W%W«%Q%E¢¢
+%`$fi`¢%%¥i§§%fiwfi%w`fifiafi=%E#%?Q`%mwfiwflfifi%
+fififi%%%§%fifl`%%%§fifi%flfi%$`#%$%wfifl%$i`@¥m%
+
+         °fi%%%%%%®ww&%fi@fi%%¥flfi%i`$¥$%fi%%£@«fl
+          °¥fi%%@&i§fl¢fi%§#fi%$`%flwfi`¢¥$%fi%%£fi«fl
+
+                                    °%%%%fi%?%§fl%fl`$¥¥%f%%h@r§
+                                                                 °w%?¥%%@%%$@%wfi%
+
+?%`%£%m@%%#%%flfi4m%flwéw`fififiwffiawafi#%$%fi4w
+@4w`%fi%%ffifi§%wm%fi%&%®%§m%fi`¢¥$%fi%%£&«fl
+
+                                                           °%J§%M%flfl¥%4§%¥%`fl%¥¥
+
+#%%%%E%§W:%H`fi¥#§¥@%§¥fi%$¥%fl§weé%&w`fifiz
+%ffia§%:%wgamw%42%wm%a§wwgwwgmafiggiwfi4w`m
+
+fiflfi=%E%%fiwfi`Efl§%t%%fi%%m$%w%43%`E%§W«%Wfi%
+
+?Mfi%fl%4£$`%4§%¥w%43$%3%fi%3`¢¥$%fi%%k@wfl
+
+                                     °%%fi%%fi¥fi¥fififéw$fi§$$fi§fifi%%fi¥fi
+
+Mfiwwiw¢fi§$$fi3¥fifi+é%¥fl%fi«éé`¢¥$%fi%%fi%wfl
+                                                                            °fi§§§fi§¥fifi¢f
+
+W¥W%WT%§¢fi§$wMMT%%fi%%¥fi%Ewfi%%fi%fififififl$M?
+`%fi%@fMMf%#E%%%%fiv§W¥W%Wf%%%@%¥@%fififé`%¥%
+%%%T%§m%fifi¥%w`fifiEW%Efi%flfifl`$¥¥%fi%%k%wfl
+
+                        °%%%%%fiw%§fi%fiw%¥`MW*%%E%W%%%VéW¥W
+
+%W«%%%V%JM%$éw`%fi§w%@fi%mwa`¢¥$%£%%hfiwfl
+
+°fiwgfififigW%%fi$%%%#%%JWW%fl$fi%?%fl%"fifiJWW%fi$fi
+
+§§$fi§$wfi£wfi`fifififl`%¥ffi%%§4@%%4w%#%$%%¢%m%
+  `$%mé%¥fi%$@éw`fififlfi=%B%%m%fi`$¥$%fiwfififlwfl
+
+                                                    °fifi$¥flfi¢é$¥fl%fi«éawfi%w
+
+iflfififi%?%%%w¢%?%`fiflwé%%%%%%+%%¥W%Ww%5%Efi
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+WO 2022/227719  PCT/CN2022/072427
+
+%%,mi£9#+%fi%&fimi£9#kfi%%¢fi%%fié,ufififiiifififlfi
+
+fiufiéifiéfifiELfitfiW£wfiiiflfifi¢ éfififiéwfiisfi
+
+     ?Affi,$¢%fi%*fififimfififi%fifi»fifififimfififi%fifi¢fi%fifi
+é,§flfifififiéifififi,fififififiéflfiififi"f@fi%"fifififififiiflf
+fifiififi%%wfi%o
+
+     fihfifi,$$%fi%%fififimfififi%fik,mfififimfifié%fifi¢fi%fi%
+é,fififi£9*¢fififiéifififi,fifififi£9*4fififiéfifiifi$;f@fi$
+Lffififiafiimfifiifififiéfifke
+
+      3% Jrfitfiv, iMaifi`éfwéT 7%? @éfi`aééfi ifiémfifififir, 9.5 fifti+$§ii>iiéfifli
+
+fififififiéfifiiifi*ffifi%"ffififiwfiiflfififiifififi%%fi%o
+     %+%fi@,$¢fififiTwfiaafiéfififimfififi%,fififiiwafifififié
+
+:ifiw,@fifiiéi»+fififié&fiifi%;%@fi%:$@w&»fiiflfiimi
+
+66 iiii/ééfifi 7`32: 0
+
+      1UPififbbiéxfirfivfifiééfiimfifiéfigmi, fifim`iffia`fiéfléufifiié 93%
+
+Wflfiw
+     %T§%fi%%m$¢%ifim¢m&fifi%,T@%fi§%mfifi¢fifi%fimfiw
+
+Efifi$%fi%,ifi%flfl,T@%fi¢%wgflafifi¢%¢fififi*%ififl,fl?
+$fifi%fififiAfi%w,Efiufififi%wgfifiiwwwgo
+
+      Im%»fi&%%%é%mm%flfiéfl
+     Eufifififiéfié%mm¢éfik%fifiwfiéfi;
+     E3fi$¢fiifimfifi»fififié%fififiMfi$fifiE;
+     EMfi$$fiififlfifififififi%wéfiflmWéwk%fifififiég;
+     Esfi$$fiifimfifififififi%éfi%%&m%%%fi%§;
+     Ewfi$fifiifimfifiw#fi%fimfififiwfiég;
+      E1777$¢ifiiz`afidiflaééfir-fiériwgfitfifirfi fififiréw: PE];
+
+      E Mix?ifiiz`amfifiéfifiififizflfié éfi300¢é~wifi fl k§xéfii§fi2§§géfi<7§s E;
+
+     Ew%$$%¥%Wfi%fi*fififié%fi%fifififi%E;
+     Ew%$¢%ifimfifififi*fififiéfif%fifififi%§;
+
+      PE] 11%77Lfi91`fiiz`mwfléééé #fiéfifidiiééfi éira`ijfirév: E];
+
+     Emfi$¢fiifimfifiw~fiififiw%fifiég;
+
+      E 13%i\$ifiii1§dfifl%éfi "fiéfi%fli§i§%@¢¢éfififi% PS;
+
+     [aMfi$¢fiifiwfifiw»fii%fi%&%%wfiégo
+£¢§$fifi
+
+    T@%%é$$%¢%wg,fi$¢fifififiifiw¢fifiififihfie
+
+      7MB ifiéfi «312% ¥fiufixill%éi%&:i£W% E d9 66 7K??? -"\ "£913: ;"%9fé)'fl f 12 £1] ifiaéfi
+
+fig,fi$%mf%i%ifimfifi%ékfiofifififlfifififlfififififi£fiflTfifl
+
+gfi,fififififii¢$fiwifiw¢fimfléfiwfifififiiwfifimwE??io
+     éflgL%*fiflfifififiéfié%fikfifififio@EWfihfifiéfi%%mfifl
+
+%i%fimwmfi%fimzfl¢,1%fimmfiéfifimmufifiiygfi&%(ww
+                                                                                  9
+
+  `@`IHEOOIIOIEVOOIOOISI?%DIF `31?! "afla`m`éwffifl`éflaloufl (17014945211; ) 4944/
+
+% ¥EK¥¥§$§7IFW $¥¥E%%XWE$xzz012yH39AIH§£4y%% `%(¥¥%\%WF 913%2002002912? (1701
+
+4 mm ) 4 BEN/ % ¥2¢>2¥£éw99 $¥¥E¥wfi¢9E¥L<IZOI#fiHngGHTZOI%%%%EP%%
+gm `M&Wfllflnooworu?Z\%%HI%EU£ 4%?[IT£¥HOOZOOZSI'§YI%§HI%E9'6 `%¥Péh%
+
+                                                    °%%fi%%fi%fifiwflfifi%mk%¥`fi
+wgeagzwgggygwmmfi2 1412mm anzmflir (ZZOIfiHfi/`IH `Uowmgsaqm;
+
+T32?) 221% wowaéfiz 222m%23%wea2y2%z0122%%222%252 2232212224 2r
+222222291992123 21x22(z0122%% `gfiflf'r`éfié? `cw 2222192991701 494992121 21
+
+xi 9224;21012222 ?%aéia `%(¥?£¥%?F £29 2%? ix] 7%2399 U2xzz012mgeAIH§gp<2y X4a¥¥fé%%
+
+92 2%; E ???%fli`?7:315"301%PH3550H35P%%3§%£¥93¥ `awywwwww [1%2:: E21 242%
+
+M%2H%E`mn%2H%E`-§2J2 22231242222; 99%(¥¥%%7IF99¥E¥ZIOI$W59AIH éfléfi`gm
+
+2%:29222132421 99262411101223530H2M422t2 `22:: 992%%%%Wy%2k warm 22--2
+
+iéflélflr`éfliz 212922222299 ab WIN ? 99z01$22<2§£4y<212 `%2«%%%;2%¥%\%1F9W2Wz
+
+4/???[EJ?ZOlifgfigéT101fi%?%£¥}35`5}$@ W<22¢mv§£w2mzm$mr ?E}
+
+                                   °415533]%P%Z%%E¥XZZOI#H39AFH§{4P%(9`29? 1%? `122
+"2% 33% ) 2129926awwwmngeTgkjL $329202"; `222231222y2y£7m2x1z012mgsmH
+3%? (£1,K t2 7% t2 `Ig E 22%? ) ????WEEEH101%PE3850HT%H2MI%¥H{%E `41fo
+R42; [[23 ?Emrfifi? 9% 711341? [9:23:29 12%;; [(23% X4 12%;; [1%`27fé1 55/ W `1EH\`4P%J:¥¥?
+`2? #2456134! `¥EZ01%¥%%§£¢P%%¥¥%%7IF 9Wif%k101222`f$ 1% ??géwmfik m%
+[H fi/WHW 99:10122222 97%;H299Tz01222542 `zz012szsAIH *1z012mgsac1H2r2 mgr
+
+ZOI%¥%% `GEE/Eil °(%(¥>£2'%\%1F99 4 waif%flla%l¥1£%%fifizwz%¥¥`fifl 1%?) %¥¥¥ 13?
+
+2WW901 cf wé'é/QWMIOI2yH39AIH$¥E¥IOIfi>2Enméy `101%2%2E§%%k%f%k¥ £22m?
+EE%`fifiWW%¥%%fifi%ngw%%w`Umfiw%m°(%fi%fiwgwgfi
+2K4£2MWW9MZ$¥ [231mg [2 ) 2mg [2 $¥W¥1§9§%7IF999014 22392222211012sz
+
+SHGHEQEIOI%¥%?UIFP§} `i¥ E 99EE¥?%X%}%{¥%¥\%W99¥%¥%;¥Z?H42 `101fi%?`:¥
+
+%P%X%¥%¥%m¥:fi%2¢>z¥%a¥2% H g 24422292 sf [22222 `11012yHgsaqH `22: "$92?
+QE¥$WH$2£flfi%WW4MV%&`fiwygwwwk`M%fi%ngwv2%
+fifilOIfi`fi? `99:??? °%(%`--§§?£9?§ `%%*cb%¥%9935iv¥£7¥§§d00139q22¥flfim4 `Kfimmm
+$`flfiQEfififl2MfifiMflffifififiw¥2WEQE`H%%#W%W¥%fi%fl
+i2 Wag?» M %'--2¥%2`z+y¥+%%k `%k%zék%?%y¥1fix2 MWSHGH `atc`é 2mm
+
+`z1012yH29AIH`g mIIOIfiHfl SHCIH `Iualsfis 9m pemqwsw dOOPBII ) 3% `2' +y¥¥gyc<9doopvqég
+
+@malowgéiflm "2%%¥é£%?%¥2%d00pvq$2§z012222%42`5K410172225?22123; `¥?%Pé}$fé
+                                                                           Wi'i-flgeaana'ééézmwvm
+
+cf Lid £24001% §5y<22¥¥§f§2¥ K4 222% 91232429221701 4 Bar 2222222222192242mw
+EZOIfiEéfi? `¥H§fl¥$$¥101%¥%?5fi`%¥3¥ °z012g§<2§gw22mgw 92227101222?
+$3.13?Jm%k99¥4'[{%[2mh{01%%%%$ TH? °%(%¥%\%WF¥$¥EJ2I¥>£¥99¥B¥%WFxl/«T%kifl
+
+`5`?! @fifi'? L ff °2%5¥?ék¥?%¥¥%99¥fi¥%fixlx ?%Xfl/v`fifi 1.1 WZAEQFB; tel 5.42.1 `IOIfifz`f?
+
+LEM? (%%4`399$§¥?¥`5H&(E%X4I22Wfi) §¥§HM7J$¥E¥X4£4M `aln%@¥&rZ/id£
+
+                                                        °2%'M£i?%%2\I/%EE¥ rxz\%r4£'%z01%2é%%
+
+`fimmiflfifii `41%[f¥\%1£'3' "Mff (2%%%%%%$f%¥%¥§édoopwifi¥mfl fifififiééxflfixl/f
+
+53459;EEX4EG¥ZOIfi%%`EflIOI%¥%? "1W; "Mm? (2%%2?%P%X $3 Mm? 3:32?
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                  L
+
+'éméémfifiéé `%flz¥m+%fl%%mmoom`é'gwwmé 4%"? °%¢$é@¥¥¥E\I/éfza%m
+¥£3¥¥X4I500¥2%%%%¥1%flflfl `éfl¥%%fl£flla00%%£fi%%fl% Irfislaiuné
+
+  °Efifl££¥¥i£flfixw9¥i$ `Em31¥1'rnéy%+¥wéémyoos%`fléfiafifiwyflg `wiffl
+
+ Ea4f:gavelflfiwwzzmowmw?abMWfi--szwuafluwfi `IW K?
+
+z1[m$§¥xl/«§rxymiflubooz%é'gwwmf `abiér'rgmvéwsa? "gyyawaégslgsmajw
+`fiHLflE/ EX4£V01<§¥H$E¥§ 2%"? ?%wat4$3633901§g¥mwflwmgowfimflfii
+ 7%"? 322%waE21$gfl5901§2ym[MfgX4k§yt01§¥é¥$éfi§¥fl4501%;4fiéézxfizz HEB
+
+§§¥w¥fl¥yé901§§%mwfl`fifl `1701%Ht%§%% `SOI%HI%?W "W `aboowg`é'
+
+y<2amfl%sl:«ma%01§§wafl EH71 41¥££Tfl£ fizfiaéiaaiffi `HH¥?¥J'P§}¥--Ek¥?fifl¥ 21:44
+002% `é' £4H2a¥>£¥é% 5113901§§¥§H [fl Lil 14%2 g `44 g! °rw+¥wfigxy¥ $% 5113991701§¥1fi$§£
+
+%n¥01%zfit$§¥$9wya§ Wzé'fifiw `W `36 "MW?fifiififi`é'5fi¥%fl¥`é'ffi¥3$@
+`fi%%¥?%iw¥¥%£fiEjzkxl/ffi%%¥%/W ` (UOIfiw) "$8199?$2+%%X4h`é'3§%nw
+$5? `abif "fi3'5f¥?4'%fl3«@%101#%fi? £71701<%_1[m%§%% f`é'3§%£%fl%@%ZOI%g%%éT
+201%??[I91éfii i 5F wg #éfiwmw `éééé`ag mmwwowwn--wfiz» `SOI%;<1[I$§£
+E `WWMLE wwztmwm`t? (fi%efigy%%%99z01fi%%%waif%¥) IOIfi`fi?
+£79gémém§z01§g>£<2h$3¥1701<2m4¢1§¥<2 `92§3¥$¥¥101%g%$fl% fgyewmwm
+@2zmigéfinflowfi? [m$§%£01<%%§¥$ `9'??§M¥"¥7T¥IOI%¥%$§Y "4mm? mg»
+$1¥12¥99[§\I?Z01fi%%n¥101fi%? [twat [#1701<???fi$§£%n¥01%zflt$ifii 9a m ye g
+
+                                                            °gfiaflzfiasofiéxflfiMEI$¥ZZOI$¥§§¢1
+`{%¥U+E`~Z$T¥§Y `%¥¥?99$101#%?{4P%%W `fi%9}%%101#§£?94%301#é% Er
+
+E&BE--fif`éafiw X4h901§§xflflwfl HBHLfiE/idifi `Déwékfiwflxl/ffifiwsmgyfiflwfl
+
+KWEE °§¥$9¢§1¥1¥Q$901§§%§lflw7flw% `Effinflkfiwaflfifiéa'flWJ/`EmMflifi%
+
+fl£$SOI§E¥§HME¥éwlmig§f$ °§Wfi§¥f~xy$fig§[n§\£?K4Ia"ErZOI%¥%%`£flIOI%g
+
+>5? `cblé'fzhtéslirfk "Mi? (§§fifi99£7¥§§doopvq%%nfl $$$$$va éfiEEEflh
+
+$¥301%¥%%`§f`fi4101%¥%? `HW "urn? (%¢%L`?%P%X $3 WWW ?wmmfl <?25N/
+«.4EEEEK4£ZOI%¥%%`W4IOI%¥%? `abif °§¥§FSOI§§HHMEETX4£OOS¥Z%{9P%%¥
+1%: 14% °1701<2w$§£<2 `EOI%§?[{$§%$ `z01fi%%`gx4101%g%ié{r@choosyz`ggw
+améewyasg `T$¢3¥9¢001¥3§$P§§f¥¥éflfiaflyflEdi? @Jxastsam? °§S§i$fi¥§w¥fi£4y
+
+§§¥¥¥Wfi§¥fifi9¥fié§$$¥ `Eg'xh? Wis`é'aw`ganzW--wwwawaw `Clfiwfii`
+                        BEES 99%73H%%w¥12%fi%%001¥2 `é' w?awa? L 53kg Ag "Pr `XWA`é/zw 994 $9?
+
+???xlié'fi 99%Woowz %9y%a¥>zm%%w 24%;; 42%;»? ch i 2 girygrwmmww
+
+actsmwzyamwww `%§$§¥%EY%¥$§MW%%%Q afiwgflwamm `améem
+
+Dam]EM$§K§M¥fiHa$§M§$$J§¥ HEHCHF °$§MWEI¥X4§5+3§E$1¥W @fizwm
+
+Q??? 2" cf`39? abi¢¥¥¥mamw2 mama Qua? [a JEXE/géflalnfifl%3§('lf `fi 2341:2913 «Mia?
+`gmamémé Haifleaisg ta ta! 31%3535I21701 4 w `LH%¥1%9$%2F$%M Efééé 51%;22zcb001112`g
+
+@fiL--yfiflfi mm "#137? ¥H%§H%W:%%&fifi¥fi%¥tmgf [fl ¥001¥3%'%%%1¥1fl5%35£%
+
+YY ` (aflzfl-IIW/WééW ) %.¢%fi¥%5JaiEanWangwgkfiyflzm#HzSdCIH@1440,» was?
+{6% £29 [gar `99 yggH-ggg maZZOI #IfiaAIH El 44 H&Hamfx`éw 99£4H2ab 301%¥%%M¥@EOI%¥
+Jilmmm-J [fl `Ieaénfiéflmifii? 1% Jam Erwgéiriéw mm1:La--»$;00210:s1~00=00=21
+L¥wamfxgwwablzotwwfiésdaHflMHM ` (¥é%}£é£?%¥¥%%fi\`9fl3%fi%k9 MOI
+#395332? )%(¥1£%%7IF9911%99V01 cf wifiéj L @EVNIOIfiHfi/`IHUJEIIOIfiIfiSflGHEEflOIfiElfi$
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+WO 2022/227719  PCT/CN2022/072427
+
+wgfimfififififioflflfl,$$%¢%%%fifififiw%fifififiifi,mffié+fl
+523? (region) (45MB: 519512?ij 519%135231) fififlf' (iimF106&EFfiflF ) ?%fiéfllig` (iv:
+
+§i¢§fifi%fl%\%) éfi'fi`ififiéo «L--flfiifir`é" @fik-fiééfififlé, Tifuibzxflia'fgfiéflfi fifigm
+
+fiifiHELg`fiv/és`néWL/fim Hligx 21a `19 1% v? 66 fifiiwfifir'séflflétiifla [>1 66 731? fifigm fimi
+%%fi/fi§kf+fimflfi%éfifiifi%é\ iiééiffififiabbffiifififitfmflifiifiufififlfi iii, 1:
+fi%%%i%waflui%%fifik%fimwfio
+
+     133%? @3fififiéfiififéé4fiééfi300réfié'réfimi4'fifiy"fififfid'fiiflf], ?FT/lfi] Hi, iii:
+éwézmoowamfimfimififirfi`aéwzéfi Haim, iiiifié4é>ééfi300fififlx am:--
+'E'iy'tfim fiuafifl fififiefiflomaéfifi102fififiafii§fia Xbbizu, iiiééwgzjt
+300¢ééifie£¥10L 34%me @ééazfifrfléHDFSéflfiL1011»17§\Hive2fl4¢1012z9h iivm
+@ééfiéiiiréééflfla izaEWijaélouUIu @éwtimkéa`ifigiifiigafisparkSQLéfl
+4+, ii?5531` v1 @i'éié'i E] iii 15] VMX ( Lightweight Directory Access Protocol, LDAP ) ?EM+
+fifié`ifi E] 2% (active directory, AD) éfl4+%`o $¥54§dfif§fil§flfié?fi300667E1--44`géfl7`f5i
+???FiifiFEk/io
+
+     EmmflfiifiE--éwfimow, iii$dii§>103£é§$flififimméfigfimzméw
+flk%`§é§:¢)§fli flfiiu Jkéé`fiafi/ix`ifiifimfiéw, WhiméwiéfifimiwJLMM;
+1mm éfi/fiififiv--fie flfli`éfi, ia`Eé`iny'télofififi'E-Jfiafifiéflflk%éfiififié4fifii%, ifififi:
+§¢MBfixéi géfilm "1'13"le 512mm 7%? 3 fiifififiqéfi 1% EM} 713% #Ha`zll 0 WW?--
+£33, izaQMfrfi, fififlflomflkéy`, i5fi£%7ffi%éfi§4\w&%¢, "?Miz'kfifiémxiaz
+?EHDFSéflffiFIOIMEH`Eéfi/ifm P 106%: E1 $315313 AkéJKi'fiEéé $9, mtékwfiiimxiia
+Hiveéfl4+10127ffiééfiwr§1fmfi106éfiiifé3`4'fififlkg`fififiyfififiéo Wk, ikiféaflfifiiwgwlafii
+4am, rfl fl`a fi§4fi£§$£¥lOZéfik%fifi/§ib $499M éfiififilm "P aééfifififiifiizflk
+zvmfléima 52M; £11%2`5`9101:12Jkgxééiiig'fiiAéfixéfiiéfifilozw, 345%11i5'té
+103Tifllfidif£7bizfikéz`ffliéfiéfiififiséwiflééfifidififilmé`uéfifiloz, #2:? "am ééiéfil`é
+101 ¢5i§ik%7faa`éééé +$£é§fi$fix>w£é§efiloze Wm, iéifi`lii>103fifvx @iéfiflm
+ifii`aé`, »1#E{<i%73¥101§§h>%73¥102£%#HQLZ'J %%ia HDFSé'M`ifiOlMHa`éfi`J E1 i3fléfik
+§§i$§vxflifimveéfl4+1012¢$H§ééfii$§3¢ééik%\§iifié~4fi£%%fi102% x`w- wk;
+Mixiéwiéfifilozméim, fiafifiiwmififilow EJéé/féfi%fiéifii2ik%7m7`ééfik
+49;, Mrf'néflfififiifiiZflkg`iEla`ééfiiffiféfiEéfiI--iflfl`ffléfifiiffiEfi'AfiO wt, §i$£¥101ii¢i
+Fifi, >§£73¥102m1£ffl"Ha`I`filfiiéfi££`ififi'wgiifififiéfi, Mfr)? #1;in fifififiéffi/fi
+§4fi§ éfi300?&4%fik%flfi%`fli 553 firm: yxé3raiéifi§w ,% 21330071: #1 F 431%3kg`iz'kfiéfifi4é
+EL éiélflkfliéa`fiiz
+
+     ?%TZE, fififik'séwééfiéfiéfifi?FRilfiéfiEWiifiiffiiifiifimz`éfiiio
+     El§3ffrfi<éfiif§vfi§4fié éfi3006fi£z£i, $153 ESFfifiéfiiiJiE§~4fi$éfi3000 :fidaflol
+Era élé'é"/P§5L%`§ 4W] ?%lflfii`ufi%ik%§fif%éééfl4¢, fiugsfififi, ig`qfiilm @mflflm
+234+2u mafiaaa ififlfim 234+; éfl4+3iflx Fa ffiv--4v'fgéf 2 4%] [a a1; Jk%;§§j)§iifiit
+filififiii ¥HéL, 7'? FFTJ`ZFH HUL, 4f7%:*4\§5h§ MMFEMR] fitfifis`gfifiw w/ngxéfi 7h a
+
+iflfi, {Mm éflfimx Réfl4¢fiffl~fifl*flk%`fifi$fl§féjfiifiifii$fl éfiéffifi$§£§%i&4'ffi4%o
+
+§i$§£¥101 ( ufiééfiiloz) thadoopébfifljiiffi`flfiiflfl', éflfliuflizufirufimq? ééHDFS
+23441011, mfl%r-/u\Jkés`ééé`liéawkéJ`ifiEfifififiHéfia`g'rfififiw éfl4#24§dizfifllil'3
+
+                                                                                         8
+WO 2022/227719  PCT/CN2022/072427
+
+zfiUéfiHiveéflfflmz, Ff]f'ln'fiiflkéy`fififi*gFfiflg`iii/fi`ffifiééfikfiifio Eigéfl éflfifim
+
+wm+mmx£%%fl "ikgvé`l 7F 1%] Jkflkfififiwm 1%] #ééiiififiwao Mu, éfl4¢13fl>£
+EzqvééHiveéflfla rfnéflflizflmigzr?éfiSparkSQLéflflL, 5H1, éfif+1»1&éfl4+2iéaflfl%
+i2 fik%fifi iiigfiiimé chiéug fifafififi% ( Jat-- fin , sparkSQLéflHL 6!: fikifiii la" +4: 5%? E} f
+HiveéMHfiéi`M/éiiglrififi) o $iz`mm, émflrl` éflf¢2dfiéfl4¢3fiyxfiififilmifi]f
+%%%i%@%alizfii`xififiéwfiéééflfio ?HEL, Efiifléfihfi4i£$flfik%fifii&ifiaflfimim éfiéflflfir
+ufifizéfro Mm, fifitiflé`gfifimgxlééi`wfli fifrfifi]fiééfl4¢fiflxfiflfiéflf+h mug
+fifififlkgwéfifigm`, Wimééémfinx fliééfl4+1vxfiéfl4+z fifitifiéimfimgxwéifig
+uni Ffifiifléfié'fl`ifl`u fléééfl'fi'rL éfl4%2»x&éfl4%3o
+
+     %%%¥102¢&3m aééw/réfi`ufiéwm4, fiaESfififi, éfifiilozaéfimw` 234%
+ufiéfl4¢6§x Eifigfiilmimo éfifi102i662fl4+m 2fl4+5uwm+6mxmfl¢»4\g&
+fifi¢mrfikéfifififififlfifi%,m%i%%xm&%fiumfiififimfifixmw
+fifififi,%fl,E&flfififi%$flk%%fifififi&m%fl%fiufifii%%o%¢,
+§§fi102iéfiéfl4¢iflx4¢i7ififilmififiéflf¢éfié4fio Wm, §§§73¥102iéfiéfl4+43fl14¢
+ayifiafiflomaééflfltmééw, éfl4¢53m4lwyém+2aééw éfl4¢6fiylfl¢fiy£fl4¢3éé>4fio
+7M: w; , éfi`cfiiwzfiififilmiiéflfizfi, E1fifl'riééfiifififlmmfiJkés`iiifiiifiém
+£§~4Mk%i§ii&éfi iific? , ig`cfimmiazxéflflwka a`ééfiik%%w%mx #fiéwiéfifimz:
+
+4'E7`é7%4ln\éfiéflf+¢o bb'fia, ififilmiifiéflftllliaa`ééfidkéz`ififé, ETWRéWéQéfiloziéfi
+
+éflflflfi/fi ééffifliia'i"? ; 52fl4+27m§éééflk%§ffil%, WyMfixzfiwy`ééflfiSfi/E éfifififlififlj;
+
+52fl4+37kaflmk%w%, mMMMfiééflfisfifléfifififlififi"o xii? fiififiilmiiifi
+13$:%m%i§73¥102&%%i%£¥101:é63k%w, éfifi102mfiwlmé4fi£ém+m ?MHWiéfl
+
+{+65%} XaL/fi éfififi£ [>1 fish"? éfiiiife'yékfiéi 7`5 Ff] F iifliii--Ta' Jké5`ifkifiéfiflliés`o
+      91'me Huh 1%fi101»1&%%£¥102fifi£éfifii/fiifiié`fiéiifififléfifififi--iié (izu
+
+fi%%%)fi§,M%E%%%fi%fi%%fifiufifiéfli%fiufiéfléfifio"fl,
+'EIyxffifit/Eifflfifiififig`aflififiififilmM&éfiéfiilozfififitfi, mmfislsmfimfig
+
+awa`éémooo
+     4'F%7*-7F`1'5?%i=f§d, fififfififihfifiéiflffififl@%fi¥fiiiflfivlgfifrfiéfigkfifiéfifitfi,
+
+??fifiiifififliéfifirfifljXfifil`uiiflfiééflfififiifi (fiagéfififififififiL fifizx 34%
+51%) , iimxiiflzxfifimaa`éfia, fiugsfififiéfiefiéfifififia fififlflféfiflkéé, w?)
+iiifljfimxmfififimfifiviwfiéAfifiifi", fifiififléfififififlzififimmaa>fiefi
+102, v1¢bfifi$§fil§§4fi§éfi300° ?Pflifilflfl`, fiififfiéfihfi`ifléfiififfiflfifufififimF%flf
+ifi`filmufiéfifilozaéfitxfliufimiwgéfié£5300? iiiz`mdxwm`j'rxfimfizo
+
+     fizfiifififififlmyxzzéfiféflozmmé, ifigfimmzzéfiefiilozzmmxififi
+
+iiiafibififé, mu, éfifilOZWflE]fifl'riéfi4%ififi101iéfiJké§ii®§é4fié>§c£¥102° xiii
+
+*fifl`fifififiiififfiqn, ififilmvx&%%%¥lOZZI`EUfLiifiJk%§f§:JIE%4fi--Zfifi3 ?mwt
+?Efikhififiikifiiifi, ufifirififilmEéfifilozxxfiifio n'tfid'riifla, ig`qfimméfifii
+
+1022135]?J`Wiéf41fiifiiiflfi7d5é/ .5}? W] PLHQ'EVMX (Transmission Control Protocol/Internet
+
+Protocol, TCP/IP) W]éékéajaiiiWwasfigfiwwmfifififimfi, izfigfiwmmx
+
+{?HZUEJ`ufiKerberosVJ`ngjq`o ?Hflmfld', 1%fi1015é'gtfi102--ZI`EUETVX Elijlfihfi`ifi'fgik
+
+wig, J&JVIfl/Elflfiévg`fi'ififiéfifiATi'EfiUXffififififilfi Mb, Wufi'éiiifilm
+
+iaéifgfiilozzrfl iifi`iffifiififi 66 3:25am: u RBI 3%: It: 0
+
+                                                                                         9
+                                                                                 OI
+
+%1%?%211¥%\'/ 2422212222211011222411411--22222 `Z01%34'%%7%101%%?%Efi%%%`241
+
+%%1%214%--2 2% 4121221144 2901%%111%%1$ ` 249441¥21§214122 2% ET 221%" 2% 1% 14471254
+
+1244122122% 142%HF22% 14% 142%21141211414 99¥B¥`%7IF-`2% 12211424 1% 22%12'4`119012221235
+ `%%f%#%w%w%W2%E%m`(%%%%%%%W%%%¢)mfiw%fifiw%
+
+314%?" 2% 2mm 15121545272121§41¥25Y§1E¥K112W14 [11 $1111? 21%? `DIWI "thfiérth`iea
+
+91125141§21¥121Ew 2% £212 801%15? 112315143112} [111/14 ` 1261912214141? 2% 21251121422: 2`4`4 1%
+
+                                                                                                70122212
+
+22%%%%%12w2a%%«%%2%%2%wmw224:%%%%w`wmw%%
+
+442%:2522 `%%12{£11%%14111--2%22%1K1%01%%211%%2? `12 (21%24--2`0244 ) 21%44f2%
+92 221422111\%11%12154 225/1214 °%1%11%12121`1¥2%14%142%W--2 2%92141214T10122>%E114 `11%121\£11
+%%2 E31111 21 111212214 ` 2414 11421 - 2%Wz01 2%%%%1 X4 11% [221%V214: %1V%1%%H% [21{11%24
+12T121114§ ?%`211`25313?WIA§PI 21 111 `21 221 °11421242292212221112:[2141\422121711 `1141211--22»%V
+22 ab 211V%2 142 [1%%H\`41%15X+%T @1145; 2212413124 541 21 [11251 K4 2114\41121421 11% [221%`42 K42114V112142 11%
+1121142112211 [2! K4lacb 2154222241¥ `Ism `2142212221412922222--222 22T101122221212142
+211%121 X412z0112222 `12 L11 U11 2% °§412%\21%%14%22% 142 542124222 2%?12112'2'21142114412212
+2%???5 X1 12211--2 2% 2.422490122241123591`4 ` [14421--2 2% 22212221222141? 22%11 --2 2% 11mm
+2% @%%92%2%%4121 1114112414K11fl¥01<2¥212§2$ `21 21 @21421412`2 mz=1224242 *1222241222
+
+'92 H4412192%22--2 2%E%12 ` 3/1%%14V%1?% 21222211229292; %%%%EI?%211%%12%4 I 21 [11 22% KUaSOI
+
+~?211222E`1r12r "2%21114124/ %%§%\1/21422EE14%W2 2% %%2Tz012%2%%%<41%%%% 72121
+21 11114211271 `1124221--22%%92%W--22% 1% I 21 11122126 `2%=114 $22%2114%214Z%%22%222%B14
+Z2111; 2%{41222122222 131412121134 9714221141 @4414; `%14 292%2124121 %2%7%\1/--21422% 511%71F
+
+"225979W124T101224`2fE'1flE24--2E ` (E25144%11$`%'T@254E911%2%fl1 2.111141%) 511112212
+¥1r2%§911%3Fr2% 904%:414 [112%`2331 `32:? °H44¥ak1w2%§921%wr2% 942%?2 @1221
+
+99%7IF--`25 99V1--9%T@2¥(§229413124 11132341 21 11121211K4120122212§2$ 5,1244 #14211 9221%
+21%?224%92%W22% 141-42444 (22114 292%22--22%n4 ) H22122%W--22% 142%; "121%14V221 21 111
+22141 ` ( 441142141%% 412%12 921112222122111222111§44 ) 122122121122 X41214 1211542221
+
+%%%1 `@1§§?%%}%92%141LE21D%M£§14 [2112M112901%22111%E%E WW1 °\241`;%\`41%%(¥>£%----
+
+2%E912\%HF--22% 14m2`d/1222921 2! W%%X41201%%111%§¥$ ` 4143:2439: 142221211221
+                                                                                                       "1%
+
+241442 21422421424222 2214224121249 4: 101212422? 14111--2 2%%2%4£%214%%W 142z0121222<2§
+111%? 221 121 14121--22142 21:22:91 2414292142142 Mgr»; 2221142212142 2%1H424K112224E 2%
+
+3/14 $142 £22 [a £22 423%"? `%1$1492¥ [a 221E9112%1H3%K4%%%E'2192H4#%12% WWW?
+°m#%w%%?wwgw%%%+%%¥W%W2%%`2M%%¢"%%%%%%¥fiw
+
+Efifiétfl`fimffirwféfizmfiflféfiwéfgfl 221113111211? K4 121211? `?%%(%%%\'/ £ 12112»? 131%sz 2% GT
+
+ 44122 °1K4121--2 2%`44 x42'2192>%%14%\1/ % 92261314\%W--22% 9? 41410122>%E%%E 2%%%1%%14%
+~2 2% 4.1 22252122214121? 2% E?92%2122 2% 1421 21 [11 £4 X4221422/21441 tum 21422421492222?
+2%? 123121494116141<222412§@214 [11213244127201«%211%%%$ @1449 g 2% 2111112232212"?
+
+                                  °H221211141221`1E2141221141214212`é21--22%92121 221%X41211 °z01
+2%%%§%1%%1%%92%W--2 2%92T101222%?%1 225/214 %\%2Fx4x412u112z01222%42`4mml
+222%? 22141212.: 142 @12z0122%%`44 4410122426??%212112124009144 214122211442 ?F $114142?
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+WO 2022/227719  PCT/CN2022/072427
+
+99%??1020
+
+    4'F%7"7F+9'?i%i=f§d, iéifi`liié-IOFJ'V1£ffi§§ifi§~4fia\§{%ifiifig5-- 2%, 799992353
+
+ E&fiiifieififilm, yxiafiififii101gfafixfifii-Hfid665%%k%#a%66§4`9figfiéé
+%flofl?a$3fi9??ua%%»%#flfifiau&%»wfl,fi%»w%%fifi%
+iié103éli§<73¥1017i5i3§i 39643392110 fiamfi, i%73¥101fia`%4fidi§%£ 34%, f3???
+
+a:9939:394099»4?9fiéaas49.a»xw«-Hm, 9????2992994flfi23m49a ???:???101
+"1767\7`3`1fivéfl4+lyxiéfl4+zfiifléififi%fifiifi$¢i£¢fi§ééfi§ 4`9figfio N`s 1%??101mx
+
+7mm iififié4fii§§fi10111J3$i£fi1v17iififiz ??gabaiéfiir-afid éé'bkflwfafixmfifi
+
+Héfigflo 9H", iifilfi'i'i`éflfib??&%1, flflifil ffiil`fléflffl, %fi%"flii'liféfl4¢lfiifl
+
+924%?41`9`935fiaikwaa`éafifigfififiw'?, 199U£9wma [513%, fiiizfifiéflfi'tkfléfié}
+2, £44191 5%)}? 1`512H4¢2, 9%}? «4192] xfiMfléfiEfiififiifiéfiE £15 "flkééz`ifia'ééfiififéfiiifi'bfi
+H? fiédfiéz'rfifio E??iimw, é4fiifi§fi1o1mmmwfl 1%fi101:6699~»4\
+fififi&fiii%fifi%,??,%#&fi%mfiwu£fifi&fi%fiimg
+
+     9%52k9k9figaéméé, 949%}???1011?»1fi9u%%??102?99199909991039?
+Hfififik w'nfifidfiéwwm@éfifilozmééwézfififi1021'FflsifiiL939, ma?
+éfifilozfififlififilm¢5$*fl%iaééé6§49i9fififi§*flii'léfikfiéfififi/fiééififio
+?%er 129%; `39???»1 aéabifii wrmaymgg Llfkfla 6139311433 é4fiifli§i§1021
+FHME'QEiZfi-fi`éé`n`fi ?ififi101iééfiéwméyxxaé Lb??? 999+X¢§wrfl23£jy§9w
+%1»1&+fi§5l'H%H/3£fi§%`lfi-é§2° EéinfifiéfiMfiMt éggfilozimx élééiyrfifltic
+4929, 9299`r-Micfiéémwmiéfiwfifl, ??kmxiiflxififilolfifiiamd 6133??"-
+WQ, flwmzsfii"1%??49m2fl4919t399hé4i99653?r-ikéykiaflfiwfigéfid 9%???102,
+19d9zu?mf?4%9?l A&fifimuwéMHfiEafififi?Bis???o a`fiL, %%fi102J-_66£9>4\
+#Lfiéémwnfiiéfingz, fififimiiflxififiwmfiéaafid61399;}??? 9%??«95-1`235
+S'H&fl4%éléfl4+zfl;ififiifi%éfiififig"ikéy`ifié`éééifififiifi`liéfifiloz, {fiHfiTu£%§i--
+EAéfifiloziéééMmf/fiééisififliis'fe?o izcukb, Effliifluik%fibfififii%fi101ilé
++%#Jk%éfi9fi?%49\£>%?¥1029 9H9, §4fi£>9§<fi1oziéfiik9§9kfiiéfla1%??101
+
+E%"N%a%fi%%%*i%%fifi,M&fiffl*k%%fifi,%%éfiflfififi%fi
+Hi 1?? éfi/iiuméw-éio
+
+     $995919, éfifimzwu 7W] r-Nicfiéé, mmmz 92911929}; 3L7? éfifiloz
+mwlmfiflinfiéé, Wfim'fi +E91J499, 9999992994999? 73%, ifiefiloliéw
+?iflfifilm1v1fi§§<73¥102i66§4fiéii§§§1021Wv1£iéfifft7ffiflflfi%é§iéfifi)fl 99/90
+
+ii,é%%fi%fiwuufiéw%fi%fiwmfluifififlmfififiQfi,flfi:ifim
+fifikflfig`fiflfiu&w%fi¢fi&%*fi%,$ifimfif§%%fl%fififlWifl
+fii%7r\wfl?io
+
+     ifiififfi`? £u%%73¥102£%fi%4fiik%§ffi%fib{édfifin'fifil'fiiflfl, ?%flmw
+J&JTfl`Mimififilmiiflgflfi9?:"fikéz`ffifi`éfifiifififiéfiiéfifilozo
+
+     4/? fly "flimflad, 19991599103199? iiggfi101fifim¢5 éfl4+1u 7123492951 9??? 9%
+wk%éfi§74`i§i&l§%fifififlé, ?Iyxfiiéifiiiifii'i`aé`, yxisfiififilomfifimifié
+
+4fl%?a%éé Wig? Afifiéfififig AHULZIJ 6%??? WW}: éfiifkifisfliiééé%fi¥lozo $19] Ma,
+
+i;9-9`39\WM @Jfi'sbfi? *RHQ»1R§L»E?H6§¢EM§EQ 1%??10119994529111299»93
+
+4`13, WMWEiZE`Sr-i`aévfaiififiilomééfiiwrkflaufifigyafléo 22$)"; 191%??10131'
+
+                                                                                        11
+                                                                                            ZI
+
+                                                                                                 ?&éfikiwfl
+`E?%W2%a¥t;a maiiéiflfi é`a'tffla `mémrmw; eazmfié`zi%§w%éfa%xv 2? [71???
+13W??? 25 ETT 101%:95 ?Jzk'ma fi%}5%%%(¥1§9?r :5 arm: X4%}5{4}%%{£1§4Ew 25 Egg 501%26?
+($351? 9T `E¥$¥M££%fi99z01%g%%¥£fi%% %(¥3£%\'/ % 99¥E¥%1Ff: GTT 101%?!sz
+
+£kM£fifi¥£¢W2am¥fééa¥fi¥fi Xfi®5£fi§£fl¥i EEEQEJ 01%¥?[t$§¥? `abif "ZOIfiééfi?
+
+3%? ( 35-33%le % 99¥E¥éa¥f2 Eda???) Ham??? 99 abigbfiieta [IT£¥HT§5%FZOI%¥%`%
+"SEIOIfiPfi? [afifimggfiaflfiré &%" X4Ja£01§21fi$§¥$ #3? ° (wwméémwé
+
+99%fingéqfiX91l7Wé`fiflzfifié `Hvfliflif [x¥101%g?z`i?2?¥dfl §£a¥¥¥99¥a¥%wf§799%fi
+
+?gfléewtfiqnzxpffianmééBirx`mtgéeTemwvfimzfiHzm `%%¥1%99¥E¥%1Ff$
+£7 firmfinfifm #1551 ch 101%205 $39; mm: 353.1 `stfmtgé ¥?29'i`? migfiréfifl?
+\I/ éefiéwa`éWf`é £7 `4: magi? °[15¥Hf`§5%x4fi'2y99%%m%\v 99¥B¥%7IFT§T4=
+
+101#%E%¥E $`2m}5\%%%(¥¥%f§fi `%§§@fi%fi¥1¥f§5§?fl%fif§5 [24 X023? `44>>2Ia
+
+ngfimafw :5 Eafix`flw :5 ¥ mg L $90K??? [$31915 ¢H£éy<§n¥ éfifiéfifiififiééWflE/fi
+
+££££sz K4 `1? "41`! °%¥1%%W99 $842¥¥¥ K4§M¥%WF% cbzfizf `%¥1¥%W99iz¥ E 994414
+8§n2;%miaif `a¥¥%9¢%w:g&+~w `%(%¥%\%WF9MI%¥¥`£X4--HM%%W 99i1¥ [a 99914
+
+8 Enlfi%mlaif `%¥¥%99%3Fw§544x `W ¥a¥¥iiz9%%f§`fifl%wwi%flqfin E1 101%???
+Em "4M9? axgwwme E2113"; ¥X4ia%7lF99 £2ch `EJE¥>E%%E%¥E£%99%HFEJ\£H%
+
+`%(M%%%WF gi?????fliafi `%(¥1%99%WF« ?%kfifllflkimlfiéf? `4: %@¥ [#71431 f
+
+                                                                                         °«%@mgfi
+choosyzwwwmflmmm `4EJ¢%H%¥¥ZOI%@%ETW:? `SOI%¥HI%§%EQTIOI%%
+
+3.2%? W4"? °g>aw§§>zanéwpwwz `4 Elclérqfifimfi¥¥@fifi@%f4kw01%ifl
+flag??? 9710172395? "¥Z ?'E °éJéclé/1EH 9'; E21 Eilfim`i EI?IOI%¥%?GTSOI<2ZHI$§¥?%£¥M4 `4 E21
+cpg/jfiaéygrmligé`fiié (cLLN `1000101d emu >110AA19N) mm DMWMEE? X4 ££01§1$fi$§¥$
+
+  `DW; welwmE1airgzémg@2901%¥%3¥?§m101%?25?cl:magi»? WHERE? WE
+
+"i [Ifénfiflfizfifi/Pafléfifiéwwdif101%???97 [12% 99%(¥12%99%HF*$EH¥¥E¥SOI<22HI$E¥$
+
+???%Ui`w `90200=£I£;9£01<%.1fi$§?? ffi ma 9`33/V%.%¥§H%fl'éw%i:zl£101#%?££¥PE fi4¥9§+£01
+<2¥Ht$§fiiq4cmaif+t¥l `Iea mmmwrwaafiwg 3.14%flmlifizf? ma `00200251 £% [le
+---- 35 QWEIW (b\é/agyg-«gksmgmwg; 14,1? `fififl'cfiflfl eaTtoméifiE 5144:248 WHOI
+
+§§Ht$$¥$2fi¥ék "#1514 "El EHZ i4fl§h [Ki 15H 99 mwméwm 14? 101%?5? £7 `IIZHP 3%: £29 an
+EMJ $¢E¥?§Efl01%¥?fi$§¥? `ng °--»%>k%£%5£é14cl=%fifl £29 EQ01<2ZHI$§£$ 971mg:
+??`??UEYY `$f£7¥%3fliaf+? £29 L21 \J: $EE££01§2W$E¥$E mmififi `clnié`r'@¥ [#71431 f
+
+                                                                       °%fiw%1«%W%awwm
+
+«giroowzwwwmwmgg [tit [1§#H¥¥?K4EZOI#%% "IMF "Eggfifi`éfififfi
+
+@ng EH afl'éflfiamé fifih`flFw 35%! [12133 w 35 @101 $343.5 15 97 "2H fl £29 [@ng fiéfiafléfiWflfi`?
+
+W9WW2¥>S+$ZOE¥§§ `LHCHT °%P%Iék¥¥§fi%fl'99 fié--gméf `éfififl'ékfiéffi`fixl/ é ewwwm
+h%301#%% `azmfiéflifléfifiafiw % 993.63%ng éfikmififl $9444}:
+
+                                                                              "$$$$qu `fiif??§fl4?¥fi¥
+
+?EEHQL `Tfififli--`éflflfi1W1?"Q$E¥E$fi<fifl¥§éywéfi¥+§K¥§¥ZOI$¥§fi§$¥¥fi`27 Efifi`flfitfl
+1`:eawwmémaawmamlfié`iE `cbif °Z01%g%`f%§$$$P§g¥1¥99¥9¥%W*%§99
+fiékfifififwzfitféfil£k `za`zmvfgéamzk `éééww % $¥+«Z¢$¥E¥% 201%;3543`NW535
+
+amwfiawwgé T@9%k%k¥afifiélfifizi¥l%k `amwgéam `éééWH/ % 7%??xl/wfifiifl
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+WO 2022/227719  PCT/CN2022/072427
+
+     fifi'rfiam, :flflouafikfim, ET»X%REJ£E¢$6§%42}£>%7E¥IOZO 2£#2=I=;?H.L
+22w, fiskéwééfifilozmkgxwg, W»X£i%fi101i%f$"ik%éfifififi 22%;:
+2a %E%»2+%2L275W, ifigfimmfiéfifilozzmwfié«wkéww, 2425222
+filOZJmfi'J211%2`5'Wfiflliififi101fifié"Hfidaééfi4%5§*ik%7faa`ééfi§fifé, rrn 3.512%
+
+#101 u fi>§<73¥102zm 32,2222": 22%4232, é42£>2§£¥102¢22 k2222§6m £23": #22211
+
+éfiiflfidfifllfl, ifiefiilomwfiififio 2W, 2533221121725;;222254k2`622222fifi
+
+2422222210 422:»fiimflw, 122221012222wa27422222222222222222223, HIM:
+25332211222723421124222`212422252%»2222226222221222222, 22511223222, 222332
+2:2? : £12211 2% eh 23422242224222 5 2% #29223 2 22 222% 2252222222, 43:91? 232222, 1`2 2%
+
+£N%%fiififiwflo?%EWW,$$LN%5$¢N%zM%M%N%,Mwfim
+fiififimméfifilozzm 222522§>42E1220 22% £225Lflfimmxfimiéfidiiém
+£22233? ififilmfififiifié:2262222222'2425, mxfiiiéwéifilfifilol12%;:fi2u22
+
+iii $1Ji2>103, 7"? xi: 1%: $1Ji2>10322 fififlfifié 22223102122222 £24926 22222222423222 9
+5%*%%k%fifiéfififiéw,%w%£§ENMWM%fi%£%%MR%W%%B%
+
+232222211E23u2§$11fi240 222:: éifiilozfim 721Wifl`f-4`é`2`nfiéééitfififilflfafi3,
+guawyuiiffiamfi-¢22§u&2:¢22, fifiiififiIOILémcFlfigfiv--NZ'Jififiiflizlii"
+
+3212222122222421422252%»222a22222'3r2222 (21Tfifizjbfi`5'ig'3`ii3ffé) , $72123"?
+
+422%2222522423222222102, 42d2umx£r42£2m+4fifl2213122222223o 2E, éfiafifloz
+3m 2112] 312` r-Ninfiéééinfigéfiwgw, 2244:?»1 £22222? £22222 u 22% 2272222 221 222342
+22222422112223322152»W22m fittififiifififfifiifi ?%fikéy`fifléifiéfiw 21 T223127
+22322--32222) , i`fléfizfiiLi%%§2#%%4%£%%fi102, {?dizu'fifylfi%4b\£éfl4+5fiflééfi
+
+4228232290 2mm, ééifizk%42>flk%2§zéfisfli i2fi£¥101ufi§2§£¥10221flf 2141413262235?
+
+2222;, %Wyxi%%%i%£¥101iéfififi753`5"Alagvka%k%\%§2%fi42§¢£§%£¥102, 2M?)
+mwfifiiirai2`ififi1015éfifiilozzrfl 22 2222222241222? fififiéléwfiéfiaé a Hi,
+
+22222224222222: 66 fifii`éié
+     ii£2212§<7¥1015>2ia¥102zm éfiiéiifi§4fiiifii£f #23, T2722; 22 3%22101
+
+222222232, §§¢E§~4fi§éfi300¢éfigfi`kflfiiifio
+
+     Eififilmiéfifl%§ki&#fii>4fi£>%£¥102)§, %1%£¥101£i¢2rfi, 91111227332101
+
+22222212222272]222222222222223222, 121332, ég`qfiilozfirufiig`qfiwlfijfiéfi
+éfiik%`iifié%%a 221])22222242222222222, 22222m2224222222222i22222, ma:
+4%2`22222é422 223002¢f4122m P 26 2%222Eéfifiréitrio
+
+     fifi'f'fififi Mmefiii/fimfiflélosmwzfi Wiififiloléhéfifiloummé
+k222fiifi4'fiiflfilo $202222), izuasfifrfi, Jimwjkéémsqv@2213?22105m&%§fi
+2210525 29?, fii§£73¥101$§cF§Zfi, mF`Tuifiii/fififlfi%\2§105iéfiigfi51%10511`73`1`51
+12222101, fififiififilomflézé, J'fl FETWfiiiEJWR$2§105iélJ§§P 22105222151r
+
+fifimzo
+
+     ?Fw`zfilfli Em22%éé105mxfiififiilouiiwfié, EJinWflSJE`qfiéézifiifim
+EEF%Mflfi%%%gF%MflO
+
+     Wt, flmflfi%\2§105/fiziififli Vflxifiiiizifi 2%1os1uxézifi 2210522322225222F2:
+662%??? 4'Ffiyr-fi'flid, £221?2%1051'6m@ifiéfiloliéééavfififlmfiIaiJrinflHEaéa`1 (2n
+
+zookeeperflfiéj`gfif` ) iiflfl'7félifild$4+a %?§#ii§fi\jfi fififlfié`tfl`ififlfi%lfiéfi 213221921222 %, 127V?)
+
+                                                                                        13
+WO 2022/227719  PCT/CN2022/072427
+
+29Mé2%%»22%%i%%101%§7ii2fl2 (2222222) 0 7`32}, @2125 2%10522davnxéj%é%%%
+102:26fi7222`x/3J2122/22712212MQ (fivzookeeperflfig`%§ ) 9222222211$4%, ???%45C1`Zév\75 5V1
+2% 22%+2~2J2HR%2M%2622~222222'2, 2222291222 22221221 %%%%2102%2?7%:%22F2:( 22%22% )0
+2w, 22%22221022225222222101221`221271`222`222222`2222222, fi%22%22:105221fiii%
+2:?2%10522%%%~%22102%§7ii2fl2, 2222222222210222722221223, 2%%%227%102
+$$i§§filOlfi2iF§Zfiiifiéfiflk%o
+
+     22%): 13%]22%22105Tafwiaé`922211$22221017ii2fl225, 2222222222222222222222
+1212222222? 2% 224226, 111212122<2§1052Um @22422222221053, av'rfimmizifi 2%1051
+21714221? 2%1052292221122222221122221012173\%%<%%102%42\2242%0 213-219 , 22:? 2%1051
+
+Efiéflfifii/fifi] 22%222`22297`1922222212 $44123, 222222112] 22/?» 222%}1257`1? u @1295 2%
+1051)i/f%2-2k%é42%, 22%»2222422M222%22222222422222222 (@EN`afiifi
+fifiém`fiififiiiéfifi) , 2%2sfiififii/Eiii2i (fiulfifim`irfnkéfi?) 0
+
+r2 21%, fi22fim22x2+mm2222u 61%;??? 2%10522i/ififii 222221234322, 2225;222:342EHJ
+
+ffifiibififlb`fifié`fl'z}, 2L2`2Efi2ifififég`fiiiiiko 22%)3 42222722521053? 2157\2`311
+
+Migfi%mm%%fifi%fiéfi%,M%%P%mfl%%%%;%%fiao%%»%%fi
+2M] ?%`éfiififilmfiyéfiffififififiifi, %2%;2k%42.%)% f2%%%%%2102% 22W}
+22`, 4+222§k10532m 2% £1312] 22%2`2105221`51 222226221? 2%2272225%2P 2% 10520 4222--1272:
+26%, 2222221012222--12, $42J<§EEWf2§fii%£¥10127i%4fi, 22L~J<2§42%)%
+f2%%%~%§%%1022y%%4%0 2322222221017222211223, i222dii§>103mx®mfi2fiififi
+22%2222222112 2242.2, 2142er P 2%252Efi 222222221]22%10322%2222%2+22%%22
+
+26%4522`2124`22'24'2, 2222222210222242222422222222226 222%, 2r 211$? fifiifiifiéfifié
+
+42% 22300! 22212222222222?) :1: 222%2210122222222210222 2%24/n`fliifir2`227220 `22;
+
+2`26, 2122227222221722222222222222i222222222, %%W21£%i%%¥10126%45227i%
+
+22222222742222} (23222222222252) , »x¢b;mi%g2%101%%%2210211`%222242222220 m2,
+4+§L$§2§1053Mi22fi2%1051`2932i2722635">lk§43§2fi1 222%:2221012222222222
+£22, 22222:? 2%10522222222E22L2Mé423m 22% %%%%%102% 224229
+
+     222%, 2212222101222211222, [2212%222105222222221`222222222222722222101 125
++2722£%~%2%%102, 2%Alfim2/fim 22%22105222`21`2 2% 22222222222722, 22%2222%%24:
+22%»4222223002622222, F%M/xxiééfifiuxo
+
+     422%227232222, $i21§diifi22£il$ 2222/32]212%221055222%IJ22%1032212F%,
+1122:? 2% 1051224221? 2% 105221242222210532132222/fim 2222232105217 222%2'2fl2d2222,
+EH 0 222%2222222222222223002, EL)2]22%2`21052m522E%IJ22%103%2225%, 2,29;
+2:»4\2%%%22Lfi21H&%%§10522222%112%%10322252%, 222%%2m222722%1fii%222223fl
+)2] 222%, EPiZ2§%uJii%2L%/fi% 22%222W 2222227222E4Ffrfiéi§fi 2%1051\ 222?? 2%
+105m 7242 22222221053, 7% `21 222%21129:%2L%fi FF] 22%222222L22fi )2] 22%221052222222222
+
+1`51 §fi»l&%é%fl%£¥ifl§%fi%4'h 2273*{2E ?%W`TP, 21/121 HR§2§1052212§2211291§>10322
+
+22322122, :iflmnfiéJ`éfiloW 2132.2? 2%1051\ fin??? 2%10522222222222221053222522
+
+Wu 2122211222210322, 222222112%%103222%:222%%fi 2% E] 21522722262224?» 221%
+
+§?2%222%%1129:%1032, F2)2]22%22105F12222222262255ifi2<éiii£2§%dii%1o329, r2:
+
+2E%IJ2`;':%~103 "172% 25 fufibiéflb`ééizllfi 2% (22%2212" 2%) 22222212222 (22%2222) "102625:
+2222432225 0
+
+                                                                                                     14
+WO 2022/227719  PCT/CN2022/072427
+
+      :`fir`fiéfi, 222222242111112:2212422222222 E] 2222251222231 (2222212221222
+1?;2212:22101112112222122'122103222--122, 1222101126222? 2111*] 212-2112121122me
+
+2P 2% 10512222222227 12222 1, 111% 1112222 1052151222212] 21 222222151 2221222221222 1`51,
+Wfiuxfi§fifififlfififififiw2°
+
+     22222212, 222221021122212221012212--{22222222122221212, 2412221
+
+21222222622212, 25222112225212] P 2622212, 12:12] P 2'4 26" 12] P 21125120
+
+     21211221, 212112221052222151 26 22227122210127221222210212, 2m 272%
+2M1 112222102111221126121 P 22212, 11 21% 22221021222121 P 21:22224222112622212
+
+225121229 273--2", 15212222612] P 2221222120211 @2212] P 2221` 12] P 211% 1%] P 22/21221Péfi22
+
+11222212122112-220 2222222112, xaéfi/kjfi éfi/xlfiéfiifii, 222222210212222112
+Pt] 15' ~ 731)" ~ ????FXFRWfiM/F? , 4:29? 3135221242462 1% 21330015113 WEB? [EU E] 22 (recovery time
+
+object, RTO) , 2123222117 1112 (12221012221) 12.21%, 22222422213002421121112
+
+212zmwwko
+     2522b, 1122 2-22 2212221, 11222101221211: 222102211211421222101
+
+122122122242222222102, 12112122101122121 P2222222122`c221020 2M2
+2%21232, 12221222103211 23122210122222. 2:12:22, 11222122101222122222 1922222
+12] P 2221212 22122222102» 222 122%112221032112221122210111122221021212
+
+261% P 22212, 12222212222101 "13222412243121 P 222212222221022'22222612] P 22212212221224},
+
+111222122221012222221021222226121 P 22212»21;, 2222212122101 1224222212] P 2221222
+222221021 121m 2221222212] P 21:22, 122222221021222`2212 P 2222212212122 2122
+22222102222512.2221011221222, 21121222121222210212212] P 2221225 12] P 29:42
+221221211122, 112.71% riwiééfi/xfi 11222210212122A12a10 1221b, 21121112112
+2222112 2222222221, 201, 112% 2222122212242222300261122211 21220
+
+     1212122522 1, 12122217221, 21112221012121.2117121212221212221212 , 2%1211
+12] 222 :10, 2 12221012222212: 22, 2222122112] P 2222222121 12222222 2222217222222, 1111
+12112210521122221`5126 22222712222101 21 21212212222102" 2224222222222;
+22112,5112mfifiéw,22%2122z2211212,£%22210
+
+     21211219, 21227122224211*222222122122222212252]c 22212211122252
+2%: 2221221122 22300:, 2221211 12222222222222: ngadoop2é22221$22 2222252121224?
+22, 22221211, @522226222224222300122211211112142422£HDF32122, 21222
+ufiéfl4+57ar4$£Hiveéfl4¢, 1221423111214267222£Spark3QL21220 2W, 2222112212104
+PI 11 11111 12] 1112222 10515222 1`51 21: 222222212222 10212, 22222221222102122 112222212
+2412212222101 (2212222101421222112122221212'1222) D 2221112121, 22222122
+21042221522512221222103262112222411, 2242111122122222122212`2210322252222
+1 T 17 11212T022211 26 1221:2122: 111212221212 , 2 922222222221221222122 11 @112:
+
+     S901: 122%1122'12103222114211222221212121040
+     222621211, 21221011212222 2121212, 12221212103211222112114221222101
+1221222222421222221020 221122, 21222101221212, 2221022112221222101
+12212, 1212121210, 122212222101222212, 1102222121210421122212221222222222
+10212612222212.2241}; (22112121242213 ) 129221010 23213, 122%1J2221032112132t222 21
+
+                                                                                        15
+                                                                                 91
+
+%y%z+yfizeAIHm `iQIIE/llfiwfi °aa¥+W§¥ a sacm eag-Www fiammxtéwg¥amw¥
+
+#yfi%fi%w`fifi?%%fi%fi%%flfifi%mfl$wfi$(fllWmmW)fi%%W
+¢$flfififififl%m%flflk%`fiWMMM%%¥WkGH§Hmyfiflmfiflflfi¥
+
+%#¥E@%fi%%fl*é%%fififiwm{E&"%%Q%(%%%%¥W%W*%EM
+WW¥E$MHW¥W%W"%§%%Q#W&MH$MWH%?%`#W&MHH%%Em£
+1%?`$fi*Yfl?ywfimiwa%gwm£nmgfifi%@%`mémfifiw¥w
+
+                                                                                                    °fifigfififi%v
+
+éW¥W%W~%%W%%#W%EM%%%fl%¥+éwwnm§%fi%w%ZW$
+                                                                                                °+wgqbsxmds
+
+WmfiWMM`#%&MH%EHw%%fiV§W¥W%W¢%§¥%Efl%fi£%flfi
+
+M&flfiwéflww%`%%+%%w`a¢%?%@W%flUm§%fiéfi%=W$
+                                      °fi¥%%%¥%%%fiflwfl%w¥E%M§%%m%fif
+
+$Em4WMfifi?%%¥fi%%¢%§%¥$`fl2fimflaflw%mwfli`WEE
+                          °anwfiwymwmfififi$&%?éfi`¢%?%%EUME%
+
+fi%%%11fl%%?@flkwm%fl`%¥%%%%%Ewflwflfl%y%fi?=wfi
+
+                                                                                 °¥%%?¥W%M%£¥&M§
+
+fififimfiwfifi"%%%%fifi%EW%Ww%%UN%EW3?¥Wfl£MM%EE%%
+Efifi`$fi°%%#%fi%¥%fi%%wwg¥%%%gfim&mw%§fi§fififig%w
+`mm%%Mm%%%%%%%%%wwgmm%%%%%fi%%mhfiwuwwvg
+
+                                                                              °%%%%V§%¥W%Wwiéw
+
+%%#%Mm%fl#W&MH$%Ew%whWE#%wgmmn4w¢`%%%+%%¥w
+
+%W*%é%%fi%fifl%fl%fi$i$fi©fl§flkfiwfiwwgfi%mn4M`$M%fi
+Wfikafifl°mfi%%%%¢%@%fl£%ME%WW#%Q`M¥%%fi+é%¥fl%
+
+Wr%%%%gfiwfiwmfififlfifi%m`fififimflfiflfi#%fl`$M%EY
+                                                                                   °E§W$%fl`?%%?
+
+¥WWM¥£E¥M§£`3?%fi%fi%%#%¥@%fiwé%fiflgw`$fi°Tmfi%
+
+%%E%%%%$V%W%%wfifi%%`M%%%E%fiw%fiwfiflfifi%wfl`fifi
+
+fivW¥W%W'%EE#MH%%?L%%E%%%#%E4mfifiwflfl%wwggm
+
+  `%%fi%¥¥%%%fiqmflfi%$?%fiw%w~gfiflwhmn4M`wwfl%fi
+                °§fifi$¥fl%fi«%§%%%fi%fimw@wwfiw%m`fiWEGMQL
+
+%&EE%%%#%`$fi`MH%W%%%%W«$$§Wflfl$gfi¥fififi¥$§
+
+fififi`%¥%%%%EW%W«%¥`Mfigmwwuwflwfim%y%3$tmfi
+
+                                                            °Ew%%W%%W$%#Efi%$%¥`EE
+EE%T%$%$W£@MW%§%3%`$W%fi%w§`%%k%m%%T`fififl
+
+                                                                       °Efl$¥@fl%%fi%fiww%flfl%
+0%%%%%%%`%%%%®%flfl%%%%%fi`%¥#w%@?wwfifl%flM#%E
+fi`E%¥WWMW%%%%%%%EWE`Efigww4kmn%fififl?`WHM%
+
+              wwwméw; Dal 2z01%%%%%IOI%¥%$ [wk'éémg2% m4; X4ia01%25? [W
+EEM4W£M%mwfiififigwEfié$¢fifi%%%mfiflk`E%§w%¢wfi%1
+
+wfl$`$fi°§wrv%%E§EV%$$$¥%w`flfifi%fifi%W%EW%fiwfi
+
+£%%m%fiwfi%`gafi?%mfi%?%%fiflwm%flwfi%§4@%%EWW¥w
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+WO 2022/227719  PCT/CN2022/072427
+
+éfiéfi'awiflfi, ££££4¢$§M§<fifi7fafl 6`7 HDFS E1 £11190 $123011 16 1%? 1`5] SparkSQLé'fl
+4+ , fr? 1x {LTON 2'1 fifiifiifiéévfixéfié`MiUEI--i v17 ?xflx 1i) 1`2 SparksQLéflfi/E`fififi Jk%\%§:if% 6!:
+@141); , xAWEafi--iZJtiz'UE--Xfl`a fl? "ikéz`éé iii); 5% PiWWifi ééHDFs E1 $121,051,125: o it'HéL,
+ebSparkSQLéfldfls'vfififi ???kmbfififi, @iififiiwééifififiim éfiHDFs E1 211%
+
+      £332 $560!] "1", ?4fi`ififvjflfifi 101 max £711] )1] £9 "Aéflfiééfifiééflfifififiéfi 1kg»
+iiiéfiiifi'méfiago i? "P, $935001? Ffiér`friifitfi`é`é`fi'] iijfilffiifi fifi`iiiz`md Witfié`ééfi 9%
+
+     S906: Ezfik`giififiwafa, iéfiuiiéms @éfifi102:fifi%w%ifiiifi1021T7i§5 ;
+11%, a 46`s fi>§§73¥102§$1JiE§73¥101 "F 66 i5 3% 7`11;er am 3 Aififificfififi #3121] 661%?"
+gm 6% £136);er
+
+     9' firm Huh ifififloméwéfifiifi 101 1391111] 3 fififiifififififiHDFsflw
+Hiveéfl4+ 11 asparkSQLéflfi/faifiééé 11331101116005 , ?I 11 1%: ii: $111924» 10333511}: Héfik`wb
+66 @m , M&iéfififiififlm/Efifi Emaeéfiié, fififlifii ; 1301`s fi<>§£73¥ 102%; 1%?
+1011.613 Jk%\ifkif§%4b\fii%%fi102°
+
+     flfidIriifia, 3`33 L E74"? T1111 491%; fififlm "F >11 fiJHDFSéflf+\ Hiveéflflm RSparkSQLé'fl
+00%fi5fififl%fi%fifififififlfiflfififififia,u@f%%%fl%fiwmfiifi
+vfifiébiififif`d`ifiéwe
+
+     wm:§fifl§fimmfifi%#k%%fififlfififigfié4§fl&%,fi%§%&
+
+9W] f imfirfi`éflfllfifififi i5 3`5 4193er §§éfi§fif£é§fifié4fio
+
+     S908: éfia`éiiflfifi1021fifiifi`r-4`émf2éémflz 3 02151419}, iffidfigiifii 101:
+%N%%kfl,%m§+fl%fi%%5%#&%m%%&fifiéfiééfifimz
+
+      4'? 75 "fl'fl'fifll, 4Fii§t§§§fi¥102iiéfi7fi 341M??? 5%] fibéfimféé 1 ` #14? 2212 11 ?Minfi
+
+£3 1: 40 , #Mféém 3`39?me 41%1, fixiw` 1`51 ififilOlfiififiToflifidfifiHDFSé'flfifi
+W05 £135 «419,913 fiééfiififi ( fiUHDFS E] i ) éé'bfifla, 111%FI»17FE<#I££ZWI1%HDFS£H4H%
+41W: 5 £15 "£57913 a`é éfifififié0§£éfiefi102:66HDFSéfl4+xaL/f1 éfififi£ IX: 15qu o £41166 ,
+
+#14? $20] féinfiifi-IJ {£919 , #MEETO 1112'] ?rfiHiveéflfiHfififi i5 3% # Jkéfia 7% 60 1:221); £13: 6`:
+
+1k 1% , §?W%ifiiiHiveémflé%éfi 5 3'15 «41%! 3% 661115 §§£é$£¥102iéfiHiveéfl4¢flflLfléfi
+mmm; Wfi`ém f?fl%f§%`lfi%3, 7FWI§ETOHULZIJ+XTSparkSQLéfl4$ 1:? i5 3% "Jkgvhél
+
+71`: 1171;104:2000 , ?-- m%%ifiii3pmkSQLéfl4+fifi%éfi i5 35 "ikéwha 7`": 617 fififé fiéflfiééfifii
+1021:1513 sparkSQLémflmL/fi 6!: fi4%Ei&¢ o
+
+     E: "P , fi%%Hiveéfl4+»x xsparkSQLéflfiLmL/fi a6 3% "JUNK: 13:15 %%4¢:\£r £112»? 102 aa` ,
+
+W11%%12Jk%\§iifiai£%%filoziéé iiii/éfifi 3% fifiwz: £117 ikiiéir "P , 11 {if}? fifié
+
+fififlozfiwfififi 40 as iiiififiiéfijfii «419% 451%
+     ¢th éwézfiefi 1021.66 ikflm, i5: 7!] i%£¥101thOHflLZMfi/FL%éfi £15 ~Jk%\7ha %
+
+16 3 fiéflfé git, UHF? ? m§§§73¥102iéfi £325 *fikéy`éfiififiyfi Ha" I`fl ?Tilifixfi'éio
+
+     S909: é4fii§§fi1021ifiii§iy"Nitfiééfiéwiéfifilozmé £13? "119%; 11:40:21,
+
+1' 'Wéo
+
+     mgrflkfiwa eh 1%fi101é4fiééfifi1om, wfififiififi 102155va 711111] izwm
+fiéfimfii Aflk%\éfiéf§:fii&fi%fi° 1W, E§§§73¥10216§W , i3 ififiimmmwzq 6!;
+0%fifiafio
+
+      fifiiiréz: 613%, $i$4§d 19, iuéfifiilozifybxkififilmLéwikgfiiifiéfij 011%?
+
+                                                                                        17
+                                                                                 81
+
+                                                                                    :figmkwfiflg
+a`§%%fl%%%$%§%fi#«x¢mwi%$iim;`mgfié°(%fiéa¥2
+$imy%%%WWflmfi¥E§%%Mfiwmuwmflmfi%?%%fi%www%%fi
+ `$fi`%%%EM¥%%%%%t%%¥@?mwfifi%flM#%$m`QiYM#%%
+§%%%fi%%%flmfi%$%wmk`¢flfi%%%§gymm:gflmw%fi"$m
+wfigfiflfilYm#%%§%%%%fi%fli%%¢flflfifi?%flfim¥W?%%M%fi
+%T%fiwkmfianfifi%`mw°MM%@%%%%HMW%m%%¢M%£ET*%H
+
+ °gfi$§fifi¥rgyww%wwfiaw%fig`aw%%#m~ggwfl%W`fiaa
+%%@2mwfifl%flmg%$L§mg`mgwwm%%wmwa%%figmr@g§m
+%%fl%umwwm°$§flfigfi$flfiamkmzmfigggmmfiiwmmagi
+ `%%WM%%%M¥%%%%%fi%wwiflflfi%igfim%flm%`¢M%§ET
+
+                            "?%Eéfiiwfl`fiww?¥W%M%£%%M§wk`afim
+fifififi"wwfifiwfimmfi43%Wmmg%mwflfifiaw%w`fiaiwfifim
+@fimganmmg%mwfl`gzymmfi%ifl%wmfifiimgwm%gfiiwr
+§M§yflMflEE4w$EQMflmfifi??%w&Mfi$M%%m#%%%mm#%$
+
+$$mfi`flfl%¥mwflfigflkfiflgw`$W%£Y`H%°%%%¥fli%%$w%
+
+ii`Eflfl?¥ww¢wwiwflwéflkwfi`¥$m£%i%%4¢%%g`%wg
+
+$¥¥%fi%ma%4¥mw%4fl§?§¢mwfii`%E%%L¥`%%%flfifl
+             °fl$h$flfi%fi%4m%fié¢mm%%@%fi%fi%%fl`%mE@%%%%
+
+WfiflJW¥fi%`%fi%W%%%¥mww%`wfi%¥%W%%Efl%Hm%%?flflk
+ZW#%%W`Efi??flfl#%?%"éflflfi???%§fi%fi%fi%fiflflfi§ifl
+
+                              °#«4§%$wfl%%$4w%wmmflwgw`m#%(%u{
+m%@>4w%%w:1flfi%E?%Emkww`fifigmwimnfifi?`WflMg
+
+                                                                     °%w%%%%4w%%&¢wt
+#%%%%fi4w%%fi$wwfiflwm%M%mwfi$`%¥¥mgfi%§%%%fiaw
+£Wflflmfifi?`%¥`Wfl#fi%§@%%fidfi@wwmfi%fi%flmfi§%iMfi
+
+                                                      =mw%4%i%@wh%%%fii`%¥°fifi
+@%E%%mw%%%%%fi+fl¥i%fi`fi%`Y?%@%Ev%@£%%mfifli`w
+#"Emrvyfifl7m#%%?EV%E $¥%W"¥W%W%EWfi%4M%%fiaw
+éfl7mfi%%§%%%fiwkffi%%%:flflfi%?%fiflflfi%%§`#E°fiwfiwg
+&{99%@£?41ZOI%¥%5%%?IOI%%%5?Eé$E$YH`§%E@é%ifi%¢%%qfEr99%9éf41301%¥%5%$xfi¢%%q(&{
+%%fi¢flflfi%$%fl%`fifi4w%%fififimfifi%fimflfifi$wfiflbflfl§flwfl
+i`%%5Ym#%%§4@fififlfi%flm#§$¥%fi%méfi£%fifl`¢%m%%¥
+Imgfiifiw@mkfln%ywa$wmfimnfifi§§fi§fimkfifiwaww7nngg
+E`fififi§§§fi%fimk%fi%%fl«i?flflfi%?wi`¢M%fi$`%4w%
+
+                                                                                                     7m
+
+#%%§@%%fi%%%«g%wwwwM%fiw`ggwwflwfigmfi`awwwgfl
+?flflmfifiiiwwYmfi%%§w%%%%%¥W%Wwé§%%flfi%fifiwfiwm
+
+#EMM`fiwmmmwflmfi%E%%m`¢%«%%Emwfi$nmufim%ywfii
+
+EH5Wmm#%%§%%%fi%w%fiiflflfi%?$¥m£fi`Mwfl%£`%%HM%
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                 61
+
+%%W«%%%Ewkm2flm%%ymMMfi%E`M%fi%ww%mfifia`%w
+                                                                                         °wwgfififi
+
+%&%%Ww%%7mflfifi%§w%%§%wvw4§EEMME%E%@%=wms
+     °%fi%www%mfiflmfi%?%%WE`%%%W%%%%W«%fiwywfluwl
+
+flymfifiw%W«%%mfiflamng%?%`fifi%%%:flfl#§%§@§`mw
+                                            °flfi$$fiw$$flflfi§fifi¥$$fififififlT
+
+Em#%%fifig%@fl`$fififiWTflflfi%%§%%%%¥%?flflfi%%fl%%%%
+2%Ww:¢MM#%%Ew%%#%%WEMfiWfiww@%w#W%m%fl`¢i
+
+                      ° M? E 94%299 wazibsmdseaTZOIfi>fz¢<2§w§m¥§$¥zz£H£
+`flfiéfl%%fiw%%%fiMEEWflwE$WWm$W®E%`%%%E#%Wwiwfi
+
+1¥m9W®M%MMEXmMM%fl%$`%fl%%flw$wmgywf¢¥fi%fl%flfi
+4flfimflfl7mfi%%§@%fi%%flfi%%`%%%%%%W#%%%fiwfi@wflwl
+fl#%%mz%`%%%EH%W«%%#E%MM%MfluwwMflfiflflw`Hflw%
+3%er [:HZéEé/W? WW? ° ch??? 31 $92? £213 IfthjkyHéSdCIHea Tz01%g?z%§£éy%amée%¥zt
+%%`%%%%%%Ww%%%&MEMME"MEH%KME%`%%%M%uwmwm
+%%flflk%w`fifiwE#%W*iWfiW$MHM%MME3YW%fi%Efl%W*%
+
+fizfififiésflGHqfierfllflflofli A£$101if¥¥$ [3141??? ` 1%}? [tgé`é'éWH' Ed I $24??? `cb if °§E
+
+Qwfifl@%W¥W§QW¥M@`§%wvufififlflmfi%%mw`M¥fiw¥w
+ YM#%%E@%%%%%%%W«$%%fifim¢%%`fifl%%%uym%fi%Mm%
+tflm#%?%w`wfiwévéfigwfigw+w4§3@wmgfifig@%rwms
+
+                                     °£¢H2ék¥¥§f¥w¥99¥ [34%qu :5 ET 99%}2EZ1HH34/«1EXTEL? 1L Bah?
+aw3v3"¥fiWEv?%3E%%%#%%%Wwéfiwwmgfifiéagwmms
+
+   YM#%%E%%%%%%%W«%%W¢Hflfi¥$$fiflflfimn#%%%%m`¢%
+¥gyiwm§§fié$§fl7flk¥fi$fiM§flWfi$`gwfififiygfl4Wms
+
+                                                                                     °$¥Emwfifl7
+
+I341 i???¥P¥§¥+P¥EE¥%W EM??? £7413? 99%P%+}H3108de8 ` 41 if ° 2313' fiéflfi E StICIH
+
+%§w%fi%fi%%%fifi%%wfifiyfififi%w`%fi¥%%%fi¥W%W«%%W%
+awwfiww®flp@w%¢flfifiw¢¢flfifififigwmuywk%EWWEMMEM
+
+5.4-3?» `59 KUaEEQ? °ab¥ E S&CIHfiz';1 EIE¥?1§X%}¥%¥+P¥$¥@% `mmmfiz 99%}?!117PE39AIH
+
+`¢fi%%@%¥Eflmfififl%fi%££fififl¥flflfifi¥flfiW¥W%fiywfifi
+
+1a"??? EWWF « 3% 97 £29 1%23HW29AIH Ewfi`fi cl: fiaflimé/éflwflfifififi [1T5 M IE? K4 i242? ` 1H
+
+EMmmfiggflkfifi¥Wfifimflmflflflfi¥fifi¥figflfiw%flwiW%%fi%
+
+SHGH ` ab if ° EH fifi'ékEFFZ`f $1? £29 i¥ [a SdCIH £29 $6 [341%7IF" 25 ET 99%kék4vJ/HéSflCIHLF 15X [1? MIL
+
+fl%`#W&MnggwwwLwa¥%%@£nm§%fi%w%`M¥ME%w¥w
+                                                                                         °fifigfi§fi
+
+fiW¥W%W*%§W%Q#W%EMMfiEfl%fiVéMWUME%E%%%mm
+                                                               °+yfiflbs>1mdsyw+mgaAIH *JFWSAGH
+
+waww%%fiwy%%awmfiwmgw&a%vémww%`(afivzwawamw
+§fifi%«éfl%%¥)fl¥¢éfiw`3¢%?%MWfiflnmggfigwgwmms
+
+                                                °flfi£$$%fi«ifim%flfi%@¢¢%yga
+`¢%?%%¥Um§%fi%%%flm#%?@`&?MWHWW%%%QE3WMS
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                 OZ
+
+            °%%#W%fi¥fiwfififéw$¥§$$£$$§fifi$%fi¥fi¥fifiwfi%
+
+$¥§EE£$%E%%$Vé?%%¥fl%fiw%fi£fi`$¥$%fi%%£flwfl
+
+     °fi¥§fi£§fi§¥fi%v§%%%¥W%ngfigg¢fi§$@%wfigjggg
+%#§%¥%¥fi%$¥%%fl%¥%§%fifgywfifl4mg`mn%fi%gg%
+
+                                                                                      ffi%f%%
+E%%%%fiwéW¥W§Wrgfiflafigfigwgfifirgyw¢%gggfifijgg
+W%WT%¥%W`wnfifigwfiEfimU%m%fifiw`$¥$%fi%%k%wfl
+
+                                                                                                 °%%@%%fi
+«gfiwgw%W«gmw¥`wmwgw%%%awgfifivéW¥W%ngw%aw
+
+VfiJM%W%M`wnmfigwfififimn%m%fifiw`¢¥$%fiwfikwwfl
+                  °%%Q%%%Jfl%%fl$fi%%fi£gfifigMW%Q$#%EEw%fi
+
+%`fifigw%%fl$fi%%fifl%fifi?fiflwfi%W%`mnfifiwgy%`gy
+                                                                         ffi%%%%§4@%%
+
+4w%fifiifiw%%¢%mgfiw`¢%mé%flfifiifiw@£w`mnfifiag
+                                       =%Efimn%fiwfifi%`¢¥$%fiw%kwwfl
+
+                        °fifiW§flfi+é?%%¥fl%wfiéfi%éw%H#%%%flwfifi%
+
+$%%%%%M¢%?%%%`fifiwgfifl%%%%%fifiv?%%%¥W%W¢%fi%
+
+5%@¢%?%E%`¢S?%%Efi%?%£@`fl?¢%i%%£%¥fi%%fiw@%
+fififififl`%¥`&%wi%¥#%?fiw@%flwfififlfl@+w`mnfifigg
+
+                                       :fiEfimU%fl%E?%`$¥¥%£%%hflrfl
+                                                                       °%fi%fl#%fi%%%r%fi
+
+£fifififivé?%%¥fl%flw%$%é$fi§$$£wéfifiiin#%%fifl%%
+ `¢2ri%¥fi%%ww@`gy`fi%%@w§%¥%%%3#wwwmmwg%ga
+
+fififiv§?%%¥W%Wr%¥%%%fi%$fi£¥%`fi%r%%¥fi%?%%@
+
+                             3%wwfi`wnfififififi%`$¥¥%fi%%h%*fl
+
+                            °Mfiw$$£fi§fl$§fifivé?%%¥fl%%w%$£fi%@%
+%%%%fiwgfiw`¢i`#%%Ew§w%%%wvéw¥w%1«ga¢fi%$$w
+WMfi'$%fi¥%fi%¥fi¥?¥£@fi%%%%%%wgfifl%w`mnfifiwfi
+
+                                        1%EWU%%%$E`#%%fiflfi%?%E§
+
+%%%%%fifl`%MW%%%%%%%¥%GE%T%`%%%%%%£flmn%flwfiw
+Ewng`%$@%%%%QM%MH%Ew£?¢MfifififiTmfiéwmkmngmwg
+wgflflg`$fi°§E¥Wfi$%fi@fiflw%fifi%%fi%$ii$$`UEM?
+
+            °%V%%%fi%%¥%%%fifiT%W%M%fi%%%£%$¢%§%%%¥i
+
+%V%#%¥%%%%%%WW%%%%%%%fiflw%fi%¢iwm§§TgéfiTfl
+
+                                                                         °$é&%fli%fl¢%%fi
+
+Y`%%%?¥W%$M%fi%&%éwhwfi`¥¥%fi%fi%%4+§fl%`%¢%fi
+
+%%%wwwmmwfiflmm%4fl%?é$wwii`%%%%L¥`%%%flfiw
+                                                                         °%%%%W$%fifi%flw
+
+§4flfi?`MQW?¥@§%%§E`%%%%%fi%www2mwfifi%flmfi%ifi
+W¥RWE%W'flfl#%%§%%%%%%fii%%¢flfl#%?%$¥fl£%`flfiéfi
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                 IZ
+
+@?mu§%fl`mugfiw°mU¥%fl%mU¥fiV`muggfigmugywfi
+
+                                                      °%%wmu%mwww
+?%U§%T%£%wflhwfima%fl%fi`%%H§%°%fl%@flrifi¥fl§
+
+                                                          °$%fii%fl`%%i¥`awflw
+9%W%flm#%E$W%fiETmfi£¥W$Kfi%%fi3fi%fiTWfifi¢%wwa
+fi¥?3%`%$%%%$M%fi%$$&%%flflkmafi¥?%%%fi%$$fiy
+
+        °#%W%%W%®®w%%%efifi%wfifi%$`¢¥¥%fiw%h&~fl
+            °fi§§§4gfifigw%éwfi`mamfi@g`¢¥g%g%%h%¢§
+                                                  °fi¥§§$¥fifi$flflww%`ww%fi
+
+                                                                                    f`éfifl'fii`? mug." ???lg`iawféxl/ `2
+G9¥E¥%W#§ 7$fi¥$$fi¥£ `Dflflwé`infl'aWfififiv flawww-fiewm
+
+                                       `£M%fi`wa%fi%§`$¥¥%fi%%k%wfl
+                                                                                            °fi§§§fi
+
+§§fifi+é$¥fl%fi«%§$fi%iwfimwi%`&%%w&w`ma%fi%%
+                                                                          ?MMw%%%%%%%fiv
+
+?%¥W%W*%E%B$¢%`$fi`¢%%¥i%flfiflfifi%w`mafifi%@
+                                                               =fifimafifiEfi`%mwfiymfi
+
+%%%@fi%%%%%fifi`%MW%%%%%%W¥%£Q%T%`%%w%%fiéyma
+%%%5?E9#§¥9%ZIEQ `fi¥£¥£fi$¢¥§9fié¢fi$yaIOIifiéiE?#nM¢@@i§?3§trflfii§:9EHYHJEOOZIégai
+
+?gagygag `abf`fif °E21334%£7¥$3£29fi¥$+¥w99fi§¥fiwgivfié$5?I.$3} `ZIEIMé/
+
+m%fl%QE¢M%EETmfiL¥M$$°fi$fl£#fi%ifiw3flfi`%%¥wTi%¥¥`fia+y§fl%wWwUg%wwfl
+
+WQH%`%¥WE%$M%fi%$$%W%Eflh%fl%fl%fi%%%fi%$i%fi
+
+                                                                                         "fl
+
+¥WE%M¥®WW$%%E#%%%WW%#%EE£`$¥$%fi%%hfiwfl
+
+                                                                                               °¥fi$$
+
+@Wi§%$fifi%fi%%fi%?%%`wn%m%£%%`¢¥¥%fiw%h&vfl
+
+                °%E%%fi%?%%émn%mwafi%`¢¥z%£w%£%«fl
+
+                                                           °%&E¥%M&&%$%&Wfi
+
+%%ww%`wfifiww%w#%%fiwwggwyw4yw;m`%u%fifiwfiw
+
+                         f3§$§fifi%$?%%%gw@%w`%U%fi%%fig
+ f%U¥fi%WYWWU%fi¥%fifiEWU%E%@E%`$¥¥%fi%%k%wfl
+
+         °%gzwmgwfl¥%4z%fi£zw`mw&$¥fi%%%w%%aa§%:g
+
+?%H`fi¥fi%¥%%¥fi%$fiw%%E%§%wg?w§$M`Wnfifig%
+
+                                                                                        fE'$}§¥Ff 3%, £29 [157%
+
+mwfi4%%%%WW%%$%«%%@%MQ%42$%%w£+m`mu¥ag@
+
+                                                                                  `39; @001 1%?5? [wmya
+
+`4E§%?§¥%%T`i%w4fi§fi%%fififlw%M4@3%?M%fiE4W3U%%?E%%"Q%?%%§`%$w¥g¥w%fif%%i%fihw%mwafl;w%
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+WO 2022/227719  PCT/CN2022/072427
+
+IfliiE": £31301L3§o
+      N23113017317 3:531):M33133? 15E (peripheral component interconnect, PCI) 1332333f§<
+
+31314733 /E33'] (extended industry standard architecture, EISA )39"33` 53": 2371131333 33331253
+
+23 33:63 3W233 33333,33333333333:333333333
+
+531233 3333163323
+     9&331 2§1302T V3 7"] `3' 93%}31 2§(centra1 processing unit, CPU) \ Q 93/5 fig 22` ( graphics
+
+processing unit, GPU)\ 3357;3ng (micro processor, MP) 3333'"???`3 9t}??? (digital signal
+processor, DSP ) 3%? W] 3kifl2§ ( neural network processing unit NPU ) 3` 33323 `3' 63337:?
+
+"33' 33 3 3`3"
+      33132`21303TV1 b33337 KI33/733132$:(V01atile memory) 453 39133333313432:(random access
+
+memory, RAM)o X343 2%13031VT W» {(1333333] KI33/73332`wm0n-V01atile memory), 4933213)? 131:}
+43%(read-only memory, ROM) 312133-313, 3333317333 (hard drive drive, HDD) 33-75153
+33(sohdsuuedfiye, SSD) o
+
+    3333m333fi33333333,333mm3fi3333333333333
+3333313333fl333333333330
+
+     Emfi333313303gmm3,ififimmflqumfifliiaumfiwi
+
+7413733120063 37331::
+
+     i33mm3393333333333A33$,33,3£)3A3335£N
+33333333333333333333 33M33 33333ML/3A333u
+33333333333333333333333 33 3A33333ua333mm\
+333MM3333MM 335MM 333mszLfié 3mmLfi
+
+     43mm3ummmfl3MmA 33 3TMA333,3 3W3 EW3
+   753333317: @14331fl "35331933317: 39333333173`33`3331"33'73fl 6'333
+
+     333mm733am\mm\wU3D9\MM33333333»33;30
+     333%2§1403TVX @333] KI33/733392`(volatile memory) {?HURAMo 13433231403553]? V1 133
+
+33333] 3333/331323`(-n0nvolatile memory) {?HUROM, 3731334341323 , HDD383D
+
+    3A333333333mm7333333333333,33,3A333333
+333mm333333333335w37ififimmfifiW`$333133mmw3
+3333333
+
+     23137339353133 5533437 "33133333334335? 0 9313933" 73--73331--3333433)? `TWx 33373-
+ixéfib 33436643473311AfifléffiiflA"/l\J35 'l`EJ--fi] 4W3? 1553533337 "3353333433130
+
+3L33333u33333,(333 33 33 33) 333(33,mm)\3
+
+333334353 ( 35333 3/3333 )3 333373--3ILTi3/73434I`fi @333H7A , 31313333333331?»
+
+333LL133133MWE33mm3m3333333o
+
+     731373$9935543 b33437 "331333333/3F3 Wtfl` 33373313Fu`jn @33'4`33 33373--
+3R3a7A 0 E13731333:73337'3`13343`WT1313`W333?33 A313333331313335'33373?]39:33:33]
+#3331513 313333313 EB
+
+     Ffiiifig--QHWE/é`TVX 434335233 33333313333335: `3" «333333353 333T3313334I`5M 13
+7`3 "`33" 3333333134351" 3331'] , 353310, 53133373W333"A: TMUV`AWfiJE`3 x 3373--3333333
+W'Sifiii7333 (3533U353313`333/3x 3633~ 333W)" 23 (DSL) ) 333123 (3% 311319193` 7323` iii
+)33` ) $334153 3 "4` W] $393,237 \ 33333113351333" IUiifi`H`ié'Fo
+
+                                                                                        22
+WO 2022/227719      PCT/CN2022/072427
+
+     mififimfififi%fiufi#¢fi#%§a,Efigfimfiifiimflfi%%fi#fig
+%%%T,WMTfifififimfiéfi$%Efifik§ifififififimfififi$0
+
+     :fiéfiwafifiwfififi%wfifii§fiWE,fiémfifi%%¢fifififim%%,
+quéfiiwfififi%%fifi%fiio
+
+                23
+                    V`Z
+
+EEEEE  EEE EEEEEEEEEEEEEEEBEEEEE:EE
+
+                                                                      "EEE'EEE
+
+EEEEEEEEEEEEEE EIEEEEEEEIEEEEEIIEEEE
+
+                    WE EE W`mfl¥W' EEEEEEE
+
+EEEEEEEEE`WEEEE EEEEEjIEEEEEEEEEE`EEEEE
+
+EEEEEEEEEEEEE `EEEEE`EEEEEEEEEIEEEEEEE
+                                                                          °EEEEEEEEEEE
+
+:EEEEEErEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+EEEEEEEE EEEE `EEEEE `EEEEEEEE9-IEE IEEEEL
+
+°EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+                                              `EEEEEEEEEEEEEEEEEEfEE
+EEEEEEEEEEE: EEE `EEEEEEEEEEEEE: EEEEEEEE
+
+                 "EEEEEEE E`EEEE `EI'IEEEEEEES-I?EEIEEEEEQ
+
+                                            °EEEEEEEEEEEEEEEEEEE`EE
+«EEEEEEEEEEEEEEEEE EEEEEvEEEEEEEIIEEEE
+
+                EEEEEEE `EEEEE `EEEEEEEEv-IEE IIEEEEE
+
+                      °EEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+EEEEWEEE EEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+                                                                        `EEIEEEEEEEEE
+EEEEEEEEEEE EEEEEE EEEEEEEEEEEEEEEEEE
+
+               =EEEEEEE `EEEEE`EEEEEEEEEIEEEEEEE
+                                °EEEEEEEEEEEEEEE EEEEEEEEEE
+
+EEEEEEEEI EEEEEEEEEEE `EE EEEE'IEEE`IEIEE
+EEEE EEEEEEE E:EEE` E,EEEEEEEEEEEEEEE
+
+  'EEEEEEE`WEE: E_EEEEEEEEEEEEEEE `EE`EEE
+
+EEEEEIEEEEIEEEEE EEEEE EEEEEZEE [IEEEEE
+     EEEJEEEEEE EEEEEEEWEEIEEEEEE EEEEEEEE
+
+EEEEEEEEEWEEEEEEE`EEEEEEEEEEEEEEEEEE
+          `EEfEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+EEEEEEEEEEEEEEEEE`EEEEEEEEEEEEEEEEEE
+                                                                          EE`EEEEEEEE
+
+EEEEEEEEEE EEEEETEEEIEE EEEEEEEEEEEEEEE
+EEEEEEEEEEEEEEEE `EEEEE `EEEEEIEE IIEEEEZ
+
+                      EEEEIEEWEEEEEEEIEEEEEE EEEEEEEE
+
+EEEEEEEE `EE EEEEEEEEEEEEEEEEEE EEEEEEE
+EEIEEEEEEEEEEEEEEEEEEIEEEEEEEEEEEEE
+
+                                      EEEEEE `EEEEEWEEE`EEEEEEE
+EEEEEEIE `EEEEEEEEEE EEEIE `EEEEE `EEEEEEEEI
+
+                    5|: #5 "E [IE `5?
+
+LZVZLO/ZZOZND/ILDJ                     6ILLZZ/ZZOZ 0AA
+                                                                                 SZ
+
+wyaéw¢%:%%w`MM"%%w#%%%%fi+%%w%¥wgm¢ggw
+E%@¢%?%%w`¢%§i%yfi%ffiw®`fl?¢%:%%w%¥fi%%¥w
+
+@%fi%§?%¥¢%r%%¥fi%??fl@%fl%fifi%fl@9%M`fififlfi
+
+          =%B%%m%%?w`&flW%i`%H%%%%%m¥%wfl%wm
+
+                     °%fi%fl#%fi%M&«fi?%fl%%fi¢é¥%%¥fi%wwg%
+
+wfi¢fififfiflfiéfi%ffiwwfi%%fiw¥%`$%:g%yg%%ggg
+
+                         `%¥f§%%?%§%¥%#%flfl%fiwwwwififlfl%%
+$+§?%%¥W%W¢%%flfi%fi%?¥%¥%`$%¢%%¥%%?¥%@
+
+      =&MW%`¥%%Q¥%`£§W%%`%H%Q%%%U¥%wflfifim
+
+             °wwwg$w#fia%%%fiV§%ww%w%w¢%%wa%@%%@
+
+%%%«%%%`¢i`fi%%%%§@%%%fi+é%¥fi%wwg§¢fi§$fiw
+
+W%M#fi%fi%%?fl¥fi%$?fl%%%%%%%fi#%%fl%M`fifififi
+
+                                                  `%E%E%Q¥w`fi%%flmfififfififi%
+
+§$§fifi¥$`%é@%%fiéfl%flfifi¥fl`%flfl%i`%fi%fifirfl
+
+                                                         °fi%%fiwwfi®ww&%%ag
+
+%%?%¥W%%??fl`%flfl%i`%$%¥%%wflgflfl¥%Wfl%ym
+
+                                                 °fi§§fi%§4@%fiawfiggiyg
+
+              =%E%%$%%'V&flw%fi`%¥%fiwfl§ml¢%ww%flg
+                °g%%?%§%¥%fiwfifl%fl%fl%`%fi¥£%fifi%f¥fl
+
+         f%%%%Hr%¥%fl%%fi¢é¥fl%¥fl%%r%?%5¢fi%$¥flm
+
+fl`w%¢%%%#%%%%%#+§¥gw¥w%%¢%¥%§%wg%$%g
+
+                                                                                                         =%@w
+fi`g%%%w§@%%%%V%?%W¥W%W¢%¥wa¢figifiwwwmrg
+
+?%fl`¢%¥%%fifi%$?%`éflfl%fi`%%%¥%I¥%Mfl%fifl
+
+                                                           °g%%%%§%%%%%+§¥w
+w¥w%%«%%wg¢g%$%wwwwrgfiw%`¢%%w%wg%$%w
+
+                                                             fMH«%#fi%%%%fi+§w
+¥W%W¢%5%E¢$%¥£`¢fi`$%%¥i%fl%£¥flm¥fi%f?w
+
+                                      =%E%¥¥fl`%fi%%#fi%%`fi%¥%fi%§
+
+@%%fi¥%`%§@%%fi&wfi%¥¥w`éflfl%i`%¥@%%fi&¢fl
+
+                                                         °fl§%%%%%®wmé%%@g
+
+%%¥%%flfi%$¥£`éflw%i`%$%?%mwa¢r1$%MW%flfl
+
+                                                        °¥#M%@Wfi§m¢fi%%%%#
+fi%?¥%`%fififlfifl`%flfl%i`%¥%¥w%«am1¥%%fl%fifl
+
+                                                                                              °%%%%
+fi§$$flfi§flfi§¥£`£flfl%f`%¥%¥%%¢fi61¥%Wfl%flm
+
+                                                                     °%%$¥§%@%%$%
+%%§%%mw%`w%§w@%wg%%¥w%%4w¥w4a%%mwwfiw
+
+                                   ffiawamgfiifiwyyaw@%mwg%w
+
+                       `%E%%¥¥%`%?fl%fi`%$%¥fl8$%wflfifl6
+
+        °%4$%H%M@%%J§%¥%E%%fififi¥fl`%@%?%fi%%¥%¥
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                                                                                 9E
+
+                                       °EEEEEEEEEEE_EWEEEEEEEEEEEEE
+                          `EEEEEEEE9HHEE IEEE.EEEEEEEEEEEE
+
+                 EE EEEEEE zx-- 1 EEIEEEEEEEEE EEE EEEE
+
+                                                                                                            3EE
+EEEEE`EEEEEBEEEEEEEE`EEEEE`EEEEEEEEM
+
+                                                        °EEEEEEE®WWEEEEEEE
+EEMEEEEEE `EEEEE `EEEEEEEEEEEEEMEEEEEESZ
+
+                                                    °EEEEEEEEEEEEEEEEEEE
+EE`EEEEEE`EEEEE`EEEEEEEEEEQMJEEEEEEM
+
+                                                                                      °EEEEEEE
+EEEEEEEEE`EEEEE`EEIEEEEEEEEEQMIEE IEEEEE
+
+                                                                              °EEEEEEEEEEEEEE
+
+EEEEE`EEEEEEEEEEEEEEEEEEEEEEE`EEEEEE
+                                       5EEEEEEEEEEEEEEEEE`EEEEEE
+
+                                                                                `EEEEEEEEE
+
+EEEETEJEEEEEDEEEEEEE `EEEEEEEEEE `EEEEIEEE99E_EEEIv--EE VZ ?EEEIIEXEEEEESZ
+
+      °EEEEEEEEEEEEEEEEE EEEEEEEEEEEEEEEETE
+EEE`EEEEEEEEEEEEEEEEEEEEEEEEEEE`EEEE
+
+                                                                                       fWEEE'EEEE
+EEEJEEEEWBEEEEEEEEEEEJEEEEEEE `EEEE
+
+                              EEEEEEEEE`EEEEEWEEEEEEEEEEE
+JEEEE`EEEEE EEEEEEEEEEEEEEEE`EEEEEMEEE
+EEEEEIEEEE `EEEEE `EEEEEEEEEEERHJEEEEEEW
+
+                                                                              °EEEEEEEEEEE:
+EEEEEEE_EEEEEEEEEEEEEEEE EEEEEEEEEBEEEEE
+EEEEEEE EEEE `EEEEE `EEEEEEEEHMIEEEEEER
+
+                                                                                                               °E
+EEEEEEEEEEEEEEEEEEEE: EEEEEEEEEEEE: EEE
+EEEEEEXEEEEEEEEEEEEEK%;EEEEEEE `EEEEEE
+
+                                                      EEEEEEEEEEEEEEEEEEEE
+EEEEEEEEEEEEEEEE EEEEEEEEEEEEEEEEEE`EEEE
+EEEEEEEEE `EEEEE `EEEEEEEEEEEJEMEEIEEEEzz
+
+                                                       °EEEEEEEW_EEEEE EEE
+
+E`EEEEEEEEEEEEEEEEEEEE EEEEEVEEEEEEE `E
+EEEEQEEETEJEEEEEFEEEEEEE `EEEEEEEEEE `EEEEEEEEEEEEEE'OZ-LI ?EEEhEXEEEEE'IZ
+
+                     °EEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+EEEE`EEEEEEEEEEEEEEEEEEEEEEEE`EEEEEE
+
+                                                                     `EEfEEEEEEEEEE
+
+EEEEEEE_ EEEEEEEE_E`E EEEEEEEEEEEEE`EEEE
+=EEEEEEEEE `EEEEE `EEEEEEEEEEémlEEEEEEOZ
+
+          °EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+LZVZLO/ZZOZND/chI  6ILLZZ/ZZOZ 0AA
+                   LZ
+
+                                         °¥4196$Fyerrfycb U 31 ??%Difi`fi/DIFH`F?
+§§fi¥¥£fifi`fl%§T%flfiHflffi`%££3W£H%¢%©E@¢Z
+
+                     olilggfifiydmfg-fid: Z1 §1?g--g[1¥X¥n¥é£¥¥%§?i§+?3fi¥dfik¥y `44]
+
+,2§;%§@§5+fl\éxa¥¥wfi `xé/awm 4%er `E`Wmifiéuwizfifiwr'w
+                                                            °¥5$¢9§w¢gkwaz1 31
+
+$%Mfl%%%:%%fl%fig#~?§%afiwma`g$%%m%g%gfig¢w%`%&fifl¥wwg%rw`%%wm%wfi%ww?4flm
+
+LZVZLO/ZZOZND/chI      6ILLZZ/ZZOZ 0AA
+WO 2022/227719                                                                                                             PCT/CN2022/072427
+
+                                                                                                                        \
+
+                ififilm
+
+                #:éli @745}-                                                                                               HDFSiEfi-l 0.21
+                                                                                                                           Hive:$fi:4§*1&252:
+
+                1/10
+WO 2022/227719                          PCT/CN2022/072427
+
+                            fimw%gms\\  rifl%é%%%éim0
+
+                                              . §fi$J
+
+                §fiflfiémt  g gg        ififlfi§m3
+
+                              Q3
+
+                            2/10
+WO 2022/227719                                            PCT/CN2022/072427
+
+                                            *3        iii %'1 iié~103
+
+                HDF52EL4+1011     .j            1 .`  HDEsza4+1021
+
+                                 /                    .3
+
+                Biz - '                         '     - 3%2
+
+                Him: £5. 17+ 1
+                        fiwgéz .
+
+                SparkSQL éflfi                        SparkSQLéflfi"
+
+                                      3/10
+WO 2022/227719  PCT/CN2022/072427
+
+                                      0"
+
+                                mm
+                              1%
+                             %
+                         Am
+
+                     b?
+                   %m
+
+                i
+
+                              ééééahiéibé H `
+
+                                     (7313': $44")
+
+                4/10
+WO 2022/227719                                                                                    PCT/CN2022/072427
+
+                                           fififitflL/fi`vfi
+
+                                IIIIIIIII,________________________________\
+                                 `
+                                                                             IIIIIIIII
+                  `46
+
+                :4:
+
+                                           fiifiiflfi :                      IIIIIIIII IIIIIIIII
+
+                fififiififiux§fifiz
+
+                £4,563?                                  §i§£¥2
+
+                wan V)                                   $731M V)
+
+                $9339                                    ,, 4%???
+
+                  fififi                                    %#3
+
+                                                          517%
+                                           E6
+
+                                           5/10
+WO 2022/227719                                                               PCT/CN2022/072427
+
+                                           ?fiaéfiaziéi`rfiy
+
+                /
+
+                   ffi`é 3&4? 66 AM} VXZiéfi} HflLZ'J
+
+                flk%%fi=
+
+                fams g--Jkflaiwmww 7%- E`EI i
+
+                231% :    ififiaifiaéfi 21
+
+                                                              a
+
+                          aw; £2                              M
+
+                          Mi: %3                              a
+
+                am :> a
+
+                E www: f;_____________________________________________`j. i
+
+                             E7
+
+                          f" éivfi'éfiy`é %300
+
+                          6/10
+WO 2022/227719                                          PCT/CN2022/072427
+
+                                                ,f»«'3
+
+                                                f; : \\ s902ififi%"i%éfi%éffl\
+
+                                                \xksfl §Wi%fifi%nwfl
+
+                                                W '106                  ,            `
+
+                                                           51%103
+
+                                                        giflfifl
+
+Ki fifilm
+
+/
+
+i               §®fifikwu
+
+   $9o4ifim 52,9415 F]       $90%)? 1`6]
+
+                             /
+
+                                                           sgos/gflg    ?%Mfig
+
+                                                        i M1 E55?         (HDFS) y.
+
+                                                        ,g (Hive) §_..
+
+                                                        W'Wméwm
+
+                If] P fiifi                             J?) F iii?
+                  `%                                      9&1
+
+                                          7/10
+WO 2022/227719                                                                      PCT/CN2022/072427
+
+                                    éa": $1] iggflm                            /--- fiifififiv`rfi woo
+
+                                  (7E2? $1145?)                      ia`fifii'l is'ié-NB
+
+                                                                       (El? #145?)
+
+Hive
+fi%
+
+                                                           $0063;in    smuegé'w   $10". $543
+                                                                     ,13W}§/~§,   :rWE'fi"fiéfl\.
+
+                                                                     . (Hive) L.      (HDFS)
+
+                                                                     '§"f'79"5§' 5.317%?!th
+
+                                                     E10
+
+                                                     8/10
+WO 2022/227719                                                  PCT/CN2022/072427
+
+                m muazmoo
+
+                §§fi$mm§~~~~~~~~~§%£fi%mm§
+
+                -_._..__......_.._ __.._.___.___._,.._x\        ;_ ~~~~~~~~~~~~~~~~~~~~~~~
+
+                VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+                @flfi%fl%§ §fi&fi%m%§
+
+                _______________________________________________
+
+                                                      /""""" ifiéfiilzoo
+
+                             fififi%&mm
+
+                         :,fig%§i;12@2
+
+                                               P312
+
+                                                          9/10
+WO 2022/227719                                                 PCT/CN2022/072427
+
+        K                     kti22§1302         fifi'liiél300\
+
+                         <(                                      >
+
+                ,m9 e2% 1301                     figkI g
+
+        K                                   ¢§Iifié§1303       /
+
+                              PE} 13
+
+                                                 / ififilmo
+
+   /  / ---------------------------------------------- \
+                , ------------------------------------------ ¥-\
+
+I/ //                         étigflé§1402                                  \\
+
+I{                                                        ##flié` }
+
+I  0..  l                                                           i
+
+I . V |I                                                       I> I
+        I4
+
+I I V.
+
+II                                               #41I21231403       III
+\\ I\
+                                                                 /
+   \~--\
+                                                               /
+                      \
+
+                                          10/10
+

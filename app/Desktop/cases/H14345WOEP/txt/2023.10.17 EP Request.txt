@@ -1,0 +1,304 @@
+0)            Europfiisches    Entry I- nto the European phase
+                               (EPO as designated or elected Office)
+              Wm Patentamt
+              Paenttomce       To the European Patent Office
+
+              Office européen
+
+              des brevets
+
+European application number                                                           EP22794685.2
+PCT application number                                                                PCT/CN2022/O87722
+PCT publication number                                                                WO2022228214
+Applicant's or representative's reference                                             H14345WOEP
+International Filing Date                                                             19.04.2022
+International Searching Authority (ISA)                                               CN
+International Preliminary Examining Authority (IPEA)                                  not applicable
+
+1. Applicant                                                                          E
+
+Indications concerning the applicant(s) are contained in the international
+
+publication or were recorded by the International Bureau after the international
+
+publication.                                                                          D
+
+Changes which have not yet been recorded by the International Bureau are set
+
+out here:
+
+2. Representative
+
+Representative 1
+
+Representative or association of representatives to be listed in the Register of
+European Patents and to whom communications are to be notified
+
+                                                                            Name: Goddar, Prof. Dr. Heinz
+
+                                                                 Company: Boehmert & Boehmert
+                                                                                   Anwaltspartnerschaft mbB
+
+                                                      Address of place of business: Pettenkoferstrasse 22
+                                                                                                80336 Munich,
+
+                                                                                     Germany
+                                                                 Telephone: 089-559680
+
+                                                                            E-mail: Goddar@Boehmert.de
+
+3. Authorisation                                                                      D DEE DEED
+   Representative 1
+   An individual authorisation is attached.
+
+A general authorisation has been registered under No:
+
+A general authorisation has been filed, but not yet registered.
+
+   The authorisation filed with the EPO as PCT receiving Office expressly includes
+   the European phase.
+
+4. Request for examination
+    Examination of the application under Art. 94 EPC is hereby requested. The
+   examination fee is being (has been, will be) paid.
+
+    Request for examination in an admissible non-EPO language:
+
+   The/Each applicant hereby declares that he is an entity or a natural person under
+   Rule 6(4) EPC.
+
+5. Copies
+   Additional copies of the documents cited in the supplementary European search
+   report are requested.
+
+   Number of additional sets of copies
+
+6. Documents intended for proceedings before the EPO
+   Number of claims on entry into the European phase:
+
+6.1 Proceedings before the EPO as designated Office (PCT I) are to be based on
+the following documents
+
+the application documents published by the International Bureau; where the
+publication includes a set of claims amended under Article 19 PCT, the latter
+replaces the originally filed claims
+
+H 14345WOE P
+      unless replaced by the amendments attached.                                            D@
+
+      Comments on the written opinion established by the EPO as the International            DD D D DD E E DD EDD
+      Searching Authority and/or observations or, where applicable, on the
+      explanations given in the Supplementary International Search Report                    DD EDD
+      established by the EPO as the Supplementary International Searching Authority
+     (Rule 45bis.7(e) PCT)
+    Where necessary, further details should be attached as "Other documents "
+6.2 Proceedings before the EPO as elected Office (PCT II) are to be based on the
+following documents:
+   the documents on which the international preliminary examination report is based,
+   including any annexes
+      unless replaced by the amendments attached.
+
+      comments on the international preliminary examination report established by the
+      EPO as the International Preliminary Examining Authority and/or observations
+      are enclosed.
+    Where necessary, further details should be attached as "Other documents "
+    If the EPO as International Preliminary Examining Authority has been supplied
+   with test reports, these may be used as the basis of proceedings before the EPO.
+6.3 A copy of the results of the search carried out by the authority with which the
+previous application(s) whose priority is claimed was (were) filed is attached (R.
+141(1) EPC).
+
+7. Translations
+
+Translations in one of the official languages of the EPO (English, French, German)
+are attached as crossed below:
+
+    * /n proceedings before the EPO as des/gnafed 0r elected Ofi`l'ce (PCT/ + //).'
+      7.1 Translation of the international application (description, claims, any text in
+      the drawings) as originally filed, of the abstract as published and of any
+      indication under Rule 13bis.3 and 13bis.4 PCT regarding biological material
+      7.2 Translation of the priority application(s) (to be filed only at the EPO's
+      request, Rule 53(3) EPC)
+      7.3 It is hereby declared that the international application as originally filed is a
+      complete translation of the previous application (Rule 53(3) EPC)
+
+    * /n addition, in proceed/hgs before the EPO as designated Ofi`l'ce (P077):
+      7.4 Translation of amended claims and any statement under Art. 19 PCT, if the
+      claims as amended are to form the basis for the proceedings before the EPO
+      (see Section 6).
+
+    * /n addition, in proceed/hgs before the EPO as elected Ofi`l'ce (PCT/l):
+      7.5 Translation of any annexes to the international preliminary examination
+      report
+
+8. Biological material
+
+   The invention uses and/or relates to biological material deposited under Rule 31
+   EPC.
+   The particulars referred to in Rule 31(1)(c) EPC (if not yet known, the depositary
+   institution and the identification reference(s)) [number, symbols, etc.] of the
+   depositor) are given in the international publication or in the translation submitted
+   in Section 7 on:
+
+      page(s) / |ine(s)
+   The receipt(s) of deposit issued by the depositary institution
+
+      is (are) enclosed.
+
+     will be filed later.
+
+   Waiver of the right to an undertaking from the requester pursuant to Rule 33(2)
+    EPC attached.
+9. Nucleotide and amino acid sequences
+   The international application discloses nucleotide and/or amino acid sequences.
+
+   9.1 The sequence listing was filed under Rule 5.2(a) PCT, or furnished to the
+    EPO as ISA under Rule 13ter. 1(a) PCT, or is otherwise available to the EPO, in a
+   computer-readable format complying with the WIPO Standard applicable at the
+   international date of filing.
+   9.2
+
+H 14345WOE P
+   The sequence listing is attached in a computer-readable format complying with                DD
+   the WIPO Standard applicable at the international date of filing (Rule 163(3) EPC.
+
+   The sequence listing does not include matter which goes beyond the content of
+   the application as filed.
+
+10. Designation of contracting states
+   All the contracting states party to the EPC at the time of filing of the international
+   patent application and designated in the international application are deemed to
+   be designated (see Article 79(1) EPC).
+
+11. ExtensionNalidation
+
+   This application is deemed to be a request to extend the effects of the European
+   patent application and the European patent granted in respect of it to all
+   non-contracting states to the EPC designated in the international application with
+   which extension or validation agreements were in force on the date on which the
+   application was filed. However, the request is deemed withdrawn if the extension
+   fee or the validation fee, whichever is applicable, is not paid within the prescribed
+   time limit.
+
+   11.1 It is intended to pay the extension fee(s) for the following state(s):
+
+11.2 It is intended to pay the validation fee(s) for the following state(s):
+
+Note: Under the automatic debiting procedure, extension and/or validation fees
+will be debited only for states indicated here unless the EPO is instructed
+otherwise before expiry of the period for payment.
+
+12. Acceleration of procedure
+   12.1 Early processing
+
+Early processing of the application pursuant to Article 23(2) / 40(2) PCT is hereby
+requested ("early entry into the European phase")
+
+Please take note of the further requirements for the request to be effective and the
+legal consequences (see "Notes on EPO Form 1200" on the EPO website
+http://www.epo.org/applying/forms-fees/forms.html)
+
+12.2 Waivers
+
+The applicant waives his right to the communication under Rules 161(1) or (2)                   DE
+and 162 EPC.
+
+The applicant waives his right to be asked under Rule 70(2) EPC whether he
+wishes to proceed further with the application.
+
+13. List of enclosed documents                    Original file name                                  Assigned file name
+                    Description of document                                                          SPECTRANEPO-1.pdf
+
+1 Combined Translations                           87086495EP03 Translation of International           AMSPECEPO-1.pdf
+
+                                                   Applicationpdf                                        CLMS-HWA.pdf
+
+2 Combined Amendments                             87086495EP03 Amended Claims -
+
+                                                   CLEAN.pdf
+
+3 Amended claims with annotations                 87086495EP03 Amended Claims -
+
+                                                  MARKED-UP.pdf
+
+14. Method of payment: Debit from deposit account                                               E
+                                                                                                EUR
+Currency
+
+   The European Patent Office is hereby authorised, to debit from the deposit                   28001950
+   account with the EPO any fees and costs indicated on the fees page.
+   Deposit account number                                                                       Boehmert & Boehmert
+
+   Account holder                                                                               E
+
+15. Any refunds should be made to the following EPO deposit account:                            Boehmert & Boehmert,
+   Number and account holder                                                                    28001 950
+
+16. Fees
+
+                                                                            Factorlreducti          Fee schedule  Amount to be paid
+                                                                              on applied
+16-1      002 Fee for a European search - Applications filed on/after                        1       1 450.00             1 460.00
+
+          01.07.2005                                                                         1
+
+16-2      005e Designation fee - For all contracting States designated for                           550.00               660.00
+
+          applications filed on/after 01.04.2009
+
+H 14345WOE P
+16-3  006 Examination fee - For applications filed on/after 01.07.2005                                 1 840.00   1 840.00
+
+16-4  015 Claims fee - For the 16th to the 50th claim                                                    265.00        0.00
+16-5  15e Claims fee - For the 51st and each subsequent claim                                            660.00        0.00
+
+16-6  020 Filing fee - entry EP phase - online                                                           135.00     135.00
+16-7                                                                                                       17.00      34.00
+      520 Additional filing fee for the 36th and each subsequent page
+      - entry into EP phase                                                                                 EUR   4 129.00
+
+                                                                                               Total:
+
+17. Annotations
+18. Signature(s) of applicant(s) or representative
+
+      Place:                Munich
+      Date:                 17 October 2023
+      Signed by:            [Heinz Goddarl
+      Representative name:  Heinz Goddar
+      Capacity:             (Representative)
+
+H 14345WOE P
+                                    Table for section 6 of Form 1200.3
+
+In accordance with the Notice from the European Patent Office dated 26 January 2009 concerning the 2009 fee structure (OJ EPO 2009, 118,
+and Guidelines for Examination in the EPO, April 2009, A--III, 13.2), the amount of the additional fee (Art. 2, item 13, Rules relating to Fees) for
+the pages of this European patent application is calculated as follows:
+
+Documents intended for proceedings before the EPO (R. 159 (1) (b) EPC) and for calculating the additional fee
+(Art. 2, item 1a, RFees):
+
+                                                                Page(s) from to     Nugzzrsd
+
+Description:           International application as published        1 to 21        21
+
+Claims:                Amendments filed on entry into European       1 t0 2         2
+
+                       phase
+
+Drawings:              International application as published        1/13 to 13/13  13
+Abstract:
+                       Default count: one page                                      1
+
+Total number of pages                                                               37
+
+Fee--exempt pages (Art. 2, item 1a, RFees)                                          -35
+
+Number of pages to be paid for                                  EUR                             2
+Total amount payable
+                                                                                    (x 17 EUR per page)
+
+                                                                                            34
+
+H 14345WOE P
+

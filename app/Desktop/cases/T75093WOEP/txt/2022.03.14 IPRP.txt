@@ -1,0 +1,411 @@
+                                       PATENT COOPERATION TREATY
+
+                                                PCT
+
+                INTERNATIONAL PRELIMINARY REPORT ON PATENTABILITY
+                                     (Chapter I of the Patent Cooperation Treaty)
+
+                                                       (PCT Rule 44bis)
+
+Applicant's 0r agent's file reference  FOR FURTHER ACTION                          See item 4 below
+T75093WO
+                                                                                   Priority date (day/monlh/year)
+International application No.          International filing date (day/monlh/year)  30 August 2019 (30.08.2019)
+PCT/EP2020/074134                      28 August 2020 (28.08.2020)
+
+International Patent Classification (8th edition unless older edition indicated)
+See relevant information in Form PCT/lSA/237
+
+Applicant
+4TEEN4 PHARMACEUTICALS GMBH
+
+I. This international preliminary report on patentability (Chapter I) is issued by the International Bureau on behalf of the
+       International Searching Authority under Rule 44 bis. 1(a).
+
+2. This REPORT consists of a total of 8 sheets, including this cover sheet.
+
+       In the attached sheets, any reference to the written opinion of the International Searching Authority should be read as a reference
+       to the international preliminary report on patentability (Chapter I) instead.
+
+3. This report contains indications relating to the following items:
+
+Eflfi ED Dfifi  Box No. I              Basis of the report
+
+                Box No. II             Priority
+
+                Box No. III            Non-establishment of opinion With regard to novelty, inventive step and industrial
+                                       applicability
+
+                Box No. IV             Lack of unity of invention
+
+                Box No. V              Reasoned statement under Article 35(2) With regard to novelty, inventive step or industrial
+                                       applicability; citations and explanations supportng such statement
+
+                Box No. VI             Certain documents cited
+
+                Box No. VII            Certain defects in the international application
+
+                Box No. VIII           Certain observations on the international application
+
+4. The International Bureau Will communicate this report to designated Offices in accordance With Rules 44bis.3(c) and 93bis.l but
+       not, except Where the applicant makes an express request under Article 23(2), before the expiration of 30 months from the priority
+       date (Rule 44bis .2).
+
+                        The International Bureau of WIPO              Date of issuance of this report
+                             34, chemin des Colombettes               01 March 2022 (01.03.2022)
+                            1211 Geneva 20, Switzerland
+                                                                      Authorized officer
+Form PCT/IB/373 (revised January 2020)
+                                                                                                        Nora Lmdner
+                                                                      e-mail pct.team5@wipo.int
+                                       PATENT COOPERATION TREATY
+
+From the                                                                            PCT
+INTERNATIONAL SEARCHING AUTHORITY
+
+            see f0"" PCT"SA'220                INTERNWARTIIOTNTAELN SOEPAINRICOHNINOGF ATUHTEHORITY
+
+                                                                 (PCT Rule 43bis.1)
+
+                                               Date of mailing
+                                               (day/month/year) see form PCT/ISA/Zto (second sheet)
+
+Applicant's or agent's file reference          FOR FURTHER ACTION
+
+see form PCT/ISA/220                           See paragraph 2 below
+
+International application No.          International filing date (day/fnonth/year)  Priority date (day/month/year)
+
+PCT/EP2020/074134                      28.08.2020                                   30.08.2019
+
+International Patent Classification (IPC) or both national classification and IPC
+
+INV. A61P9/00 G01N33/48 A61K38/08 A61K38/22 A61K39/395 A61K45/06
+
+Applicant
+
+4TEEN4 PHARMACEUTICALS GMBH
+
+1. This opinion contains indications relating to the following items:
+
+E Box No. |      Basis of the opinion
+E Box No. II     Priority
+
+|:| Box No. |||  Non-establishment of opinion with regard to novelty, inventive step and industrial applicability
+
+El Box No. IV    Lack of unity of invention
+
+E Box No. V      Reasoned statement under Rule 43bis.1(a)(i) with regard to novelty, inventive step and industrial
+                 applicability; citations and explanations supporting such statement
+E Box No. VI
+                 Certain documents cited
+El Box No. VII
+E Box No. V|||   Certain defects in the international application
+
+                 Certain observations on the international application
+
+2. FURTHER ACTION
+
+If a demand for international preliminary examination is made, this opinion will usually be considered to be a
+
+written opinion of the International Preliminary Examining Authority ("IPEA") except that this does not apply where
+the applicant chooses an Authority other than this one to be the IPEA and the chosen IPEA has notifed the
+International Bureau under Rule 66.1bis(b) that written opinions of this International Searching Authority
+will not be so considered.
+
+If this opinion is, as provided above, considered to be a written opinion of the IPEA, the applicant is invited to
+submit to the IPEA a written reply together, where appropriate, with amendments, before the expiration of 3 months
+
+from the date of mailing of Form PCT/ISA/220 or before the expiration of 22 months from the priority date,
+
+whichever expires later.
+
+For further options, see Form PCT/ISA/220.
+
+Name and mailing address of the ISA:           Date of completion of                Authorized Officer              4m" Pmmm'
+                                               this opinion                                                      I
+                                               seeform                                                              f8  ).
+                                                                                    Bochelen,DamIen                 N
+       9))  European PatentOffice              PCTASA/21o
+                                                                                    Telephone No. +49 89 2399-0                      4g'led ma"«a
+--          D-80298 Munich                                                                                          ; 0'
+            Tel. +49 89 2399 - 0
+            Fax: +49 89 2399 - 4485                                                                                 3
+                                                                                                                          '
+
+Form PCT/ISA/237 (Cover Sheet) (January 2015)
+WRITTEN OPINION OF THE                     International application No.
+INTERNATIONAL SEARCHING AUTHORITY          PCT/EP2020/074134
+
+    Box No. | Basis of the opinion
+
+1. With regard to the language, this opinion has been established on the basis of:
+
+   IZI the international application in the language in which it was filed.
+   III a translation of the international application into , which is the language of a translation furnished for the
+
+          purposes of international search (Rules 12.3(a) and 23.1 (b)).
+          This opinion has been established taking into account the rectification of an obvious mistake authorized
+           by or notified to this Authority under Rule 91 (Rule 43bis.1(a))
+
+           With regard to any nucleotide and/or amino acid sequence disclosed in the international application, this
+          opinion has been established on the basis of a sequence listing:
+          a. IZI forming part of the international application as filed:
+
+                     IZI in the form of an Annex C/ST.25 text file.
+
+                     III on paper or in the form of an image file.
+
+           b. III furnished together with the international application under PCT Rule 13ter.1(a) for the purposes of
+                     international search only in the form of an Annex C/ST.25 text file.
+
+           0. III furnished subsequent to the international filing date for the purposes of international search only:
+
+                   [I in the form of an Annex C/ST.25 text file (Rule 13ter.1(a)).
+
+                   III on paper or in the form of an image file (Rule 13ter.1(b) and Administrative Instructions, Section
+                       713).
+
+           In addition, in the case that more than one version or copy of a sequence listing has been filed or furnished,
+           the required statements that the information in the subsequent or additional copies is identical to that
+           forming part of the application as filed or does not go beyond the application as filed, as appropriate, were
+           furnished.
+
+5. Additional comments:
+
+Box No. II Priority
+
+1.|Z|  The validity of the priority claim has not been considered because the International Searching Authority
+       does not have in its possession a copy of the earlier application whose priority has been claimed or, where
+       required, a translation of that earlier application. This opinion has nevertheless been established on the
+       assumption that the relevant date (Rules 43bis.1 and 64.1) is the claimed priority date.
+
+       This opinion has been established as if no priority had been claimed due to the fact that the priority claim
+       has been found invalid (Rules 43bis.1 and 64.1). Thus for the purposes of this opinion, the international
+
+       filing date indicated above is considered to be the relevant date.
+
+3. Additional observations, if necessary:
+
+       see separate sheet
+
+Form PCT/ISA/237 (January 2015)
+WRITTEN OPINION OF THE                                      International application No.
+INTERNATIONAL SEARCHING AUTHORITY                           PCT/EP2020/074134
+
+    Box No. V Reasoned statement under Rule 43bis.1(a)(i) with regard to novelty, inventive step or
+    industrial applicability; citations and explanations supporting such statement
+
+1. Statement
+
+Novelty (N)                      Yes: Claims  14-16, 18-24
+                                 No: Claims   1-13, 17, 25
+
+Inventive step (IS)              Yes: Claims
+
+                                 No: Claims   1-25
+
+Industrial applicability (IA)    Yes: Claims  1-25
+                                 No: Claims
+
+2. Citations and explanations
+    see separate sheet
+
+    Box No. VI Certain documents cited
+1. Certain published documents (Rules 43bis.1 and 70.10)
+
+    and / or
+2. Non-written disclosures (Rules 43bis.1 and 70.9)
+
+    see form 210
+
+    Box No. VIII Certain observations on the international application
+
+The following observations on the clarity of the claims, description, and drawings or on the question whether the
+Claims are fully supported by the description, are made:
+
+    see separate sheet
+
+Form PCT/ISA/237 (January 2015)
+   WRITTEN OPINION OF THE                                      International application No.
+   INTERNATIONAL SEARCHING                                       PCT/EP2020/074134
+   AUTHORITY (SEPARATE SHEET)
+
+Re Item ll
+Priority
+
+1      The claimed priority date is valid.
+
+Re Item V
+
+Reasoned statement with regard to novelty, inventive step or industrial
+applicability; citations and explanations supporting such statement
+
+2      Prior art:
+
+       Reference is made to the following documents:
+
+   D1       KOJI TAKAGI ET AL: "Circulating dipeptidyl peptidase 3 and alteration in
+
+            haemodynamics in cardiogenic shock: results from the OptimaCC trial",
+
+            EUROPEAN JOURNAL OF HEART FAILURE,
+
+            vol. 22, no. 2, 31 August 2019 (2019-08-31), pages 279-286,
+
+            XP055681198,
+
+            NL
+
+            ISSN: 1388-9842, DOI: 10.1002/ejhf.1600
+
+   D2       LINDA REHFELD ET AL: "Novel Methods for the Quantification of
+
+            Dipeptidyl Peptidase 3 (DPP3) Concentration and Activity in Human Blood
+
+            Samples",
+
+            THE JOURNAL OF APPLIED LABORATORY MEDICINE,
+
+            vol. 3, no. 6, 1 May 2019 (2019-05-01), pages 943-953, XP055681701,
+
+            ISSN: 2576-9456, DOI: 10.1373/jalm.2018.027995
+
+   D3       ESTEVAO BASSI ET AL: "Therapeutic Strategies for High-Dose
+
+            Vasopressor-Dependent Shock",
+
+            CRITICAL CARE RESEARCH AND PRACTICE,
+
+            vol. 2013, 1 January 2013 (2013-01-01), pages 1-10, XP055681557,
+
+            ISSN: 2090-1305, DOI: 10.1155/2013/654708
+
+   D4       WO 2019/077082 A1 (ADRENOMED AG [DE]) 25 April 2019 (2019-04-25)
+
+Form PCT/ISA/237 (Separate Sheet) (Sheet 1) (EPO--April 2005)
+WRITTEN OPINION OF THE                                         International application No.
+INTERNATIONAL SEARCHING                                          PCT/EP2020/074134
+AUTHORITY (SEPARATE SHEET)
+
+D5  JADHAV AMAR P ET AL: "Angiotensin II in septic shock",
+
+    AMERICAN JOURNAL OF EMERGENCY MEDICINE,
+
+    vol. 37, no. 6, 19 March 2019 (2019-03-19), pages 1169-1174,
+
+    XP085707434,
+
+    ISSN: 0735-6757, DOI: 10.1016/J.AJEM.2019.03.026
+
+    If not indicated otherwise the relevant passages are those mentioned in the
+    search report.
+
+    Document D1 discloses that circulating DPP3 is increased in patients with
+    refractory cardiogenic shock despite vasopressor treatment, compared to
+    patients having non-refractory shock.
+
+    Document D2 discloses a method for assessing circulatory DPP3 in patients
+    with severe sepsis and septic shock and shows that DPP3 levels increase with
+    the severity and the mortality risk.
+    Document D3 discloses the use of vasopressors e.g. arginine vasopressin for
+    the treatment of refractory shock.
+    Document D4 discloses the assessment of pro-adrenomedullin fragment for
+    determining the outcome of the treatment with anti-adrenomedullin antibody or
+    antibody-fragment.
+
+    Document D5 discloses the use of angiotensin II in the treatment of septic
+    shock.
+
+    Novelty (Art. 33 (1) and (2) PCT):
+
+    Document D2 does not explicitly disclose that the DPP3 level is compared to a
+    predetermined threshold. However, it is considered that implicitly D2 compares
+    the DPP3 levels with values of DPP3 levels in healthy subjects or shock vs
+    refractory shock patients. Furthermore, it is noted that this threshold is not
+    defined in the claims and it is thus not possible to determine whether the DPP3
+    levels are above a threshold (see point 6 below). Therefore, it is considered that
+    the disclosure of D2 anticipates the subject-matter of claims 1 and 25. The
+    dependent claims 2--4 lack also novelty in view of D2. Claims 5-10 are directed
+    to a method of diagnosis and comprise a step which is a method of treatment
+
+Form PCT/ISA/237 (Separate Sheet) (Sheet 2) (EPO--April 2005)
+WRITTEN OPINION OF THE                                         International application No.
+INTERNATIONAL SEARCHING                                          PCT/EP2020/074134
+AUTHORITY (SEPARATE SHEET)
+
+           (see point 7 below) which renders the scope of the claims unclear. It is
+           considered that this second part relating to a treatment is not a characterizing
+          feature. Claims 5-12 lack thus novelty.
+
+3.2 Claims 13 and 17 are directed to a vasopressor for use in the treatment of
+           patients identified by a method of claim 1 wherein the DPP3 level is below an
+          undefined predetermined threshold. D3 discloses the use of vasopressors e.g.
+           arginine vasopressin for the treatment of refractory shock. It appears that the
+           group of patients identified by the method of claim 1 does not differ from the
+          patients of D3 which have refractory shock. Claim 13 and 17 lack novelty in
+           view of D3.
+
+Claims 1-13, 17 and 25 do not meet the requirements of Art.33(2) PCT.
+
+           Inventive step (Art. 33 (1) and (3) PCT):
+
+           Document D2 which is the closest prior art for claims 14 and 18 discloses that
+          circulatory DPP3 in patients with severe sepsis and septic shock increases with
+          the severity and the mortality risk. Claims 14 and 18 differ in that the DPP3
+           inhibitor is used in patients identified by measuring DPP3 levels i.e. having
+          refractory shock. The problem to be solved is defined as to provide a treatment
+          for refractory shock. The application does not provide any evidence that
+           refractory shock is useful for treating patients having refractory shock. The
+           problem is thus not solved. In view of D2 showing that DPP3 levels increase
+           with the severity of the symptoms in septic shock patients, it would be obvious
+          for a skilled person to consider the use of a DPP3 inhibitor to solve the problem.
+           Claims 14 and 18 are not inventive.
+
+4.2 The dependent claims 15-16 and 19-21 differ in that the DPP3 inhibitor is
+          combined with an angiotensin-receptor-agonist like angiotensin II. The problem
+           to be solved is defined as to provide an improved treatment for refractory shock.
+           The application does not provide any evidence of an unexpected technical
+           effect due to the claimed combinations. The problem is thus redefined as to
+          provide an alternative treatment for refractory shock. Vasopressors e.g.
+          angiotensin II, are known from D3 and D5 for the treatment of refractory shock.
+            It would thus be obvious for a skilled person to combine a DPP3 inhibitor with
+           an angiotensin-receptor-agonist like angiotensin II in order to solve the problem.
+          Claims 15-16 and 19-21 are not inventive.
+
+Form PCT/lSA/237 (Separate Sheet) (Sheet 3) (EPO--April 2005)
+WRITTEN OPINION OF THE                                         International application No.
+INTERNATIONAL SEARCHING                                          PCT/EP2020/074134
+AUTHORITY (SEPARATE SHEET)
+
+4.3 Claims 11-12 and 22-24 differ from D2 in that additionally the level of pro-
+          adrenomedullin is assessed and/ an anti-ADM antibody is administered. The
+           problem to be solved is to provide an alternative method of diagnosis or method
+           of treatment of refractory shook. Document D4 discloses the assessment of pro-
+          adrenomedullin fragment for determining the outcome of the treatment with an
+           anti-adrenomedullin antibody e.g. in septic shock. In view of the disclosure of
+           D1 in combination with D4 a skilled person would have considered to assess
+          the level of pro-adrenomedullin in addition to DPP3 and would have envisaged
+           the treatment with an anti-adrenomedullin antibody. Claims 11-12 and 22-24 do
+           not involve an inventive step.
+
+Claims 10-12 and 13-23 do not meet the requirements of Art. 33(3) PCT.
+
+w
+
+Certain documents cited
+Document D1 is not state of the art as the priority date is valid.
+
+M
+Certain observations on the international application
+
+The value of the "predetermined threshold" used in claims 1, 6-14 and 20-25 is
+not defined in the claims. It is thus not possible to assess the scope of the
+claims. Said claims do not meet the requirements of Art. 6 PCT.
+
+The subject-matter of claims 6-12 is not clear in that said claims are directed to
+a method of diagnosis of refractory shook wherein the claims also relate to the
+treatment of a patient. The subject-matter of said claims is thus not clear.
+
+Form PCT/lSA/237 (Separate Sheet) (Sheet 4) (EPO--April 2005)
+

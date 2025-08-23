@@ -1,0 +1,105 @@
+T17560DE
+24
+WHAT IS CLAIMED IS:
+1. A method comprising:
+forming a protruding fin;
+forming a first dielectric layer comprising:
+a first top portion on a top surface of the protruding fin; and
+a first sidewall portion on a sidewall of the protruding fin;
+forming a second dielectric layer over the first top portion of the first dielectric layer and
+the top surface of the protruding fin, wherein the second dielectric layer is formed using an
+anisotropic deposition process;
+forming a dummy gate electrode on the second dielectric layer;
+forming a gate spacer on a sidewall of the dummy gate electrode;
+removing the dummy gate electrode; and
+forming a replacement gate electrode in a space left by the dummy gate electrode.
+2. The method of claim 1, wherein the second dielectric layer is free from portions on the
+first sidewall portion of the first dielectric layer.
+3. The method of claim 1 or 2, wherein the first dielectric layer and the second dielectric
+layer are formed using different deposition methods.
+4. The method of one of the preceding claims, wherein the first dielectric layer is deposited
+using a conformal deposition method.
+5. The method of one of the preceding claims, wherein the second dielectric layer is
+deposited using plasma enhanced atomic layer deposition, with a bias power applied.
+2024010408564500DE 04.01.2024 DPMADirekt
+T17560DE
+25
+6. The method of one of the preceding claims further comprising, after the dummy gate
+electrode is removed and before the replacement gate electrode is formed, etching exposed
+portions of the first dielectric layer and the second dielectric layer.
+7. The method of claim 6, wherein after the exposed portions of the first dielectric layer and
+the second dielectric layer are etched, a first part of the first dielectric layer and a second part of
+the second dielectric layer remain directly underlying the gate spacer.
+8. The method of claim 7, wherein the second part of the second dielectric layer directly
+underlying the gate spacer is non-conformal.
+9. The method of one of the preceding claims wherein the protruding fin comprises a
+plurality of semiconductor nanostructures stacked and spaced apart from each other, and
+wherein the replacement gate electrode extends into spaces between the plurality of
+semiconductor nanostructures.
+10. The method of one of the preceding claims, wherein the forming the dummy gate
+electrode comprises depositing a polysilicon layer on the second dielectric layer, and patterning
+the polysilicon layer, wherein the patterning is stopped on the second dielectric layer.
+11. The method of one of the preceding claims, wherein the second dielectric layer
+comprises a second sidewall portion on the first sidewall portion, and wherein the second
+sidewall portion is removed in a cleaning process performed before the forming the gate spacer.
+12. A structure comprising:
+a dielectric isolation region;
+a plurality of semiconductor nanostructures aside of, and higher than, the dielectric
+isolation region, wherein higher ones of the plurality of semiconductor nanostructures overlap
+2024010408564500DE 04.01.2024 DPMADirekt
+T17560DE
+26
+respective lower ones of the plurality of semiconductor nanostructures;
+a gate stack comprising:
+a first portion over a top nanostructure of the plurality of semiconductor
+nanostructures; and
+second portions between neighboring ones of the plurality of semiconductor
+nanostructures, wherein the second portions of the gate stack and the plurality of semiconductor
+nanostructures connectively form a protruding fin;
+a first dielectric layer on a top surface and a sidewall of the protruding fin;
+a second dielectric layer comprising a first part over the first dielectric layer, wherein the
+second dielectric layer is less conformal than the first dielectric layer, and wherein at least a top
+portion of the first part is higher than a top nanostructure of the plurality of semiconductor
+nanostructures; and
+a gate spacer over the second dielectric layer.
+13. The structure of claim 12, wherein the first dielectric layer is conformal, and the first part
+of the second dielectric layer has a bottommost end substantially level with a topmost surface of
+the top nanostructure.
+14. The structure of claim 12 or 13, wherein the second dielectric layer further comprises a
+second portion overlapping the dielectric isolation region, wherein the first portion and the
+second portion are discrete portions of the second dielectric layer.
+15. The structure of one of claims 12 to 14, wherein the first portion of the second dielectric
+layer further comprises a second part on a sidewall of the protruding fin, wherein the second
+part is thinner than the first part.
+2024010408564500DE 04.01.2024 DPMADirekt
+T17560DE
+27
+16. The structure of claim 15, wherein a bottommost end of the second part is higher than a
+mid-height of the protruding fin.
+17. A structure comprising:
+a semiconductor substrate;
+a first dielectric isolation region and a second dielectric isolation region in the
+semiconductor substrate;
+a protruding fin between, and higher than, the first dielectric isolation region and the
+second dielectric region;
+a first dielectric layer on a top surface and a sidewall of the protruding fin;
+a second dielectric layer over the first dielectric layer, the second dielectric layer
+comprising:
+a first portion overlapping the protruding fin; and
+a second portion overlapping the first dielectric isolation region, wherein the first
+portion and the second portion are discrete portions of the second dielectric layer; and
+a gate spacer over the second dielectric layer.
+18. The structure of claim 17, wherein the gate spacer physically contacts a sidewall part of
+the first dielectric layer, and is spaced apart from a top part of the first dielectric layer by the
+first portion of the second dielectric layer.
+19. The structure of claim 17 or 18, wherein the first dielectric layer comprises silicon oxide,
+and the second dielectric layer comprises silicon and an element selected from the group
+consisting of N, C, and combinations thereof.
+2024010408564500DE 04.01.2024 DPMADirekt
+T17560DE
+28
+20. The structure of claim 17, 18 or 19 wherein the second dielectric layer further comprises a
+first vertical portion on a second vertical portion of the first dielectric layer, and wherein the
+second vertical portion is on the sidewall of the protruding fin.
+2024010408564500DE 04.01.2024 DPMADirekt
+

@@ -1,0 +1,211 @@
+T75093WOEP                                   BOEHMERT & BOEHNIERT
+
+            CLAIMS §marked-up!
+
+1. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+   that has developed shock, wherein said method is comprising the steps:
+   0 determining the level of DPP3 in a sample of bodily fluid of said subject;
+   0 compaiing said level of determined DPP3 to a predetermined threshold,
+   wherein said subject is predicted to run into refractory shock or is diagnosed as having refractory
+        shock if said determined level of DPP3 is above said predetermined threshold.
+
+2. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to claim 1, wherein said shock is selected from the group
+    compiising shock due to hypovolemia, cardiogenic shock, obstructive shock and distributive shock,
+    in particular cardiogenic shock or septic shock.
+
+3. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to claim 1 or 2, wherein said shock is a vasopressor-resistant
+    shock.
+
+4. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to claims 1 to 3, wherein
+    0 in case of cardiogenic shock said subject may have suffered an acute coronary syndrome (e.g.
+        acute myocardial infarction) or wherein said subject has heart failure (e.g. acute decompensated
+        heart failure), myocarditis, arrhythmia, cardiomyopathy, valvular heart disease, aOItic dissection
+        with acute aOItic stenosis, traumatic chordal rupture or massive pulmonary embolism, or
+    0 in case of hypovolemic shock said subject may have suffered a hemorrhagic disease including
+        gastrointestinal bleed, trauma, vascular etiologies (e.g. ruptured abdominal aOItic aneurysm,
+        tumor eroding into a major blood vessel) and spontaneous bleeding in the setting of
+        anticoagulant use or a non-hemorrhagic disease including vomiting, diarrhea, renal loss, skin
+        losses/insensible losses (e.g. bums, heat stroke) or third-space loss in the setting of pancreatitis,
+        cirrhosis, intestinal obstruction, trauma, or
+    0 in case of obstructive shock said patient may have suffered a cardiac tamponade, tension
+        pneumothorax, pulmonary embolism or aOItic stenosis, or
+    0 in case of distributive shock said patient may have septic shock, neurogenic shock, anaphylactic
+         shock or shock due to adrenal crisis.
+5. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to claims 1 to 4, wherein said method is used for initiation
+    and/or termination and/ or stratification and/or guidance of treatment.
+
+6. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+
+    and/or maintained and/or withheld and/ or terminated if said determined level of DPP3 is above
+    said predetermined threshold.
+
+7. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to claim 6, wherein said treatment is selected from the group of
+    vasopressors, Angiotensin-Receptor-Agonists and/or precursors thereof, inhibitors of the DPP3
+    activity and anti-adrenomedullin antibodies or anti-adrenomedullin antibody fragments.
+
+8. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to any of claims 1 to 7, wherein either the level of DPP3
+    protein and/or the level of active DPP3 is determined and compared to a predetermined threshold,
+    wherein the level of DPP3 is determined by contacting said sample of bodily fluid with a capture
+    binder that binds specifically to DPP3.
+
+9. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to any of claims 1 to 8, wherein a treatment with Angiotensin-
+
+    initiated and/or continued when the level of DPP3 in said sample is above a ceItain threshold
+    and/or wherein a treatment with vasopressors is tggmjmmwithheld and/ or terminated if said
+    determined level of DPP3 is above said predetermined threshold.
+
+10. A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+    that has developed shock according to any of claims 1 to 9, wherein a treatment with vasopressors
+    is m_wbmgminitiated and/or continued when the level of DPP3 in said sample is below a ceItain
+    threshold and/or wherein a treatment with Angiotensin-Receptor-Agonists and/ or precursors
+    thereof and/or inhibitors of the DPP3 activity is tggmbgg__withhe1d and/ or terminated if the said
+    determined level of DPP3 is below said predetermined threshold.
+11A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+   that has developed shock according to claim 9, wherein in addition the level of Pro-adrenomedullin
+   or fragments thereof is determined and wherein treatment with an anti-ADM antibody or anti-ADM
+   antibody fragment is jiggmmminitiated and/or continued when the level of Pro-adrenomedullin or
+   fragments thereof in said sample is above a ceItain threshold and/or wherein a treatment with an
+
+   determined level of Pro-adrenomedullin or fragments thereof is below said predetermined
+   threshold.
+
+12A method for predicting or diagnosing a refractory shock in a subject that either runs into shock or
+   that has developed shock according to claim 9, wherein treatment with an anti-ADM antibody or
+   anti-ADM antibody fragment and/or Angiotensin-Receptor-Agonists and/ or precursors thereof
+   and/or inhibitors of the DPP3 activity is mmmminitiated and/or continued if the level of Pro-
+   adrenomedullin or fragments thereof in said sample is above a ceItain threshold and said
+   determined level of DPP3 is above said predetermined threshold of DPP3.
+
+13.Vasopressor for use in therapy of shock in a subject that either runs into shock or that has
+   developed shock, wherein said subject has a level of DPP3 in a sample of bodily fluid of said
+    subject that is below a predetermined threshold, when determined by a method according to any of
+    claims 1-- 11.
+
+   into shock or that has developed shock, wherein said subject has a level of DPP3 in a sample of
+   bodily fluid of said subject that is above a predetermined threshold when determined by a method
+   according to any of claims 1 -- 11, wherein the inhibitor of the activity of DPP3 is selected from the
+   group comprising anti-DPP3 antibody or anti-DPP3 antibody fragment or anti-DPP3 non-Ig
+    scaffold.
+
+15.1nhibitor of the activity of DPP3 for use in therapy of ggfimggg`gf};_shock in a subj ect that either runs
+    into shock or that has developed shock according to claim 14, wherein said inhibitor is
+   administered in combination with an Angiotensin-Receptor-Agonist and/or precursor thereof.
+
+   into shock or that has developed shock according to claim 15, wherein said Angiotensin-Receptor-
+Agonist and/ or precursor thereof is selected from the group comprising angiotensin I, angiotensin
+II, angiotensin III, angiotensin IV, in patticular angiotensin II.
+
+4;           \                                       u                a                                 a                 ,t                km                           aa                                          t           ~                                  . M~ \ a/                  at                a.
+
+    \           \                        '\                       w         wn)     r                            w           ..          tw             m                                                         it                i\                        ¢                      \ t r ¢ t v.
+
+                                                                                                                                                           x                            M               A.        M                                       x         >»                         a
+
+    » ")3"                               «w                           a                        n                                                                         a »r                               a                       a xa                            a                w            ~               a
+
+                               m.                 x                                                                                      x          x.                   M         Vi.               x                                                 /                  /          WM»   ..        a
+
+    b. Va"                            t t J, ¢r, , w,t                                  ¢ tv t                   mW5             ¢, t               t¢                      t`
+
+    b.                                       w                    a              »                m                 r                       n1                      \           i                                             m     mt                                     tt                  b.                m
+                                                                                                                                                                                                                                    si «
+                                                                                    be                              ML                                  m           J           I          `1.       n               n                                              >»                                    >~            v1
+                                                                                                                                                                                                                                              t
+    3/          «t N                         v»                              :3 I                                t ,w'\ w                                                                     3} "5 a                                                                  3/ `                ii                 w
+                                                                                                                                                                                                                                    MA
+             at r t \ t                                                     w    D "*                      ¢V y                  b.                              y                                      w                  x»                                                wtr «a V}; V4                        \
+                                      t                     w                             .                      M                                                                                             t                                                          "MM              w                         w
+
+         at                                 wa                 u3 au                      aa`              w           u         ~ e ~-                                  a                                  ~ 2«        t
+
+    b2.                                  a "jl`                   aa                   t          m                       isi            wb. m          t a 'W.                    b. w                              t           m                                                t b. "I- s}, a isV
+
+    rm                             t             w                       Q_               3             n/,                  a                  . '3                                       i wi               .i                                                             m"5      '5'                     r
+                                                                                                                                                                                                            n.)                                                                      `W
+
+H            '3 m                        \"\a                     t¢                                                 i¢                         x MM                                    m'\m                ¢                           ¢                           m".5          t               Wx M               N
+
+iw              *` «                                     r            a»                                a1 a
+
+                                                                      . 3:;                                   i                  w i M,                       w                            a v,» 'u            4 ,3              .t «                            s                am t iw                     aa
+
+          zm                                         m                              Tw"              t                               tr                 m xw. m,                                \M                   \ nw n h                                                              i M3 " t
+    m a/ v», \
+    ih                                K "J                     i                                                          i                     a J 1"m" « 4»                                                                a/                                     m4'              w7.                w               aM
+                                                                                                                                                                                                                           nt
+                                            .1)"                     4r r                      i                 4r                             tt                  try            V83 1' x t                                                             4r                 m `v`vhereln mmfirfltid
+
+tiggmmma treatment with vasopressors is withheld and/ or terminated if said determined level of
+DPP3 is above said predetermined threshold.
+
+4,2471%. Vase messm F01" use in them M'Metheéwflmhwm of shock in a subject that either runs into
+
+shock or that has developed shock according to claims ,1; `3, i ` i _` `                                                                                                                                                                                                                                      tJ
+
+                   3                                 '1                  3                     3 «i 3                                3 :3                     «n «                         `\                              {                                                         um w \                          (
+
+and/ or precursors thereof and/or inhibitors of the DPP3 activity is withheld and/ or terminated if
+the said determined level of DPP3 is below said predetermined threshold.
+a subject that either runs into shock or that has developed shock according to claimg5 WMQZ, the
+
+     A_J        : 5: M:                          Hetiw:                                                                                                                        :
+
+          `1qu                       5:: t : :1: wherein in addition 555"":5gymdmmgmggthe level
+
+of Pro-adrenomedullin or fragments thereof is deteimined m a mm 36 0f bediik' fluid M said
+
+fimwand wherein treatment with aéfiénggmanti-ADM antibody or anti-ADM antibody fragment is
+
+initiated and/or continued when the level of Pro-adrenomedullin or fragments thereof in said
+
+sample is above a certain threshold and/or wherein a treatment with an anti-ADM antibody or anti-
+
+ADM antibody fragment is withheld and/ or terminated if the said determined level of Pro-
+
+adrenomedullin or fragments thereof is below said predetermined threshold.
+
+273720: Vase {essm for use in them «i Metheéwifitmatmem-of shock in a subject that either runs into
+
+:53 ' w. ` :_ 3. : 1 '. :_ ' ` :  A  wherein in addition 5n said themmmthe level of Pro-
+mm)                                                                                                        nmnmmmnmwm."
+
+adrenomedullin or fragments thereof is determined in a sam 15;: wi`hwdiiw fluid of said wheat and
+
+wherein treatment with wdmgmnanti-ADM antibody or anti-ADM antibody fragment is initiated
+
+and/or continued when the level of Pro-adrenomedullin or fragments thereof in said sample is
+
+above a certain threshold and/or wherein a treatment with an anti-ADM antibody or anti-ADM
+
+antibody fragment is withheld and/ or terminated if the said determined level of Pro-
+
+adrenomedullin or fragments thereof is below said predetermined threshold.
+
+          ., . h: , H `           u , /,,.r ,3:  (": A V:  .V ,                                                                                V:          ::  A,      `*,/
+
+     w
+
+                                                           w\                                                                                  trJ`r«w  v      a tw ,  w. AMj
+
+if»
+                                                                   r
+                                                                     L,
+                                                                                                                                           {A
+
+developed refractory shock, wherein said method is comprising the steps:
+0 determining the level of DPP3 in a sample of bodily fluid of said subject;
+0 compaiing said level of determined DPP3 to a predetermined threshold,
+0 correlating said level of DPP3 with said risk of an adverse event in said subject, wherein an
+    elevated level above a certain threshold is predictive for an enhanced risk of said adverse events
+    or,
+
+0 correlating said level of DPP3 with success of a therapy or intervention in said subj ect, wherein
+    a level below a certain threshold is predictive for a success of therapy or intervention.
+

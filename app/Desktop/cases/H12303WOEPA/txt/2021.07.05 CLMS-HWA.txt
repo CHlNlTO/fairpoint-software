@@ -1,0 +1,344 @@
+    Huawei Technologies C0., Ltd.
+    EP 19 160 813.2
+    H12303WOEP-A
+
+                                                 CLAIMS
+
+    1. A service chain fault detection method, wherein the service chain comprises a plurality of
+
+    service function nodes, and a packet passes through according to an order of the plurality of service
+
+    function nodes, wherein the method comprises:
+
+    obtaining, by a service forwarding entity, SFE (111), a first fault tracing detection request packet,
+
+    and determining, by the SFE (111), to communicate with a service function, SF, node (121), wherein
+    the first fault tracing detection request packet comprises a path identifier, ID, and the path ID is
+
+    used to identify a path of a service chain;
+
+    obtaining, by the SFE (111), an ID of the SF node (121);~aflé
+
+10  sending, by the SFE (111), a first fault tracing detection response packet to a device for initiating
+
+    fault detection (131), wherein the first fault tracing detection response packet comprises the path ID
+
+    and the ID of the SF node (121)11.2.1131
+
+    wherein after the obtaining, by the SFE the first fault tracing detection request packet the
+
+       method further comprises: sending: by the SFE, a second fault tracin detection response packet to
+15 the device for initiating fault detection wherein the second fault tracing detection response packet
+
+       comprises an ID 0fthe SFE and the bath ID.
+
+    2. The method according to claim 1, wherein the determining, by an SFE (111), to communicate
+
+    with a SF node, comprises:
+
+20  obtaining, by the SFE, a correspondence based on the path ID, wherein the correspondence
+
+    comprises the path ID and an address of the SF node;
+
+    sending, by the SFE, the first fault tracing detection request packet to the SF node according to
+
+    the address of the SF node; and
+
+    receiving, by the SFE, a second fault tracing detection request packet from the SF node, wherein
+
+25 the second fault tracing detection request packet comprises the path ID.
+
+             3. The method according to claim 1, wherein the first fault tracing detection request packet
+       further comprises a first parameter, the first parameter is used to identify the SF node or is used to
+       identify a previous--hop SF node of the SF node on the service chain; and the determining, by an SFE,
+30 to communicate with a SF node comprises:
+
+             obtaining, by the SFE, a correspondence based on the path ID and the first parameter, wherein
+       the correspondence comprises the path ID, the first parameter and an address of the SF node;
+
+             sending, by the SFE, the first fault tracing detection request packet to the SF node according to
+    the address of the SF node; and
+          receiving, by the SFE, a second fault tracing detection request packet from the SF node, wherein
+
+    the second fault tracing detection request packet comprises the path ID.
+
+          4. The method according to claim 3, wherein the first fault tracing detection response packet
+    further comprises at least one of the first parameter and an ID of the SFE.
+
+10
+
+    65. The method according to any one of claims 1 to 54, wherein the first fault tracing detection
+
+15 request packet further comprises a node list, and the node list comprises an ID of the previous-hop
+
+    SF node of the SF node on the service chain; and the first fault tracing detection response packet
+
+    further comprises an updated node list, the updated node list comprises the ID of the SF node and
+
+    the node list, and an order of all SF nodes comprised in the updated node list is the same as an order
+
+    of all the SF nodes on the service chain.
+
+20
+
+    £6, The method according to any one of claims 1 to 65, wherein the first fault tracing detection
+
+    request packet further comprises an ID of an SF node used as an end point; and
+
+    after the sending, by the SFE, a first fault tracing detection response packet to the device for
+
+    initiating fault detection, the method further comprises:
+
+25  ending, by the SFE, detection on the service chain when the ID of the SF node is the same as the
+
+    ID of the SF node used as the end point.
+
+          81. The method according to any one of claims 1 to 79, wherein the obtaining, by an SFE, a first
+    fault tracing detection request packet comprises:
+
+30  receiving, by the SFE, the first fault tracing detection request packet from the device for
+
+    initiating fault detection; or
+
+    receiving, by the SFE, the first fault tracing detection request packet from a previous-hop SFE of
+
+    the SFE on the service chain; or
+
+    generating, by the SFE, the first fault tracing detection request packet.
+
+35
+
+    98, A service chain fault detection method, wherein the service chain comprises a plurality of
+
+    service function nodes, and a packet passes through according to an order of the plurality of service
+    function nodes, wherein the method comprises:
+
+    sending, by a device for initiating fault detection (131), a first fault tracing detection request
+
+    packet to a service forwarding entity, SFE (111), wherein the first fault tracing detection request
+
+    packet comprises a path identifier, ID, and the path ID is used to identify a path of a service chain;
+
+    receiving, by the device for initiating fault detection (131), a first fault tracing detection response
+
+    packet from the SFE (111), wherein the first fault tracing detection response packet comprises the
+
+    path ID and an ID of a service function, SF, node (121);--aeet
+
+    determining, by the device for initiating fault detection (131), that forwarding between the SFE
+
+    (111) and the SF node (121) is normal based on the received ID of the SF node;
+
+10  wherein after the sending b the device for initiating fault detection the first fault tracing
+
+    detection reeuest Daeket to the SFE the method further comprises:
+
+    receiving, by the device for initiating fault detection, a second fault tracing detection response
+
+    packet from the SFE, wherein the second fault tracing detection response packet comprises the path
+
+    ID and an ID of the SFE` and
+
+15  determining, by the device for initiating fault detection, that forwarding between the SFE and
+
+    the device for initiating: fault detection is normal based on the received ID of the SFE.
+
+    3:99. The method according to claim 95}, wherein the sending, by a device for initiating fault
+
+    detection, a first fault tracing detection request packet to the SFE comprises:
+
+20  obtaining, by the device for initiating fault detection, a correspondence based on the path ID,
+
+    wherein the correspondence comprises the path ID and an address of the SFE; and
+
+    sending, by the device for initiating fault detection, the first fault tracing detection request
+
+    packet to the SFE according to the address of the SFE.
+
+25  1115;. The method according to claim E9 or tag, wherein the first fault tracing detection request
+
+    packet further comprises a first parameter, and the first parameter is used to identify the SF node or
+
+    is used to identify a previous-hop SF node of the SF node on the service chain.
+
+               3:91;. The method according to any one of claims 9--_8_t0 i119, wherein the first fault tracing
+30 detection request packet further comprises a node list, and the node list comprises an ID of the
+
+       previous-hop SF node of the SF node on the service chain; and the first fault tracing detection
+       response packet further comprises an updated node list, the updated node list comprises the ID of
+       the SF node and the node list, and an order of all SF nodes comprised in the updated node list is the
+        same as an order of all the SF nodes on the service chain.
+
+35
+    1a                           +kn           n          ` ` +`n+§   flan" Amy 11+: n +l~n+ 1!?     n A:                k+  n+         CDC 1'1 A
+
+    l «L\../l ill .lll 1`5, LI}  1 \.,/ k` /  l L« 1  1 LA  Ll (LLJL  lI            L  4L « L1  ll,  (AL lUl V Cl  I1 l  U/  /k/IL  l«  1 ,LJ (,
+
+                '+'n+`«n £ 11+A + n+' n '                             mm]
+                L                             /       /L                       LA-
+
+    1412. A service forwarding apparatus (111), wherein the service forwarding apparatus (111)
+
+    comprises:
+
+10  a first communications unit (1103; 1105), configured to: obtain a first fault tracing detection
+
+    request packet, and then determine to communicate with a service function, SF, node (121), wherein
+
+    the first fault tracing detection request packet comprises a path identifier, ID, and the path ID is
+
+    used to identify a path of a service chain, wherein the service chain comprises a plurality of service
+
+    function nodes, and a packet passes through according to an order of the plurality of service function
+
+15 nodes;
+             a first obtaining unit, configured to obtain an ID of the SF node (121); 62%
+
+    a first sending unit, configured to send a first fault tracing detection response packet to the
+
+    device for initiating fault detection (131), wherein the first fault tracing detection response packet
+
+    comprises the path ID and the ID of the SF node (121)3.5.131
+
+20  wherein the first sendin unit is further configured to send a second fault traein detection
+
+    response packet to the device for initiating: fault detection wherein the second fault tracing
+
+    detection response packet comprises the path ID and an ID of the service fowardine apparatus.
+
+    1513. The service forwarding apparatus according to claim 141;, wherein the first
+
+25 communications unit is specifically configured to:
+
+    obtain a correspondence based on the path ID, wherein the correspondence comprises the path
+
+    ID and an address of the SF node;
+
+    send the first fault tracing detection request packet to the SF node according to the address of
+
+    the SF node comprised in the correspondence; and
+
+30  receive a second fault tracing detection request packet from the SF node, wherein the second
+
+    fault tracing detection request packet comprises the path ID.
+
+             1614. The service forwarding apparatus according to claim 1412, wherein the first fault tracing
+       detection request packet further comprises a first parameter, the first parameter is used to identify
+35 the SF node or is used to identify a previous-hop SF node of the SF node on the service chain; and
+       the first communications unit is specifically configured to:
+
+             obtain a correspondence based on the path ID and the first parameter, wherein the
+       correspondence comprises the path ID, the first parameter and an address of the SF node;
+             send the first fault tracing detection request packet to the SF node according to the address of
+
+       the SF node comprised in the correspondence; and
+             receive a second fault tracing detection request packet from the SF node, wherein the second
+
+       fault tracing detection request packet comprises the path ID.
+
+             $15. The service forwarding apparatus according to claim iéig, wherein the first fault tracing
+       detection response packet further comprises at least one of the first parameter and an ID of the
+       service forwarding apparatus.
+
+10
+
+"I +An+ +3          A Lr`1 +k             n     A iH +n '            A + +1  1'         ,
+
+(VLLI L  4  1 1.1:  '1 J 41 mlll L11  :3     1  l 1 XLLL  I. (AM  1  U  k    11 1V HUI  PC
+
+            ft`" ("`1 AC m u inflappuettii
+
+15
+
+             «1--9153. The service forwarding apparatus according to any one of claims «174--1;to +815, wherein
+
+       the first fault tracing detection request packet further comprises a node list, and the node list
+       comprises an ID of the previous-hop SF node of the SF node on the service chain; and the first fault
+       tracing detection response packet further comprises an updated node list, the updated node list
+20 comprises the ID of the SF node and the node list, and an order of all SF nodes comprised in the
+       updated node list is the same as an order of all the SF nodes on the service chain.
+
+             2911. The service forwarding apparatus according to any one of claims +44;to $919, wherein
+       the first fault tracing detection request packet further comprises an ID of an SF node used as an end
+25 point; and
+
+             the service forwarding apparatus further comprises:
+             a control unit, configured to: after the first sending unit sends the first fault tracing detection
+       response packet to the device for initiating fault detection, determine that the ID of the SF node is
+       the same as the ID of the SF node used as the end point, and end detection on the service chain.
+
+30
+
+             2-113. The service forwarding apparatus according to any one of claims 3:41;to 2612, wherein
+             the first communications unit is specifically configured to receive the first fault tracing
+       detection request packet from the device for initiating fault detection; or
+             the first communications unit is specifically configured to receive the first fault tracing
+35 detection request packet from a previous-hop SFE of the service forwarding apparatus on the service
+       chain; or
+             the first communications unit is specifically configured to generate the first fault tracing
+    detection request packet.
+
+    2213. A device for initiating fault detection (131), wherein the device for initiating fault
+
+    detection (131) comprises:
+
+    a sending unit (1306), configured to send a first fault tracing detection request packet to a
+
+    service forwarding entity, SFE (111), wherein the first fault tracing detection request packet
+
+    comprises a path identifier, ID, and the path ID is used to identify a path of a service chain, wherein
+
+    the service chain comprises a plurality of service function nodes, and a packet passes through
+
+    according to an order of the plurality of service function nodes;
+
+10  a first receiving unit (1305), configured to receive a first fault tracing detection response packet
+
+    from the SFE (111), wherein the first fault tracing detection response packet comprises the path ID
+
+    and an ID of a service function, SF, node (121);~afié
+
+    a first determining unit (1313), configured to determine that forwarding between the SFE (111)
+
+    and the SF node (121) is normal based on the received ID of the SF node;
+
+15  wherein the device for initiating fault detection further comDrises:
+
+    a second receiving unit configured to receive a second fault tracing detection response packet
+
+    from the SFE wherein the second fault tracing detection response packet comprises the path ID and
+
+    an ID of the SFE; and
+
+    the first determinin unit is further configured to determi e that forwardin between the SFE
+
+20 and the fault detection is normal based on the received 11) 0f the SFE.
+
+               2329,. The device for initiating fault detection according to claim 2219, wherein the sending unit
+       is specifically configured to:
+
+             obtain a correspondence based on the path ID, wherein the correspondence comprises the path
+25 ID and an address of the SFE; and
+
+             send the first fault tracing detection request packet to the SFE according to the address of the
+       SFE comprised in the correspondence.
+
+               21421. The device for initiating fault detection according to claim 22--15101" 2320, wherein the first
+30 fault tracing detection request packet further comprises a first parameter, and the first parameter is
+
+       used to identify the SF node or is used to identify a previous-hop SF node of the SF node on the
+        service chain.
+
+               252;. The device for initiating fault detection according to any one of claims 22--1910 2421,
+35 wherein the first fault tracing detection request packet further comprises a node list, wherein the
+
+       node list comprises an ID of the previous-hop SF node of the SF node on the service chain; and
+             the first fault tracing detection response packet further comprises an updated node list, the
+updated node list comprises the ID of the SF node and the node list, and an order of all SF nodes
+comprised in the updated node list is the same as an order of all the SF nodes on the service chain.
+
+11« 1L«\xp 1 1 1  l  at (1h 11? nn /\1 ¥l VnA n{`1m 111 nn+Lu n L), v la141 [::1 +l1nL«
+
+      2--523. A system, comprising a service forwarding apparatus according to any one of claims 14--12
+to 211$, and a device for initiating fault detection according to any one of claims 22--;9_t0 2622.
+

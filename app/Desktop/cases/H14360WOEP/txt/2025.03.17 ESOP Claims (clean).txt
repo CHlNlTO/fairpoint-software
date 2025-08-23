@@ -1,0 +1,234 @@
+    H14360WOEP
+    EP 22 794 201.8
+
+                                Amended Claims
+
+    1. A data backup method, wherein the method is applied to a data backup system (100, 300),
+
+    the data backup system (100, 300) comprises a primary cluster (101, 1200, 1400), a secondary
+
+    cluster (102), and a control device (103, 104, 1100, 1300), wherein the primary cluster includes a
+
+    first component and a second component, the secondary cluster includes a third component and
+
+5 a fourth component, the third component is used as backup of the first component, the fourth
+
+    component is used as backup of the second component, the first component and the second
+
+    component store data in different formats, the third component and the fourth component store
+
+    data in different formats; and the method comprises:
+
+    configuring, by the control device (103, 104, 1100, 1300), a first data backup policy for a first
+
+10 service based on: information about a plurality of data sets related to the first service and that is
+
+    entered by a user (104, 106); and a first moment, wherein the plurality of data sets related to the
+
+    first service comprise a data set processed or stored by the first component in the primary cluster
+
+    (101, 1200, 1400) and a data set processed or stored by the second component in the primary
+
+    cluster (101, 1200, 1400);
+
+15  controlling, by the control device (103, 104, 1100, 1300) based on the first data backup policy,
+
+    the primary cluster (101, 1200, 1400) or the secondary cluster (102) to back up, to the secondary
+
+    cluster (102), the plurality of data sets related to the first service that are in the primary cluster
+
+    (101, 1200, 1400) and that are at the first moment, wherein the first data backup policy comprises
+
+    the information about the plurality of data sets related to the first service and the first moment.
+
+20
+
+    2. The method according to claim 1, wherein the controlling, by the control device (103, 104,
+
+    1100, 1300) based on a first data backup policy, the primary cluster (101, 1200, 1400) or the
+
+    secondary cluster (102) to back up, to the secondary cluster (102), a plurality of data sets related
+
+    to a first service that are in the primary cluster (101, 1200, 1400) and that are at a first moment
+
+25 comprises:
+
+    sending, by the control device (103, 104, 1100, 1300), a first instruction to the primary cluster
+
+    (101, 1200, 1400), to instruct the primary cluster (101, 1200, 1400) to send, to the secondary
+
+    cluster (102), data corresponding to snapshots of the plurality of data sets related to the first
+
+    service that are at the first moment; or
+
+30  sending, by the control device (103, 104, 1100, 1300), a second instruction to the secondary
+
+    cluster (102), to instruct the secondary cluster (102) to replicate, from the primary cluster (101,
+
+    1200, 1400), data corresponding to snapshots of the plurality of data sets related to the first
+
+    service that are at the first moment and that are in the primary cluster (101, 1200, 1400).
+
+35  3. The method according to claim 2, wherein before the sending, by the control device (103,
+
+                                              1
+     104, 1100, 1300), a first instruction to the primary cluster (101, 1200, 1400), or the sending, by
+     the control device (103, 104, 1100, 1300), a second instruction to the secondary cluster (102), the
+     method further comprises:
+
+          sending, by the control device (103, 104, 1100, 1300), a third instruction to the primary
+5 cluster (101, 1200, 1400), wherein the third instruction comprises the information about the
+
+     plurality of data sets related to the first service and the first moment, and the third instruction
+     instructs the primary cluster (101, 1200, 1400) to obtain the snapshots of the plurality of data sets
+      related to the first service that are at the first moment.
+
+10  4. The method according to any one of claims 1 to 3, wherein the method further comprises:
+
+    sending, by the control device, a fourth instruction to the primary cluster, wherein the fourth
+
+    instruction instructs the primary cluster to synchronize user data to the secondary cluster; or
+
+    obtaining, by the control device, user data stored in the primary cluster and the secondary
+
+    cluster, and adjusting, by the control device based on the user data stored in the primary cluster,
+
+15 the user data stored in the secondary cluster.
+
+            5. The method according to any one of claims 1 to 4, wherein the method further comprises:
+            configuring, by the control device (103, 104, 1100, 1300), a second data backup policy for a
+       second service, wherein the second data backup policy comprises information about a plurality of
+20 data sets related to the second service and a second moment; and
+            controlling, by the control device (103, 104, 1100, 1300) based on the second data backup
+      policy, the primary cluster (101, 1200, 1400) or the secondary cluster (102) to back up, to the
+       secondary cluster (102), the plurality of data sets related to the second service that are in the
+       primary cluster (101, 1200, 1400) and that are at the second moment.
+
+25
+
+            6. The method according to any one of claims 1 to 5, wherein the control device (103, 104,
+       1100, 1300) comprises a primary client (1051) and a secondary client (1052), the primary client
+       (1051) is configured to detect first status information of the primary cluster (101, 1200, 1400), the
+       secondary client (1052) is configured to detect second status information of the secondary cluster
+30 (102), and the method further comprises:
+
+            obtaining, by the control device (103, 104, 1100, 1300), the first status information obtained
+       through detection of the primary client (1051) and the second status information obtained
+       through detection of the secondary client (1052); and
+
+            when the first status information indicates that the primary cluster (101, 1200, 1400) is a
+35 secondary identity or the cluster fails, and the second status information indicates that the
+
+       secondary cluster (102) is a primary identity, determining, by the control device (103, 104, 1100,
+       1300), that the client accessing the cluster is switched to the secondary client.
+
+    7. The method according to claim 6, wherein the method further comprises:
+
+                                                                                      2
+          prompting, by the control device (103, 104, 1100, 1300), the user (104, 106) with information
+     indicating that the primary cluster (101, 1200, 1400) is faulty; and
+
+           adjusting, by the control device (103, 104, 1100, 1300), an identity of the secondary cluster
+     (102) from the secondary identity to the primary identity in response to an identity adjustment
+5 operation of the user (104, 106) for the secondary cluster (102).
+
+         8. The method according to any one of claims 1 to 7, wherein the control device (103, 104,
+    1100, 1300) is deployed in an isolated manner from the primary cluster (101, 1200, 1400).
+
+10  9. The method according to any one of claims 1 to 8, wherein a same clock source is set in the
+
+    control device (103, 104, 1100, 1300), the primary cluster (101, 1200, 1400), and the secondary
+
+    cluster (102).
+
+           10. The method according to any one of claims 1 to 9, wherein the primary cluster (101, 1200,
+15 1400) and/or the secondary cluster (102) comprise/comprises a cluster constructed based on a
+
+      hadoop architecture.
+
+            11. A data backup method, wherein the method is applied to a data backup system (100, 300),
+       the data backup system (100, 300) comprises a primary cluster (101, 1200, 1400), a secondary
+20 cluster (102), and a control device (103, 104, 1100, 1300), wherein the primary cluster includes a
+      first component and a second component, the secondary cluster includes a third component and
+       a fourth component, the third component is used as backup of the first component, the fourth
+       component is used as backup of the second component, the first component and the second
+       component store data in different formats, the third component and the fourth component store
+25 data in different formats; and the method comprises:
+
+            configuring, by the control device (103, 104, 1100, 1300), a first data backup policy for a first
+       service based on: information about a plurality of data sets related to the first service and that is
+       entered by a user (104, 106); and a first moment, wherein the plurality of data sets related to the
+      first service comprise a data set processed or stored by the first component in the primary cluster
+30 (101, 1200, 1400) and a data set processed or stored by the second component in the primary
+
+    cluster (101, 1200, 1400);
+
+    obtaining, by the primary cluster (101, 1200, 1400), an instruction delivered by the control
+
+    device (103, 104, 1100, 1300), wherein the instruction comprises the information about the
+
+    plurality of data sets related to the first service and the first moment;
+
+35  backing up, by the primary cluster (101, 1200, 1400) to the secondary cluster (102) based on
+
+    the instruction, the plurality of data sets related to the first service that are in the primary cluster
+
+    (101, 1200, 1400) and that are at the first moment, and
+
+         synchronizing, by the primary cluster (101, 1200, 1400), user data to the secondary cluster
+    (102).
+
+                                3
+    12. The method according to claim 11, wherein the backing up, by the primary cluster (101,
+
+    1200, 1400) to the secondary cluster (102) based on the instruction, the plurality of data sets
+
+    related to the first service that are in the primary cluster (101, 1200, 1400) and that are at the first
+
+5 moment specifically comprises:
+
+    obtaining, by the primary cluster (101, 1200, 1400) based on the information about the
+
+    plurality of data sets related to the first service and the first moment, snapshots of the plurality of
+
+    data sets related to the first service that are in the primary cluster (101, 1200, 1400) and that are
+
+    at the first moment; and
+
+10  sending, by the primary cluster (101, 1200, 1400), data corresponding to the snapshots to the
+
+    secondary cluster (102) based on the snapshots.
+
+            13. The method according to claim 11 or 12, wherein the primary cluster (101, 1200, 1400)
+       and/or the secondary cluster (102) comprise/comprises a cluster constructed based on a hadoop
+
+15 architecture.
+
+    14. A data backup system (100, 300), wherein the data backup system (100, 300) comprises
+
+    a control device (103, 104, 1100, 1300), a primary cluster (101, 1200, 1400), and a secondary
+
+    cluster (102), wherein
+
+20  the control device (103, 104, 1100, 1300) is configured to perform the method according to
+
+    any one of the method any one of claims 1 to 10;
+
+    the primary cluster (101, 1200, 1400) is configured to perform the method according to any
+
+    one of the method any one of claims 11 to 13; and
+
+    the secondary cluster (102) is configured to obtain and store a data set backed up from the
+
+25 primary cluster (101, 1200, 1400).
+
+            15. A control device (103, 104, 1100, 1300), wherein the computing device comprises a
+      processor (1302, 1402) and a memory (1303, 1403), wherein
+
+            the processor (1302, 1402) is configured to execute instructions stored in the memory (1303,
+30 1403), to enable the computing device to perform the method according to any one of claims 1 to
+
+        10.
+
+                                       4
+

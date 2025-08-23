@@ -1,0 +1,406 @@
+Datum                  Blatt            Anmelde-Nr:                          22 885 594.6
+
+Date cf Form 1507      Sheet 1          Application No:
+                       Feuille          Demande nº:
+Date
+
+The examination is being carried out on the following application documents
+
+Description, Pages
+
+1-49                filed with entry into the regional phase before the EPO
+
+Claims, Numbers
+
+1-15                filed with entry into the regional phase before the EPO
+
+Drawings, Sheets
+
+1/6-6/6             filed with entry into the regional phase before the EPO
+
+1        Reference is made to the following document; the numbering will be adhered to
+
+         in the rest of the procedure.
+
+D1       Junya Honda et al .: "Polar Coding Without Alphabet Extension for
+
+         Asymmetric Models", IEEE Transactions on Information Theory, vol. 59, no. 12,
+
+         December 2013, pages 7829-7838, XP055463520, ISSN: 0018-9448, DOI: 10.1109/TIT.
+
+         2013.2282305
+
+D2       Zheng Mengfan et al: "Joint Source-Channel Polar Coding for Biased
+
+         Bernoulli Sources at Short Blocklengths", 11TH International Symposium on Topcs
+
+         in Coding, ISTC, IEEE, 30 August 2021, pages 1-5, XP034018256,
+
+         DOI: 10.1109/ISTC49272.2021.9594160 [retrieved on 2021-10-28]
+
+1.1 Document D1 discloses a method of polar coding (see title) for performing
+         channel coding for an asymmetric channel requiring a nonuniform channel
+         symbol distribution and for lossy source coding of nonuniform sources (see
+         abstract and section "I Introduction"). Channel coding is disclosed in section
+         III.A (i.e. "III. Polar Codes for Asymmetric Channels"; "A. Code Construction").
+         Assuming a polar code of length n having an information set I and a frozen set Ic
+         (defined as complementary subsets of {1, 2, ... ,n}), a frozen bit u; has a
+         deterministic value depending on the previous information and frozen bit values
+         U1 ... Uj-1 (noted u;i-1). Therefore, the frozen bits are not set to a default value
+
+          such as zero.
+
+         The frozen value uj given u-1-1 is selected non-uniformly, i.e. with different
+         probabilities of being 0 or 1, by using maps generated based on pseudorandom
+         number sequences shared by the encoder and decoder, wherein a map is a
+
+EPO Form 1703 01.91TRI
+Datum                   Blatt    Anmelde-Nr:               22 885 594.6
+
+Date cf Form 1507       Sheet 2  Application No:
+                                 Demande nº:
+Date                    Feuille
+
+   functions associating to binary i-tuples to a binary value, where i takes any
+
+   value in the frozen set.
+
+   The information and frozen bits are then polar encoded by multiplication by a
+   polarization matrix.
+   In the source coding setup (see section IV; see notations X, Y in section II), the
+   encoder receives a non-uniformly distributed source message y-", determines
+
+   from y-" a sequence of information bits (eq. 19) and determines frozen (eq. 20)
+   bits by using a map between info/frozen bits ... (i-1) to {0,1}, as in the channel
+
+                                                                                                                                                                                      1
+
+   coding case. The encoder then sends the information bits, hence achieving a
+   compression ratio with is the size of the information set divided by n.
+
+1.2 Document D2 discloses a joint source-channel polar coding method for
+         Bernouilli sources (see title). Encoding is by concatenating a source polar
+         encoder and a channel polar encoder. At the decoder side, joint decoding is
+         provided (see fig 3). The performance for short blocklengths (i.e. short polar
+         code length) is improved by applying CRC-aided successive cancellation
+         decoding to the source polar coding.
+
+2  The application does not meet the requirements of Article 84 EPC because the
+
+   claims are not clear and supported by the description.
+
+2.1 In claim 1, the formulation "A coding method, applied to a first communications
+         device" lacks clarity as to whether the first communications device actually
+         performs the method.
+
+2.2 In claim 1, the formulation "a probability distribution value P1 of the first
+
+         information bit sequence" is not clear since the specific definition of this term
+         used in the application (see [87]-[89]) is not defined in claim 1. It results that
+         claim 1 is not clear by itself.
+         Furthermore, claim 1 lacks of support in the description over the whole area
+         claimed. According to par. [89] of the description, in the present application, a
+         probability distribution value has the following definition: "A probability
+         distribution value of an information bit sequence is a proportion of 0 or 1 in the
+         information bit sequence". However, the formulation of claim 1 is vague and
+         encompasses interpretations which are not supported by the description, such
+         as a-priori knowledge that an information bit has a probability of being zero or
+         one, or such as a symbol (e.g. zero or one) of a set of symbols having a
+          probability distribution, etc ...
+         The definition of paragraph [89] should therefore be included in claim 1.
+
+EPO Form 1703 01.91TRI
+Datum                   Blatt    Anmelde-Nr:      22 885 594.6
+
+Date cf Form 1507       Sheet 3  Application No:
+                        Feuille  Demande nº:
+Date
+
+2.3 In claim 1, the formulation "determining a frozen bit sequence" is not clear and
+         supported by the description over its whole breadth.
+         A plain reading of this feature would be determining the frozen set, that is, a
+         sequence of frozen indexes at the input of the polar encoder.
+         However, according to the summary of the invention, claim 1 (copied in par. [6]
+         of the description) has the effect (see par. [7]) that "values of the first frozen bit
+         sequence are determined based on the probability distribution value of the first
+         information bit sequence, instead of by setting the values of the first frozen bit
+         sequence to all Os by default" (emphasis added). A similar disclosure is
+         provided in par. [106]. Since claim 1 neither specifies values of the frozen bit
+         sequence nor specifies departing from the conventional method of setting
+         frozen its to zero, it encompasses readings (such as indicated above) which are
+         not supported by the description. Furthermore, claim 1 does not contains the
+
+          features which are essential to achieve the effect of the invention.
+
+2.4 It is noted that the defects identified above under 2.2 and 2.3 could be
+         overcome by amending the frozen bit sequence determining step as follows:
+         determining the values of a first frozen bit sequence based on a probability
+          distribution value P1 of the first information bit sequence without setting the
+          values to zero by default, wherein the probability distribution value P- is a
+
+         proportion of 0 or 1 in the first information bit sequence
+
+2.5 Claims 3 and 13 are unclear because the claimed features appear tautological:
+         in an equiprobable distribution, P1 is by definition equal to 0,5, so that the
+         relationship |P1-0,5| & is necessarily held for any value of &.
+
+2.6 Claim 4 appears to be useful in the case where a pre-transformation is
+         employed, see par. [12]. However, this case is only one of two alternative cases
+         in claim 1. It is obscure what the technical effect of the features of claim 4 might
+          be when applied in combination with the alternative of claim 1 were no pre-
+         transformation is performed.
+
+2.7 In claim 5, the formulation "the check bit sequence is located in the bits
+         comprised in the second information bit sequence" is not clear. A plain reading
+          the second information bit sequence contains check bits. However, in view of
+         the par. [13] which visibly refers to the well-known technique of interspersing
+         check bits within information bits for allowing early termination of decoding, it
+         appears what "in" means something like "interspersed within", which is not clear
+         from claim 5. It is noted that the term "interspersed" is not used in the
+         application and cannot be used to clarify claim 5.
+
+EPO Form 1703 01.91TRI
+Datum              Blatt                            Anmelde-Nr:      22 885 594.6
+                   Sheet 4
+Date cf Form 1507  Feuille                          Application No:
+                                                    Demande nº:
+Date
+
+2.8 Claim 6 is not clear when dependent on the equiprobable distribution alternative
+         of claims 1 and 2: in this case, there is only one possible probability distribution
+         value P1=0,5 and it would not be technically meaningful to select a different
+         value Po based on P1. It is noted that there is no disclosure in the application of
+         alternating between the equiprobable and the non-equiprobable case.
+
+2.9 Claim 9 is not clear for reasons similar to those of claim 6: in the configuration
+         where P1=0,5, it has no technical function to signalize a probability distribution
+          reference value to a receiver.
+
+2.10 Claim 11 is not clear for the following reasons.
+
+2.10.1  Claim 11 is not clear for reasons corresponding to points 2.1 to 2.3 above. In
+        relation with 2.3, claim 11 is additionally unclear because it does not link the
+        probability distribution value to the first information sequence, so that it is
+        unclear what the probability distribution value represents.
+        It is not evident how to clarify this point. Maybe the only possibility is to link
+        claims 1 and 11 by clarifying that the second communications device (of claim
+        11) obtains the to-be-decoded sequence sent by the first communication device,
+        based on par. [154]-[157], which would also imply to include the sending step in
+        claim 1, and, in order to avoid an intermediate generalisation, to add the
+        disclosed modulation and a demodulation steps.
+
+2.10.2 Claim 11 does not mention polar codes/coding/decoding. Although frozen bits
+         are mentioned and suggest that a polar code is employed, this should be made
+         explicit in claim 11 (this would be achieved by following the suggestion made in
+          2.10.1).
+
+2.11 Claim 12 is not clear for reasons corresponding to 2.8 above.
+
+3       The present application does not meet the requirements of Article 52(1) EPC
+
+        because the subject-matter of claims 1-3, 5, 10 does not involve an inventive
+
+        step within the meaning of Article 56 EPC.
+
+3.1 Concerning claims 1 and 2, first alternative.
+         The "first" alternative refers to the alternative of claim 2 where P1 is an
+         equiprobable distribution and where the first and second information bit
+          sequences are identical.
+
+3.1.1 Document D1 discloses a method having the following features of claim 1.
+
+        A coding method, applied to a first communications device,
+
+         D1, section III.A, see last paragraph of I.h. col .: "Third, the encoder sends the
+         codeword ... ". The encoder is a first communication device.
+
+EPO Form 1703 01.91TRI
+Datum              Blatt    Anmelde-Nr:      22 885 594.6
+
+Date cf Form 1507  Sheet 5  Application No:
+                   Feuille  Demande nº:
+Date
+
+          wherein the method comprises:H
+          obtaining a first information bit sequence;
+
+         D1, section III.A, see last paragraph of I.h. col .: "the encoder determines the
+
+          information bits by "T = mj."
+
+           determining a first frozen bit sequence based on a
+          probability distribution value P1 of the first information
+          bit sequence;
+
+         D1, section III.A, see last paragraph of I.h. col .:
+         "Next, for the frozen bits Ic, the encoder determines the value uj, i E Ie , in the
+
+       ascending order by uj = (u')"; and
+
+         "Let MIT!denote a message uniformly distributed on {0, 1} }". The uniform
+         distribution corresponds to P1=0,5.
+
+         The formula uj = ("1") expresses that the frozen bit at index i depends over
+         the map A; from all information and frozen bits at indexes 1 ... (i-1). Since the
+         information bits have the probability distribution value P1=0,5, it results that the
+         values of the frozen bits are based on P1. This is the case because a different
+          probability distribution value would result into different messages, which in turn
+         results in different frozen bit values.
+          It is noted that the clarified formulation suggested above in section 2.4 would
+         not be distinguished from D1.
+
+           determining a check bit sequence based on a second
+           information bit sequence, wherein the second information
+           bit sequence is the first information bit sequence or a
+           sequence obtained after a pre-transformation operation is
+            performed on the first information bit sequence;
+           obtaining a first bit sequence based on the second
+           information bit sequence, the check bit sequence, and the
+           first frozen bit sequence, wherein the first bit sequence
+           comprises bits in the second information bit sequence, bits
+           in the check bit sequence, and bits in the first frozen bit
+
+            sequence;
+
+         D1, section III.A, see last paragraph of I.h. col .: "Third, the encoder sends the
+         codeword "1 = ""Gn.", where u," constitutes a first bit sequence.
+         Note that u," contains values u; with i being in the frozen set, and information
+
+                                   I
+
+         bits I = mi which constitute the "first information bit sequence, which in turn
+         can be identical to the "second information bit sequence" according to the
+          above-feature of claim 1.
+
+EPO Form 1703 01.91TRI
+Datum                   Blatt    Anmelde-Nr:      22 885 594.6
+                        Sheet 6  Application No:
+Date cf Form 1507       Feuille  Demande nº:
+
+Date
+
+       performing polar coding on the first bit sequence to obtain
+       a second bit sequence; and
+       outputting the second bit sequence.
+
+       See again: "encoder sends the codeword " = utG. ".
+
+3.1.2  Consequently, the method of claim 1 differs from that of D1 by using a check bit
+       sequence based on the second information bit sequence, which may be
+       according to claim 1 equal to the first information bit sequence, i.e. the
+       information bits of the message to be encoded.
+       The objective technical problem is to increase coding performance.
+
+3.1.3  It is notoriously known that adding parity bits, for example CRC bits, increases
+       the performance of a polar code, especially for small block lengths in which the
+       channels are not completely polarized.
+       It is also noted that document D1 discloses using successive cancellation
+       decoding (cf. page 7833, I.h. column, after equation (25)), which can notoriously
+       be improved by using a successive cancellation list, SCL, decoding in a so-
+       called CRC-Aided, CA-Polar, setup where CRC bits allow to aid selecting the
+       correct path and/or to verify whether decoding is correct.
+       It is also noted that document D2 shows that CRC-aided polar source coding is
+       known in the art, in order to improve the short-block performance.
+       Consequently, the skilled person would arrive at the subject-matter of claims 1
+       and 2 without the exercise of inventive activity (note: the features of claim 2
+       limiting claim 1 to the first alternative defined above in the introductory
+       paragraph of section 3.1 were assumed in the above feature analysis).
+
+3.2 Concerning claims 1 and 2, second alternative.
+         The "second" alternative refers to the alternative of claim 2 where P1 is a non
+
+         equiprobable distribution and where the second information bit sequence is
+         obtained by performing a pre-transformation on the first information bit
+
+           sequence.
+
+         Reference is made to D1, section "IV. Application to Lossy Source Coding".
+         The complete feature analysis is not repeated below. It is noted that the pre-
+         transformation of the first information bit sequence into the second information
+         bit sequence (which is not present in the first alternative of claim 1 and has
+         therefore not been mapped to D1 in the above reasoning) reads onto the
+         operation of equation (19). It therefore appears that the subject-matter of claim
+         1 differs from D1, section IV, only by adding a check bit sequence, which lacks
+         an inventive step for the same reasons as those indicated above.
+
+EPO Form 1703 01.91TRI
+Datum                   Blatt    Anmelde-Nr:      22 885 594.6
+
+Date cf Form 1507       Sheet 7  Application No:
+                        Feuille  Demande nº:
+Date
+
+3.3 Concerning claim 3
+         In the equiprobable case disclosed in D1, the probability distribution value is
+         P1= 0,5 (by definition), so that |P1-0,5]=0, which is smaller than any preset
+          value.
+
+3.4 Concerning claims 5 and 10
+         As indicated above having regard to claim 1, it is well-known in the art to
+         perform CA-polar encoding/decoding with check bits interspersed within the
+         information bits in order to assist the decoder in pruning paths in a SCL
+         decoding method.
+
+4  Positive statements
+
+   A claim based on a combination of present claims 1, 2, and 6, clarified as
+   indicated above in sections 2.1 and 2.4 above, and furthermore clarified by
+   deleting the equiprobable alternative from claims 1-2, would appear to be novel,
+   inventive and clear. By doing so (by incorporating claim 6), it would also be
+   related to the same invention as independent claim 11.
+   The subject-matter of claim 11 is new and inventive. Clarity issues might be
+   overcome as indicated above.
+   The prior art does not suggest the subject-matter of a combination of claims 1
+   and 4. However, this claim combination gives rise to clarity issues as indicated
+
+   above.
+
+5  The following requirements should be attended to when filing new application
+
+   documents.
+
+5.1 To meet the requirements of Rule 43(1) (a) and (b) EPC, the independent claim
+         should be properly cast in the two part form, with those features which are part
+         of the prior art (see document D1) being placed in the preamble.
+
+5.2 Reference signs in parentheses should be inserted in the claims to increase
+         their intelligibility, Rule 43(7) EPC. This applies to both the preamble and
+         characterising portion.
+
+5.3 In order to indicate more completely the background art useful for
+         understanding the invention, the above-mentioned documents D1 and D2
+         should be acknowledged in the description (Rule 42 (1) (b) and (c) EPC).
+
+5.4 Paragraph [1] of the description should be deleted because it contains irrelevant
+         subject-matter, Rule 48(1)(c) EPC, and an unallowable indication of
+         incorporating a document by reference, cf. F-III 8.
+
+EPO Form 1703 01.91TRI
+Datum                   Blatt    Anmelde-Nr:      22 885 594.6
+                        Sheet 8  Application No:
+Date cf Form 1507       Feuille  Demande nº:
+
+Date
+
+5.5 The description should be adapted to the claims to be filed:
+         - The summary of the invention should be maintained in strict conformity with
+         the claims, preferably by using a reference to the claims. Copy of superseded
+         claims must be deleted because they suggest that the invention might be
+         different than as defined in the claims.
+         - The description should be entirely reviewed to ensure that combination of
+         features of the independent claims are not be presented as optional, that
+         embodiments which are not covered by the independent claims are identified as
+         such or deleted, and generally, that there are no statement suggesting that the
+         invention might be different from what is specified in the claims. In particular, the
+         passages of the description relating to dependent claims incorporated into an
+         independent claims have to be checked with care.
+         - reference to the scope of the application (see par. [289]) should be deleted
+         since the scope is defined by the claims.
+
+5.6 In order to comply with the requirements of Rule 137(4) EPC, the applicant
+         should clearly identify the amendments made and indicate the passages of the
+         application as filed on which these amendments are based (see Guidelines H
+          III, 2.1).
+
+EPO Form 1703 01.91TRI
+

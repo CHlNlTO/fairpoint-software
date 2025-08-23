@@ -1,0 +1,844 @@
+T17560DE / DE 10 2024 100 165.8
+Taiwan Semiconductor Manufacturing Co., Ltd.
+12.05.2025
+SELEKTIVE MASKENABSCHEIDUNG ZUR VERRINGERUNG
+VON NANOBLATTVERLUST
+HINTERGRUND
+[0001] Halbleitervorrichtungen werden in einer Vielzahl von elektronischen Geräten
+verwendet, z. B. PCs, Mobiltelefonen, Digitalkameras und anderen elektronischen
+Produkten. Halbleitervorrichtungen werden üblicherweise hergestellt, indem
+nacheinander isolierende bzw. dielektrische Schichten, leitfähige Schichten und
+Halbleitermaterialschichten über einem Halbleitersubstrat abgeschieden und die
+verschiedenen Materialschichten unter Verwendung von Lithographie strukturiert
+werden, um Schaltungskomponenten und -elemente darauf auszubilden.
+[0002] Die Halbleiterindustrie verbessert stetig die Integrationsdichte verschiedener
+elektronischer Komponenten (z. B. Transistoren, Dioden, Widerständen,
+Kondensatoren usw.) durch eine fortlaufende Verringerung der minimalen
+Elementgröße, wodurch mehr Komponenten auf einer bestimmten Fläche integriert
+werden können. Wenn die minimalen Elementgrößen verringert werden, treten jedoch
+neue Probleme auf und sollten gelöst werden.
+[0003] Halbleitervorrichtungen mit nicht-konformen Verkappungsschichten sind
+beispielsweise aus der DE 10 2020 114 865 A1, der DE 10 2021 120 584 A1, der
+US 2021 / 0 098 458 A1 und der US 2019 / 0 385 916 A1 bekannt.
+KURZE BESCHREIBUNG DER ZEICHNUNGEN
+[0004] Aspekte der vorliegenden Offenbarung werden am besten aus der folgenden
+detaillierten Beschreibung verstanden, wenn sie mit den beigefügten Zeichnungen
+2025051212303069DE 12.05.2025 DPMADirekt
+2
+gelesen wird. Es wird angemerkt, dass gemäß dem üblichen Vorgehen in der Branche
+verschiedene Elemente nicht maßstabsgetreu gezeichnet sind. Tatsächlich können die
+Abmessungen der verschiedenen Elemente zur Klarheit der Beschreibung beliebig
+vergrößert oder verkleinert sein.
+[0005] Die Figuren 1 bis 3, 4A, 4B, 5, 6A, 6B, 6C, 7, 8A, 8B, 8C, 9A, 9B, 10A, 10B, 11A,
+11B, 11C, 12A, 12B, 13A, 13B, 14A, 14B, 15A, 15B, 15C und 15D zeigen die Ansichten von
+Zwischenstufen bei der Ausbildung eines Gate-All-Around-Transistors
+(GAA-Transistors) gemäß einigen Ausführungsformen.
+[0006]Figur 16 zeigt einen Prozessablauf zum Ausbilden eines GAA-Transistors gemäß
+einigen Ausführungsformen.
+DETAILLIERTE BESCHREIBUNG
+[0007] Die Erfindung ist in den Ansprüchen definiert. Die folgende Offenbarung sieht
+viele verschiedene Ausführungsformen oder Beispiele vor, um verschiedene Merkmale
+der Erfindung zu implementieren. Spezielle Beispiele von Komponenten und
+Anordnungen sind unten beschrieben, um die vorliegende Offenbarung zu
+vereinfachen. Diese sind natürlich nur Beispiele und sollen nicht einschränkend
+wirken. Beispielsweise kann das Ausbilden eines ersten Elements über oder auf einem
+zweiten Element in der folgenden Beschreibung Ausführungsformen abdecken, in
+denen das erste und das zweite Element in direktem Kontakt ausgebildet sind, und
+kann auch Ausführungsformen abdecken, in denen zusätzliche Elemente zwischen dem
+ersten und dem zweiten Element ausgebildet sein können, so dass das erste und das
+zweite Element nicht in direktem Kontakt stehen müssen. Zusätzlich kann die
+vorliegende Offenbarung Bezugszeichen und/oder Buchstaben in den verschiedenen
+Beispielen wiederholen. Diese Wiederholung dient dem Zweck der Einfachheit und
+2025051212303069DE 12.05.2025 DPMADirekt
+3
+Klarheit und erzwingt an sich keine Beziehung zwischen den verschiedenen
+beschriebenen Ausführungsformen und/oder Konfigurationen.
+[0008] Weiter können räumlich relative Begriffe, wie ,,darunter liegend", ,,unter",
+,,unterer" ,,darüber liegend", ,,oberer" und ähnliche, hier der Einfachheit der
+Beschreibung halber verwendet werden, um die Beziehung eines Elements oder eines
+Abschnitts mit einem oder mehreren anderen Elementen oder Abschnitten zu
+beschreiben, wie in den Figuren gezeigt ist. Die räumlich relativen Begriffe sollen
+verschiedene Ausrichtungen der verwendeten oder betriebenen Vorrichtung zusätzlich
+zu der in den Figuren gezeigten Ausrichtung abdecken. Die Vorrichtung kann anders
+(um 90 Grad gedreht oder in einer anderen Ausrichtung) ausgerichtet sein und die
+räumlich relativen Begriffe, die hier verwendet werden, können auch dahingehend
+interpretiert werden.
+[0009] Es sind ein Gate-All-Around-Transistor (GAA-Transistor) mit verringertem
+Verlust in der oberen Halbleiternanostruktur und verringertem Verlust im
+Flachgrabenisolationsbereich (STI-Bereich) sowie die zugehörigen Verfahren
+vorgesehen. Gemäß einigen Ausführungsformen wird eine erste dielektrische Schicht
+unter Verwendung eines konformen Abscheidungsprozesses auf einer vorstehenden
+Finne ausgebildet. Eine zweite dielektrische Schicht wird mithilfe eines anisotropen
+Abscheidungsprozesses auf der ersten dielektrischen Schicht ausgebildet. Die zweite
+dielektrische Schicht wird als Hartmaske verwendet und befindet sich auf der oberen
+Fläche, jedoch nicht unbedingt auf den Seitenwänden der vorstehenden Finne. Die
+zweite dielektrische Schicht kann daher mit einem dickeren oberen Abschnitt
+ausgebildet werden, um einen besseren Schutz zu bieten, ohne den Raum zwischen
+benachbarten vorstehenden Finnen zu belegen. Es ist zu beachten, dass zwar
+GAA-Transistoren als Beispiel verwendet werden, die Ausführungsformen der
+2025051212303069DE 12.05.2025 DPMADirekt
+4
+vorliegenden Offenbarung jedoch auch auf andere Transistorarten wie Finnen-
+Feldeffekttransistoren (FinFETs) anwendbar sind.
+[0010] Hier beschriebene Ausführungsformen sollen Beispiele angeben, um eine
+Herstellung oder Verwendung des Gegenstands dieser Offenbarung zu ermöglichen,
+und Fachleute werden leicht Modifikationen finden, die vorgenommen werden können,
+während sie innerhalb des in Betracht gezogenen Umfangs der verschiedenen
+Ausführungsformen bleiben. In den verschiedenen Ansichten und beispielhaften
+Ausführungsformen werden gleiche Bezugszeichen zum Bezeichnen gleicher Elemente
+verwendet. Obwohl Ausführungsformen des Verfahrens so beschrieben sein können,
+dass sie in einer bestimmten Reihenfolge ausgeführt werden, können andere
+Ausführungsformen des Verfahrens in jeder logischen Reihenfolge ausgeführt werden.
+[0011] Die Figuren 1 bis 3, 4A, 4B, 5, 6A, 6B, 6C, 7, 8A, 8B, 8C, 9A, 9B, 10A, 10B, 11A,
+11B, 11C, 12A, 12B, 13A, 13B, 14A, 14B, 15A, 15B, 15C und 15D zeigen die Ansichten von
+Zwischenstufen bei der Ausbildung eines GAA-Transistors gemäß einigen
+Ausführungsformen. Die entsprechenden Prozesse sind auch schematisch in dem in
+Figur 16 gezeigten Prozessablauf wiedergegeben.
+[0012] In Bezug auf Figur 1 ist eine Perspektivansicht eines Wafers 10 gezeigt, der ein
+Substrat 20 umfasst. Auf dem Substrat 20 ist eine Mehrschichtstruktur ausgebildet, die
+einen Mehrschichtstapel 22 aufweist. Gemäß einigen Ausführungsformen besteht das
+Substrat 20 aus einem Halbleitersubstrat oder weist dieses auf, das ein
+Siliziumsubstrat, ein Siliziumgermaniumsubstrat (SiGe-Substrat) oder dergleichen sein
+kann, während andere Substrate und/oder Strukturen, wie Halbleiter-auf-Isolator
+(SOI), verspannter SOI, Siliziumgermanium-auf-Isolator oder dergleichen verwendet
+werden können. Das Substrat 20 kann als p-Halbleiter dotiert sein, obwohl es in
+weiteren Ausführungsformen als n-Halbleiter dotiert sein kann.
+2025051212303069DE 12.05.2025 DPMADirekt
+5
+[0013] Gemäß einigen Ausführungsformen wird der Mehrschichtstapel 22 durch eine
+Folge von Abscheidungsprozessen zum Abscheiden abwechselnder Materialien
+ausgebildet. Der entsprechende Prozess ist als Prozess 202 in dem in Figur 16 gezeigten
+Prozessablauf 200 gezeigt. Gemäß einigen Ausführungsformen weist der
+Mehrschichtstapel 22 erste Schichten 22A, die aus einem ersten Halbleitermaterial
+ausgebildet sind, und zweite Schichten 22B auf, die aus einem zweiten
+Halbleitermaterial ausgebildet sind, das sich von dem ersten Halbleitermaterial
+unterscheidet. Aufgrund der Epitaxie weisen die ersten Schichten 22A und die zweiten
+Schichten 22B die gleiche Gitterorientierung wie das Substrat 20 auf.
+[0014] Gemäß einigen Ausführungsformen ist das erste Halbleitermaterial einer
+ersten Schicht 22A aus SiGe, Ge, Si, GaAs, InSb, GaSb, InAlAs, InGaAs, GaSbP, GaAsSb
+oder dergleichen ausgebildet oder enthält diese. Gemäß einigen Ausführungsformen
+erfolgt das Abscheiden der ersten Schichten 22A (beispielsweise SiGe) durch
+epitaktisches Züchten, und das entsprechende Abscheidungsverfahren kann aus
+Gasphasenepitaxie (VPE), Molekularstrahlepitaxie (MBE), chemische
+Gasphasenabscheidung (CVD), Niederdruck-CVD (LPCVD), Atomlagenabscheidung
+(ALD), Ultrahochvakuum-CVD (UHVCVD), CVD mit verringertem Druck (RPCVD) oder
+dergleichen bestehen.
+[0015] Nachdem die erste Schicht 22A über dem Substrat 20 abgeschieden wurde,
+wird eine zweite Schicht 22B über der ersten Schicht 22A abgeschieden. Gemäß einigen
+Ausführungsformen sind die zweiten Schichten 22B aus einem zweiten
+Halbleitermaterial wie Si, SiGe, Ge, GaAs, InSb, GaSb, InAlAs, InGaAs, GaSbP,
+GaAsSb, Kombinationen davon oder dergleichen ausgebildet oder enthalten diese,
+wobei das zweite Halbleitermaterial sich von dem ersten Halbleitermaterial der ersten
+Schicht 22A unterscheidet. Beispielsweise kann gemäß einigen Ausführungsformen, in
+denen die erste Schicht 22A aus Siliziumgermanium besteht, die zweite Schicht 22B aus
+2025051212303069DE 12.05.2025 DPMADirekt
+6
+Silizium ausgebildet sein oder umgekehrt. Es versteht sich, dass jede geeignete
+Kombination von Materialien für die ersten Schichten 22A und die zweiten Schichten
+22B verwendet werden kann.
+[0016] Gemäß einigen Ausführungsformen wird die zweite Schicht 22B epitaktisch auf
+der ersten Schicht 22A unter Verwendung einer Abscheidungstechnik gezüchtet, die der
+ähnelt, die zum Ausbilden der ersten Schicht 22A verwendet wird. Gemäß einigen
+Ausführungsformen wird die zweite Schicht 22B mit einer ähnlichen Dicke wie die erste
+Schicht 22A ausgebildet. Die zweite Schicht 22B kann jedoch auch mit einer Dicke
+ausgebildet werden, die sich von der ersten Schicht 22A unterscheidet.
+[0017] Gemäß einigen Ausführungsformen werden die ersten Schichten 22A in den
+nachfolgenden Prozessen entfernt und werden in der gesamten Beschreibung alternativ
+als Opferschichten 22A bezeichnet. Gemäß alternativen Ausführungsformen sind die
+zweiten Schichten 22B Opferschichten und werden in den nachfolgenden Prozessen
+entfernt.
+[0018] Gemäß einigen Ausführungsformen werden eine Pufferoxidschicht 12 und eine
+Hartmaskenschicht 14 über dem Mehrschichtstapel 22 ausgebildet. Die
+Pufferoxidschicht 12 kann Siliziumoxid, Siliziumkarbid oder dergleichen enthalten,
+während die Hartmaskenschicht 14 Siliziumnitrid enthalten kann, und auch andere
+Materialien können verwendet werden. Die Pufferoxidschicht 12 und die
+Hartmaskenschicht 14 werden so strukturiert, dass sie mehrere längliche Streifen
+bilden, die auch als Padoxide und Hartmasken bezeichnet werden.
+[0019] Mit Bezug auf Figur 2 werden der Mehrschichtstapel 22 und ein Teil des
+darunterliegenden Substrats 20 in einem oder mehreren Ätzprozessen so strukturiert,
+dass Gräben (gefüllt mit Isolierbereichen 26) ausgebildet werden. Die Gräben
+erstrecken sich in das Substrat 20. Die verbleibenden Abschnitte der Mehrschichtstapel
+werden im Folgenden als Mehrschichtstapel 22' bezeichnet. Der entsprechende Prozess
+2025051212303069DE 12.05.2025 DPMADirekt
+7
+ist als Prozess 204 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Unter den
+Mehrschichtstapeln 22' verbleiben einige Abschnitte des Substrats 20 und werden im
+Folgenden als Substratstreifen 20' bezeichnet. Zu den Mehrschichtstapeln 22' gehören
+die Halbleiterschichten 22A und 22B. Die Halbleiterschichten 22A werden alternativ
+als Opferschichten bezeichnet, und die Halbleiterschichten 22B werden im Folgenden
+alternativ als Nanostrukturen bezeichnet. Die Abschnitte der Mehrschichtstapel 22'
+und der darunterliegenden Substratstreifen 20' werden gemeinsam als
+Halbleiterstreifen 24 bezeichnet.
+[0020] In den oben gezeigten Ausführungsformen können die
+GAA-Transistorstrukturen mit jedem geeigneten Verfahren strukturiert werden.
+Beispielsweise können die Strukturen unter Verwendung eines oder mehrerer
+Photolithographieprozesse wie beispielsweise Doppelstrukturierungs- oder
+Mehrfachstrukturierungsprozesse strukturiert werden. Im Allgemeinen kombinieren
+Doppelstrukturierungs- oder Mehrfachstrukturierungsprozesse Photolithographie- und
+selbstausgerichtete Prozesse, so dass Strukturen erzeugt werden können, die
+beispielsweise Mittenabstände aufweisen, die kleiner als die sind, die sonst mit einem
+einzigen, direkten Photolithographieprozess erhalten werden können. Beispielsweise
+wird in einer Ausführungsform eine Opferschicht über einem Substrat ausgebildet und
+unter Verwendung eines Photolithographieprozesses strukturiert. Abstandshalter
+werden unter Verwendung eines selbstausgerichteten Prozesses neben der
+strukturierten Opferschicht ausgebildet. Die Opferschicht wird dann entfernt und die
+verbleibenden Abstandshalter können dann verwendet werden, um die GAA-Struktur
+zu strukturieren.
+[0021] Als nächstes werden die Isolierbereiche 26 ausgebildet, die in der
+Beschreibung auch als Flachgrabenisolationsbereiche (STI-Bereiche) bezeichnet
+werden können. Der entsprechende Prozess ist als Prozess 206 in dem in Figur 16
+2025051212303069DE 12.05.2025 DPMADirekt
+8
+gezeigten Prozessablauf 200 gezeigt. Die STI-Bereiche 26 können ein Auskleidungsoxid
+(nicht gezeigt) aufweisen, das aus einem thermischen Oxid bestehen kann, das durch
+thermische Oxidation einer Oberflächenschicht des Substrats 20 ausgebildet wird. Das
+Auskleidungsoxid kann auch durch eine abgeschiedene Siliziumoxidschicht gebildet
+werden, die beispielsweise unter Verwendung von ALD, chemischer
+Gasphasenabscheidung im hochdichten Plasma (HDPCVD), CVD oder dergleichen
+ausgebildet wird. Die STI-Bereiche 26 können auch ein Dielektrikum über dem
+Auskleidungsoxid enthalten, wobei das Dielektrikum unter Verwendung von
+fließfähiger chemischer Gasphasenabscheidung (FCVD), Rotationsbeschichtung oder
+dergleichen ausgebildet werden kann. Nachfolgend kann ein Planarisierungsprozess
+wie beispielsweise ein chemisch-mechanischer Polierprozess (CMP-Prozess) oder ein
+mechanischer Schleifprozess durchgeführt werden, der die obere Fläche des
+Dielektrikums beispielsweise mit der oberen Fläche der Hartmaskenschicht 14
+nivelliert, und die verbleibenden Abschnitte des Dielektrikums bilden die STI-
+Bereiche 26.
+[0022] Unter weiterer Bezugnahme auf Figur 3 werden die STI-Bereiche 26 vertieft, so
+dass die oberen Abschnitte der Halbleiterstreifen 24 höher als die oberen Flächen 26T
+der verbleibenden Abschnitte der STI-Bereiche 26 vorstehen, so dass vorstehende
+Finnen (Strukturen) 28 ausgebildet werden. Der entsprechende Prozess ist als Prozess
+208 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Zu den vorstehenden
+Finnen 28 gehören die Mehrschichtstapel 22' und die oberen Abschnitte der
+Substratstreifen 20'. Das Vertiefen der STI-Bereiche 26 kann durch einen
+Trockenätzprozess erreicht werden, wobei beispielsweise NF3
+und NH3
+als Ätzgase
+verwendet werden. Während des Ätzprozesses kann Plasma erzeugt werden. Argon
+kann ebenfalls verwendet werden. Gemäß alternativen Ausführungsformen der
+vorliegenden Offenbarung wird das Vertiefen der STI-Bereiche 26 durch einen
+2025051212303069DE 12.05.2025 DPMADirekt
+9
+Nassätzprozess erreicht. Die Ätzchemikalie kann beispielsweise HF enthalten. Die
+Pufferoxidschichten 12 und Hartmasken 14 werden entfernt.
+[0023] Unter Bezugnahme auf die Figuren 4A und 4B wird eine dielektrische
+Verbundschicht 32 ausgebildet, zu der eine dielektrische Schicht 32A und eine
+dielektrische Schicht 32B gehört. Der entsprechende Prozess ist als Prozess 210 in dem
+in Figur 16 gezeigten Prozessablauf 200 gezeigt. Die dielektrische Schicht 32A wird auf
+den Seitenwänden und den oberen Flächen der vorstehenden Finnen 28 und auf den
+oberen Flächen der STI-Bereiche 26 abgeschieden. Figur 4A zeigt eine
+Perspektivansicht, und Figur 4B zeigt den vertikalen Querschnitt 4B­4B wie in Figur
+4A gezeigt.
+[0024] Gemäß einigen Ausführungsformen bildet die dielektrische Schicht 32A eine
+einzelne (homogene) Schicht, wobei die gesamte dielektrische Schicht 32A aus einem
+gleichen Material ausgebildet ist und eine gleiche Zusammensetzung aufweist. Wenn in
+der Beschreibung von der gleichen Zusammensetzung zweier Schichten die Rede ist,
+bedeutet dies, dass die beiden Schichten die gleichen Elemente enthalten und der
+Anteil der entsprechenden Elemente in den beiden Schichten der gleiche ist. Wenn
+umgekehrt in der Beschreibung von einer unterschiedlichen Zusammensetzung zweier
+Schichten die Rede ist, bedeutet dies, dass mindestens eine der beiden Schichten
+entweder mindestens ein Element enthält, das in der anderen Schicht nicht vorhanden
+ist, oder dass die beiden Schichten dieselben Elemente enthalten, aber die Anteile der
+Elemente in den beiden Schichten voneinander abweichen. Gemäß alternativen
+Ausführungsformen bildet die dielektrische Schicht 32A eine Verbundschicht, die zwei
+oder mehr Teilschichten aufweist.
+[0025] Gemäß einigen Ausführungsformen wird die dielektrische Schicht 32A unter
+Verwendung eines konformen Abscheidungsprozesses ausgebildet, so dass die
+vertikalen Abschnitte (auch als Seitenwandabschnitte bezeichnet) und die horizontalen
+2025051212303069DE 12.05.2025 DPMADirekt
+10
+Abschnitte (auch als obere Abschnitte bezeichnet) der dielektrischen Schicht 32A eine
+gleiche Dicke aufweisen, beispielsweise mit einer Abweichung von weniger als etwa 20
+Prozent, weniger als etwa 10 Prozent oder weniger. Die Ausbildung wird durch einen
+konformen Ausbildungsprozess wie ALD, CVD oder dergleichen erreicht. Zu den
+Materialien der dielektrischen Schicht 32A können ein Oxid wie Siliziumoxid,
+Siliziumoxynitrid, Siliziumoxykarbid oder dergleichen gehören.
+[0026] Nachfolgend wird die dielektrische Schicht 32B mithilfe eines nicht-konformen
+Abscheidungsprozesses, auch als anisotroper Abscheidungsprozess bezeichnet, auf der
+dielektrischen Schicht 32A abgeschieden. Die dielektrischen Schichten 32A und 32B
+werden im Folgenden gemeinsam als dielektrische Verbundschichten 32 bezeichnet.
+Die dielektrische Schicht 32B wird auch als Hartmaskenschicht bezeichnet, da sie das
+unerwünschte Ätzen bei nachfolgenden Dummy-Gatestrukturierungs- und -
+reinigungsprozessen verhindert. Wie in den Figuren 4A und 4B gezeigt, können zu der
+dielektrischen Schicht 32B horizontale Abschnitte über der oberen Fläche der
+vorstehenden Finnen 28 und der STI-Bereiche 26 gehören. Die dielektrische Schicht
+32B kann frei oder im Wesentlichen frei von vertikalen Abschnitten an Seitenwänden
+der vorstehenden Finnen 28 sein.
+[0027] Gemäß alternativen Ausführungsformen kann die dielektrische Schicht 32B
+vertikale Abschnitte an den Seitenwänden der vorstehenden Finnen 28 aufweisen. Die
+Dicke T2 der vertikalen Abschnitte ist jedoch deutlich geringer als die Dicke T1 der
+horizontalen Abschnitte. Beispielsweise kann das Verhältnis T2/T1 kleiner als etwa 0,2
+oder kleiner als etwa 0,1 sein.
+[0028] Figur 4B zeigt einige beispielhafte vertikale Abschnitte der dielektrischen
+Schicht 32B. Gemäß einigen Ausführungsformen weisen die Seitenwände der oberen
+Abschnitte der vorstehenden Finnen 28 Abschnitte der dielektrische Schicht 32B
+darauf auf. Die Seitenwände der unteren Abschnitte der vorstehenden Finnen 28
+2025051212303069DE 12.05.2025 DPMADirekt
+11
+weisen die dielektrische Schicht 32B nicht auf, und die entsprechenden unteren
+Abschnitte der dielektrischen Schicht 32A liegen frei. Gemäß alternativen
+Ausführungsformen bedecken die vertikalen Abschnitte der dielektrischen Schicht 32B
+alle Seitenwandabschnitte der dielektrischen Schicht 32A, wobei die Dicke T2 kleiner
+als die Dicke T1 ist.
+[0029] Da die Abscheidung der dielektrischen Schicht 32B anisotrop ist, werden
+zwischen den eng beieinander liegenden vorstehenden Finnen 28 dünnere oder
+überhaupt keine vertikalen Abschnitte der dielektrischen Schicht 32B ausgebildet, was
+zu einer Verkleinerung des Prozessfensters führt.
+[0030] Gemäß einigen Ausführungsformen kann die dielektrische Schicht 32B aus
+einem anderen Material als die dielektrische Schicht 32A ausgebildet sein.
+Beispielsweise kann die dielektrische Schicht 32A aus SiC, SiCN, SiN, SiO, SiOCN,
+SiON oder dergleichen oder Kombinationen davon ausgebildet sein oder diese
+enthalten. Es wird darauf hingewiesen, dass die Wertebereiche Beispiele darstellen und
+von den hier angegebenen abweichen können.
+[0031] Gemäß alternativen Ausführungsformen weisen die dielektrischen Schichten
+32A und 32B die gleichen Elemente auf, etwa Si, O und N oder Si, O, C und N, weisen
+jedoch beim Abscheiden und/oder nach nachfolgenden Wärmeprozessen
+unterschiedliche Anteile der entsprechenden Elemente auf. Beispielsweise können die
+Atomanteile von C und/oder N in der dielektrischen Schicht 32B höher als die der
+dielektrischen Schicht 32A sein, und der Atomanteil von O in der dielektrischen
+Schicht 32A kann höher als der der dielektrischen Schicht 32B sein.
+[0032] Gemäß weiteren alternativen Ausführungsformen besteht die dielektrische
+Schicht 32B aus einer Verbundschicht, zu der eine untere Teilschicht und eine obere
+Teilschicht gehören (als Teilschichten 32B1 und 32B2 bezeichnet, nicht gezeigt). Die
+Teilschichten 32B1 und 32B2 sind für einen Abschnitt der dielektrischen Schicht 32B
+2025051212303069DE 12.05.2025 DPMADirekt
+12
+gezeigt, obwohl sie in jedem der gezeigten Abschnitte der dielektrischen Schicht 32B
+vorhanden sein können. Jede der Teilschichten 32B1 und 32B2 kann aus einem
+anderen Dielektrikum als dem der dielektrischen Schicht 32A ausgebildet sein oder ein
+solches enthalten. Während sich die Materialien der Teilschichten 32B1 und 32B2
+voneinander unterscheiden, kann jede der Teilschichten 32B1 und 32B2 aus einem
+Material (wie oben beschrieben) ausgebildet sein, das bei der nachfolgenden
+Strukturierung und Reinigung der Dummy-Gateelektroden 34 eine niedrigere Ätzrate
+als die dielektrische Schicht 32A aufweist. Beispielsweise kann jede der Teilschichten
+32B1 und 32B2 aus derselben Gruppe von Kandidatenmaterialien ausgewählt sein, zu
+der SiC, SiOC, SiON, SiCN, SiN, SiOCN oder dergleichen gehören können.
+[0033] Gemäß weiteren alternativen Ausführungsformen, in denen die dielektrische
+Schicht 32B eine Verbundschicht bildet, kann jede der Teilschichten 32B1 und 32B2
+eine einheitliche Zusammensetzung aufweisen. Wenn die dielektrische Schicht 32B
+eine einzelne Schicht ist, kann die gesamte dielektrische Schicht 32B als einheitlicher
+Verbundstoff abgeschieden werden. Gemäß alternativen Ausführungsformen weist die
+dielektrische Schicht 32B eine stufenweise veränderte Zusammensetzung auf, wobei
+verschiedene Abschnitte dieselben Elemente (etwa Silizium, Sauerstoff und Stickstoff)
+enthalten, während sich von unten nach oben der Anteil der Elemente allmählich
+ändert. Beispielsweise kann der untere Abschnitt der dielektrischen Schicht 32B SiOx
+enthalten, während der obere Abschnitt SiAEy
+(oder SiOAEy
+) enthalten kann, wobei
+,,AE" für ein oder mehrere alternative Elemente wie C und/oder N steht. Von der
+Unterseite der dielektrischen Schicht 32B zur Oberseite der dielektrischen Schicht 32B
+nehmen die Atomanteile y des Elements AE allmählich zu. Dies kann beim Einsatz von
+CVD beispielsweise durch eine schrittweise Änderung der Flussrate der Vorläufer
+erreicht werden.
+2025051212303069DE 12.05.2025 DPMADirekt
+13
+[0034] Gemäß einigen Ausführungsformen wird die dielektrische Schicht 32 unter
+Verwendung eines ersten und eines zweiten Vorläufers ausgebildet. der ersten
+Vorläufer enthält einen siliziumhaltigen Vorläufer, zu dem Silan, Disilan, Aminosilan,
+Di-sec-Butylaminosilan (DSBAS), Bis(tert-butylamino)silan (BTBAS) oder dergleichen
+oder Kombinationen davon gehören können. Der zweite Vorläufer kann andere
+Elemente wie C, N und/oder O enthalten und kann im Folgenden als O/C/N-haltiger
+Vorläufer bezeichnet werden. Beispielsweise kann der zweite Vorläufer Ammoniak
+enthalten, wenn N in die dielektrische Schicht aufgenommen werden soll.
+[0035] Gemäß einigen Ausführungsformen wird die dielektrische Schicht 32B unter
+Verwendung eines anisotropen Abscheidungsprozesses wie eines plasmaverstärkten
+Atomlagenabscheidungsprozesses (PEALD-Prozesses), ausgebildet, bei dem Plasma
+erzeugt wird. Während des PEALD-Abscheidungsprozesses wird eine
+Vorspannungsleistung angelegt. Die angelegte Vorspannungsleistung kann höher als
+etwa 150 Watt sein und im Bereich zwischen etwa 10 Watt und etwa 500 Watt liegen.
+[0036] Das Plasma kann während und/oder nach dem Pulsen der Vorläufer wie des
+siliziumhaltigen Vorläufers und des O/C/N-haltigen Vorläufers angewendet werden
+und kann beispielsweise nach dem Spülen eines Vorläufers und vor dem Pulsen des
+nächsten Vorläufers angewendet werden. Beispielsweise kann das Plasma während des
+Pulsens des siliziumhaltigen Vorläufers ausgeschaltet und zu einem Zeitpunkt nach
+dem Pulsen des siliziumhaltigen Vorläufers und vor dem Pulsen des O/C/N-haltigen
+Vorläufers eingeschaltet werden. In ähnlicher Weise kann das Plasma während des
+Pulsens des O/C/N-haltigen Vorläufers ausgeschaltet und zu einem Zeitpunkt nach
+dem Pulsen des O/C/N-haltigen Vorläufers und vor dem Pulsen des siliziumhaltigen
+Vorläufers eingeschaltet werden. Das Plasma kann aus dem Spülgas wie beispielsweise
+Argon, N2
+oder dergleichen erzeugt werden.
+2025051212303069DE 12.05.2025 DPMADirekt
+14
+[0037] Durch die Verwendung von PEALD und das Anlegen der Vorspannungsleistung
+ist die dielektrische Schicht 32B nicht konform, wobei die Dicke T1 der horizontalen
+Abschnitte größer als die Dicke T2 der vertikalen Abschnitte ist. Um die anisotrope
+Abscheidungswirkung weiter zu verbessern, werden die Prozessbedingungen des
+PEALD angepasst, um sicherzustellen, dass die Abscheidung im Diffusionsmodus
+erfolgt. Der Diffusionsmodus kann durch Verringerung der Pulszeit (Zufuhrzeit),
+Verringerung der Spülzeit und Verringerung der Plasmabehandlungszeit erreicht und
+verbessert werden. Der Diffusionsmodus kann auch durch Erhöhen des Kammerdrucks
+während des Pulsens der Vorläufer und/oder beim Einschalten des Plasmas verbessert
+werden.
+[0038] Gemäß einigen Ausführungsformen kann die Pulszeit (Zufuhrzeit) jedes der
+Vorläufer im Bereich zwischen etwa 0,01 Sekunden und etwa 0,2 Sekunden liegen. Dies
+ist kürzer als bei der üblichen Abscheidung im Nichtdiffusionsmodus, bei der die
+Pulszeit im Bereich zwischen etwa 0,2 Sekunden und etwa 3 Sekunden liegen kann. Die
+Plasmabehandlungszeit jedes der Vorläufer kann im Bereich zwischen etwa
+0,1 Sekunden und etwa 0,3 Sekunden liegen. Dies ist kürzer als bei der üblichen
+Abscheidung im Nichtdiffusionsmodus, bei der die Plasmabehandlungszeit im Bereich
+zwischen etwa 0,3 Sekunden und etwa 2 Sekunden liegen kann. Die Spülzeit jedes
+Vorläufers kann auf einen Bereich zwischen etwa 0,5 Sekunden und etwa 1,5 Sekunden
+verringert werden.
+[0039] Gemäß alternativen Ausführungsformen wird die dielektrische Schicht 32B
+unter Verwendung von physikalischer Gasphasenabscheidung (PVD) abgeschieden,
+wobei eine Vorspannung angelegt wird, um die anisotrope Abscheidung zu erreichen.
+Beispielsweise kann die Vorspannungsleistung im Bereich zwischen etwa 1.000 Watt
+und etwa 3.000 Watt liegen.
+2025051212303069DE 12.05.2025 DPMADirekt
+15
+[0040] Unter Bezugnahme auf Figur 5 wird eine Dummy-Gateelektrodenschicht 34
+abgeschieden. Der entsprechende Prozess ist als Prozess 212 in dem in Figur 16
+gezeigten Prozessablauf 200 gezeigt. Nachfolgend wird ein Planarisierungsprozess
+durchgeführt, um die obere Fläche der Dummy-Gateelektrodenschicht 34 einzuebnen.
+Die Dummy-Gateelektrodenschicht 34 kann beispielsweise unter Verwendung von
+Polysilizium oder amorphem Silizium ausgebildet werden, und es können auch andere
+Materialien wie amorpher Kohlenstoff verwendet werden. Eine (oder mehrere)
+Hartmaskenschichten 36 werden außerdem über der Dummy-Gateelektrodenschicht 34
+ausgebildet. Die Hartmaskenschichten 36 können aus Siliziumnitrid, Siliziumoxid,
+Siliziumkarbonitrid, Siliziumoxykarbonitrid oder Mehrfachschichten davon ausgebildet
+sein.
+[0041] Unter Bezugnahme auf die Figuren 6A, 6B und 6C werden die
+Hartmaskenschicht 36 und die Dummy-Gateelektrodenschicht 34 so strukturiert, dass
+Dummy-Gatestapel 37 ausgebildet werden, zu denen Hartmasken 36 und Dummy-
+Gateelektroden 34 gehören. Der entsprechende Prozess ist als Prozess 214 in dem in
+Figur 16 gezeigten Prozessablauf 200 gezeigt. Die Figuren 6B und 6C zeigen die
+vertikalen Querschnitte 6B­6B bzw. 6C­6C in Figur 6A. Gemäß einigen
+Ausführungsformen wird der Strukturierungsprozess durch einen anisotropen
+Ätzprozess erreicht. Das Ätzgas kann ein sauerstoffhaltiges Gas wie eine Mischung aus
+HBr, Cl2
+und O2
+enthalten, oder kann andere Prozessgase wie Fluor (F2
+), Chlor (Cl2
+),
+Chlorwasserstoff (HCl), Bromwasserstoff (HBr), Brom (Br2
+), C2
+F6
+, CF4
+, SO2
+, O2
+oder
+Kombinationen davon enthalten. Das Ätzen wird unter Verwendung der dielektrischen
+Schicht 32B als Ätzstoppschicht ausgeführt.
+[0042] Nachfolgend können Reinigungsprozesse durchgeführt werden. Die Reinigung
+kann mit einem chemischen Reinigungsmittel wie verdünntem HF erfolgen. Gemäß
+einigen Ausführungsformen ist durch Auswahl der richtigen Kombination des Materials
+2025051212303069DE 12.05.2025 DPMADirekt
+16
+der dielektrischen Schicht 32B, der Chemie für die Strukturierung der Dummy-
+Gateelektrodenschicht 34 und der Reinigungschemie die Ätzrate (Verlustrate) der
+dielektrischen Schicht 32B (während der Strukturierung und der Reinigung) niedriger
+als die Ätzrate der dielektrischen Schicht 32A, die Siliziumoxid enthalten kann.
+Beispielsweise kann das Ätzratenverhältnis ER32A
+/ER32B
+höher als etwa 5 oder höher als
+etwa 10 sein, wobei ER32B
+die Ätzrate der dielektrischen Schicht 32B und ER32A
+die
+Ätzrate der dielektrischen Schicht 32A ist. Infolgedessen verhindert die dielektrische
+Schicht 32B in den Ausführungsformen der vorliegenden Offenbarung das Ätzen besser
+als Siliziumoxid, bei dem es sich auch um das Gateoxid der E/A-Transistoren (die in
+demselben Wafer/Die wie die GAA-Transistoren ausgebildet sein können) handeln
+kann.
+[0043] Da die oberen Abschnitte der dielektrischen Schicht 32A dicker sind und
+widerstandsfähiger gegenüber Ätzen und Reinigen sind, verringert sich die
+Wahrscheinlichkeit, dass der obere Abschnitt der dielektrischen Schicht 32B im
+Strukturierungsprozess vollständig entfernt wird. Dementsprechend ist die
+Wahrscheinlichkeit geringer, dass die darunterliegende obere Nanostruktur 22B geätzt
+wird, bzw. ist deren Verlust beim Ätzen geringer. Die erneute Oxidation der oberen
+Nanostruktur 22B, die auch als Deckschicht bezeichnet wird, wird verringert, und der
+Verlust der Deckschicht wird verringert.
+[0044] Beim Ätz- und Reinigungsprozess können auch die vertikalen Abschnitte (siehe
+die Figuren 6B und 6C) der dielektrischen Schicht 32 ausgedünnt werden. Gemäß
+einigen Ausführungsformen werden die vertikalen Abschnitte der dielektrischen
+Schicht 32B (sofern vorhanden) aufgrund ihrer sehr geringen Dicke vollständig
+entfernt. Gemäß alternativen Ausführungsformen werden die vertikalen Abschnitte der
+dielektrischen Schicht 32B (sofern ausgebildet) ausgedünnt, aber nicht vollständig
+entfernt.
+2025051212303069DE 12.05.2025 DPMADirekt
+17
+[0045] Wie in Figur 7 gezeigt, werden als Nächstes Gateabstandshalter 38 an den
+Seitenwänden der Dummy-Gatestapel 37 ausgebildet. Der entsprechende Prozess ist als
+Prozess 216 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Gemäß einigen
+Ausführungsformen der vorliegenden Offenbarung sind die Gateabstandshalter 38 aus
+einem Dielektrikum wie Siliziumnitrid (SiN), Siliziumoxid (SiO2
+), Siliziumkarbonitrid
+(SiCN), Siliziumoxynitrid (SiON), Siliziumoxykarbonitrid (SiOCN) oder dergleichen
+ausgebildet und können eine Einzelschichtstruktur oder eine Mehrschichtstruktur mit
+mehreren dielektrischen Schichten aufweisen. Zu dem Ausbildungsprozess der
+Gateabstandshalter 38 können ein Abscheiden einer oder mehrerer dielektrischer
+Schichten und dann ein Durchführen eines oder mehrerer anisotroper Ätzprozesse an
+der einen oder den mehreren dielektrischen Schichten gehören. Die verbleibenden
+Abschnitte der einen oder mehreren dielektrischen Schichten bilden die
+Gateabstandshalter 38.
+[0046] Die Figuren 8A, 8B und 8C zeigen die Ausbildung von Vertiefungen 42, aus
+denen Epitaxiebereiche ausgebildet werden. Figur 8A zeigt den vertikalen Querschnitt
+8A­8A in Figur 8C, der durch die Abschnitte der vorstehenden Finnen 28 verläuft, die
+nicht von den Dummy-Gatestapeln 37 und Gateabstandshaltern bedeckt sind. In Figur
+8A sind außerdem Finnenabstandshalter 38' gezeigt, die sich an den Seitenwänden der
+vorstehenden Finnen 28 befinden. Figur 8B zeigt den Referenzquerschnitt 8B­8B in
+Figur 8C, wobei der Referenzquerschnitt parallel zur Längsrichtung der vorstehenden
+Finnen 28 verläuft.
+[0047] Wie in den Figuren 8A, 8B und 8C gezeigt, werden die freiliegenden Abschnitte
+der dielektrischen Schichten 32 geätzt. Der entsprechende Prozess ist als Prozess 218
+in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Die Abschnitte der
+dielektrischen Schicht 32 und der vorstehenden Finnen 28, die direkt unter den
+Dummy-Gatestapeln 37 und den Gateabstandshaltern 38 liegen, bleiben nach dem
+2025051212303069DE 12.05.2025 DPMADirekt
+18
+Ätzprozess erhalten. Der entsprechende Prozess ist als Prozess 220 in dem in Figur 16
+gezeigten Prozessablauf 200 gezeigt. Die verbleibenden Abschnitte der dielektrischen
+Schicht 32 werden als Teil der Dummy-Gatestapel 37 betrachtet. Gemäß einigen
+Ausführungsformen gehört zu dem Ätzprozess ein Trockenätzprozess, der unter
+Verwendung von C2
+F6
+, CF4
+, SO2
+, der Mischung aus HBr, Cl2
+und O2
+, der Mischung aus
+HBr, Cl2
+, O2
+und CH2
+F2
+oder dergleichen ausgeführt wird, um die mehrschichtigen
+Halbleiterstapel 22' und die darunterliegenden Substratstreifen 20' zu ätzen. Die
+Böden der Vertiefungen 42 liegen mindestens auf gleicher Höhe mit den Böden der
+mehrschichtigen Halbleiterstapel 22' oder können tiefer liegen. Das Ätzen kann
+anisotrop sein, so dass die den Vertiefungen 42 zugewandten Seitenwände der
+mehrschichtigen Halbleiterstapel 22' vertikal und gerade sind.
+[0048] Mit Bezug auf Figur 8B werden die Opferhalbleiterschichten 22A seitlich
+vertieft, so dass seitliche Vertiefungen 41 ausgebildet werden, die von den Rändern der
+jeweiligen darüber- und darunterliegenden Nanostrukturen 22B zurückgesetzt sind.
+Der entsprechende Prozess ist als Prozess 222 in dem in Figur 16 gezeigten
+Prozessablauf 200 gezeigt. Das seitliche Vertiefen der Opferhalbleiterschichten 22A
+kann durch einen Nassätzprozess unter Verwendung eines Ätzmittels erreicht werden,
+das selektiver gegenüber dem Material der Opferhalbleiterschichten 22A
+(beispielsweise Siliziumgermanium (SiGe)) als gegenüber dem Material der
+Nanostrukturen 22B und des Substrats 20 (beispielsweise Silizium (Si)) ist.
+Beispielsweise kann in einer Ausführungsform, bei der die Opferhalbleiterschichten
+22A aus Siliziumgermanium ausgebildet sind und die Nanostrukturen 22B aus Silizium
+ausgebildet sind, der Nassätzprozess unter Verwendung eines Ätzmittels wie etwa
+Salzsäure (HCl) ausgeführt werden. Der Nassätzprozess kann unter Verwendung eines
+Tauchprozesses, eines Sprühprozesses oder dergleichen ausgeführt werden. Gemäß
+alternativen Ausführungsformen wird das seitliche Vertiefen der
+2025051212303069DE 12.05.2025 DPMADirekt
+19
+Opferhalbleiterschichten 22A durch einen isotropen Trockenätzprozess oder eine
+Kombination aus einem Trockenätzprozess und einem Nassätzprozess erreicht.
+[0049] Die Figuren 9A und 9B zeigen die Ausbildung von inneren Abstandshaltern 44.
+Der entsprechende Prozess ist als Prozess 224 in dem in Figur 16 gezeigten
+Prozessablauf 200 gezeigt. Zu dem Ausbildungsprozess gehören ein Abscheiden einer
+Abstandshalterschicht, die sich in die Vertiefungen 41 erstreckt, und ein Durchführen
+eines Ätzprozesses zum Entfernen der Abschnitte der inneren Abstandshalterschicht
+außerhalb der Vertiefungen 41, wodurch die inneren Abstandshalter 44 in den
+Vertiefungen 41 übrig bleiben. Die inneren Abstandshalter 44 können aus SiOCN,
+SiON, SiOC, SiCN oder dergleichen ausgebildet sein oder diese enthalten, wobei gemäß
+einigen Ausführungsformen das Ätzen der Abstandshalterschicht durch einen
+Nassätzprozess erreicht werden kann, bei dem die Ätzchemikalie H2
+SO4
+, verdünnte HF,
+Ammoniaklösung (NH4
+OH, Ammoniak in Wasser) oder dergleichen oder
+Kombinationen davon enthalten kann.
+[0050] Die Figuren 10A und 10B zeigen Querschnittsansichten von durch Epitaxie
+ausgebildeten Source/Drain-Bereichen 48 in den Vertiefungen 42. Der entsprechende
+Prozess ist als Prozess 226 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Ein
+oder mehrere Source/Drain-Bereiche können eine Source oder einen Drain bezeichnen,
+einzeln oder gemeinsam, abhängig vom Kontext. Gemäß einigen Ausführungsformen
+können die Source/Drain-Bereiche 48 eine Spannung auf die Nanostrukturen 22B
+ausüben, die als Kanäle der entsprechenden GAA-Transistoren verwendet werden,
+wodurch die Leistung verbessert wird.
+[0051] Gemäß einigen Ausführungsformen ist der entsprechende Transistor vom
+n-Typ, und die epitaktischen Source/Drain-Bereiche 48 werden dementsprechend
+durch Dotierung mit einem n-Dotierstoff als n-Typ ausgebildet. Beispielsweise kann
+Siliziumphosphor (SiP), Siliziumkohlenstoffphosphor (SiCP) oder dergleichen
+2025051212303069DE 12.05.2025 DPMADirekt
+20
+gezüchtet werden, um die epitaktischen Source/Drain-Bereiche 48 auszubilden. Gemäß
+alternativen Ausführungsformen ist der entsprechende Transistor vom p-Typ, und die
+epitaktischen Source/Drain-Bereiche 48 werden dementsprechend durch Dotierung mit
+einem p-Dotierstoff als p-Typ ausgebildet. Beispielsweise kann Siliziumbor (SiB),
+Siliziumgermaniumbor (SiGeB) oder dergleichen gezüchtet werden, um die
+epitaktischen Source/Drain-Bereiche 48 auszubilden. Nachdem die Vertiefungen 42
+mit den Epitaxiebereichen 48 gefüllt sind, bewirkt ein weiteres epitaktisches Wachstum
+der Epitaxiebereiche 48, dass sich die Epitaxiebereiche 48 horizontal ausdehnen und
+sich Facetten bilden können. Das weitere Wachstum der Epitaxiebereiche 48 kann auch
+bewirken, dass benachbarte Epitaxiebereiche 48 miteinander verschmelzen.
+[0052] Nach dem Epitaxieprozess können die Epitaxiebereiche 48 zusätzlich mit einer
+n-Verunreinigung oder einer p-Verunreinigung implantiert werden, um Source- und
+Drain-Bereiche auszubilden, die ebenfalls mit dem Bezugszeichen 48 gekennzeichnet
+sind. Gemäß alternativen Ausführungsformen der vorliegenden Offenbarung wird der
+Implantationsprozess übersprungen, wenn die Epitaxiebereiche 48 während der
+Epitaxie vor Ort mit der n-Verunreinigung oder der p-Verunreinigung dotiert werden,
+und die Epitaxiebereiche 48 bilden auch die Source/Drain-Bereiche.
+[0053] Die Figuren 11A, 11B und 11C zeigen die Querschnittsansichten und eine
+Perspektivansicht der Struktur nach der Ausbildung einer Kontaktätzstoppschicht
+(CESL) 50 und eines Zwischenschichtdielektrikums (ILD) 52. Der entsprechende
+Prozess ist als Prozess 228 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Die
+CESL 50 kann aus Siliziumoxid, Siliziumnitrid, Siliziumkarbonitrid oder dergleichen
+ausgebildet sein und kann unter Verwendung von CVD, ALD oder dergleichen
+ausgebildet werden. Das ILD 52 kann ein Dielektrikum enthalten, das beispielsweise
+unter Verwendung von FCVD, Rotationsbeschichtung, CVD oder einem anderen
+geeigneten Abscheidungsverfahren ausgebildet wird. Das ILD 52 kann aus einem
+2025051212303069DE 12.05.2025 DPMADirekt
+21
+sauerstoffhaltigen Dielektrikum ausgebildet sein, das aus einem Material auf
+Siliziumoxidbasis wie Siliziumoxid, Phosphorsilikatglas (PSG), Borsilikatglas (BSG),
+bordotiertem Phosphorsilikatglas (BPSG), undotiertem Silikatglas (USG) oder
+dergleichen bestehen kann.
+[0054] Die Figuren 12A und 12B bis 15A und 15B zeigen den Prozess zur Ausbildung
+von Ersatz-Gatestapeln und Kontaktsteckern. In den Figuren 12A und 12B wird ein
+Planarisierungsprozess wie beispielsweise ein CMP-Prozess oder ein mechanischer
+Schleifprozess durchgeführt, um die obere Fläche des ILD 52 einzuebnen. Gemäß
+einigen Ausführungsformen kann der Planarisierungsprozess die Hartmasken 36
+entfernen, so dass die Dummy-Gateelektroden 34 freigelegt werden, wie in Figur 12A
+gezeigt. Der entsprechende Prozess ist als Prozess 230 in dem in Figur 16 gezeigten
+Prozessablauf 200 gezeigt. Gemäß alternativen Ausführungsformen kann der
+Planarisierungsprozess die Hartmasken 36 freilegen und wird auf diesen angehalten.
+Gemäß einigen Ausführungsformen sind nach dem Planarisierungsprozess die oberen
+Flächen der Dummy-Gateelektroden 34 (oder der Hartmasken 36), der
+Gateabstandshalter 38 und des ILD 52 innerhalb von Prozessschwankungen plan.
+[0055] Als nächstes werden in dem in den Figuren 13A und 13B gezeigten Prozess die
+Dummy-Gateelektroden 34 (und die Hartmasken 36, falls noch vorhanden) in einem
+oder mehreren Ätzprozessen entfernt, so dass Vertiefungen 58 ausgebildet werden. Der
+entsprechende Prozess ist als Prozess 232 in dem in Figur 16 gezeigten Prozessablauf
+200 gezeigt. Die Abschnitte der dielektrischen Schicht 32B liegen in Vertiefungen 58
+frei.
+[0056] Gemäß einigen Ausführungsformen kann das Entfernen der Dummy-
+Gateelektroden 34 durch einen Trocken- und/oder Nassätzprozess erreicht werden.
+Wenn beispielsweise Trockenätzen ausgeführt wird, kann das Ätzgas F2
+, Cl2
+, HCl, HBr,
+Br2
+, C2
+F6
+, CF4
+, SO2
+oder dergleichen oder Kombinationen davon enthalten.
+2025051212303069DE 12.05.2025 DPMADirekt
+22
+[0057] Unter Bezugnahme auf die Figuren 14A und 14B werden die freiliegenden
+Abschnitte der Verbund-Gatedielektrika 32 geätzt. Der entsprechende Prozess ist als
+Prozess 234 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Die Abschnitte der
+Gatedielektrika 32, die direkt unter den Gateabstandshaltern 38 liegen, sind dagegen
+vor Entfernung geschützt.
+[0058] Nachfolgend werden die Opferschichten 22A entfernt, so dass Vertiefungen 58
+zwischen den Nanostrukturen 22B ausgebildet werden. Der entsprechende Prozess ist
+als Prozess 236 in dem in Figur 16 gezeigten Prozessablauf 200 gezeigt. Die
+Opferschichten 22A können durch Ausführen eines isotropen Ätzprozesses wie eines
+Nassätzprozesses unter Verwendung von Ätzmitteln entfernt werden, die selektiv für
+die Materialien der Opferschichten 22A sind, während die Nanostrukturen 22B, das
+Substrat 20, die STI-Bereiche 26 und die verbleibenden Gatedielektrika 32A im
+Vergleich zu den Opferschichten 22A relativ ungeätzt bleiben. Gemäß einigen
+Ausführungsformen, bei denen die Opferschichten 22A beispielsweise SiGe enthalten
+und die Nanostrukturen 22B beispielsweise Si oder kohlenstoffdotiertes Silizium
+enthalten, können Chemikalien wie Tetramethylammoniumhydroxid (TMAH),
+Ammoniumhydroxid (NH4
+OH) oder dergleichen zum Entfernen der Opferschichten 22A
+verwendet werden.
+[0059] Unter Bezugnahme auf die Figuren 15A, 15B und 15C werden Gatestapel 70
+ausgebildet. Der entsprechende Prozess ist als Prozess 238 in dem in Figur 16 gezeigten
+Prozessablauf 200 gezeigt. Zuerst werden Gatedielektrika 62 ausgebildet. Gemäß
+einigen Ausführungsformen gehören zu jedem der Gatedielektrika 62 eine
+Grenzflächenschicht 64 und eine High-k-Dielektrikumsschicht 66 auf der
+Grenzflächenschicht 64. Die Grenzflächenschicht 64 kann aus Siliziumoxid ausgebildet
+sein oder dieses enthalten, das durch einen konformen Abscheidungsprozess wie ALD
+oder CVD abgeschieden werden kann. Gemäß einigen Ausführungsformen gehören zu
+2025051212303069DE 12.05.2025 DPMADirekt
+23
+der High-k-Dielektrikumsschicht 66 eine oder mehrere Dielektrikumsschichten.
+Beispielsweise kann die High-k-Dielektrikumsschicht 66 ein Metalloxid oder ein Silikat
+aus Hafnium, Aluminium, Zirkonium, Lanthan, Mangan, Barium, Titan, Blei und
+Kombinationen davon enthalten.
+[0060] Gateelektroden 68 werden über den Gatedielektrika 62 ausgebildet. Beim
+Ausbildungsprozess werden zunächst leitfähige Schichten auf der
+High-k-Dielektrikumsschicht 66 ausgebildet, die die verbleibenden Anteile der
+Vertiefungen 58 füllen. Die Gateelektroden 68 können ein metallhaltiges Material wie
+etwa TiN, TaN, TiAl, TiAlC, Kobalt, Ruthenium, Aluminium, Wolfram, Kombinationen
+davon und/oder Mehrfachschichten davon enthalten. Die Gateelektroden 68 können
+auch ein Füllmetall wie Kobalt, Wolfram oder dergleichen enthalten. Die
+Gatedielektrika 62 und die Gateelektroden 68 füllen auch die Räume zwischen
+benachbarten Nanostrukturen 22B und füllen die Räume zwischen den unteren der
+Nanostrukturen 22B und den darunterliegenden Substratstreifen 20'. Nach dem Füllen
+der Vertiefungen 58 wird ein Planarisierungsprozess wie beispielsweise ein CMP-
+Prozess oder ein mechanischer Schleifprozess durchgeführt, um die überschüssigen
+Anteile der Gatedielektrika 62 und der Gateelektroden 68 zu entfernen, die sich über
+der oberen Fläche des ILD 52 befinden. Die Gateelektroden 68 und die Gatedielektrika
+62 werden gemeinsam als Gatestapel 70 der resultierenden Nano-FETs bezeichnet.
+[0061] Als nächstes werden die Gatestapel 70 vertieft, so dass Vertiefungen direkt
+über den Gatestapeln 70 und zwischen gegenüberliegenden Abschnitten der
+Gateabstandshalter 38 ausgebildet werden. Eine Gatemaske 74, zu der eine oder
+mehreren Schichten aus Dielektrika wie Siliziumnitrid, Siliziumoxynitrid oder
+dergleichen gehören, wird in jede der Vertiefungen gefüllt, worauf ein
+Planarisierungsprozess folgt, um überschüssige Anteile der Dielektrika zu entfernen,
+die über dem ILD 52 vorstehen.
+2025051212303069DE 12.05.2025 DPMADirekt
+24
+[0062] Wie in den Figuren 15A und 15B weiter gezeigt, wird ein ILD 76 über dem ILD
+52 und über den Gatemasken 74 abgeschieden. Vor der Ausbildung des ILD 76 kann,
+muss aber keine Ätzstoppschicht (nicht gezeigt) abgeschieden werden. Gemäß einigen
+Ausführungsformen wird das ILD 76 durch FCVD, CVD, PECVD oder dergleichen
+ausgebildet. Das ILD 76 ist aus einem Dielektrikum ausgebildet, das aus Siliziumoxid,
+PSG, BSG, BPSG, USG oder dergleichen ausgewählt sein kann.
+[0063] Das ILD 76, das ILD 52, die CESL 50 und die Gatemasken 74 werden geätzt,
+um Vertiefungen auszubilden (die durch Kontaktstecker 80A und 80B belegt werden),
+durch die die epitaktischen Source/Drain-Bereiche 48 und die Gatestapel 70 freigelegt
+werden. Die Vertiefungen können durch einen anisotropen Ätzprozess wie RIE, NBE
+oder dergleichen ausgebildet werden. Obwohl Figur 15B zeigt, dass die Kontaktstecker
+80A und 80B in einem gleichen Querschnitt liegen, können die Kontaktstecker 80A
+und 80B in verschiedenen Ausführungsformen in unterschiedlichen Querschnitten
+ausgebildet werden, wodurch die Gefahr eines Kurzschlusses dazwischen verringert
+wird. Nachdem die Vertiefungen ausgebildet wurden, werden Silizidbereiche 78 über
+den epitaktischen Source/Drain-Bereichen 48 ausgebildet. Gemäß einigen
+Ausführungsformen werden die Silizidbereiche 78 durch Metallabscheidungs- und
+Temperprozesse ausgebildet.
+[0064] Es werden Gatekontaktstecker 80A und Source/Drain-Kontaktstecker 80B
+ausgebildet. Der entsprechende Prozess ist als Prozess 240 in dem in Figur 16 gezeigten
+Prozessablauf 200 gezeigt. Die Gatekontakte 80A liegen über den Gateelektroden 68
+und berühren diese. Über den Silizidbereichen 78 werden Source/Drain-Kontaktstecker
+80B ausgebildet. Die Kontaktstecker 80A und 80B können jeweils eine oder mehrere
+Schichten aufweisen, beispielsweise eine Sperrschicht und ein Füllmaterial. Die
+Sperrschicht kann Titan, Titannitrid, Tantal, Tantalnitrid oder dergleichen enthalten.
+Das Füllmaterial kann Kupfer, eine Kupferlegierung, Silber, Gold, Wolfram, Kobalt,
+2025051212303069DE 12.05.2025 DPMADirekt
+25
+Aluminium, Nickel und/oder dergleichen enthalten. Ein Planarisierungsprozess wie
+beispielsweise ein CMP-Prozess kann durchgeführt werden, um überschüssiges
+Material von einer Oberfläche des ILD 76 zu entfernen. Somit ist der GAA-Transistor
+82 ausgebildet.
+[0065] Im fertigen GAA-Transistor 82 können beide dielektrischen Schichten 32A und
+32B vorhanden sein. Ein Querschnitt 15D­15D (Figur 15C), der durch den
+Gateabstandshalter 38 verläuft, ist in Figur 15D gezeigt. Die dielektrische Schicht 32A
+kann eine konforme Schicht auf einer vorstehenden Finne bilden, zu der die
+Halbleiternanostrukturen 22B und der Gatestapel 70 zwischen benachbarten
+Halbleiternanostrukturen 22B gehören. Die Halbleiternanostrukturen 22B und die
+Abschnitte des Gatestapels 70 zwischen benachbarten Halbleiternanostrukturen 22B
+bilden gemeinsam eine vorstehende Finne, die höher als die oberen Flächen der STI-
+Bereiche 26 ist. Die dielektrische Schicht 32B kann einen ersten horizontalen Abschnitt
+über der vorstehenden Finne und einen zweiten horizontalen Abschnitt auf der oberen
+Fläche der STI-Bereich 26 aufweisen.
+[0066] Die dielektrische Schicht 32B kann, muss aber keine Seitenwandabschnitte an
+den Seitenwänden der vorstehenden Finne aufweisen. Wenn die dielektrische Schicht
+32B Seitenwandabschnitte aufweist, können die untersten Enden der
+Seitenwandabschnitte höher, auf gleicher Höhe oder niedriger als die Mitte der Höhe
+der vorstehenden Finne liegen. Die Seitenwandabschnitte der dielektrischen Schicht
+32B können mit den zweiten horizontalen Abschnitten der zweiten dielektrischen
+Schicht 32B verbunden sein oder von diesen beabstandet sein, wobei sich diese zweiten
+horizontalen Abschnitte auf der oberen Fläche der STI-Bereich 26 befinden.
+[0067] Der Gateabstandshalter 38 kann einen Seitenwandabschnitt der dielektrischen
+Schicht 32A berühren und ist durch die dielektrische Schicht 32B vom oberen
+Abschnitt der dielektrischen Schicht 32A beabstandet. Alternativ dazu ist gemäß
+2025051212303069DE 12.05.2025 DPMADirekt
+26
+einigen Ausführungsformen, bei denen die dielektrische Schicht 32B auch
+Seitenwandabschnitte auf allen Seitenwandabschnitten der dielektrischen Schicht 32A
+(mit geringerer Dicke als die oberen Abschnitte) aufweist, der Gateabstandshalter 38
+durch die dielektrische Schicht 32B vollständig von der dielektrischen Schicht 32A
+beabstandet.
+[0068] Die Ausführungsformen der vorliegenden Offenbarung haben einige
+vorteilhafte Eigenschaften. Durch die Ausbildung einer dielektrischen Schicht unter
+Verwendung eines anisotropen Abscheidungsprozesses weist die dielektrische Schicht
+auf den vorstehenden Finnen und STI-Bereichen eine größere Dicke auf. Bei der
+Strukturierung zur Ausbildung von Dummy-Gates und den nachfolgenden
+Reinigungsprozessen fungiert die dielektrische Schicht als Hartmaske auf einer
+darunter liegenden konformen dielektrischen Schicht, so dass sie den
+Deckschichtverlust der Halbleiternanostrukturen verringern und den Verlust der STI-
+Bereiche verringern kann.
+[0069] Gemäß einigen Ausführungsformen der vorliegenden Offenbarung umfasst ein
+Verfahren ein Ausbilden einer vorstehenden Finne; Ausbilden einer ersten
+dielektrischen Schicht, die einen ersten oberen Abschnitt auf einer oberen Fläche der
+vorstehenden Finne; und einen ersten Seitenwandabschnitt auf einer Seitenwand der
+vorstehenden Finne aufweist; Ausbilden einer zweiten dielektrischen Schicht über dem
+ersten oberen Abschnitt der ersten dielektrischen Schicht und der oberen Fläche der
+vorstehenden Finne, wobei die zweite dielektrische Schicht unter Verwendung eines
+anisotropen Abscheidungsprozesses ausgebildet wird; Ausbilden einer Dummy-
+Gateelektrode auf der zweiten dielektrischen Schicht; Ausbilden eines
+Gateabstandshalters auf einer Seitenwand der Dummy-Gateelektrode; Entfernen der
+Dummy-Gateelektrode; und Ausbilden einer Ersatz-Gateelektrode in einem Raum, der
+von der Dummy-Gateelektrode hinterlassen wird. In einer Ausführungsform ist die
+2025051212303069DE 12.05.2025 DPMADirekt
+27
+zweite dielektrische Schicht frei von Abschnitten auf dem ersten Seitenwandabschnitt
+der ersten dielektrischen Schicht.
+[0070] In einer Ausführungsform werden die erste dielektrische Schicht und die
+zweite dielektrische Schicht unter Verwendung unterschiedlicher
+Abscheidungsverfahren ausgebildet. In einer Ausführungsform wird die erste
+dielektrische Schicht unter Verwendung eines konformen Abscheidungsverfahrens
+abgeschieden. In einer Ausführungsform wird die zweite dielektrische Schicht unter
+Verwendung einer plasmaunterstützten Atomlagenabscheidung abgeschieden, wobei
+eine Vorspannung angelegt wird. In einer Ausführungsform umfasst das Verfahren
+ferner, nachdem die Dummy-Gateelektrode entfernt wurde und bevor die Ersatz-
+Gateelektrode ausgebildet wird, Ätzen freiliegender Abschnitte der ersten
+dielektrischen Schicht und der zweiten dielektrischen Schicht.
+[0071] In einer Ausführungsform verbleiben, nachdem die freiliegenden Abschnitte
+der ersten dielektrischen Schicht und der zweiten dielektrischen Schicht geätzt wurden,
+ein erster Abschnitt der ersten dielektrischen Schicht und ein zweiter Abschnitt der
+zweiten dielektrischen Schicht direkt unter dem Gateabstandshalter. In einer
+Ausführungsform ist der zweite Abschnitt der zweiten dielektrischen Schicht, der direkt
+unter dem Gateabstandshalter liegt, nicht konform. In einer Ausführungsform weist die
+vorstehende Finne mehrere Halbleiternanostrukturen auf, die gestapelt und
+voneinander beabstandet sind, und wobei sich die Ersatz-Gateelektrode in Räume
+zwischen den mehreren Halbleiternanostrukturen erstreckt.
+[0072] In einer Ausführungsform umfasst das Ausbilden der Dummy-Gateelektrode
+ein Abscheiden einer Polysiliziumschicht auf der zweiten dielektrischen Schicht und
+Strukturieren der Polysiliziumschicht, wobei das Strukturieren auf der zweiten
+dielektrischen Schicht anhält. In einer Ausführungsform weist die zweite dielektrische
+Schicht einen zweiten Seitenwandabschnitt auf dem ersten Seitenwandabschnitt auf,
+2025051212303069DE 12.05.2025 DPMADirekt
+28
+und wobei der zweite Seitenwandabschnitt in einem Reinigungsprozess entfernt wird,
+der durchgeführt wird, bevor der Gateabstandshalter ausgebildet wird.
+[0073] Gemäß einigen Ausführungsformen der vorliegenden Offenbarung weist eine
+Struktur einen dielektrischen Isolierbereich; mehrere Halbleiternanostrukturen neben
+dem dielektrischen Isolierbereich und höher als dieser, wobei höhere der mehreren
+Halbleiternanostrukturen entsprechende niedrigere der mehreren
+Halbleiternanostrukturen überlappen; einen Gatestapel, der einen ersten Abschnitt
+über einer oberen Nanostruktur der mehreren Halbleiternanostrukturen; und zweite
+Abschnitte zwischen benachbarten der mehreren Halbleiternanostrukturen aufweist,
+wobei die zweiten Abschnitte des Gatestapels und die mehreren
+Halbleiternanostrukturen gemeinsam eine vorstehende Finne bilden; eine erste
+dielektrische Schicht auf einer oberen Fläche und einer Seitenwand der vorstehenden
+Finne; eine zweite dielektrische Schicht, die einen ersten Teil über der ersten
+dielektrischen Schicht aufweist, wobei die zweite dielektrische Schicht weniger
+konform als die erste dielektrische Schicht ist, und wobei zumindest ein oberer
+Abschnitt des ersten Teils höher als eine obere Nanostruktur der mehreren
+Halbleiternanostrukturen liegt; und einen Gateabstandshalter über der zweiten
+dielektrischen Schicht auf.
+[0074] In einer Ausführungsform ist die erste dielektrische Schicht konform, und der
+erste Teil der zweiten dielektrischen Schicht weist ein unterstes Ende auf, das im
+Wesentlichen auf gleicher Höhe mit einer obersten Fläche der oberen Nanostruktur
+liegt. In einer Ausführungsform weist die zweite dielektrische Schicht ferner einen
+zweiten Abschnitt auf, der den dielektrischen Isolierbereich überlappt, wobei der erste
+Abschnitt und der zweite Abschnitt getrennte Abschnitte der zweiten dielektrischen
+Schicht sind. In einer Ausführungsform weist der erste Abschnitt der zweiten
+dielektrischen Schicht ferner einen zweiten Teil an einer Seitenwand der vorstehenden
+2025051212303069DE 12.05.2025 DPMADirekt
+29
+Finne auf, wobei der zweite Teil dünner als der erste Teil ist. In einer Ausführungsform
+liegt ein unterstes Ende des zweiten Teils höher als eine Mitte der Höhe der
+vorstehenden Finne.
+[0075] Gemäß einigen Ausführungsformen der vorliegenden Offenbarung weist eine
+Struktur ein Halbleitersubstrat; einen ersten dielektrischen Isolierbereich und einen
+zweiten dielektrischen Isolierbereich in dem Halbleitersubstrat; eine vorstehende
+Finne zwischen dem ersten dielektrischen Isolierbereich und dem zweiten
+dielektrischen Isolierbereich und höher als diese; eine erste dielektrische Schicht auf
+einer oberen Fläche und einer Seitenwand der vorstehenden Finne; eine zweite
+dielektrische Schicht über der ersten dielektrischen Schicht, wobei die zweite
+dielektrische Schicht einen ersten Abschnitt, der die vorstehende Finne überlappt; und
+einen zweiten Abschnitt aufweist, der den ersten dielektrischen Isolierbereich
+überlappt, wobei der erste Abschnitt und der zweite Abschnitt getrennte Abschnitte der
+zweiten dielektrischen Schicht sind; und einen Gateabstandshalter über der zweiten
+dielektrischen Schicht auf.
+[0076] In einer Ausführungsform berührt der Gateabstandshalter physisch einen
+Seitenwandteil der ersten dielektrischen Schicht und ist durch den ersten Abschnitt der
+zweiten dielektrischen Schicht von einem oberen Teil der ersten dielektrischen Schicht
+beabstandet. In einer Ausführungsform enthält die erste dielektrische Schicht
+Siliziumoxid, und die zweite dielektrische Schicht enthält Silizium und ein Element,
+das aus der Gruppe bestehend aus N, C und Kombinationen davon ausgewählt ist. In
+einer Ausführungsform weist die zweite dielektrische Schicht ferner einen ersten
+vertikalen Abschnitt auf einem zweiten vertikalen Abschnitt der ersten dielektrischen
+Schicht auf, und wobei der zweite vertikale Abschnitt auf der Seitenwand der
+vorstehenden Finne liegt.
+2025051212303069DE 12.05.2025 DPMADirekt
+

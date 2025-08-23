@@ -1,0 +1,408 @@
+                                                                BOEHMERT & BOEHMERT
+
+BOEHMERT & BOEHMERT Pettenkoferstraße 22 80336 München Germany  Ihr Zeichen / your ref.                                            Dr. Matthias Hofmann
+                                                                                                                                   Pettenkoferstraße 22
+Online filing                                                   22 794 201.8                                                       80336 München
+                                                                                                                                   Germany
+Europäisches Patentamt                                          Ihre Nachricht /your letter
+80298 München                                                                                                                      T +49-89 559680
+                                                                Unser Zeichen / our ref.                                           F +49-89-559685090
+                                                                                                                                   hofmann@boehmert.de
+                                                                H14360WOEP                                                         www.boehmert.de
+
+                                                                                                                          München  Dr. Ing. Karl Boehmert PA (1899-1973)
+                                                                                                                                   Dipl .- Ing. Albert Boehmert PA (1902-1993)
+                                                                                17.03.2025                                         Wilhelm J. H. Stahlberg RA, Bremen
+                                                                                                                                   Dr .- Ing. Walter Hoormann PA*, Bremen
+European Patent Application EP 22 794 201.8                                                                                        Prof. Dr. Heinz Goddar PA', Munchen, Shanghai
+DATA BACKUP METHOD AND SYSTEM, AND RELATED                                                                                         Wolf-Dieter Kuntze RA, Bremen
+                                                                                                                                   Dr. Ludwig Kouker RA, Bremen
+DEVICE
+                                                                                                                                   Dipl .- Ing. Eva Liesegang PA", München
+Huawei Cloud Computing Technologies Co., Ltd.                                                                                      Dr .- Ing. Matthias Philipp PA*, Bielefeld
+                                                                                                                                   Dr. Martin Wirtz RA, Düsseldorf, Berlin
+On the communication pursuant to Rules 70(2) and 70a(2) EPC dated                                                                  Dr. Carl-Richard Haarmann RA, Munchen, Dusseldorf
+17.09.2024, the EPO is hereby informed that the applicant wishes to                                                                Dipl .- Phys. Christian W. Appelt PA", München
+proceed further with the European patent application.                                                                              Dipl .- Phys. Dr .- Ing. Uwe Manasse PAs, Bremen
+                                                                                                                                   Dipl .- Phys. Dr. Thomas L. Bittner PA, Berlin
+It is requested to begin with the examination on the basis of new                                                                  Dr. Volker Schmitz-Fohrmann, M. JUR. RA, Munchen, Paris
+claims 1 to 15 replacing the claims on file, new description pages 1 to                                                            Dipl .- Biochem. Dr. Markus Engelhard PA*, München
+9 replacing description pages 1 to 9 on file, and the remaining                                                                    Dipl .- Chem. Dr. Karl-Heinz B. Metten PA*, Frankfurt
+documents as currently on file.                                                                                                    Dr. Florian Schwab, LL.M. RA, Lic en droit, Munchen
+                                                                                                                                   Dr. Andreas Dustmann, LL.M. RA, Berlin, Alicante
+I. Amendments                                                                                                                      Dipl .- Chem. Dr. Volker Scholz PA+, Bremen
+                                                                                                                                   Dr. Martin Schaefer RA, Berlin
+New claim 1 combines the features of previous claims 1, 5 and 7.                                                                   Dipl .- Phys. Dr. Michael Hartig PA*, München, Paris
+Original disclosure can be found in original claims 1, 5 and 7.                                                                    Dipl .- Phys. Dr. Steffen Schmidt PA, Munchen
+                                                                                                                                   Dr. Andreas Lucke PA*, Munchen
+Furthermore, new claim 1 is amended to specify that "wherein the                                                                   Dipl .- Chem. Dr. Ute Kilger PA', Berlin
+primary cluster includes a first component and a second component,                                                                 Malte Nentwig, LL.M. RA, Bremen
+the secondary cluster includes a third component and a fourth                                                                      Dr. Rudolf Bockenholt, LL.M. RA, Bremen
+component, the third component is used as backup of the first                                                                      Peter Groß, LL.M. RA, München, Alicante
+component, the fourth component is used as backup of the second                                                                    Dipl .- Ing. Felix Hermann PA", München
+component." Original disclosure can be found in e.g., par. [0068] of                                                               Dr. Michael Rüberg, LL.M. RA, München, Paris
+the original description and original Fig. 2.                                                                                      Dipl .- Phys. Christoph Angerhausen PA+, Dusseldorf
+                                                                                                                                   Dipl .- Inform. Dr. Jakob Valvoda PA*, München
+New claim 1 has been further amended to specify that "the first                                                                    Dipl .- Chem. Dr. Martin Erbacher PA*, Bremen
+component and the second component store data in different                                                                         Dr. Daniel Herrmann PA*, Frankfurt, Munchen
+                                                                                                                                   Dr. Sebastian Engels RA, Berlin
+BOEHMERT & BOEHMERT Anwaltspartnerschaft mbB · Patentanwälte Rechtsanwälte · AG Bremen-PR 358 HB                                   Silke Freund RA, München
+München · Bremen . Berlin . Düsseldorf . Frankfurt . Bielefeld . Alicante . Paris . Shanghai                                       Dipl .- Phys. Dr. Matthias Hofmann PA+, Munchen
+                                                                                                                                   Dr. Eckhard Ratjen, LL.M. RA, Bremen
+Information about data protection and your rights as data subjects:                                                                Dipl .- Phys. Dr. Jin Jeon PA', München
+www.boehmert.com/data-protection                                                                                                   Dr. Mario Araujo ** PAT, München
+
+                                                                                                                                   Dipl .- Ing. Oliver Tarvenkorn PA', Düsseldorf, Bielefeld
+                                                                                                                                   Dr. Katrin Seibt RA, Bremen
+                                                                                                                                   Dipl .- Biochem. Dr. Sibylla M. Grahn PA*, Munchen (2007-2024)
+                                                                                                                                   Dipl .- Phys. Dr. Xia Pfaffenzeller PA", München
+                                                                                                                                   Dipl .- Inform. Fritz Jetzek PA, Bremen
+                                                                                                                                   Claudia Deppe RA, München
+                                                                                                                                   Dr. Anja Ruge, LL.M. RA, Berlin, München
+                                                                                                                                   Mehmet Bengi-Akyürek PA", München
+                                                                                                                                   Dr. Lars Eggersdorfer RA, München
+                                                                                                                                   Dipl .- Ing. Dr. Sebastian Schlegel PA+, Berlin
+                                                                                                                                   Dipl .- Chem. Robert Bernin PA", Bremen
+                                                                                                                                   Dipl .- Ing. Jan Göring PA*, Frankfurt
+                                                                                                                                   Dr. Laura Haas, M.Sc. PA*, München
+                                                                                                                                   Dr. Hanno Flentje PA+, Munchen
+
+                                                                                                                                   Dr. Lara Gwinner PA*, München
+                                                                                                                                   Dr. Alexander Thamer RA, Berlin
+                                                                                                                                   Dr .- Ing. Michael Rubsamen PA", Munchen
+                                                                                                                                   Dipl .- Phys. Dr. Michael Lohse PA", München
+                                                                                                                                   Dr .- Ing. Jonas Boschung, M.Sc., M.Sc. PA*, Dusseldorf
+                                                                                                                                   Dipl .- Phys. Dr. Adrian Steffens PA*, Berlin
+                                                                                                                                   Melanie Müller RA, Bremen
+                                                                                                                                   Dipl .- Phys. Dr. Giulio Schober PA*, München
+                                                                                                                                   Micheline Verwohlt RA, München
+                                                                                                                                   Nina Rücker RA, München
+                                                                                                                                   Dr. Makiko Maruyama*, M.Sc., München
+                                                                                                                                   Théodore Ley", München
+
+                                                                                                                                   Dr. Oleg Lebedev*, Berlin
+                                                                                                                                   Fabio Adinolfi RA, München
+                                                                                                                                   Dipl .- Chem. Dr. José M. Pfizer PAT, Berlin, München
+                                                                                                                                   Malte Windeler, LL.M. oec. RA, Bremen
+
+                                                                                                                                   Dipl .- Ing. Bemhard Jochim PA', Dusseldorf
+                                                                                                                                   Dr. Julian Wernicke, LL.M. (UCT) RA, Berlin
+                                                                                                                                   Dipl .- Phys. Dr. habil. Daniel Niesner PA*, Munchen
+                                                                                                                                   Hannah Dauer, LL.M. RA, München
+                                                                                                                                   Stella Euchner RA, Munchen
+                                                                                                                                   Dr. Jan Bohl, M.Sc. PA, Frankfurt
+                                                                                                                                   Dr .- Ing. Dominik Denker, M.Sc. PA, Düsseldorf
+                                                                                                                                   Victor V. Fetscher, LL.M. (Tel Aviv) RA, München
+                                                                                                                                   Dr .- Ing. Thomas Michaelis PAT, München
+
+                                                                                                                                   PA Patentanwalt/Patent Attorney *European Patent Attomey
+
+                                                                                                                                   RA Rechtsanwalt/Attorney at Law (Germany)
+                                                                                                                                   ** Agente de la Propiedad Industrial (Spanien / Spain)
+                                                                                                                                   Vertretung vor dem EUIPO - Marken und Designs
+                                                                                                                                   Representation at EUIPO - Trade marks and Designs
+                                                                         BOEHMERT & BOEHMERT
+
+formats, the third component and the fourth component store data in different
+formats." Original disclosure can be found in e.g., pars. [0068], [0077] and [0078] of the
+original description.
+New claim 11 combines the features of previous claims 13 and 15. Original disclosure can
+be found in original claims 13 and 15.
+New claim 11 has been further amended in the same way as new claim 1.
+Previous claims 5, 7 and 15 have been cancelled.
+
+All claims have been provided with reference signs, where appropriate.
+
+The description has been amended to acknowledge the prior art known from documents
+D1 to D6 and to reflect the new claims.
+
+Thus, all amendments meet the requirements of Art. 123(2) EPC.
+
+II. Clarity
+The Search Division in section 2.1.1 of the European Search Opinion (ESOP) objects that
+
+"[ ... ] the subject-matter of claim 13 comprises merely a subset of features of the features
+of claim 1." and therefore, claims 1 and 13 do not fall within one or more of the
+exceptional situations out in paragraph (a), (b) or (c) of Rule 43(2) EPC.
+
+The applicant respectfully disagrees.
+
+The objective technical problem solved by claims 1 and 13 (new claims 1 and 11) is how
+to improve reliability of a data backup system.
+Claim 1 approaches the problem from the controlling device's perspective (the
+controlling phase) while claim 13 (new claim 11) approaches this problem from the
+executing/primary cluster's perspective (executing phase).
+Specifically, both claims represent alternative solutions to the problem of coordinating
+data backup between clusters. Specifically, claims 1 and 13 (new claims 1 and 11) describe
+fundamentally different technical implementations (i.e., controlling versus executing)
+and involve different components of a data backup system with distinct responsibilities.
+Combining claims 1 and 13 (new claims 1 and 11) would result in an unnecessarily
+complex and unclear claim.
+
+                                                                                                                                                                                                   2/8
+                                                                        BOEHMERT & BOEHMERT
+
+Therefore, both claims 1 and 13 (new claims 1 and 11) fall under Rule 43(2)(c) of the EPC
+which allows more than one independent claim in the same category if they involve
+"alternative solutions to a particular problem, where it is not appropriate to cover these
+alternatives by a single claim.".
+
+In section 2.2 of the ESOP, the Search Division argues that claim 5 is unclear and that:
+"the information that is about the plurality of data sets ... and that is entered by a user
+and the first moment" cannot be clearly understood.
+
+The applicant notes that at least new claim 1 (which incorporates the features of previous
+claim 5) is clear when read in its entirety. The phrase "configuring, by the control device,
+a first data backup policy for a first service based on: information about a plurality of
+data sets related to the first service and that is entered by a user; and a first moment"
+indicates two separate bases for configuring the backup policy:
+
+       (1) information about data sets that is entered by a user, and
+
+      (2) the first moment.
+
+The first moment refers to a specific point in time at which the data sets exist in the
+primary cluster and are to be backed up, as clarified in the subsequent limitation stating
+"to back up, to the secondary cluster, the plurality of data sets related to the first service
+that are in the primary cluster and that are at the first moment." Therefore, it is clear
+from new claim 1 that "the first moment" serves as a temporal identifier for the state of
+data to be backed up, not as a modifier of user-entered information.
+
+Thus, at least new claim 1 is clear.
+
+In section 2.3.1 of the ESOP, it is objected that it is not clear how a certain system state,
+which is described by a particular set of status information, established by each client,
+allows to determine that one of the clients are accessed by an application.
+
+To proceed with the application in a favorable manner, new claim 6 (previous claim 8)
+has been amended to specify that the control device in fact determines based on the first
+and second status information that that the client accessing the cluster is switched to the
+secondary client.
+
+It is clear to the skilled person that the status information obtained through detection of
+a client directly corresponds to the status of its corresponding cluster (primary or
+secondary) and therefore, based on the identity provided in the status information, the
+control device can determine which client is accessing the service.
+
+                                                                                                                             3/8
+                                                                        BOEHMERT & BOEHMERT
+
+Specifically, when the first and second status information is obtained, the controller
+determines which cluster is acting as a backup (the one with the secondary identity) and
+which cluster is providing the service (the one with the primary identity). With this
+information, the controller can determine which client is the one connected to the cluster
+providing the service.
+
+Thus, all amendments meet the requirements of Art. 84 EPC.
+
+III. Claim 1
+
+                                                    Novelty
+
+As conceded by the Search Division in 3.1 of the ESOP, D1 does not disclose:
+a) a secondary cluster,
+b) the primary cluster or the secondary cluster to back up, to the secondary cluster.
+
+D1 discloses methods and systems for using high availability attributes to define data
+protection plans, focusing on backing up highly available data within a high availability
+
+cluster.
+
+Specifically, D1 discloses that in column 5 lines 23 to 26 that "each machine 125, 130
+includes a high availability agent 140 that performs operations with regards to load
+balancing, synchronizing a state between machines 125, 130, and so forth." and in
+column 6 lines 59 to 64 discloses that "the HA agent 140 on the primary machine 125
+periodically takes a snapshot (a point-in-time image) of the state of the application at
+the primary machine, including the state of the high availability data 145, and sends
+this snapshot to the high availability agents 140 on the standby machines 130 .. "
+Furthermore, the applicant respectfully submits that D1 does not disclose:
+c) the primary cluster includes a first component and a second component, the
+
+        secondary cluster includes a third component and a fourth component, the third
+        component is used as backup of the first component, the fourth component is
+        used as backup of the second component, the first component and the second
+        component store data in different formats, the third component and the fourth
+        component store data in different formats.
+Furthermore, as apparently already conceded by the Search Division, D1 does not
+disclose:
+
+                                                                                                                                                                                         4/8
+                                                                        BOEHMERT & BOEHMERT
+
+d) the plurality of data sets related to the first service comprise a data set processed
+        or stored by the first component in the primary cluster and a data set processed
+        or stored by the second component in the primary cluster.
+
+Thus, the subject matter of claim 1 is new. The same considerations apply mutatis
+mutandis to new claims 14 and 15.
+
+                                             Inventive Step
+
+D1 is considered as closest prior art. D1 does not disclose the above-mentioned
+distinguishing features a) to d).
+
+The distinguishing features have the technical effect that when service data of multiple
+components needs to be synchronized, ensure that the time of service data
+synchronization between multiple components is consistent. Therefore, time consistency
+is maintained during backup of the same service of a user. This improves reliability of a
+data backup system.
+
+Therefore, the objective technical problem can be seen in how to improve reliability of a
+data backup system.
+
+Starting from D1, the skilled person would find no hints towards the claimed subject
+matter. D1 teaches that the highly available data, that is data determined by a data
+protection agent/server, from a high availability cluster may be backed up to a data
+protection agent or server. Specifically, D1 discloses in lines 23 to 26 of column 5 that
+"each machine 125, 130 includes a high availability agent 140 that performs operations
+with regards to load balancing, synchronizing a state between machines 125, 130, and
+so forth."
+
+However, D1 does not disclose the feature in the amended claim 1 of the present
+application wherein an architecture in which service data in multiple components
+synchronization is required. Thus, D1 provides no hints towards how to solve the
+problem of in the same way as claim 1.
+
+When starting from D1 and tasked with solving the objective technical problem, the
+skilled person might consider D2 to D6. However, D2 to D6 also does not provide any
+hints towards the claimed solution. Thus, even if the skilled person were to combine the
+prior art known from D1 and D6 to solve the objective technical problem, they would not
+be able to arrive at the claimed subject-matter.
+
+                                                                                                                                                                                         5/8
+                                                                         BOEHMERT & BOEHMERT
+
+The same considerations apply mutatis mutandis to claims 14 and 15, which therefore
+also rely on an inventive step.
+
+IV. Claim 11
+
+                                                     Novelty
+
+As conceded by the Search Division in Section 4.1 of the ESOP, D3 does not disclose:
+
+e) obtaining, by the primary cluster, an instruction delivered by the control device,
+        wherein the instruction comprises the information about the plurality of data
+        sets related to the first service and the first moment,
+
+f) backing up, by the primary cluster to the secondary cluster based on the
+        instruction, the plurality of data sets related to the first service that are in the
+        primary cluster and that are at the first moment.
+
+Meanwhile, the applicant respectfully submits that, D3 does not disclose:
+
+g) the primary cluster includes a first component and a second component, the
+        secondary cluster includes a third component and a fourth component, the third
+        component is used as backup of the first component, the fourth component is
+        used as backup of the second component, the first component and the second
+        component store data in different formats, the third component and the fourth
+        component store data in different formats;
+
+h) configuring, by the control device, a first data backup policy for a first service
+        based on: information about a plurality of data sets related to the first service
+        and that is entered by a user; and a first moment, wherein the plurality of data
+        sets related to the first service comprise a data set processed or stored by the
+        first component in the primary cluster and a data set processed or stored by the
+        second component in the primary cluster.
+
+As noted by the Search Division in Section 6.4.1 of the ESOP, D3 discloses "data
+synchronization between clusters ... according to pre-set rules". However, D3 does not
+disclose feature g) of new claim 1 of the present application. The feature specifies an
+architecture in which service data in multiple components synchronization is required.
+Thus, D3 provides no hints towards this kind of architecture.
+
+Thus, the subject matter of claim 11 is new. The same considerations apply mutatis
+mutandis to new claim 14.
+
+                                                                                                                                                                                         6/8
+                                                                        BOEHMERT & BOEHMERT
+
+                                       Inventive Step
+
+D3 is considered as closest prior art. D1 does not disclose the above-mentioned
+distinguishing features e) to h).
+
+The distinguishing features have the technical effect that when service data of multiple
+components needs to be synchronized, ensure that the time of service data
+synchronization between multiple components is consistent. Therefore, time consistency
+is maintained during backup of the same service of a user. This improves reliability of a
+data backup system.
+
+Therefore, the objective technical problem can be seen in how to improve reliability of a
+data backup system.
+
+Starting from D3, the skilled person would find no hints towards the claimed solution.
+D3 teaches that by synchronizing data defined by pre-set rules between a main and a
+backup cluster, the backup cluster may take over the responsibilities of the main cluster
+when the main cluster fails. However, D3 provides no hints towards the distinguishing
+features of new claim 1 of the present application. Specifically, D3 does not provide any
+hints towards feature g) which specifies an architecture in which service data in multiple
+components synchronization is required. Thus, D3 provides no hints towards how to
+solve the objective technical problem in the same way as new claim 11.
+
+To solve the objective technical problem, the skilled person might come across D2 when
+starting from D3. Specifically, D2 focuses on scalable cloud backup using a coordinator
+process and worker processes to package data for cloud storage. However, D2 provides
+no hints towards the claimed solution. Thus, even if the skilled person were to combine
+the prior art known from D3 and D2 to solve the objective technical problem, they would
+not be able to arrive at the claimed subject-matter.
+
+To solve the objective technical problem, the skilled person might come across D4 when
+starting from D3. D4 focuses on remote copying of data based on policy tags to reduce
+resource or processing load. However, D4 also does not provide any hints towards the
+claimed solution. Thus, even if the skilled person were to combine the prior art known
+from D3 and D4 to solve the objective technical problem, they would not be able to arrive
+at the claimed subject-matter.
+
+To solve the objective technical problem, the skilled person might come across D5 when
+starting from D3. D5 discusses synchronizing the clock time of all nodes in a cluster to
+ensure they are in sync with a standard external time server, which is unrelated to the
+backup and synchronization of user data between primary and secondary clusters as
+
+                                                                                                                                                                                           7/8
+                                                                        BOEHMERT & BOEHMERT
+
+claimed. Thus, even if the skilled person were to combine the prior art known from D3
+and D5 to solve the objective technical problem, they would at an alternative solution.
+
+To solve the objective technical problem, the skilled person might come across D6 when
+starting from D3. D6 focuses on ensuring continuity of user services through redundancy
+and backup mechanisms involving cloud devices, which is different from the claimed
+method of backing up data sets related to a service based on a specific backup policy and
+synchronizing user data. Thus, even if the skilled person were to combine the prior art
+known from D3 and D6 to solve the objective technical problem, they would not be able
+to arrive at the claimed subject-matter.
+
+The same considerations apply mutatis mutandis to claim 14, which therefore also relies
+
+on an inventive step.
+
+V. Conclusion
+
+In view of the amendments made and the above explanations, it is believed that the
+application is now in a state acceptable for grant. Should the Examining Division,
+nevertheless, still see deficiencies in the documents on file, it is kindly asked to give the
+applicant the opportunity to file further arguments and, if necessary, amendments.
+Minor issues could be discussed by telephone.
+
+Only as a measure of precaution,
+
+                                         Oral Proceedings
+
+are herewith requested. In this event, it is further requested that the Oral Proceedings be
+either held in Munich, or by videoconference.
+
+BOEHMERT & BOEHMERT
+
+Mathias Hof
+
+Dr. Matthias Hofmann
+
+Enclosures:
+.New claims 1 to 15, clean copy
+· New claims 1 to 15, marked-up version
+· New description pages 1 to 9, clean copy
+· New description pages, marked-up version
+
+                                                                                                                                                                                                  8/8
+

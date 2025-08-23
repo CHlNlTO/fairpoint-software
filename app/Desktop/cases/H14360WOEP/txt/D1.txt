@@ -1,0 +1,1717 @@
+US009275060B1
+
+(12) United States Patent
+Supekar
+
+(10) Patent No.: US 9.275,060 B1
+
+(45) Date of Patent:
+
+Mar. 1, 2016
+
+(54) METHOD AND SYSTEM FOR USING HIGH (56)
+AVAILABILITY ATTRIBUTES TO DEFINE
+
+References Cited
+
+OO
+(75) Inventor: Nitin Supekar, Pune (IN)
+(73) Assignee: Symantec Corporation, Mountain View, CA (US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35 U.S.C. 154(b) by 435 days.
+(21) Appl. No.: 13/360,493 (22) Filed: Jan. 27, 2012
+
+(51) Int. Cl.
+G06F 7/30
+
+(2006.01)
+
+G06F 7700
+
+(2006.01)
+
+(52) U.S. Cl.
+
+CPC. G06F 17/30082 (2013.01); G06F 17/30221 (2013.01)
+
+(58) Field of Classification Search
+
+CPC
+
+GO6F 17/3OO73. GO6F 17/30O82
+
+Goof 1773ooss. Goof 7,3022,
+
+See application file for complete search history.
+
+7,451,201 B2 * 1 1/2008 Alex et al. ..................... 709,223
+7,613,747 B1 * 1 1/2009 Thakur et al. ...... TO7/640
+
+7.693,889 B1 * 4/2010 Armorer et al. .............. 707/653
+
+78,,179354,,997564 BB22 **
+
+66//22001120
+
+RDaavoiseteatl.al................................
+
+T14? 15
+714.f4.1
+
+8,306,951 B2 * 1 1/2012 Ghosh et al. ....... TO7/646
+
+2005, 0071391 A1* 3, 2005 Fuerderer et al. ..
+
+707,204
+
+2007/0271304 A1* 11/2007 Atluri ............ 2008. O162843 A1* 7, 2008 Davis et al. .
+
+... 771017,/126O2O
+
+2010, 0169860 A1* 7, 2010 Biazetti et al. .
+
+717/107
+
+2012/01 17029 A1* 5, 2012 Gold .................. 707,651
+
+2013/0042139 A1 2/2013 Bhalerao et al. .................. T14/2
+
+* cited by examiner
+
+Primary Examiner -- Jeffrey A Burke (74) Attorney, Agent, or Firm -- Wilmer Cutler Pickering
+Hale and Dorr LLP
+
+(57)
+
+ABSTRACT
+
+A data protection agent or server running on a computing
+
+device receives a cluster configuration of a high availability
+
+cluster. The data protection agent or server identifies highly available data of an application running on the high availabil
+
+ity cluster based on the clustering. The data protection agent
+
+or server then implements a data protection policy that backs
+
+up the highly available data.
+
+19 Claims, 8 Drawing Sheets
+
+400 ^s.
+
+( start
+
+Receive Cluster Configuration of High Availability Cluster 405
+y
+Parse Cluster Configuration To identify Data Of Application Running On High Availability Cluster To Protect Based on Cluster Configuration 410
+--
+Initiate Backup. According To Backup Policy 415
+
+Backup HA Data 425
+
+- Is
+
+---.
+
+s: Application Multi-Tiered? --
+
+YES y Quiet First Tier 430
+y Quiet Second Tier 435
+y Quiet Third Tier 440
+y Backup Data From First, Second And/Or Third
+Tier 445
+w
+Resume Operations On First, Second And/Or Third Tier 450
+
+U.S. Patent Mar. 1, 2016 Sheet 1 of 8
+
+US 9.275,060 B1
+
+100
+N
+
+Standby Machine 130
+
+Backup Agent
+
+135
+
+HA
+
+Data
+
+HA Agent 140 145
+
+Standby Machine 130
+
+Backup Agent
+
+135
+
+HA
+
+Data
+
+145
+HA Agent 140
+
+Primary Machine 125
+
+Backup Agent
+
+135
+
+HA
+
+Data
+
+145
+HA Agent 140|\ T
+
+High Availability Cluster 105
+
+Backup Data
+Store 120
+
+Client(s)118
+
+HA Cluster Server 122 Cluster Configuration 148
+Backup Server 115 Backup Policy 150
+
+FIG. 1A
+
+U.S. Patent Mar. 1, 2016 Sheet 2 of 8
+
+US 9.275,060 B1
+
+Co
+
+U.S. Patent Mar. 1, 2016 Sheet 3 of 8
+
+US 9.275,060 B1
+
+Backup Agent/Server 200
+
+Cluster
+Configuration 235
+
+-
+
+8-X
+
+HA Cluster Querying
+Module
+205
+
+Cluster Configuration
+ParSer
+210
+
+Backup Policy 240 -
+8-X
+
+User Interface
+215
+
+Backup Policy
+Generator
+220
+
+Backup Module
+225
+
+Restore Module
+230
+
+FIG.2
+
+U.S. Patent Mar. 1, 2016 Sheet 4 of 8
+
+US 9.275,060 B1
+
+Receive Cluster Configuration of High Availability Cluster 305
+-
+dentify Highly Available Data Of Application Running On High Availability Cluster Based On
+Cluster Configuration 310
+implement Data Protection Policy. To Back Up Highly Available Data 315
+
+U.S. Patent Mar. 1, 2016 Sheet 5 of 8
+
+US 9.275,060 B1
+
+400
+
+a
+
+Start
+
+V
+Receive Cluster Configuration of High Availability Cluster 405
+
+V
+Parse Cluster Configuration Toldentify Data Of Application Running On High Availability Cluster To Protect Based On Cluster Configuration 410
+
+V
+Initiate Backup ACCording To Backup Policy 415
+
+NO
+
+ls
+
+Application Multi-Tiered?
+
+420
+
+YES
+V Quiet First Tier 430
+
+V Quiet Second Tier 435
+
+V
+Backup HA Data 425
+
+V Quiet Third Tier 440
+V
+Backup Data From First, Second And/Or Third Tier 445
+V
+Resume Operations On First, Second And/Or Third Tier 450
+e
+End
+FIG. 4
+
+U.S. Patent Mar. 1, 2016 Sheet 6 of 8
+
+US 9.275,060 B1
+
+500
+a
+Receive Cluster Configuration of High Availability Cluster 505
+Generate Backup Policy Based On Cluster Configuration 510
+Receive Point-In-Time Image Sent From Primary Server of Cluster To Standby Server of Cluster
+515
+Generate Backup of Point-In-Time Image Without Interrupting Operations of Primary
+Server 520
+End
+FIG. 5
+
+U.S. Patent Mar. 1, 2016 Sheet 7 of 8
+
+US 9.275,060 B1
+
+600
+
+Start
+
+a
+
+Receive Command To Restore Multi-Tier
+Application From Backup 605
+
+Display Topology of Multi-Tier Application 610
+
+Prompt User To Select Recovery Options 615
+
+Partial
+Recovery
+
+Perform
+Partial Or Full Recovery?
+620
+Fu
+Recovery
+
+SRpeeCciOfvieerd
+Tier(s) 625
+
+Determine Dependencies Between Tiers 630
+y
+Recover Third Tier 635
+y
+Recover Second Tier 640
+t
+Recover First Tier 645
+
+Resume Operations On First, Second And/Or Third Tier 650
+
+End
+F.G. 6
+
+U.S. Patent
+
+Mar. 1, 2016 Sheet 8 of 8
+
+US 9.275,060 B1
+
+702 PROCESSOR
+| INSTRUCTIONS 726
+
+704 MAIN MEMORY
+
+s N INSTRUCTIONS X
+
+726
+
+706
+
+STATIC MEMORY
+
+722
+NETWORK INTERFACE
+DEVICE
+
+N-730
+
+700 -
+7- 710
+VIDEO DISPLAY
+712
+ALPHA-NUMERC INPUT DEVICE
+
+714
+
+CURSOR
+
+CONTROL
+
+DEVICE
+
+CO D
+
+718
+
+?
+
+STORAGE DEVICE
+COMPUTER-READABLE MEDIUM
+
+INSTRUCTIONS
+
+724
+
+BACKUP
+
+726
+
+770
+
+AGENTISERVER
+
+720 SIGNAL GENERATION DEVICE
+FIG. 7
+
+US 9,275,060 B1
+
+1.
+
+2
+
+METHOD AND SYSTEM FORUSING HIGH AVAILABILITY ATTRIBUTES TO DEFINE
+DATA PROTECTION PLANS
+
+comprises a web server tier corresponding to the first tier, an application server tier corresponding to the second tier and a
+database tier.
+
+In one embodiment, the highly available data is for a multi
+
+FIELD OF THE INVENTION
+
+tiered application having at least a first tier and a second tier
+
+that is depended on by the first tier. In such an embodiment,
+
+Embodiments of the invention relate to the field of data the backup agent or backup server may identify a first Subset
+
+backup, and more particularly to using cluster configuration of the highly available data associated with the first tier and a
+
+data from a high availability cluster to set backup policies. second subset of the highly available data associated with the
+
+10 second tier. The backup agent or server may record in meta
+
+BACKGROUND OF THE INVENTION
+
+data that the first subset is associated with the first tier and that
+
+Many enterprises have important data that should be
+backed up for business reasons and/or compliance reasons. For example, there are compliance guidelines under the Health Insurance Portability and Accountability Act (HIPAA) to preserve records of complaint for 6 years, to
+
+15
+
+the second subset is associated with the second tier. The
+backup agent or server may additionally store the first Subset, the second Subset and the metadata in a backup storage device. In one embodiment, the backup agent or server recov ers the application, the recovery comprising recovering the
+
+preserve certain billing records for 6 years, to retain medical second tier based on the second Subset, and Subsequently
+
+records for 5 years, and so forth. To back up and protect such recovering the first tier based on the first subset.
+
+data, enterprises typically deploy enterprise data protection In one embodiment, the backup agent or server identifies,
+
+systems. These systems periodically generate backup copies based on the cluster configuration, a primary server and a
+
+of specified data, and write the backup copies to backup standby server of the highly available cluster. The backup
+
+storage devices.
+
+agent or server then backs up the highly available data from
+
+Data protection systems are typically set up and main the standby server without interrupting operations of the pri
+
+tained by information technology (IT) administrators (often 25 mary server. In one embodiment, backing up the highly avail
+
+called backup administrators). Such IT administrators do not able data from the standby server comprises determining that
+
+typically have detailed knowledge about the systems for the standby server has received a point-in-time image from
+
+which they are to backup data. Accordingly, it can be difficult the primary server, the point-in-time image containing the
+
+and time consuming for an IT administrator to set up protec highly available data, and generating a backup of the point
+
+tion policies to backup data for enterprise systems. Often, the 30 in-time image. In one embodiment, the backup agent or server
+
+IT administrator will need to coordinate with a system admin queries the high availability cluster for the cluster configura
+
+istrator who manages the system that is to be backed up to tion via at least one of a command line interface of the high
+
+determine what data from the system to protect. This can availability cluster, a web service of the high availability
+
+further consume enterprise resources and slow down the pro cluster or an application programming interface of the high
+
+cess of setting up protection policies. Moreover, this can 35 availability cluster.
+
+result in backup policies that do not protect sensitive data. In additional embodiments, methods for performing the
+
+Additionally, enterprise systems are dynamic in nature. operations of the above described embodiments are also
+
+Therefore, even if an IT administrator sets up a data protec implemented. Additionally, in embodiments of the present
+
+tion policy correctly, that data protection policy may stop invention, a computer readable storage media stores methods
+
+protecting important data in the future unless the IT admin 40 for performing the operations of the above described embodi
+
+istrator correctly modifies the policy.
+
+mentS.
+
+SUMMARY OF THE INVENTION
+
+BRIEF DESCRIPTION OF THE DRAWINGS
+
+In one embodiment, a data protection agent or server run 45 The present invention will be understood more fully from
+
+ning on a computing device receives a cluster configuration of the detailed description given below and from the accompa
+
+a high availability cluster. The data protection agent or server nying drawings of various embodiments of the invention,
+
+identifies highly available data of an application running on which, however, should not be taken to limit the invention to
+
+the high availability cluster based on the cluster configura the specific embodiments, but are for explanation and under
+
+tion. The data protection agent or server then implements a 50 standing only.
+
+data protection policy to back up the highly available data. In FIG. 1A illustrates an exemplary network architecture, in
+
+one embodiment, the computing device is a node in the high which embodiments of the present application may operate.
+
+availability cluster, and the data protection agent or server FIG. 1B illustrates another exemplary network architec
+
+backs up the highly available data to a storage device at a time ture, in which embodiments of the present application may
+
+specified in the data protection policy.
+
+55 operate.
+
+In one embodiment, the application is a multi-tiered appli FIG. 2 is a block diagram of a backup agent or backup
+
+cation having at least a first tier and a second tier that is server, in accordance with one embodiment of the present
+
+depended on by the first tier, and the data protection agent or invention.
+
+server quiets the first tier and second tier before backing up FIG. 3 is a flow diagram of one embodiment of a method
+
+the highly available data. Quieting the first tier may comprise 60 for generating a backup policy and backing up highly avail
+
+blocking access to the first tier and performing at least one of able data.
+
+writing contents of a first memory at the first tier to a first FIG. 4 is a flow diagram of another embodiment of a
+
+permanent storageorsending the contents ofthefirst memory method forgeneratinga backuppolicy and backing up highly
+
+to the second tier. Quieting the second tier may comprise available data.
+
+writing contents of a second memory at the second tier to at 65 FIG. 5 is a flow diagram of yet another embodiment of a
+
+least one ofthe first permanent storage ora secondpermanent method forgeneratinga backuppolicy and backing up highly
+
+storage. In one embodiment, the multi-tiered application available data.
+
+US 9,275,060 B1
+
+3
+
+4
+
+FIG. 6 is a flow diagram of one embodiment of a method disk including floppy disks, optical disks, CD-ROMs, and
+
+for recovering an application from a backup.
+
+magnetic-optical disks, read-only memories (ROMs), ran
+
+FIG. 7 is a block diagram of an exemplary computer system dom access memories (RAMs), EPROMs, EEPROMs, mag
+
+that may perform one or more of the operations described netic oroptical cards, orany type ofmedia Suitable forstoring
+
+herein.
+
+5 electronic instructions.
+
+The algorithms and displays presented hereinare not inher
+
+DETAILED DESCRIPTION OF THE PRESENT
+
+ently related to any particular computer or other apparatus.
+
+INVENTION
+
+Various general purpose systems may be used with programs
+
+in accordance with the teachings herein, or it may prove
+
+A method and apparatus for setting up and implementing 10 convenient to construct a more specialized apparatus to per
+
+data protection policies (also referred to herein as backup form the required method steps. The required structure for a
+
+policies) based on cluster configuration data for a high avail variety of these systems will appear from the description
+
+ability cluster are described. A backup agent or backup server below. In addition, the present invention is not described with
+
+receives a cluster configuration, determines highly available reference to any particular programming language. It will be
+
+data from the cluster configuration, and generates a backup 15 appreciated that a variety of programming languages may be
+
+policy that protects the highly available data. As used herein, used to implement the teachings of the invention as described
+
+highly available data is data that is stored on a data store that herein.
+
+is highly available, and that will be available even if a primary Embodiments of the present invention can automatically
+
+node fails or becomes unresponsive. Such a data store may be identify enterprise assets such as data to protect based on a
+
+a shared data store that is shared between nodes in a cluster cluster configuration. The cluster configuration may be pro
+
+and/or may be a replicated data store of which multiple nodes vided by a high availability cluster agent or service. Data that
+
+have a copy. The backup agent or server then backs up the is made highly available via the high availability cluster may
+
+highly available data according to the backup policy.
+
+be identified as important data. Accordingly, a backup agent
+
+In the following description, numerous details are set forth. or server may set up a data protection policy to backup Such
+
+It will be apparent, however, to one skilled in the art, that the 25 highly available data. Thus, embodiments of the present
+
+present invention may be practiced without these specific invention can either automatically set up backup policies or
+
+details. In some instances, well-known structures and devices provide a backup administrator with information that enables
+
+are shown in block diagram form, rather than in detail, in him to set up backup policies. Embodiments of the present
+
+order to avoid obscuring the present invention.
+
+invention may simplify and speed up the process ofsetting up
+
+Some portions of the detailed description that follows are 30 backup policies.
+
+presented in terms of algorithms and symbolic representa FIG. 1A illustrates an exemplary network architecture 100,
+
+tions of operations on data bits within a computer memory. in which embodiments of the present application may oper
+
+These algorithmic descriptions and representations are the ate. The network architecture 100 includes a high availability
+
+means used by those skilled in the data processing arts to most cluster 105 connected to a backup data store 120, clients 118,
+
+effectively convey the substance of their work to others 35 a high availability server 122 and/or a backup server 115 via
+
+skilled in the art. An algorithm is here, and generally, con a network 110. The network 110 may be a public network
+
+ceived to be a self-consistent sequence of steps leading to a (e.g., the Internet), a private network (e.g., a local area net
+
+desired result. The steps are those requiring physical manipu work (LAN) or wide area network (WAN)), or a combination
+
+lations of physical quantities. Usually, though not necessarily, of a public network and private network. Network 110 may be
+
+these quantities take the form ofelectrical or magnetic signals 40 the network of an enterprise (e.g., a corporation), and may
+
+capable of being stored, transferred, combined, compared, also include such devices as network printers, Switches, rout
+
+and otherwise manipulated. It has proven convenient at times, ers, gateways, firewalls, or any other devices having a net
+
+principally for reasons of common usage, to refer to these work address. Note that a primary machine 125 and standby
+
+signals as bits, values, elements, symbols, characters, terms, machines 130 included in the high availability cluster 105
+
+numbers, or the like.
+
+45 may also be connected with one another via network 110 or
+
+It should be borne in mind, however, that all of these and via another network.
+
+similar terms are to be associated with the appropriate physi The high availability cluster 105 includes multiple
+
+cal quantities and are merely convenient labels applied to machines, which may be classified as primary machines 125
+
+these quantities. Unless specifically stated otherwise as and as standby machines 130. Primary machines 125 and
+
+apparent from the following discussion, it is appreciated that 50 standby machines 130 may include one or more computing
+
+throughout the description, discussions utilizing terms such devices Such as, for example, a desktop computer, laptop
+
+as "receiving", "identifying, "implementing, "quieting. computer, server computer, etc. configured to perform desig
+
+"recording." "storing, or the like, refer to the actions and nated tasks. Primary machines 125 and standby machines 130
+
+processes of a computer system, or similar electronic com may include one or more processing devices, memory, data
+
+puting device, that manipulates and transforms data repre 55 stores, etc. In one embodiment, primary machines 125 and/or
+
+sented as physical (e.g., electronic) quantities within the com standby machines 130 are virtual machines that run on top of
+
+puter system's registers and memories into other data hosts executing hypervisors. In one embodiment, the high
+
+similarly represented as physical quantities within the com availability cluster 105 executes inside a cloud managed by a
+
+puter system memories or registers or other Such information cloud provider system (not shown). In such an embodiment,
+
+storage devices.
+
+60 the standby machines 130 and primary machines 125 may be
+
+The present invention also relates to an apparatus for per virtual machines hosted on physical machines provided by
+
+forming the operations herein. This apparatus may be spe the cloud provider.
+
+cially constructed for the required purposes, or it may com The high availability cluster 105 may include one or mul
+
+prise a general purpose computer selectively activated or tiple active primary machines 125 that may receive requests
+
+reconfigured by a computer program stored in the computer. 65 from clients 118, process the requests and/or perform other
+
+Such a computer program may be stored in a computer read operations. The high availability cluster 105 may also include
+
+able storage medium, Such as, but not limited to, any type of one or more standby machines 130. The standby machines
+
+US 9,275,060 B1
+
+5
+
+6
+
+130 may have a system state that is synchronized with a a desktop computer, laptop computer, server computer, etc.
+
+system state of the primary machine (or machines) 125, but configured to perform designated tasks. Backup server 115
+
+may not perform any work. Standby machines 130 and pri may include one or more processing devices, memory, data
+
+mary machines 125 may be virtually identical, except that the Stores, etc.
+
+primary machine 125 is active while the standby machines Different corporate backup systems may use various com
+
+130 are in a standby state. The standby machines 130 may be binations of backup agents 135, backup server 115, network
+
+ready to assume work performed by the primary machine 125 appliances, and so forth. Backup agents 135 and/or backup
+
+at any time. For example, if the primary machine crashes or server 115 backup high availability data according to a
+
+becomes unreachable (e.g., due to a network partition), then backup policy 150. In one embodiment, the backup policy
+
+the high availability cluster 105 may fail over to a standby 10 150 is generated by backup server 115 and transmitted to
+
+machine 130.
+
+backup agents 135. Alternatively, the backup policy 150 may
+
+Primary machines 125 and standby machines 130 may host be generated by a backup agent 135 and sent to other backup
+
+copies of an enterprise application that provides services to agents 135. In one embodiment, the backup server and/or
+
+clients 118 on network 120. Examples of enterprise applica backup agent 135 generates the backup policy based on infor
+
+tion include storage applications that provide network Stor 15 mation from the cluster configuration 148. The cluster con
+
+age, email applications that handle incoming and outgoing figuration 148 may identify what data used by the high avail
+
+email traffic, web applications, databases, and so forth. The ability cluster is made highly available. For example, the
+
+enterprise application may generate and use data that may be cluster configuration 148 may show that a shared disk or file
+
+important to the enterprise. The data may include, for system is used to store data for the high availability cluster
+
+example, emails, transaction information, patient informa 105. The backup policy 150 may backup data stored to the
+
+tion, web server data such as web pages, customer informa shared disk or file system. In another example, an Oracle(R)
+
+tion, etc.
+
+server may have multiple database instances running, and
+
+In one embodiment, each machine 125,130 includes a high only one of those database instances may be made highly
+
+availability agent 140 that performs operations with regards available. The backup policy 150 may backup data stored at
+
+to load balancing, synchronizing a state between machines 25 the highly available Oracle database instance, but not data
+
+125, 130, and so forth. The high availability (HA) agents may stored at the other Oracle database instances. Alternatively,
+
+communicate with each other and/or with high availability the backup policy 150 may backup all of the database
+
+server 122 to maintain the high availability cluster 105. In one instances, but give higher priority to the database instance that
+
+embodiment, the high availability agents 140 maintain the is made highly available. The backup policy 150 may backup
+
+cluster 105 based on a cluster configuration 148. The cluster 30 the high availability data to a faster backup store, may main
+
+configuration 148 may specify what data to replicate between tain a higher retention level for the high availability data, may
+
+the primary machine 125 and standby machines 130, how and create more backup copies of high availability data and/or
+
+when to failover from the primary machine 125 to a standby may use a higher backup job priority for high availability
+
+machine 130, how many primary machines 125 and how data. In another example, a file server may have a C drive, a D
+
+many standby machines 130 to maintain, and so forth. 35 drive and an E drive, and the clustering configuration may
+
+In one embodiment, high availability server 122 manages show that just the D drive is highly available (e.g., that the D
+
+the high availability cluster 105. HA server 122 may include drive is replicated to standby machines 130). The backup
+
+one or more computing devices such as, for example, a desk policy 150 may backup data stored at the D drive, but not data
+
+top computer, laptop computer, server computer, etc. config stored at the C and Edrives. Alternatively, the backup policy
+
+ured to perform designated tasks. HA server 122 may include 40 150 may backup data stored at the C, D and Edrives, but may
+
+one or more processing devices, memory, data stores, etc. HA assign a higher priority to the D drive, maintain high redun
+
+server 122 may generate the cluster configuration 148, instan dancy for backup data from the D drive, may backup the D
+
+tiate the primary and standby machines, and perform other drive more quickly and/or more frequently, etc.
+
+management tasks. Alternatively, management of the high In one embodiment, the backup server 115 and/or backup
+
+availability cluster 105 may be performed through consensus 45 agent 135 generates a backup policy 150 that protects highly
+
+by high availability agents 140 running on the machines 125, available data 145. Highly available data (also referred to
+
+130 in the high availability cluster 105. Accordingly, in some hereinas availability data) 145 may be any data that an admin
+
+embodiments high availability server 122 may not be present. istrator has determined to be important enough to make
+
+In one embodiment, standby machines 130 and/or primary highly available. Possible examples of such high availability
+
+machines 125 include backup agents 135. Backup agents 135 50 data 145 include email data, customer data, patient data,
+
+may facilitate and/or perform the backup of high availability transaction data, web site data, etc.
+
+data 145 or other data to backup data store 120. Backup data In one embodiment, backup agents 135 and/or the backup
+
+store 120 may be or include hard disk drives (e.g., arranged in server 115 backup high availability data 145 from a standby
+
+a storage area network (SAN) or network attached storage machine 130 without interrupting operations of the primary
+
+(NAS)), tape backup, a cloud data store, etc. Backup agents 55 machine 125. Since the standby machines 130 are synchro
+
+135 may coordinate with backup server 115 to backup data. nized to the primary machine 125, backing up from a standby
+
+Backup server 115 may be an enterprise class online machine 130 provides a consistent copy of a state of the
+
+backup system such as provided by Barracuda Networks(R), application and/or of the high availability data 145. In one
+
+IronMountain(R), CoreVault(R), RackSpace(R), Amazon Simple embodiment, the HA agent 140 on the primary machine 125
+
+Storage Service (S3)(R), and so on. Alternatively, the backup 60 periodically takes a Snapshot (a point-in-time image) of the
+
+server 115 may be a corporate managed backup system that state of the application at the primary machine, including the
+
+backs up data items to backup data store 120 controlled by the state of the high availability data 145, and sends this snapshot
+
+corporation whose data is being protected. Examples of Such to the high availability agents 140 on the standby machines
+
+corporate backup systems include Symantec R. Backup 130. In response to a standby machine 130 receiving the
+
+ExecR), Symantec NetBackup(R), EMC Networker R, IBM 65 snapshot, the backup agent 135 (or the backup server 115)
+
+Tivoli Storage Manager.R, and so on. Backup server 115 may may backup a copy of the Snapshot (or a portion of the
+
+include one or more computing devices Such as, for example, snapshot) to backup data store 120. To enable such a backup
+
+US 9,275,060 B1
+
+7
+
+8
+
+policy that takes advantage of synchronization between the cation server tier and the actual web server tier. Components
+
+primary machine 125 and the standby machines 130, the within each of these tiers may have their own resource pref
+
+backup agents 135 and/or backup server 115 should have erences, dependencies, and so forth. Additionally, these com
+
+information identifying the primary machine 125 and the ponents may operate on a single machine or may operate on
+
+standby machines 130. Specifically, backup agents 135 and/ different machines. Accordingly, in one embodiment, the
+
+or backup server 115 may have information about storage multi-tiered application cluster 170 includes a web servertier
+
+devices used to store primary data and also other storage cluster 105, an application server tier cluster 190 and a data
+
+devices that host replicated data. For a backup policy 150 to base tier cluster 198. Each of these clusters 188, 190,198 may
+
+take advantage of Such an architecture, knowledge of both include a different collection of machines that provide a par
+
+these storage devices may help the generation of the policy. 10 ticular service or functionality. Note that in alternative
+
+This information may be included in and/or derived from the embodiments, other multi-tiered application clusters may be
+
+cluster configuration 148.
+
+used, which may have more, fewer, or different tiers than
+
+In one embodiment, backup agents 135 running on standby those illustrated.
+
+machines 130 and/or primary machines 125 perform backup Web server tier cluster 188 may include a collection of
+
+independent of backup server 115 or any remote backup 15 linked virtual machines 155 (or physical machines), each of
+
+system. In Such an embodiment, backup agents 135 may which may include a copy of a web server configured to serve
+
+backup data to backup data store 120 without communicating files such as web pages to clients 118. Application server tier
+
+with backup server 115. In another embodiment, backup is cluster 190 may include a collection of linked virtual
+
+performed without use of backup agents 135. For example, machines 160 (or physical machines), each of which may
+
+backup server 115 may access high availability data 145 on include software that provides services for developing,
+
+standby machines 130 and/or primary machines 125 without deploying and/or managing applications in a distributed man
+
+use of a backup agent 135.
+
+ner. The application servers may also include application
+
+Clients 118 may be laptop computers, desktop computers, code for executing business logic for services such as email,
+
+mobile phones, personal digital assistants (PDAs), notebook searching, electronic commerce, etc. Database tier cluster
+
+computers, tablet computers, server computers, or other com 25 198 may include a collection of linked virtual machines 165
+
+puting devices connected to network 120. Clients 118 include (or physical machines), each of which may include a copy of
+
+applications (not shown) that access, request operations from a database and/or a database server.
+
+and/or query machines of high availability cluster 105. High availability agents 140 running on virtual machines
+
+Examples of applications include an email application (e.g., 155, 160, 165 may communicate with other high availability
+
+Microsoft Outlook, Mozilla Thunderbird, Apple Mail, etc.), 30 agents 140 running on virtual machines in the same tier clus
+
+an instant messaging application (e.g., Yahoo Instant Messen ter and/or with high availability agents 140 running on virtual
+
+ger, Windows Live Messenger, ICO, etc.), a web browser machines in other tier clusters. A cluster configuration 148
+
+(e.g., Google Chrome, Microsoft Internet Explorer, Apple may identify the relationships and dependencies between the
+
+Safari, etc.), and so on.
+
+different tier clusters as well as relationships within tier clus
+
+FIG.1B illustrates another exemplary network architecture 35 ters. For example, the cluster configuration 148 may indicate
+
+152, in which embodiments of the present application may that the web servertier cluster 188 depends on the application
+
+operate. The network architecture 152 includes a multi-tiered server tier cluster 190, and that the application server tier
+
+application cluster 170 connected to a backup data store 120, cluster 190 depends on the database tier cluster 198. The
+
+clients 118, a high availability server 122 and/or a backup cluster configuration 148 may therefore provide a topology of
+
+server 115 via a network 110. The multi-tiered application 40 multi-tiered assets, which may be defined as multiple differ
+
+cluster 170 maintains high availability for a multi-tiered ent clusters, and which together form a larger cluster.
+
+application. The multi-tiered application includes multiple Conventional data backup systems do not protect multi
+
+systems (e.g., a web server, application server and database in tiered applications as a single asset. For example, conven
+
+the case of a web common based application) acting together tional data backup systems would create separate backups of
+
+to form a single application. Other examples of multi-tier 45 data from the web server tier, from the application server tier
+
+applications that Support a multi-tier architecture or have and from the database tier, without any information on how
+
+multiple systems cooperating to deliver certain functionality these backups relate to one another. It can therefore be diffi
+
+or services include backup systems and archival systems. cult for a backup administrator to reconstruct a multi-tiered
+
+Other non-web based multi-tier applications may also be application during recovery of a multi-tiered application.
+
+used, which may not have a web server tier. Each of the 50 In contrast, embodiments of the present invention provide
+
+different tiers may have different operating systems, different a backup system (e.g., backup agents 135 and/or backup
+
+versions of operating systems, different applications, differ server 115) that can protect the multi-tiered application as a
+
+ent data, and so forth. The network 110 may be a public single asset. Backup agents 135 running on the virtual
+
+network (e.g., the Internet), a private network (e.g., a local machines 155, 160, 165 and/or a backup server 115 may
+
+area network (LAN) or wide area network (WAN)), or a 55 generate and implement a backup policy 150 that protects
+
+combination of a public network and private network.
+
+highly available data from some or all of the tier clusters 188,
+
+The multi-tiered application cluster 170 is a cluster of 190, 198, and that maintains relationships betweenthese tiers.
+
+clusters that is maintained by high availability agents 140 For example, a backup policy 150 may be set up that protects
+
+and/or a high availability server 122. The high available highly available data from the web server tier 175, that pro
+
+agents 140 and/or high availability server 122 may be, for 60 tects highly available data from the application server tier
+
+example, components of Symantec's Virtual Business Ser 180, and that protects highly available data from the database
+
+vice (VBS).R. cluster system, or another clustering solution tier 185. Backup agents 135 and/or backup server 115 may
+
+that allows for multi-tiered clustering. Each of the clusters backup data from multiple tiers as a single image or as sepa
+
+may correspond to a different tier or layer of a multi-layer rate and distinct images. Backed up data may include meta
+
+application. Most web applications typically implement mul 65 data that identifies which tier the backup data is associated
+
+tiple layers or tiers of functionality to operate. For example, a with and/or how the backup data relates to backup data from
+
+common web application may use a database tier, an appli other tiers. For example, the metadata may identify associa
+
+US 9,275,060 B1
+
+9
+
+10
+
+tions and/or dependencies between the backup data from the Cluster configuration parser 210 parses the received cluster
+
+different tiers of a multi-tier application. Accordingly, the configuration 235 to determine what data is made highly
+
+backup agents 135 and/or backup server 115 may restore a available by the cluster configuration 235. The cluster con
+
+complex multi-tiered application from the backed up data. figuration 235 may provide a topology of a high availability
+
+In one embodiment, in order to generate a consistent cluster, including numbers of active and standby servers, fault
+
+backup for the different tiers, the backup system (e.g., backup tolerance policies, failover policies, load balancing policies,
+
+agents 135 and/or backup server 115) performs a multi-step and so forth. The cluster configuration may further identify
+
+backup. Initially, the backup system may quiet (also referred data that is made highly available. Ifthe cluster configuration
+
+to as quiesce) the web servertier (or other top level tier that is 235 is for a multi-tiered application cluster, then the cluster not depended upon by any other tier). Quieting or quiescing 10 configuration 235 may also indicate relationships and depen
+
+the web server tier may include processing all pending dencies between the different tiers, start order for the different
+
+requests to the web server tier and blocking any additional tiers, stop order for the different tiers, etc.
+
+accesses and/or requests to the web servertier (e.g., by clients Backup policy generator 220 generates a backup policy
+
+118). Quieting the web servertier may further include writing a memory of the web server tier to permanent storage, to a
+
+15
+
+240 to protect the identified highly available data. Backup policy generator 220 may automatically set up a backup
+
+memory ofthe application server tier and/or to a memory of policy 240 based on the information from the cluster configu
+
+the database tier. Once the web server tier is quieted, the ration 235 without receiving any user input. Alternatively,
+
+backup system may quiet the application servertier (or a next backup policy generator 220 may identify highly available
+
+tier that the previously quieted tier depends on). Quieting the data to a backup administrator to enable the backup admin
+
+application server tier may include writing contents of the istrator to set up a backup policy 240. In such an instance, the
+
+application servertier's memory to permanent storage and/or backup policy 240 may be generated based on user input.
+
+to a memory of the database tier. Once the application server Backup administrators typically know where to back up
+
+tier is quieted, the backup system may quiet the database tier. data to, and when to back up data, but typically do not know
+
+Quieting the database tier may include writing data from the 25 what data to back up. For example, in a system with multiple
+
+database tier's memory to permanent storage. Once all tiers different database instances running, a backup administrator
+
+have been quieted, the backup system may write web server does not typically know what is inside of the different data
+
+tier data 175 from permanent storage of the web server tier to bases, and therefore does not know which of the database
+
+the backup data store 120, application server tier data 180 instances to back up. However, the backup policy generator
+
+from permanent storage of the application server tier to 30 220 can provide such information to the backup administra
+
+backup data store 120 and/or database tier data 185 from tor, or can automatically set up backup policies for the backup
+
+permanent storage of the database tier to backup data store administrator that backup highly available data. A backup
+
+120. Note that in many cases there will be no data to back up policy may include information specifying where to backup
+
+from the web server tier.
+
+data to (e.g., to a disk drive, NAS, SAN, tape backup, cloud
+
+FIG. 2 is a block diagram of a backup agent and/or backup 35 storage, etc.), when to backup data (e.g., a backup schedule
+
+server 200, in accordance with one embodiment of the present Such as every 10 minutes, every night at midnight, on week
+
+invention. In one embodiment, backup agent/server 200 cor ends, etc.), and what data to backup (e.g., data from a particu
+
+responds to backup agent 135 and/or backup server 115 of lar share drive, database, file folder, storage device, etc.).
+
+FIGS. 1A-1B. In one embodiment, backup agent/server 200 Backup module 225 performs backups of highly available
+
+includes high availability cluster querying module 205, a 40 data in accordance with the backup policy 240. At specified
+
+cluster configuration parser 210, a user interface 215, a times (e.g., every hour), backup module 225 generates a copy
+
+backup policy generator 220, a backup module 225 and a ofthe highly available data, and writes this copy to a backup
+
+restore module 230. In other embodiments, the functionality data store. In one embodiment, the copy of the highly avail
+
+ofthese modules may be further divided into additional mod able data is a Snapshot orpoint-in-time image. In one embodi
+
+ules, or the functionality of multiple modules may be com 45 ment, the copy is recorded as a delta from a previous copy of
+
+bined into a single module. Also, as previously described, the highly available data.
+
+backup policies may be configured, and backups may be Restore module 230 restores an application to a previous
+
+performed, using backup agents, using a backup server, or state based on a previously generated backup. In one embodi
+
+using a combination of backup agents and a backup server. ment, the previously generated backup is for a multi-tiered
+
+Accordingly, the high availability cluster querying module 50 application, and the backup data includes data from multiple
+
+205, cluster configuration parser 210, user interface 215, tiers. In such an embodiment, restore module 230 may restore
+
+backup policy generator 220, backup module 225 and restore data for the different tiers in an appropriate order to maintain
+
+module 230 may all be included in a backup agent and/or may consistency. In one embodiment, restore module 230 first
+
+all be included in a backup server. Alternatively, some of these restores a database server tier (or other tier that does not
+
+modules may be divided between a backup agent and a 55 depend on any other tier). Restore module 230 may then
+
+backup server. Further discussion of FIG. 2 will be discussed restore an application servertier (or other tier that depends on
+
+with regards to a backup agent 200. However, it should be the already restored tier). Restore module 230 may then
+
+understood that any of the described functionality may also be restore a web server tier (or other tier that depends on the
+
+performed by a backup server 200 or a combination of a second restored tier). At this stage, the multi-tiered applica
+
+backup agent (or agents) and a backup server.
+
+60 tion may be fully restored. Note that the multi-tier application
+
+High availability cluster querying module 205 queries a may include more or fewer than three tiers. A three tiered
+
+high availability cluster for a cluster configuration 235. High application is merely a common example of a multi-tiered
+
+availability cluster querying module 205 may query a high application that is provided herein.
+
+availability agent or a high availability server via a command In one embodiment, backup agent 200 includes a user
+
+line interface, a web service and/or an application program 65 interface 215. The user interface 215 may be a graphical user
+
+ming interface (API) of the high availability agent or high interface, command line user interface, or other user interface
+
+availability server to obtain the cluster configuration.
+
+that enables a user to configure the backup policy. Users may,
+
+US 9,275,060 B1
+
+11
+
+12
+
+for example, adjust backup policies, control the format of At block 435, after the first tier is quiet, processing logic
+
+backup data, adjust the location to which data will be backed quiets a second tier. The second tier may be a tier that is
+
+up, and so on.
+
+depended upon by the first tier. A common second tier is an
+
+FIGS. 3-6 are flow diagrams of some embodiments of application server tier. Quieting the second tier may include
+
+methods performed by a computing device. The methods are 5 flushing contents of the second tier's memory to permanent
+
+performed by processing logic that may comprise hardware storage and/or to a Subsequent tier.
+
+(circuitry, dedicated logic, etc.). Software (such as is run on a At block 440, after the second tier is quiet, processing logic
+
+general purpose computer system or a dedicated machine), or quiets a third tier. The third tier may be a tier that is depended
+
+a combination of both. In one embodiment, at least some upon by the second tier and/or the first tier. One common third operations of the methods are performed by a backup agent 10 tier isa database servertier. Note that more orfewerthanthree
+
+and/or backup server, as described in FIG. 2.
+
+tiers may also be used. Three tiers are merely provided herein
+
+FIG. 3 is a flow diagram of one embodiment of a method as an example. Quieting the third tier may include flushing
+
+300 for generating a backup policy and backing up highly contents of the third tier's memory to permanent storage.
+
+available data. At block 305 of method 300, processing logic 15 At block 445, after all tiers have been quieted, processing receives a cluster configuration of a high availability cluster. logic backs up data from the first tier, second tier and/or third
+
+The cluster configuration may be received in response to tier to a backup data store. At block 450, after the data has
+
+querying a high availability agent and/or high availability been backed up, processing logic resumes operations of the
+
+SeVe.
+
+first tier, second tier and third tier. This may include sending
+
+At block 310, processing logic identifies high availability any requests, access attempts, queries, etc. sent to the first tier
+
+data of an application running on the high availability cluster while the backup was being performed, which may be stored
+
+based on the cluster configuration. The high availability data in a queue. The method then ends.
+
+may be data at a data source that has high availability, such as FIG. 5 is a flow diagram of yet another embodiment of a
+
+a shared storage or shared file system, or a storage area that is method 500 for generating a backup policy and backing up
+
+replicated between nodes of the high availability cluster, for 25 highly available data. At block 505 of method 500, processing
+
+example.
+
+logic receives a cluster configuration of a high availability
+
+At block 315, processing logic implements a data protec cluster. At block 510, processing logic generates a backup
+
+tion policy to backup up the high availability data. This may policy based on the cluster configuration. The cluster con
+
+include generating a backup policy based on the received figuration may identify a primary server of a cluster and one
+
+cluster configuration. The backup policy may specify data 30 or more standby servers of the cluster. The cluster configura
+
+Sources to backup, a backup schedule and a backup data store tion may further indicate that the primary server generates
+
+(or data stores) to backup the highly available data to.
+
+point-in-time images (e.g., Snapshots) and sends these to the
+
+FIG. 4 is a flow diagram of another embodiment of a standby servers to keep the standby servers synchronized
+
+method 400 for generating a backup policy and backing up with the primary server.
+
+highly available data. At block 405 of method 400, processing 35 At block 515, processing logic receives a point-in-time
+
+logic receives a cluster configuration of a high availability image that has been sent from the primary server to a standby
+
+cluster. At block 410, processing logic parses the cluster server. At block 520, processing logic generates a backup of
+
+configuration to identify high availability data of an applica the point-in-time image based on the backup policy. Process
+
+tion running on the high availability cluster based on the ing logic may run on the same machine as a standby server,
+
+cluster configuration. The high availability data may be data 40 and may retrieve a copy of the point-in-time image from the
+
+at a data source that has high availability, Such as a shared standby server. Accordingly, processing logic may generate
+
+storage or shared file system, or a storage area that is repli the backup without interrupting operations of the primary
+
+cated between nodes of the high availability cluster, for SeVe.
+
+example. Processing logic may then generate a backup policy FIG. 6 is a flow diagram of one embodiment of a method
+
+to protect the highly available data. This backup policy may 45 600 for recovering an application from a backup via a guided
+
+be generated based on the cluster configuration, and without recovery process. At block 605 of method 600, processing
+
+user input.
+
+logic receives a command to restore a multi-tier application
+
+At block 415, processing logic initiates a backup according from a backup. At block 610, processing logic displays a
+
+to the backup policy. At block 420, processing logic deter topology of the multi-tier application. This topology may
+
+mines whether the application whose data is to be backed up 50 have been determined based on a cluster configuration that
+
+is a multi-tiered application. If the application is not a multi was used to generate a backup policy, and may be stored in
+
+tiered application, then the method proceeds to block 425, metadata associated with the backup. The topology may show
+
+and processing logic backs up highly available data from a the number of tiers included in the multi-tier application,
+
+data source specified in the backup policy. If the application is dependencies between the tiers, numbers of nodes included in
+
+a multi-tiered application, then processing logic may perform 55 each tier, and so on. For example, the topology may show that
+
+a multi-step backup process to ensure that backed up copy is the multi-tiered application has four web servers, five appli
+
+consistent. Accordingly, in Such an instance, the method con cation servers and two database servers.
+
+tinues to block 430.
+
+At block 615, processing logic prompts a user to select one
+
+At block 430, processing logic quiets a first tier of the or more recovery options. The user may select to recover just
+
+multi-tier application. The first tier may be a tier that no other 60 one tier, particular data from a single tier, multiple tiers, all
+
+tiers depend on. A common first tier is a web server tier. tiers, specific data from multiple tiers, etc. Alternatively,
+
+Quieting the first tier may include blocking all requests, que blocks 610 and 615 may be skipped, and processing logic
+
+ries, accesses, etc. to the first tier and flushing contents of the may automatically recover the entire multi-tiered application
+
+first tier's memory to permanent storage and/or to other tiers. or part of the multi-tiered application (e.g., just a database
+
+Blocked requests, accesses, queries, etc. may be stored in a 65 server). At block 620, processing logic determines whether a
+
+queue, and may be processed by the first tier after the backup full recovery or a partial recovery is to be performed. If a
+
+is complete.
+
+partial recovery is to be performed, the method proceeds to
+
+US 9,275,060 B1
+
+13
+
+14
+
+block 625, and processing logic recovers one or more speci device 712 (e.g., a keyboard), a cursor control device 714
+
+fied tiers. If a full recovery is to be performed, the method (e.g., a mouse), and a signal generation device 720 (e.g., a
+
+continues to block 630.
+
+speaker).
+
+At block 630, processing logic determines dependencies The data storage device 718 may include a computer-read
+
+between the tiers. This information may be included in the able storage medium 724 on which is stored one or more sets
+
+application topology information stored in metadata. At of instructions 726 (e.g., Software) embodying any one or
+
+block 635, processing logic recovers a third tier (a tier that does not depend on any other tiers). One example of the third
+tier is a database tier. At block 640, processing logic recovers a second tier, which depends on the third tier. one example of a second tier is an application server tier. At block 645, pro cessing logic recovers a first tier, which depends on the sec
+
+10
+
+more of the methodologies or functions described herein. The instructions 726 may also reside, completely or at least par tially, within the main memory 704 and/or within the proces sor 702 during execution thereof by the computer system 700, the main memory 704 and the processor 702 also constituting computer-readable storage media. The instructions 726 may
+further be transmitted or received over a network 774 via the
+
+ond tier, one example of the first tier is a web server tier. Note network interface device 822.
+
+that more or fewer than three nodes may be recovered, depending on the topology of the multi-tiered application. At
+
+15
+
+In one embodiment, the instructions 826 include instruc tions for a backup agent and/or backup server 770, such as
+
+block 650, processing logic resumes operations of the first, backup agent or server 200 of FIG.2, and/or a software library
+
+second and third tiers. The method then ends.
+
+containing methods that call a backup agent or backup server.
+
+FIG. 7 illustrates a diagrammatic representation of a While the computer-readable storage medium 824 is shown
+
+machine in the exemplary form of a computer system 700 in an exemplary embodiment to be a single medium, the term
+
+within which a set of instructions, for causing the machine to "computer-readable storage medium' should be taken to
+
+perform any one or more of the methodologies discussed include a single medium or multiple media (e.g., a centralized
+
+herein, may be executed. For example, the computer system or distributed database, and/or associated caches and servers)
+
+700 may be a node in a high availability cluster. In alternative that store the one or more sets of instructions. The term
+
+embodiments, the machine may be connected (e.g., net 25 "computer-readable storage medium' shall also be taken to
+
+worked) to other machines in a LAN, an intranet, an extranet, include any medium that is capable of storing, encoding or
+
+or the Internet. The machine may operate in the capacity of a carrying a set of instructions for execution by the machine and
+
+server or a client machine in client-server network environ that cause the machine to perform any one or more of the
+
+ment, or as a peer machine in a peer-to-peer (or distributed)
+network environment. The machine may be a personal com puter (PC), a tablet PC, a set-top box (STB), a Personal Digital Assistant (PDA), a cellular telephone, a web appli
+ance, a server, a network router, Switch or bridge, or any machine capable of executing a set of instructions (sequential
+
+30 35
+
+methodologies of the present invention. The term "computer readable storage medium' shall accordingly be taken to
+include, but not be limited to, Solid-state memories, optical media, and magnetic media.
+It is to be understood that the above description is intended to be illustrative, and not restrictive. Many other embodi ments will be apparent to those ofskill in theart upon reading
+
+or otherwise) that specify actions to be taken by that machine. and understanding the above description. The scope of the
+
+Further, while only a single machine is illustrated, the term invention should, therefore, be determined with reference to
+
+"machine' shall also be taken to include any collection of the appended claims, along with the full scope of equivalents
+
+machinesthat individually orjointly execute a set (or multiple to which such claims are entitled.
+
+sets) ofinstructions to perform any one or more ofthe meth 40 While the computer-readable storage medium may be a
+
+odologies discussed herein.
+
+single medium, the term "computer-readable storage
+
+The exemplary computer system 700 includes a processing medium' should be taken to include a single medium or
+
+device (processor) 702, a main memory 704 (e.g., read-only multiple media (e.g., a centralized or distributed database,
+
+memory (ROM), flash memory, dynamic random access and/or associated caches and servers) that store the one or
+
+memory (DRAM) such as synchronous DRAM (SDRAM) or 45 more sets of instructions. The term "computer-readable stor
+
+Rambus DRAM (RDRAM), etc.), a static memory 706 (e.g., age medium' shall also be taken to include any medium that
+
+flash memory, static random access memory (SRAM), etc.), is capable ofstoring,encoding orcarryinga set ofinstructions
+
+and a data storage device 718, which communicate with each for execution by the machine and that cause the machine to
+
+other via a bus 730.
+
+performany one or more of the methodologies of the present
+
+Processor 702 represents one or more general-purpose pro 50 invention. The term "computer-readable storage medium'
+
+cessing devices such as a microprocessor, central processing shall accordingly be taken to include, but not be limited to,
+
+unit, or the like. More particularly, the processor 702 may be Solid-state memories, optical media, and magnetic media.
+
+a complex instruction set computing (CISC) microprocessor, It is to be understood that the above description is intended
+
+reduced instruction set computing (RISC) microprocessor, to be illustrative, and not restrictive. Many other embodi
+
+very long instruction word (VLIW) microprocessor, ora pro 55 ments will be apparent to those ofskill in theart upon reading
+
+cessor implementing other instruction sets or processors and understanding the above description.
+
+implementing a combination of instruction sets. The proces
+
+Sor 702 may also be one or more special-purpose processing What is claimed is:
+
+devices such as an application specific integrated circuit 1. A method comprising:
+
+(ASIC), a field programmable gate array (FPGA), a digital 60 receiving, by a data protection agent or server running on a
+
+signal processor (DSP), network processor, or the like. The
+
+computing device, a cluster configuration of a high
+
+processor 702 is configured to execute instructions 726 for
+
+availability cluster, the cluster configuration indicating
+
+performing the operations and steps discussed herein.
+
+highly available data, specified by a first administrator,
+
+The computer system 700 may further include a network
+
+of a multi-tiered application running on the high avail
+
+interface device 722. The computer system 700 also may 65 ability cluster, the high availability cluster comprising a
+
+include a video display unit 710 (e.g., a liquid crystal display
+
+plurality of clusters corresponding to tiers of the multi
+
+(LCD) or a cathode ray tube (CRT)), an alphanumeric input
+
+tiered application;
+
+US 9,275,060 B1
+
+15
+
+16
+
+parsing, by the data protection agent or server, the cluster 10. A non-transitory computer readable storage medium
+
+configuration to identify the highly available data resid including instructions that, when executed by a processing
+
+ing on the plurality of clusters corresponding to the tiers device, cause the processing device to perform operations
+
+of the multi-tiered application;
+
+comprising:
+
+providing information indicating the identified highly 5 receiving, by a data protection agent or server executed by
+
+available data to back up to a second administrator hav
+
+ing no information of the highly available data to be
+
+backed up; and implementing a data protection policy to backup the highly
+
+available databased on the information.
+
+10
+
+2. The method of claim 1, wherein the computing device is
+
+a node in the high availability cluster, the method further comprising:
+
+backing up the highly available data to a storage device at
+
+a time specified in the data protection policy.
+
+15
+
+3. The method of claim 1, further comprising:
+
+quieting a first tier of the multi-tiered application, wherein
+
+the quieting of the first tier comprises blocking access to
+
+the processing device, a cluster configuration of a high availability cluster, the cluster configuration indicating
+highly available data, specified by a first administrator, of a multi-tiered application running on the high avail ability cluster, the high availability cluster comprising a
+plurality of clusters corresponding to tiers of the multi tiered application;
+parsing, by the data protection agent or server, the cluster configuration to identify the highly available data resid ing on the plurality of clusters corresponding to the tiers
+of the multi-tiered application; providing information indicating the identified highly
+
+the firsttierand sending contents ofa first memory atthe
+
+available data to back up to a second administrator hav
+
+first tier to a second memory at a second tier of the
+
+ing no information of the highly available data to be
+
+multi-tiered application that is depended on by the first
+
+backed up; and
+
+tier;
+
+implementing a data protection policy to backup the highly
+
+quieting the second tier of the multi-tiered application,
+
+available databased on the information.
+
+wherein the quieting of the second tier comprises writ 11. The non-transitory computer readable storage medium
+
+ing contents of the second memory at the second tier to 25 of claim 10, wherein the computing device is a node in the
+
+a permanent storage; and
+
+high availability cluster, the operations further comprising:
+
+backing up the highly available data from the permanent backing up the highly available data to a storage device at
+
+Storage.
+
+a time specified in the data protection policy.
+
+4. The method of claim 1, wherein the multi-tiered appli 12. The non-transitory computer readable storage medium
+
+cation comprises a web servertier corresponding to a first tier 30 of claim 10, wherein the multi-tiered application comprises at
+
+ofthe multi-tiered application, an application server tier cor least a first tier and a second tier that is depended on by the
+
+responding to a second tier of the multi-tiered application, first tier, the operations further comprising:
+
+and a database tier.
+
+quieting the first tier, wherein the quieting of the first tier
+
+5. The method of claim 1, further comprising:
+
+comprises blocking access to the first tier and sending
+
+identifying a first subset of the highly available data asso 35 contents of a first memory at the first tier to a second
+
+ciated with a first tier of the multi-tiered application and
+
+memory at a second tier of the multi-tiered application
+
+a second Subset of the highly available data associated
+
+that is depended on by the first tier;
+
+with a second tier of the multi-tiered application;
+
+quieting the second tier, wherein the quieting of the second
+
+recording in metadata that the first Subset is associated with
+
+tier comprises writing contents of the second memory at
+
+the first tier and that the second subset is associated with 40 the second tier to a permanent storage; and
+
+the second tier, and
+
+backing up the highly available data from the permanent
+
+storing the first Subset, the second Subset and the metadata
+
+Storage.
+
+in a backup storage device.
+
+13. The non-transitory computer readable storage medium
+
+6. The method of claim 5, further comprising recovering of claim 10, wherein the multi-tiered application comprises a
+
+the multi-tiered application, the recovering comprising: 45 web server tier corresponding to the first tier, an application
+
+recovering the second tier based on the second Subset; and server tier corresponding to the second tier, and a database
+
+subsequently recovering the first tier based on the first tier.
+
+Subset.
+
+14. The non-transitory computer readable storage medium
+
+7. The method of claim 1, further comprising:
+
+ofclaim 10, the operations further comprising:
+
+identifying, based on the cluster configuration, a primary 50 identifying a first subset of the highly available data asso
+
+server and a standby server of the high availability clus
+
+ciated with a first tier of the multi-tiered application and
+
+ter, and
+
+a second Subset of the highly available data associated
+
+backing up the highly available data from the standby
+
+with a second tier of the multi-tiered application; and
+
+server without interrupting operations of the primary recording in metadata that the first Subset is associated with
+
+SeVe.
+
+55 the first tier and that the second subset is associated with
+
+8. The method of claim 7, wherein backing up the highly
+
+the second tier, and
+
+available data from the standby server comprises:
+
+storing the first Subset, the second Subset and the metadata
+
+determining that the standby server has received a point
+
+in a backup storage device.
+
+in-time image from the primary server, the point-in-time 15. The non-transitory computer readable storage medium
+
+image containing the highly available data; and
+
+60 ofclaim 14, the operations further comprising recovering the
+
+generating a backup of the point-in-time image.
+
+multi-tiered application, the recovering comprising:
+
+9. The method of claim 1, further comprising:
+
+recovering the second tier based on the second Subset; and
+
+querying the high availability cluster for the cluster con subsequently recovering the first tier based on the first
+
+figuration via at least one of a command line interface of
+
+Subset.
+
+the high availability cluster, a web service of the high 65 16. The non-transitory computer readable storage medium
+
+availability cluster oran application programming inter of claim 10, wherein implementing the data protection policy
+
+face of the high availability cluster.
+
+comprises:
+
+US 9,275,060 B1
+
+17
+
+18
+
+identifying, based on the cluster configuration, a primary
+
+cluster, the high availability cluster comprising a plu
+
+server and a standby server of the high availability clus
+
+rality of clusters corresponding to tiers of the multi
+
+ter; and
+
+tiered application;
+
+backing up the highly available data from the standby
+
+parse the cluster configuration to identify the highly
+
+server without interrupting operations of the primary 5
+
+available data residing on the plurality of clusters
+
+server, wherein the backing up comprises:
+
+corresponding to the tiers of the multi-tiered applica
+
+determining that the standby server has received a point
+
+in-time image from the primary server, the point-in-time
+
+image containing the highly available data; and
+
+generating a backup of the point-in-time image.
+
+10
+
+tion;
+provide information indicating the identified highly available data to back up to a second administrator having no information of the highly available data to
+
+17. The non-transitory computer readable storage medium of claim 10, the operations further comprising:
+querying the high availability cluster for the cluster con
+figuration via at least one of a command line interface of
+the high availability cluster, a web service of the high
+availability cluster or an application programming inter face of the high availability cluster. 18. An apparatus comprising:
+a memory to store instructions for a backup agent or backup server; and
+a processing device, coupled to the memory, to execute the instructions, wherein the processing device is config ured by the instructions to: receive a cluster configuration of a high availability clus ter, the cluster configuration indicating highly avail
+
+25
+
+be backed up; and implement a data protection policy to back up the highly
+available databased on the information.
+19. The apparatus of claim 18, wherein the processing
+device is further to:
+quiet the first tier, wherein to quiet first tier comprises the processing device to block access to the first tier and send contents of a first memory at the first tier to a second memory at a second tier of the multi-tiered application that is depended on by the first tier;
+quiet the second tier, wherein to quiet the second tier com prises the processing device to write contents of the second memory at the second tier to a permanent stor age; and
+back up the highly available data from the permanent stor
+
+able data, specified by a first administrator, of a multi
+
+age.
+
+tiered application running on the high availability
+
+

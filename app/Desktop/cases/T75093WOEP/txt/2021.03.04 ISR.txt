@@ -1,0 +1,162 @@
+                 INTERNAHONALSEARCHREPORT                                                          International application No
+
+                                                                                                    PCT/EP2020/074134
+
+A. CLASSIFICATION OF SUBJECT MATTER                                                                A61K38/22
+INV. A61P9/00    001N33/48           A61K38/08                                                                A61K39/395
+
+      A61K45/06
+
+ADD.
+
+According to International Patent Classification (IPC) or to both national classification and IPC
+
+B. FIELDS SEARCHED
+
+Minimum documentation searched (classification system followed by classification symbols)
+
+A61P 001N A61K C07K
+
+Documentation searched other than minimum documentation to the extent that such documents are included in the fields searched
+
+Electronic data base consulted during the international search (name of data base and, where practicable, search terms used)
+
+EPO-Internai, BIOSIS, COMPENDEX, EMBASE, WPI Data
+
+C. DOCUMENTS CONSIDERED TO BE RELEVANT                                                                                         Relevant to claim No.
+Category* Citation of document, with indication, where appropriate, of the relevant passages
+                                                                                                                               1-13,17,
+X,P   KOJI TAKAGI ET AL: "Circuiating                                                                                          25
+
+      dipeptidyi peptidase 3 and aiteration in                                                                                 1-25
+
+      haemodynamics in cardiogenic shock:
+
+      resuits from the OptimaCC triai",
+
+      EUROPEAN JOURNAL OF HEART FAILURE,
+
+      voi. 22, no. 2,
+
+      31 August 2019 (2019-08-31), pages
+
+      279-286, XP055681198,
+
+      NL
+
+      ISSN: 1388-9842, DOI: 10.1002/ejhf.1600
+
+Y,P   page 281 - page 282; figures 1, $1
+
+                                                                                 _/__
+
+              Further documents are listed in the continuation of Box 0.                       See patent family annex.
+
+  * Special categories of cited documents :                                      "T" later document published after the international filing date or priority
+                                                                                         date and not in conflict with the application but cited to understand
+  "A" document defining the general state of the art which is not considered             the principle or theory underlying the invention
+           to be of particular relevance
+                                                                                 "X" document of particular relevance; the claimed invention cannot be
+  "E" earlier application or patent but published on or after the international          considered novel or cannot be considered to involve an inventive
+           filing date                                                                   step when the document is taken alone
+
+  "L" documentwhich may throw doubts on priority claim(s) or which is            "Y" document of particular relevance; the claimed invention cannot be
+           cited to establish the publication date of another citation or other          considered to involve an inventive step when the document is
+           special reason (as specified)                                                 combined with one or more other such documents, such combination
+                                                                                         being obvious to a person skilled in the art
+  "0" document referring to an oral disclosure, use, exhibition or other
+         means                                                                   "&" document member of the same patent family
+                                                                                        Date of mailing of the international search report
+  "P" document published prior to the international filing date but later than
+           the priority date claimed                                                      19/11/2020
+
+   Date of the actual completion of the international search                           Authorized officer
+
+           13 November 2020                                                               Bocheien, Damien
+
+  Name and mailing address of the ISA]                                                                                 page 1 of 2
+                            European Patent Office, PB. 5818 Patentlaan 2
+                         NL - 2280 HV Rijswijk
+                        Tel. (+31-70) 340-2040,
+                        Fax: (+31-70) 340-3016
+
+Form PCT/ISA/210 (second sheet) (April 2005)
+   INTERNAHONALSEARCHREPORT                                                                   International application No
+
+C(Continuation). DOCUMENTS CONSIDERED TO BE RELEVANT                                           PCT/EP2020/074134
+
+Category* Citation of document, with indication, where appropriate, of the relevant passages                                Relevant to claim No.
+
+X  LINDA REHFELD ET AL: "Novel Methods for                                                                          1-12,25
+
+   the Quantification of Dipeptidy] Peptidase                                                                       1-25
+                                                                                                                    13,17
+   3 (DPP3) Concentration and Activity in
+                                                                                                                    1-25
+   Human Blood Samples",                                                                                            11,12,
+                                                                                                                    22-24
+   THE JOURNAL OF APPLIED LABORATORY                                                                                15,16,
+                                                                                                                    19-21
+   MEDICINE,
+
+   v01. 3, no. 6, 1 May 2019 (2019-05-01),
+
+   pages 943-953, XP055681701,
+
+   ISSN: 2576-9456, DOI:
+
+   10.1373/ja1m.2018.027995
+
+   pages 951-952; figure 4
+
+   ESTEVAO BASSI ET AL: "Therapeutic
+   Strategies for High-Dose
+   Vasopressor-Dependent Shock",
+   CRITICAL CARE RESEARCH AND PRACTICE,
+   vol. 2013, 1 January 2013 (2013-01-01),
+   pages 1-10, XP055681557,
+   ISSN: 2090-1305, DOI: 10.1155/2013/654708
+
+   pages 4-5
+
+   WO 2019/077082 A1 (ADRENOMED AG [DE])
+   25 April 2019 (2019-04-25)
+
+   claims 1-10; example 2
+
+   JADHAV AMAR P ET AL: "Angiotensin II in
+   septic shock",
+   AMERICAN JOURNAL OF EMERGENCY MEDICINE,
+   v01. 37, no. 6, 19 March 2019 (2019-03-19)
+   , pages 1169-1174, XP085707434,
+   ISSN: 0735-6757, DOI:
+   10.1016/J.AJEM.2019.03.026
+
+   page 1171
+
+Form PCT/ISA/21O (continuation of second sheet) (April 2005)
+
+                                                                                              page 2 of 2
+INTERNAHONALSEARCHREPORT                                                             International application No
+
+         Information on patent family members                                         PCT/EP2020/074134
+
+   Patent document                                   Publication      Patent family   Publication
+cited in search report                                   date          member(s)          date
+
+WO 2019077082 A1                                     25-04-2019   AU 2018350861 A1    09-04-2020
+                                                                                      20-10-2020
+                                                                  BR 112020005682 A2  25-04-2019
+                                                                                      31-07-2020
+                                                                  CA  3079112 A1      26-08-2020
+                                                                                      29-04-2020
+                                                                  CN 111480076 A      25-04-2019
+
+                                                                  EP  3698134 A1
+
+                                                                  80 11202002268X A
+
+                                                                  WO 2019077082 A1
+
+Form PCT/ISA/21O (patent family annex) (April 2005)
+

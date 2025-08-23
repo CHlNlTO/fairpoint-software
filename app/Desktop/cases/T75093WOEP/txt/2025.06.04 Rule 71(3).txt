@@ -1,0 +1,299 @@
+L  Europäisches                                                      European Patent Office
+   Patentamt                                                         80298 MUNICH
+    European                                                         GERMANY
+    Patent Office
+    Office européen                                                  Questions about this communication?
+    des brevets                                                      Contact Customer Services at
+                                                                     www.epo.org/contact
+   Kilger, Ute
+   Boehmert & Boehmert                                               Primary Examiner
+   Anwaltspartnerschaft mbB                                          Name: Fayos, Cecile
+   Pettenkoferstrasse 22                                             Tel: +49 89 2399 - 2180
+   80336 München
+   ALLEMAGNE
+
+L                                                        Ref         Date
+
+                             Application No.             T75093WOEP  04.06.2025
+
+                  20 764 639.9 - 1109
+
+                           Applicant
+
+                4TEEN4 Pharmaceuticals GmbH
+
+   Communication under Rule 71(3) EPC
+
+   1. Intention to grant
+           You are informed that the examining division intends to grant a European patent on the basis of the
+           above application, with the text and drawings and the related bibliographic data as indicated below
+           A copy of the relevant documents is enclosed
+
+   1.1 Text intended for grant
+
+   In the text for the Contracting States:
+
+   AL AT BE BG CH CY CZ DE DK EE ES FI FR GB GR HR HU IE IS IT LI LT LU LV MC MK MT NL NO PL
+   PT RO RS SE SI SK SM TR
+
+   Description, Pages
+
+   1-80                filed during Oral proceedings on              08-05-2025
+
+   Sequence listings, SEQ ID NO
+
+   1-44                as published
+
+   Claims, Numbers
+
+   1-10                filed in electronic form on                   07-05-2025
+
+   Drawings, Sheets
+
+   1/15-15/15          as published
+
+   With the following amendments to the above-mentioned documents according to your request
+
+   dated 08-05-2025: (2)
+
+   Registered Letter
+
+   EPO Form 2004C 10.24AUWF (02.06.2025)
+Date 04.06.2025            Sheet 2                           Application No .: 20 764 639.9
+
+Description, Pages  1,17
+
+With the following amendments to the above-mentioned documents proposed by the division
+
+Description, Pages
+
+                    Delete Previous: 81, 82
+
+Comments
+
+DESCRIPTION
+Page 1: Description adapted to amended claims (Art. 84 EPC)
+
+Page 81: (PAGE DELETED) - empty page
+Page 82: (PAGE DELETED) - abstract
+Pages 84-99: (PAGE DELETED) -
+
+        See also the comments in enclosed EPO Form 2906.
+
+        (* ) The sequence listing part of this communication is available for download as a ZIP file in
+         Mailbox or MyEPO Portfolio. It can also be downloaded from the Register.
+
+           https://register.epo.org/application?documentId=L1ANMUZ7XJOFERK&number=EP20764639&SEQLZIP25=true
+
+1.2 Bibliographic data
+
+        The title of the invention in the three official languages of the European Patent Office, the
+        international patent classification, the designated contracting states, the registered name(s) of the
+        applicant(s) and the other bibliographic data are shown on EPO Form 2056 (enclosed).
+
+2 Invitation
+
+        You are invited, within a non-extendable period of four months of notification of this
+
+         communication,
+
+2.1 to EITHER approve the text communicated above and verify the bibliographic data (Rule
+        71(5) EPC)
+       (1) by filing a translation of the claim(s) in the other two official languages of the EPO
+
+                                                             Fee code                        EUR
+
+(2a) by paying the fee for grant including the fee           007                             1080.00
+
+          for publication                                                                         0.00
+
+          minus any amount already paid (Rule 71a(5) EPC):
+
+(3) by paying additional claims fees under Rule 71(4) EPC;   Total amount:                   1080.00
+       number of claims fees payable: 0                      016
+        minus any amount already paid (Rule 71a(5) EPC):                                          0.00
+                                                                                                  0.00
+
+                                                             Total amount:                   0.00
+
+EPO Form 2004C 10.24AUWF (02.06.2025)
+Date 04.06.2025  Sheet 3                            Application No .: 20 764 639.9
+
+Important: If the translations of the claims and fees have already been filed and paid respectively
+in reply to a previous communication under Rule 71(3) EPC, e.g. in the case of resumption of
+examination after approval (see Guidelines C-V, 6), agreement as to the text to be granted
+
+(Rule 71a(1) EPC) must be expressed within the same time limit (e.g. by approving the text and
+verifying the bibliographic data, by confirming that grant proceedings can go ahead with the
+
+documents on file and/or by stating which translations of the claims already on file are to be used).
+
+Note 1: See "Notes concerning fee payments" below.
+
+Note 2: Any overpaid "minus" amounts will be refunded when the decision to grant (EPO Form
+            2006A) has been issued.
+
+Note 3:  For the calculation of the grant fee under Article 2(2), No. 7, RFees (old fee structure),
+
+         the number of pages is determined on the basis of a clean copy of the application
+         documents, in which text deleted as a result of any amendments by the examining
+
+         division is not shown.
+
+         Such clean copy is made available via on-line file inspection only.
+
+2.2 OR, in the case of disapproval, to request reasoned amendments or corrections to the text
+        communicated above or keep to the latest text submitted by you (Rule 71(6) EPC).
+
+In this case the translations of the claims and fee payments mentioned under point 2.1 above are
+
+NOT due.
+
+The terms "amendment(s)" and "correction(s)" refer only to amendments or corrections of the
+application documents and not of other documents (e.g. bibliographic data, the designation of the
+
+inventor, etc.).
+
+        If filing amendments, you must identify them and indicate the basis for them in the application as
+        filed. Failure to meet either requirement may lead to a communication from the examining division
+        requesting that you correct this deficiency (Rule 137(4) EPC).
+
+2.3 Bibliographic data
+
+        Where you request a change or correction of bibliographic data in response to the Rule 71(3)
+        communication, this will not cause the sending of a further communication under Rule 71(3) EPC.
+        You will still have to pay the fees and file translations in reply to the Rule 71(3) communication in
+        the case of 2.1 above, unless you also file a reasoned request for amendments or corrections in
+        response to the Rule 71(3) communication (see case 2.2 above).
+
+3. Loss of rights
+
+        If neither of the two possible actions above (see points 2.1 or 2.2) is performed in due time, the
+        European patent application will be deemed to be withdrawn (Rule 71(7) EPC).
+
+4. Further procedure
+
+4.1 In the case of point 2.1 above
+
+4.1.1 The decision to grant the European patent will be issued, and the mention of the grant of the
+         patent will be published in the European Patent Bulletin, if the requirements concerning the
+        translation of the claims and the payment of all fees are fulfilled and there is agreement as to the
+        text to be granted (Rule 71a(1) EPC).
+
+        Note on payment of the renewal fee:
+
+If a renewal fee becomes due before the next possible date for publication of the mention of the
+grant of the European patent, publication will be effected only after the renewal fee and any
+additional fee have been paid (Rule 71a(4) EPC).
+
+Under Article 86(2) EPC, the obligation to pay renewal fees to the European Patent Office
+terminates with the payment of the renewal fee due in respect of the year in which the mention of
+the grant of the European patent is published.
+
+EPO Form 2004C 10.24AUWF (02.06.2025)
+Date 04.06.2025  Sheet 4               Application No .: 20 764 639.9
+
+        Note on payment of the designation fee(s):
+
+         If the designation fee(s) become(s) due after the communication under Rule 71(3) EPC, the
+         mention of the grant of the European patent will not be published until these fees have been paid
+          (Rule 71a(3) EPC).
+
+4.1.2 After publication, the European patent specification can be downloaded free of charge from the
+         EPO publication server https://data.epo.org/publication-server.
+
+4.1.3 Filing of translations in the contracting states
+
+        As regards translation requirements prescribed by the contracting states under Article 65(1) EPC,
+
+         please consult the website of the European Patent Office
+        www.epo.org -> Law & practice -> Legal texts, National law relating to the EPC
+        www.epo.org -> Law & practice -> All Legal texts -> London Agreement
+
+         In the case of a valid extension or validation
+
+        As regards translation requirements prescribed by the extension or validation states, please
+        consult the website of the European Patent Office
+        www.epo.org -> Law & practice -> Legal texts, National law relating to the EPC
+
+        Failure to supply a prescribed translation in a contracting state, or in an extension or
+        validation state may result in the patent being deemed to be void ab initio in the state
+        concerned (Art. 65(3) EPC).
+
+4.2 In the case of 2.2 above
+
+        If the present communication under Rule 71(3) EPC is based on an auxiliary request and, within
+        the time limit, you maintain the main request or a higher ranking request which was not found
+        allowable, the application may be refused (Art. 97(2) EPC).
+
+        If the examining division gives its consent to the requested amendments or corrections, it will issue
+         a new communication under Rule 71(3) EPC; otherwise, it shall resume the examination
+        proceedings (Rule 71(6) EPC).
+
+5. Filing of a divisional application
+
+        Any divisional application relating to this European patent application must be filed directly with the
+         European Patent Office in Munich, The Hague or Berlin and will be in the language of the
+        proceedings for the present application, or if the latter was not in an official language of the EPO,
+         the divisional application may be filed in the language of the present application as filed (see Article
+        76(1) and Rule 36(2) EPC). Any such divisional application must be filed while the present
+        application is still pending (Rule 36(1) EPC; Guidelines A-IV, 1.1.1).
+
+6. Notes concerning fee payments
+6.1 Making payments
+
+         For payments made via deposit account, please note that as from 1 December 2017 debit orders
+         will only be carried out if filed in an electronically processable format (xml), using an accepted
+         means of filing as laid down in the Arrangements for deposit accounts (ADA), published in the
+         Supplementary publication in the Official Journal.
+
+        All relevant information related to the modes of payment of fees to the EPO can be retrieved from
+        the EPO website at "Making Payments".
+
+6.2 Information concerning fee amounts
+
+        Procedural fees are usually adjusted every two years, on even years, with effect from 1 April.
+         Therefore, before making a payment, parties should verify the amounts actually due on the date of
+         payment using the applicable version of the Schedule of fees and expenses, published as a
+         Supplement to the Official Journal of the EPO, available on the EPO website (www.epo.org) at
+        www.epo.org/schedule-of-fees. The "Schedule of fees" table allows the viewing, downloading
+        and searching of individual fee amounts, both current and previous.
+
+6.3 Note to users of the automatic debiting procedure
+
+EPO Form 2004C 10.24AUWF (02.06.2025)
+Date 04.06.2025                                       Sheet 5                   Application No .: 20 764 639.9
+
+               The fee for grant, including the fee for publication, and any additional claims fees due under Rule
+               71(4) EPC will be debited automatically on the date of filing of the translations of the claims, or on
+               the last day of the period of this communication. However, if the designation fee(s) become(s) due
+
+               as set out in Rule 71a(3) EPC and/or a renewal fee becomes due as set out in Rule 71a(4) EPC,
+
+               these should be paid separately by another permitted way of payment in order not to delay the
+
+               publication of the mention of the grant. The same applies in these circumstances to the payment of
+
+               extension and validation fees.
+
+Examining Division:                                   Habedanck, Robert
+                                                      Merckling-Ruiz, Virginie
+Chair:                                                Fayos, Cecile
+2nd member:
+1st member:
+
+      aisches Patentamt
+                              . EuropeanPatentOffice
+n des brevets
+
+               · Office europe
+
+Annexes:                                              Applicants not using the Mailbox can access patent literature via Espacenet
+
+                                                      Text intended for grant
+                                                      EPO Form 2056
+
+                                                      EPO Form 2906
+
+EPO Form 2004C 10.24AUWF (02.06.2025)
+

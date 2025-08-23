@@ -1,0 +1,2125 @@
+    CODING METHOD, DECODING METHOD, AND
+              COMMUNICATIONS APPARATUS
+
+     [0001] This application claims priority to Chinese Patent Application No. 202111278393.9,
+     filed with the China National Intellectual Property Administration on October 30, 2021 and entitled
+5 "CODING METHOD, DECODING METHOD, AND COMMUNICATIONS APPARATUS",
+     which is incorporated herein by reference in its entirety.
+
+                                                 TECHNICAL FIELD
+
+    [0002] This application relates to the field of communications technologies, and in particular,
+    to a coding method, a decoding method, and a communications apparatus.
+
+10  BACKGROUND
+
+       [0003] In an existing communications system such as a cellular communications system or a
+       wireless fidelity (wireless-fidelity, WiFi) communications system, based on a separate source-
+      channel coding (SSCC) solution, source coding (compression) processing is first performed on to-
+       be-sent source data, and then channel coding is performed on compressed data, to add specific
+15 redundancy to improve reliability of information transmission. The source coding is usually
+      completed at an application layer, and the channel coding is usually completed at a physical layer.
+      For the physical layer, it is assumed that the upper layer has completed ideal source coding and
+       obtained an approximately equiprobable sequence. However, in actual application, some data that
+      is not fully compressed, for example, control information from a link layer or the physical layer,
+20 to-be-fed-back channel state information, and some upper-layer application data, may be processed
+      at the physical layer. To fully use source redundancy at the physical layer and improve transmission
+       performance, joint source-channel coding (JSCC) is a potential solution. In this solution, both a
+       source compression operation and a channel protection operation can be completed.
+       [0004] FIG. 1 is a schematic flowchart of a system-polar (polar)-based JSCC solution. A coder
+25 side first obtains a to-be-coded bit sequence based on an information bit sequence; and then
+      performs system polar coding on the to-be-coded bit sequence, modulates a bit sequence obtained
+       after the polar coding, and sends the modulated bit sequence to a decoder side. In addition, the
+       coder side sends a probability distribution value (a proportion of 0 or 1 in the information bit
+
+                                                                                                        1
+       sequence) of the information bit sequence to the decoder side by using control signaling. The
+       decoder side decodes a to-be-decoded sequence based on the received probability distribution
+      value and a frozen bit sequence that is all Os by default. In an existing system-polar-based JSCC
+       solution, during decoding, a transmitting end needs to send control signaling to notify a receiving
+ 5 end of a probability distribution value of a current information bit sequence, causing an increase
+      in control signaling overheads. If a coder side does not send a probability distribution value of an
+       information bit sequence to a decoder side, when decoding a to-be-decoded sequence, the decoder
+       side decodes the to-be-decoded sequence by sequentially trying different probability distribution
+      values and based on a frozen bit sequence that is all Os by default, causing a high error detection
+10 probability. The error detection probability indicates that the decoder side uses an incorrect
+       probability distribution value to try to perform decoding and obtains an incorrect decoding result,
+       but check, for example, cyclic redundancy check (cyclic redundancy check, CRC) or parity check
+       (parity check, PC), on the incorrect decoding result succeeds.
+
+                                                                  SUMMARY
+
+15 [0005] This application provides a coding method, a decoding method, and a communications
+       apparatus, to help reduce an error detection probability of a decoder side.
+       [0006] According to a first aspect, this application provides a coding method, applied to a first
+       communications device. The method includes: obtaining a first information bit sequence;
+      determining a first frozen bit sequence based on a probability distribution value P1 of the first
+
+20 information bit sequence; determining a check bit sequence based on a second information bit
+       sequence, where the second information bit sequence is the first information bit sequence or a
+       sequence obtained after a pre-transformation operation is performed on the first information bit
+       sequence; obtaining a first bit sequence based on the second information bit sequence, the check
+       bit sequence, and the first frozen bit sequence, where the first bit sequence includes bits in the
+
+25 second information bit sequence, bits in the check bit sequence, and bits in the first frozen bit
+       sequence; performing polar coding on the first bit sequence to obtain a second bit sequence; and
+       outputting the second bit sequence.
+       [0007] Based on the method described in the first aspect, values of the first frozen bit sequence
+       are determined based on the probability distribution value of the first information bit sequence,
+
+30 instead of by setting the values of the first frozen bit sequence to all Os by default. In this way,
+       when decoding a to-be-decoded sequence, a decoder side may sequentially try different probability
+       distribution values in a probability distribution value set and frozen bit sequences corresponding
+      to the probability distribution values to perform decoding, so that the decoder side can better
+
+                                                                                                       2
+       distinguish between different probability distribution values, thereby reducing an error detection
+       probability.
+       [0008] In addition, in this application, the first communications device may first perform the
+       pre-transformation operation on the first information bit sequence, and then determine the check
+ 5 bit sequence based on the second information bit sequence obtained after the pre-transformation
+       operation. In this way, the decoder side needs to perform a polar operation only on a third
+       information bit sequence that is obtained through decoding and that is successfully checked, to
+
+       obtain the first information bit sequence sent by the first communications device. This helps reduce
+      power consumption of the decoder side and improve decoding efficiency. If the first
+10 communications device first determines the check bit sequence based on the first information bit
+       sequence, and then performs the pre-transformation operation on the first information bit sequence,
+       the decoder side needs to perform a polar operation on a third information bit sequence obtained
+       through decoding based on each probability distribution value, and then check (for example,
+      perform CRC or PC on) an information bit sequence obtained after the polar operation. In this way,
+15 power consumption of the decoder side is relatively high and decoding efficiency is low.
+       [0009] In addition, in this application, the first communications device may directly determine
+       the check bit sequence based on the first information bit sequence, that is, the first communications
+       device may not perform the pre-transformation operation on the first information bit sequence. In
+       this way, the decoder side does not need to perform a polar operation on a third information bit
+20 sequence obtained through decoding, and the decoder side may directly determine the third
+       information bit sequence as the first information bit sequence, thereby reducing processing
+       overheads of the first communications device and the decoder side.
+      [0010] In a possible implementation, if the probability distribution value P1 is not
+       equiprobable distribution, the second information bit sequence is the sequence obtained after the
+25 pre-transformation operation is performed on the first information bit sequence; or if the
+       probability distribution value P1 is equiprobable distribution, the second information bit
+       sequence is the first information bit sequence. Based on this possible implementation, two
+
+       implementations in which the pre-transformation operation is performed on the first information
+       bit sequence and the pre-transformation operation is not performed on the first information bit
+30 sequence may be properly compatible in a system. When the pre-transformation operation is
+       performed on the first information bit sequence, decoding performance is improved by using
+
+      sparseness of the first information bit sequence. When the probability distribution value of the first
+
+       information bit sequence is far away from equiprobable distribution, it indicates that the first
+       information bit sequence is very sparse. When the probability distribution value of the first
+35 information bit sequence is equiprobable distribution, it indicates that the first information bit
+
+                                                                                                             3
+       sequence is not sparse. Therefore, when the probability distribution value of the first information
+      bit sequence is equiprobable distribution, the pre-transformation operation does not need to be
+       performed on the first information bit sequence, to reduce processing overheads of the first
+       communications device and the decoder side.
+ 5 [0011] In a possible implementation, if |P1 - 0.5| SE, the probability distribution value P1
+      is equiprobable distribution, where E is a preset value. E may be a relatively small value, for
+       example, may be 0.001, 0.01, 0.02, 0.03, 0.04, or 0.05.
+
+      [0012] In a possible implementation, check bit locations in the first bit sequence are bit
+
+       locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+10 columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+
+       coding, the set a is an information bit set, and the information bit set includes information bit
+       locations and the check bit locations in the first bit sequence. Based on this possible
+       implementation, on a coder side, the pre-transformation operation of the first information bit
+       sequence may be decoupled from the operation of determining the check bit sequence based on
+15 the second information bit sequence, so that the pre-transformation operation can be performed
+       before the check bit sequence is determined, to reduce power consumption of the decoder side and
+       improve decoding efficiency.
+       [0013] In a possible implementation, at least one check bit in the check bit sequence is located
+       in the bits included in the second information bit sequence. In this way, the at least one check bit
+20 may be used to check an information bit located in front of the at least one check bit. This helps
+      implement a function of early decoding stopping. The early decoding stopping means that when
+       the decoder side decodes some information bits in a to-be-decoded sequence, the decoder side may
+
+      check the decoded information bits by using check bits, and if the check on the information bits
+       fails, the decoder side stops decoding in advance, thereby reducing power consumption of the
+
+25 decoder side.
+
+       [0014] In a possible implementation, a decoding order of at least one check bit in the check bit
+       sequence is located in a decoding order of the bits included in the second information bit sequence.
+       In this way, the at least one check bit may be used to check an information bit in front of the
+       decoding order of the at least one check bit, to implement a function of early decoding stopping,
+30 thereby reducing power consumption of the decoder side.
+      [0015] In a possible implementation, the determining a first frozen bit sequence based on a
+      probability distribution value P1 of the first information bit sequence includes: selecting a
+       probability distribution value Po in a probability distribution value set P based on the probability
+       distribution value P1 of the first information bit sequence, where the probability distribution value
+35 Po is a probability distribution value closest to the probability distribution value P1 in the
+
+                                                                                                   4
+       probability distribution value set P, and one probability distribution value in the probability
+       distribution value set P corresponds to one frozen bit sequence mapping manner; and determining
+       the first frozen bit sequence based on a frozen bit sequence mapping manner corresponding to the
+       probability distribution value Po. Based on this possible implementation, different probability
+ 5 distribution values in the probability distribution value set P may correspond to different frozen
+
+      bit sequence mapping manners. In this way, when the decoder side sequentially tries different
+       probability distribution values in the probability distribution value set and frozen bit sequences
+       corresponding to the probability distribution values to perform decoding, the decoder side can
+       better distinguish between different probability distribution values, thereby reducing an error
+10 detection probability.
+      [0016] In a possible implementation, the first frozen bit sequence is determined based on a
+       basic sequence corresponding to the probability distribution value Po, and the basic sequence is
+       determined based on a quantity of probability distribution values included in the probability
+
+       distribution value set P. In this way, the coder/decoder side needs to store only basic sequences
+15 and relationships between first frozen bit sequences and the basic sequences, to help reduce storage
+
+       overheads, and also ensure that different first frozen bit sequences are orthogonal to a specific
+       extent, thereby reducing an error detection probability.
+       [0017] In a possible implementation, the first frozen bit sequence is determined based on an
+       m-sequence, a Gold sequence, or a pseudo-random sequence corresponding to the probability
+
+20 distribution value Po. In this way, the coder/decoder side needs to store only mapping relationships
+       between first frozen bit sequences and m-sequences, Gold sequences, or pseudo-random sequences,
+       to help reduce storage overheads, and also ensure that different first frozen bit sequences are
+
+       orthogonal to a specific extent, thereby reducing an error detection probability.
+
+       [0018] In a possible implementation, a probability distribution reference value range or a
+25 probability distribution reference value is sent to a second communications device every N
+
+       information bit sequences, where N is an integer greater than 1. The probability distribution
+       reference value range or the probability distribution reference value is sent to the second
+      communications device once every N information bit sequences. In this way, the decoder side may
+       preferentially select a probability distribution value corresponding to the probability distribution
+30 reference value range or the probability distribution reference value from the probability
+       distribution value set to perform decoding, to help reduce a quantity of times the decoder side tries
+       to perform decoding, and reduce decoding power consumption.
+      [0019] In a possible implementation, the check bits include cyclic redundancy check CRC bits
+       and/or parity check PC bits.
+35 [0020] According to a second aspect, this application provides a decoding method, applied to
+
+                                                                                                   5
+    a second communications device. The method includes:
+
+    step 1: obtaining a to-be-decoded sequence;
+
+    step 2: setting i=1;
+
+    step 3: decoding the to-be-decoded sequence based on an ith probability distribution
+
+5 value in a probability distribution value set P and a frozen bit sequence corresponding to the ith
+
+    probability distribution value, to obtain a third bit sequence corresponding to the ith probability
+
+    distribution value, where the third bit sequence includes bits in a third information bit sequence,
+
+    check bits, and bits in the frozen bit sequence corresponding to the ith probability distribution value;
+
+    step 4: checking the third information bit sequence;
+
+10  step 5: if the check on the third information bit sequence succeeds, obtaining a first
+
+    information bit sequence based on the third information bit sequence, and stopping decoding,
+
+    where the first information bit sequence is the third information bit sequence or the first
+
+    information bit sequence is a sequence obtained after polar coding is performed on the third
+
+    information bit sequence;
+
+15  step 6: if the check on the third information bit sequence fails and i is less than x, setting
+
+    i=i+1, and returning to step 3, where x is a quantity of probability distribution values included in
+
+    the probability distribution value set P; and
+
+    step 7: if the check on the third information bit sequence fails and i is equal to x:
+
+    stopping decoding; or obtaining a fourth information bit sequence based on a target information
+
+20 bit sequence, and stopping decoding, where the target information bit sequence is one of x third
+
+    information bit sequences corresponding to the probability distribution value set P, and the fourth
+
+    information bit sequence is the target information bit sequence or a sequence obtained after polar
+
+    coding is performed on the target information bit sequence.
+
+    [0021] Based on the method described in the second aspect, when decoding a to-be-decoded
+
+25 sequence, a decoder side may sequentially try different probability distribution values in a
+
+    probability distribution value set and frozen bit sequences corresponding to the probability
+
+    distribution values to perform decoding, so that the decoder side can better distinguish between
+
+    different probability distribution values, thereby reducing an error detection probability.
+
+    [0022] In addition, in this application, the decoder side may need to perform a polar operation
+
+30 only on a third information bit sequence that is obtained through decoding and that is successfully
+
+    checked, to obtain the first information bit sequence sent by a first communications device. This
+
+    helps reduce power consumption of the decoder side and improve decoding efficiency.
+
+    Alternatively, in this application, the second communications device may directly determine the
+
+    third information bit sequence as the first information bit sequence, that is, the second
+
+35 communications device may not perform polar coding on the third information bit sequence to
+
+                                                   6
+       obtain the first information bit sequence. In this way, processing overheads of the second
+       communications device can be reduced.
+      [0023] In a possible implementation, if the ith probability distribution value is not equiprobable
+       distribution, the first information bit sequence is the sequence obtained after polar coding is
+
+ 5 performed on the third information bit sequence; or if the ith probability distribution value is
+
+       equiprobable distribution, the first information bit sequence is the third information bit sequence.
+       Based on this possible implementation, two implementations in which the third information bit
+       sequence is determined as the first information bit sequence and the sequence obtained after polar
+       coding is performed on the third information bit sequence is determined as the first information
+
+10 bit sequence may be properly compatible in a system.
+      [0024] In a possible implementation, if |Pir - 0.5| SE, the ith probability distribution value
+      is equiprobable distribution, where E is a preset value, and Pir is the ith probability distribution
+       value. E may be a relatively small value, for example, may be 0.001, 0.01, 0.02, 0.03, 0.04, or
+
+        0.05.
+
+15 [0025] In a possible implementation, a decoding order of probability distribution values in the
+      probability distribution value set P is determined based on information entropies corresponding to
+      the probability distribution values in the probability distribution value set. A probability
+       distribution value with a larger information entropy indicates lower sparsity, and a probability
+       distribution value with a smaller information entropy indicates higher sparsity. Two probability
+
+20 distribution values whose sum is 1 (for example, P' + P" = 1) are equal in information entropy
+      and consistent in sparsity. The decoding order of the probability distribution values in the
+      probability distribution value set P is determined based on the information entropies corresponding
+
+       to the probability distribution values in the probability distribution value set, thereby helping
+      reduce an error detection probability.
+25 [0026] In a possible implementation, an information entropy corresponding to the ith
+       probability distribution value is greater than or equal to an information entropy corresponding to
+       an (i+1)th probability distribution value. That is, the second communications device may
+       preferentially use a probability distribution value with a relatively large information entropy to
+       perform decoding. Because a probability distribution value with a relatively large information
+30 entropy has less prior information that can be used by the decoder side, the probability distribution
+       value is preferentially tried, so that negative impact caused on a decoding effect by the decoder
+       side by introducing incorrect prior information can be reduced, thereby reducing an error detection
+       probability.
+       [0027] In a possible implementation, a decoding order of probability distribution values in the
+35 probability distribution value set P is determined based on historical probability distribution values
+
+                                                                                                       7
+       of a transmitting end. This possible implementation helps reduce a quantity of times the decoder
+       side tries to perform decoding, and reduce decoding power consumption.
+
+      [0028] In a possible implementation, a probability distribution reference value range or a
+       probability distribution reference value sent by the first communications device every N
+ 5 information bit sequences is received, where N is an integer greater than 1. A decoding order of
+       probability distribution values in the probability distribution value set P is determined based on
+
+       the probability distribution reference value range or the probability distribution reference value.
+       This possible implementation helps reduce a quantity of times the decoder side tries to perform
+       decoding, and reduce decoding power consumption.
+10 [0029] In a possible implementation, the target information bit sequence is a third information
+       bit sequence corresponding to equiprobable distribution in the probability distribution value set P.
+       Because the second communications device does not know a real probability distribution value,
+       when check on the third information bit sequences corresponding to all the probability distribution
+       values fails, it is a conservative solution to obtain the fourth information bit sequence based on the
+15 third information bit sequence corresponding to equiprobable distribution, so that a negative effect
+       caused by incorrectly using a probability distribution value can be avoided.
+
+       [0030] In a possible implementation, check bit locations in the third bit sequence are bit
+       locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+       columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+20 coding, the set a is an information bit set, and the information bit set includes information bit
+
+       locations and the check bit locations in the third bit sequence. Based on this possible
+       implementation, on a coder side, a pre-transformation operation of the first information bit
+       sequence may be decoupled from an operation of determining a check bit sequence based on a
+       second information bit sequence, so that the pre-transformation operation can be performed before
+25 the check bit sequence is determined. In this way, the decoder side needs to perform a polar
+
+       operation only on a third information bit sequence that is obtained through decoding and that is
+       successfully checked, to obtain the first information bit sequence sent by the coder side, to reduce
+       power consumption of the decoder side and improve decoding efficiency.
+       [0031] In a possible implementation, at least one of the check bits is located in the bits included
+
+30 in the third information bit sequence. In this way, the at least one check bit may be used to check
+       an information bit located in front of the at least one check bit. This helps implement a function of
+       early decoding stopping. The early decoding stopping means that when the decoder side decodes
+       some information bits in a to-be-decoded sequence, the decoder side may check the decoded
+       information bits by using check bits, and if the check on the information bits fails, the decoder side
+
+35 stops decoding in advance, thereby reducing decoding power consumption.
+
+                                                                                                             8
+       [0032] In a possible implementation, a decoding order of at least one of the check bits is
+       located in a decoding order of the bits included in the third information bit sequence. In this way,
+       the at least one check bit may be used to check an information bit in front of the decoding order of
+       the at least one check bit, to implement a function of early decoding stopping.
+ 5 [0033] In a possible implementation, one probability distribution value in the probability
+       distribution value set P corresponds to one frozen bit sequence mapping manner, and the second
+       communications device may further determine, based on a frozen bit sequence mapping manner
+       corresponding to the ith probability distribution value, the frozen bit sequence corresponding to the
+
+       ith probability distribution value. Based on this possible implementation, different probability
+10 distribution values in the probability distribution value set P may correspond to different frozen
+
+       bit sequence mapping manners. In this way, when the decoder side sequentially tries different
+       probability distribution values in the probability distribution value set and frozen bit sequences
+       corresponding to the probability distribution values to perform decoding, the decoder side can
+       better distinguish between different probability distribution values, thereby reducing an error
+15 detection probability.
+       [0034] In a possible implementation, the frozen bit sequence corresponding to the ith
+       probability distribution value is determined based on a basic sequence corresponding to the
+       probability distribution value, and the basic sequence is determined based on the quantity of
+       probability distribution values included in the probability distribution value set P.
+20 [0035] In a possible implementation, the frozen bit sequence corresponding to the ith
+       probability distribution value is determined based on an m-sequence, a Gold sequence, or a
+       pseudo-random sequence corresponding to the probability distribution value.
+
+      [0036] In a possible implementation, the check bits include cyclic redundancy check CRC bits
+
+       and/or parity check PC bits.
+
+25 [0037] According to a third aspect, this application provides a communications apparatus. The
+
+       communications apparatus includes: a processing unit, configured to obtain a first information bit
+       sequence; further configured to determine a first frozen bit sequence based on a probability
+       distribution value P1 of the first information bit sequence; further configured to determine a check
+       bit sequence based on a second information bit sequence, where the second information bit
+30 sequence is the first information bit sequence or a sequence obtained after a pre-transformation
+       operation is performed on the first information bit sequence; further configured to obtain a first bit
+       sequence based on the second information bit sequence, the check bit sequence, and the first frozen
+      bit sequence, where the first bit sequence includes bits in the second information bit sequence, bits
+       in the check bit sequence, and bits in the first frozen bit sequence; further configured to perform
+
+35 polar coding on the first bit sequence to obtain a second bit sequence; and further configured to
+
+                                                                                                                   9
+       output the second bit sequence.
+       [0038] In a possible implementation, if the probability distribution value P1 is not
+       equiprobable distribution, the second information bit sequence is the sequence obtained after the
+       pre-transformation operation is performed on the first information bit sequence; or if the
+ 5 probability distribution value P1 is equiprobable distribution, the second information bit
+       sequence is the first information bit sequence.
+
+      [0039] In a possible implementation, if |P1 - 0.5| SE, the probability distribution value P1
+
+      is equiprobable distribution, where E is a preset value. E may be a relatively small value, for
+       example, may be 0.001, 0.01, 0.02, 0.03, 0.04, or 0.05.
+10 [0040] In a possible implementation, check bit locations in the first bit sequence are bit
+       locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+       columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+       coding, the set a is an information bit set, and the information bit set includes information bit
+       locations and the check bit locations in the first bit sequence.
+15 [0041] In a possible implementation, at least one check bit in the check bit sequence is located
+       in the bits included in the second information bit sequence.
+      [0042] In a possible implementation, a manner in which the processing unit determines the
+       first frozen bit sequence based on the probability distribution value P1 of the first information bit
+       sequence is specifically: selecting a probability distribution value Po in a probability distribution
+20 value set P based on the probability distribution value P1 of the first information bit sequence,
+       where the probability distribution value Po is a probability distribution value closest to the
+       probability distribution value P1 in the probability distribution value set P, and one probability
+       distribution value in the probability distribution value set P corresponds to one frozen bit sequence
+       mapping manner; and determining the first frozen bit sequence based on a frozen bit sequence
+25 mapping manner corresponding to the probability distribution value Po.
+
+       [0043] In a possible implementation, the first frozen bit sequence is determined based on a
+       basic sequence corresponding to the probability distribution value Po, and the basic sequence is
+       determined based on a quantity of probability distribution values included in the probability
+       distribution value set P.
+30 [0044] In a possible implementation, the first frozen bit sequence is determined based on an
+       m-sequence, a Gold sequence, or a pseudo-random sequence corresponding to the probability
+       distribution value Po.
+
+       [0045] In a possible implementation, the communications apparatus further includes a
+       communications unit. The communications unit is configured to send a probability distribution
+35 reference value range or a probability distribution reference value to a second communications
+
+                                                                                                  10
+    device every N information bit sequences, where N is an integer greater than 1.
+    [0046] In a possible implementation, the check bits include cyclic redundancy check CRC bits
+
+    and/or parity check PC bits.
+
+    [0047] According to a fourth aspect, this application provides a communications apparatus.
+
+5 The communications apparatus includes:
+
+    [0048] a processing unit, configured to obtain a to-be-decoded sequence, where
+
+    the processing unit is further configured to set i=1;
+
+    the processing unit is further configured to decode the to-be-decoded sequence based
+
+    on an ith probability distribution value in a probability distribution value set P and a frozen bit
+
+10 sequence corresponding to the ith probability distribution value, to obtain a third bit sequence
+
+    corresponding to the ith probability distribution value, where the third bit sequence includes bits in
+
+    a third information bit sequence, check bits, and bits in the frozen bit sequence corresponding to
+
+    the ith probability distribution value;
+
+    the processing unit is further configured to check the third information bit sequence;
+
+15  the processing unit is further configured to: if the check on the third information bit
+
+    sequence succeeds, obtain a first information bit sequence based on the third information bit
+
+    sequence, and stop decoding, where the first information bit sequence is the third information bit
+
+    sequence or the first information bit sequence is a sequence obtained after polar coding is
+
+    performed on the third information bit sequence;
+
+20  the processing unit is further configured to: if the check on the third information bit
+
+    sequence fails and i is less than x, set i=i+1, and perform the step of decoding the to-be-decoded
+
+      sequence based on an ith probability distribution value in a probability distribution value set P and
+
+      a frozen bit sequence corresponding to the ith probability distribution value, to obtain a third bit
+
+      sequence corresponding to the ith probability distribution value, where x is a quantity of probability
+25 distribution values included in the probability distribution value set P; and
+
+    the processing unit is further configured to: if the check on the third information bit
+
+    sequence fails and i is equal to x: stop decoding; or obtain a fourth information bit sequence based
+
+    on a target information bit sequence, and stop decoding, where the target information bit sequence
+    is one of x third information bit sequences corresponding to the probability distribution value set
+
+30 P, and the fourth information bit sequence is the target information bit sequence or the fourth
+
+    information bit sequence is a sequence obtained after polar coding is performed on the target
+
+    information bit sequence.
+
+    [0049] In a possible implementation, if the ith probability distribution value is not equiprobable
+    distribution, the first information bit sequence is the sequence obtained after polar coding is
+
+35 performed on the third information bit sequence; or if the ith probability distribution value is
+
+                                             11
+      equiprobable distribution, the first information bit sequence is the third information bit sequence.
+
+      [0050] In a possible implementation, if |Pir - 0.5| SE, the ith probability distribution value
+
+      is equiprobable distribution, where E is a preset value, and Pir is the ith probability distribution
+       value. E may be a relatively small value, for example, may be 0.001, 0.01, 0.02, 0.03, 0.04, or
+ 5 0.05.
+       [0051] In a possible implementation, a decoding order of probability distribution values in the
+      probability distribution value set P is determined based on information entropies corresponding to
+      the probability distribution values in the probability distribution value set P.
+      [0052] In a possible implementation, an information entropy corresponding to the ith
+10 probability distribution value is greater than or equal to an information entropy corresponding to
+      an (i+1)th probability distribution value.
+      [0053] In a possible implementation, a decoding order of probability distribution values in the
+      probability distribution value set P is determined based on historical probability distribution values
+
+       of a transmitting end.
+15 [0054] In a possible implementation, the communications apparatus further includes a
+
+      communications unit. The communications unit is configured to receive a probability distribution
+
+       reference value range or a probability distribution reference value sent by a first communications
+       device every N information bit sequences, where N is an integer greater than 1. A decoding order
+
+       of probability distribution values in the probability distribution value set P is determined based on
+20 the probability distribution reference value range or the probability distribution reference value.
+
+       [0055] In a possible implementation, the target information bit sequence is a third information
+      bit sequence corresponding to equiprobable distribution in the probability distribution value set P.
+      [0056] In a possible implementation, check bit locations in the third bit sequence are bit
+      locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+25 columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+       coding, the set a is an information bit set, and the information bit set includes information bit
+       locations and the check bit locations in the third bit sequence.
+      [0057] In a possible implementation, at least one of the check bits is located in the bits included
+       in the third information bit sequence.
+30 [0058] In a possible implementation, one probability distribution value in the probability
+      distribution value set P corresponds to one frozen bit sequence mapping manner, and the
+      processing unit is further configured to determine, based on a frozen bit sequence mapping manner
+      corresponding to the ith probability distribution value, the frozen bit sequence corresponding to the
+       ¡th probability distribution value.
+35 [0059] In a possible implementation, the frozen bit sequence corresponding to the ith
+
+                                                                                                  12
+       probability distribution value is determined based on a basic sequence corresponding to the
+       probability distribution value, and the basic sequence is determined based on the quantity of
+      probability distribution values included in the probability distribution value set P.
+       [0060] In a possible implementation, the frozen bit sequence corresponding to the ith
+ 5 probability distribution value is determined based on an m-sequence, a Gold sequence, or a
+      pseudo-random sequence corresponding to the probability distribution value.
+      [0061] In a possible implementation, the check bits include cyclic redundancy check CRC bits
+       and/or parity check PC bits.
+       [0062] According to a fifth aspect, this application provides a communications apparatus. The
+10 communications apparatus includes a processor, and when the processor invokes a computer
+      program in a memory, the method according to the first aspect or the second aspect is performed.
+      [0063] According to a sixth aspect, this application provides a communications apparatus. The
+       communications apparatus includes a processor and a memory, the processor is coupled to the
+      memory, and the processor is configured to implement the method according to the first aspect or
+15 the second aspect.
+       [0064] According to a seventh aspect, this application provides a communications apparatus.
+       The communications apparatus includes a processor, a memory, and a transceiver, the processor is
+       coupled to the memory, the transceiver is configured to send/receive data, and the processor is
+       configured to implement the method according to the first aspect or the second aspect.
+20 [0065] According to an eighth aspect, this application provides a communications apparatus.
+       The communications apparatus includes a processor and an interface, the interface is configured
+      to receive or output a signal, and the processor is configured to implement the method according
+       to the first aspect or the second aspect by using a logic circuit or by executing code instructions.
+      [0066] According to a ninth aspect, this application provides a computer-readable storage
+25 medium. The storage medium stores a computer program or instructions, and when the computer
+       program is or the instructions are executed by a communications apparatus, the method according
+      to the first aspect or the second aspect is implemented.
+
+      [0067] According to a tenth aspect, this application provides a computer program product
+
+       including instructions. When a computer reads and executes the computer program product, the
+30 computer is enabled to perform the method according to the first aspect or the second aspect.
+
+                                       BRIEF DESCRIPTION OF DRAWINGS
+
+       [0068] FIG. 1 is a schematic flowchart of an existing coding and decoding method;
+      [0069] FIG. 2 is a schematic diagram of a communications system according to an
+
+                                                                                                  13
+       embodiment of this application;
+       [0070] FIG. 3 is a schematic flowchart of a coding and decoding method according to an
+       embodiment of this application;
+       [0071] FIG. 4 is a schematic flowchart of another coding and decoding method according to
+ 5 an embodiment of this application;
+       [0072] FIG. 5 is a schematic diagram of a nesting relationship according to an embodiment of
+       this application;
+       [0073] FIG. 6 is a schematic flowchart of still another coding and decoding method according
+       to an embodiment of this application;
+10 [0074] FIG. 7 is a schematic diagram of a structure of a communications apparatus according
+       to an embodiment of this application;
+       [0075] FIG. 8 is a schematic diagram of a structure of another communications apparatus
+       according to an embodiment of this application; and
+       [0076] FIG. 9 is a schematic diagram of a structure of a chip according to an embodiment of
+15 this application.
+
+                                       DESCRIPTION OF EMBODIMENTS
+
+       [0077] The terms "first", "second", and the like in the specification, claims, and accompanying
+       drawings of this application are used to distinguish between different objects, but are not used to
+       describe a specific order. In addition, the terms "include" and "have" and any other variants thereof
+20 are intended to cover a non-exclusive inclusion. For example, a process, a method, a system, a
+      product, or a device that includes a series of steps or units is not limited to the listed steps or units,
+       but optionally further includes an unlisted step or unit, or optionally further includes another
+       inherent step or unit of the process, the method, the system, the product, or the device.
+       [0078] To better understand this application, the following describes a communications system
+25 provided in embodiments of this application.
+       [0079] FIG. 2 is a schematic diagram of a communications system 2000 to which embodiments
+       of this application are applied. As shown in FIG. 2, the communications system 2000 includes a
+       radio access network 100 and a core network 200. Optionally, the communications system 2000
+       may further include an Internet 300. The radio access network 100 may include at least one radio
+30 access network device (for example, 110a and 110b in FIG. 2), and may further include at least
+      one terminal device (for example, 120a to 120j in FIG. 2). The terminal device is connected to the
+       radio access network device in a wireless manner, and the radio access network device is connected
+       to the core network in a wireless or wired manner. A core network device and the radio access
+
+                                                                                                  14
+       network device may be different independent physical devices, or functions of the core network
+       device and logical functions of the radio access network device may be integrated into a same
+      physical device, or some functions of the core network device and some functions of the radio
+       access network device may be integrated into one physical device. Terminal devices may be
+ 5 connected to each other in a wired or wireless manner, and radio access network devices may be
+       connected to each other in a wired or wireless manner. FIG. 2 is merely a schematic diagram, and
+       the communications system may further include other network devices, for example, may further
+       include a wireless relay device and a wireless backhaul device that are not drawn in FIG. 2.
+       [0080] The radio access network device may be a base station (base station), an evolved
+10 NodeB (evolved NodeB, eNodeB), a transmission reception point (transmission reception point,
+
+      TRP), a next generation NodeB (next generation NodeB, gNB) in a 5th generation (5th generation,
+       5G) mobile communications system, a next generation base station in a 6th generation (6th
+      generation, 6G) mobile communications system, a base station in a future mobile communications
+       system, an access node in a WiFi system, or the like, or may be a module or a unit that completes
+15 some functions of the base station, for example, may be a central unit (central unit, CU), or may
+      be a distributed unit (distributed unit, DU). The CU herein completes functions of a radio resource
+       control protocol and a packet data convergence protocol (packet data convergence protocol, PDCP)
+      of the base station, and may further complete functions of a service data adaptation protocol
+       (service data adaptation protocol, SDAP). The DU completes functions of a radio link control layer
+20 and a medium access control (medium access control, MAC) layer of the base station, and may
+      further complete some or all of functions of a physical layer. For specific descriptions of the
+       foregoing protocol layers, refer to related technical specifications of the 3rd generation partnership
+      project (3rd generation partnership project, 3GPP). The radio access network device may be a
+      macro base station (for example, 110a in FIG. 2), may be a micro base station or an indoor station
+25 (for example, 110b in FIG. 2), or may be a relay node, a donor node, or the like. A specific
+
+       technology and a specific device form that are used by the radio access network device are not
+       limited in embodiments of this application. In embodiments of this application, the radio access
+       network device may be referred to as a network device for short. For ease of description, the radio
+       access network device is referred to as a network device for short below for description.
+
+30 [0081] The terminal device may also be referred to as a terminal, user equipment (user
+       equipment, UE), a mobile station, a mobile terminal, or the like. The terminal device may be
+       widely used in various scenarios, for example, a device-to-device (device-to-device, D2D)
+      scenario, a vehicle-to-everything (vehicle to everything, V2X) communication scenario, a machine
+       type communication (machine-type communication, MTC) scenario, an internet of things (internet
+
+35 of things, IOT) scenario, a virtual reality scenario, an augmented reality scenario, an industrial
+
+                                                                                                  15
+       control scenario, a self-driving scenario, a telemedicine scenario, a smart grid scenario, a smart
+       furniture scenario, a smart office scenario, a smart wearable scenario, a smart transportation
+       scenario, and a smart city scenario. The terminal may be a mobile phone, a tablet computer, a
+       computer with a wireless sending/receiving function, a wearable device, a vehicle, an unmanned
+ 5 aerial vehicle, a helicopter, an airplane, a ship, a robot, a robot arm, a smart home device, or the
+       like. A specific technology and a specific device form that are used by the terminal device are not
+       limited in embodiments of this application.
+       [0082] The network device and the terminal device may be at fixed locations, or may be
+       movable. The network device and the terminal device each may be deployed on the land, including
+10 an indoor device, an outdoor device, a handheld device, or a vehicle-mounted device, may be
+       deployed on a water surface, or may be deployed on an airplane, a balloon, and a satellite in the
+      air. An application scenario of the network device and the terminal device is not limited in
+       embodiments of this application.
+       [0083] Roles of the network device and the terminal device may be relative. For example, the
+15 helicopter or the unmanned aerial vehicle 120i in FIG. 2 may be configured as a mobile network
+       device. For the terminal device 120j that accesses the radio access network 100 through 120i, the
+       terminal device 120i is a network device. However, for the network device 110a, 120i is a terminal
+       device, that is, 110a and 120i communicate with each other by using a radio air interface protocol.
+       Certainly, 110a and 120i may alternatively communicate with each other by using an interface
+20 protocol between network devices. In this case, compared with 110a, 120i is also a network device.
+       Therefore, both the network device and the terminal device may be collectively referred to as
+       communications apparatuses. 110a and 110b in FIG. 2 each may be referred to as a
+       communications apparatus having functions of a network device, and 120a to 120j in FIG. 2 each
+      may be referred to as a communications apparatus having functions of a terminal device.
+
+25 [0084] Communication may be performed between a network device and a terminal device,
+       between network devices, or between terminal devices by using a licensed spectrum, an unlicensed
+       spectrum, or both a licensed spectrum and an unlicensed spectrum, may be performed by using a
+       spectrum below 6 gigahertz (gigahertz, GHz), a spectrum above 6 GHz, or both a spectrum below
+       6 GHz and a spectrum above 6 GHz. A spectrum resource used for wireless communication is not
+
+30 limited in embodiments of this application.
+       [0085] In this embodiment of this application, the function of the network device may
+       alternatively be performed by a module (for example, a chip) in the network device, or may be
+       performed by a control subsystem including the function of the network device. Herein, the control
+       subsystem including the function of the network device may be a control center in the foregoing
+
+35 application scenario such as the smart grid scenario, the industrial control scenario, the intelligent
+
+                                                                                                  16
+      transportation scenario, or the smart city scenario. The function of the terminal device may
+       alternatively be performed by a module (for example, a chip or a modem) in the terminal device,
+       or may be performed by an apparatus including the function of the terminal device.
+       [0086] In embodiments of this application, a first communications device on a coder side may
+ 5 be a terminal device, and a second communications device on a decoder side may be a network
+       device. Alternatively, a first communications device on a coder side may be a network device, and
+
+       a second communications device on a decoder side may be a terminal device.
+       [0087] The following describes some nouns or terms used in embodiments of this application.
+       [0088] 1. Probability distribution value
+
+10 [0089] A probability distribution value of an information bit sequence is a proportion of 0 or
+
+       1 in the information bit sequence. For example, the probability distribution value is a proportion
+       of 1 in the information bit sequence. Assuming that the information bit sequence is 0000000011,
+       the probability distribution value of the information bit sequence is 0.2.
+      [0090] 2. Log likelihood ratio (log likelihood ratio, LLR)
+15 [0091] A log likelihood ratio of a bit is a natural logarithm of a ratio of a probability that the
+      bit is 1 to a probability that the bit is 0. If the probability that the bit is 1 is denoted as P(1), and
+       the probability that the bit is 0 is denoted as P(0), the log likelihood ratio of the bit is
+
+      In[P(0)/P(1)].
+       [0092] 3. Coding length
+20 [0093] The coding length is a quantity of bits in a coded bit sequence. When a quantity of
+      information bits is fixed, if coding is performed in a coding manner with a longer coding length,
+      there are more redundant bits in a coded bit sequence, and data transmission reliability is higher.
+
+       [0094] 4. Coding rate
+      [0095] The coding rate is a proportion of information bits existing before coding in coded bits.
+25 If a bit sequence is coded in a coding manner with a lower coding rate, there are more redundant
+       bits in a coded bit sequence, and data transmission reliability is higher.
+       [0096] 5. Pseudo-random sequence
+       [0097] A sequence that can be determined in advance and can be repeatedly implemented is
+       referred to as a determined sequence, a sequence that can be neither determined in advance nor
+30 repeatedly implemented is referred to as a random sequence, and a sequence that cannot be
+      determined in advance but can be repeatedly generated is referred to as a pseudo-random sequence.
+       [0098] 6. m-sequence
+      [0099] The m-sequence is short for a longest linear shift register sequence, and is a pseudo-
+       random sequence, a pseudo-noise (PN) code, or a pseudo-random code. In all pseudo-random
+35 sequences, the m-sequence is a most important and basic pseudo-random sequence.
+
+                                                                                                       17
+       [00100] 7. Gold (Gold) sequence
+
+       [00101] The Gold sequence is a sequence generated by performing modulo 2 addition on a pair
+      of preferred m-sequences, and the pair of preferred m-sequences cause relatively small cross-
+
+       correlation between different Gold sequences.
+ 5 [00102] The following further describes in detail a coding method, a decoding method, and a
+
+       communications apparatus provided in embodiments of this application.
+       [00103] FIG. 3 is a schematic flowchart of a coding and decoding method according to an
+       embodiment of this application. As shown in FIG. 3, the coding and decoding method includes the
+       following step 301 to step 315. The method shown in FIG. 3 may be performed by a first
+10 communications device and a second communications device. Alternatively, the method shown in
+      FIG. 3 may be performed by a chip in the first communications device and a chip in the second
+       communications device. FIG. 3 is described by using an example in which the first
+       communications device and the second communications device perform the method.
+       [00104] 301: The first communications device obtains a first information bit sequence.
+15 [00105]302: The first communications device determines a first frozen bit sequence based on
+      a probability distribution value P1 of the first information bit sequence.
+       [00106] In this embodiment of this application, that the first communications device determines
+       a first frozen bit sequence based on a probability distribution value P1 of the first information bit
+       sequence means that the first communications device determines values of the first frozen bit
+20 sequence based on the probability distribution value P1 of the first information bit sequence. That
+       is, the values of the first frozen bit sequence are not all Os by default, and the values of the first
+       frozen bit sequence are related to the probability distribution value P1 of the first information bit
+
+        sequence.
+
+       [00107] In a possible implementation, a specific implementation in which the first
+25 communications device determines the first frozen bit sequence based on the probability
+
+       distribution value P1 of the first information bit sequence is as follows: The first communications
+       device selects a probability distribution value Po in a probability distribution value set P based
+       on the probability distribution value P1 of the first information bit sequence, where the
+       probability distribution value Po is a probability distribution value closest to the probability
+30 distribution value P1 in the probability distribution value set P, and one probability distribution
+      value in the probability distribution value set P corresponds to one frozen bit sequence mapping
+       manner; and determines the first frozen bit sequence based on a frozen bit sequence mapping
+      manner corresponding to the probability distribution value Po.
+       [00108] The probability distribution value set P is a set preset on a coder side and a decoder
+35 side. The probability distribution value set P includes a plurality of probability distribution values,
+
+                                                                                                       18
+       and different probability distribution values correspond to different frozen bit sequence mapping
+       manners. That is, different probability distribution values in the probability distribution value set
+       P correspond to different frozen bit sequence values.
+
+      [00109] For example, it is assumed that the probability distribution value set P includes {0.2,
+ 5 0.4, 0.5, 0.7}. The probability distribution value 0.2 corresponds to a frozen bit sequence mapping
+
+       manner 1, the probability distribution value 0.4 corresponds to a frozen bit sequence mapping
+       manner 2, the probability distribution value 0.5 corresponds to a frozen bit sequence mapping
+       manner 3, and the probability distribution value 0.7 corresponds to a frozen bit sequence mapping
+       manner 4. Assuming that the probability distribution value P1 is 0.48, the first communications
+10 device obtains the probability distribution value 0.5 from the probability distribution value set P,
+       and determines the values of the first frozen bit sequence based on the frozen bit sequence mapping
+       manner 3 corresponding to the probability distribution value 0.5.
+       [00110] Based on this possible implementation, different probability distribution values in the
+       probability distribution value set P may correspond to different frozen bit sequence mapping
+15 manners. In this way, when the decoder side sequentially tries different probability distribution
+       values in the probability distribution value set and frozen bit sequences corresponding to the
+       probability distribution values to perform decoding, the decoder side can better distinguish
+       between different probability distribution values, thereby reducing an error detection probability.
+       [00111] Optionally, the frozen bit sequence mapping manner corresponding to the probability
+20 distribution value Po may specifically include the following four manners:
+       [00112] Manner 1: The first frozen bit sequence is determined based on a basic sequence
+      corresponding to the probability distribution value Po, and the basic sequence is determined based
+       on a quantity of probability distribution values included in the probability distribution value set P.
+       [00113] Different probability distribution values in the probability distribution value set P
+25 correspond to different basic sequences.
+       [00114] For example, it is assumed that the probability distribution value set P includes {0.2,
+       0.4, 0.5, 0.7}, and the quantity of probability distribution values in the probability distribution
+       value set P is 4. In this case, the four probability distribution values may be represented by using
+
+      two bits. The probability distribution value 0.2 is represented by using a basic sequence 00, the
+
+30 probability distribution value 0.4 is represented by using a basic sequence 01, the probability
+
+      distribution value 0.5 is represented by using a basic sequence 10, and the probability distribution
+       value 0.7 is represented by using a basic sequence 11.
+      [00115] A frozen bit sequence mapping manner 1 corresponding to the probability distribution
+
+       value 0.2 is determining a frozen bit sequence based on the basic sequence 00. A frozen bit
+35 sequence mapping manner 2 corresponding to the probability distribution value 0.4 is determining
+
+                                                                                                  19
+       a frozen bit sequence based on the basic sequence 01. A frozen bit sequence mapping manner 3
+       corresponding to the probability distribution value 0.5 is determining a frozen bit sequence based
+       on the basic sequence 10. A frozen bit sequence mapping manner 4 corresponding to the
+      probability distribution value 0.7 is determining a frozen bit sequence based on the basic sequence
+
+ 5 11.
+       [00116] Optionally, the values of the first frozen bit sequence may be obtained by directly
+       extending or cross-extending the basic sequence corresponding to the probability distribution
+       value Po.
+
+       [00117] The direct extension is used as an example. It is assumed that a length of the first frozen
+10 bit sequence is 4. If the probability distribution value Po is 0.2, the basic sequence 00 may be
+
+       directly extended to obtain a first frozen bit sequence 0000. If the probability distribution value
+       Po is 0.4, the basic sequence 01 may be directly extended to obtain a first frozen bit sequence
+       0101. If the probability distribution value Po is 0.5, the basic sequence 10 may be directly
+       extended to obtain a first frozen bit sequence 1010. If the probability distribution value Po is 0.7,
+15 the basic sequence 11 may be directly extended to obtain a first frozen bit sequence 1111.
+       [00118] The cross extension is used as another example. If the probability distribution value Po
+       is 0.2, the basic sequence 00 may be cross-extended to obtain a first frozen bit sequence 0000. If
+       the probability distribution value Po is 0.4, the basic sequence 01 may be cross-extended to obtain
+      a first frozen bit sequence 0011. If the probability distribution value Po is 0.5, the basic sequence
+20 10 may be cross-extended to obtain a first frozen bit sequence 1100. If the probability distribution
+       value Po is 0.7, the basic sequence 11 may be cross-extended to obtain a first frozen bit sequence
+
+        1111.
+
+       [00119] In the frozen bit sequence mapping manner described in the manner 1, the
+       coder/decoder side needs to store only basic sequences and relationships between first frozen bit
+25 sequences and the basic sequences, to help reduce storage overheads, and also ensure that different
+       first frozen bit sequences are orthogonal to a specific extent, thereby reducing an error detection
+       probability.
+       [00120] Manner 2: The first frozen bit sequence is determined based on an m-sequence
+       corresponding to the probability distribution value Po.
+30 [00121] Different probability distribution values in the probability distribution value set P
+       correspond to different m-sequences.
+       [00122] For example, it is assumed that the probability distribution value set P includes {0.2,
+       0.4, 0.5, 0.7}. The probability distribution value 0.2 corresponds to an m-sequence 1, the
+       probability distribution value 0.4 corresponds to an m-sequence 2, the probability distribution
+35 value 0.5 corresponds to an m-sequence 3, and the probability distribution value 0.7 corresponds
+
+                                                             20
+       to an m-sequence 4.
+       [00123] A frozen bit sequence mapping manner 1 corresponding to the probability distribution
+
+       value 0.2 is determining a frozen bit sequence based on the m-sequence 1. A frozen bit sequence
+       mapping manner 2 corresponding to the probability distribution value 0.4 is determining a frozen
+ 5 bit sequence based on the m-sequence 2. A frozen bit sequence mapping manner 3 corresponding
+       to the probability distribution value 0.5 is determining a frozen bit sequence based on the m-
+       sequence 3. A frozen bit sequence mapping manner 4 corresponding to the probability distribution
+       value 0.7 is determining a frozen bit sequence based on the m-sequence 4.
+       [00124] In a possible implementation, if a length of the m-sequence corresponding to the
+10 probability distribution value Po is greater than a length Nf of the first frozen bit sequence, the
+       first Nf bits may be selected from the m-sequence as the values of the first frozen bit sequence.
+       If a length of the m-sequence corresponding to the probability distribution value Po is less than a
+      length Nf of the first frozen bit sequence, a value 0 may be assigned to an excess frozen bit of the
+       length of the m-sequence. For example, the probability distribution value Po is 0.2. If a length of
+15 the m-sequence 1 is 7, the m-sequence 1 is 1010101, and the length Nf of the first frozen bit
+       sequence is 5, the values of the first frozen bit sequence are 10101. If a length of the m-sequence
+       1 is 7, the m-sequence 1 is 1010101, and the length Nf of the first frozen bit sequence is 10, the
+       values of the first frozen bit sequence are 1010101000.
+       [00125] In the frozen bit sequence mapping manner described in the manner 2, the
+20 coder/decoder side needs to store only mapping relationships between first frozen bit sequences
+       and m-sequences, to help reduce storage overheads, and also ensure that different first frozen bit
+       sequences are orthogonal to a specific extent, thereby reducing an error detection probability.
+       [00126] Manner 3: The first frozen bit sequence is determined based on a Gold sequence
+       corresponding to the probability distribution value Po.
+25 [00127] An implementation of the manner 3 is the same as the implementation of the manner 2.
+       For a specific implementation of the manner 3, refer to the specific implementation of the manner
+       2. Details are not described herein.
+       [00128] Manner 4: The first frozen bit sequence is determined based on a pseudo-random
+       sequence corresponding to the probability distribution value Po.
+30 [00129] An implementation of the manner 4 is the same as the implementation of the manner 2.
+       For a specific implementation of the manner 4, refer to the specific implementation of the manner
+       2. Details are not described herein. The pseudo-random sequence is determined by the first
+       communications device based on a random seed, and the random seed may be agreed on by both
+       the first communications device and the second communications device by using signaling, or the
+35 random seed may be specified in a protocol in advance.
+
+                                                                                                  21
+       [00130] In a possible implementation, frozen bit sequence values corresponding to different
+       probability distribution values and frozen bit sequence lengths may alternatively be directly
+       defined in a protocol in advance. The first communications device determines, based on the
+      probability distribution value Po and a length of the first frozen bit sequence, the values of the
+ 5 first frozen bit sequence from the plurality of frozen bit sequence values defined in the protocol in
+       advance. For example, the protocol may have the following advance definitions: When a
+
+      probability distribution value is 0.2 and a frozen bit sequence length is 2, corresponding frozen bit
+       sequence values are 00. When a probability distribution value is 0.2 and a frozen bit sequence
+      length is 4, corresponding frozen bit sequence values are 0000. When a probability distribution
+10 value is 0.4 and a frozen bit sequence length is 2, corresponding frozen bit sequence values are 10.
+
+       When a probability distribution value is 0.4 and a frozen bit sequence length is 4, corresponding
+      frozen bit sequence values are 1010. When a probability distribution value is 0.5 and a frozen bit
+       sequence length is 2, corresponding frozen bit sequence values are 01. When a probability
+
+      distribution value is 0.5 and a frozen bit sequence length is 4, corresponding frozen bit sequence
+15 values are 0101. When a probability distribution value is 0.7 and a frozen bit sequence length is 2,
+
+       corresponding frozen bit sequence values are 11. When a probability distribution value is 0.7 and
+       a frozen bit sequence length is 4, corresponding frozen bit sequence values are 1111.
+       [00131] 303: The first communications device determines a check bit sequence based on a
+
+      second information bit sequence.
+20 [00132] The second information bit sequence is the first information bit sequence or a sequence
+
+      obtained after a pre-transformation operation is performed on the first information bit sequence. A
+      length of the second information bit sequence obtained after the pre-transformation operation is
+       the same as a length of the first information bit sequence. Step 302 may be performed before or
+       after step 303.
+
+25 [00133] Optionally, the first communications device may perform the pre-transformation
+       operation on the first information bit sequence based on the first frozen bit sequence, to obtain the
+       second information bit sequence. For example, the second information bit sequence may meet the
+       following formula (1):
+
+                  u(src) = [x(src) -u(chk) *G(chk,src) -u(frz) *G(frz,src)] *G(src)-1 (1)
+30 [00134] u(src) is the second information bit sequence. x(src) is the first information bit
+
+       sequence. u(chk) is the check bit sequence obtained based on the second information bit
+
+      sequence, for example, u(chk)=CRC(u(src)) or PC(u(src)). G(chk,src) indicates that
+
+       rows corresponding to a set chk and columns corresponding to a set src are selected from a
+      polar matrix G. u(frz) is the first frozen bit sequence. G(frz, src) indicates that rows
+35 corresponding to a set frz and the columns corresponding to the set src are selected from the
+
+                                                              22
+       polar matrix G. G(src) indicates that rows and the columns corresponding to the set src are
+       selected from the polar matrix G. The set src represents an information bit location set, the set
+       chk represents a check bit location set, and the set frz represents a frozen bit set. To decouple
+       performing the pre-transformation operation on the first information bit sequence from
+ 5 determining the check bit sequence based on the second information bit sequence so that u(src)
+       obtained after the pre-transformation operation is related only to the first information bit sequence
+      x(src) and the first frozen bit sequence u(frz) and then the pre-transformation operation can
+      be performed before the check bit sequence is determined, the sets chk and src need to be found
+       so that a constraint G(chk, src)=0 holds.
+10 [00135] In a possible implementation, check bits include cyclic redundancy check (cyclic
+       redundancy check, CRC) bits and/or parity check (parity check, PC) bits.
+       [00136] 304: The first communications device obtains a first bit sequence based on the second
+      information bit sequence, the check bit sequence, and the first frozen bit sequence.
+       [00137] The first bit sequence includes bits in the second information bit sequence, bits in the
+15 check bit sequence, and bits in the first frozen bit sequence.
+       [00138] In a possible implementation, a specific implementation in which the first
+       communications device obtains the first bit sequence based on the second information bit sequence,
+       the check bit sequence, and the first frozen bit sequence is as follows: The first communications
+       device maps the bits in the second information bit sequence to information bit locations in an
+20 information bit set, maps the bits in the check bit sequence to check bit locations in the information
+       bit set, and maps the bits in the first frozen bit sequence to frozen bit locations in the frozen bit set,
+       to obtain the first bit sequence. The information bit set includes the information bit locations and
+       the check bit locations in the first bit sequence, and the frozen bit set includes the frozen bit
+       locations in the first bit sequence. The information bit set and the frozen bit set may be obtained
+25 based on a sum of the length of the second information bit sequence and a length of the check bit
+       sequence and a coding length.
+       [00139] A (16, 12) code is used as an example. The coding length is 16, an information bit
+      length is 12, and the information bit length is the sum of the length of the second information bit
+      sequence and the length of the check bit sequence. The first communications device may obtain
+30 the information bit set and the frozen bit set based on the information bit length 12 and the coding
+      length 16. The information bit set includes {4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}, the information
+       bit locations in the information bit set include {8, 10, 11, 12, 13, 14, 15, 16}, and the check bit
+      locations in the information bit set include {4, 6, 7, 9}. The frozen bit set includes {1, 2, 3, 5}. The
+       first communications device maps eight bits in the second information bit sequence to the
+35 information bit locations {8, 10, 11, 12, 13, 14, 15, 16}, maps four bits in the check bit sequence
+
+                                                                                                 23
+       to the check bit locations {4, 6, 7, 9}, and maps four bits in the first frozen bit sequence to the
+      frozen bit set {1, 2, 3, 5}, to obtain the first bit sequence.
+      [00140] In a possible implementation, check bit locations in the first bit sequence are bit
+      locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+
+ 5 columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for polar coding,
+
+       the set a is an information bit set, and the information bit set includes information bit locations and
+       the check bit locations in the first bit sequence. Based on this possible implementation,
+      G(chk, src)=0 can hold. Therefore, performing the pre-transformation operation on the first
+      information bit sequence is decoupled from determining the check bit sequence based on the
+10 second information bit sequence, so that the pre-transformation operation can be performed before
+      the check bit sequence is determined, to reduce power consumption of the decoder side and
+       improve decoding efficiency.
+
+      [00141] A (16, 12) code is used as an example. A coding length is 16, an information bit length
+      is 12, and a frozen bit length is 4. The length of the second information bit sequence is 8, and a
+15 length of the check bit sequence is 4. A polar matrix G corresponding to the coding length is shown
+      in the following Table 1:
+
+          Table 1
+
+Bit       1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
+location
+
+sequence
+
+number
+
+1         1 0 0 0 0 0 0 0 0 0 0 00 0 0 0
+
+2         11 000000000 00 00 0
+
+3         1 01 0 0 0 0 0 0 00 00 0 0 0
+
+4         1 1 1 10 0 0 0 0 0 0 0 0 0 0 0
+
+5         1 0 0 01 0 0 0 0 0 0 0 0 0 0 0
+
+6         1 1 0 0 1 1 0 0 00 0 0 0 0 0 0
+
+7         1 0 1 0 1 0 1000 0 0 0 0 0 0
+
+8         1 1 1 1 1 11 100 0 0 0 0 0 0
+
+9         1 0 0 00 0 0 0 10  0  0  0  0  0  0
+
+10        1 1 0 0 0 0 001 1 0 0 0 0 0 0
+
+11        1 0 1 0 0 0 0 01 0 1 0 0 0 0 0
+
+12        1 1 1 1 0 00011 1 1 0 0 0 0
+
+          24
+    Bit       1 2 3 4 5 6 7 8 9 10 11 £ 12 £ 13 14 15 16
+
+    location
+
+    sequence
+
+    number
+
+    13        1 0 0( 0 1 0 0 0100 0                 1     00     0
+
+    14        1 1 001 1 0 0 1 1 0 0 1 1 0 0
+
+    15        1 0 1 0 1 01 0 1 0 1 0 1 0 1 0
+
+    16        1 1 1 1 1 1 1 11 1             1  1   1     1  1   1
+
+     [00142] A decoding reliability order of bit locations may be {1, 2, 3, 5, 9, 4, 6, 7, 10, 11, 13, 8,
+     12, 14, 15, 16}, and 12 bit locations with highest reliability are selected as an information bit set.
+     For example, {4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16} may be selected as the information bit set.
+5 It is assumed that decoding is performed in a bit reversal order, and a corresponding order is {1, 9,
+     5, 13, 3, 11, 7, 15, 2, 10, 6, 14, 4, 12, 8, 16}. A decoding order of information bits is info_sorted={9,
+     13, 11, 7, 15, 10, 6, 14, 4, 12, 8, 16}. G(info_sorted) is obtained based on the decoding order,
+
+     that is, the 9th, 13th, 11th, 7th, 15th, 10th, 6th, 14th, 4th, 12th, 8th, and 16th row and column are selected
+
+     from the matrix G, to obtain a 12*12 matrix, shown in the following Table 2:
+
+10                               Table 2
+
+    info_sorted sequence  9 13 11 7 15 10 6 14 4 12 8 16
+
+    number                1 0 0 0 0 0 0 0 0 00 0
+                          1 1 0 00 0 0 0 0 0 0 0
+    9
+    13                    10  1 00 0            00     0     00  0
+    11
+                          00  0  10       0     00     0     0 00
+    7
+    15                    11  1  11       0     00     0     00 0
+    10
+    6                     1 0 0 00 1 0 0 0 0 00
+
+    14                    0 0 0 00 0 1 0 0 0 0 0
+
+    4                     11  0  00 1           11     0     0 00
+    12
+    8                     0 0 0 0 0 0 0 0 1 0 00
+    16
+                          10  1  00       1     00     1     1 00
+
+                          00  0  10 0           10     1     01 0
+
+                          11  1  11       1     11     1     11  1
+
+    [00143] To meet the constraint G(chk, src)=0, rows (rows in bold in Table 2) whose sums are
+                                                          25
+       1 in G(info_sorted) may be counted. There are four bit locations {9, 7, 6, 4} in total. The four
+       bit locations {9, 7, 6, 4} are the check bit locations.
+       [00144] In a possible implementation, at least one check bit in the check bit sequence is located
+       in the bits included in the second information bit sequence. If decoding is performed in a non-bit-
+ 5 reversal order, the at least one check bit may be used to check an information bit in front of the at
+       least one check bit, to implement a function of early decoding stopping. The early decoding
+       stopping means that when the decoder side decodes some information bits in a to-be-decoded
+       sequence, the decoder side may check the decoded information bits by using check bits, and if the
+       check on the information bits fails, the decoder side stops decoding in advance, thereby reducing
+10 decoding power consumption.
+      [00145] For example, it is assumed that decoding is performed in a non-bit-reversal order, the
+      information bit set is {4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}, and a decoding order is also {4, 6,
+       7, 8, 9, 10, 11, 12, 13, 14, 15, 16}. It is assumed that the check bit locations include {4, 9, 13, 14}.
+       Check bits corresponding to check bit locations {4, 9} are used to check information bits
+15 corresponding to information bit locations {6, 7, 8}. Check bits corresponding to check bit
+       locations {13, 14} are used to check information bits corresponding to information bit locations
+       {10, 11, 12, 15, 16}. If check on the information bits corresponding to the information bit locations
+       {6, 7, 8} fails, the decoder side may stop decoding in advance, to implement early decoding
+       stopping.
+20 [00146] In a possible implementation, a decoding order of at least one check bit in the check bit
+       sequence is located in a decoding order of the bits included in the second information bit sequence.
+       In this way, the at least one check bit may be used to check an information bit in front of the
+       decoding order of the at least one check bit, to implement a function of early decoding stopping.
+       [00147] For example, it is assumed that decoding is performed in a bit reversal order, and a
+25 decoding order of information bits is {9, 13, 11, 7, 15, 10, 6, 14, 4, 12, 8, 16}. The check bit
+       locations include {9, 7, 6, 4}. Check bits corresponding to check bit locations {9, 7} are used to
+       check information bits corresponding to information bit locations {13, 11}. Check bits
+       corresponding to check bit locations {6, 4} are used to check information bits corresponding to
+       information bit locations {8, 10, 12, 14, 15, 16}. If check on the information bits corresponding to
+30 the information bit locations {13, 11} fails, the decoder side may stop decoding in advance, to
+       implement early decoding stopping.
+       [00148] 305: The first communications device performs polar coding on the first bit sequence
+
+       to obtain a second bit sequence.
+
+       [00149] In this embodiment of this application, after determining the first bit sequence, the first
+35 communications device may perform polar coding on the first bit sequence by using the polar
+
+                                                                                             26
+       matrix G, to obtain the second bit sequence.
+       [00150] Optionally, bits obtained after polar coding is performed on the check bits in the first
+       bit sequence meet the following formula (2):
+
+                   x(chk) = u(src) *G(src,chk) +u(chk) *G(chk) +u(frz) *G(frz,chk) (2)
+ 5 [00151] x(chk) is the bits obtained after polar coding is performed on the check bits in the first
+
+      bit sequence. u(src) is the second information bit sequence. G(src, chk) indicates that the
+       rows corresponding to the set src and columns corresponding to the set chk are selected from
+      the polar matrix G. u(chk) is the check bit sequence. G(chk) indicates that the rows and the
+       columns corresponding to the set chk are selected from the polar matrix G. u(frz) is the first
+10 frozen bit sequence. G(frz, chk) indicates that the rows corresponding to the set frz and the
+       columns corresponding to the set chk are selected from the polar matrix G. The set src
+       represents the information bit location set, the set chk represents the check bit location set, and
+      the set frz represents the frozen bit set.
+
+       [00152] Optionally, bits obtained after polar coding is performed on the frozen bits in the first
+
+15 bit sequence meet the following formula (3):
+                  x(frz) = u(src) * G(src,frz) + u(chk) *G(chk,frz) +u(frz) *G(frz) (3)
+
+      [00153] x(frz) is the bits obtained after polar coding is performed on the frozen bits in the
+      first bit sequence. u(src) is the second information bit sequence. G(src, frz) indicates that the
+       rows corresponding to the set src and columns corresponding to the set frz are selected from
+20 the polar matrix G. u(chk) is the check bit sequence. G(chk, frz) indicates that the rows
+       corresponding to the set chk and the columns corresponding to the set frz are selected from the
+      polar matrix G. u(frz) is the first frozen bit sequence. G(frz) indicates that the rows and the
+       columns corresponding to the set frz are selected from the polar matrix G. The set src
+
+       represents the information bit location set, the set chk represents the check bit location set, and
+25 the set frz represents the frozen bit set.
+
+       [00154] 306: The first communications device outputs the second bit sequence.
+       [00155] 307: The first communications device modulates the second bit sequence to obtain a
+       modulation symbol.
+       [00156] 308: The first communications device sends the modulation symbol to the second
+
+30 communications device.
+
+       [00157] 309: The second communications device obtains a to-be-decoded sequence.
+       [00158] In this embodiment of this application, after receiving the modulation symbol sent by
+       the first communications device, the second communications device demodulates the modulation
+       symbol to obtain the to-be-decoded sequence. The to-be-decoded sequence may be an LLR
+35 sequence. The LLR sequence includes three parts: an LLR sequence corresponding to a set src,
+
+                                                                                             27
+       an LLR sequence corresponding to a set chk, and an LLR sequence corresponding to a set frz.
+       The set src represents an information bit location set, the set chk represents a check bit location
+       set, and the set frz represents a frozen bit set. Alternatively, the to-be-decoded sequence may be
+       another bit sequence or symbol sequence.
+ 5 [00159] 310: The second communications device sets i=1.
+       [00160] 311: The second communications device decodes the to-be-decoded sequence based on
+       an ith probability distribution value in the probability distribution value set P and a frozen bit
+       sequence corresponding to the ith probability distribution value, to obtain a third bit sequence
+      corresponding to the ith probability distribution value. The third bit sequence includes bits in a third
+10 information bit sequence, check bits, and bits in the frozen bit sequence corresponding to the ith
+       probability distribution value.
+       [00161] 312: The second communications device checks the third information bit sequence.
+       [00162] 313: If the check on the third information bit sequence succeeds, the second
+       communications device obtains the first information bit sequence based on the third information
+15 bit sequence, and stops decoding. The first information bit sequence is the third information bit
+       sequence or the first information bit sequence is a sequence obtained after polar coding is
+       performed on the third information bit sequence.
+       [00163] 314: If the check on the third information bit sequence fails and i is less than x, the
+       second communications device sets i=i+1, and returns to step 311. x is the quantity of probability
+20 distribution values included in the probability distribution value set P.
+       [00164] 315: If the check on the third information bit sequence fails and i is equal to x, the
+       second communications device stops decoding; or obtains a fourth information bit sequence based
+       on a target information bit sequence, and stops decoding. The target information bit sequence is
+       one of x third information bit sequences corresponding to the probability distribution value set P,
+25 and the fourth information bit sequence is the target information bit sequence or the fourth
+       information bit sequence is a sequence obtained after polar coding is performed on the target
+       information bit sequence.
+       [00165] In this embodiment of this application, i represents a decoding order of a probability
+       distribution value in the probability distribution value set P. The ith probability distribution value
+30 represents the ith probability distribution value used to decode the to-be-decoded sequence in the
+       probability distribution value set P. The second communications device sets i=1, indicating that
+       the first probability distribution value used to decode the to-be-decoded sequence is selected from
+       the probability distribution value set P. The second communications device sets i=1+1, indicating
+      that a next probability distribution value used to decode the to-be-decoded sequence is selected
+35 from the probability distribution value set P.
+
+                                                                                                      28
+       [00166] For example, it is assumed that the probability distribution value set P includes {0.2,
+       0.5, 0.7}. The second communications device may first decode the to-be-decoded sequence based
+       on the probability distribution value 0.2 and a frozen bit sequence corresponding to the probability
+      distribution value 0.2, to obtain a third bit sequence 1 corresponding to the probability distribution
+ 5 value 0.2. The third bit sequence 1 includes bits in a third information bit sequence 1, check bits
+       1, and bits in the frozen bit sequence corresponding to the probability distribution value 0.2. If
+       check on the third information bit sequence 1 succeeds, the second communications device obtains
+       the first information bit sequence based on the third information bit sequence 1, and stops decoding.
+       The first information bit sequence is the third information bit sequence 1 or the first information
+10 bit sequence is a sequence obtained after polar coding is performed on the third information bit
+
+        sequence 1.
+
+       [00167] If check on the third information bit sequence 1 fails, the second communications
+       device decodes the to-be-decoded sequence based on the probability distribution value 0.5 and a
+       frozen bit sequence corresponding to the probability distribution value 0.5, to obtain a third bit
+15 sequence 2 corresponding to the probability distribution value 0.5. The third bit sequence 2
+      includes bits in a third information bit sequence 2, check bits 2, and bits in the frozen bit sequence
+       corresponding to the probability distribution value 0.5. If check on the third information bit
+       sequence 2 succeeds, the second communications device obtains the first information bit sequence
+       based on the third information bit sequence 2, and stops decoding. The first information bit
+20 sequence is the third information bit sequence 2 or the first information bit sequence is a sequence
+       obtained after polar coding is performed on the third information bit sequence 2.
+       [00168] If check on the third information bit sequence 2 fails, the second communications
+       device decodes the to-be-decoded sequence based on the probability distribution value 0.7 and a
+       frozen bit sequence corresponding to the probability distribution value 0.7, to obtain a third bit
+25 sequence 3 corresponding to the probability distribution value 0.7. The third bit sequence 3
+      includes bits in a third information bit sequence 3, check bits 3, and bits in the frozen bit sequence
+       corresponding to the probability distribution value 0.7. If check on the third information bit
+       sequence 3 succeeds, the second communications device obtains the first information bit sequence
+      based on the third information bit sequence 3, and stops decoding. The first information bit
+30 sequence is the third information bit sequence 3 or the first information bit sequence is a sequence
+      obtained after polar coding is performed on the third information bit sequence 3.
+      [00169] If check on the third information bit sequence 3 fails, the second communications
+       device may stop decoding, or select a third information bit sequence from the third information bit
+       sequence 1 to the third information bit sequence 3, to determine the fourth information bit sequence.
+35 For example, if the third information bit sequence 2 is selected to determine the fourth information
+
+                                                                                                 29
+       bit sequence, the fourth information bit sequence may be the third information bit sequence 2 or
+       the fourth information bit sequence is a sequence obtained after polar coding is performed on the
+       third information bit sequence 2.
+      [00170] The following describes, by using an example in which the to-be-decoded sequence is
+ 5 an LLR sequence, a possible implementation in which the second communications device decodes
+       the to-be-decoded sequence based on the ith probability distribution value and the frozen bit
+       sequence corresponding to the ith probability distribution value, to obtain the third bit sequence
+       corresponding to the ith probability distribution value.
+       [00171] The second communications device may correct, based on the ith probability
+10 distribution value, values of an LLR sequence corresponding to a set src in the to-be-decoded
+       sequence, to obtain a corrected LLR sequence corresponding to the set src. For example, the
+       corrected LLR sequence corresponding to the set src meets the following formula (4):
+
+                  LLR'(src) = LLR(src) +log((1-Pir)/Pi,r) (4)
+       [00172] LLR(src) is the LLR sequence corresponding to the set src, and LLR'(src) is an LLR
+
+15 sequence that corresponds to the set src and that is obtained after the LLR sequence corresponding
+       to the set src is corrected based on the ith probability distribution value. Pir is the ith probability
+       distribution value. The second communications device decodes a corrected to-be-decoded
+       sequence based on the frozen bit sequence corresponding to the ith probability distribution value,
+       to obtain the third bit sequence corresponding to the ith probability distribution value. The corrected
+
+20 to-be-decoded sequence includes three parts: an LLR sequence corresponding to a set chk, an
+       LLR sequence corresponding to a set frz, and the corrected LLR sequence corresponding to the
+
+          set src.
+
+       [00173] Optionally, the second communications device may decode the corrected to-be-
+       decoded sequence based on the frozen bit sequence corresponding to the ith probability distribution
+25 value, an information bit set, and a frozen bit set, to obtain the third bit sequence corresponding to
+       the ith probability distribution value. The information bit set includes information bit locations and
+       check bit locations in the third bit sequence, and the frozen bit set includes frozen bit locations in
+       the third bit sequence. The second communications device may obtain the information bit set and
+       the frozen bit set based on a sum of a length of the third information bit sequence and a length of
+30 a check bit sequence and a coding length. The information bit set and the frozen bit set that are
+       used by the second communications device for decoding are the same as the information bit set
+       and the frozen bit set that are used by the first communications device for coding. That is, the
+       information bit locations in the third bit sequence are the same as the information bit locations in
+       the first bit sequence, the check bit locations in the third bit sequence are the same as the check bit
+35 locations in the first bit sequence, and the frozen bit locations in the third bit sequence are the same
+
+                                                              30
+       as the frozen bit locations in the first bit sequence.
+       [00174] Optionally, the second communications device may enter the frozen bit sequence
+       corresponding to the ith probability distribution value, the information bit set, the frozen bit set,
+       and the corrected to-be-decoded sequence into a CRC-aided successive cancellation list (CRC-
+
+ 5 aided successive cancellation list, CA-SCL) decoder, a parity check successive cancellation list
+       (parity check successive cancellation list, PC-SCL) decoder, or another polar decoder for decoding,
+       to obtain the third bit sequence corresponding to the ith probability distribution value.
+       [00175] In a possible implementation, one probability distribution value in the probability
+       distribution value set P corresponds to one frozen bit sequence mapping manner, and the second
+
+10 communications device may further determine, based on a frozen bit sequence mapping manner
+      corresponding to the ith probability distribution value, the frozen bit sequence corresponding to the
+       ith probability distribution value.
+       [00176] Optionally, the frozen bit sequence mapping manner corresponding to the ith probability
+       distribution value may specifically include the following four manners:
+
+15 [00177] Manner 1: The frozen bit sequence corresponding to the ith probability distribution
+       value is determined based on a basic sequence corresponding to the ith probability distribution
+       value, and the basic sequence is determined based on the quantity of probability distribution values
+       included in the probability distribution value set P.
+       [00178] Manner 2: The frozen bit sequence corresponding to the ith probability distribution
+
+20 value is determined based on an m-sequence corresponding to the ith probability distribution value.
+       [00179] Manner 3: The frozen bit sequence corresponding to the ith probability distribution
+       value is determined based on a Gold sequence corresponding to the ith probability distribution
+       value.
+       [00180] Manner 4: The frozen bit sequence corresponding to the ith probability distribution
+
+25 value is determined based on a pseudo-random sequence corresponding to the ith probability
+       distribution value.
+
+       [00181] For a specific implementation in which the second communications device determines,
+       based on the frozen bit sequence mapping manner corresponding to the ith probability distribution
+
+       value, the frozen bit sequence corresponding to the ith probability distribution value, refer to the
+30 foregoing specific implementation in which the first communications device determines the first
+
+       frozen bit sequence based on the frozen bit sequence mapping manner corresponding to the
+       probability distribution value Po. Details are not described herein.
+       [00182] In a possible implementation, frozen bit sequence values corresponding to different
+       probability distribution values and frozen bit sequence lengths may alternatively be directly
+35 defined in a protocol in advance. The second communications device determines, based on the
+
+                                                                                                 31
+       probability distribution value and a length of the frozen bit sequence, values of the frozen bit
+       sequence corresponding to the probability distribution value from the plurality of frozen bit
+      sequence values defined in the protocol in advance.
+      [00183] In a possible implementation, check bit locations in the third bit sequence are bit
+ 5 locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+       columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+       coding, the set a is an information bit set, and the information bit set includes information bit
+       locations and the check bit locations in the third bit sequence. Based on this possible
+       implementation, on the coder side, the pre-transformation operation of the first information bit
+10 sequence may be decoupled from the operation of determining the check bit sequence based on
+       the second information bit sequence, so that the pre-transformation operation can be performed
+      before the check bit sequence is determined. In this way, the decoder side needs to perform a polar
+       operation only on an information bit sequence that is obtained through decoding and that is
+       successfully checked, to obtain the first information bit sequence sent by the coder side, to reduce
+15 power consumption of the decoder side and improve decoding efficiency.
+       [00184] In a possible implementation, at least one of the check bits is located in the bits included
+       in the third information bit sequence. In this way, the at least one check bit may be used to check
+       an information bit located in front of the at least one check bit. This helps implement a function of
+
+       early decoding stopping.
+20 [00185] In a possible implementation, a decoding order of at least one of the check bits is
+
+       located in a decoding order of the bits included in the third information bit sequence. In this way,
+       the at least one check bit may be used to check an information bit in front of the decoding order of
+       the at least one check bit, to implement a function of early decoding stopping.
+       [00186] In this embodiment of this application, if the second information bit sequence on a first
+25 communications device side is the first information bit sequence, if the check on the third
+       information bit sequence succeeds, the second communications device determines that the third
+       information bit sequence is the first information bit sequence. That is, the first communications
+       device may not perform the pre-transformation operation on the first information bit sequence.
+       Correspondingly, the second communications device does not need to perform polar coding on the
+30 third information bit sequence. It may be learned that, in this way, processing overheads of the first
+       communications device and the second communications device can be reduced.
+       [00187] In this embodiment of this application, if the second information bit sequence on a first
+       communications device side is the sequence obtained after the pre-transformation operation is
+      performed on the first information bit sequence, if the check on the third information bit sequence
+35 succeeds, the second communications device determines that the sequence obtained after polar
+
+                                                           32
+       coding is performed on the third information bit sequence is the first information bit sequence.
+       That is, the first communications device may first perform the pre-transformation operation on the
+       first information bit sequence, and then determine the check bit sequence based on the second
+       information bit sequence obtained after the pre-transformation operation. The second
+ 5 communications device needs to perform polar coding only on a third information bit sequence
+       that is obtained through decoding and that is successfully checked, to obtain the first information
+       bit sequence sent by the first communications device. This helps reduce power consumption of the
+       decoder side and improve decoding efficiency. If the first communications device first determines
+       the check bit sequence based on the first information bit sequence, and then performs the pre-
+10 transformation operation on the first information bit sequence, the second communications device
+       needs to perform polar coding on a third information bit sequence obtained through decoding based
+       on each probability distribution value, and then check (for example, perform CRC or PC on) an
+      information bit sequence obtained after the polar operation. In this way, power consumption of the
+       decoder side is relatively high and decoding efficiency is low.
+15 [00188] In a possible implementation, if the probability distribution value P1 is not
+       equiprobable distribution, the second information bit sequence is the sequence obtained after the
+       pre-transformation operation is performed on the first information bit sequence; or if the
+       probability distribution value P1 is equiprobable distribution, the second information bit
+      sequence is the first information bit sequence. Correspondingly, if the ith probability distribution
+20 value is not equiprobable distribution, the first information bit sequence is the sequence obtained
+      after polar coding is performed on the third information bit sequence; or if the ith probability
+       distribution value is equiprobable distribution, the first information bit sequence is the third
+       information bit sequence.
+       [00189] That is, when the probability distribution value P1 is not equiprobable distribution, the
+25 first communications device needs to perform the pre-transformation operation on the first
+       information bit sequence; or when the probability distribution value P1 is equiprobable
+       distribution, the first communications device does not need to perform the pre-transformation
+      operation on the first information bit sequence. If the ith probability distribution value is not
+       equiprobable distribution, the second communications device needs to perform polar coding on
+30 the third information bit sequence to obtain the first information bit sequence; or if the ith
+      probability distribution value is equiprobable distribution, the second communications device does
+       not need to perform polar coding on the third information bit sequence, and the second
+       communications device directly determines the third information bit sequence as the first
+      information bit sequence. For example, this is shown in step 402 to step 405 and step 415 and step
+35 416 in FIG. 4. Specific implementations of other steps in FIG. 4 are the same as the specific
+
+                                                                                                 33
+      implementations of the corresponding steps in FIG. 3, and details are not described herein again.
+       [00190] It may be learned that, based on this possible implementation, two implementations in
+       which the pre-transformation operation is performed on the first information bit sequence and the
+       pre-transformation operation is not performed on the first information bit sequence may be
+ 5 properly compatible in a system, and two implementations in which the third information bit
+       sequence is determined as the first information bit sequence and the sequence obtained after polar
+
+       coding is performed on the third information bit sequence is determined as the first information
+
+      bit sequence may be properly compatible in the system. When the pre-transformation operation is
+       performed on the first information bit sequence, decoding performance is improved by using
+10 sparseness of the first information bit sequence. When the probability distribution value of the first
+
+       information bit sequence is far away from equiprobable distribution, it indicates that the first
+       information bit sequence is very sparse. When the probability distribution value of the first
+       information bit sequence is equiprobable distribution, it indicates that the first information bit
+       sequence is not sparse. Therefore, when the probability distribution value of the first information
+15 bit sequence is equiprobable distribution, the pre-transformation operation does not need to be
+       performed on the first information bit sequence, to reduce processing overheads of the first
+       communications device and the second communications device.
+
+      [00191] In a possible implementation, if |P1 - 0.5| SE, the probability distribution value P1
+      is equiprobable distribution, where E is a preset value. If Pi,r - 0.5|E, the ith probability
+20 distribution value is equiprobable distribution, where E is a preset value, and Pir is the ith
+       probability distribution value. E may be a relatively small value, for example, may be 0.001, 0.01,
+
+       0.02, 0.03, 0.04, or 0.05.
+       [00192] It should be noted that a decoding order of probability distribution values in the
+       probability distribution value set P may be unrelated to the probability distribution values, that is,
+25 decoding is not necessarily performed in descending order or ascending order of the probability
+
+       distribution values. The following describes manners of determining the decoding order of the
+      probability distribution values in the probability distribution value set P.
+       [00193] Manner 1: The decoding order of the probability distribution values in the probability
+       distribution value set P is determined based on information entropies corresponding to the
+30 probability distribution values in the probability distribution value set.
+       [00194] A probability distribution value with a larger information entropy indicates lower
+       sparsity, and a probability distribution value with a smaller information entropy indicates higher
+      sparsity. Two probability distribution values whose sum is 1 (for example, P' + P" = 1) are equal
+      in information entropy and consistent in sparsity. When a probability distribution value is 0.5, an
+35 information entropy is the largest, that is, the information entropy is 1, indicating that source bits
+
+                                                                                                  34
+       are not sparse at all. The decoding order of the probability distribution values in the probability
+       distribution value set P is determined based on the information entropies corresponding to the
+      probability distribution values in the probability distribution value set, thereby helping reduce an
+       error detection probability.
+ 5 [00195] In a possible implementation, an information entropy corresponding to the ith
+       probability distribution value is greater than or equal to an information entropy corresponding to
+       an (i+1)th probability distribution value. That is, the second communications device may
+      preferentially use a probability distribution value with a relatively large information entropy to
+       perform decoding. Because a probability distribution value with a relatively large information
+10 entropy has less prior information that can be used by the decoder side, the probability distribution
+       value is preferentially tried, so that negative impact caused on a decoding effect by the decoder
+       side by introducing incorrect prior information can be reduced, thereby reducing an error detection
+
+       probability.
+
+      [00196] For example, if the probability distribution value set P includes a probability
+
+15 distribution value 1, a probability distribution value 2, and a probability distribution value 3, an
+       information entropy of the probability distribution value 1 is greater than an information entropy
+       of the probability distribution value 2, and the information entropy of the probability distribution
+
+       value 2 is greater than an information entropy of the probability distribution value 3, the second
+       communications device first decodes the to-be-decoded sequence based on the probability
+20 distribution value 1. If check on a decoding result fails, the second communications device decodes
+       the to-be-decoded sequence based on the probability distribution value 2. If check on a decoding
+       result fails, the second communications device decodes the to-be-decoded sequence based on the
+       probability distribution value 3.
+      [00197] Optionally, if two probability distribution values correspond to equal information
+25 entropies, a probability distribution value less than 0.5 in the two probability distribution values is
+      first tried. Alternatively, if two probability distribution values correspond to equal information
+       entropies, a probability distribution value greater than 0.5 in the two probability distribution values
+
+       is first tried.
+
+       [00198] Manner 2: The decoding order of the probability distribution values in the probability
+30 distribution value set P is determined based on historical probability distribution values of a
+
+       transmitting end.
+       [00199] For example, if the probability distribution value set P includes a probability
+       distribution value 1, a probability distribution value 2, and a probability distribution value 3,
+      historical usage of the transmitting end for the probability distribution value 1 is higher than
+35 historical usage of the transmitting end for the probability distribution value 2, and the historical
+
+                                                              35
+       usage of the transmitting end for the probability distribution value 2 is higher than historical usage
+       of the transmitting end for the probability distribution value 3, the second communications device
+       first decodes the to-be-decoded sequence based on the probability distribution value 1. If check on
+       a decoding result fails, the second communications device decodes the to-be-decoded sequence
+ 5 based on the probability distribution value 2. If check on a decoding result fails, the second
+       communications device decodes the to-be-decoded sequence based on the probability distribution
+       value 3.
+       [00200] The manner 2 helps reduce a quantity of times the decoder side tries to perform
+       decoding, and reduce decoding power consumption.
+10 [00201] Manner 3: The first communications device may further send a probability distribution
+       reference value range or a probability distribution reference value to the second communications
+       device every N information bit sequences, where N is an integer greater than 1. The second
+       communications device may further receive the probability distribution reference value range or
+       the probability distribution reference value sent by the first communications device every N
+15 information bit sequences. The decoding order of the probability distribution values in the
+       probability distribution value set P is determined based on the probability distribution reference
+       value range or the probability distribution reference value.
+       [00202] For example, the first communications device may send a probability distribution
+       reference value range or a probability distribution reference value to the second communications
+20 device once every five information bit sequences. Assuming that a probability distribution
+       reference value sent by the first communications device in a current cycle is 0.5, the second
+       communications device preferentially uses the probability distribution value 0.5 to decode the to-
+       be-decoded sequence. Assuming that a probability distribution reference value range sent by the
+       first communications device in a current cycle is 0.3 to 0.5, the second communications device
+25 preferentially uses a probability distribution value within the probability distribution reference
+       value range 0.3 to 0.5 in the probability distribution value set P to decode the to-be-decoded
+       sequence.
+       [00203] The manner 3 helps reduce a quantity of times the decoder side tries to perform
+       decoding, and reduce decoding power consumption.
+30 [00204] In a possible implementation, if the second information bit sequence on the first
+       communications device side is the first information bit sequence, the fourth information bit
+       sequence is the target information bit sequence. If the second information bit sequence on the first
+       communications device side is the sequence obtained after the pre-transformation operation is
+       performed on the first information bit sequence, the fourth information bit sequence is the sequence
+35 obtained after polar coding is performed on the target information bit sequence.
+
+                                                                                              36
+       [00205] In a possible implementation, the target information bit sequence is a third information
+      bit sequence corresponding to equiprobable distribution in the probability distribution value set P.
+       Because the second communications device does not know a real probability distribution value,
+       when check on the third information bit sequences corresponding to all the probability distribution
+ 5 values fails, it is a conservative solution to obtain the fourth information bit sequence based on the
+       third information bit sequence corresponding to equiprobable distribution, so that a negative effect
+       caused by incorrectly using a probability distribution value can be avoided.
+       [00206] In a possible implementation, the first communications device may further adjust a
+       coding rate. For example, the first communications device may adjust the coding rate based on a
+10 transmission resource of the system. In this way, the coding rate can be more flexible.
+       [00207] Optionally, if the first communications device adjusts the coding rate, the first
+       communications device may determine a first code based on an adjusted coding rate. The first code
+       may be obtained by puncturing or shortening a mother code based on a punctured bit set or a
+       shortened bit set. The first communications device may determine an information bit set and a
+15 frozen bit set of the first code based on the mother code. The first communications device
+       determines the first bit sequence based on the first information bit sequence, the check bit sequence,
+       the first frozen bit sequence, and the information bit set and the frozen bit set of the first code.
+       After performing polar coding on the first bit sequence, the first communications device punctures
+       or shortens, based on the punctured bit set/shortened bit set, a bit sequence obtained after the polar
+20 coding, to obtain the second bit sequence.
+       [00208] In a possible implementation, in a scenario in which the coding rate is adjusted,
+      punctured bits/shortened bits corresponding to the first code may be first selected from the mother
+       code, and then information bits of the first code may be selected from remaining locations in the
+       mother code. For example, the first code is a (30, 20) code, and a corresponding mother code
+25 length of the first code is 32. If puncturing is performed in a bit reversal order, locations {1, 17}
+       need to be punctured. Based on decoding reliability of remaining locations {2 to 16, 18 to 32}, 20
+       most reliable locations are selected as the information bits, to obtain the information bit set of the
+       first code: info={4, 6, 7, 8, 10, 12, 14, 15, 16, 20, 22, 23, 24, 26, 27, 28, 29, 30, 31, 32}. Rows
+      whose sums are 1 (meeting a constraint G(chk, src)=0) in G(info) are counted to obtain six
+30 information bit locations {4, 6, 7, 10, 27, 29}, that is, the check bit set of the first code includes
+      {4, 6,7,10,27,29}.
+       [00209] In a possible implementation, for a same mother code, a nesting relationship between
+       check bit locations may be constructed for different code lengths and code rates, to facilitate saving
+       of optional check bit locations for different code lengths and code rates in the system.
+35 [00210] 1. It is assumed that an optional check bit set in an (N, K) code is chk (N,K).
+
+                                                                     37
+      [00211] 2. (N, K) code -> (N, K-1) code: An information bit i with lowest decoding reliability
+      in K information bits of the (N, K) code is changed to a frozen bit.
+      [00212] (a) An optional check bit set in the (N, K-1) code is chk(N,K-1)=chk(N,K) \{i}.
+      [00213] (b) Non-zero locations (denoted as Idx') in G(info\{i}, i) are found, rows (denoted
+ 5 as Idx") whose sums are 1 in G(Idx', info\{i}) are evaluated, and chk(N,K-1)=chk(N,K-1) U
+       Idx" is obtained through updating (a check bit may be placed in an information bit whose
+       coupling relationship is removed). G(a, b) indicates that rows corresponding to a set a and
+       columns corresponding to a set b are selected from a polar matrix G.
+      [00214] 3. (N, K) code -> (N-1, K) code:
+10 [00215] (a) If frozen bits are punctured/shortened, the optional check bit set remains unchanged,
+      and an optional check bit set in the (N-1, K) code is chk(N-1,K)=chk(N,K).
+       [00216] (b) If information bits are punctured/shortened, a frozen bit f with highest decoding
+       reliability in (N-K) frozen bits needs to be changed to an information bit.
+      [00217] (b1) G(f, info U{f}) is evaluated. If a sum is 1, chk(N-1,K) =chk(N,K) U{f};
+
+15 otherwise, chk(N-1,K)=chk (N,K).
+
+      [00218] (b2) Non-zero locations (denoted as Idx') in G(chk(N,K), f) are found. Coupling
+
+      relationships may be generated at these locations, and therefore need to be removed from the check
+      bit set. chk(N-1,K)=chk(N-1,K)\/dx'.
+       [00219] 4. (N, K) code -> (N-1, K-1) code:
+
+20 [00220](a) If information bits are punctured/shortened, the operations (a) and (b) in 2 are
+      repeated to obtain an optional check bit set chk(N-1,K-1) in the (N-1, K-1) code.
+       [00221] (b) If frozen bits are punctured/shortened, an optional check bit set chk(N-1,K-1) in
+       the (N-1, K-1) code is consistent with the optional check bit set chk(N,K-1) in the (N, K-1) code.
+      [00222] Based on the foregoing operations 1 to 4, various code length and code rate
+
+25 combinations in puncturing/shortening are sequentially constructed by using a mother code (Nm,
+      Km) as a reference (Km/Nm corresponds to a highest code rate). During storage, a two-dimensional
+      linked list structure is used, including two dimensions: a code length and an information bit length.
+      As shown in FIG. 5, a complete optional check bit set needs to be stored only for the mother code
+       (Nm, Km), and only a change amount of the optional check bit set needs to be stored for another
+
+30 combination.
+
+       [00223] A mother code (32, 20) is used as an example. An information bit length of the mother
+      code is 20, and a frozen bit length is 12. Based on decoding reliability, 20 most reliable locations
+       are selected as information bits, to obtain an information bit set info={4, 6, 7, 8, 10, 12, 14, 15, 16,
+       20, 22, 23, 24, 26, 27, 28, 29, 30, 31, 32}. Rows whose sums are 1 (meeting a constraint
+
+                                                                38
+      G(chk, src)=0) in G(info) are counted to obtain six information bit locations {4, 6, 7, 10, 27,
+       29}, that is, a maximum of six check bits can be arranged.
+      [00224] Then, an optional check bit set chk(32,20)={4, 6, 7, 10, 27, 29} of the (32, 20) code is
+      used to separately obtain a set of a (32, 19) code, a set of a (31, 20) code, and a set of a (31, 19)
+
+ 5 code.
+
+       [00225] 1. (32, 19) code:
+       [00226] (a) The information bit 7 with lowest reliability is changed to a frozen bit, where an
+      updated information bit set is info'={4, 6, 8, 10, 12, 14, 15, 16, 20, 22, 23, 24, 26, 27, 28, 29, 30,
+       31, 32}.
+
+10 [00227] (b) chk(32,19)=chk(32,20) \{7}={4, 6, 10, 27, 29} is obtained through updating.
+
+      [00228] (c) Non-zero locations (denoted as Idx') in G(info'\{7}, 7) are found, that is,
+
+      Idx'={8, 15, 16, 23, 24, 31, 32}; rows (denoted as Idx") whose sums are 1 in G(Idx', info'\{7})
+      are evaluated, that is, Idx"={15, 23}; and chk (32,19)=chk(32,19) U Idx"={4, 6, 10, 15, 23, 27, 29}
+
+       is further obtained through updating.
+15 [00229] (d) A change value set {7, 15, 23} of chk(32,19) and chk(32,20) is recoded.
+
+      [00230] 2. (31, 20) code: For example, puncturing is performed in a bit reversal order. Alocation
+       {1} needs to be punctured. Because the location is a frozen bit, the optional check bit set remains
+      unchanged, that is, chk(31,20)=chk(32,20). A change value set Ø of chk(31,20) and chk(32,20) is
+
+       recorded.
+
+20 [00231] 3. (31, 19) code: For example, puncturing is performed in a bit reversal order. Alocation
+       {1} needs to be punctured. Because the location is a frozen bit, chk(31,19)=chk(32,19) may be
+      directly obtained. A change value set {7, 15, 23} of chk(31,19) and chk(32,20) is recorded.
+       [00232] In a possible implementation, when the probability distribution value P1 is not
+
+       equiprobable distribution, the first communications device may puncture system bits in the second
+25 bit sequence, to obtain a bit sequence obtained after the system bits are punctured, to implement
+
+      information bit compression. After puncturing the system bits in the second bit sequence, the first
+
+       communications device modulates the bit sequence obtained after the system bits are punctured,
+       and sends an obtained modulation symbol to the second communications device. When the
+       probability distribution value P1 is equiprobable distribution, the first communications device
+30 may modulate the second bit sequence, and send an obtained modulation symbol to the second
+       communications device. For example, this is shown in step 607 in FIG. 6. Specific
+      implementations of other steps in FIG. 6 are the same as the specific implementations of the
+       corresponding steps in FIG. 3, and details are not described herein again.
+
+      [00233] It may be learned that, based on the method described in FIG. 3, the values of the first
+
+                                                                                                    39
+       frozen bit sequence are determined based on the probability distribution value of the first
+      information bit sequence, instead of by setting the values of the first frozen bit sequence to all Os
+      by default. In this way, when decoding the to-be-decoded sequence, the decoder side may
+       sequentially try different probability distribution values in the probability distribution value set
+ 5 and frozen bit sequences corresponding to the probability distribution values to perform decoding,
+       so that the decoder side can better distinguish between different probability distribution values,
+       thereby reducing an error detection probability.
+       [00234] FIG. 7 is a schematic diagram of a structure of a communications apparatus according
+      to an embodiment of this application. The communications apparatus shown in FIG. 7 may be
+10 configured to perform some or all functions of the first communications device in the method
+       embodiment described in FIG. 3, FIG. 4, or FIG. 6. The apparatus may be the first communications
+       device, or may be an apparatus in the first communications device, or an apparatus that can be
+       used together with the first communications device. The communications apparatus may
+      alternatively be a chip system. The communications apparatus shown in FIG. 7 may include a
+15 communications unit 701 and a processing unit 702. The processing unit 702 is configured to
+       process data. A receiving unit and a sending unit are integrated into the communications unit 701.
+       The communications unit 701 may also be referred to as a transceiver unit. Alternatively, the
+      communications unit 701 may be split into a receiving unit and a sending unit.
+       [00235] The processing unit 702 is configured to obtain a first information bit sequence. The
+20 processing unit 702 is further configured to determine a first frozen bit sequence based on a
+      probability distribution value P1 of the first information bit sequence. The processing unit 702 is
+      further configured to determine a check bit sequence based on a second information bit sequence,
+       where the second information bit sequence is the first information bit sequence or a sequence
+       obtained after a pre-transformation operation is performed on the first information bit sequence.
+25 The processing unit 702 is further configured to obtain a first bit sequence based on the second
+       information bit sequence, the check bit sequence, and the first frozen bit sequence, where the first
+       bit sequence includes bits in the second information bit sequence, bits in the check bit sequence,
+       and bits in the first frozen bit sequence. The processing unit 702 is further configured to perform
+      polar coding on the first bit sequence to obtain a second bit sequence. The processing unit 702 is
+30 further configured to output the second bit sequence.
+       [00236] In a possible implementation, if the probability distribution value P1 is not
+
+      equiprobable distribution, the second information bit sequence is the sequence obtained after the
+      pre-transformation operation is performed on the first information bit sequence; or if the
+       probability distribution value P1 is equiprobable distribution, the second information bit
+
+35 sequence is the first information bit sequence.
+
+                                                                                                 40
+      [00237] In a possible implementation, if |P1 - 0.5| SE, the probability distribution value P1
+      is equiprobable distribution, where E is a preset value.
+
+       [00238] In a possible implementation, check bit locations in the first bit sequence are bit
+       locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+ 5 columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+       coding, the set a is an information bit set, and the information bit set includes information bit
+       locations and the check bit locations in the first bit sequence.
+       [00239] In a possible implementation, at least one check bit in the check bit sequence is located
+       in the bits included in the second information bit sequence.
+10 [00240] In a possible implementation, a manner in which the processing unit 702 determines
+       the first frozen bit sequence based on the probability distribution value P1 of the first information
+       bit sequence is specifically: selecting a probability distribution value Po in a probability
+       distribution value set P based on the probability distribution value P1 of the first information bit
+       sequence, where the probability distribution value Po is a probability distribution value closest to
+15 the probability distribution value P1 in the probability distribution value set P, and one
+      probability distribution value in the probability distribution value set P corresponds to one frozen
+      bit sequence mapping manner; and determining the first frozen bit sequence based on a frozen bit
+       sequence mapping manner corresponding to the probability distribution value Po.
+      [00241] In a possible implementation, the first frozen bit sequence is determined based on a
+20 basic sequence corresponding to the probability distribution value Po, and the basic sequence is
+       determined based on a quantity of probability distribution values included in the probability
+       distribution value set P.
+       [00242] In a possible implementation, the first frozen bit sequence is determined based on an
+       m-sequence, a Gold sequence, or a pseudo-random sequence corresponding to the probability
+25 distribution value Po.
+       [00243] In a possible implementation, a probability distribution reference value range or a
+      probability distribution reference value is sent to a second communications device every N
+      information bit sequences, where N is an integer greater than 1.
+       [00244] In a possible implementation, the check bits include cyclic redundancy check CRC bits
+30 and/or parity check PC bits.
+       [00245] FIG. 7 is a schematic diagram of a structure of a communications apparatus according
+      to an embodiment of this application. The communications apparatus shown in FIG. 7 may be
+       configured to perform some or all functions of the second communications device in the method
+       embodiment described in FIG. 3, FIG. 4, or FIG. 6. The apparatus may be the second
+35 communications device, or may be an apparatus in the second communications device, or an
+
+                                                                                             41
+       apparatus that can be used together with the second communications device. The communications
+       apparatus may alternatively be a chip system. The communications apparatus shown in FIG. 7 may
+      include a communications unit 701 and a processing unit 702. The processing unit 702 is
+       configured to process data. A receiving unit and a sending unit are integrated into the
+ 5 communications unit 701. The communications unit 701 may also be referred to as a transceiver
+      unit. Alternatively, the communications unit 701 may be split into a receiving unit and a sending
+
+         unit.
+
+      [00246] The processing unit 702 is configured to obtain a to-be-decoded sequence.
+       [00247] The processing unit 702 is further configured to set i=1.
+10 [00248] The processing unit 702 is further configured to decode the to-be-decoded sequence
+      based on an ith probability distribution value in a probability distribution value set P and a frozen
+       bit sequence corresponding to the ith probability distribution value, to obtain a third bit sequence
+
+       corresponding to the ith probability distribution value, where the third bit sequence includes bits in
+       a third information bit sequence, check bits, and bits in the frozen bit sequence corresponding to
+15 the ith probability distribution value.
+       [00249] The processing unit 702 is further configured to check the third information bit
+
+        sequence.
+       [00250] The processing unit 702 is further configured to: if the check on the third information
+       bit sequence succeeds, obtain a first information bit sequence based on the third information bit
+20 sequence, and stop decoding, where the first information bit sequence is the third information bit
+
+       sequence or the first information bit sequence is a sequence obtained after polar coding is
+       performed on the third information bit sequence.
+       [00251] The processing unit 702 is further configured to: if the check on the third information
+      bit sequence fails and i is less than x, set i=i+1, and perform the step of decoding the to-be-decoded
+25 sequence based on an ith probability distribution value in a probability distribution value set P and
+       a frozen bit sequence corresponding to the ith probability distribution value, to obtain a third bit
+      sequence corresponding to the ith probability distribution value, where x is a quantity of probability
+       distribution values included in the probability distribution value set P.
+       [00252] The processing unit 702 is further configured to: if the check on the third information
+30 bit sequence fails and i is equal to x: stop decoding; or obtain a fourth information bit sequence
+       based on a target information bit sequence, and stop decoding, where the target information bit
+       sequence is one of x third information bit sequences corresponding to the probability distribution
+       value set P, and the fourth information bit sequence is the target information bit sequence or the
+      fourth information bit sequence is a sequence obtained after polar coding is performed on the target
+35 information bit sequence.
+
+                                                             42
+      [00253] In a possible implementation, if the ith probability distribution value is not equiprobable
+       distribution, the first information bit sequence is the sequence obtained after polar coding is
+      performed on the third information bit sequence; or if the ith probability distribution value is
+       equiprobable distribution, the first information bit sequence is the third information bit sequence.
+
+ 5 [00254] In a possible implementation, if |Pir - 0.5| SE, the ith probability distribution value
+
+      is equiprobable distribution, where E is a preset value, and Pir is the ith probability distribution
+
+        value.
+
+       [00255] In a possible implementation, a decoding order of probability distribution values in the
+      probability distribution value set P is determined based on information entropies corresponding to
+10 the probability distribution values in the probability distribution value set P.
+       [00256] In a possible implementation, an information entropy corresponding to the ith
+       probability distribution value is greater than or equal to an information entropy corresponding to
+      an (i+1)th probability distribution value.
+       [00257] In a possible implementation, a decoding order of probability distribution values in the
+15 probability distribution value set P is determined based on historical probability distribution values
+       of a transmitting end.
+       [00258] In a possible implementation, the communications unit 701 is configured to receive a
+      probability distribution reference value range or a probability distribution reference value sent by
+       a first communications device every N information bit sequences, where N is an integer greater
+20 than 1. A decoding order of probability distribution values in the probability distribution value set
+       P is determined based on the probability distribution reference value range or the probability
+       distribution reference value.
+       [00259] In a possible implementation, the target information bit sequence is a third information
+       bit sequence corresponding to equiprobable distribution in the probability distribution value set P.
+25 [00260] In a possible implementation, check bit locations in the third bit sequence are bit
+      locations corresponding to rows whose sums are 1 in G(a), G(a) is a matrix including rows and
+       columns in a set a in a polar matrix G, the polar matrix G is a polar matrix used for the polar
+       coding, the set a is an information bit set, and the information bit set includes information bit
+      locations and the check bit locations in the third bit sequence.
+30 [00261] In a possible implementation, at least one of the check bits is located in the bits included
+       in the third information bit sequence.
+       [00262] In a possible implementation, one probability distribution value in the probability
+      distribution value set P corresponds to one frozen bit sequence mapping manner, and the
+       processing unit 702 is further configured to determine, based on a frozen bit sequence mapping
+35 manner corresponding to the ith probability distribution value, the frozen bit sequence
+
+                                                                                                 43
+       corresponding to the ith probability distribution value.
+       [00263] In a possible implementation, the frozen bit sequence corresponding to the ith
+       probability distribution value is determined based on a basic sequence corresponding to the
+       probability distribution value, and the basic sequence is determined based on the quantity of
+ 5 probability distribution values included in the probability distribution value set P.
+       [00264] In a possible implementation, the frozen bit sequence corresponding to the ith
+       probability distribution value is determined based on an m-sequence, a Gold sequence, or a
+       pseudo-random sequence corresponding to the probability distribution value.
+       [00265] In a possible implementation, the check bits include cyclic redundancy check CRC bits
+10 and/or parity check PC bits.
+       [00266] FIG. 8 is a schematic diagram of a structure of a communications apparatus. The
+       communications apparatus 800 may be the first communications device in the foregoing method
+       embodiment, may be the second communications device in the foregoing method embodiment,
+       may be a chip, a chip system, a processor, or the like that supports the first communications device
+
+15 in implementing the foregoing method, may be a chip, a chip system, a processor, or the like that
+       supports the second communications device in implementing the foregoing method, or may be a
+       chip, a chip system, a processor, or the like that supports a server in implementing the foregoing
+      method. The communications apparatus may be configured to implement the method described in
+       the foregoing method embodiment. For details, refer to the descriptions in the foregoing method
+
+20 embodiment.
+       [00267] The communications apparatus 800 may include one or more processors 801. The
+
+       processor 801 may be a general-purpose processor, a dedicated processor, or the like. For example,
+       the processor 801 may be a baseband processor or a central processing unit. The baseband
+       processor may be configured to process a communication protocol and communication data. The
+25 central processing unit may be configured to: control a communications apparatus (for example, a
+       base station, a baseband chip, a terminal, a terminal chip, a DU, or a CU), execute a software
+      program, and process data of the software program.
+       [00268] Optionally, the communications apparatus 800 may include one or more memories 802.
+       The memory 802 may store instructions 804, and the instructions may be run on the processor 801,
+30 to enable the communications apparatus 800 to perform the method described in the foregoing
+       method embodiment. Optionally, the memory 802 may further store data. The processor 801 and
+       the memory 802 may be separately disposed, or may be integrated together.
+       [00269] Optionally, the communications apparatus 800 may further include a transceiver 805
+       and an antenna 806. The transceiver 805 may be referred to as a transceiver unit, a transceiver
+35 machine, a transceiver circuit, or the like, and is configured to implement a sending/receiving
+
+                                                                                                 44
+       function. The transceiver 805 may include a receiver and a transmitter. The receiver may be
+       referred to as a receiver machine, a receiver circuit, or the like, and is configured to implement a
+       receiving function. The transmitter may be referred to as a transmitter machine, a transmitter
+       circuit, or the like, and is configured to implement a sending function. The processing unit 702
+ 5 shown in FIG. 7 may be the processor 801. The communications unit 701 may be the transceiver
+
+        805.
+
+       [00270] The communications apparatus 800 is the first communications device: The processor
+       801 is configured to perform a data processing operation of the first communications device in the
+       foregoing method embodiment. The transceiver 805 is configured to perform a data
+10 sending/receiving operation of the first communications device in the foregoing method
+       embodiment. For example, the transceiver 805 may be configured to perform a data
+      sending/receiving operation of the first communications device in FIG. 3, FIG. 4, or FIG. 6. For
+       example, the transceiver 805 may send a modulation symbol. The processor 801 may be
+       configured to perform a data processing operation of the first communications device in FIG. 3,
+
+15 FIG. 4, or FIG. 6. For example, the processor 801 may perform step 301 to step 305 and step 307
+      in FIG. 3. Alternatively, the processor 801 may perform step 401 to step 407 and step 409 in FIG.
+      4. Alternatively, the processor 801 may perform step 601 to step 605, step 607, and step 608 in
+
+        FIG. 6.
+       [00271] The communications apparatus 800 is the second communications device: The
+
+20 processor 801 is configured to perform a data processing operation of the second communications
+       device in the foregoing method embodiment. The transceiver 805 is configured to perform a data
+       sending/receiving operation of the second communications device in the foregoing method
+       embodiment. For example, the transceiver 805 may be configured to perform a data
+       sending/receiving operation of the second communications device in FIG. 3, FIG. 4, or FIG. 6. For
+
+25 example, the transceiver 805 may receive a modulation symbol. The processor 801 may be
+       configured to perform a data processing operation of the second communications device in FIG.
+       3, FIG. 4, or FIG. 6. For example, the processor 801 may perform step 309 to step 315 in FIG. 3.
+       Alternatively, the processor 801 may perform step 411 to step 418 in FIG. 4. Alternatively, the
+       processor 801 may perform step 610 to step 616 in FIG. 6.
+
+30 [00272] In another possible design, the processor 801 may include a transceiver configured to
+       implement a receiving and sending function. For example, the transceiver may be transceiver
+       circuits, interfaces, or interface circuits. The transceiver circuits, the interfaces, or the interface
+       circuits configured to implement the receiving and sending function may be separated, or may be
+       integrated together. The transceiver circuit, the interface, or the interface circuit may be configured
+
+35 to read/write code/data. Alternatively, the transceiver circuit, the interface, or the interface circuit
+
+                                                             45
+    may be configured to transmit or transfer a signal.
+
+    [00273] In still another possible design, optionally, the processor 801 may store instructions
+
+    803, and the instructions 803 are run on the processor 801, to enable the communications apparatus
+
+    800 to perform the method described in the foregoing method embodiment. The instructions 803
+
+5 may be built into the processor 801. In this case, the processor 801 may be implemented by using
+
+    hardware.
+
+    [00274] In still another possible design, the communications apparatus 800 may include a
+
+    circuit. The circuit may implement a sending, receiving, or communication function in the
+
+    foregoing method embodiment. The processor and the transceiver described in this embodiment
+
+10 of this application may be implemented on an integrated circuit (integrated circuit, IC), an analog
+
+    IC, a radio frequency integrated circuit RFIC, a hybrid signal IC, an application-specific integrated
+    circuit (application specific integrated circuit, ASIC), a printed circuit board (printed circuit board,
+    PCB), an electronic device, or the like. The processor and the transceiver may alternatively be
+
+    manufactured by using various IC technologies, for example, a complementary metal oxide
+
+15 semiconductor (complementary metal oxide semiconductor, CMOS), an N-channel metal oxide
+
+    semiconductor (nMetal-oxide-semiconductor, NMOS), a p-channel metal oxide semiconductor
+
+    (positive channel metal oxide semiconductor, PMOS), a bipolar junction transistor (Bipolar
+
+    Junction Transistor, BJT), a bipolar CMOS (BiCMOS), silicon germanium (SiGe), and gallium
+
+    arsenide (GaAs).
+
+20 [00275] The communications apparatus described in the foregoing embodiment may be the first
+
+    communications device or the second communications device. However, a scope of the
+
+    communications apparatus described in embodiments of this application is not limited thereto, and
+
+    a structure of the communications apparatus may not be limited by FIG. 8. The communications
+
+      apparatus may be an independent device or may be a part of a relatively large device. For example,
+
+25 the communications apparatus may be:
+
+               (1) an independent integrated circuit IC, a chip, or a chip system or subsystem;
+
+               (2) a set that has one or more ICs, where optionally, the IC set may alternatively include
+
+    a storage component configured to store data and instructions;
+
+               (3) an ASIC, for example, a modem (MSM);
+
+30             (4) a module that can be embedded in another device;
+
+                 (5) a receiver, a terminal, an intelligent terminal, a cellular phone, a wireless device, a
+    handheld device, a mobile unit, a vehicle-mounted device, a network device, a cloud device, an
+
+    artificial intelligence device, or the like; or
+
+               (6) another device, or the like.
+
+35 [00276] For a case in which the communications apparatus may be a chip or a chip system, refer
+
+                                                     46
+      to a schematic diagram of a structure of a chip in FIG. 9. A chip 900 shown in FIG. 9 includes a
+       processor 901 and an interface 902. Optionally, the chip 900 may further include a memory 903.
+       There may be one or more processors 901 and a plurality of interfaces 902.
+
+       [00277] In a design, for a case in which the chip is configured to implement functions of the
+ 5 first communications device in embodiments of this application, details are as follows:
+
+      [00278] The interface 902 is configured to receive or output a signal. For example, the interface
+       902 may be configured to perform a signal receiving or output operation of the first
+       communications device in FIG. 3, FIG. 4, or FIG. 6. For example, the interface 902 may output a
+       second bit sequence and output a modulation symbol.
+10 [00279] The processor 901 is configured to perform a data processing operation of the first
+
+       communications device. For example, the processor 901 may be configured to perform a data
+      processing operation of the first communications device in FIG. 3, FIG. 4, or FIG. 6. For example,
+       the processor 901 may perform step 301 to step 305 and step 307 in FIG. 3. Alternatively, the
+
+      processor 901 may perform step 401 to step 407 and step 409 in FIG. 4. Alternatively, the processor
+15 901 may perform step 601 to step 605, step 607, and step 608 in FIG. 6.
+
+       [00280] In another design, for a case in which the chip is configured to implement functions of
+       the second communications device in embodiments of this application, details are as follows:
+       [00281] The interface 902 is configured to receive or output a signal. For example, the interface
+       902 may be configured to perform a signal receiving or output operation of the second
+20 communications device in FIG. 3, FIG. 4, or FIG. 6. For example, the interface 902 may receive a
+
+       modulation symbol.
+       [00282] The processor 901 is configured to perform a data processing operation of the second
+       communications device. For example, the processor 901 may be configured to perform a data
+      processing operation of the second communications device in FIG. 3, FIG. 4, or FIG. 6. For
+25 example, the processor 901 may perform step 309 to step 315 in FIG. 3. Alternatively, the
+       processor 901 may perform step 411 to step 418 in FIG. 4. Alternatively, the processor 901 may
+
+       perform step 610 to step 616 in FIG. 6.
+       [00283] It may be understood that, in some scenarios, some optional features in embodiments
+       of this application may be independently implemented without depending on another feature, for
+
+30 example, a solution on which the optional features are currently based, to resolve a corresponding
+       technical problem and achieve a corresponding effect. Alternatively, in some scenarios, the
+       optional features may be combined with other features based on requirements. Correspondingly,
+       the communications apparatus provided in embodiments of this application may also
+       correspondingly implement these features or functions. Details are not described herein.
+
+35 [00284] It should be noted that the processor in embodiments of this application may be an
+
+                                                                   47
+      integrated circuit chip, and has a signal processing capability. In an implementation process, the
+       steps in the foregoing method embodiments may be implemented by using an integrated logic
+       circuit of hardware in the processor, or instructions in a form of software. The foregoing processor
+      may be a general-purpose processor, a digital signal processor (digital signal processor, DSP), an
+ 5 application-specific integrated circuit (application specific integrated circuit, ASIC), a field
+       programmable gate array (field programmable gate array, FPGA) or another programmable logic
+       device, a discrete gate or transistor logic device, or a discrete hardware component.
+       [00285] It may be understood that the memory in embodiments of this application may be a
+       volatile memory or a nonvolatile memory, or may include both a volatile memory and a nonvolatile
+10 memory. The nonvolatile memory may be a read-only memory (read-only memory, ROM), a
+      programmable read-only memory (programmable ROM, PROM), an erasable programmable read-
+
+       only memory (erasable PROM, EPROM), an electrically erasable programmable read-only
+       memory (electrically EPROM, EEPROM), or a flash memory. The volatile memory may be a
+      random access memory (random access memory, RAM), used as an external cache. Through
+15 example but not limitative description, many forms of RAMs may be used, for example, a static
+       random access memory (static RAM, SRAM), a dynamic random access memory (dynamic RAM,
+       DRAM), a synchronous dynamic random access memory (synchronous DRAM, SDRAM), a
+       double data rate synchronous dynamic random access memory (double data rate SDRAM, DDR
+       SDRAM), an enhanced synchronous dynamic random access memory (enhanced SDRAM,
+20 ESDRAM), a synchronous link dynamic random access memory (synchlink DRAM, SLDRAM),
+       and a direct rambus random access memory (direct rambus RAM, DR RAM). It should be noted
+
+      that the memory in the system and the method described in this specification is intended to include
+       but is not limited to these memories or any memory of another proper type.
+
+       [00286] This application further provides a computer-readable medium. The storage medium
+25 stores a computer program or instructions. When the computer program is or the instructions are
+
+      executed by a communications apparatus, a function in any one of the foregoing method
+       embodiments is implemented.
+
+       [00287] This application further provides a computer program product including instructions.
+
+      When a computer reads and executes the computer program product, the computer is enabled to
+30 implement a function in any one of the foregoing method embodiments.
+
+       [00288] All or some of the foregoing embodiments may be implemented by using software,
+      hardware, firmware, or any combination thereof. When software is used to implement the
+       embodiments, all or some of the embodiments may be implemented in a form of a computer
+       program product. The computer program product includes one or more computer instructions.
+35 When the computer instructions are loaded and executed on a computer, all or some of the
+
+                                                             48
+      procedures or functions according to embodiments of this application are generated. The computer
+       may be a general-purpose computer, a dedicated computer, a computer network, or another
+      programmable apparatus. The computer instructions may be stored in a computer-readable storage
+
+       medium or may be transmitted from a computer-readable storage medium to another computer-
+ 5 readable storage medium. For example, the computer instructions may be transmitted from a
+
+       website, computer, server, or data center to another website, computer, server, or data center in a
+      wired (for example, a coaxial cable, an optical fiber, or a digital subscriber line (digital subscriber
+      line, DSL)) or wireless (for example, infrared, radio, or microwave) manner. The computer-
+      readable storage medium may be any usable medium accessible by the computer, or a data storage
+10 device, for example, a server or a data center, integrating one or more usable media. The usable
+
+      medium may be a magnetic medium (for example, a floppy disk, a hard disk, or a magnetic tape),
+      an optical medium (for example, a high-density digital video disc (digital video disc, DVD)), a
+       semiconductor medium (for example, a solid state disk (solid state disk, SSD)), or the like.
+      [00289] The foregoing descriptions are merely specific implementations of this application, but
+15 the protection scope of this application is not limited thereto. Any variation or replacement readily
+
+       figured out by a person skilled in the art within the technical scope disclosed in this application
+
+      shall fall within the protection scope of this application. Therefore, the protection scope of this
+      application shall be subject to the protection scope of the claims.
+
+                                                                                                 49
+

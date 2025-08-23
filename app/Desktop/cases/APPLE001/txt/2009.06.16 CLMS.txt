@@ -1,0 +1,235 @@
+    06 846 405.6                                         June 16, 2009
+    Apple Inc.                       A1 15422WOEP JLa/le/BB
+
+                         New Claims
+
+    A computer-implemented method of controlling a portable electronic de-
+
+    vice (400, 1000) comprising a touch-sensitive display (408, 1014), com-
+
+    prising:
+
+    detecting (308, 908) contact with the touch-sensitive display (408, 1014)
+
+    while the device is in a user-interface lock state;
+
+    transitioning (314, 914) the device (400, 1000) to a user-interface unlock
+
+    state if the detected contact corresponds to a predefined gesture; and
+
+    maintaining (312, 912) the device (400, 1000) in the user-interface lock
+
+    state if the detected contact does not correspond to the predefined gesture;
+
+    characterized by
+
+    moving an unlock image (402, 1002, 1008) along a predefined displayed
+
+15  path on the touch-sensitive display (408, 1014) in accordance with the con--
+
+    tact, wherein the unlock image (402, 1002, 1008) is a graphical, interac-
+
+    tive user-interface object with which a user interacts in order to unlock the
+
+    device (400, 1000).
+
+    The computer-implemented method of claim 1, further comprising dis-
+    playing (304) the unlock image (402) and one or more visual cues on the
+    touch-sensitive display (408) while the portable electronic device (400) is
+    in a user-interface lock state, wherein the one or more visual cues indicate
+    a movement of the unlock image (402) along the touch-sensitive display
+    (408) that will unlock the device (400).
+                                                  -2-
+
+Ix)                The computer-implemented method of claim 1, further comprising dis-
+   LII             playing (304) the unlock image (402) on the touch-sensitive display (408)
+                   while the device (400) is in a user-interface lock state; and
+             Lt.)  wherein the predefined gesture corresponds to moving the unlock image
+                   (402) along the predefined displayed path on the touch-sensitive display
+                   (408) to a predefined location on the touch-sensitive display (408).
+
+                   The computer-implemented method of claim 1, further comprising dis-
+
+                   playing (304) the unlock image (402) on the touch-sensitive display (408)
+
+10                 while the device (400) is in a user-interface lock state; and
+
+                   wherein the predefined gesture corresponds to moving the unlock image
+
+                   (402) across the touch-sensitive display (408) according to the predefined
+
+                   displayed path on the touch-sensitive display (408).
+
+15                 The computer-implemented method of claim 1, further comprising:
+
+                   displaying (904) a first unlock image (1002) and a second unlock
+
+                   image (1008) on the touch-sensitive display (1014) while the device
+
+                   (1000) is in a user-interface lock state; and
+
+                   wherein transitioning the device (1000) to a user--interface unlock state
+
+20                 comprises:
+
+                   transitioning (914) the device (1000) to a first active state corresponding to
+
+                   the first unlock image (1002) if the detected contact corresponds to a pre-
+
+                   defined gesture with respect to the first unlock image (1002); and
+
+                   transitioning (914) the device (1000) to a second active state distinct from
+
+                   the first active state if the detected contact corresponds to a predefined ges-
+
+                   ture with respect to the second unlock image (1008).
+
+                   A portable electronic device (100, 400, 1000), comprising:
+
+                   a touch-sensitive display (126, 408, 1014);
+
+3O                 one or more processors (106);
+
+                   memory (120); and
+              -3-
+
+       one or more programs (132 to 146), wherein the one or more programs
+
+       (132 to 146) are stored in the memory (120) and configured to be executed
+
+       by the one or more processors (106), the programs (132 to 146) including
+
+       instructions for:
+       detecting (308, 908) contact with the touch-sensitive display (126, 408,
+
+       1014) while the device (100, 400, 1000) is in a user-interface lock state;
+
+       transitioning (314, 914) the device (100, 400, 1000) to a user-interface
+
+       unlock state if the detected contact corresponds to a predefined gesture;
+
+       and
+
+10     maintaining (312, 912) the device (100, 400, 1000) in the user-interface
+
+       lock state if the detected contact does not correspond to the predefined ges-
+
+       ture;
+
+       characterized in that
+       the programs (132 to 146) further include instructions for moving an
+
+15     unlock image (402, 1002, 1008) along a predefined displayed path on the
+
+       touch-sensitive display (126, 408, 1014) in accordance with the contact,
+
+       wherein the unlock image (402, 1002, 1008) is a graphical, interactive
+
+       user-interface object with which a user interacts in order to unlock the de-
+
+       vice (100, 400, 1000).
+
+       The portable electronic device of claim 6, wherein the device (100, 400,
+       1000) is a portable multifunction device.
+
+Ix)    The portable electronic device of claim 6, further comprising instructions
+   VI  for preventing (302, 310, 312) the device (100, 400) from performing a
+       predefined set of actions in response to detecting any contact with the
+       touch-sensitive display (126, 408) that does not correspond to the prede--
+       fined gesture while the device (100, 400) is in the user-interface lock state.
+                             -4-
+
+       The portable electronic device of claim 6, wherein the predefined dis-
+       played path is a channel (404).
+
+       10. The portable electronic device of claim 6, wherein the detected contact is a
+                movement of a point of contact across the touch-sensitive display (126,
+                408) while maintaining continuous contact with the touch-sensitive display
+                (126, 408).
+
+       11. The portable electronic device of claim 10, wherein the movement of the
+
+10     point of contact across the touch-sensitive display (126, 408) while main-
+
+       taining continuous contact with the touch-sensitive display (126, 408) is a
+
+       horizontal movement.
+
+       12. The portable electronic device of claim 6,
+                wherein the one or more programs (132 to 146) further comprise instruc-
+                tions for displaying (304) the unlock image (402) and one or more visual
+                cues on the touch-sensitive display (126, 408) while the portable electronic
+                 device (100, 400) is in a user-interface lock state, wherein the one or more
+                visual cues indicate a movement of the unlock image (402) along the
+                touch-sensitive display (126, 408) that will to unlock the device (100,
+                400,).
+
+Ix.)            The portable electronic device of claim 12, wherein the one or more visual
+   VI            cues include an arrow.
+
+       14. The portable electronic device of claim 12, wherein the one or more visual
+                 cues include text.
+
+       15. The portable electronic device of claim 6,
+
+30     wherein the one or more programs (132 to 146) further comprise instruc-
+
+       tions for displaying (304) the unlock image (402) on the touch-sensitive
+                               -5-
+
+U!  display (126, 408) while the device (100, 400) is in a user-interface lock
+    state; and
+    wherein the predefined gesture corresponds to moving the unlock image
+    (402) along the predefined displayed path on the touch-sensitive display
+    (126, 408) to a predefined location on the touch-sensitive display (126,
+    408).
+
+    16. The portable electronic device of claim 6, wherein the one or more pro-
+             grams (132 to 146) further comprise instructions for displaying (304) the
+
+10  unlock image on the touch-sensitive display while the device is in a user-
+
+    interface lock state; and
+
+    wherein the predefined gesture corresponds to moving the unlock image
+
+    (402) across the touch-sensitive display (126, 408) according to a prede-
+
+    fined displayed path on the touch-sensitive display (126, 408).
+
+15
+
+    17. The portable electronic device of claim 6, wherein the one or more pro-
+
+    grams further comprise instructions for displaying (904) a first unlock im-
+
+    age (1002) and a second unlock image (1008) on the touch-sensitive dis-
+
+    play ( 1014) while the device (1000) is in a user-interface lock state; and
+
+20  wherein the instructions for transitioning the device to a user-interface
+
+    unlock state comprise:
+
+    instructions for transitioning the device (1000) to a first active state corre-
+
+    sponding to the first unlock image (1002) if the detected contact corre-
+
+    sponds to a predefined gesture with respect to the first unlock image
+
+25  (1002), and
+
+    instructions for transitioning the device (1000) to a second active state dis-
+    tinct from the first active state if the detected contact corresponds to a pre-
+
+    defined gesture with respect to the second unlock image (1008).
+
+3O
+                                               -6-
+
+18. A computer program product with instructions configured for execution by
+         one or more processors (106), which when executed by a portable elec-
+         tronic device (100, 400, 1000) with a touch-sensitive display (126, 408,
+        1014), cause the device (100, 400, 1000) to perform the method of any of
+         claims 1 to 5.
+

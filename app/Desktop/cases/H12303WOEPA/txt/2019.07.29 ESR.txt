@@ -1,0 +1,88 @@
+9)                                   Europiisches                          EUROPEANSEARCHREPORT                                                 Application Number
+                                     Patentamt
+                                                                                                                                        EP l9 16 0813
+                                     European
+                                     Patent Office
+
+                                     Office européen
+                                     des brevets
+
+                                            DOCUMENTS CONSIDERED TO BE RELEVANT
+
+                                  Category                  Citation of document with indication, where appropriate,          Relevant   CLASSIFICATION OF THE
+                                                                            of relevant passages                             to claim    APPLICATION (IPC)
+
+                                  X           EP 2 595 344 A2 (HUAWEI TECH CO LTD [CN])                                    1-27         INV.
+                                                                                                                                        H04L12/24
+                                              22 May 2013 (2013-05-22)
+
+                                              * abstract *
+
+                                            X-X-X-X-X-X-X-  paragraph [0001] paragraph [0011] *
+
+                                                            paragraph [0021]  1-
+
+                                                            paragraph [0030] paragraph [0050] *
+
+                                                            paragraph [0053] paragraph [0088] *
+
+                                                            paragraph [0097] paragraph [0103] *
+
+                                                            claims 1, 6, 11, 14, 17-18 *
+
+                                                            figures 1-5 *
+
+                                              US 2009/037713 Al (KHALID MOHAMED [US] ET                                    1-27
+                                              AL) 5 February 2009 (2009-02-05)
+                                            x-
+                                                 abstract *
+                                              * paragraph [0001] - paragraph [0002] *
+                                              * paragraph [0016] - paragraph [0051] *
+
+                                              'k claims 1-9, 11, 17 *
+                                              * figures 1-9 *
+
+                                                                                                                                           TECHNICAL FIELDS
+                                                                                                                                           SEARCHED (IPC)
+
+                                                                                                                                        H04L
+
+EPO FORM 1503 03.82 (PO4CO1) |_I              The present search report has been drawn up for all claims
+
+                                             Place of search                             Date of completion of the search                       Examiner
+
+                                            Munich                                       16 July 2019                            Schrembs, Gerd
+
+                                            CATEGORY OF CITED DOCUMENTS                   T : theory or principle underlying the invention
+                                                                                          E : earlier patent document, but published on, or
+                                     X : particularly relevant if taken alone
+                                     Y : particularly relevant if combined with another       after the filing date
+                                                                                          D : document cited in the application
+                                         document of the same category                    L : document cited for other reasons
+                                     A : technological background
+                                     0 : non-written disclosure                           & : member of the same patent family, corresponding
+                                     P : intermediate document                               document
+                ANNEXTOTHEEUROPEANSEARCHREPORT                                                                     EP 19 16 0813
+                ON EUROPEAN PATENT APPLICATION NO.
+
+                This annex lists the patent family members relating to the patent documents cited in the above-mentioned European search report.
+                The members are as contained in the European Patent Office EDP file on
+                The European Patent Office is in no way liable for these particulars which are merely given for the purpose of information.
+
+                                                                                                                       16-07-2019
+
+                  Patent document           Publication      Patent family                                           Publication
+                cited in search report          date          member(s)                                                   date
+
+                EP 2595344              A2  22-05-2013 CN 102404145 A                                              04-04-2012
+                                                         EP  2595344 A2                                            22-05-2013
+                                                         US 2013155874 A1                                          20-06-2013
+                                                         WO 2013071801 A1                                          23-05-2013
+
+                US 2009037713 A1            05-02-2009 CN 101772918 A                                              07-07-2010
+                                                         EP  2171918 A1                                            07-04-2010
+                                                         US 2009037713 A1                                          05-02-2009
+                                                         WO 2009020817 A1                                          12-02-2009
+
+EPO FORM P0459  For more details about this annex : see Official Journal of the European Patent Office, No. 12/82
+

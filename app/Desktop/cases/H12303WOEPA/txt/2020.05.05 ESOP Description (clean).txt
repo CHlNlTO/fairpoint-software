@@ -1,0 +1,91 @@
+    SERVICE CHAIN FAULT DETECTION METHOD AND
+                                  APPARATUS
+
+    [0001] This application claims priority to Chinese Patent Application No.
+    CN201410224672.0, filed With the Chinese Patent Office on May 26, 2014 and
+    entitled "SERVICE CHAIN FAULT DETECTION METHOD AND APPARATUS".
+
+                                             TECHNICAL FIELD
+
+    [0002] The present invention relates to communications technologies, and in
+    particular, to a service chain fault detection method, a service forwarding apparatus, a
+    device for initiating fault detection, and a service function apparatus.
+
+10  BACKGROUND
+
+        [0003] In addition to providing basic forwarding functions such as switching and
+        routing, a general network device may further provide a value--added service (English
+        full name: Value--Added Service, English abbreviation: VAS). For example, the VAS
+        may be a service such as network address translation (English full name: Network
+15 Address Translation, English abbreviation: NAT) or a firewall.
+         [0004] In a network that provides a value--added service, a service chain (English
+         name: service chain) includes a service classifier (English name: service classifier)
+        and N service forwarding entities (English full name: service forwarding entity,
+        English abbreviation: SFE). The SFEs included in the service chain are successively
+20 connected. The SFE may be connected to one or more service function (English full
+        name: service function, English abbreviation: SF) nodes. According to a service to
+        Which a received packet belongs, the service classifier adds an identifier of the service
+        chain to the packet, to obtain a service packet. The service classifier sends the service
+        packet to an SFE connected to the service classifier. The SFE sends the received
+25 service packet to an SF node that is connected to the SFE and that belongs to the
+        service chain, and the SF node performs service processing on the service packet.
+        [0005] To implement normal forwarding 0f the service packet, a detection device
+
+                                                                                         1
+         in the network may detect whether the SFE, the SF node, and the service classifier can
+        forward the service packet. When the SFE can forward the service packet to the SF
+        node that is connected to the SFE and that belongs to the service chain, the detection
+        device cannot detect Whether an order in Which the SFE forwards the service packet to
+        an SF node belonging to the service chain is correct, that is, the detection device
+        cannot learn an SF node that the service packet passes through When being forwarded
+        0n the service chain.
+        EP 2 595 344 A2 discloses a method and an apparatus for detecting connectivity in a
+        multi--protocol label switching ring network. The network comprises a plurality of
+10 nodes arranged in a ring structure. The detection of connectivity is based on the use of
+        request packets comprising a ring identifier and node identifiers.
+
+                                                        SUMMARY
+
+        [0006] In View of the foregoing, embodiments of the present invention provide a
+        service chain fault detection method, a service forwarding apparatus, a device for
+15 initiating fault detection, and a service function apparatus, Which are helpful to learn
+        an SF node that a service packet passes through When being forwarded on a service
+        chain. The present invention is defined in the attached claims.
+        [0007] The technical solutions provided in the embodiments of the present
+        invention are as follows:
+20 [0008] According to a first aspect, a service chain fault detection method is
+        provided, including:
+
+                       obtaining, by an SFE, a first fault tracing detection request packet, and
+        then determining to communicate With a first SF node, Where the first fault tracing
+        detection request packet includes a path ID and an address of a device for initiating
+25 fault detection, and the path ID is used to identify a path of a service chain;
+
+                         obtaining, by the SFE, an ID of the first SF node; and
+                       sending, by the SFE, a first fault tracing detection response packet to the
+        device for initiating fault detection, Where the first fault tracing detection response
+        packet includes the path ID, the ID of the first SF node, and the address of the device
+30 for initiating fault detection.
+[0009] In a first possible implementation manner of the foregoing first aspect, the
+determining, by an SFE, to communicate With a first SF node on the service chain
+
+includes:
+
+              determining, by the SFE according to the path ID, to forward the first fault
+tracing detection request packet according to a first forwarding entry, Where the first
+
+                                                                                        2a
+       disc.
+        [0309] Persons of ordinary skill in the art may understand that all or some of the
+        steps of the foregoing method embodiments may be implemented by a program
+       instructing relevant hardware. The foregoing program may be stored in a computer
+       readable storage medium. When the program runs, the steps of the method
+       embodiments are performed. The foregoing storage medium may be at least one of the
+       following mediums: any medium that can store program code, such as a ROM, a
+       RAM, a magnetic disk, or an optical disc.
+        [0310] Finally, it should be noted that the foregoing embodiments are merely
+10 intended for exemplarily describing the technical solutions of the present invention,
+       but not for limiting the present invention.
+
+                                                                                       71
+

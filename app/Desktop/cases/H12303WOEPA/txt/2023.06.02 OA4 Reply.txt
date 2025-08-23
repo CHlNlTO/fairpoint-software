@@ -1,0 +1,201 @@
+                                                           gig» BOEHMERT & BOEHMERT
+
+BOEHMERT & BOEHMERT P.O.Box 150308 80043 Miinchen Germany  1hr Zeichen/your ref.                                                   Pettenkoferstrafie 22
+                                                                                                                                   80336 Miinchen
+Mg                                                         19 160 813.2
+                                                                                                                                   Germany
+Europaisches Patentamt                                     Ihre Nachricht / your letter
+80298 Miinchen                                                                                                                     T +49--89 559680
+                                                           Unser Zeichen/ our ref.                                                 F +49--89--559685090
+
+                                                           H12303WOEP-A                                                            www.boehmert.de
+
+                                                                                                                         Miinchen  Dr. Ing. Karl Boehmert PA(189971973)
+                                                                                                                                   Dip|.-|ng. Albert Boehmert PA (190271993)
+                                                                         02.06.2023                                                \Mlhelm J. H. Stahlberg RA. Bremen
+                                                                                                                                   Dr.-|ng. Walter Hoormann PA`. Bremen
+European Patent Application EP 19 160 813.2                                                                                        Prof. Dr. Heinz Goddar PA`. Muflchefl` Shanghai
+SERVICE CHAIN FAULT DETECTION METHOD AND                                                                                           Dr.-|ng. Roland Liesegang PAfi Muflchefl
+APPARATUS                                                                                                                          Wolf--Dieter Kuntze RA. Bremen
+Huawei Technologies Co., Ltd.                                                                                                      Dr. Ludwig Kouker RA. Bremen
+                                                                                                                                   Dip|.-|ng. Eva Liesegang PA`. Muflchefl
+On the communication pursuant to Art. 94(3) EPC dated 08.02.2023:                                                                  DipI.-Phys. Dr. Stefan Schohe PA`. Muflchefl
+                                                                                                                                   Dr.-|ng. Matthias Philipp PAfi Bietefetd
+It is requested to proceed with the examination on the basis of new                                                                Dr. Martin \Mrtz RA. Dussetdorf. Bemn
+Claims 1 to 23 replacing the claims on file, and the remaining                                                                     Dr. CarI-Richard Haarmann RA. Muflchefl
+documents as currently on file.                                                                                                    DipI.-Phys. Christian W. Appelt PA`. Muflchefl
+                                                                                                                                   DipI.-Phys. Dr.-|ng. Uwe Manasse PA`. Bremen
+I. Amendments                                                                                                                      DipI.-Phys. Dr. Thomas L. Bittner PA`. Berhn
+                                                                                                                                   Dr. Volker Schmitz-Fohrmann, M. JUR. RA. Muflchefl` Pans
+Claim 1 has been amended to specify that the first fault tracing                                                                   DipI.-Biochem. Dr. Markus Engelhard PA`. Muflchefl
+detection request packet is sent by a previous-hop service forwarding                                                              DipI.-Chem. Dr. Kad-Heinz B. Metten PA`. Frankfurt
+entity, SFE 0f the SFE 0n the service chain. Original disclosure can be                                                            Dr. Florian Schwab, LL.M. RA. Lic en droit. Muflchefl
+found in e.g., par. [0019] of the original description.                                                                            Dr. Andreas Dustmann, LL.M. RA. Bemn. Nicante
+                                                                                                                                   DipI.-Chem. Dr. Volker Schulz PA`. Bremen
+Claim 12 has been amended similar to claim 1.                                                                                      Dr. Martin Schaefer RA. Bemn
+                                                                                                                                   DipI.-Phys. Dr. Michael Hartig PAfi Muflchefl` Pans
+The remaining claims are unchanged.                                                                                                DipI.-Phys. Dr. Steffen Schmidt PAfi Muflchefl
+                                                                                                                                   Dr. Andreas Lucke PA`. Muflchefl
+Thus, all amendments meet the requirements of Alt. 123(2) EPC.                                                                     DipI.-Chem. Dr. Ute Kilger PA`. Berhn
+                                                                                                                                   Malte Nentwig, LL.M. RA. Bremen
+II. Two-part form, Rule 43(1) EPC                                                                                                  Dr. Rudolf Backenholt, LL.M. RA. Bremen
+                                                                                                                                   Peter GroB, LL.M. RA. Muflchefl` Ahcante
+In response to the request for two--paIt form in section 4.1 of Office                                                             Dip|.-|ng. Felix Hermann PA`. Muflchefl
+Action 3, 0A3, it is submitted that the subject matter of new claims 1                                                             Dr. ij`m Bahlmann RA. Muflchefl. Frankfurt (200972022)
+and 8 relates to a method whose method steps are interrelated with                                                                 DipI.-Phys. Dr. Dennis Kretschmann PA`. Muflchefl
+                                                                                                                                   Dr. Michael Ruberg, LL.M. RA. Muflchefl` Pans
+BOEHMERT & BOEHMERT Anwaltspartnerschafl mbB - Patentanwélte Rechtsanwélte - AG Bremen-PR 358 HR                                   DipI.-Phys. Christoph Angerhausen PAfi Dussetdorf
+Miinchen - Bremen - Berlin - Diisseldorf - Frankfurt - Bielefeld - Alicante - Paris - Shanghai                                     Dip|.-|nform. Dr. Jakob Valvoda PA`. Muflchefl
+Information about data protection and your rights as data subjects:                                                                DipI.-Chem. Dr. Martin Erbacher PA`. Bremen
+www.boehmert.com/data-protection                                                                                                   Dr. Daniel Hermann PAfi Frankfurt. Muflchefl
+                                                                                                                                   Dr. Sebastian Engels RA. Berhn
+                                                                                                                                   Silke Freund RA. Muflchefl
+                                                                                                                                   DipI.-Phys. Dr. Matthias Hofmann PAfi Muflchefl
+                                                                                                                                   Dr. Eckhard Ratjen, LL.M. RA. Bremen
+                                                                                                                                   DipI.-Phys. Dr. Jin Jeon PA`. Muflchefl
+                                                                                                                                   Dr. Mario Araujo" PA`. Muflchefl
+
+                                                                                                                                   DipI.-Phys. Dr. Klaus Seranski PA`. Frankfurt. Muflchefl
+                                                                                                                                   Dr. Katrin Seibt RA. Bremen
+                                                                                                                                   DipI.-Biochem. Dr. Sibylla M. Grahn PA`. Muflchefl
+                                                                                                                                   DipI.-Phys. Dr. Xia Pfaffenzeller PA`. Muflchefl
+                                                                                                                                   Dr. Catharina Gb`tz RA. Muflchefl
+                                                                                                                                   Dip|.-|nform. Fritz Jetzek PA. Bremen
+                                                                                                                                   Claudia Deppe RA. Muflchefl
+                                                                                                                                   Dr. Anja Ruge, LL.M. RA. Muflchefl
+                                                                                                                                   Mehmet Bengi-Akyurek PA`. Muflchefl
+                                                                                                                                   Dr. Lars Eggersdorfer RA. Muflchefl
+                                                                                                                                   Yannick Schutt, M.Sc. Inform. PAfi Muflchefl
+                                                                                                                                   Dip|.-|ng. Simon Comet PA`. Dussetdorf
+                                                                                                                                   Dip|.-|ng. Dr. Sebastian Schlegel PA`. Bemn
+                                                                                                                                   DipI.-Chem. Robert Bernin PAfi Bremen
+                                                                                                                                   Dip|.-|ng. Jan Gijring PA`, Frankfurt
+                                                                                                                                   Dr. Laura Haas, M.Sc. PAfi Muflchefl
+                                                                                                                                   Dr. Hanno Flentje PAfi Muflchefl
+                                                                                                                                   Dr. Lennart-Knud Liefeith PA`. Frankfurt
+                                                                                                                                   Dr. Lara Gwinner PA`. Muflchefl
+                                                                                                                                   Dr. Alexander Thamer RA. Berhn
+                                                                                                                                   Dr.-|ng. Michael Rubsamen PA`. Muflchefl
+                                                                                                                                   DipI.-Phys. Dr. Michael Lohse PAfi Muflchefl
+                                                                                                                                   Dr.-|ng. Jonas Boschung, M.Sc., M.Sc. PA`. Dussetdorf
+                                                                                                                                   DipI.-Phys. Dr. Adrian Steffens PA`. Berhn
+                                                                                                                                   Melanie Muller RA. Bremen
+                                                                                                                                   DipI.-Phys. Dr. Giulio Schober PA. Muflchefl
+                                                                                                                                   Micheline Verwohlt RA. Muflchefl
+                                                                                                                                   Nina Ruoker RA. Muflchefl
+                                                                                                                                   Dr. Makiko Maruyama`, M.Sc., Muflchefl
+                                                                                                                                   Théodore Ley`, Muflchefl
+                                                                                                                                   Dr. Oleg Lebedev`, Berhn
+
+                                                                                                                                   PA Patentanwan/Patem Attorney *European Patent Attorney
+                                                                                                                                   RA Rechtsanwan/Attomey at Law (Germany)
+                                                                                                                                   .. Agente de \a Propiedad \ndustnai (Spanien / Spam)
+                                                                                                                                   Vertretung vordem EU`PO , Marken und Designs
+                                                                                                                                   Representation at EU`PO iTrade marks and Designs
+                                                   g8 BOEHMERT & BOEHMERT
+
+each other, while the inventive step concerns changes in several of these interrelated
+method steps. Further, the subject matter of claim 12 and 19 relates to a complex
+apparatus of functionally inter-related parts, while the inventive step concerns changes
+in several of these parts of the apparatus. Therefore, the use of the two-paIt form is
+considered to be inappropriate, since it would give a distorted picture of the claimed
+invention and would lead to an artificial lack of clarity of the respective claim. Hence, it
+is requested to allow the one-paIt form in the present case.
+
+III. Clarity
+
+Under item 3.1 of 0A3, the Examining Division raises a laCk-of-ClaIity objection
+regarding the entity responsible for sending the "firstfault tracing detection request
+packet". Allegedly, the identity of this entity is not clear. Present claims 1 and 12 now
+state that the first fault tracing detection request packet is sent by a previous-hop SFE of
+the SFE on the service chain. Thus, the objection is overcome.
+
+In response to the objection under item 3.2 of 0A3, it is again submitted that
+independent claims 1, 8, 12 and 19 do not utilize the terms "fault tracing detection" or
+"initiating fault detection" individually, but rather define a "first fault tracing detection
+request packet" containing a path ID, a "first fault tracing detection response packet"
+containing the path ID and ID of the SF node, and a "second fault tracing detection
+response packet" containing the path ID and ID of the SFE. Additionally, these claims
+make reference to a "device for initiating fault detection" that is connectable to the SFE,
+and its relevant technical features. Consequently, the terms "fault tracing detection" and
+"initiating fault detection" do not create any lack of clarity concerning the subject matter
+of the aforementioned claims.
+
+Under item 3.2.1 of 0A3, the Examining Division argues that the nature of the fault
+remains unknown. The applicant respectfully disagrees that this causes a lack of clarity.
+The skilled person understands that the faults being detected are any kind of faults that
+might occur in the service chain during its operation. Any fault, may it be of any kind, if
+detected would lead to achieving the same technical effect if the claimed method is
+implemented.
+
+The Examining Division under item 3.2.1 further objects that it is not clear how fault
+detection is achieved merely by requesting/sending/obtaining just ID's of one SF node
+and one SFE. The applicant respectfully disagrees. It is reiterated that the method of
+claim 8 interacts with the method of claim 1 and comprises steps of determining that
+forwarding between the SFE node and the SF node is normal and that the forwarding
+between the SFE and the device for initiating fault detection is normal. Thus, these
+
+                                                                                                                                                                                  2/4
+                                                   g8 BOEHMERT & BOEHMERT
+
+determinations in combination lead to the result that the forwarding between all devices
+(device for initiating fault detection, SFE node, and SF node) is normal.
+
+Furthermore, it is understood that by repeating the same method for all the SF nodes
+and SFEs, fault/detecting can be achieved for the entire chain. The skilled person knows
+that the SF node in a service chain is responsible for processing the request and the SFE
+is responsible for forwarding the request to the next service function in the chain. If there
+is a fault in the service chain, it will be reflected in the SF node or SFE, and they will not
+be able to either process or forward the request. Thus, the claimed invention provides a
+way of determining service chain fault detection.
+
+Under item 3.2.2 of 0A3, the Examining Division raises concerns about the other SF
+nodes on the path. Although the claims describe obtaining the ID of only one SF node in
+the service chain, it is only for conciseness, and the method can be applied to all SF nodes
+in the chain by repeating the process for each node.
+
+Furthermore, the Examining Division apparently considers that fault detection
+according to the independent claims is merely determining whether "the ID of one SF
+node" obtained in the "fault tracing detection response packet" is included in the
+memory of the SFE or not, and further that, at best, this is only one type of fault that is
+detected. The applicant respectfully disagrees with this interpretation. It is clear that to
+implement normal forwarding of the service packet, a detection device in the network
+detects whether the SFE and the SF node can forward the service packet and through the
+correct path. If a fault (any kind of fault) occurs, the normal forwarding of the service
+packet is affected. Using the path ID and the ID of the SFE, the fault can be traced. The
+applicant notes that any fault can be detected and traced through this technique.
+
+Objections under item 3.3 of 0A3 are expected to be overcome after the above
+explanation.
+
+Therefore, all claims are clear and meet the requirements of Art. 84 EPC.
+
+IV. Novelty and Inventive Step
+
+The applicant hereby indicates their intention to rely on the arguments concerning
+novelty and inventive step that were presented in their previous response.
+
+V. Conclusion
+
+In view of the amendments made and the above explanations, it is believed that the
+application is now in a state acceptable for grant. Should the Examining Division,
+
+                                                                                                                                                                                  3/4
+                                                   g8 BOEHMERT & BOEHMERT
+
+nevertheless, still see deficiencies in the documents on file, it is kindly asked to give the
+applicant the opportunity to file further arguments and, if necessary, amendments.
+Minor issues could be discussed by telephone.
+Only as a measure of precaution,
+
+                                             Oral Proceedings
+are herewith requested. In this event, it is further requested that the Oral Proceedings be
+either held in Munich, or by Videoconference.
+BOEHMERT & BOEHMERT
+
+Enclosures:
+New claims 1 to 23, clean copy
+New claims 1 to 23, marked-up version
+
+                                                                                                                                                                                 4/4
+

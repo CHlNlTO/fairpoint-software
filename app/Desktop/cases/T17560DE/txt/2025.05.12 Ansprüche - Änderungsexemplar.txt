@@ -1,0 +1,132 @@
+T17560DE / DE 10 2024 100 165.8
+Taiwan Semiconductor Manufacturing Co., Ltd.
+12.05.2025
+ANSPRÜCHE:
+1. Verfahren, umfassend:
+Ausbilden einer vorstehenden Finne (28) neben einem dielektrischen Isolierbereich (26)
+und höher als dieser;
+Ausbilden einer ersten dielektrischen Schicht (32A), aufweisend:
+einen ersten oberen Abschnitt auf einer oberen Fläche der vorstehenden
+Finne (28); und
+einen ersten Seitenwandabschnitt auf einer Seitenwand der vorstehenden
+Finne (28);
+Ausbilden einer zweiten dielektrischen Schicht (32B) mit einem ersten Abschnitt über
+dem ersten oberen Abschnitt der ersten dielektrischen Schicht (32A) und der oberen Fläche der
+vorstehenden Finne (28) und einem zweiten Abschnitt, der den dielektrischen Isolierbereich
+überlappt, wobei die zweite dielektrische Schicht (32B) unter Verwendung eines anisotropen
+Abscheidungsprozesses ausgebildet wird und der erste Abschnitt und der zweite Abschnitt
+getrennte Abschnitte der zweiten dielektrischen Schicht sind;
+Ausbilden einer Dummy-Gateelektrode (34) auf der zweiten dielektrischen
+Schicht (32B);
+Ausbilden eines Gateabstandshalters (38) auf einer Seitenwand der Dummy-
+Gateelektrode (34) und über der zweiten dielektrischen Schicht (32B);
+Entfernen der Dummy-Gateelektrode (34); und
+Ausbilden einer Ersatz-Gateelektrode (70) in einem Raum, der von der Dummy-
+Gateelektrode (34) hinterlassen wird.
+2025051212303069DE 12.05.2025 DPMADirekt
+2
+2. Verfahren nach Anspruch 1, wobei die zweite dielektrische Schicht (32B) frei von
+Abschnitten auf dem ersten Seitenwandabschnitt der ersten dielektrischen Schicht (32A) ist.
+3. Verfahren nach Anspruch 1 oder 2, wobei die erste dielektrische Schicht (32A) und die
+zweite dielektrische Schicht (32B) unter Verwendung unterschiedlicher Abscheidungsverfahren
+ausgebildet werden.
+4. Verfahren nach einem der vorhergehenden Ansprüche, wobei die erste dielektrische
+Schicht (32A) unter Verwendung eines konformen Abscheidungsverfahrens abgeschieden wird.
+5. Verfahren nach einem der vorhergehenden Ansprüche, wobei die zweite dielektrische
+Schicht (32B) unter Verwendung einer plasmaunterstützten Atomlagenabscheidung
+abgeschieden wird, wobei eine Vorspannung angelegt wird.
+6. Verfahren nach einem der vorhergehenden Ansprüche, ferner umfassend, nachdem die
+Dummy-Gateelektrode (34) entfernt wurde und bevor die Ersatz-Gateelektrode (70) ausgebildet
+wird, ein Ätzen freiliegender Abschnitte der ersten dielektrischen Schicht (32A) und der zweiten
+dielektrischen Schicht (32B).
+7. Verfahren nach Anspruch 6, wobei, nachdem die freiliegenden Abschnitte der ersten
+dielektrischen Schicht (32A) und der zweiten dielektrischen Schicht (32B) geätzt wurden, ein
+erster Abschnitt der ersten dielektrischen Schicht (32A) und ein zweiter Abschnitt der zweiten
+dielektrischen Schicht (32B) direkt unter dem Gateabstandshalter (38) verbleiben.
+8. Verfahren nach Anspruch 7, wobei der zweite Abschnitt der zweiten dielektrischen
+Schicht (32B), der direkt unter dem Gateabstandshalter (38) liegt, nicht konform ist.
+2025051212303069DE 12.05.2025 DPMADirekt
+3
+9. Verfahren nach einem der vorhergehenden Ansprüche, wobei die vorstehende
+Finne (28) mehrere Halbleiternanostrukturen (22A, 22B) aufweist, die gestapelt und
+voneinander beabstandet sind, und wobei sich die Ersatz-Gateelektrode (70) in Räume zwischen
+den mehreren Halbleiternanostrukturen (22A, 22B) erstreckt.
+10. Verfahren nach einem der vorhergehenden Ansprüche, wobei das Ausbilden der
+Dummy-Gateelektrode (34) ein Abscheiden einer Polysiliziumschicht (34) auf der zweiten
+dielektrischen Schicht (32B) und Strukturieren der Polysiliziumschicht (34) umfasst, wobei das
+Strukturieren auf der zweiten dielektrischen Schicht (32B) anhält.
+11. Verfahren nach einem der vorhergehenden Ansprüche, wobei die zweite dielektrische
+Schicht (32B) einen zweiten Seitenwandabschnitt auf dem ersten Seitenwandabschnitt aufweist,
+und wobei der zweite Seitenwandabschnitt in einem Reinigungsprozess entfernt wird, der
+durchgeführt wird, bevor der Gateabstandshalter (38) ausgebildet wird.
+12. Struktur (10), aufweisend:
+einen dielektrischen Isolierbereich (26);
+mehrere Halbleiternanostrukturen (22B) neben dem dielektrischen Isolierbereich (26)
+und höher als dieser, wobei höhere (22B) der mehreren Halbleiternanostrukturen (22B)
+entsprechende niedrigere (22A) der mehreren Halbleiternanostrukturen (22B) überlappen;
+einen Gatestapel (70), aufweisend:
+einen ersten Abschnitt über einer oberen Nanostruktur (22B) der mehreren
+Halbleiternanostrukturen (22B); und
+zweite Abschnitte zwischen benachbarten der mehreren Halbleiternanostrukturen
+(22B), wobei die zweiten Abschnitte des Gatestapels (70) und die mehreren
+Halbleiternanostrukturen (22B) gemeinsam eine vorstehende Finne (28) bilden;
+eine erste dielektrische Schicht (32A) auf einer oberen Fläche und einer Seitenwand der
+2025051212303069DE 12.05.2025 DPMADirekt
+4
+vorstehenden Finne (28);
+eine zweite dielektrische Schicht (32B), die einen ersten Teil Abschnitt über der ersten
+dielektrischen Schicht (32A) aufweist, wobei die zweite dielektrische Schicht (32B) weniger
+konform als die erste dielektrische Schicht (32A) ist, und wobei zumindest ein oberer Abschnitt
+des ersten Teils Abschnitts höher als eine obere Nanostruktur (22B) der mehreren
+Halbleiternanostrukturen (22B) liegt; und
+einen Gateabstandshalter (38) über der zweiten dielektrischen Schicht (32B),
+wobei die zweite dielektrische Schicht (32B) ferner einen zweiten Abschnitt aufweist, der den
+dielektrischen Isolierbereich (26) überlappt, wobei der erste Abschnitt und der zweite Abschnitt
+getrennte Abschnitte der zweiten dielektrischen Schicht (32B) sind.
+13. Struktur (10) nach Anspruch 12, wobei die erste dielektrische Schicht (32A) konform ist
+und der erste Teil Abschnitt der zweiten dielektrischen Schicht (32B) ein unterstes Ende
+aufweist, das im Wesentlichen auf gleicher Höhe mit einer obersten Fläche der oberen
+Nanostruktur (22B) liegt.
+14. Struktur nach Anspruch 12 oder 13, wobei die zweite dielektrische Schicht ferner einen
+zweiten Abschnitt aufweist, der den dielektrischen Isolierbereich überlappt, wobei der erste
+Abschnitt und der zweite Abschnitt getrennte Abschnitte der zweiten dielektrischen Schicht
+sind.
+15.14. Struktur (10) nach einem der Ansprüche 12 bis 14Anspruch 12 oder 13, wobei der erste
+Abschnitt der zweiten dielektrischen Schicht (32B) einen ersten Teil über der ersten
+dielektrischen Schicht (32A) und ferner einen zweiten Teil an einer Seitenwand der
+vorstehenden Finne (28) aufweist, wobei der zweite Teil dünner als der erste Teil ist.
+2025051212303069DE 12.05.2025 DPMADirekt
+5
+16.15. Struktur (10) nach Anspruch 15Anspruch 14, wobei ein unterstes Ende des zweiten Teils
+höher als eine Mitte der Höhe der vorstehenden Finne (28) liegt.
+17.16. Struktur (10), aufweisend:
+ein Halbleitersubstrat (20);
+einen ersten dielektrischen Isolierbereich (26) und einen zweiten dielektrischen
+Isolierbereich (26) in dem Halbleitersubstrat (20);
+eine vorstehende Finne (28) zwischen dem ersten dielektrischen Isolierbereich (26) und
+dem zweiten dielektrischen Isolierbereich (26) und höher als diese;
+eine erste dielektrische Schicht (32A) auf einer oberen Fläche und einer Seitenwand der
+vorstehenden Finne (28);
+eine zweite dielektrische Schicht (32B) über der ersten dielektrischen Schicht (32A),
+wobei die zweite dielektrische Schicht (32B) aufweist:
+einen ersten Abschnitt, der die vorstehende Finne (28) überlappt; und
+einen zweiten Abschnitt, der den ersten dielektrischen Isolierbereich (26)
+überlappt, wobei der erste Abschnitt und der zweite Abschnitt getrennte Abschnitte der zweiten
+dielektrischen Schicht (32B) sind; und
+einen Gateabstandshalter (38) über der zweiten dielektrischen Schicht (32B).
+18.17. Struktur (10) nach Anspruch 17Anspruch 16, wobei der Gateabstandshalter (38)
+physisch einen Seitenwandteil der ersten dielektrischen Schicht (32A) berührt und durch den
+ersten Abschnitt der zweiten dielektrischen Schicht (32B) von einem oberen Teil der ersten
+dielektrischen Schicht (32A) beabstandet ist.
+19.18. Struktur (10) nach Anspruch 17 oder 18Anspruch 16 oder 17, wobei die erste
+dielektrische Schicht (32A) Siliziumoxid enthält und die zweite dielektrische Schicht (32B)
+2025051212303069DE 12.05.2025 DPMADirekt
+6
+Silizium enthält und ein Element, das aus der Gruppe bestehend aus N, C und Kombinationen
+davon ausgewählt ist.
+20.19. Struktur (10) nach Anspruch 17, 18 oder 19einem der Ansprüche 16 bis 18, wobei die
+zweite dielektrische Schicht (32B) ferner einen ersten vertikalen Abschnitt auf einem zweiten
+vertikalen Abschnitt der ersten dielektrischen Schicht (32A) aufweist, und wobei der zweite
+vertikale Abschnitt auf der Seitenwand der vorstehenden Finne (28) liegt.
+2025051212303069DE 12.05.2025 DPMADirekt
+

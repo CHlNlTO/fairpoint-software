@@ -1,0 +1,397 @@
+                                      1/14
+
+,--.,                  Electronic                Electronic device 400
+( 0 --\                deVice 300
+                       (watch GT)                          (V75)
+                                                                               WWW
+                                                                                0
+
+                                     _ 4--D
+
+                                   Access point 500
+
+           \--'j                   H      I   '  'H                         W
+                                      HAJIA S WI'FI
+Electronic device 100                                                          Electronic
+   (JIAJIA'S mobile
+                                                                               device 200
+        phone)
+                                                                                 (P40)
+
+                                      FIG. 1
+
+         Distributed application (for example, distributed
+                                   gallery)
+
+Request                                       Device inform ati on report
+
+                                                   (P40 and V75)
+
+Request i              Distributed data service
+
+                                          T Device inform ati on report
+                                                  (watch GT, P40, and V75)
+
+                         Distributed soft bus
+
+                                      FIG. 2
+
+                                      40
+                                 2/14
+
+             Distributed application (for example, distributed gallery)
+
+             Write policy
+
+                            Distfibuted data service             303
+                                                              /_/
+
+                       301  ..                Device reporting module
+                       F/ Capab1l1ty
+                                              DeV1.ce filten. ng module      302
+Synchrom'ze  P011' CY fl                                                   H
+
+             database
+
+                            Online device query               Device online/
+
+                                        Distributed soft bus   Offline report
+
+                                FIG. 3
+
+              411 1     412 1                 DeV1.ce name field /\-- 413
+Devicefieilddentifier  Account field
+
+ Application                Status field               .
+identifier field                              Label field
+                             415 .2
+        \ 414                                     41S6
+
+             Dimension                        Dimension
+             Local                            Local
+             Filtering conditi on             Filtering condition
+
+                     \                                   4%
+
+                                         417
+
+                                FIG. 4
+
+                                     41
+      502                                                                  3/14             503                    504
+                                                                  501                                       [J
+[1 P(M1)3)]                                                                       W[2h(1t2h3T)]
+                                                          HAfi[1fi(a13g)d] me                          [3 (V17253)]
+
+JIAJIA'S moblle\ \ \aaaH aaaaW aaaaaAaaaAaaaM aaaa§ aaaw  Watch GT          EJIb
+                                                          [2 (1 2 3)]
+\
+
+     Watch GT
+     [2 (1 2 3)]
+
+                                                                                                  513                514
+
+                                                                                               /._/              /._/
+
+                                                                                  Watch GT                 V75
+                                                                                  [2 (1 2 3)]          [3 (1 2 3)]
+
+"2K\ HAHAs
+
+           mobile phone
+
+           [1 (1 3)]
+
+                                                          W[2at(1ch2 G3)T]
+
+                                                                            42
+              4/14
+
+  /                                        User interface 61
+           6
+                              V
+          _/
+              Distributed gallery
+611
+
+              DD EEEDDEE
+
+                                               612
+
+Distributed gallery
+
+Once enabled, this device can browse
+and access gallefies of other devices
+logged in to the same account
+
+              FIG. 6A
+
+              43
+                                                             User interface 62                                 User interface 63
+   621
+                                                                                4.2222 >5 Thursday, January 1  ®
+                  Clock Calendar Gallery Notepad
+622                                                                             JIAJIA Bluetooth Mobile data
+
+                                                                                é§`.&@
+
+                                                                                Aumpoldaene  Silent            Hotspot
+
+                                                                                 (El)
+
+                                                                                                                                            5/14
+
+44
+                                                                                Auto-rotate                    Distributed
+
+                                                                                i} --0-- Auto a
+
+k"""""""""""7C Camera Contacts Phone Messages                                                FR3.6C
+                                                                         623
+              User interface 64                                  User interface 65
+
+     642      Distributed       3 '\  /                                \
+
+                                                Albums               )
+
+                                       (Q
+
+     This device Other devices            This device Other devices
+
+                                      Do you want to enable distributed gallery       651
+                                      access? Once enabled, this device can         q
+                                      browse and access galleries of other
+                                      devices logged in t0 the same account.
+                                                                                                                                            6/14
+
+45
+
+                                          652                    653
+
+'\°           63K)                    N"                @E)
+kPhOtOS Gallery Highli ghts Discovy   kPhotos Gallery Highlights Discoverj
+
+     FIG. 6D                                            FIG. 6E
+/                         User interface 66     /           N User interface 67
+
+                                N
+
+   Albums                                           Albums
+
+           661                                  (Q
+
+(Q <                      D
+
+                    662                    663     MCDN This device                                           I 673
+   This device           Other devices
+
+                                                                                                 /\ \--/ 672
+
+                                                671
+                                                                                           V64
+                                                                                                                                            7/14
+
+46
+                Download
+
+           665
+
+   "\C'                  6?) Q                              6?) Q
+kPhotos Gallery Highlights Discoverj
+                                                KPhotos Gallery Highlights Discoverj
+           FIG. 6F
+                                                                    FIG. 6G
+   8/14
+
+            User interface 68
+
+W           W
+2%! /6 P40
+
+ r.
+681
+
+     Camera Screenshots Download
+682
+
+   FIG. 6H
+
+   47
+f                      User interface 71  /                    \ User interface 72
+
+6 Configure filtering conditions          6 Configure filtering conditions
+
+                          1 712           Device type
+
+Device type 711
+
+System version
+Applicati 0n versi 0n
+
+Camera
+Microphone
+
+Speaker
+                                                                                                                                            9/14
+
+48
+
+            FIG. 7A                          721
+
+                                                      FIG. 7B
+K                 10/14
+
+         Albums                  User interface 73
+
+ (Q                           N
+
+                          D
+
+This device Other devices ®
+
+671                                   /\, 672
+
+             P40               V64
+
+                      731
+                  f`/
+
+Watch GT
+
+  N°                   39
+
+\Photos           Gallery Highli ghts Discovv
+
+                  FIG. 7C
+
+                           49
+/                      User interface 74                   \ User interface 75
+
+                                          /
+
+6 Configure filterlng conditions          6 Configure filtering conditions
+
+Device type                               Device type                       @
+                                          System version
+System version 741                                                                        _/742
+Applic ati on version
+
+Camera
+Microphone
+
+Speaker
+                                                                                                                                            11/14
+
+50
+
+   FIG. 7D                                   751
+
+                                                  FIG. 7B
+                                                 User interface 81                                          User interface 82
+                                                                         This device Other devices G)
+@woaQ
+
+            This device
+       811
+
+                                                                                                                                            12/14
+
+51
+
+                                                                    \
+
+   <3 @1 Night Portrait Photo Video More                            813
+
+   A
+
+\
+
+   FIG. 8A                                                               FIG. 8B
+                       13/14
+
+                                                        User interface 83
+
+@aocQ-Q
+
+This device Other devices ?
+
+   g   832
+
+t                                                                                          0
+
+                ®
+
+                831
+
+             my]
+
+100/ Night Portrait Photo Video More
+
+                       FIG. 8C
+
+   52
+                                    14/14
+
+                                    Electronic device
+
+            Antenna 1                                  Antenna 2
+                                                                       \I/
+                              \'/
+                               \:/
+
+    Mobile communication module                   Wirele ss communic ati on module
+               2G/3G/4G/5G                        BT/WLAN/GNSS/NFC/IR/FM
+
+               [150]                                           [160]
+
+Speaker                                                    1
+[170A]                                                                 Sensor module [180]
+
+  Receiver 7                                                                Pressiggzensor
+
+  [1703] Audio                                                                 []
+
+Microphone m[o1d7u0l]e --                                                     Gyro sensor
+
+J' aeHkea[d1s7e0tD] 1               Processor [110]              prii[r`1`18i0fiCi`]l`ém
+
+ Displays 1 to N [194]                                            Magnetic sensor
+ Cameras 1 to N [193]
+                                                                      [180D]
+    Indicator [192]
+                                                                            -
+           Motor [191]                                          Acceleratl on sensor
+
+       Button [190]                                                  [180E]
+
+Internal memory [121]                                     ]       Distance sensor
+
+  SIM card interfaces                                Power t                 [180F]
+       1 to N [195]
+                                                  managemen      Optical proximity
+   External memory                                                 sensor [180G]
+     interface [120]                              module [141]
+                                                                Fingerprint sensor
+USB interface 130                     Charging        Battery
+                                                       [142]          [180H]
+                   []               management
+                                    module [140]                Temperature sensor
+
+Chargi 11g  _________                                                  [180J]
+  input
+                                                                    Touch sensor
+
+                                                                      [180K]
+
+                                                                  Ambient light
+
+                                                                   sensor [180L]
+
+                                                                 Bone conducti on
+                                                                   sens or [180M]
+
+                                    FIG. 9
+
+                                    53
+

@@ -1,0 +1,527 @@
+                 1/12
+
+User
+
+                 App Ication \
+
+                 server         \
+
+Primary cluster                    Secondary
+        1O1                        cluster E022
+
+                 FIG. 1
+
+                 50
+                                            2/12
+
+Primary                                  _                             Sacondary
+3'; cluster ROI y"
+
+HDFS compouant                                             HDFS camponcnt
+
+ / WWWWWWWWWWWWWWWWWW "a                                   f _________________ "w
+
+` Directary Directory Directory `                       , 1 Directory  Directory  Directory  3`}
+
+                                                                                             3
+                                                                                             1`;
+
+SparkSQL                           91*;             {,gr:              SparkSQL
+
+component.                                          f1                 component
+
+                                            FIG. 2
+
+                                            51
+                   3/12
+
+                   User 106
+
+                   _ p . \\
+
+                   Applicatlem \\  "1  rData backup system 300
+                   servcr 105
+
+                                       .W W W W W             I
+
+                                       Secondar`;J "1
+
+                                                        site  E
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                       Secondary              1
+
+                                       c1 Lister 102          I
+                                                              1
+
+                                                              E
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              E
+
+                                                              E
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              E
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              E
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+                                                              I
+
+Secondary control                      Primary control        I
+    device 104                                                E
+                                       device 103
+                                                              I
+
+                                                              I
+
+                   FIG. 3
+
+                   52
+                                       4/12
+
+                                        Instructian  1311111813! 90111301
+
+                                       `                dewce 103
+
+           Primary                                               Secondary
+       clustcr101                                                clustcr 102
+
+       HDFS component                                          HDFScompane nt
+   II- 101 1                                                            1021
+                      /*--"`--"~m
+                                                     flfiw--hfiw
+
+   :l        2         3I               D1112}
+                                       backup
+
+1` Hive component 1                I1                Hive camponcnt 3
+
+1      1012        1               i                 1 022                     1
+
+,» Table Tahiti: 1E Table T                          Table Table ~
+
+1                  Km                                1
+
+       SparkSQL                                      SgarkSQL
+       component                                     component
+
+                                       FIG. 4
+
+                                       53
+                                        5/12                                                                                                      `%§>§§Q§§S  I  `I
+
+                                                                                      m§\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  \\\                               Applzcatmn
+                                                                                                                                                              S&i`Vel` 105
+                                             Arbitranon                                                                     A 1113311011 2.
+                                            module 1053                                                                       pp
+
+       _       Primary client 1051                                                                                          0S1e16c1o11nd1a0r5y2                Second
+                                                                                                                                                                 status
+     FIFSt                                                                                                                                                    information
+    status
+infamafimn
+
+                                                             fDafia backup system 300
+
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm .3
+
+                      Primary site-                                                                                               S6 undary 511:6-                          {mmmmmmmmmmmmmwmwmmwmwmmmmm"mmmmmwmwmmmmmmmwmmmmmmmmmm
+
+chigtrsr` Primary cluster 10]                                                                                                   Seccndary Cluster 102         Registtzr ;
+                     Distributed
+                                                                                                                                       Distribut6d
+               application program                                                                                               application program
+              coordinaimn service 1                                                                                         coordinafiion service 2
+
+                                           13161111060011
+
+                                                task 1
+
+                                     Back up (12112111613613
+                                    on 21 56001111 snapshot
+
+                                          R6p1ication
+                                             task 2
+
+                  U556: dapa m       Bac1k113411561"(16111                                                                     1  U ser data
+
+            (User, 13611111331011,  Snapshot                                                                                * *` "l": (U561, permissiun,
+                and tenant)            133k 2
+                                                                                                                                    \ anti tenant)
+
+- 1 PTOCSS 2
+
+Backup managemem                                                                                                               Backup mama gement
+   apparatus 101 1                                                                                                                apparatus 1021
+
+                                    Third                                                                                         $611de insfiu`ciio
+
+            _                       11151111611011
+
+86662111121131 control                                                                                                            Primary (20111301
+     device 104
+                                                                                                                            ~     device 103
+(Pregram Software)
+                                                                                                                                  (Progm`am Software)
+                                 6/12
+
+                                 /-- Cluster pairing interface
+
+/                                                                      \
+
+   Cluster informati on:
+
+                                 I ________________________ \
+
+   Cluster 1         Il          Posm. o. n: C                             \
+
+                                                                    DI
+
+                     |                                                    |
+
+                     :           Resource C                         D:
+                                                                       /I
+                     I\ specification:
+
+   Cluster 2            IIl Position: C ) I| I ________________________ \
+   Cluster 3                                                             I
+                        I        Resource C
+                        I                                           D:
+                         I \ specification:                              I
+
+                                 ________________________ /
+
+                           I / ------------------------------------------------ \I
+                                 Position: C
+                             I                                      D
+
+                           II    Resource C                         D
+
+                             \\ specification:                         /
+
+   Please pair a primary cluster and a secondary cluster:
+
+   Pfimary cluster:                             Secondary cluster:
+
+   Cluster 1                     V              Cluster 1           V
+
+   Cluster 2                                    Cluster 2
+   Cluster 3                                    Cluster 3
+
+K                                                                      /
+
+                                 FIG. 6
+
+                                      55
+                                                     7/12
+
+/                                                    /-- Policy configuration interface
+
+                                    Please specify a service to be backed up and a backup moment
+
+   '--___________________________K  Whether to configure a backed 101p protectl on Yes I No       \____________________________t
+                                                 group for a first serv1ce
+
+                                                     Please configure a
+                                                      protecti on group
+
+                                    Component 1:
+
+                                                     Data set 1          a
+
+                                    Component 2:
+
+                                                     Data set 2
+                                                     Data set 3
+
+                                    Backup                                                        \__________--
+
+                                    mom ent:
+
+                                    Backup 1' ______________________ \
+
+                                    peri odicity: \                                          /
+
+                                                     FIG. 7
+
+                                                          56
+Primary      8/12
+
+              Data backup symem 300
+
+                                                Secondary
+
+Camponeni 3  3 mm                                         Component 6
+
+                 $3
+                     Oufl
+
+                           UR
+                            pd
+
+                    Wa Sem p
+
+                                   3 3.0}
+
+                                                     vuf
+
+             FTC}.8
+
+             57
+                                                             9/12
+
+                                                                                              3902: Set a protection group
+                                                                                                for a 11:31" service and a T3
+
+                                                                                              moment at which service data
+                                                                                                         is backed up
+
+                                                                                                                Data backup
+                                                                                                          1 [- system 300
+
+_ Primary siie ,                                 $901 : Synchronize
+
+    _______________                                    COnfigUfatiOn
+
+            ` Secondary cuntml I                          infonnafign                           Primary control
+
+              ` device 104                          ,        `1            _`                       device: 1113         390,5:
+                                                    39632361161 a thlrd ,
+            ; (Program software) 1                                                            (Program software)        Deliver a
+
+                                       '                     instrustion
+
+Primary cluster 101                                                                                                     1. 11s8g11c1o1n0g11i031
+
+                                                                           /T~----:dfiflfidd_`q_____::--. M".                            `
+
+        Backup management                                                                                                             1
+             mociulc 101 1
+
+Process Process Process
+
+       1                       2  ,3                                       8909:                       $909:            $909:
+
+$904:         3904; Access 8904: Access                                    Snapshofi Snapshot Snapshot
+
+Access                                                                          cam 1:101}th
+
+mg ` E                                     w                           3                         g
+a s 8 1 5.3 g 3;; {.z.` '3:i 1 z9:' 1E0:"1:'g3;"w 0"a a m r.)           fl 1 1 2                 c:£3
+                                                                        `  .
+ ' C)                                      MQ                                                     :3
+
+                                                                 , S908:                                             ` 8908:13ack 5
+                                                                   Backup 8908:1321? up                                 up 3
+
+3905. Sn8a9p0s5:hot                                                        11'" H"Q9E% M 11 11 " ".g33m"III" "p5g;"1
+Sna"pslm` t
+        ~~~~~~~~~~~~                             i                         1 3om% 1` flu aD§~_ I'I1 g0r::: II
+
+W"                                         -=-"   M                        27M } LEasELMW     a        u<m:2) mW  [     mcGmuasy.  1
+
+   fl                                            A                                            1                   1                1
+HHHH" r   _.                                              \                                                          I
+              *1. g
+
+       @811   B @131                                                       ww--mm` p",                 mmmmm            MMWJ
+
+{L J 1M~_1§@J                                                                                 \ 1/
+
+                                                                                              Backup management.
+                                                                                                   modum 1012
+
+              , User (12%                        89111:Backyup user                                         ' ''
+
+             (User, tenant, and                        database                                    1 User data
+                permigsion)
+                                                       ~                                         (U sen twang and
+                                                                                                    permission)
+
+                                                             58
+MMMMMMMMMMMMMMMMMMMMMMMMWWWWMWWWW/gDw5`atsautbeamwcEkOuGmp
+
+                                                          E
+
+          `3 Sacondary central                                           Primayy CQEM']
+                                                                         drmcc 103
+                      dcvicc 104      81001: Senda
+
+        (Program software)            fifth instruction ' ' Program software                  81004:
+    __ _ ,,                                                                                   Defliver
+Pri. mary_ cluster 10]                                       L Secondary ciuster .E02
+                                                                                            insatsriuxctthion
+
+Backup mnagement                                             (?iififfi A 7;"...a: M 7 :13: M";
+     modulelflll
+                                                             x"M.-HET 1 h1..;_,_ T 111_.._:_1;','1,
+ProcessI Process Process                                        ?&"fiwwfl ""*"_R*
+
+1                              2  ,3                            Si007:            81007: $1007:
+
+31002: 31002: 81002: Access                                  Snapshot Snapshot Snapshot
+
+ACCESS Access
+
+                                           `                    gr: (1,                     ME
+                                                                3%        m
+4aa5--;:              avaC--v         rm 0'da""G                                            [Jam
+                                                                ChQBCS}  53c:t::
+                                      $6.g3?9                                               Q mgR`
+                                          U                                                     0U
+ECou                  E0:2.       Dataha$e                      W0_H     a'
+
+8                     0                          Q5
+
+E7 ` E `                                                     3 B8a1c0k06m.i» 81006: Back up" B$a1c0k06u:p
+
+1 $1003: Snapht" ` : S3n1a0p0s3h:m3 "é                       133% E l .m H am 1 3 FE 3A"%A"Ef, E("35L"%"H'Ef} HEJ`3aM3?`32 "L
+1 gnaw £ 1 l i:v'                                                II Ecu;m k [t EmMm; HI Ea : 1
+PIfjPélP_;.P\E PPI,.    "_Hfl--   thgflhsw_da."`~"3j`f;             tu_m S E L M E Elk 95: E g
+                                          l" NI," ; :
+                      3M, h
+
+I --- "T ~*~e--A m-- *- 1;; 3,1006: Backup                                        3                 _
+
+\Mw,» ___l~_,___*._,*`,,~~_._fi_,wn'f                           $3006:            `         $10062
+
+     ' 4--1:":                                                  ` Back UP , .               33"}: "1' fig
+
+r2": ".211. ::m-,::m::m I                                    `           81005: Startatask
+
+3 r w E mW: m mm wm":                                                    ' Ba'ckup
+1 L_NT \mV--mm--w" MMM-J ,                                                  management
+~.._._____.§_£3 _____________                                               module 1012
+
+                                                         59
+               11/12
+
+          /-- Control device 1100
+
+I
+
+: Communication L____: Determining :
+
+I modu161101 :               I modulellO4 :
+I                            I
+
+_____ _l._____J\             .___________J
+
+      Control module         I  1105           i
+             1102            I
+
+      I                      _____ 1 _____ J
+
+      II                                    I
+                                            I
+   I_____ L_____                _____L_____
+
+   :  Configurati on  I
+                      I
+   I Inodu161103 :              1106              :
+   I
+
+              FIG. 11
+
+                             Primary
+                     /-- cluster 1200
+
+          Communication
+            modul e 1201
+
+          Backup module 1202
+
+                      FIG. 12
+
+                         60
+            12/12
+
+                   Processor              Control device
+
+                          1302                     1300
+
+       {C                                                      b
+
+    Bus 1301                        Program
+
+                                      code
+                                    Memory
+
+                                       1303
+
+            FIG. 13
+
+                                             Prim ary cluster
+
+                                    K            1400
+
+/ ---------------------------------------- \
+         / .r" ------------------------------------ "` "' "N
+
+[f          Processor               Computing device \
+
+|              1402                                                 |
+                                                                    |
+|
+                                                                  >:
+I 4?
+                                                                     |
+:
+I Bus 1401                          Program                       '
+                                    code                           :
+|
+
+|                                   Memory 1403                   I
+                                                                  I
+1\
+
+"` "\ K ____________________ ,
+
+                                61
+

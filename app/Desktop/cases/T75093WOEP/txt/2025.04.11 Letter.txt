@@ -1,0 +1,330 @@
+                                                                BOEHMERT & BOEHMERT
+
+BOEHMERT & BOEHMERT Pettenkoferstraße 22 80336 München Germany  Ihr Zeichen / your ref.                                          Dr. Ute Kilger
+
+Online Filing                                                   20764639.9                                                       Pettenkoferstraße 22
+                                                                                                                                 80336 München
+Europäisches Patentamt                                          Ihre Nachricht /your letter
+80298 München                                                                                                                    Germany
+                                                                Unser Zeichen / our ref.
+                                                                                                                                 T +49-89 559680
+                                                                T75093WOEP                                                       F +49-89-559685090
+
+                                                                                                                        München  kilger@boehmert.de
+
+                                                                             11.04.2025                                          www.boehmert.de
+
+European Patent Application 20764639.9                                                                                           Dr. Ing. Karl Boehmert PA (1899-1973)
+THERAPY GUIDANCE AND/OR THERAPY MONITORING                                                                                       Dipl .- Ing. Albert Boehmert PA (1902-1993)
+                                                                                                                                 Wilhelm J. H. Stahlberg RA, Bremen
+FOR TREATMENT OF SHOCK                                                                                                           Dr .- Ing. Walter Hoormann PA*, Bremen
+4TEEN4 Pharmaceuticals GmbH                                                                                                      Prof. Dr. Heinz Goddar PA", Munchen, Shanghai
+                                                                                                                                 Wolf-Dieter Kuntze RA, Bremen
+This refers to the communication dated March 14, 2025:                                                                           Dr. Ludwig Kouker RA, Bremen
+                                                                                                                                 Dipl .- Ing. Eva Liesegang PA*, München
+The Examining Division regards the feature ,,a predetermined                                                                     Dr .- Ing. Matthias Philipp PA", Bielefeld
+threshold, that is between 25 and 150 ng/ml for plasma DPP3" as                                                                  Dr. Martin Wirtz RA, Düsseldorf, Berlin
+                                                                                                                                 Dr. Carl-Richard Haarmann RA, Munchen, Düsseldorf
+unclear.                                                                                                                         Dipl .- Phys. Christian W. Appelt PA*, München
+                                                                                                                                 Dipl .- Phys. Dr .- Ing. Uwe Manasse PA*, Bremen
+We would like to reply thereto in written prior to Oral proceedings to                                                           Dipl .- Phys. Dr. Thomas L. Bittner PA*, Berlin
+enable the Examining Division to take our arguments into account as                                                              Dr. Volker Schmitz-Fohrmann, M. JUR. RA, Munchen, Paris
+early as possible. We are of course prepared to present the same                                                                 Dipl .- Biochem. Dr. Markus Engelhard PA*, München
+during Oral Proceedings.                                                                                                         Dipl .- Chem. Dr. Karl-Heinz B. Metten PA*, Frankfurt
+                                                                                                                                 Dr. Florian Schwab, LL.M. RA, Lic en droit, Munchen
+A person skilled in the art, who is Statistician in the medical field, i.e                                                       Dr. Andreas Dustmann, LL.M. RA, Berlin, Alicante
+a biostatistician, interprets the feature ,,a predetermined threshold,                                                           Dipl .- Chem. Dr. Volker Scholz PA*, Bremen
+that is between 25 and 150 ng/ml for plasma DPP3" as follows:                                                                    Dr. Martin Schaefer RA, Berlin
+                                                                                                                                 Dipl .- Phys. Dr. Michael Hartig PA", Munchen, Paris
+The predetermined threshold can have a value between 25 and 150                                                                  Dipl .- Phys. Dr. Steffen Schmidt PA*, München
+ng/ml for plasma DPP3, i.e. the predetermined threshold could be for                                                             Dr. Andreas Lucke PA', Munchen
+example 30 ng/ml or 40 ng/ml or 50 ng/ml or 140 ng/ml. All these                                                                 Dipl .- Chem. Dr. Ute Kilger PA*, Berlin
+thresholds are meaningful for a medical practitioner. The actual                                                                 Malte Nentwig, LL.M. RA, Bremen
+determined DPP3 level in a blood sample of a patient may have a value                                                            Dr. Rudolf Bockenholt, LL.M. RA, Bremen
+above or below said predetermined threshold. If said actual                                                                      Peter Groß, LL.M. RA, München, Alicante
+determined DPP3 level in a blood sample of a patient is above said                                                               Dipl .- Ing. Felix Hermann PA*, München
+predetermined threshold then the medical practitioner would                                                                      Dr. Michael Ruberg, LL.M. RA, München, Paris
+consider this patient as being in shock or as predicted to run into                                                              Dipl .- Phys. Christoph Angerhausen PA*, Dusseldorf
+                                                                                                                                 Dipl .- Inform. Dr. Jakob Valvoda PA", München
+shock.                                                                                                                           Dipl .- Chem. Dr. Martin Erbacher PA*, Bremen
+                                                                                                                                 Dr. Daniel Herrmann PA*, Frankfurt, Munchen
+BOEHMERT & BOEHMERT Anwaltspartnerschaft mbB . Patentanwälte Rechtsanwälte . AG Bremen-PR 358 HB                                 Dr. Sebastian Engels RA, Berlin
+München . Bremen . Berlin . Düsseldorf . Frankfurt . Bielefeld . Alicante . Paris . Shanghai                                     Silke Freund RA, München
+                                                                                                                                 Dipl .- Phys. Dr. Matthias Hofmann PA", Munchen
+Information about data protection and your rights as data subjects: www.boehmert.com/data-protection                             Dr. Eckhard Ratjen, LL.M. RA, Bremen
+General terms and conditions: www.boehmert.com/termsandconditions                                                                Dipl .- Phys. Dr. Jin Jeon PA*, München
+                                                                                                                                 Dr. Mario Araujo ** PA*, München
+
+                                                                                                                                 Dipl .- Ing. Oliver Tarvenkom PAT, Düsseldorf, Bielefeld
+                                                                                                                                 Dr. Katrin Seibt RA, Bremen
+                                                                                                                                 Dipl .- Phys. Dr. Xia Pfaffenzeller PA*, Munchen
+                                                                                                                                 Dipl .- Inform. Fritz Jetzek PA, Bremen
+                                                                                                                                 Dr. Anja Ruge, LL.M. RA, Berlin, München
+                                                                                                                                 Mehmet Bengi-Akyürek PA", München
+                                                                                                                                 Dr. Lars Eggersdorfer RA, München
+                                                                                                                                 Dipl .- Ing. Dr. Sebastian Schlegel PA*, Berlin
+                                                                                                                                 Dipl .- Chem. Robert Bernin PA*, Bremen
+                                                                                                                                 Dipl .- Ing. Jan Göring PA', Frankfurt
+                                                                                                                                 Dr. Laura Haas, M.Sc. PA*, München
+                                                                                                                                 Dr. Hanno Flentje PA*, München
+                                                                                                                                 Dr. Lara Gwinner PA", Munchen
+                                                                                                                                 Dr. Alexander Thamer RA, Berlin
+                                                                                                                                 Dr .- Ing. Michael Rübsamen PA*, München
+                                                                                                                                 Dipl .- Phys. Dr. Michael Lohse PA*, München
+                                                                                                                                 Dr .- Ing. Jonas Boschung, M.Sc., M.Sc. PA', Dusseldorf
+                                                                                                                                 Dipl .- Phys. Dr. Adrian Steffens PA*, Berlin
+                                                                                                                                 Melanie Müller RA, Bremen
+                                                                                                                                 Dipl .- Phys. Dr. Giulio Schober PA", Munchen
+                                                                                                                                 Micheline Verwohlt RA, München
+                                                                                                                                 Nina Rücker RA, München
+                                                                                                                                 Dr. Makiko Maruyama*, M.Sc., Munchen
+                                                                                                                                 Théodore Ley", München
+                                                                                                                                 Dr. Oleg Lebedev*, Berlin
+                                                                                                                                 Dipl .- Chem. Dr. Jose M. Pfizer PA*, Berlin, Munchen
+                                                                                                                                 Malte Windeler, LL.M. oec. RA, Bremen
+                                                                                                                                 Dipl .- Ing. Bernhard Jochim PA*, Düsseldorf
+                                                                                                                                 Dr. Julian Wernicke, LL.M. (UCT) RA, Berlin
+                                                                                                                                 Dipl .- Phys. Dr. habil. Daniel Niesner PA*, München
+                                                                                                                                 Hannah Dauer, LL.M. RA, München
+                                                                                                                                 Stella Euchner RA, Munchen
+                                                                                                                                 Dr. Jan Bohl, M.Sc. PA, Frankfurt
+                                                                                                                                 Dr .- Ing. Dominik Denker, M.Sc. PA, Dussel dorf
+                                                                                                                                 Victor V. Fetscher, LL.M. (Tel Aviv) RA, München
+                                                                                                                                 Hongting Wu PA, München
+                                                                                                                                 Dr .- Ing. Thomas Michaelis PA*, München
+
+                                                                                                                                 PA Patentanwalt/Patent Attorney *European Patent Attomey
+                                                                                                                                 RA Rechtsanwalt/ Attorney at Law (Germany)
+                                                                                                                                 ** Agente de la Propiedad Industrial (Spanien / Spain)
+                                                                                                                                 Vertretung vor dem EUIPO - Marken und Designs
+                                                                                                                                 Representation at EUIPO - Trade marks and Designs
+                                                                   BOEHMERT & BOEHMERT
+
+Having a look at the declaration of Dr. Oliver Hartmann, exemplary calculations were
+
+made for cut-offs of
+    1) 45 ng/ml
+    2) 50 ng/ml
+    3) 55 ng/ml
+
+Each of these above-mentioned exemplary cut-offs is a value between 25 and 150 ng/ml
+for plasma DPP3.
+We will explain the meaning of the claim for the threshold 45 ng/ml and threshold 55
+ng/ml in the following.
+
+Case 1: threshold 45 ng/ml
+Let's assume the medical practitioner would choose the first cut-off that is a value
+between 25 and 150 ng/ml for plasma DPP3 and that is 45 ng/ml.
+The medical practitioner would then take blood draws from patients and would obtain
+plasma therefrom and would then determine the respective DPP3 concentration in the
+obtained patient's plasma sample.
+A patient having a determined DPP3 concentration of 48 ng/ml would then be ,,above
+the predetermined threshold" and the medical practitioner would consider this patient
+as being very likely in shock or very likely running into shock.
+If another patient had a determined DPP3 concentration of 40 ng/ml the determined
+DPP3 value would be "below the predetermined threshold" and the medical practitioner
+would consider this patient as being very likely NOT in shock or very likely NOT running
+
+into shock.
+
+Case 2: threshold 55 ng/ml
+Let's assume the medical practitioner would choose another cut-off that is a value
+between 25 and 150 ng/ml for plasma DPP3 and that is 55 ng/ml.
+The medical practitioner would then take blood draws from the same patients and would
+obtain plasma therefrom and would then determine the respective DPP3 concentration
+in the obtained patient's plasma sample.
+
+                                                                                                                                                                                                   2/7
+                                                                   BOEHMERT & BOEHMERT
+
+A patient having a determined DPP3 concentration of 48 ng/ml would then be ,,below
+the predetermined threshold" and the medical practitioner would consider this patient
+NOT as being very likely in shock or NOT very likely running into shock.
+
+If the other patient had a determined DPP3 concentration of 40 ng/ml the determined
+DPP3 value would be also with this threshold "below the predetermined threshold" and
+the medical practitioner would consider also this patient as being very likely NOT in
+shock or very likely NOT running into shock.
+
+Please, consider the following technical terms and the possible cases in diagnostic
+methods:
+
+        False positive: The patient is healthy, but the test incorrectly classified them as
+         sick.
+        True positive: The patient is sick, and the test correctly indicated this.
+        True negative: The patient is healthy, and the test correctly indicated this.
+        False negative: The patient is sick, but the test incorrectly classified them as
+
+         healthy.
+
+For the sake of our exercise - Let us now assume that the patient having a determined
+DPP3 concentration of 48 ng/ml actually runs into shock.
+
+Under this assumption the chosen threshold of 55 ng/ml led to a false negative
+conclusion, whereas the threshold of 45 ng/ml led in this case for this patient to a true
+positive conclusion.
+
+This does not mean that any of both thresholds would be wrong per se! It was wrong for
+this one patient in one case, but statistically for most of the patients the classification
+would have been correct, nevertheless. We are talking here about statistics and
+probabilities!
+
+Further note, that for each and every threshold within the threshold range there will be
+false positives, false negatives, true positives and true negatives.
+
+There is no diagnostic test in this world and no threshold in any diagnostic method that
+would allow only true negatives and true positives. For any diagnostic method and any
+chosen threshold, you will have a certain number of false negatives and false positives
+even though statistically every of the possible threshold is meaningful.
+
+In the following we copied some helpful explanations from Wikipedia:
+https://en.wikipedia.org/wiki/Sensitivity_and_specificity:
+
+                                                                                                                                                                                          3/7
+                                                           BOEHMERT & BOEHMERT
+
+"The occurrence of false negatives and false positives, true negatives and true
+positives for a given method and threshold can be expressed mathematically.
+In medicine and statistics, sensitivity and specificity mathematically describe the
+accuracy of a test that reports the presence or absence of a medical condition. If
+individuals who have the condition are considered "positive" and those who do
+not are considered "negative", then sensitivity is a measure of how well a test can
+identify true positives and specificity is a measure of how well a test can identify
+true negatives:
+
+        · Sensitivity (true positive rate) is the probability of a positive test
+             result conditioned on the individual truly being positive.
+
+         · Specificity (true negative rate) is the probability of a negative test
+             result, conditioned on the individual truly being negative.
+
+For all testing, both diagnoses and screening, there is usually a trade-off between
+sensitivity and specificity, such that higher sensitivities will mean lower
+specificities and vice versa.
+A test which reliably detects the presence of a condition, resulting in a high
+number of true positives and low number of false negatives, will have a high
+sensitivity. This is especially important when the consequence of failing to treat
+the condition is serious and/or the treatment is very effective and has minimal
+
+side effects.
+
+A test which reliably excludes individuals who do not have the condition,
+resulting in a high number of true negatives and low number of false positives,
+will have a high specificity. This is especially important when people who are
+identified as having a condition may be subjected to more testing, expense,
+stigma, anxiety, etc.
+
+                                                                                                                                                                            4/7
+                                                                                                          BOEHMERT & BOEHMERT
+
+                                                                           False negative
+
+                                                        Healthy                                     Sick
+
+                                                                           Cut off         True positive
+
+L  True negative
+
+   Unit of measure of the test
+
+                                                                           False positive
+
+PPV = -                                                                                    NPV =
+                                                     +
+                                                                                                                                     +
+
+Sensitivity =                                                                              Specificity =
+
+                                                                        +                                                                          +
+
+        Sensitivity and specificity
+
+        The terms "sensitivity" and "specificity" were introduced by American
+        biostatistician Jacob Yerushalmy in 1947."
+
+What does this mean for our example?
+
+A medical practitioner who is in addition to the Statistician in the medical field, a
+biostatistician, the person skilled in the art is very well aware of the above contexts. He
+will choose a threshold that is between 25 and 150 ng/ml for plasma DPP3 depending on
+whether he finds it more acceptable to have more false positive or more false negative
+
+conclusions.
+
+                                                                                                                                                      5/7
+                                                                   BOEHMERT & BOEHMERT
+
+For instance, the medical practitioner could measure plasma DPP3 for deciding which
+patient should obtain fluid administration. In this case, he would probably choose a
+lower threshold between 25 and 150 ng/ml for plasma DPP3, maybe 25 or 30 ng/ml. In
+this case he would probably overtreat more patients as if he chooses a higher threshold,
+but this may be acceptable as the treatment of fluid administration is safe and no harm
+
+is done.
+
+In another instance the medical practitioner may measure plasma DPP3 for deciding
+which patient shall obtain a treatment having probably higher adverse effects. For this
+decision, he would probably choose a higher threshold between 25 and 150 ng/ml for
+plasma DPP3, maybe 70 or 90 ng/ml, thereby minimizing treating healthy patients, but
+he will miss some sick patients because the threshold is quite high and there are sick
+patients below said higher threshold.
+
+This also means that the shifting of the threshold within the predetermined range as
+mentioned in the claims just changes the sensitivity and the specificity of the diagnostic
+method. Both statistic measures are counteracting, if you improve the sensitivity, you
+will worsen the specificity of the test and vice versa.
+
+In his declaration, Dr. Hartmann has nicely explained the above said. In table A you can
+see that despite choosing different thresholds, in our case 45 ng/ml, 50 ng/ml or 55
+ng/ml, the performance measures are essentially equivalent.
+
+Therefore, all that the person skilled in the art needs to know is that he must choose a
+threshold that is between 25 and 150 ng/ml for plasma DPP3.
+
+The above-explained consequences are clear to person skilled in the art.
+
+Applicants once again kindly ask for including an expert in this field into the Examining
+Division, which is a Statistician in the medical field, a biostatistician. We are convinced
+that the wording of the claims is clear to person skilled in the art.
+
+Further, the Examining Division asked to include a comparison step to DPP3 values of
+healthy persons.
+It may be true that a threshold range is calculated statistically by some statistical
+comparison to DPP3 values of healthy persons. But once this has been done, once the
+threshold range has been determined (as this was done by the inventors of the present
+application) the medical practitioner will not compare an actual determined DPP3 value
+of a patient to DPP3 values of healthy persons, but he will compare said determined
+DPP3 value of a patient blood sample to said predetermined threshold. This is exactly
+reflected and encompassed by the actual wording of the claims. If we introduced that the
+
+                                                                                                                                                                                6/7
+                                                                   BOEHMERT & BOEHMERT
+
+predetermined threshold value is obtained by measuring DPP3 levels in samples from
+"normal" healthy subjects or derived therefrom we would introduce a step or a feature
+into the claims that will not be performed when the inventive method is infringed or
+when the inventive method is induced to be infringed. It would render the claims useless
+and unenforceable.
+
+Also, there is no constant shifting of the scope of the claims. The claims are clear and
+concise and clearly understood by a person skilled in the art. It is also not missing in the
+claims how threshold values are determined. The "art" of how thresholds are determined
+is basic knowledge of a person skilled in the art which is a Statistician in the medical field.
+It is described in textbooks; it is described in the description of the present application.
+
+The claims are in accordance with Art. 84 EPC.
+
+We kindly ask the Examining Division to reconsider its conclusion in view of the above
+arguments and clarifications and furthermore, since numerous Examining Divisions
+were of the same opinion and granted patent claims with the exact same wording.
+
+Applicants again respectfully requests that the presently pending claims are granted
+without Oral Proceedings.
+
+BOEHMERT & BOEHMERT
+
+Dr. Ute Kilger
+Patent Attorney
+
+112.276  7/7
+
