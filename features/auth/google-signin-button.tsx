@@ -83,7 +83,7 @@ export function GoogleSignInButton({
 
       if (data.user) {
         // Redirect to protected page after successful sign-in
-        router.push('/protected');
+        router.push('/dashboard');
       }
     } catch (error) {
       console.error('Error during Google sign-in:', error);
