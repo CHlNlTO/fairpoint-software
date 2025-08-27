@@ -11,7 +11,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Fairpoint Software - Tax & Accounting Platform",
+  title: "Fairpoint Software",
   description: "Professional tax and accounting software for modern businesses",
 };
 
