@@ -29,7 +29,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { LogoutButton } from "@/features/auth/logout-button"
+import { LogoutButton } from "@/components/ui/logout-button"
 
 export function NavUser({
   user,

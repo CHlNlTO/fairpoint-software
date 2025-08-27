@@ -24,9 +24,19 @@ export default async function Page() {
     redirect("/auth/login");
   }
 
+  // Debug: Log claims to see what's available
+  console.log("Claims data:", JSON.stringify(data.claims, null, 2));
+
+  // Create user object for sidebar using claims data
+  const userData = {
+    name: data.claims.user_metadata?.name || data.claims.user_metadata?.full_name,
+    email: data.claims.email || "",
+    avatar: data.claims.user_metadata?.avatar_url || data.claims.user_metadata?.picture || "/avatars/accountant.jpg",
+  };
+
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar user={userData} />
       <SidebarInset className="bg-card">
         <header className="flex h-16 shrink-0 items-center gap-2">
           <div className="flex items-center gap-2 px-4">
@@ -52,8 +62,8 @@ export default async function Page() {
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="mb-6">
-            <h1 className="text-3xl font-bold">Welcome back, {data.claims.email}</h1>
-            <p className="text-muted-foreground">Manage your tax and accounting needs</p>
+            <h1 className="text-lg font-bold">Welcome back, {userData.name || userData.email.split('@')[0]}</h1>
+            <p className="text-muted-foreground text-sm">Manage your tax and accounting needs</p>
           </div>
 
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
@@ -76,12 +86,12 @@ export default async function Page() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">
                 <div className="w-2 h-2 bg-chart-2 rounded-full"></div>
-                <span>Tax return submitted for 2023</span>
+                <span>Tax return submitted for 2025</span>
                 <span className="text-muted-foreground ml-auto">2 days ago</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <div className="w-2 h-2 bg-chart-2 rounded-full"></div>
-                <span>Document uploaded: W-2 Form</span>
+                <span>Document uploaded: 1701Q Form</span>
                 <span className="text-muted-foreground ml-auto">1 week ago</span>
               </div>
               <div className="flex items-center gap-3 text-sm">

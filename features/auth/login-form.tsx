@@ -119,7 +119,7 @@ export function LoginForm({
                 </div>
               </div>
 
-              <GoogleSignInButton className="w-full rounded-full" />
+              <GoogleSignInButton />
             </div>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}

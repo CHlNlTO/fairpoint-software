@@ -49,7 +49,6 @@ const GoogleOneTap = () => {
       return
     }
 
-    /* global google */
     google.accounts.id.initialize({
       client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
       callback: async (response: CredentialResponse) => {
@@ -99,6 +98,7 @@ const GoogleOneTap = () => {
     if (pathname === '/' || pathname.startsWith('/auth')) {
       initializeGoogleOneTap()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   // Wrap the async function so onReady gets a sync function (to fix type error)

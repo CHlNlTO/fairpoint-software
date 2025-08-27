@@ -3,7 +3,6 @@
 import * as React from "react"
 import {
   BookOpen,
-  Bot,
   Command,
   Frame,
   LifeBuoy,
@@ -12,6 +11,8 @@ import {
   Send,
   Settings2,
   SquareTerminal,
+  User,
+  type LucideIcon,
 } from "lucide-react"
 
 import { NavMain } from "@/components/ui/nav-main"
@@ -28,95 +29,127 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-const data = {
+// Define the user type
+interface User {
+  name?: string
+  email: string
+  avatar?: string
+}
+
+// Define the sidebar data structure
+interface SidebarData {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
+    name: string
+    email: string
+    avatar: string
+  }
+  navMain: Array<{
+    title: string
+    url: string
+    icon: LucideIcon
+    isActive?: boolean
+    items?: Array<{
+      title: string
+      url: string
+    }>
+  }>
+  navSecondary: Array<{
+    title: string
+    url: string
+    icon: LucideIcon
+  }>
+  projects: Array<{
+    name: string
+    url: string
+    icon: LucideIcon
+  }>
+}
+
+// Default data structure
+const defaultData: Omit<SidebarData, 'user'> = {
   navMain: [
     {
-      title: "Playground",
-      url: "#",
+      title: "Dashboard",
+      url: "/dashboard",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Overview",
+          url: "/dashboard",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Tasks",
+          url: "/dashboard/tasks",
         },
         {
-          title: "Settings",
-          url: "#",
+          title: "Reminders",
+          url: "/dashboard/reminders",
         },
       ],
     },
     {
-      title: "Models",
-      url: "#",
-      icon: Bot,
+      title: "Clients",
+      url: "/clients",
+      icon: User,
       items: [
         {
-          title: "Genesis",
-          url: "#",
+          title: "All Clients",
+          url: "/clients",
         },
         {
-          title: "Explorer",
-          url: "#",
+          title: "Add Client",
+          url: "/clients/new",
         },
         {
-          title: "Quantum",
-          url: "#",
+          title: "Client Groups",
+          url: "/clients/groups",
         },
       ],
     },
     {
-      title: "Documentation",
-      url: "#",
+      title: "Documents",
+      url: "/documents",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
-          url: "#",
+          title: "All Documents",
+          url: "/documents",
         },
         {
-          title: "Get Started",
-          url: "#",
+          title: "Upload",
+          url: "/documents/upload",
         },
         {
-          title: "Tutorials",
-          url: "#",
+          title: "Templates",
+          url: "/documents/templates",
         },
         {
-          title: "Changelog",
-          url: "#",
+          title: "Archive",
+          url: "/documents/archive",
         },
       ],
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: Settings2,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: "Profile",
+          url: "/settings/profile",
         },
         {
           title: "Team",
-          url: "#",
+          url: "/settings/team",
         },
         {
           title: "Billing",
-          url: "#",
+          url: "/settings/billing",
         },
         {
-          title: "Limits",
-          url: "#",
+          title: "Integrations",
+          url: "/settings/integrations",
         },
       ],
     },
@@ -124,35 +157,49 @@ const data = {
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/support",
       icon: LifeBuoy,
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/feedback",
       icon: Send,
     },
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "#",
+      name: "2025 Tax Returns",
+      url: "/projects/2025-tax-returns",
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
+      name: "Bookkeeping Q1",
+      url: "/projects/bookkeeping-q1",
       icon: PieChart,
     },
     {
-      name: "Travel",
-      url: "#",
+      name: "Payroll",
+      url: "/projects/payroll",
       icon: Map,
     },
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  user: User
+}
+
+export function AppSidebar({ user, ...props }: AppSidebarProps) {
+  // Combine user data with default data
+  const data: SidebarData = {
+    ...defaultData,
+    user: {
+      name: user.name || user.email.split('@')[0], // Use email prefix if no name
+      email: user.email,
+      avatar: user.avatar || "/avatars/accountant.jpg", // Default avatar
+    }
+  }
+
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -164,8 +211,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-medium">{data.user.name}</span>
+                  <span className="truncate text-xs">Accountant</span>
                 </div>
               </a>
             </SidebarMenuButton>
