@@ -118,7 +118,7 @@ export function SignUpForm({
                 </div>
               </div>
 
-              <GoogleSignInButton className="w-full rounded-md" />
+              <GoogleSignInButton />
             </div>
             <div className="mt-4 text-center text-sm">
               Already have an account?{" "}
