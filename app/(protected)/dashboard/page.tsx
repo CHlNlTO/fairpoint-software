@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { AppSidebar } from "@/components/ui/app-sidebar"
+import { extractUserFromClaims } from "@/lib/utils";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -24,19 +25,12 @@ export default async function Page() {
     redirect("/auth/login");
   }
 
-  // Debug: Log claims to see what's available
-  console.log("Claims data:", JSON.stringify(data.claims, null, 2));
-
-  // Create user object for sidebar using claims data
-  const userData = {
-    name: data.claims.user_metadata?.name || data.claims.user_metadata?.full_name,
-    email: data.claims.email || "",
-    avatar: data.claims.user_metadata?.avatar_url || data.claims.user_metadata?.picture || "/avatars/accountant.jpg",
-  };
+  // Extract user data using the shared utility
+  const user = extractUserFromClaims(data.claims);
 
   return (
     <SidebarProvider>
-      <AppSidebar user={userData} />
+      <AppSidebar user={user} />
       <SidebarInset className="bg-card">
         <header className="flex h-16 shrink-0 items-center gap-2">
           <div className="flex items-center gap-2 px-4">
@@ -62,7 +56,7 @@ export default async function Page() {
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="mb-6">
-            <h1 className="text-lg font-bold">Welcome back, {userData.name || userData.email.split('@')[0]}</h1>
+            <h1 className="text-lg font-bold">Welcome back, {user.firstName || user.email.split('@')[0]}</h1>
             <p className="text-muted-foreground text-sm">Manage your tax and accounting needs</p>
           </div>
 

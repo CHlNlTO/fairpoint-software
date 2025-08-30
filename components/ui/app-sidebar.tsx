@@ -28,13 +28,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-
-// Define the user type
-interface User {
-  name?: string
-  email: string
-  avatar?: string
-}
+import type { User as SharedUser } from "@/lib/types"
 
 // Define the sidebar data structure
 interface SidebarData {
@@ -186,7 +180,7 @@ const defaultData: Omit<SidebarData, 'user'> = {
 }
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
-  user: User
+  user: SharedUser
 }
 
 export function AppSidebar({ user, ...props }: AppSidebarProps) {
@@ -194,7 +188,7 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
   const data: SidebarData = {
     ...defaultData,
     user: {
-      name: user.name || user.email.split('@')[0], // Use email prefix if no name
+      name: user.firstName || user.email.split('@')[0], // Use email prefix if no firstName
       email: user.email,
       avatar: user.avatar || "/avatars/accountant.jpg", // Default avatar
     }

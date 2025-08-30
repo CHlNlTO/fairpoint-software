@@ -14,8 +14,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoogleSignInButton } from "./google-signin-button";
+import { isNewlyCreatedUser, getAuthProvider } from "@/lib/utils";
 
 export function SignUpForm({
   className,
@@ -27,6 +28,34 @@ export function SignUpForm({
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  // Listen for auth state changes to detect new users
+  useEffect(() => {
+    const supabase = createClient();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        if (event === 'SIGNED_IN' && session?.user) {
+          const user = session.user;
+
+          // Check if this is a new user
+          const isNewUser = isNewlyCreatedUser(user);
+          const authProvider = getAuthProvider(user);
+
+          if (isNewUser) {
+            console.log(`New user signed up via ${authProvider}`);
+            // Redirect to welcome page for new users
+            router.push('/welcome');
+          } else {
+            // Existing user, redirect to dashboard
+            router.push('/dashboard');
+          }
+        }
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, [router]);
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +78,9 @@ export function SignUpForm({
         },
       });
       if (error) throw error;
+
+      // For email/password signup, we'll wait for email confirmation
+      // The auth state change listener above will handle the redirect
       router.push("/auth/sign-up-success");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");

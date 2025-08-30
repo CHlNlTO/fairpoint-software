@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import type { CredentialResponse } from "google-one-tap";
+import { isNewlyCreatedUser, getAuthProvider } from "@/lib/utils";
 
 interface GoogleSignInButtonProps {
   className?: string;
@@ -79,8 +80,18 @@ export function GoogleSignInButton({
       }
 
       if (data.user) {
-        // Redirect to protected page after successful sign-in
-        router.push('/dashboard');
+        // Check if this is a new user
+        const isNewUser = isNewlyCreatedUser(data.user);
+        const authProvider = getAuthProvider(data.user);
+
+        if (isNewUser) {
+          console.log(`New user signed up via ${authProvider}`);
+          // Redirect to welcome page for new users
+          router.push('/welcome');
+        } else {
+          // Existing user, redirect to dashboard
+          router.push('/dashboard');
+        }
       }
     } catch (error) {
       console.error('Error during Google sign-in:', error);
