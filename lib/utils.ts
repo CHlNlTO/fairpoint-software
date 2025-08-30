@@ -18,6 +18,7 @@ export const hasEnvVars =
  * @param thresholdMs - Time threshold in milliseconds (default: 5000ms = 5 seconds)
  * @returns boolean indicating if user is newly created
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function isNewlyCreatedUser(user: any, thresholdMs: number = 5000): boolean {
   if (!user?.created_at || !user?.last_sign_in_at) {
     return false;
@@ -37,6 +38,7 @@ export function isNewlyCreatedUser(user: any, thresholdMs: number = 5000): boole
  * @param user - Supabase user object
  * @returns string indicating the auth provider
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getAuthProvider(user: any): AuthProvider {
   if (!user?.identities || user.identities.length === 0) {
     return 'email_password';
@@ -59,6 +61,7 @@ export function getAuthProvider(user: any): AuthProvider {
  * @param claims - Supabase auth claims object
  * @returns User object with extracted information
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function extractUserFromClaims(claims: any): User {
   const userMetadata = claims.user_metadata || {};
   const firstName = userMetadata.name || userMetadata.first_name || userMetadata.full_name?.split(' ')[0] || 'User';
