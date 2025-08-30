@@ -6,6 +6,7 @@ import type { accounts, CredentialResponse } from 'google-one-tap'
 import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { isNewlyCreatedUser, getAuthProvider } from '@/lib/utils'
+import { useAuthLoader } from '@/hooks/use-full-page-loader'
 
 declare const google: { accounts: accounts }
 
@@ -26,6 +27,7 @@ const GoogleOneTap = () => {
   const router = useRouter()
   const pathname = usePathname()
   const [isInitialized, setIsInitialized] = useState(false)
+  const { showGoogleAuth, hide, showSuccess } = useAuthLoader()
 
   const initializeGoogleOneTap = async () => {
     // Prevent multiple initializations
@@ -54,6 +56,9 @@ const GoogleOneTap = () => {
       client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
       callback: async (response: CredentialResponse) => {
         try {
+          // Show the loader immediately
+          showGoogleAuth();
+
           // send id token returned in response.credential to supabase
           const { data, error } = await supabase.auth.signInWithIdToken({
             provider: 'google',
@@ -72,15 +77,24 @@ const GoogleOneTap = () => {
 
             if (isNewUser) {
               console.log(`New user signed up via ${authProvider}`);
+              // Show success message briefly before redirect
+              showSuccess('Welcome! Setting up your account...');
               // Redirect to welcome page for new users
-              router.push('/welcome')
+              setTimeout(() => {
+                router.push('/welcome')
+              }, 1500);
             } else {
+              // Show success message briefly before redirect
+              showSuccess('Welcome back!');
               // Existing user, redirect to dashboard
-              router.push('/dashboard')
+              setTimeout(() => {
+                router.push('/dashboard')
+              }, 1000);
             }
           }
         } catch (error) {
           console.error('Error logging in with Google One Tap', error)
+          hide(); // Hide loader on error
         }
       },
       nonce: hashedNonce,

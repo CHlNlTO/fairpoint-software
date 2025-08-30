@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import type { CredentialResponse } from "google-one-tap";
 import { isNewlyCreatedUser, getAuthProvider } from "@/lib/utils";
+import { useAuthLoader } from "@/hooks/use-full-page-loader";
 
 interface GoogleSignInButtonProps {
   className?: string;
@@ -19,6 +20,7 @@ export function GoogleSignInButton({
   const buttonRef = useRef<HTMLDivElement>(null);
   const supabase = createClient();
   const router = useRouter();
+  const { showGoogleAuth, hide, showSuccess } = useAuthLoader();
 
   useEffect(() => {
     // Load Google client library
@@ -67,8 +69,11 @@ export function GoogleSignInButton({
     });
   };
 
-  const handleCredentialResponse = async (response: CredentialResponse) => {
+    const handleCredentialResponse = async (response: CredentialResponse) => {
     try {
+      // Show the loader immediately
+      showGoogleAuth();
+
       const { data, error } = await supabase.auth.signInWithIdToken({
         provider: 'google',
         token: response.credential,
@@ -76,6 +81,7 @@ export function GoogleSignInButton({
 
       if (error) {
         console.error('Google sign-in error:', error);
+        hide(); // Hide loader on error
         return;
       }
 
@@ -86,15 +92,24 @@ export function GoogleSignInButton({
 
         if (isNewUser) {
           console.log(`New user signed up via ${authProvider}`);
+          // Show success message briefly before redirect
+          showSuccess('Welcome! Setting up your account...');
           // Redirect to welcome page for new users
-          router.push('/welcome');
+          setTimeout(() => {
+            router.push('/welcome');
+          }, 1500);
         } else {
+          // Show success message briefly before redirect
+          showSuccess('Welcome back!');
           // Existing user, redirect to dashboard
-          router.push('/dashboard');
+          setTimeout(() => {
+            router.push('/dashboard');
+          }, 1000);
         }
       }
     } catch (error) {
       console.error('Error during Google sign-in:', error);
+      hide(); // Hide loader on error
     }
   };
 

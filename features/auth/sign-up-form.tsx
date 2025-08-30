@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { GoogleSignInButton } from "./google-signin-button";
 import { isNewlyCreatedUser, getAuthProvider } from "@/lib/utils";
+import { useAuthLoader } from "@/hooks/use-full-page-loader";
 
 export function SignUpForm({
   className,
@@ -28,6 +29,7 @@ export function SignUpForm({
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const { showSignUp, hide, showSuccess } = useAuthLoader();
 
   // Listen for auth state changes to detect new users
   useEffect(() => {
@@ -44,18 +46,26 @@ export function SignUpForm({
 
           if (isNewUser) {
             console.log(`New user signed up via ${authProvider}`);
+            // Show success message briefly before redirect
+            showSuccess('Welcome! Setting up your account...');
             // Redirect to welcome page for new users
-            router.push('/welcome');
+            setTimeout(() => {
+              router.push('/welcome');
+            }, 1500);
           } else {
+            // Show success message briefly before redirect
+            showSuccess('Welcome back!');
             // Existing user, redirect to dashboard
-            router.push('/dashboard');
+            setTimeout(() => {
+              router.push('/dashboard');
+            }, 1000);
           }
         }
       }
     );
 
     return () => subscription.unsubscribe();
-  }, [router]);
+  }, [router, showSuccess]);
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,20 +80,25 @@ export function SignUpForm({
     }
 
     try {
+      // Show the loader immediately
+      showSignUp();
+
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/protected`,
+          emailRedirectTo: `${window.location.origin}/dashboard`,
         },
       });
       if (error) throw error;
 
       // For email/password signup, we'll wait for email confirmation
       // The auth state change listener above will handle the redirect
+      hide(); // Hide loader since we're waiting for email confirmation
       router.push("/auth/sign-up-success");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
+      hide(); // Hide loader on error
     } finally {
       setIsLoading(false);
     }

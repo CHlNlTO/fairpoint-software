@@ -3,7 +3,7 @@ import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import GoogleOneTap from "@/features/auth/google-one-tap";
-import { Providers } from "@/lib/providers";
+import { Providers } from "@/components/providers/providers";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`

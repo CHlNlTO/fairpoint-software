@@ -3,6 +3,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useState, type ReactNode } from 'react';
+import { FullPageLoaderProvider } from '@/components/providers/full-page-loader-provider';
 
 interface ProvidersProps {
   children: ReactNode;
@@ -35,7 +36,9 @@ export function Providers({ children }: ProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {children}
+      <FullPageLoaderProvider>
+        {children}
+      </FullPageLoaderProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
