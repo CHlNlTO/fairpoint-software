@@ -1,23 +1,13 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript"
-  ],
-  "plugins": [
-    "boundaries",
-    "@tanstack/query"
-  ],
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["boundaries", "@tanstack/query"],
   "settings": {
     "boundaries/include": ["**/*"],
     "boundaries/elements": [
       {
         "mode": "full",
         "type": "shared",
-        "pattern": [
-          "components/**/*",
-          "lib/**/*",
-          "hooks/**/*"
-        ]
+        "pattern": ["components/**/*", "lib/**/*", "hooks/**/*"]
       },
       {
         "mode": "full",

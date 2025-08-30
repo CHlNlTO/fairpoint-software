@@ -27,7 +27,7 @@ type AuthStore = AuthState & AuthActions;
 
 export const useAuthStore = create<AuthStore>()(
   persist(
-    (set) => ({
+    set => ({
       // Initial state
       user: null,
       isAuthenticated: false,
@@ -35,16 +35,16 @@ export const useAuthStore = create<AuthStore>()(
       error: null,
 
       // Actions
-      setUser: (user) =>
+      setUser: user =>
         set({
           user,
           isAuthenticated: !!user,
           error: null,
         }),
 
-      setLoading: (isLoading) => set({ isLoading }),
+      setLoading: isLoading => set({ isLoading }),
 
-      setError: (error) => set({ error, isLoading: false }),
+      setError: error => set({ error, isLoading: false }),
 
       logout: () =>
         set({
@@ -59,7 +59,7 @@ export const useAuthStore = create<AuthStore>()(
     {
       name: 'auth-storage',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({
+      partialize: state => ({
         user: state.user,
         isAuthenticated: state.isAuthenticated,
       }),
@@ -85,18 +85,18 @@ type UIStore = UIState & UIActions;
 
 export const useUIStore = create<UIStore>()(
   persist(
-    (set) => ({
+    set => ({
       // Initial state
       sidebarOpen: false,
       theme: 'system',
       notifications: true,
 
       // Actions
-      toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
-      setSidebarOpen: (sidebarOpen) => set({ sidebarOpen }),
-      setTheme: (theme) => set({ theme }),
+      toggleSidebar: () => set(state => ({ sidebarOpen: !state.sidebarOpen })),
+      setSidebarOpen: sidebarOpen => set({ sidebarOpen }),
+      setTheme: theme => set({ theme }),
       toggleNotifications: () =>
-        set((state) => ({ notifications: !state.notifications })),
+        set(state => ({ notifications: !state.notifications })),
     }),
     {
       name: 'ui-storage',

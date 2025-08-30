@@ -22,7 +22,7 @@ export function FullPageLoader({
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setDots(prev => prev.length >= 3 ? '' : prev + '.');
+      setDots(prev => (prev.length >= 3 ? '' : prev + '.'));
     }, 500);
 
     return () => clearInterval(interval);
@@ -83,7 +83,7 @@ export function FullPageLoader({
             transition={{
               duration: 8 + Math.random() * 4,
               repeat: Infinity,
-              ease: "linear",
+              ease: 'linear',
             }}
           />
         ))}
@@ -94,13 +94,13 @@ export function FullPageLoader({
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
         className={cn(
-          "relative w-full max-w-md mx-4 p-8 rounded-2xl",
-          "bg-gradient-to-br",
+          'relative w-full max-w-md mx-4 p-8 rounded-2xl',
+          'bg-gradient-to-br',
           styles.bgGradient,
-          "border border-border/50 shadow-2xl",
-          "backdrop-blur-xl",
+          'border border-border/50 shadow-2xl',
+          'backdrop-blur-xl',
           className
         )}
       >
@@ -113,7 +113,7 @@ export function FullPageLoader({
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ rotate: variant === 'success' ? [0, -10, 10, 0] : 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
             className="flex justify-center"
           >
             {styles.icon}
@@ -126,7 +126,7 @@ export function FullPageLoader({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className={cn(
-                "text-xl font-semibold tracking-tight",
+                'text-xl font-semibold tracking-tight',
                 styles.textColor
               )}
             >
@@ -155,9 +155,9 @@ export function FullPageLoader({
             >
               <motion.div
                 className="h-full bg-primary rounded-full"
-                initial={{ width: "0%" }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 2, ease: "easeInOut" }}
+                initial={{ width: '0%' }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 2, ease: 'easeInOut' }}
               />
             </motion.div>
           )}
@@ -174,7 +174,7 @@ export function FullPageLoader({
                   duration: 1.5,
                   repeat: Infinity,
                   delay: i * 0.2,
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                 }}
               />
             ))}
@@ -189,7 +189,7 @@ export function FullPageLoader({
 export function AuthLoader({ message }: { message?: string }) {
   return (
     <FullPageLoader
-      message={message || "Signing you in..."}
+      message={message || 'Signing you in...'}
       variant="processing"
       className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
     />
@@ -199,7 +199,7 @@ export function AuthLoader({ message }: { message?: string }) {
 export function SuccessLoader({ message }: { message?: string }) {
   return (
     <FullPageLoader
-      message={message || "Success!"}
+      message={message || 'Success!'}
       variant="success"
       className="bg-gradient-to-br from-green-50 to-emerald-50"
     />
@@ -209,7 +209,7 @@ export function SuccessLoader({ message }: { message?: string }) {
 export function ProcessingLoader({ message }: { message?: string }) {
   return (
     <FullPageLoader
-      message={message || "Processing..."}
+      message={message || 'Processing...'}
       variant="processing"
       className="bg-gradient-to-br from-amber-50 to-orange-50"
     />

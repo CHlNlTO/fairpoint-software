@@ -22,15 +22,16 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## 📋 Available Scripts
 
-| Command             | Description               |
-| ------------------- | ------------------------- |
-| `pnpm dev`          | Start development server  |
-| `pnpm build`        | Build for production      |
-| `pnpm start`        | Start production server   |
-| `pnpm lint`         | Run ESLint                |
-| `pnpm lint:fix`     | Fix ESLint issues         |
-| `pnpm format`       | Format code with Prettier |
-| `pnpm format:check` | Check code formatting     |
+| Command             | Description                |
+| ------------------- | -------------------------- |
+| `pnpm dev`          | Start development server   |
+| `pnpm build`        | Build for production       |
+| `pnpm start`        | Start production server    |
+| `pnpm lint`         | Run ESLint                 |
+| `pnpm lint:fix`     | Fix ESLint issues          |
+| `pnpm format`       | Format code with Prettier  |
+| `pnpm format:check` | Check code formatting      |
+| `pnpm format:fix`   | Format + fix ESLint issues |
 
 ## 🏗️ Architecture Overview
 
@@ -48,7 +49,6 @@ This project enforces a strict **feature-based architecture** using ESLint bound
 ├── lib/                    # Shared utilities
 ├── hooks/                  # Shared custom hooks
 ├── server/                 # Server-side logic
-├── drizzle/                # Database schema and migrations
 └── data/                   # Static data and constants
 ```
 
@@ -98,10 +98,10 @@ This project enforces a strict **feature-based architecture** using ESLint bound
 - **React Hook Form** - Form state management
 - **Zod** - Schema validation
 
-### Database & Backend
+### Database & Auth
 
-- **Drizzle ORM** - Type-safe database queries
-- **Clerk** - Authentication (inferred from business context)
+- **Supabase** - Postgres DB
+- **Supabase Auth** - Authentication
 
 ### Development Tools
 
@@ -130,11 +130,6 @@ This project enforces a strict **feature-based architecture** using ESLint bound
 │   ├── lib/                          # Utility functions
 │   │   ├── utils.ts                 # Common utilities
 │   │   └── store.ts                 # Query client config
-│   ├── server/                       # Server-side logic
-│   │   └── [domain]/                # Domain-specific server code
-│   ├── drizzle/                      # Database schema
-│   │   └── schemas/                 # Table definitions
-│   └── data/                         # Static data
 ├── components.json                   # shadcn/ui configuration
 ├── eslint.config.mjs                # ESLint configuration
 ├── next.config.ts                   # Next.js configuration

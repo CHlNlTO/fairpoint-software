@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import * as React from "react"
+import * as React from 'react';
 import {
   BookOpen,
   Command,
@@ -13,12 +13,12 @@ import {
   SquareTerminal,
   User,
   type LucideIcon,
-} from "lucide-react"
+} from 'lucide-react';
 
-import { NavMain } from "@/components/ui/nav-main"
-import { NavProjects } from "@/components/ui/nav-projects"
-import { NavSecondary } from "@/components/ui/nav-secondary"
-import { NavUser } from "@/components/ui/nav-user"
+import { NavMain } from '@/components/ui/nav-main';
+import { NavProjects } from '@/components/ui/nav-projects';
+import { NavSecondary } from '@/components/ui/nav-secondary';
+import { NavUser } from '@/components/ui/nav-user';
 import {
   Sidebar,
   SidebarContent,
@@ -27,160 +27,160 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import type { User as SharedUser } from "@/lib/types"
+} from '@/components/ui/sidebar';
+import type { User as SharedUser } from '@/lib/types';
 
 // Define the sidebar data structure
 interface SidebarData {
   user: {
-    name: string
-    email: string
-    avatar: string
-  }
+    name: string;
+    email: string;
+    avatar: string;
+  };
   navMain: Array<{
-    title: string
-    url: string
-    icon: LucideIcon
-    isActive?: boolean
+    title: string;
+    url: string;
+    icon: LucideIcon;
+    isActive?: boolean;
     items?: Array<{
-      title: string
-      url: string
-    }>
-  }>
+      title: string;
+      url: string;
+    }>;
+  }>;
   navSecondary: Array<{
-    title: string
-    url: string
-    icon: LucideIcon
-  }>
+    title: string;
+    url: string;
+    icon: LucideIcon;
+  }>;
   projects: Array<{
-    name: string
-    url: string
-    icon: LucideIcon
-  }>
+    name: string;
+    url: string;
+    icon: LucideIcon;
+  }>;
 }
 
 // Default data structure
 const defaultData: Omit<SidebarData, 'user'> = {
   navMain: [
     {
-      title: "Dashboard",
-      url: "/dashboard",
+      title: 'Dashboard',
+      url: '/dashboard',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "Overview",
-          url: "/dashboard",
+          title: 'Overview',
+          url: '/dashboard',
         },
         {
-          title: "Tasks",
-          url: "/dashboard/tasks",
+          title: 'Tasks',
+          url: '/dashboard/tasks',
         },
         {
-          title: "Reminders",
-          url: "/dashboard/reminders",
+          title: 'Reminders',
+          url: '/dashboard/reminders',
         },
       ],
     },
     {
-      title: "Clients",
-      url: "/clients",
+      title: 'Clients',
+      url: '/clients',
       icon: User,
       items: [
         {
-          title: "All Clients",
-          url: "/clients",
+          title: 'All Clients',
+          url: '/clients',
         },
         {
-          title: "Add Client",
-          url: "/clients/new",
+          title: 'Add Client',
+          url: '/clients/new',
         },
         {
-          title: "Client Groups",
-          url: "/clients/groups",
+          title: 'Client Groups',
+          url: '/clients/groups',
         },
       ],
     },
     {
-      title: "Documents",
-      url: "/documents",
+      title: 'Documents',
+      url: '/documents',
       icon: BookOpen,
       items: [
         {
-          title: "All Documents",
-          url: "/documents",
+          title: 'All Documents',
+          url: '/documents',
         },
         {
-          title: "Upload",
-          url: "/documents/upload",
+          title: 'Upload',
+          url: '/documents/upload',
         },
         {
-          title: "Templates",
-          url: "/documents/templates",
+          title: 'Templates',
+          url: '/documents/templates',
         },
         {
-          title: "Archive",
-          url: "/documents/archive",
+          title: 'Archive',
+          url: '/documents/archive',
         },
       ],
     },
     {
-      title: "Settings",
-      url: "/settings",
+      title: 'Settings',
+      url: '/settings',
       icon: Settings2,
       items: [
         {
-          title: "Profile",
-          url: "/settings/profile",
+          title: 'Profile',
+          url: '/settings/profile',
         },
         {
-          title: "Team",
-          url: "/settings/team",
+          title: 'Team',
+          url: '/settings/team',
         },
         {
-          title: "Billing",
-          url: "/settings/billing",
+          title: 'Billing',
+          url: '/settings/billing',
         },
         {
-          title: "Integrations",
-          url: "/settings/integrations",
+          title: 'Integrations',
+          url: '/settings/integrations',
         },
       ],
     },
   ],
   navSecondary: [
     {
-      title: "Support",
-      url: "/support",
+      title: 'Support',
+      url: '/support',
       icon: LifeBuoy,
     },
     {
-      title: "Feedback",
-      url: "/feedback",
+      title: 'Feedback',
+      url: '/feedback',
       icon: Send,
     },
   ],
   projects: [
     {
-      name: "2025 Tax Returns",
-      url: "/projects/2025-tax-returns",
+      name: '2025 Tax Returns',
+      url: '/projects/2025-tax-returns',
       icon: Frame,
     },
     {
-      name: "Bookkeeping Q1",
-      url: "/projects/bookkeeping-q1",
+      name: 'Bookkeeping Q1',
+      url: '/projects/bookkeeping-q1',
       icon: PieChart,
     },
     {
-      name: "Payroll",
-      url: "/projects/payroll",
+      name: 'Payroll',
+      url: '/projects/payroll',
       icon: Map,
     },
   ],
-}
+};
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
-  user: SharedUser
+  user: SharedUser;
 }
 
 export function AppSidebar({ user, ...props }: AppSidebarProps) {
@@ -190,9 +190,9 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
     user: {
       name: user.firstName || user.email.split('@')[0], // Use email prefix if no firstName
       email: user.email,
-      avatar: user.avatar || "/avatars/accountant.jpg", // Default avatar
-    }
-  }
+      avatar: user.avatar || '/avatars/accountant.jpg', // Default avatar
+    },
+  };
 
   return (
     <Sidebar variant="inset" {...props}>
@@ -222,5 +222,5 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

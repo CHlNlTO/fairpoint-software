@@ -55,7 +55,8 @@ export function WelcomePage({ user }: WelcomePageProps) {
         variants={itemVariants}
         className="text-lg md:text-xl text-muted-foreground mb-12 max-w-lg leading-relaxed"
       >
-        Just tell us a bit about your business, and we&apos;ll handle the rest. Simple, guided, and stress-free.
+        Just tell us a bit about your business, and we&apos;ll handle the rest.
+        Simple, guided, and stress-free.
       </motion.p>
 
       {/* Action Buttons */}
@@ -85,7 +86,13 @@ export function WelcomePage({ user }: WelcomePageProps) {
         className="flex flex-col items-center"
       >
         <div className="flex items-center justify-center mb-2">
-          <Image src="/logo.png" alt="FairPoint" width={1000} height={1000} className='w-1/3' />
+          <Image
+            src="/logo.png"
+            alt="FairPoint"
+            width={1000}
+            height={1000}
+            className="w-1/3"
+          />
         </div>
       </motion.div>
     </motion.div>

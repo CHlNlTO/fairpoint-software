@@ -1,11 +1,11 @@
-import { EnvVarWarning } from "@/components/ui/env-var-warning";
-import { AuthButton } from "@/features/auth/auth-button";
-import { Hero } from "@/features/home/hero";
-import { hasEnvVars } from "@/lib/utils";
-import Link from "next/link";
-import { ThemeSwitch } from "@/components/ui/theme-switch";
-import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { EnvVarWarning } from '@/components/ui/env-var-warning';
+import { AuthButton } from '@/features/auth/auth-button';
+import { Hero } from '@/features/home/hero';
+import { hasEnvVars } from '@/lib/utils';
+import Link from 'next/link';
+import { ThemeSwitch } from '@/components/ui/theme-switch';
+import { redirect } from 'next/navigation';
+import { createClient } from '@/lib/supabase/server';
 
 export default async function Home() {
   // Check if user is authenticated and redirect to dashboard
@@ -13,7 +13,7 @@ export default async function Home() {
     const supabase = await createClient();
     const { data } = await supabase.auth.getClaims();
     if (data?.claims) {
-      redirect("/dashboard");
+      redirect('/dashboard');
     }
   }
 
@@ -23,7 +23,7 @@ export default async function Home() {
         <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
           <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
             <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"}>Fairpoint</Link>
+              <Link href={'/'}>Fairpoint</Link>
             </div>
             {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
           </div>
@@ -34,7 +34,7 @@ export default async function Home() {
 
         <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-4">
           <p>
-            Powered by{" "}
+            Powered by{' '}
             <a
               href="https://ckdigitals.com"
               target="_blank"

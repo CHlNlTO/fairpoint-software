@@ -37,10 +37,7 @@ export function LoaderDemo() {
           Show Success Loader
         </Button>
 
-        <Button
-          onClick={hide}
-          variant="destructive"
-        >
+        <Button onClick={hide} variant="destructive">
           Hide Loader
         </Button>
       </div>

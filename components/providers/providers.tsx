@@ -36,9 +36,7 @@ export function Providers({ children }: ProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <FullPageLoaderProvider>
-        {children}
-      </FullPageLoaderProvider>
+      <FullPageLoaderProvider>{children}</FullPageLoaderProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

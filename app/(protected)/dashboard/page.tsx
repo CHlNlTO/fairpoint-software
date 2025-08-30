@@ -1,7 +1,7 @@
-import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
-import { AppSidebar } from "@/components/ui/app-sidebar"
-import { extractUserFromClaims } from "@/lib/utils";
+import { redirect } from 'next/navigation';
+import { createClient } from '@/lib/supabase/server';
+import { AppSidebar } from '@/components/ui/app-sidebar';
+import { extractUserFromClaims } from '@/lib/utils';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,20 +9,20 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+} from '@/components/ui/breadcrumb';
+import { Separator } from '@/components/ui/separator';
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar';
 
 export default async function Page() {
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.getClaims();
   if (error || !data?.claims) {
-    redirect("/auth/login");
+    redirect('/auth/login');
   }
 
   // Extract user data using the shared utility
@@ -42,9 +42,7 @@ export default async function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="/dashboard">
-                    Dashboard
-                  </BreadcrumbLink>
+                  <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
@@ -56,22 +54,32 @@ export default async function Page() {
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="mb-6">
-            <h1 className="text-lg font-bold">Welcome back, {user.firstName || user.email.split('@')[0]}</h1>
-            <p className="text-muted-foreground text-sm">Manage your tax and accounting needs</p>
+            <h1 className="text-lg font-bold">
+              Welcome back, {user.firstName || user.email.split('@')[0]}
+            </h1>
+            <p className="text-muted-foreground text-sm">
+              Manage your tax and accounting needs
+            </p>
           </div>
 
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
             <div className="bg-card border rounded-xl p-6">
               <h3 className="font-semibold mb-2">Tax Returns</h3>
-              <p className="text-muted-foreground text-sm">View and manage your tax returns</p>
+              <p className="text-muted-foreground text-sm">
+                View and manage your tax returns
+              </p>
             </div>
             <div className="bg-card border rounded-xl p-6">
               <h3 className="font-semibold mb-2">Documents</h3>
-              <p className="text-muted-foreground text-sm">Upload and organize your documents</p>
+              <p className="text-muted-foreground text-sm">
+                Upload and organize your documents
+              </p>
             </div>
             <div className="bg-card border rounded-xl p-6">
               <h3 className="font-semibold mb-2">Appointments</h3>
-              <p className="text-muted-foreground text-sm">Schedule consultations with our team</p>
+              <p className="text-muted-foreground text-sm">
+                Schedule consultations with our team
+              </p>
             </div>
           </div>
 
@@ -81,22 +89,28 @@ export default async function Page() {
               <div className="flex items-center gap-3 text-sm">
                 <div className="w-2 h-2 bg-chart-2 rounded-full"></div>
                 <span>Tax return submitted for 2025</span>
-                <span className="text-muted-foreground ml-auto">2 days ago</span>
+                <span className="text-muted-foreground ml-auto">
+                  2 days ago
+                </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <div className="w-2 h-2 bg-chart-2 rounded-full"></div>
                 <span>Document uploaded: 1701Q Form</span>
-                <span className="text-muted-foreground ml-auto">1 week ago</span>
+                <span className="text-muted-foreground ml-auto">
+                  1 week ago
+                </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <div className="w-2 h-2 bg-chart-2 rounded-full"></div>
                 <span>Appointment scheduled for tax review</span>
-                <span className="text-muted-foreground ml-auto">2 weeks ago</span>
+                <span className="text-muted-foreground ml-auto">
+                  2 weeks ago
+                </span>
               </div>
             </div>
           </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }

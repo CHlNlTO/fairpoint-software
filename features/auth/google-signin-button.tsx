@@ -1,22 +1,26 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/navigation";
-import type { CredentialResponse } from "google-one-tap";
-import { isNewlyCreatedUser, getAuthProvider } from "@/lib/utils";
-import { useAuthLoader } from "@/hooks/use-full-page-loader";
+import { useEffect, useRef } from 'react';
+import { createClient } from '@/lib/supabase/client';
+import { useRouter } from 'next/navigation';
+import type { CredentialResponse } from 'google-one-tap';
+import { isNewlyCreatedUser, getAuthProvider } from '@/lib/utils';
+import { useAuthLoader } from '@/hooks/use-full-page-loader';
 
 interface GoogleSignInButtonProps {
   className?: string;
-  variant?: "default" | "outline" | "secondary" | "ghost" | "destructive" | "link";
-  size?: "default" | "sm" | "lg" | "icon";
+  variant?:
+    | 'default'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'destructive'
+    | 'link';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
   children?: React.ReactNode;
 }
 
-export function GoogleSignInButton({
-  className,
-}: GoogleSignInButtonProps) {
+export function GoogleSignInButton({ className }: GoogleSignInButtonProps) {
   const buttonRef = useRef<HTMLDivElement>(null);
   const supabase = createClient();
   const router = useRouter();
@@ -24,8 +28,8 @@ export function GoogleSignInButton({
 
   useEffect(() => {
     // Load Google client library
-    const script = document.createElement("script");
-    script.src = "https://accounts.google.com/gsi/client";
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
     script.async = true;
     script.defer = true;
     script.onload = initializeGoogleSignIn;
@@ -41,13 +45,17 @@ export function GoogleSignInButton({
     if (!window.google || !buttonRef.current) return;
 
     // Generate nonce for security
-    const nonce = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32))));
+    const nonce = btoa(
+      String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32)))
+    );
     const encoder = new TextEncoder();
     const encodedNonce = encoder.encode(nonce);
 
-    crypto.subtle.digest('SHA-256', encodedNonce).then((hashBuffer) => {
+    crypto.subtle.digest('SHA-256', encodedNonce).then(hashBuffer => {
       const hashArray = Array.from(new Uint8Array(hashBuffer));
-      const hashedNonce = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+      const hashedNonce = hashArray
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
 
       window.google.accounts.id.initialize({
         client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
@@ -58,18 +66,18 @@ export function GoogleSignInButton({
 
       // Render the Google sign-in button
       window.google.accounts.id.renderButton(buttonRef.current!, {
-        type: "standard",
-        theme: "outline",
-        size: "large",
-        text: "signin_with",
-        shape: "rectangular",
-        logo_alignment: "left",
+        type: 'standard',
+        theme: 'outline',
+        size: 'large',
+        text: 'signin_with',
+        shape: 'rectangular',
+        logo_alignment: 'left',
         width: buttonRef.current!.offsetWidth,
       });
     });
   };
 
-    const handleCredentialResponse = async (response: CredentialResponse) => {
+  const handleCredentialResponse = async (response: CredentialResponse) => {
     try {
       // Show the loader immediately
       showGoogleAuth();

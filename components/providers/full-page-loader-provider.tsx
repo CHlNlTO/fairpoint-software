@@ -10,7 +10,9 @@ interface FullPageLoaderProviderProps {
   children: React.ReactNode;
 }
 
-export function FullPageLoaderProvider({ children }: FullPageLoaderProviderProps) {
+export function FullPageLoaderProvider({
+  children,
+}: FullPageLoaderProviderProps) {
   const { isVisible, message, variant, hide } = useFullPageLoader();
 
   // Auto-hide success messages after 2 seconds
@@ -27,12 +29,7 @@ export function FullPageLoaderProvider({ children }: FullPageLoaderProviderProps
   return (
     <>
       {children}
-      {isVisible && (
-        <FullPageLoader
-          message={message}
-          variant={variant}
-        />
-      )}
+      {isVisible && <FullPageLoader message={message} variant={variant} />}
     </>
   );
 }

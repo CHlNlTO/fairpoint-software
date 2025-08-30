@@ -25,7 +25,13 @@ export interface UserProfile {
 }
 
 // New types for auth system
-export type AuthProvider = 'google' | 'email_password' | 'github' | 'microsoft' | 'apple' | 'unknown';
+export type AuthProvider =
+  | 'google'
+  | 'email_password'
+  | 'github'
+  | 'microsoft'
+  | 'apple'
+  | 'unknown';
 
 export interface AuthUserInfo {
   isNewUser: boolean;

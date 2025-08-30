@@ -355,7 +355,6 @@ export function useUpdateBusiness() {
 
 import { auth } from '@clerk/nextjs/server';
 import { revalidatePath } from 'next/cache';
-import { db } from '@/drizzle/db';
 import { businessSchema } from './validation';
 
 export async function createBusiness(data: unknown) {

@@ -1,5 +1,5 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 import type { AuthProvider, User } from './types';
 
@@ -18,8 +18,11 @@ export const hasEnvVars =
  * @param thresholdMs - Time threshold in milliseconds (default: 5000ms = 5 seconds)
  * @returns boolean indicating if user is newly created
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function isNewlyCreatedUser(user: any, thresholdMs: number = 5000): boolean {
+
+export function isNewlyCreatedUser(
+  user: { created_at?: string; last_sign_in_at?: string },
+  thresholdMs: number = 5000
+): boolean {
   if (!user?.created_at || !user?.last_sign_in_at) {
     return false;
   }
@@ -38,8 +41,9 @@ export function isNewlyCreatedUser(user: any, thresholdMs: number = 5000): boole
  * @param user - Supabase user object
  * @returns string indicating the auth provider
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function getAuthProvider(user: any): AuthProvider {
+export function getAuthProvider(user: {
+  identities?: Array<{ provider: string }>;
+}): AuthProvider {
   if (!user?.identities || user.identities.length === 0) {
     return 'email_password';
   }
@@ -61,17 +65,38 @@ export function getAuthProvider(user: any): AuthProvider {
  * @param claims - Supabase auth claims object
  * @returns User object with extracted information
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function extractUserFromClaims(claims: any): User {
+export function extractUserFromClaims(claims: {
+  sub?: string;
+  user_id?: string;
+  email?: string;
+  iat?: number;
+  user_metadata?: {
+    name?: string;
+    first_name?: string;
+    last_name?: string;
+    full_name?: string;
+    avatar_url?: string;
+    picture?: string;
+  };
+}): User {
   const userMetadata = claims.user_metadata || {};
-  const firstName = userMetadata.name || userMetadata.first_name || userMetadata.full_name?.split(' ')[0] || 'User';
+  const firstName =
+    userMetadata.name ||
+    userMetadata.first_name ||
+    userMetadata.full_name?.split(' ')[0] ||
+    'User';
 
   return {
     id: claims.sub || claims.user_id || '',
     firstName,
-    lastName: userMetadata.last_name || userMetadata.full_name?.split(' ').slice(1).join(' '),
+    lastName:
+      userMetadata.last_name ||
+      userMetadata.full_name?.split(' ').slice(1).join(' '),
     email: claims.email || '',
-    avatar: userMetadata.avatar_url || userMetadata.picture || '/avatars/accountant.jpg',
+    avatar:
+      userMetadata.avatar_url ||
+      userMetadata.picture ||
+      '/avatars/accountant.jpg',
     isNewUser: true, // This will be determined by business logic
     createdAt: new Date(claims.iat ? claims.iat * 1000 : Date.now()),
     updatedAt: new Date(),

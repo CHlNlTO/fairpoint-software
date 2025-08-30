@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { ArrowLeft, Calculator, FileText, Search, HelpCircle } from 'lucide-react';
+import {
+  ArrowLeft,
+  Calculator,
+  FileText,
+  Search,
+  HelpCircle,
+} from 'lucide-react';
 
 export default function NotFound() {
   return (
@@ -33,7 +39,6 @@ export default function NotFound() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-
           <Button asChild size="lg" className="min-w-[200px] w-full">
             <Link href="/" className="flex items-center gap-3">
               <ArrowLeft className="w-5 h-5" />
@@ -61,7 +66,8 @@ export default function NotFound() {
 
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              Need professional accounting assistance? Our team is here to help balance your books.
+              Need professional accounting assistance? Our team is here to help
+              balance your books.
             </p>
           </div>
         </div>

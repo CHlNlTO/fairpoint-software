@@ -8,13 +8,16 @@ interface LoaderState {
   isVisible: boolean;
   message: string;
   variant: 'default' | 'success' | 'processing';
-  show: (message?: string, variant?: 'default' | 'success' | 'processing') => void;
+  show: (
+    message?: string,
+    variant?: 'default' | 'success' | 'processing'
+  ) => void;
   hide: () => void;
   showSuccess: (message?: string) => void;
   showProcessing: (message?: string) => void;
 }
 
-export const useFullPageLoader = create<LoaderState>((set) => ({
+export const useFullPageLoader = create<LoaderState>(set => ({
   isVisible: false,
   message: 'Processing your request...',
   variant: 'default',
