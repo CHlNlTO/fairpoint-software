@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useFullPageLoader } from '@/hooks/use-full-page-loader';
 
 export function LoaderDemo() {
-  const { show, showSuccess, showProcessing, hide } = useFullPageLoader();
+  const { show, showSuccess, hide } = useFullPageLoader();
 
   return (
     <div className="p-6 space-y-4">

@@ -5,7 +5,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Loader2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Loader2, CheckCircle2 } from 'lucide-react';
 
 interface FullPageLoaderProps {
   message?: string;
