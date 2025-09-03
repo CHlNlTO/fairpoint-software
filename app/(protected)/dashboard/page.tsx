@@ -1,7 +1,4 @@
-import { redirect } from 'next/navigation';
-import { createClient } from '@/lib/supabase/server';
 import { AppSidebar } from '@/components/ui/app-sidebar';
-import { extractUserFromClaims } from '@/lib/utils';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,6 +13,9 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar';
+import { createClient } from '@/lib/supabase/server';
+import { extractUserFromClaims } from '@/lib/utils';
+import { redirect } from 'next/navigation';
 
 export default async function Page() {
   const supabase = await createClient();
@@ -62,7 +62,7 @@ export default async function Page() {
             </p>
           </div>
 
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+          <div className="grid auto-rows-min gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div className="bg-card border rounded-xl p-6">
               <h3 className="font-semibold mb-2">Tax Returns</h3>
               <p className="text-muted-foreground text-sm">
@@ -80,6 +80,16 @@ export default async function Page() {
               <p className="text-muted-foreground text-sm">
                 Schedule consultations with our team
               </p>
+            </div>
+            <div className="bg-card border rounded-xl p-6 hover:shadow-md transition-shadow">
+              <a href="/business-registration" className="block">
+                <h3 className="font-semibold mb-2 text-primary">
+                  Business Registration
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  Register your business and set up your account
+                </p>
+              </a>
             </div>
           </div>
 

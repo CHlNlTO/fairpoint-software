@@ -114,6 +114,12 @@ import { useBusinessData } from '@/hooks/use-business-data'; // ✅
 
 ## ⚛️ React Component Standards
 
+### Component Priority
+
+1. First check `components/animate-ui/` for animated components
+2. Fall back to `components/ui/` only if animate-ui doesn't have the component
+3. Example: Use `components/animate-ui/radix/dropdown-menu.tsx` instead of `components/ui/dropdown-menu.tsx`Priority
+
 ### Component Structure
 
 ```typescript
@@ -150,39 +156,6 @@ export function ComponentName({
       {children}
     </div>
   );
-}
-```
-
-### Component Patterns
-
-#### ✅ DO: Compound Components
-
-```typescript
-export function Wizard({ children }: { children: React.ReactNode }) {
-  return <div className="wizard">{children}</div>;
-}
-
-Wizard.Step = function WizardStep({ children }: { children: React.ReactNode }) {
-  return <div className="wizard-step">{children}</div>;
-};
-
-Wizard.Navigation = function WizardNavigation() {
-  return <div className="wizard-nav">...</div>;
-};
-```
-
-#### ✅ DO: Extract Custom Hooks
-
-```typescript
-function useWizardNavigation(totalSteps: number) {
-  const [currentStep, setCurrentStep] = useState(0);
-
-  const nextStep = () =>
-    setCurrentStep(prev => (prev < totalSteps - 1 ? prev + 1 : prev));
-
-  const prevStep = () => setCurrentStep(prev => (prev > 0 ? prev - 1 : prev));
-
-  return { currentStep, nextStep, prevStep };
 }
 ```
 
@@ -329,7 +302,7 @@ export function useBusinessData(businessId: string) {
   });
 }
 
-// ✅ DO: Use mutations with proper error handling
+// ✅ DO: Use mutations with proper error handling and toast/sonner notifications
 export function useUpdateBusiness() {
   const queryClient = useQueryClient();
 

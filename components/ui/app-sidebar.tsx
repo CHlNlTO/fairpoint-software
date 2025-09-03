@@ -1,8 +1,8 @@
 'use client';
 
-import * as React from 'react';
 import {
   BookOpen,
+  Building2,
   Command,
   Frame,
   LifeBuoy,
@@ -14,6 +14,7 @@ import {
   User,
   type LucideIcon,
 } from 'lucide-react';
+import * as React from 'react';
 
 import { NavMain } from '@/components/ui/nav-main';
 import { NavProjects } from '@/components/ui/nav-projects';
@@ -79,6 +80,21 @@ const defaultData: Omit<SidebarData, 'user'> = {
         {
           title: 'Reminders',
           url: '/dashboard/reminders',
+        },
+      ],
+    },
+    {
+      title: 'Business Registration',
+      url: '/business-registration',
+      icon: Building2,
+      items: [
+        {
+          title: 'Register Business',
+          url: '/business-registration',
+        },
+        {
+          title: 'My Businesses',
+          url: '/businesses',
         },
       ],
     },
@@ -199,15 +215,10 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Command className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">{data.user.name}</span>
-                  <span className="truncate text-xs">Accountant</span>
-                </div>
+            <SidebarMenuButton asChild>
+              <a href="/dashboard">
+                <Command />
+                <span>Fairpoint</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -216,9 +227,9 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
+        <NavSecondary items={data.navSecondary} className="mt-auto" />
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>

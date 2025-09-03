@@ -2,10 +2,10 @@
 
 'use client';
 
-import * as React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Loader2, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { CheckCircle2, Loader2 } from 'lucide-react';
+import * as React from 'react';
 
 interface FullPageLoaderProps {
   message?: string;
@@ -19,6 +19,11 @@ export function FullPageLoader({
   className,
 }: FullPageLoaderProps) {
   const [dots, setDots] = React.useState('');
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -66,28 +71,30 @@ export function FullPageLoader({
         className="absolute inset-0 bg-background/80 backdrop-blur-sm"
       />
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-            }}
-            animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-            }}
-            transition={{
-              duration: 8 + Math.random() * 4,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles - only render on client */}
+      {isClient && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-primary/20 rounded-full"
+              initial={{
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              animate={{
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              transition={{
+                duration: 8 + Math.random() * 4,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Main loader card */}
       <motion.div
