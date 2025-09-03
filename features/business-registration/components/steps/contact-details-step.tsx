@@ -252,8 +252,8 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
         <CardHeader>
           <CardTitle>Contact Details</CardTitle>
           <CardDescription>
-            Add your business address and contact information. We'll use this
-            for official correspondence.
+            Add your business address and contact information. We&apos;l use
+            this for official correspondence.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">

@@ -71,6 +71,7 @@ export function BusinessRegistrationWizard({
   };
 
   const handleStepClick = (step: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     goToStep(step as any);
   };
 
