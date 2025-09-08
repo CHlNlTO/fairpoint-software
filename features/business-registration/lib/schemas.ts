@@ -50,6 +50,10 @@ export const taxInformationSchema = z.object({
     ])
     .optional(),
   fiscalYearEnd: z.string().optional(),
+  incomeTaxRateId: z.string().uuid().optional(),
+  businessTaxType: z.enum(['VAT', 'Percentage Tax']).optional(),
+  businessTaxExempt: z.boolean().optional(),
+  additionalTaxes: z.array(z.string()).optional(),
 });
 
 export const contactDetailsStepSchema = z.object({
@@ -67,10 +71,31 @@ export const contactDetailsStepSchema = z.object({
     .or(z.literal('')),
 });
 
+// Government Credentials (Step 5)
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/u, 'Invalid date format (use YYYY-MM-DD)');
+
+export const governmentCredentialSchema = z.object({
+  agencyCode: z.enum(['BIR', 'DTI', 'LGU', 'SEC', 'CDA']),
+  registrationNumber: z.string().max(100).optional().or(z.literal('')),
+  registrationDate: isoDate.optional().or(z.literal('')),
+  expiryDate: isoDate.optional().or(z.literal('')),
+  status: z.enum(['registered', 'pending', 'expired', 'cancelled']).optional(),
+});
+
+const governmentCredentialsBase = z.object({
+  governmentCredentials: z.array(governmentCredentialSchema).optional(),
+});
+
+export const governmentCredentialsStepSchema =
+  governmentCredentialsBase.optional();
+
 export const businessRegistrationSchema = z.object({
   ...businessInfoStepSchema.shape,
   ...businessTypeStepSchema.shape,
   ...taxInformationSchema.shape,
+  ...governmentCredentialsBase.shape,
   ...contactDetailsStepSchema.shape,
 });
 
@@ -78,6 +103,7 @@ export const businessRegistrationSchema = z.object({
 export const stepSchemas = {
   'business-info': businessInfoStepSchema,
   'business-type': businessTypeStepSchema,
+  'government-credentials': governmentCredentialsStepSchema,
   'tax-information': taxInformationSchema,
   'contact-details': contactDetailsStepSchema,
   review: businessRegistrationSchema,

@@ -3,6 +3,7 @@
 'use client';
 
 import { useBusinessLoader } from '@/hooks/use-full-page-loader';
+import { useLocalStorage } from '@/hooks/use-local-storage';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo, useState } from 'react';
 import { stepSchemas } from '../lib/schemas';
@@ -24,7 +25,15 @@ export function useBusinessRegistration(
   const router = useRouter();
   const loader = useBusinessLoader();
 
-  const [data, setData] = useState<Partial<BusinessRegistrationData>>({});
+  // Persist draft in localStorage for resume
+  const [draft, setDraft] = useLocalStorage<{
+    data: Partial<BusinessRegistrationData>;
+    step?: BusinessRegistrationStep;
+  }>('business_registration_draft', { data: {}, step: 'business-info' });
+
+  const [data, setData] = useState<Partial<BusinessRegistrationData>>(
+    () => draft?.data || {}
+  );
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [isValidating, setIsValidating] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,6 +69,9 @@ export function useBusinessRegistration(
         | Partial<BusinessRegistrationData>
     ) => {
       setData(prev => ({ ...prev, ...updates }));
+
+      // Persist to draft
+      setDraft(prev => ({ ...prev, data: { ...prev.data, ...updates } }));
 
       // Clear related errors when data is updated
       const updatedFields = Object.keys(updates);
@@ -180,7 +192,15 @@ export function useBusinessRegistration(
     setIsValidating(false);
     setIsSubmitting(false);
     setSubmissionError(undefined);
+    setDraft({ data: {}, step: 'business-info' });
   }, []);
+
+  const saveDraftStep = useCallback(
+    (step: BusinessRegistrationStep) => {
+      setDraft(prev => ({ ...prev, step }));
+    },
+    [setDraft]
+  );
 
   return useMemo(
     () => ({

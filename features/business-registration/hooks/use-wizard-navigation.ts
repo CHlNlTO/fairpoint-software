@@ -2,6 +2,7 @@
 
 'use client';
 
+import { useLocalStorage } from '@/hooks/use-local-storage';
 import { useCallback, useMemo, useState } from 'react';
 import { STEP_ORDER } from '../lib/constants';
 import type {
@@ -17,8 +18,13 @@ interface UseWizardNavigationConfig {
 export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
   const { initialStep = 'business-info', onStepChange } = config;
 
-  const [currentStep, setCurrentStep] =
-    useState<BusinessRegistrationStep>(initialStep);
+  const [draft, setDraft] = useLocalStorage<{
+    step: BusinessRegistrationStep;
+  }>('business_registration_draft', { step: initialStep });
+
+  const [currentStep, setCurrentStep] = useState<BusinessRegistrationStep>(
+    () => draft?.step || initialStep
+  );
   const [completedSteps, setCompletedSteps] = useState<
     BusinessRegistrationStep[]
   >([]);
@@ -48,10 +54,11 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
       // Only allow going to completed steps or the next step
       if (stepIndex <= currentIndex || completedSteps.includes(step)) {
         setCurrentStep(step);
+        setDraft({ step });
         onStepChange?.(step);
       }
     },
-    [currentStep, completedSteps, onStepChange]
+    [currentStep, completedSteps, onStepChange, setDraft]
   );
 
   const nextStep = useCallback(() => {
@@ -65,6 +72,7 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
       }
 
       setCurrentStep(nextStepId);
+      setDraft({ step: nextStepId });
       onStepChange?.(nextStepId);
     }
   }, [
@@ -73,6 +81,7 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
     completedSteps,
     navigationState.canProgress,
     onStepChange,
+    setDraft,
   ]);
 
   const prevStep = useCallback(() => {
@@ -81,9 +90,10 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
       const prevStepId = STEP_ORDER[prevStepIndex];
 
       setCurrentStep(prevStepId);
+      setDraft({ step: prevStepId });
       onStepChange?.(prevStepId);
     }
-  }, [currentStepIndex, navigationState.canGoBack, onStepChange]);
+  }, [currentStepIndex, navigationState.canGoBack, onStepChange, setDraft]);
 
   const markStepCompleted = useCallback(
     (step: BusinessRegistrationStep) => {
@@ -113,8 +123,9 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
   const reset = useCallback(() => {
     setCurrentStep(initialStep);
     setCompletedSteps([]);
+    setDraft({ step: initialStep });
     onStepChange?.(initialStep);
-  }, [initialStep, onStepChange]);
+  }, [initialStep, onStepChange, setDraft]);
 
   return useMemo(
     () => ({

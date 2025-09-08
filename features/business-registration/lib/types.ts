@@ -3,11 +3,14 @@
 export type BusinessRegistrationStep =
   | 'business-info'
   | 'business-type'
+  | 'government-credentials'
   | 'tax-information'
   | 'contact-details'
   | 'review';
 
 export interface BusinessRegistrationData {
+  // Optional registration id once draft/record is created
+  registrationId?: string;
   // Business Info Step
   businessName: string;
   businessDescription?: string;
@@ -22,6 +25,13 @@ export interface BusinessRegistrationData {
   taxId?: string;
   taxClassification?: TaxClassification;
   fiscalYearEnd?: string;
+  incomeTaxRateId?: string;
+  businessTaxType?: 'VAT' | 'Percentage Tax';
+  businessTaxExempt?: boolean;
+  additionalTaxes?: string[]; // e.g., ['withholding_tax','expanded_withholding_tax','tamp']
+
+  // Government Credentials Step (optional)
+  governmentCredentials?: GovernmentCredential[];
 
   // Contact Details Step
   address: BusinessAddress;
@@ -65,6 +75,20 @@ export interface WizardStepInfo {
   title: string;
   description: string;
   isRequired: boolean;
+}
+
+export type GovernmentRegistrationStatus =
+  | 'registered'
+  | 'pending'
+  | 'expired'
+  | 'cancelled';
+
+export interface GovernmentCredential {
+  agencyCode: string; // e.g., 'BIR' | 'DTI' | 'LGU' | 'SEC' | 'CDA'
+  registrationNumber?: string;
+  registrationDate?: string; // ISO date (yyyy-mm-dd)
+  expiryDate?: string; // ISO date (yyyy-mm-dd)
+  status?: GovernmentRegistrationStatus;
 }
 
 export interface WizardNavigationState {

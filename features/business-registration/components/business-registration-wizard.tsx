@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { BusinessInfoStep } from './steps/business-info-step';
 import { BusinessTypeStep } from './steps/business-type-step';
 import { ContactDetailsStep } from './steps/contact-details-step';
+import { GovernmentCredentialsStep } from './steps/government-credentials-step';
 import { TaxInformationStep } from './steps/tax-information-step';
 import { WizardNavigation } from './wizard-navigation';
 import { WizardStepIndicator } from './wizard-step-indicator';
@@ -61,6 +62,24 @@ export function BusinessRegistrationWizard({
       } catch (error) {
         console.error('Registration submission failed:', error);
       }
+    } else if (currentStep === 'government-credentials') {
+      // Best-effort persist government registrations if we already have a registration id
+      try {
+        if (data.registrationId && data.governmentCredentials?.length) {
+          await fetch(
+            `/api/business-registrations/${data.registrationId}/government-registrations`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ credentials: data.governmentCredentials }),
+            }
+          );
+        }
+      } catch (e) {
+        console.error('Failed to persist government registrations', e);
+      } finally {
+        nextStep();
+      }
     } else {
       nextStep();
     }
@@ -87,6 +106,8 @@ export function BusinessRegistrationWizard({
         return <BusinessInfoStep {...stepProps} />;
       case 'business-type':
         return <BusinessTypeStep {...stepProps} />;
+      case 'government-credentials':
+        return <GovernmentCredentialsStep {...stepProps} />;
       case 'tax-information':
         return <TaxInformationStep {...stepProps} />;
       case 'contact-details':

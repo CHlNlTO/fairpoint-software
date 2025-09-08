@@ -28,6 +28,12 @@ export const WIZARD_STEPS: WizardStepInfo[] = [
     isRequired: true,
   },
   {
+    id: 'government-credentials',
+    title: 'Government Credentials',
+    description: '',
+    isRequired: false,
+  },
+  {
     id: 'tax-information',
     title: 'Tax Information',
     description: '',
@@ -50,6 +56,7 @@ export const WIZARD_STEPS: WizardStepInfo[] = [
 export const STEP_ORDER: BusinessRegistrationStep[] = [
   'business-info',
   'business-type',
+  'government-credentials',
   'tax-information',
   'contact-details',
   'review',

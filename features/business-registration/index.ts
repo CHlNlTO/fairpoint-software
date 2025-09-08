@@ -9,10 +9,16 @@ export { WizardStepIndicator } from './components/wizard-step-indicator';
 export { BusinessInfoStep } from './components/steps/business-info-step';
 export { BusinessTypeStep } from './components/steps/business-type-step';
 export { ContactDetailsStep } from './components/steps/contact-details-step';
+export { GovernmentCredentialsStep } from './components/steps/government-credentials-step';
 export { TaxInformationStep } from './components/steps/tax-information-step';
 
 // Hooks
 export { useBusinessRegistration } from './hooks/use-business-registration';
+export {
+  useFiscalYearPeriods,
+  useGovernmentAgencies,
+  useTaxRates,
+} from './hooks/use-master-data';
 export { useWizardNavigation } from './hooks/use-wizard-navigation';
 
 // Types
@@ -22,6 +28,8 @@ export type {
   BusinessRegistrationState,
   BusinessRegistrationStep,
   BusinessType,
+  GovernmentCredential,
+  GovernmentRegistrationStatus,
   OwnershipType,
   PSGCBarangay,
   PSGCMunicipality,
@@ -49,6 +57,7 @@ export {
   businessRegistrationSchema,
   businessTypeStepSchema,
   contactDetailsStepSchema,
+  governmentCredentialsStepSchema,
   stepSchemas,
   taxInformationSchema,
 } from './lib/schemas';
