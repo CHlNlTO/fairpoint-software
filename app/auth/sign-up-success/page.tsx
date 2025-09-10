@@ -1,6 +1,6 @@
-import BubbleBackground from "@/components/animate-ui/backgrounds/bubble";
+import { BubbleBackground } from "@/components/animate-ui/backgrounds/bubble";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import LiquidButton from "@/components/buttons/liquid";
+import { LiquidButton } from "@/components/animate-ui/buttons/liquid";
 
 export default function Page() {
   return (
