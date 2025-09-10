@@ -2,24 +2,23 @@
 
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { useBusinessRegistration } from '@/features/business-registration/hooks/use-business-registration';
-import { useWizardNavigation } from '@/features/business-registration/hooks/use-wizard-navigation';
-import type { BusinessRegistrationData } from '@/features/business-registration/lib/types';
+import { Card, CardContent } from '@/components/ui/card';
 import { AnimatePresence, motion } from 'framer-motion';
-import { BusinessInfoStep } from './steps/business-info-step';
-import { BusinessTypeStep } from './steps/business-type-step';
-import { ContactDetailsStep } from './steps/contact-details-step';
-import { GovernmentCredentialsStep } from './steps/government-credentials-step';
-import { TaxInformationStep } from './steps/tax-information-step';
+
+import { useWizardNavigation } from '@/features/business-registration/hooks/use-wizard-navigation';
 import { WizardNavigation } from './wizard-navigation';
 import { WizardStepIndicator } from './wizard-step-indicator';
+
+import { useBusinessRegistration } from '@/features/business-registration/hooks/use-business-registration';
+import type { BusinessRegistrationData } from '@/features/business-registration/lib/types';
+
+import { BasicInfoStep } from '@/features/business-registration/components/steps/basic-info-step';
+import { BusinessCategoriesStep } from '@/features/business-registration/components/steps/business-categories-step';
+import { BusinessStructureStep } from '@/features/business-registration/components/steps/business-structure-step';
+import { ChartOfAccountsStep } from '@/features/business-registration/components/steps/chart-of-accounts-step';
+import { FiscalYearStep } from '@/features/business-registration/components/steps/fiscal-year-step';
+import { GovernmentCredentialsStep } from '@/features/business-registration/components/steps/government-credentials-step';
+import { TaxTypeInformationStep } from '@/features/business-registration/components/steps/tax-type-information-step';
 
 interface BusinessRegistrationWizardProps {
   onComplete?: (data: BusinessRegistrationData) => void;
@@ -55,8 +54,8 @@ export function BusinessRegistrationWizard({
   };
 
   const handleNext = async () => {
-    if (currentStep === 'review') {
-      // Submit the registration
+    if (currentStep === 'chart-of-accounts') {
+      // Finalize submission on last step
       try {
         await submitRegistration();
       } catch (error) {
@@ -102,20 +101,22 @@ export function BusinessRegistrationWizard({
     };
 
     switch (currentStep) {
-      case 'business-info':
-        return <BusinessInfoStep {...stepProps} />;
-      case 'business-type':
-        return <BusinessTypeStep {...stepProps} />;
+      case 'basic-info':
+        return <BasicInfoStep {...stepProps} />;
+      case 'business-categories':
+        return <BusinessCategoriesStep {...stepProps} />;
+      case 'fiscal-year':
+        return <FiscalYearStep {...stepProps} />;
+      case 'business-structure':
+        return <BusinessStructureStep {...stepProps} />;
       case 'government-credentials':
         return <GovernmentCredentialsStep {...stepProps} />;
-      case 'tax-information':
-        return <TaxInformationStep {...stepProps} />;
-      case 'contact-details':
-        return <ContactDetailsStep {...stepProps} />;
-      case 'review':
-        return <ReviewStep data={data} onBack={handleBack} />;
+      case 'tax-type-information':
+        return <TaxTypeInformationStep {...stepProps} />;
+      case 'chart-of-accounts':
+        return <ChartOfAccountsStep {...stepProps} />;
       default:
-        return <BusinessInfoStep {...stepProps} />;
+        return <BasicInfoStep {...stepProps} />;
     }
   };
 
@@ -184,158 +185,4 @@ export function BusinessRegistrationWizard({
   );
 }
 
-// Review Step Component
-interface ReviewStepProps {
-  data: Partial<BusinessRegistrationData>;
-  onBack: () => void;
-}
-
-function ReviewStep({ data, onBack }: ReviewStepProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3 }}
-    >
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader>
-          <CardTitle>Review & Submit</CardTitle>
-          <CardDescription>
-            Please review your information before submitting your business
-            registration.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {/* Business Information */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Business Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Business Name
-                </label>
-                <p className="text-sm">{data.businessName}</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Industry
-                </label>
-                <p className="text-sm">{data.industry || 'Not specified'}</p>
-              </div>
-            </div>
-            {data.businessDescription && (
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Description
-                </label>
-                <p className="text-sm">{data.businessDescription}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Business Structure */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Business Structure</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Business Type
-                </label>
-                <p className="text-sm">{data.businessType}</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Ownership
-                </label>
-                <p className="text-sm">{data.ownership}</p>
-              </div>
-            </div>
-            {data.employees && (
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Number of Employees
-                </label>
-                <p className="text-sm">{data.employees}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Tax Information */}
-          {(data.taxId || data.taxClassification || data.fiscalYearEnd) && (
-            <div className="space-y-4">
-              <h3 className="text-lg font-medium">Tax Information</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {data.taxId && (
-                  <div>
-                    <label className="text-sm font-medium text-muted-foreground">
-                      Tax ID
-                    </label>
-                    <p className="text-sm">{data.taxId}</p>
-                  </div>
-                )}
-                {data.taxClassification && (
-                  <div>
-                    <label className="text-sm font-medium text-muted-foreground">
-                      Tax Classification
-                    </label>
-                    <p className="text-sm">{data.taxClassification}</p>
-                  </div>
-                )}
-                {data.fiscalYearEnd && (
-                  <div>
-                    <label className="text-sm font-medium text-muted-foreground">
-                      Fiscal Year End
-                    </label>
-                    <p className="text-sm">{data.fiscalYearEnd}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Contact Information */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Contact Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {data.phone && (
-                <div>
-                  <label className="text-sm font-medium text-muted-foreground">
-                    Phone
-                  </label>
-                  <p className="text-sm">{data.phone}</p>
-                </div>
-              )}
-              {data.email && (
-                <div>
-                  <label className="text-sm font-medium text-muted-foreground">
-                    Email
-                  </label>
-                  <p className="text-sm">{data.email}</p>
-                </div>
-              )}
-            </div>
-            {data.website && (
-              <div>
-                <label className="text-sm font-medium text-muted-foreground">
-                  Website
-                </label>
-                <p className="text-sm">{data.website}</p>
-              </div>
-            )}
-          </div>
-
-          <div className="flex justify-between pt-4">
-            <button
-              type="button"
-              onClick={onBack}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-            >
-              Back
-            </button>
-          </div>
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-}
+// Review step removed in new 7-step flow

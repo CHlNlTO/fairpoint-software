@@ -29,7 +29,7 @@ export function useBusinessRegistration(
   const [draft, setDraft] = useLocalStorage<{
     data: Partial<BusinessRegistrationData>;
     step?: BusinessRegistrationStep;
-  }>('business_registration_draft', { data: {}, step: 'business-info' });
+  }>('business_registration_draft', { data: {}, step: 'basic-info' });
 
   const [data, setData] = useState<Partial<BusinessRegistrationData>>(
     () => draft?.data || {}
@@ -43,11 +43,11 @@ export function useBusinessRegistration(
     () => ({
       data,
       navigation: {
-        currentStep: 'business-info',
+        currentStep: 'basic-info',
         completedSteps: [],
         canProgress: false,
         canGoBack: false,
-        totalSteps: 5,
+        totalSteps: 7,
         currentStepIndex: 0,
       },
       validation: {
@@ -154,8 +154,8 @@ export function useBusinessRegistration(
     loader.showRegistration();
 
     try {
-      // Final validation
-      const isValid = await validateStep('review');
+      // Final validation against last step in the flow
+      const isValid = await validateStep('chart-of-accounts');
 
       if (!isValid) {
         setIsSubmitting(false);
@@ -163,8 +163,104 @@ export function useBusinessRegistration(
         return;
       }
 
-      // TODO: Replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Give any in-flight step updates (watch effects) a tick to flush
+      await new Promise(resolve => setTimeout(resolve, 0));
+
+      // Helpers to sanitize payloads expected by API
+      const formatTin = (tin?: string) => {
+        if (!tin) return '';
+        const digits = tin.replace(/\D/g, '');
+        if (digits.length === 12) {
+          return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6, 9)}-${digits.slice(9, 12)}`;
+        }
+        return tin;
+      };
+      const normalizePsgc = (code?: string): string | undefined => {
+        if (!code) return undefined;
+        const digits = code.replace(/\D/g, '');
+        if (/^\d{10}$/.test(digits)) return digits;
+        if (/^\d{2}$/.test(digits)) return `${digits}00000000`;
+        if (/^\d{5}$/.test(digits)) return `${digits}00000`;
+        if (/^\d{7}$/.test(digits)) return `${digits}000`;
+        // Fallback: right-pad zeros to 10 to satisfy API constraints
+        if (digits.length < 10) return digits.padEnd(10, '0');
+        return digits;
+      };
+
+      // 1) Create draft if we don't have an id yet
+      let registrationId = (data as BusinessRegistrationData).registrationId;
+      if (!registrationId) {
+        const res = await fetch('/api/business-registrations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            business_name: data.businessName,
+            tin_number: formatTin(data.taxId),
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            business_email: (data as any).businessEmail,
+            region_psgc: normalizePsgc(data.address?.regionPsgc),
+            province_psgc: normalizePsgc(data.address?.provincePsgc),
+            city_municipality_psgc: normalizePsgc(
+              data.address?.cityMunicipalityPsgc
+            ),
+            barangay_psgc: normalizePsgc(data.address?.barangayPsgc),
+            street_address: data.address?.streetAddress || '',
+            building_name: data.address?.buildingName || '',
+            unit_number: data.address?.unitNumber || '',
+            postal_code: data.address?.postalCode || '',
+            business_types: (data.businessCategories || []) as string[],
+          }),
+        });
+        if (!res.ok) throw new Error('Failed to create registration');
+        const json = await res.json();
+        registrationId = json.id;
+        setData(prev => ({ ...prev, registrationId }));
+        setDraft(prev => ({ ...prev, data: { ...prev.data, registrationId } }));
+      }
+
+      // 2) Update rest of fields
+      if (registrationId) {
+        const uuidRegex =
+          /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+        const patchPayload: Record<string, unknown> = {
+          business_types: (data.businessCategories || []) as string[],
+          business_structure: data.businessStructure,
+          income_tax_rate_id: data.incomeTaxRateId || null,
+          business_tax_type: data.businessTaxType || null,
+          business_tax_exempt: data.businessTaxExempt || false,
+          additional_taxes: data.additionalTaxes || [],
+        };
+        if (
+          data.fiscalYearPeriodId &&
+          uuidRegex.test(String(data.fiscalYearPeriodId))
+        ) {
+          patchPayload.fiscal_year_period_id = data.fiscalYearPeriodId;
+        }
+        const updRes = await fetch(
+          `/api/business-registrations/${registrationId}`,
+          {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(patchPayload),
+          }
+        );
+        if (!updRes.ok) {
+          const err = await updRes.json().catch(() => ({}));
+          throw new Error(err?.error || 'Failed to update registration');
+        }
+      }
+
+      // 3) Best-effort persist government registrations
+      if (registrationId && (data.governmentCredentials?.length || 0) > 0) {
+        await fetch(
+          `/api/business-registrations/${registrationId}/government-registrations`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ credentials: data.governmentCredentials }),
+          }
+        );
+      }
 
       // Simulate success
       loader.showSuccess('Business registered successfully!');
@@ -192,7 +288,7 @@ export function useBusinessRegistration(
     setIsValidating(false);
     setIsSubmitting(false);
     setSubmissionError(undefined);
-    setDraft({ data: {}, step: 'business-info' });
+    setDraft({ data: {}, step: 'basic-info' });
   }, []);
 
   const saveDraftStep = useCallback(

@@ -16,11 +16,13 @@ interface UseWizardNavigationConfig {
 }
 
 export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
-  const { initialStep = 'business-info', onStepChange } = config;
+  const { initialStep = 'basic-info', onStepChange } = config;
 
+  // Use a separate storage key for step navigation to avoid overwriting
+  // the draft data stored by use-business-registration
   const [draft, setDraft] = useLocalStorage<{
     step: BusinessRegistrationStep;
-  }>('business_registration_draft', { step: initialStep });
+  }>('business_registration_step', { step: initialStep });
 
   const [currentStep, setCurrentStep] = useState<BusinessRegistrationStep>(
     () => draft?.step || initialStep
@@ -54,7 +56,7 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
       // Only allow going to completed steps or the next step
       if (stepIndex <= currentIndex || completedSteps.includes(step)) {
         setCurrentStep(step);
-        setDraft({ step });
+        setDraft(prev => ({ ...(prev || { step: initialStep }), step }));
         onStepChange?.(step);
       }
     },
@@ -72,7 +74,10 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
       }
 
       setCurrentStep(nextStepId);
-      setDraft({ step: nextStepId });
+      setDraft(prev => ({
+        ...(prev || { step: initialStep }),
+        step: nextStepId,
+      }));
       onStepChange?.(nextStepId);
     }
   }, [
@@ -90,7 +95,10 @@ export function useWizardNavigation(config: UseWizardNavigationConfig = {}) {
       const prevStepId = STEP_ORDER[prevStepIndex];
 
       setCurrentStep(prevStepId);
-      setDraft({ step: prevStepId });
+      setDraft(prev => ({
+        ...(prev || { step: initialStep }),
+        step: prevStepId,
+      }));
       onStepChange?.(prevStepId);
     }
   }, [currentStepIndex, navigationState.canGoBack, onStepChange, setDraft]);

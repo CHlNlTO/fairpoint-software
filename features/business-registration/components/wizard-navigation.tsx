@@ -24,6 +24,7 @@ export function WizardNavigation({
   onStepClick,
   isSubmitting = false,
 }: WizardNavigationProps) {
+  const isFinalStep = navigation.currentStepIndex === navigation.totalSteps - 1;
   return (
     <div
       className="w-full px-2 py-3 rounded-xl bg-background/70 border border-border/60 shadow-sm flex items-center justify-between gap-2"
@@ -49,7 +50,7 @@ export function WizardNavigation({
 
       <Button
         onClick={onNext}
-        disabled={!navigation.canProgress || isSubmitting}
+        disabled={isSubmitting}
         className="flex items-center gap-2"
       >
         {isSubmitting ? (
@@ -59,7 +60,7 @@ export function WizardNavigation({
           </>
         ) : (
           <>
-            Next
+            {isFinalStep ? 'Finish' : 'Next'}
             <ChevronRight className="h-4 w-4" />
           </>
         )}

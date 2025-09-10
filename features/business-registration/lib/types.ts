@@ -1,62 +1,64 @@
 // features/business-registration/lib/types.ts
 
 export type BusinessRegistrationStep =
-  | 'business-info'
-  | 'business-type'
+  | 'basic-info'
+  | 'business-categories'
+  | 'fiscal-year'
+  | 'business-structure'
   | 'government-credentials'
-  | 'tax-information'
-  | 'contact-details'
-  | 'review';
+  | 'tax-type-information'
+  | 'chart-of-accounts';
 
 export interface BusinessRegistrationData {
   // Optional registration id once draft/record is created
   registrationId?: string;
-  // Business Info Step
+  // Step 1: Basic Business Information
   businessName: string;
-  businessDescription?: string;
-  industry?: string;
+  taxId: string; // TIN
+  address: BusinessAddress;
+  businessEmail: string;
 
-  // Business Type Step
-  businessType: BusinessType;
-  ownership: OwnershipType;
-  employees?: number;
+  // Step 2: Business Type (categories)
+  businessCategories: BusinessCategory[];
 
-  // Tax Information Step
-  taxId?: string;
-  taxClassification?: TaxClassification;
-  fiscalYearEnd?: string;
-  incomeTaxRateId?: string;
+  // Step 3: Fiscal Year
+  fiscalYearPeriodId?: string; // selected predefined period
+  fiscalYearCustomStartMonth?: number;
+  fiscalYearCustomStartDay?: number;
+  fiscalYearCustomEndMonth?: number;
+  fiscalYearCustomEndDay?: number;
+
+  // Step 4: Business Structure
+  businessStructure: BusinessStructure;
+
+  // Step 5: Government Credentials (optional)
+  governmentCredentials?: GovernmentCredential[];
+
+  // Step 6: Tax Type Information
+  incomeTaxRateId: string; // required
   businessTaxType?: 'VAT' | 'Percentage Tax';
   businessTaxExempt?: boolean;
   additionalTaxes?: string[]; // e.g., ['withholding_tax','expanded_withholding_tax','tamp']
 
-  // Government Credentials Step (optional)
-  governmentCredentials?: GovernmentCredential[];
-
-  // Contact Details Step
-  address: BusinessAddress;
-  phone?: string;
-  website?: string;
-  email?: string;
+  // Step 7: Chart of Accounts
+  coaSetupOption: 'default' | 'import';
+  coaCsvData?: string; // CSV content when import option is chosen
 }
 
-export type BusinessType =
+// Step 2 categories
+export type BusinessCategory =
+  | 'services'
+  | 'retail'
+  | 'manufacturing'
+  | 'import-export';
+
+// Step 4 structure
+export type BusinessStructure =
+  | 'freelancing'
   | 'sole-proprietorship'
   | 'partnership'
-  | 'llc'
   | 'corporation'
-  | 's-corporation'
-  | 'non-profit'
-  | 'other';
-
-export type OwnershipType = 'single-owner' | 'multi-owner' | 'shareholders';
-
-export type TaxClassification =
-  | 'sole-proprietorship'
-  | 'partnership'
-  | 's-election'
-  | 'c-corporation'
-  | 'non-profit';
+  | 'cooperative';
 
 // Philippine Address using PSGC codes
 export interface BusinessAddress {

@@ -21,6 +21,7 @@ const createSchema = z.object({
     .optional()
     .or(z.literal('')),
   business_types: z.array(z.string()).min(1),
+  fiscal_year_period_id: z.string().uuid().optional(),
 });
 
 export async function POST(request: Request) {
@@ -43,6 +44,25 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    // determine fiscal year period id (required by DB)
+    let fiscalYearPeriodId = parsed.data.fiscal_year_period_id;
+    if (!fiscalYearPeriodId) {
+      const { data: period, error: periodErr } = await supabase
+        .from('fiscal_year_periods')
+        .select('id, is_default')
+        .eq('is_active', true)
+        .order('is_default', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (periodErr || !period) {
+        return NextResponse.json(
+          { error: 'No active fiscal year period configured' },
+          { status: 500 }
+        );
+      }
+      fiscalYearPeriodId = period.id;
+    }
+
     const payload = {
       user_id: user.id,
       business_name: parsed.data.business_name,
@@ -57,6 +77,7 @@ export async function POST(request: Request) {
       unit_number: parsed.data.unit_number || null,
       postal_code: parsed.data.postal_code || null,
       business_types: parsed.data.business_types,
+      fiscal_year_period_id: fiscalYearPeriodId,
       is_active: true,
     };
 

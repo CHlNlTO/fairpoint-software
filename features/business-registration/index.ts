@@ -6,11 +6,13 @@ export { WizardNavigation } from './components/wizard-navigation';
 export { WizardStepIndicator } from './components/wizard-step-indicator';
 
 // Step Components
-export { BusinessInfoStep } from './components/steps/business-info-step';
-export { BusinessTypeStep } from './components/steps/business-type-step';
-export { ContactDetailsStep } from './components/steps/contact-details-step';
+export { BasicInfoStep } from './components/steps/basic-info-step';
+export { BusinessCategoriesStep } from './components/steps/business-categories-step';
+export { BusinessStructureStep } from './components/steps/business-structure-step';
+export { ChartOfAccountsStep } from './components/steps/chart-of-accounts-step';
+export { FiscalYearStep } from './components/steps/fiscal-year-step';
 export { GovernmentCredentialsStep } from './components/steps/government-credentials-step';
-export { TaxInformationStep } from './components/steps/tax-information-step';
+export { TaxTypeInformationStep } from './components/steps/tax-type-information-step';
 
 // Hooks
 export { useBusinessRegistration } from './hooks/use-business-registration';
@@ -24,40 +26,38 @@ export { useWizardNavigation } from './hooks/use-wizard-navigation';
 // Types
 export type {
   BusinessAddress,
+  BusinessCategory,
   BusinessRegistrationData,
   BusinessRegistrationState,
   BusinessRegistrationStep,
-  BusinessType,
+  BusinessStructure,
   GovernmentCredential,
   GovernmentRegistrationStatus,
-  OwnershipType,
   PSGCBarangay,
   PSGCMunicipality,
   PSGCProvince,
   PSGCRegion,
-  TaxClassification,
   WizardNavigationState,
   WizardStepInfo,
 } from './lib/types';
 
 // Constants
 export {
-  BUSINESS_TYPE_OPTIONS,
   INDUSTRY_OPTIONS,
-  OWNERSHIP_TYPE_OPTIONS,
   PSGC_UTILS,
   STEP_ORDER,
-  TAX_CLASSIFICATION_OPTIONS,
   WIZARD_STEPS,
 } from './lib/constants';
 
 // Schemas
 export {
-  businessInfoStepSchema,
+  basicInfoStepSchema,
+  businessCategoriesStepSchema,
   businessRegistrationSchema,
-  businessTypeStepSchema,
-  contactDetailsStepSchema,
+  businessStructureStepSchema,
+  chartOfAccountsStepSchema,
+  fiscalYearStepSchema,
   governmentCredentialsStepSchema,
   stepSchemas,
-  taxInformationSchema,
+  taxTypeInformationSchema,
 } from './lib/schemas';

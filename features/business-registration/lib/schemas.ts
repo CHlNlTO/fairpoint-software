@@ -18,58 +18,84 @@ export const businessAddressSchema = z.object({
     .optional(),
 });
 
-export const businessInfoStepSchema = z.object({
+// Step 1: Basic Info
+export const basicInfoStepSchema = z.object({
   businessName: z.string().min(1, 'Business name is required'),
-  businessDescription: z.string().optional(),
-  industry: z.string().optional(),
+  taxId: z.string().min(1, 'TIN is required'),
+  businessEmail: z.string().email('Please enter a valid email address'),
+  address: z.lazy(() => businessAddressSchema),
 });
 
-export const businessTypeStepSchema = z.object({
-  businessType: z.enum([
+// Step 2: Business Categories
+export const businessCategoriesStepSchema = z.object({
+  businessCategories: z
+    .array(z.enum(['services', 'retail', 'manufacturing', 'import-export']))
+    .min(1, 'Select at least one business type'),
+});
+
+// Step 3: Fiscal Year
+export const fiscalYearStepSchema = z
+  .object({
+    fiscalYearPeriodId: z
+      .enum(['standard-jan-dec', 'standard-jun-jul', 'custom'])
+      .optional(),
+    fiscalYearCustomStartMonth: z.number().int().min(1).max(12).optional(),
+    fiscalYearCustomStartDay: z.number().int().min(1).max(31).optional(),
+    fiscalYearCustomEndMonth: z.number().int().min(1).max(12).optional(),
+    fiscalYearCustomEndDay: z.number().int().min(1).max(31).optional(),
+  })
+  .refine(
+    data => {
+      if (data.fiscalYearPeriodId === 'custom') {
+        return (
+          !!data.fiscalYearCustomStartMonth &&
+          !!data.fiscalYearCustomStartDay &&
+          !!data.fiscalYearCustomEndMonth &&
+          !!data.fiscalYearCustomEndDay
+        );
+      }
+      return true;
+    },
+    {
+      message: 'Please provide complete custom fiscal year dates',
+      path: ['fiscalYearPeriodId'],
+    }
+  );
+
+// Step 4: Business Structure
+export const businessStructureStepSchema = z.object({
+  businessStructure: z.enum([
+    'freelancing',
     'sole-proprietorship',
     'partnership',
-    'llc',
     'corporation',
-    's-corporation',
-    'non-profit',
-    'other',
+    'cooperative',
   ]),
-  ownership: z.enum(['single-owner', 'multi-owner', 'shareholders']),
-  employees: z.number().optional(),
 });
 
-export const taxInformationSchema = z.object({
-  taxId: z.string().optional(),
-  taxClassification: z
-    .enum([
-      'sole-proprietorship',
-      'partnership',
-      's-election',
-      'c-corporation',
-      'non-profit',
-    ])
-    .optional(),
-  fiscalYearEnd: z.string().optional(),
-  incomeTaxRateId: z.string().uuid().optional(),
+// Step 6: Tax Type Information
+export const taxTypeInformationSchema = z.object({
+  incomeTaxRateId: z.string().min(1, 'Select an income tax type'),
   businessTaxType: z.enum(['VAT', 'Percentage Tax']).optional(),
   businessTaxExempt: z.boolean().optional(),
   additionalTaxes: z.array(z.string()).optional(),
 });
 
-export const contactDetailsStepSchema = z.object({
-  address: businessAddressSchema,
-  phone: z.string().optional(),
-  website: z
-    .string()
-    .url('Please enter a valid website URL')
-    .optional()
-    .or(z.literal('')),
-  email: z
-    .string()
-    .email('Please enter a valid email address')
-    .optional()
-    .or(z.literal('')),
-});
+// Step 7: Chart of Accounts
+export const chartOfAccountsStepSchema = z
+  .object({
+    coaSetupOption: z.enum(['default', 'import']),
+    coaCsvData: z.string().optional(),
+  })
+  .refine(
+    data => {
+      if (data.coaSetupOption === 'import') {
+        return !!data.coaCsvData && data.coaCsvData.length > 0;
+      }
+      return true;
+    },
+    { message: 'Please upload a CSV file for import', path: ['coaCsvData'] }
+  );
 
 // Government Credentials (Step 5)
 const isoDate = z
@@ -92,19 +118,22 @@ export const governmentCredentialsStepSchema =
   governmentCredentialsBase.optional();
 
 export const businessRegistrationSchema = z.object({
-  ...businessInfoStepSchema.shape,
-  ...businessTypeStepSchema.shape,
-  ...taxInformationSchema.shape,
+  ...basicInfoStepSchema.shape,
+  ...businessCategoriesStepSchema.shape,
+  ...fiscalYearStepSchema.shape,
+  ...businessStructureStepSchema.shape,
   ...governmentCredentialsBase.shape,
-  ...contactDetailsStepSchema.shape,
+  ...taxTypeInformationSchema.shape,
+  ...chartOfAccountsStepSchema.shape,
 });
 
 // Individual step validation schemas
 export const stepSchemas = {
-  'business-info': businessInfoStepSchema,
-  'business-type': businessTypeStepSchema,
+  'basic-info': basicInfoStepSchema,
+  'business-categories': businessCategoriesStepSchema,
+  'fiscal-year': fiscalYearStepSchema,
+  'business-structure': businessStructureStepSchema,
   'government-credentials': governmentCredentialsStepSchema,
-  'tax-information': taxInformationSchema,
-  'contact-details': contactDetailsStepSchema,
-  review: businessRegistrationSchema,
+  'tax-type-information': taxTypeInformationSchema,
+  'chart-of-accounts': chartOfAccountsStepSchema,
 } as const;

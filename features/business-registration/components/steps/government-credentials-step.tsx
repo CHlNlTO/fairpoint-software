@@ -48,18 +48,18 @@ const AGENCY_LABELS: Record<string, string> = {
 };
 
 function getSuggestedAgencies(
-  businessStructure?: BusinessRegistrationData['businessType']
+  businessStructure?: BusinessRegistrationData['businessStructure']
 ): string[] {
-  // Map UI structure to agencies per flowchart
-  // Note: UI "businessType" currently includes structures; adapt mapping accordingly
   switch (businessStructure) {
+    case 'freelancing':
     case 'sole-proprietorship':
       return ['BIR', 'DTI', 'LGU'];
     case 'partnership':
     case 'corporation':
       return ['BIR', 'SEC', 'LGU'];
+    case 'cooperative':
+      return ['BIR', 'CDA'];
     default:
-      // Treat others as freelancing/sole prop equivalent unless Cooperative supported later
       return ['BIR', 'DTI', 'LGU'];
   }
 }
@@ -69,8 +69,8 @@ export function GovernmentCredentialsStep({
   onNext,
 }: GovernmentCredentialsStepProps) {
   const suggestedAgencies = React.useMemo(
-    () => getSuggestedAgencies(data.businessType),
-    [data.businessType]
+    () => getSuggestedAgencies(data.businessStructure),
+    [data.businessStructure]
   );
 
   const defaultRows: GovernmentCredential[] = React.useMemo(() => {
@@ -100,7 +100,16 @@ export function GovernmentCredentialsStep({
   // Push updates upward on change
   React.useEffect(() => {
     const subscription = form.watch(value => {
-      onNext({ ...data, ...value });
+      // Filter out any undefined entries from governmentCredentials
+      const filteredValue = {
+        ...value,
+        governmentCredentials: Array.isArray(value.governmentCredentials)
+          ? (value.governmentCredentials as GovernmentCredential[]).filter(
+              Boolean
+            )
+          : [],
+      };
+      onNext({ ...data, ...filteredValue });
     });
     return () => subscription.unsubscribe();
   }, [form.watch, onNext, data]);

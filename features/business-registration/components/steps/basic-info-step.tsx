@@ -1,4 +1,4 @@
-// features/business-registration/components/steps/contact-details-step.tsx
+// features/business-registration/components/steps/basic-info-step.tsx
 
 'use client';
 
@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { PSGC_UTILS } from '@/features/business-registration/lib/constants';
-import { contactDetailsStepSchema } from '@/features/business-registration/lib/schemas';
+import { basicInfoStepSchema } from '@/features/business-registration/lib/schemas';
 import type {
   BusinessRegistrationData,
   PSGCBarangay,
@@ -32,29 +32,18 @@ import { motion } from 'framer-motion';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 
-interface ContactDetailsStepProps {
+interface BasicInfoStepProps {
   data: Partial<BusinessRegistrationData>;
   onNext: (data: Partial<BusinessRegistrationData>) => void;
   onBack: () => void;
 }
 
-interface ContactDetailsFormData {
-  address: {
-    regionPsgc: string;
-    provincePsgc: string;
-    cityMunicipalityPsgc: string;
-    barangayPsgc: string;
-    streetAddress?: string;
-    buildingName?: string;
-    unitNumber?: string;
-    postalCode?: string;
-  };
-  phone?: string;
-  website?: string;
-  email?: string;
-}
+type BasicInfoFormData = Pick<
+  BusinessRegistrationData,
+  'businessName' | 'taxId' | 'businessEmail' | 'address'
+>;
 
-export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
+export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
   const [regions, setRegions] = React.useState<PSGCRegion[]>([]);
   const [provinces, setProvinces] = React.useState<PSGCProvince[]>([]);
   const [municipalities, setMunicipalities] = React.useState<
@@ -67,9 +56,13 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
     React.useState(false);
   const [isLoadingBarangays, setIsLoadingBarangays] = React.useState(false);
 
-  const form = useForm<ContactDetailsFormData>({
-    resolver: zodResolver(contactDetailsStepSchema),
+  const form = useForm<BasicInfoFormData>({
+    resolver: zodResolver(basicInfoStepSchema),
     defaultValues: {
+      businessName: data.businessName || '',
+      taxId: data.taxId || '',
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      businessEmail: (data as any).businessEmail || '',
       address: {
         regionPsgc: data.address?.regionPsgc || '',
         provincePsgc: data.address?.provincePsgc || '',
@@ -80,57 +73,37 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
         unitNumber: data.address?.unitNumber || '',
         postalCode: data.address?.postalCode || '',
       },
-      phone: data.phone || '',
-      website: data.website || '',
-      email: data.email || '',
     },
   });
 
-  // Update parent data when form values change
   React.useEffect(() => {
     const subscription = form.watch(value => {
-      // Only update if we have valid address data
-      if (
-        value.address?.regionPsgc &&
-        value.address?.provincePsgc &&
-        value.address?.cityMunicipalityPsgc &&
-        value.address?.barangayPsgc
-      ) {
-        onNext({
-          ...data,
-          ...value,
-          address: {
-            regionPsgc: value.address.regionPsgc,
-            provincePsgc: value.address.provincePsgc,
-            cityMunicipalityPsgc: value.address.cityMunicipalityPsgc,
-            barangayPsgc: value.address.barangayPsgc,
-            streetAddress: value.address.streetAddress,
-            buildingName: value.address.buildingName,
-            unitNumber: value.address.unitNumber,
-            postalCode: value.address.postalCode,
-          },
-        });
-      } else {
-        // Update other fields without address if address is incomplete
-        const { address, ...otherFields } = value;
-        onNext({
-          ...data,
-          ...otherFields,
-        });
-      }
+      // Ensure address fields are never undefined, but always a full object with string values
+      const safeAddress = {
+        regionPsgc: value.address?.regionPsgc ?? '',
+        provincePsgc: value.address?.provincePsgc ?? '',
+        cityMunicipalityPsgc: value.address?.cityMunicipalityPsgc ?? '',
+        barangayPsgc: value.address?.barangayPsgc ?? '',
+        streetAddress: value.address?.streetAddress ?? '',
+        buildingName: value.address?.buildingName ?? '',
+        unitNumber: value.address?.unitNumber ?? '',
+        postalCode: value.address?.postalCode ?? '',
+      };
+      onNext({
+        ...data,
+        ...value,
+        address: safeAddress,
+      });
     });
     return () => subscription.unsubscribe();
-  }, [form.watch, onNext, data]);
+  }, [form, onNext, data]);
 
-  // Load regions on component mount
   React.useEffect(() => {
     const loadRegions = async () => {
       try {
         setIsLoadingRegions(true);
         const regionsData = PSGC_UTILS.getRegions();
         setRegions(regionsData);
-      } catch (error) {
-        console.error('Failed to load regions:', error);
       } finally {
         setIsLoadingRegions(false);
       }
@@ -138,7 +111,6 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
     loadRegions();
   }, []);
 
-  // Load provinces when region changes
   const selectedRegion = form.watch('address.regionPsgc');
   const prevRegionRef = React.useRef<string | undefined>(undefined);
   React.useEffect(() => {
@@ -148,7 +120,6 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
           setIsLoadingProvinces(true);
           const provincesData = PSGC_UTILS.getProvinces(selectedRegion);
           setProvinces(provincesData);
-          // Only reset dependents if region actually changed (not on initial mount)
           if (
             prevRegionRef.current &&
             prevRegionRef.current !== selectedRegion
@@ -160,22 +131,18 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
             setBarangays([]);
           }
           prevRegionRef.current = selectedRegion;
-        } catch (error) {
-          console.error('Failed to load provinces:', error);
         } finally {
           setIsLoadingProvinces(false);
         }
       };
       loadProvinces();
     } else {
-      // When region is cleared, also clear dependents so UI stays consistent
       setProvinces([]);
       setMunicipalities([]);
       setBarangays([]);
     }
   }, [selectedRegion, form]);
 
-  // Load municipalities when province changes
   const selectedProvince = form.watch('address.provincePsgc');
   const prevProvinceRef = React.useRef<string | undefined>(undefined);
   React.useEffect(() => {
@@ -186,7 +153,6 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
           const municipalitiesData =
             PSGC_UTILS.getMunicipalities(selectedProvince);
           setMunicipalities(municipalitiesData);
-          // Only reset if province actually changed
           if (
             prevProvinceRef.current &&
             prevProvinceRef.current !== selectedProvince
@@ -196,21 +162,17 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
             setBarangays([]);
           }
           prevProvinceRef.current = selectedProvince;
-        } catch (error) {
-          console.error('Failed to load municipalities:', error);
         } finally {
           setIsLoadingMunicipalities(false);
         }
       };
       loadMunicipalities();
     } else {
-      // When province is cleared, also clear dependents
       setMunicipalities([]);
       setBarangays([]);
     }
   }, [selectedProvince, form]);
 
-  // Load barangays when municipality changes
   const selectedMunicipality = form.watch('address.cityMunicipalityPsgc');
   const prevMunicipalityRef = React.useRef<string | undefined>(undefined);
   React.useEffect(() => {
@@ -220,7 +182,6 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
           setIsLoadingBarangays(true);
           const barangaysData = PSGC_UTILS.getBarangays(selectedMunicipality);
           setBarangays(barangaysData);
-          // Only reset if municipality actually changed
           if (
             prevMunicipalityRef.current &&
             prevMunicipalityRef.current !== selectedMunicipality
@@ -228,15 +189,12 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
             form.setValue('address.barangayPsgc', '');
           }
           prevMunicipalityRef.current = selectedMunicipality;
-        } catch (error) {
-          console.error('Failed to load barangays:', error);
         } finally {
           setIsLoadingBarangays(false);
         }
       };
       loadBarangays();
     } else {
-      // When municipality is cleared, also clear barangays
       setBarangays([]);
     }
   }, [selectedMunicipality, form]);
@@ -248,19 +206,39 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="w-full max-w-2xl mx-auto">
+      <Card className="w-full max-w-3xl mx-auto">
         <CardHeader>
-          <CardTitle>Contact Details</CardTitle>
-          <CardDescription>
-            Add your business address and contact information. We&apos;l use
-            this for official correspondence.
-          </CardDescription>
+          <CardTitle>Your Business, Your Story</CardTitle>
+          <CardDescription>Tell us the basics to get started.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Address Section */}
+          <div className="space-y-2">
+            <Label htmlFor="businessName">Name of Business *</Label>
+            <Input
+              id="businessName"
+              placeholder="Enter business name"
+              {...form.register('businessName')}
+              className={
+                form.formState.errors.businessName ? 'border-destructive' : ''
+              }
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="taxId">TIN *</Label>
+            <Input
+              id="taxId"
+              placeholder="Enter TIN"
+              {...form.register('taxId')}
+              className={
+                form.formState.errors.taxId ? 'border-destructive' : ''
+              }
+            />
+          </div>
+
+          {/* Address */}
           <div className="space-y-4">
             <h3 className="text-lg font-medium">Business Address</h3>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="region">Region *</Label>
@@ -293,11 +271,6 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
                     ))}
                   </SelectContent>
                 </Select>
-                {form.formState.errors.address?.regionPsgc && (
-                  <p className="text-sm text-destructive">
-                    {form.formState.errors.address.regionPsgc.message}
-                  </p>
-                )}
               </div>
 
               <div className="space-y-2">
@@ -334,11 +307,6 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
                     ))}
                   </SelectContent>
                 </Select>
-                {form.formState.errors.address?.provincePsgc && (
-                  <p className="text-sm text-destructive">
-                    {form.formState.errors.address.provincePsgc.message}
-                  </p>
-                )}
               </div>
 
               <div className="space-y-2">
@@ -365,21 +333,13 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
                     />
                   </SelectTrigger>
                   <SelectContent>
-                    {municipalities.map(municipality => (
-                      <SelectItem
-                        key={municipality.psgcCode}
-                        value={municipality.munCityCode}
-                      >
-                        {municipality.munCityName}
+                    {municipalities.map(m => (
+                      <SelectItem key={m.psgcCode} value={m.munCityCode}>
+                        {m.munCityName}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
-                {form.formState.errors.address?.cityMunicipalityPsgc && (
-                  <p className="text-sm text-destructive">
-                    {form.formState.errors.address.cityMunicipalityPsgc.message}
-                  </p>
-                )}
               </div>
 
               <div className="space-y-2">
@@ -404,106 +364,47 @@ export function ContactDetailsStep({ data, onNext }: ContactDetailsStepProps) {
                     />
                   </SelectTrigger>
                   <SelectContent>
-                    {barangays.map(barangay => (
-                      <SelectItem
-                        key={barangay.psgcCode}
-                        value={barangay.brgyCode}
-                      >
-                        {barangay.brgyName}
+                    {barangays.map(b => (
+                      <SelectItem key={b.psgcCode} value={b.brgyCode}>
+                        {b.brgyName}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
-                {form.formState.errors.address?.barangayPsgc && (
-                  <p className="text-sm text-destructive">
-                    {form.formState.errors.address.barangayPsgc.message}
-                  </p>
-                )}
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="streetAddress">Street Address</Label>
+                <Label htmlFor="streetAddress">Street</Label>
                 <Input
                   id="streetAddress"
-                  placeholder="Enter street address"
+                  placeholder="Street"
                   {...form.register('address.streetAddress')}
                 />
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="buildingName">Building Name</Label>
-                  <Input
-                    id="buildingName"
-                    placeholder="Building or establishment name"
-                    {...form.register('address.buildingName')}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="unitNumber">Unit Number</Label>
-                  <Input
-                    id="unitNumber"
-                    placeholder="Unit, room, or office number"
-                    {...form.register('address.unitNumber')}
-                  />
-                </div>
-              </div>
-
               <div className="space-y-2">
-                <Label htmlFor="postalCode">Postal Code</Label>
+                <Label htmlFor="postalCode">ZIP</Label>
                 <Input
                   id="postalCode"
-                  placeholder="Enter 4-digit postal code"
+                  placeholder="ZIP"
                   {...form.register('address.postalCode')}
                 />
               </div>
             </div>
           </div>
 
-          {/* Contact Information */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Contact Information</h3>
-
-            <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
-              <Input
-                id="phone"
-                placeholder="Enter phone number"
-                {...form.register('phone')}
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Enter email address"
-                {...form.register('email')}
-              />
-              {form.formState.errors.email && (
-                <p className="text-sm text-destructive">
-                  {form.formState.errors.email.message}
-                </p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="website">Website</Label>
-              <Input
-                id="website"
-                placeholder="Enter website URL"
-                {...form.register('website')}
-              />
-              {form.formState.errors.website && (
-                <p className="text-sm text-destructive">
-                  {form.formState.errors.website.message}
-                </p>
-              )}
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="businessEmail">Business Email *</Label>
+            <Input
+              id="businessEmail"
+              type="email"
+              placeholder="business@email.com"
+              {...form.register('businessEmail')}
+              className={
+                form.formState.errors.businessEmail ? 'border-destructive' : ''
+              }
+            />
           </div>
         </CardContent>
       </Card>

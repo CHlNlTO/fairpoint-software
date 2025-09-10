@@ -6,147 +6,59 @@ import {
   listProvinces,
   listRegions,
 } from '@jobuntux/psgc';
-import type {
-  BusinessRegistrationStep,
-  BusinessType,
-  OwnershipType,
-  TaxClassification,
-  WizardStepInfo,
-} from './types';
+import type { BusinessRegistrationStep, WizardStepInfo } from './types';
 
 export const WIZARD_STEPS: WizardStepInfo[] = [
+  { id: 'basic-info', title: 'Basic Info', description: '', isRequired: true },
   {
-    id: 'business-info',
-    title: 'Business Information',
+    id: 'business-categories',
+    title: 'Business Type',
     description: '',
     isRequired: true,
   },
   {
-    id: 'business-type',
-    title: 'Business Structure',
+    id: 'fiscal-year',
+    title: 'Fiscal Year',
+    description: '',
+    isRequired: true,
+  },
+  {
+    id: 'business-structure',
+    title: 'Structure',
     description: '',
     isRequired: true,
   },
   {
     id: 'government-credentials',
-    title: 'Government Credentials',
-    description: '',
+    title: 'Govt. Credentials',
+    description: '(Optional)',
     isRequired: false,
   },
   {
-    id: 'tax-information',
-    title: 'Tax Information',
-    description: '',
-    isRequired: false,
-  },
-  {
-    id: 'contact-details',
-    title: 'Contact Details',
+    id: 'tax-type-information',
+    title: 'Tax Type',
     description: '',
     isRequired: true,
   },
   {
-    id: 'review',
-    title: 'Review',
+    id: 'chart-of-accounts',
+    title: 'Chart of Accounts',
     description: '',
     isRequired: true,
   },
 ];
 
 export const STEP_ORDER: BusinessRegistrationStep[] = [
-  'business-info',
-  'business-type',
+  'basic-info',
+  'business-categories',
+  'fiscal-year',
+  'business-structure',
   'government-credentials',
-  'tax-information',
-  'contact-details',
-  'review',
+  'tax-type-information',
+  'chart-of-accounts',
 ];
 
-export const BUSINESS_TYPE_OPTIONS: Array<{
-  value: BusinessType;
-  label: string;
-  description: string;
-}> = [
-  {
-    value: 'sole-proprietorship',
-    label: 'Sole Proprietorship',
-    description: 'A business owned and run by one individual',
-  },
-  {
-    value: 'partnership',
-    label: 'Partnership',
-    description: 'A business owned by two or more people',
-  },
-  {
-    value: 'llc',
-    label: 'LLC',
-    description: 'Limited Liability Company',
-  },
-  {
-    value: 'corporation',
-    label: 'Corporation',
-    description: 'A separate legal entity owned by shareholders',
-  },
-  {
-    value: 's-corporation',
-    label: 'S-Corporation',
-    description: 'Corporation with special tax status',
-  },
-  {
-    value: 'non-profit',
-    label: 'Non-Profit',
-    description: 'Tax-exempt organization',
-  },
-  {
-    value: 'other',
-    label: 'Other',
-    description: 'Other business structure',
-  },
-];
-
-export const OWNERSHIP_TYPE_OPTIONS: Array<{
-  value: OwnershipType;
-  label: string;
-}> = [
-  {
-    value: 'single-owner',
-    label: 'Single Owner',
-  },
-  {
-    value: 'multi-owner',
-    label: 'Multiple Owners',
-  },
-  {
-    value: 'shareholders',
-    label: 'Shareholders',
-  },
-];
-
-export const TAX_CLASSIFICATION_OPTIONS: Array<{
-  value: TaxClassification;
-  label: string;
-}> = [
-  {
-    value: 'sole-proprietorship',
-    label: 'Sole Proprietorship',
-  },
-  {
-    value: 'partnership',
-    label: 'Partnership',
-  },
-  {
-    value: 's-election',
-    label: 'S-Election',
-  },
-  {
-    value: 'c-corporation',
-    label: 'C-Corporation',
-  },
-  {
-    value: 'non-profit',
-    label: 'Non-Profit',
-  },
-];
+// Deprecated option lists removed. Step-based UIs provide their own choices.
 
 // PSGC Utilities for Philippine Addresses
 export const PSGC_UTILS = {
