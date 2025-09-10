@@ -29,7 +29,7 @@ export default async function ProtectedPage() {
       <div>
         <h2 className="font-bold text-2xl mb-4">Dashboard</h2>
         <p className="text-muted-foreground">
-          🎉 Welcome aboard, [First Name]!
+          Welcome to your Fairpoint dashboard. Here you can manage your tax and accounting needs.
         </p>
       </div>
     </div>

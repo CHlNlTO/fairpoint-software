@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import type { CredentialResponse } from "google-one-tap";
 
@@ -15,9 +14,6 @@ interface GoogleSignInButtonProps {
 
 export function GoogleSignInButton({
   className,
-  variant = "outline",
-  size = "default",
-  children = "Sign in with Google",
 }: GoogleSignInButtonProps) {
   const buttonRef = useRef<HTMLDivElement>(null);
   const supabase = createClient();
@@ -35,6 +31,7 @@ export function GoogleSignInButton({
     return () => {
       document.head.removeChild(script);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const initializeGoogleSignIn = () => {
@@ -83,7 +80,7 @@ export function GoogleSignInButton({
 
       if (data.user) {
         // Redirect to protected page after successful sign-in
-        router.push('/protected');
+        router.push('/dashboard');
       }
     } catch (error) {
       console.error('Error during Google sign-in:', error);

@@ -1,11 +1,23 @@
 import { EnvVarWarning } from "@/components/ui/env-var-warning";
 import { AuthButton } from "@/features/auth/auth-button";
 import { Hero } from "@/features/home/hero";
+import React from 'react';
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import { ThemeSwitch } from "@/components/ui/theme-switch";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
 
-export default function Home() {
+export default async function Home() {
+  // Check if user is authenticated and redirect to dashboard
+  if (hasEnvVars) {
+    const supabase = await createClient();
+    const { data } = await supabase.auth.getClaims();
+    if (data?.claims) {
+      redirect("/dashboard");
+    }
+  }
+
   return (
     <main className="min-h-screen flex flex-col items-center">
       <div className="flex-1 w-full flex flex-col gap-20 items-center">

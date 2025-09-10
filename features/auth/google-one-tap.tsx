@@ -3,7 +3,8 @@
 import Script from 'next/script'
 import { createClient } from '@/lib/supabase/client'
 import type { accounts, CredentialResponse } from 'google-one-tap'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 declare const google: { accounts: accounts }
 
@@ -22,8 +23,13 @@ const generateNonce = async (): Promise<string[]> => {
 const GoogleOneTap = () => {
   const supabase = createClient()
   const router = useRouter()
+  const pathname = usePathname()
+  const [isInitialized, setIsInitialized] = useState(false)
 
   const initializeGoogleOneTap = async () => {
+    // Prevent multiple initializations
+    if (isInitialized) return
+
     console.log('Initializing Google One Tap')
     const [nonce, hashedNonce] = await generateNonce()
     console.log('Nonce: ', nonce, hashedNonce)
@@ -33,12 +39,16 @@ const GoogleOneTap = () => {
     if (error) {
       console.error('Error getting session', error)
     }
+
+    // If user is authenticated, only redirect if they're on a public route
     if (data.session) {
-      router.push('/protected')
+      // Don't redirect if already on a protected route
+      if (pathname === '/' || pathname.startsWith('/auth')) {
+        router.push('/dashboard')
+      }
       return
     }
 
-    /* global google */
     google.accounts.id.initialize({
       client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
       callback: async (response: CredentialResponse) => {
@@ -54,8 +64,8 @@ const GoogleOneTap = () => {
           console.log('Session data: ', data)
           console.log('Successfully logged in with Google One Tap')
 
-          // redirect to protected page
-          router.push('/protected')
+          // redirect to dashboard instead of protected
+          router.push('/dashboard')
         } catch (error) {
           console.error('Error logging in with Google One Tap', error)
         }
@@ -79,11 +89,24 @@ const GoogleOneTap = () => {
         }
       })
     }, 1000)
+
+    setIsInitialized(true)
   }
+
+  // Only initialize on public routes to avoid unnecessary redirects
+  useEffect(() => {
+    if (pathname === '/' || pathname.startsWith('/auth')) {
+      initializeGoogleOneTap()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   // Wrap the async function so onReady gets a sync function (to fix type error)
   const handleScriptReady = () => {
-    initializeGoogleOneTap();
+    // Only initialize if we're on a public route
+    if (pathname === '/' || pathname.startsWith('/auth')) {
+      initializeGoogleOneTap();
+    }
   };
 
   return <Script onReady={handleScriptReady} src="https://accounts.google.com/gsi/client" />
