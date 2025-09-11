@@ -8,10 +8,10 @@ const bodySchema = z.object({
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const registrationId = params.id;
+    const { id: registrationId } = await params;
     const json = await request.json();
     const parsed = bodySchema.safeParse(json);
 
