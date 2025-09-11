@@ -14,10 +14,10 @@ const updateSchema = z.object({
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const registrationId = params.id;
+    const { id: registrationId } = await params;
     const body = await request.json();
     const parsed = updateSchema.safeParse(body);
     if (!parsed.success) {
