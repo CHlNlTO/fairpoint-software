@@ -8,10 +8,7 @@ const createSchema = z.object({
     .string()
     .regex(/^\d{3}-\d{3}-\d{3}-\d{3}$/u, 'Invalid TIN format'),
   business_email: z.string().email(),
-  region_psgc: z.string().regex(/^\d{2}0{8}$/u),
-  province_psgc: z.string().regex(/^\d{5}0{5}$/u),
-  city_municipality_psgc: z.string().regex(/^\d{7}0{3}$/u),
-  barangay_psgc: z.string().regex(/^\d{10}$/u),
+  barangay_psgc: z.string().regex(/^\d{10}$/u, 'Invalid barangay PSGC format'),
   street_address: z.string().max(500).optional().or(z.literal('')),
   building_name: z.string().max(200).optional().or(z.literal('')),
   unit_number: z.string().max(50).optional().or(z.literal('')),
@@ -21,6 +18,7 @@ const createSchema = z.object({
     .optional()
     .or(z.literal('')),
   business_types: z.array(z.string()).min(1),
+  business_structure: z.string().min(1),
   fiscal_year_period_id: z.string().uuid().optional(),
 });
 
@@ -68,15 +66,13 @@ export async function POST(request: Request) {
       business_name: parsed.data.business_name,
       tin_number: parsed.data.tin_number,
       business_email: parsed.data.business_email,
-      region_psgc: parsed.data.region_psgc,
-      province_psgc: parsed.data.province_psgc,
-      city_municipality_psgc: parsed.data.city_municipality_psgc,
       barangay_psgc: parsed.data.barangay_psgc,
       street_address: parsed.data.street_address || null,
       building_name: parsed.data.building_name || null,
       unit_number: parsed.data.unit_number || null,
       postal_code: parsed.data.postal_code || null,
       business_types: parsed.data.business_types,
+      business_structure: parsed.data.business_structure,
       fiscal_year_period_id: fiscalYearPeriodId,
       is_active: true,
     };

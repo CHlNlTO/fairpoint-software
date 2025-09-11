@@ -2,8 +2,9 @@
 
 'use client';
 
-import { Card, CardContent } from '@/components/ui/card';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { toast } from 'sonner';
 
 import { useWizardNavigation } from '@/features/business-registration/hooks/use-wizard-navigation';
 import { WizardNavigation } from './wizard-navigation';
@@ -54,23 +55,23 @@ export function BusinessRegistrationWizard({
   };
 
   const handleNext = async () => {
+    console.log('handleNext called, currentStep:', currentStep);
+
     if (currentStep === 'chart-of-accounts') {
       // Finalize submission on last step
-      try {
-        await submitRegistration();
-      } catch (error) {
-        console.error('Registration submission failed:', error);
-      }
+      console.log('About to call submitRegistration...');
+      await submitRegistration();
+      console.log('submitRegistration completed');
     } else if (currentStep === 'government-credentials') {
       // Best-effort persist government registrations if we already have a registration id
       try {
-        if (data.registrationId && data.governmentCredentials?.length) {
+        if (data.registrationId && data.governmentAgencies?.length) {
           await fetch(
             `/api/business-registrations/${data.registrationId}/government-registrations`,
             {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ credentials: data.governmentCredentials }),
+              body: JSON.stringify({ agencies: data.governmentAgencies }),
             }
           );
         }
@@ -92,6 +93,17 @@ export function BusinessRegistrationWizard({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     goToStep(step as any);
   };
+
+  // Show notifications when submission state changes
+  useEffect(() => {
+    if (submission.error) {
+      toast.error('Registration Error', {
+        description: submission.error,
+        duration: Infinity, // Persist until manually dismissed
+        dismissible: true,
+      });
+    }
+  }, [submission.error]);
 
   const renderCurrentStep = () => {
     const stepProps = {
@@ -130,27 +142,20 @@ export function BusinessRegistrationWizard({
   };
 
   return (
-    <div className={`w-full max-w-4xl mx-auto space-y-6 ${className || ''}`}>
-      {/* Header */}
-      {/* <Card>
-        <CardHeader>
-          <CardTitle>Business Registration</CardTitle>
-          <CardDescription>
-            Complete your business registration to get started with Fairpoint
-            Software.
-          </CardDescription>
-        </CardHeader>
-      </Card> */}
-
+    <div
+      className={`w-full max-w-4xl mx-auto mobile-nav-safe-area ${className || ''}`}
+    >
       {/* Step Indicator */}
-      <WizardStepIndicator
-        currentStep={currentStep}
-        completedSteps={completedSteps}
-        onStepClick={handleStepClick}
-      />
+      <div className="mb-14">
+        <WizardStepIndicator
+          currentStep={currentStep}
+          completedSteps={completedSteps}
+          onStepClick={handleStepClick}
+        />
+      </div>
 
-      {/* Main Content */}
-      <div className="min-h-[400px]">
+      {/* Main Content Container */}
+      <div className="relative min-h-[400px] md:pb-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStep}
@@ -162,25 +167,31 @@ export function BusinessRegistrationWizard({
             {renderCurrentStep()}
           </motion.div>
         </AnimatePresence>
+
+        {/* Desktop Navigation - fixed at bottom */}
+        <div className="hidden md:block fixed bottom-6 left-1/2 transform -translate-x-1/2 w-full max-w-4xl px-4">
+          <WizardNavigation
+            navigation={navigation}
+            onNext={handleNext}
+            onBack={handleBack}
+            onStepClick={handleStepClick}
+            isSubmitting={submission.isSubmitting}
+          />
+        </div>
       </div>
 
-      {/* Navigation */}
-      <WizardNavigation
-        navigation={navigation}
-        onNext={handleNext}
-        onBack={handleBack}
-        onStepClick={handleStepClick}
-        isSubmitting={submission.isSubmitting}
-      />
-
-      {/* Error Display */}
-      {submission.error && (
-        <Card className="border-destructive">
-          <CardContent className="p-4">
-            <p className="text-sm text-destructive">{submission.error}</p>
-          </CardContent>
-        </Card>
-      )}
+      {/* Mobile Navigation - fixed at bottom of screen */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-sm border-t border-border/60 shadow-lg">
+        <div className="px-4 py-3">
+          <WizardNavigation
+            navigation={navigation}
+            onNext={handleNext}
+            onBack={handleBack}
+            onStepClick={handleStepClick}
+            isSubmitting={submission.isSubmitting}
+          />
+        </div>
+      </div>
     </div>
   );
 }

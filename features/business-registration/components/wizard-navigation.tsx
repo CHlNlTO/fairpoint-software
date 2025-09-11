@@ -27,7 +27,7 @@ export function WizardNavigation({
   const isFinalStep = navigation.currentStepIndex === navigation.totalSteps - 1;
   return (
     <div
-      className="w-full px-2 py-3 rounded-xl bg-background/70 border border-border/60 shadow-sm flex items-center justify-between gap-2"
+      className="w-full px-4 py-4 md:px-2 md:py-3 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-between gap-2 md:max-w-4xl mx-auto"
       style={{
         backdropFilter: 'blur(2px)',
       }}
@@ -36,10 +36,10 @@ export function WizardNavigation({
         variant="outline"
         onClick={onBack}
         disabled={!navigation.canGoBack || isSubmitting}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 text-sm md:text-base"
       >
         <ChevronLeft className="h-4 w-4" />
-        Back
+        <span className="hidden sm:inline">Back</span>
       </Button>
 
       <div className="flex items-center gap-2">
@@ -51,16 +51,19 @@ export function WizardNavigation({
       <Button
         onClick={onNext}
         disabled={isSubmitting}
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 text-sm md:text-base"
       >
         {isSubmitting ? (
           <>
             <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-            Processing...
+            <span className="hidden sm:inline">Processing...</span>
           </>
         ) : (
           <>
-            {isFinalStep ? 'Finish' : 'Next'}
+            <span className="hidden sm:inline">
+              {isFinalStep ? 'Finish' : 'Next'}
+            </span>
+            <span className="sm:hidden">{isFinalStep ? '✓' : '→'}</span>
             <ChevronRight className="h-4 w-4" />
           </>
         )}

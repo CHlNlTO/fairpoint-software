@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import { Geist } from 'next/font/google';
-import { ThemeProvider } from 'next-themes';
-import './globals.css';
-import GoogleOneTap from '@/features/auth/google-one-tap';
 import { Providers } from '@/components/providers/providers';
+import GoogleOneTap from '@/features/auth/google-one-tap';
+import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
+import { Geist } from 'next/font/google';
+import './globals.css';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.className} antialiased bg-gradient-to-r from-background to-card`}
+        className={`${geistSans.className} antialiased bg-gradient-to-r from-background to-card min-h-screen`}
       >
         <Providers>
           <ThemeProvider

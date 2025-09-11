@@ -9,24 +9,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import type {
   BusinessRegistrationData,
-  GovernmentCredential,
-  GovernmentRegistrationStatus,
+  GovernmentAgency,
 } from '@/features/business-registration/lib/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useFieldArray, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { governmentCredentialsStepSchema } from '../../lib/schemas';
 
 interface GovernmentCredentialsStepProps {
@@ -36,20 +27,20 @@ interface GovernmentCredentialsStepProps {
 }
 
 interface GovernmentCredentialsFormData {
-  governmentCredentials: GovernmentCredential[];
+  governmentAgencies?: GovernmentAgency[];
 }
 
-const AGENCY_LABELS: Record<string, string> = {
-  BIR: 'BIR',
-  DTI: 'DTI',
-  LGU: 'LGU',
-  SEC: 'SEC',
-  CDA: 'CDA',
-};
+const OPTIONS: { value: GovernmentAgency; label: string; emoji: string }[] = [
+  { value: 'BIR', label: 'BIR', emoji: '📊' },
+  { value: 'DTI', label: 'DTI', emoji: '🏢' },
+  { value: 'LGU', label: 'LGU', emoji: '🏛️' },
+  { value: 'SEC', label: 'SEC', emoji: '⚖️' },
+  { value: 'CDA', label: 'CDA', emoji: '🤝' },
+];
 
 function getSuggestedAgencies(
   businessStructure?: BusinessRegistrationData['businessStructure']
-): string[] {
+): GovernmentAgency[] {
   switch (businessStructure) {
     case 'freelancing':
     case 'sole-proprietorship':
@@ -73,46 +64,38 @@ export function GovernmentCredentialsStep({
     [data.businessStructure]
   );
 
-  const defaultRows: GovernmentCredential[] = React.useMemo(() => {
-    const fromExisting = data.governmentCredentials || [];
-    const existingByAgency = new Map(fromExisting.map(a => [a.agencyCode, a]));
-    return suggestedAgencies.map(
-      code =>
-        existingByAgency.get(code) || {
-          agencyCode: code,
-          status: 'registered',
-        }
-    );
-  }, [data.governmentCredentials, suggestedAgencies]);
-
   const form = useForm<GovernmentCredentialsFormData>({
-    resolver: zodResolver(governmentCredentialsStepSchema as never),
+    resolver: zodResolver(governmentCredentialsStepSchema),
     defaultValues: {
-      governmentCredentials: defaultRows,
+      governmentAgencies: data.governmentAgencies || [],
     },
   });
 
-  const { fields, update } = useFieldArray({
-    control: form.control,
-    name: 'governmentCredentials',
-  });
-
-  // Push updates upward on change
   React.useEffect(() => {
     const subscription = form.watch(value => {
-      // Filter out any undefined entries from governmentCredentials
-      const filteredValue = {
+      // Ensure governmentAgencies is always GovernmentAgency[] (no undefineds)
+      const cleanedValue = {
         ...value,
-        governmentCredentials: Array.isArray(value.governmentCredentials)
-          ? (value.governmentCredentials as GovernmentCredential[]).filter(
-              Boolean
+        governmentAgencies: Array.isArray(value.governmentAgencies)
+          ? value.governmentAgencies.filter(
+              (agency): agency is GovernmentAgency =>
+                typeof agency === 'string' && !!agency
             )
           : [],
       };
-      onNext({ ...data, ...filteredValue });
+      onNext({ ...data, ...cleanedValue });
     });
     return () => subscription.unsubscribe();
   }, [form.watch, onNext, data]);
+
+  const toggle = (value: GovernmentAgency) => {
+    const current = new Set(form.getValues('governmentAgencies') || []);
+    if (current.has(value)) current.delete(value);
+    else current.add(value);
+    form.setValue('governmentAgencies', Array.from(current));
+  };
+
+  const selected = new Set(form.watch('governmentAgencies') || []);
 
   return (
     <motion.div
@@ -123,94 +106,46 @@ export function GovernmentCredentialsStep({
     >
       <Card className="w-full max-w-3xl mx-auto">
         <CardHeader>
-          <CardTitle>Government Credentials</CardTitle>
+          <CardTitle>
+            Which government agencies are you registered with?
+          </CardTitle>
           <CardDescription>
-            Provide registration details for the suggested agencies based on
-            your business structure.
+            Select all agencies where your business is registered. Based on your
+            business structure, we suggest: {suggestedAgencies.join(', ')}.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-8">
-          {fields.map((field, index) => (
-            <div key={field.id} className="space-y-4 p-4 border rounded-md">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label>Agency</Label>
-                  <Input
-                    value={AGENCY_LABELS[field.agencyCode] || field.agencyCode}
-                    readOnly
-                  />
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {OPTIONS.map(opt => (
+              <button
+                key={opt.value}
+                type="button"
+                onClick={() => toggle(opt.value)}
+                className={`rounded-2xl border py-6 px-6 text-lg font-semibold shadow-sm transition-colors text-left ${
+                  selected.has(opt.value)
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'bg-background hover:bg-accent'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl" aria-hidden="true">
+                    {opt.emoji}
+                  </span>
+                  <span>{opt.label}</span>
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor={`status-${index}`}>Status</Label>
-                  <Select
-                    onValueChange={value =>
-                      update(index, {
-                        ...field,
-                        status: value as GovernmentRegistrationStatus,
-                      })
-                    }
-                    defaultValue={(field.status || 'registered') as string}
-                  >
-                    <SelectTrigger id={`status-${index}`}>
-                      <SelectValue placeholder="Select status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {['registered', 'pending', 'expired', 'cancelled'].map(
-                        s => (
-                          <SelectItem key={s} value={s}>
-                            {s[0].toUpperCase() + s.slice(1)}
-                          </SelectItem>
-                        )
-                      )}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor={`regnum-${index}`}>Registration Number</Label>
-                  <Input
-                    id={`regnum-${index}`}
-                    placeholder="Enter registration number"
-                    defaultValue={field.registrationNumber || ''}
-                    onChange={e =>
-                      update(index, {
-                        ...field,
-                        registrationNumber: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor={`regdate-${index}`}>Registration Date</Label>
-                  <Input
-                    id={`regdate-${index}`}
-                    type="date"
-                    defaultValue={field.registrationDate || ''}
-                    onChange={e =>
-                      update(index, {
-                        ...field,
-                        registrationDate: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor={`expdate-${index}`}>Expiry Date</Label>
-                  <Input
-                    id={`expdate-${index}`}
-                    type="date"
-                    defaultValue={field.expiryDate || ''}
-                    onChange={e =>
-                      update(index, { ...field, expiryDate: e.target.value })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
+              </button>
+            ))}
+          </div>
+          {form.formState.errors.governmentAgencies && (
+            <p className="text-sm text-destructive">
+              {form.formState.errors.governmentAgencies.message as string}
+            </p>
+          )}
+          <div className="pt-2">
+            <Label className="text-xs text-muted-foreground">
+              Select all agencies where your business is registered
+            </Label>
+          </div>
         </CardContent>
       </Card>
     </motion.div>

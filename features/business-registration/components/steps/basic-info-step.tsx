@@ -2,13 +2,6 @@
 
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
@@ -206,208 +199,202 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="w-full max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle>Your Business, Your Story</CardTitle>
-          <CardDescription>Tell us the basics to get started.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="businessName">Name of Business *</Label>
-            <Input
-              id="businessName"
-              placeholder="Enter business name"
-              {...form.register('businessName')}
-              className={
-                form.formState.errors.businessName ? 'border-destructive' : ''
-              }
-            />
-          </div>
+      <div className="w-full max-w-3xl mx-auto space-y-6">
+        <div className="w-full flex flex-col gap-2 justify-center items-center">
+          <h2 className="text-5xl font-bold">Your Business, Your Story</h2>
+          <p className="text-muted-foreground">
+            Tell us the basics to get started.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="businessName">Name of Business *</Label>
+          <Input
+            id="businessName"
+            placeholder="Enter business name"
+            {...form.register('businessName')}
+            className={`bg-white ${form.formState.errors.businessName ? 'border-destructive' : ''}`}
+          />
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="taxId">TIN *</Label>
-            <Input
-              id="taxId"
-              placeholder="Enter TIN"
-              {...form.register('taxId')}
-              className={
-                form.formState.errors.taxId ? 'border-destructive' : ''
-              }
-            />
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="taxId">TIN *</Label>
+          <Input
+            id="taxId"
+            placeholder="Enter TIN"
+            {...form.register('taxId')}
+            className={`bg-white ${form.formState.errors.taxId ? 'border-destructive' : ''}`}
+          />
+        </div>
 
-          {/* Address */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Business Address</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="region">Region *</Label>
-                <Select
-                  onValueChange={value =>
-                    form.setValue(
-                      'address.regionPsgc',
-                      PSGC_UTILS.formatRegionCode(value)
-                    )
-                  }
-                  value={PSGC_UTILS.extractRegionCode(
-                    form.watch('address.regionPsgc') || ''
-                  )}
-                  disabled={isLoadingRegions}
-                >
-                  <SelectTrigger>
-                    <SelectValue
-                      placeholder={
-                        isLoadingRegions
-                          ? 'Loading regions...'
-                          : 'Select region'
-                      }
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {regions.map(region => (
-                      <SelectItem key={region.psgcCode} value={region.regCode}>
-                        {region.regionName}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="province">Province *</Label>
-                <Select
-                  onValueChange={value =>
-                    form.setValue(
-                      'address.provincePsgc',
-                      PSGC_UTILS.formatProvinceCode(value)
-                    )
-                  }
-                  value={PSGC_UTILS.extractProvinceCode(
-                    form.watch('address.provincePsgc') || ''
-                  )}
-                  disabled={!selectedRegion || isLoadingProvinces}
-                >
-                  <SelectTrigger>
-                    <SelectValue
-                      placeholder={
-                        isLoadingProvinces
-                          ? 'Loading provinces...'
-                          : 'Select province'
-                      }
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {provinces.map(province => (
-                      <SelectItem
-                        key={province.psgcCode}
-                        value={province.provCode || province.psgcCode}
-                      >
-                        {province.provName}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="municipality">City/Municipality *</Label>
-                <Select
-                  onValueChange={value =>
-                    form.setValue(
-                      'address.cityMunicipalityPsgc',
-                      PSGC_UTILS.formatMunicipalityCode(value)
-                    )
-                  }
-                  value={PSGC_UTILS.extractMunicipalityCode(
-                    form.watch('address.cityMunicipalityPsgc') || ''
-                  )}
-                  disabled={!selectedProvince || isLoadingMunicipalities}
-                >
-                  <SelectTrigger>
-                    <SelectValue
-                      placeholder={
-                        isLoadingMunicipalities
-                          ? 'Loading municipalities...'
-                          : 'Select city/municipality'
-                      }
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {municipalities.map(m => (
-                      <SelectItem key={m.psgcCode} value={m.munCityCode}>
-                        {m.munCityName}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="barangay">Barangay *</Label>
-                <Select
-                  onValueChange={value =>
-                    form.setValue(
-                      'address.barangayPsgc',
-                      PSGC_UTILS.formatBarangayCode(value)
-                    )
-                  }
-                  value={form.watch('address.barangayPsgc') || ''}
-                  disabled={!selectedMunicipality || isLoadingBarangays}
-                >
-                  <SelectTrigger>
-                    <SelectValue
-                      placeholder={
-                        isLoadingBarangays
-                          ? 'Loading barangays...'
-                          : 'Select barangay'
-                      }
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {barangays.map(b => (
-                      <SelectItem key={b.psgcCode} value={b.brgyCode}>
-                        {b.brgyName}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+        {/* Address */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Business Address</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="region">Region *</Label>
+              <Select
+                onValueChange={value =>
+                  form.setValue(
+                    'address.regionPsgc',
+                    PSGC_UTILS.formatRegionCode(value)
+                  )
+                }
+                value={PSGC_UTILS.extractRegionCode(
+                  form.watch('address.regionPsgc') || ''
+                )}
+                disabled={isLoadingRegions}
+              >
+                <SelectTrigger className="bg-white">
+                  <SelectValue
+                    placeholder={
+                      isLoadingRegions ? 'Loading regions...' : 'Select region'
+                    }
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {regions.map(region => (
+                    <SelectItem key={region.psgcCode} value={region.regCode}>
+                      {region.regionName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="streetAddress">Street</Label>
-                <Input
-                  id="streetAddress"
-                  placeholder="Street"
-                  {...form.register('address.streetAddress')}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="postalCode">ZIP</Label>
-                <Input
-                  id="postalCode"
-                  placeholder="ZIP"
-                  {...form.register('address.postalCode')}
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="province">Province *</Label>
+              <Select
+                onValueChange={value =>
+                  form.setValue(
+                    'address.provincePsgc',
+                    PSGC_UTILS.formatProvinceCode(value)
+                  )
+                }
+                value={PSGC_UTILS.extractProvinceCode(
+                  form.watch('address.provincePsgc') || ''
+                )}
+                disabled={!selectedRegion || isLoadingProvinces}
+              >
+                <SelectTrigger className="bg-white">
+                  <SelectValue
+                    placeholder={
+                      isLoadingProvinces
+                        ? 'Loading provinces...'
+                        : 'Select province'
+                    }
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {provinces.map(province => (
+                    <SelectItem
+                      key={province.psgcCode}
+                      value={province.provCode || province.psgcCode}
+                    >
+                      {province.provName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="municipality">City/Municipality *</Label>
+              <Select
+                onValueChange={value =>
+                  form.setValue(
+                    'address.cityMunicipalityPsgc',
+                    PSGC_UTILS.formatMunicipalityCode(value)
+                  )
+                }
+                value={PSGC_UTILS.extractMunicipalityCode(
+                  form.watch('address.cityMunicipalityPsgc') || ''
+                )}
+                disabled={!selectedProvince || isLoadingMunicipalities}
+              >
+                <SelectTrigger className="bg-white">
+                  <SelectValue
+                    placeholder={
+                      isLoadingMunicipalities
+                        ? 'Loading municipalities...'
+                        : 'Select city/municipality'
+                    }
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {municipalities.map(m => (
+                    <SelectItem key={m.psgcCode} value={m.munCityCode}>
+                      {m.munCityName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="barangay">Barangay *</Label>
+              <Select
+                onValueChange={value =>
+                  form.setValue(
+                    'address.barangayPsgc',
+                    PSGC_UTILS.formatBarangayCode(value)
+                  )
+                }
+                value={form.watch('address.barangayPsgc') || ''}
+                disabled={!selectedMunicipality || isLoadingBarangays}
+              >
+                <SelectTrigger className="bg-white">
+                  <SelectValue
+                    placeholder={
+                      isLoadingBarangays
+                        ? 'Loading barangays...'
+                        : 'Select barangay'
+                    }
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {barangays.map(b => (
+                    <SelectItem key={b.psgcCode} value={b.brgyCode}>
+                      {b.brgyName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="businessEmail">Business Email *</Label>
-            <Input
-              id="businessEmail"
-              type="email"
-              placeholder="business@email.com"
-              {...form.register('businessEmail')}
-              className={
-                form.formState.errors.businessEmail ? 'border-destructive' : ''
-              }
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="streetAddress">Street</Label>
+              <Input
+                id="streetAddress"
+                placeholder="Street"
+                {...form.register('address.streetAddress')}
+                className={`bg-white ${form.formState.errors.address?.streetAddress ? 'border-destructive' : ''}`}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="postalCode">ZIP</Label>
+              <Input
+                id="postalCode"
+                placeholder="ZIP"
+                {...form.register('address.postalCode')}
+                className={`bg-white ${form.formState.errors.address?.postalCode ? 'border-destructive' : ''}`}
+              />
+            </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="businessEmail">Business Email *</Label>
+          <Input
+            id="businessEmail"
+            type="email"
+            placeholder="business@email.com"
+            {...form.register('businessEmail')}
+            className={`bg-white ${form.formState.errors.businessEmail ? 'border-destructive' : ''}`}
+          />
+        </div>
+      </div>
     </motion.div>
   );
 }

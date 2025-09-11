@@ -88,19 +88,24 @@ export function useBusinessRegistration(
 
   const validateStep = useCallback(
     async (step: BusinessRegistrationStep): Promise<boolean> => {
+      console.log('validateStep called for:', step);
+      console.log('Current data:', data);
       setIsValidating(true);
       setErrors({});
 
       try {
         const schema = stepSchemas[step];
         if (!schema) {
+          console.log('No schema found for step:', step);
           setIsValidating(false);
           return true;
         }
 
         const result = schema.safeParse(data);
+        console.log('Validation result:', result);
 
         if (!result.success) {
+          console.log('Validation failed with errors:', result.error.issues);
           const fieldErrors: Record<string, string[]> = {};
 
           result.error.issues.forEach(issue => {
@@ -116,6 +121,7 @@ export function useBusinessRegistration(
           return false;
         }
 
+        console.log('Validation passed');
         setIsValidating(false);
         return true;
       } catch (error) {
@@ -149,15 +155,19 @@ export function useBusinessRegistration(
   }, []);
 
   const submitRegistration = useCallback(async (): Promise<void> => {
+    console.log('submitRegistration called');
     setIsSubmitting(true);
     setSubmissionError(undefined);
     loader.showRegistration();
 
     try {
       // Final validation against last step in the flow
+      console.log('Validating chart-of-accounts step...');
       const isValid = await validateStep('chart-of-accounts');
+      console.log('Validation result:', isValid);
 
       if (!isValid) {
+        console.log('Validation failed, stopping submission');
         setIsSubmitting(false);
         loader.hide();
         return;
@@ -198,17 +208,14 @@ export function useBusinessRegistration(
             tin_number: formatTin(data.taxId),
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             business_email: (data as any).businessEmail,
-            region_psgc: normalizePsgc(data.address?.regionPsgc),
-            province_psgc: normalizePsgc(data.address?.provincePsgc),
-            city_municipality_psgc: normalizePsgc(
-              data.address?.cityMunicipalityPsgc
-            ),
             barangay_psgc: normalizePsgc(data.address?.barangayPsgc),
             street_address: data.address?.streetAddress || '',
             building_name: data.address?.buildingName || '',
             unit_number: data.address?.unitNumber || '',
             postal_code: data.address?.postalCode || '',
             business_types: (data.businessCategories || []) as string[],
+            business_structure: data.businessStructure,
+            fiscal_year_period_id: data.fiscalYearPeriodId,
           }),
         });
         if (!res.ok) throw new Error('Failed to create registration');
@@ -251,13 +258,13 @@ export function useBusinessRegistration(
       }
 
       // 3) Best-effort persist government registrations
-      if (registrationId && (data.governmentCredentials?.length || 0) > 0) {
+      if (registrationId && (data.governmentAgencies?.length || 0) > 0) {
         await fetch(
           `/api/business-registrations/${registrationId}/government-registrations`,
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ credentials: data.governmentCredentials }),
+            body: JSON.stringify({ agencies: data.governmentAgencies }),
           }
         );
       }

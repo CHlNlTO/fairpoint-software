@@ -22,7 +22,7 @@ export default function BusinessRegistrationPage() {
   };
 
   return (
-    <div className="container mx-auto py-8 px-4">
+    <div className="py-8 px-4">
       <BusinessRegistrationWizard
         onComplete={handleComplete}
         onCancel={handleCancel}

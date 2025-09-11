@@ -120,3 +120,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Mobile navigation spacing utility */
+@layer utilities {
+  .mobile-nav-safe-area {
+    padding-bottom: 7rem; /* 112px - enough space for fixed navigation */
+  }
+
+  @media (min-width: 768px) {
+    .mobile-nav-safe-area {
+      padding-bottom: 0; /* Remove on desktop */
+    }
+  }
+}

@@ -98,31 +98,18 @@ export const chartOfAccountsStepSchema = z
   );
 
 // Government Credentials (Step 5)
-const isoDate = z
-  .string()
-  .regex(/^\d{4}-\d{2}-\d{2}$/u, 'Invalid date format (use YYYY-MM-DD)');
-
-export const governmentCredentialSchema = z.object({
-  agencyCode: z.enum(['BIR', 'DTI', 'LGU', 'SEC', 'CDA']),
-  registrationNumber: z.string().max(100).optional().or(z.literal('')),
-  registrationDate: isoDate.optional().or(z.literal('')),
-  expiryDate: isoDate.optional().or(z.literal('')),
-  status: z.enum(['registered', 'pending', 'expired', 'cancelled']).optional(),
+export const governmentCredentialsStepSchema = z.object({
+  governmentAgencies: z
+    .array(z.enum(['BIR', 'DTI', 'LGU', 'SEC', 'CDA']))
+    .optional(),
 });
-
-const governmentCredentialsBase = z.object({
-  governmentCredentials: z.array(governmentCredentialSchema).optional(),
-});
-
-export const governmentCredentialsStepSchema =
-  governmentCredentialsBase.optional();
 
 export const businessRegistrationSchema = z.object({
   ...basicInfoStepSchema.shape,
   ...businessCategoriesStepSchema.shape,
   ...fiscalYearStepSchema.shape,
   ...businessStructureStepSchema.shape,
-  ...governmentCredentialsBase.shape,
+  ...governmentCredentialsStepSchema.shape,
   ...taxTypeInformationSchema.shape,
   ...chartOfAccountsStepSchema.shape,
 });

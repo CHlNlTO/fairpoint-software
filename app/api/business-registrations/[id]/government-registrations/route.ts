@@ -2,21 +2,8 @@ import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
-const isoDate = z
-  .string()
-  .regex(/^\d{4}-\d{2}-\d{2}$/u, 'Invalid date format (use YYYY-MM-DD)');
-
-const credentialSchema = z.object({
-  agencyCode: z.enum(['BIR', 'DTI', 'LGU', 'SEC', 'CDA']),
-  registrationNumber: z.string().max(100).optional().or(z.literal('')),
-  registrationDate: isoDate.optional().or(z.literal('')),
-  expiryDate: isoDate.optional().or(z.literal('')),
-  status: z.enum(['registered', 'pending', 'expired', 'cancelled']).optional(),
-  notes: z.string().max(1000).optional().or(z.literal('')),
-});
-
 const bodySchema = z.object({
-  credentials: z.array(credentialSchema),
+  agencies: z.array(z.enum(['BIR', 'DTI', 'LGU', 'SEC', 'CDA'])),
 });
 
 export async function POST(
@@ -62,14 +49,27 @@ export async function POST(
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
+    // First, deactivate all existing government registrations for this business
+    const { error: deactivateErr } = await supabase
+      .from('business_government_registrations')
+      .update({ is_active: false })
+      .eq('business_registration_id', registrationId);
+
+    if (deactivateErr) {
+      return NextResponse.json(
+        { error: deactivateErr.message },
+        { status: 500 }
+      );
+    }
+
     const results: Array<{ agencyCode: string; id: string }> = [];
 
-    for (const cred of parsed.data.credentials) {
+    for (const agencyCode of parsed.data.agencies) {
       // Resolve agency id by code
       const { data: agency, error: agencyErr } = await supabase
         .from('government_agencies')
         .select('id, code')
-        .eq('code', cred.agencyCode)
+        .eq('code', agencyCode)
         .eq('is_active', true)
         .single();
 
@@ -77,24 +77,13 @@ export async function POST(
         continue; // skip unknown agency
       }
 
-      // Check existing
+      // Check existing record
       const { data: existing, error: existingErr } = await supabase
         .from('business_government_registrations')
         .select('id')
         .eq('business_registration_id', registrationId)
         .eq('government_agency_id', agency.id)
         .maybeSingle();
-
-      const payload = {
-        business_registration_id: registrationId,
-        government_agency_id: agency.id,
-        registration_number: cred.registrationNumber || null,
-        registration_date: cred.registrationDate || null,
-        expiry_date: cred.expiryDate || null,
-        status: cred.status || 'registered',
-        notes: cred.notes || null,
-        is_active: true,
-      } as const;
 
       if (existingErr) {
         return NextResponse.json(
@@ -103,7 +92,19 @@ export async function POST(
         );
       }
 
+      const payload = {
+        business_registration_id: registrationId,
+        government_agency_id: agency.id,
+        registration_number: null,
+        registration_date: null,
+        expiry_date: null,
+        status: 'registered',
+        notes: null,
+        is_active: true,
+      } as const;
+
       if (existing) {
+        // Update existing record to be active
         const { error: updErr } = await supabase
           .from('business_government_registrations')
           .update(payload)
@@ -111,8 +112,9 @@ export async function POST(
         if (updErr) {
           return NextResponse.json({ error: updErr.message }, { status: 500 });
         }
-        results.push({ agencyCode: cred.agencyCode, id: existing.id });
+        results.push({ agencyCode, id: existing.id });
       } else {
+        // Insert new record
         const { data: inserted, error: insErr } = await supabase
           .from('business_government_registrations')
           .insert(payload)
@@ -124,7 +126,7 @@ export async function POST(
             { status: 500 }
           );
         }
-        results.push({ agencyCode: cred.agencyCode, id: inserted.id });
+        results.push({ agencyCode, id: inserted.id });
       }
     }
 

@@ -31,9 +31,7 @@ CREATE TABLE public.business_registrations (
   -- Additional Tax Information (Multiple choices stored as array)
   additional_taxes text[] NOT NULL DEFAULT '{}',
 
-  -- Address Information (using locations table + custom fields)
-  province_psgc text NOT NULL,
-  city_municipality_psgc text NOT NULL,
+  -- Address Information (using PSGC codes + custom fields)
   barangay_psgc text NOT NULL,
   street_address text,
   building_name text,
@@ -49,9 +47,6 @@ CREATE TABLE public.business_registrations (
   CONSTRAINT business_registrations_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE,
   CONSTRAINT business_registrations_fiscal_year_period_id_fkey FOREIGN KEY (fiscal_year_period_id) REFERENCES public.fiscal_year_periods(id),
   CONSTRAINT business_registrations_income_tax_rate_id_fkey FOREIGN KEY (income_tax_rate_id) REFERENCES public.tax_rates(id),
-  CONSTRAINT business_registrations_province_psgc_fkey FOREIGN KEY (province_psgc) REFERENCES public.locations(psgc),
-  CONSTRAINT business_registrations_city_municipality_psgc_fkey FOREIGN KEY (city_municipality_psgc) REFERENCES public.locations(psgc),
-  CONSTRAINT business_registrations_barangay_psgc_fkey FOREIGN KEY (barangay_psgc) REFERENCES public.locations(psgc),
 
   -- Business constraints
   CONSTRAINT business_registrations_tin_number_format CHECK (tin_number ~ '^\d{3}-\d{3}-\d{3}-\d{3}$'),
@@ -67,7 +62,7 @@ CREATE TABLE public.business_registrations (
 CREATE INDEX idx_business_registrations_user_id ON public.business_registrations (user_id);
 CREATE INDEX idx_business_registrations_tin_number ON public.business_registrations (tin_number);
 CREATE INDEX idx_business_registrations_business_email ON public.business_registrations (business_email);
-CREATE INDEX idx_business_registrations_location ON public.business_registrations (province_psgc, city_municipality_psgc, barangay_psgc);
+CREATE INDEX idx_business_registrations_barangay_psgc ON public.business_registrations (barangay_psgc);
 CREATE INDEX idx_business_registrations_active ON public.business_registrations (is_active);
 
 -- Add comments
@@ -76,6 +71,7 @@ COMMENT ON COLUMN public.business_registrations.tin_number IS 'Tax Identificatio
 COMMENT ON COLUMN public.business_registrations.business_types IS 'Array of business types (services, retail, manufacturing, import_export)';
 COMMENT ON COLUMN public.business_registrations.business_tax_type IS 'Type of business tax: vat, percentage_tax, or exempt';
 COMMENT ON COLUMN public.business_registrations.additional_taxes IS 'Array of additional tax types (withholding_tax, expanded_withholding, tamp)';
-COMMENT ON COLUMN public.business_registrations.street_address IS 'Street address (not included in locations table)';
+COMMENT ON COLUMN public.business_registrations.barangay_psgc IS 'Full 10-digit PSGC code for barangay. Region (2 digits), Province (5 digits), and City/Municipality (7 digits) can be derived from this code.';
+COMMENT ON COLUMN public.business_registrations.street_address IS 'Street address (not included in PSGC data)';
 COMMENT ON COLUMN public.business_registrations.building_name IS 'Building or establishment name';
 COMMENT ON COLUMN public.business_registrations.unit_number IS 'Unit, room, or office number';

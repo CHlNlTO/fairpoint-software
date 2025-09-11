@@ -32,7 +32,7 @@ export interface BusinessRegistrationData {
   businessStructure: BusinessStructure;
 
   // Step 5: Government Credentials (optional)
-  governmentCredentials?: GovernmentCredential[];
+  governmentAgencies?: GovernmentAgency[];
 
   // Step 6: Tax Type Information
   incomeTaxRateId: string; // required
@@ -79,19 +79,7 @@ export interface WizardStepInfo {
   isRequired: boolean;
 }
 
-export type GovernmentRegistrationStatus =
-  | 'registered'
-  | 'pending'
-  | 'expired'
-  | 'cancelled';
-
-export interface GovernmentCredential {
-  agencyCode: string; // e.g., 'BIR' | 'DTI' | 'LGU' | 'SEC' | 'CDA'
-  registrationNumber?: string;
-  registrationDate?: string; // ISO date (yyyy-mm-dd)
-  expiryDate?: string; // ISO date (yyyy-mm-dd)
-  status?: GovernmentRegistrationStatus;
-}
+export type GovernmentAgency = 'BIR' | 'DTI' | 'LGU' | 'SEC' | 'CDA';
 
 export interface WizardNavigationState {
   currentStep: BusinessRegistrationStep;
