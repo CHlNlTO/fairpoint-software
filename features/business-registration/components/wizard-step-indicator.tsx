@@ -137,9 +137,9 @@ export function WizardStepIndicator({
 
       {/* Mobile Step Counter */}
       <div className="md:hidden mt-4 text-center">
-        <p className="text-sm text-muted-foreground">
+        {/* <p className="text-sm text-muted-foreground">
           Step {currentStepIndex + 1} of {WIZARD_STEPS.length}
-        </p>
+        </p> */}
         <p className="text-sm font-medium text-foreground mt-1">
           {WIZARD_STEPS[currentStepIndex]?.title}
         </p>

@@ -3,25 +3,29 @@
 import { z } from 'zod';
 
 export const businessAddressSchema = z.object({
-  regionPsgc: z.string().regex(/^\d{2}0{8}$/, 'Invalid region PSGC format'),
-  provincePsgc: z.string().regex(/^\d{5}0{5}$/, 'Invalid province PSGC format'),
-  cityMunicipalityPsgc: z
-    .string()
-    .regex(/^\d{7}0{3}$/, 'Invalid city/municipality PSGC format'),
-  barangayPsgc: z.string().regex(/^\d{10}$/, 'Invalid barangay PSGC format'),
+  regionPsgc: z.string().min(1, 'Please select a region'),
+  provincePsgc: z.string().min(1, 'Please select a province'),
+  cityMunicipalityPsgc: z.string().min(1, 'Please select a city/municipality'),
+  barangayPsgc: z.string().min(1, 'Please select a barangay'),
   streetAddress: z.string().optional(),
   buildingName: z.string().optional(),
   unitNumber: z.string().optional(),
   postalCode: z
     .string()
-    .regex(/^\d{4}$/, 'Invalid postal code format')
-    .optional(),
+    .optional()
+    .refine(
+      val => !val || val.trim() === '' || /^\d{4}$/.test(val.trim()),
+      'Postal code must be exactly 4 digits'
+    ),
 });
 
 // Step 1: Basic Info
 export const basicInfoStepSchema = z.object({
   businessName: z.string().min(1, 'Business name is required'),
-  taxId: z.string().min(1, 'TIN is required'),
+  taxId: z
+    .string()
+    .min(1, 'TIN is required')
+    .regex(/^\d{9}$/, 'TIN must be exactly 9 digits'),
   businessEmail: z.string().email('Please enter a valid email address'),
   address: z.lazy(() => businessAddressSchema),
 });

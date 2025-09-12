@@ -12,7 +12,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { PSGC_UTILS } from '@/features/business-registration/lib/constants';
-import { basicInfoStepSchema } from '@/features/business-registration/lib/schemas';
 import type {
   BusinessRegistrationData,
   PSGCBarangay,
@@ -20,15 +19,19 @@ import type {
   PSGCProvince,
   PSGCRegion,
 } from '@/features/business-registration/lib/types';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import * as React from 'react';
-import { useForm } from 'react-hook-form';
+import { TINInput } from '../tin-input';
 
 interface BasicInfoStepProps {
   data: Partial<BusinessRegistrationData>;
   onNext: (data: Partial<BusinessRegistrationData>) => void;
   onBack: () => void;
+  validation: {
+    errors: Record<string, string[]>;
+    isValidating: boolean;
+  };
+  clearFieldError: (field: string) => void;
 }
 
 type BasicInfoFormData = Pick<
@@ -36,7 +39,12 @@ type BasicInfoFormData = Pick<
   'businessName' | 'taxId' | 'businessEmail' | 'address'
 >;
 
-export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
+export function BasicInfoStep({
+  data,
+  onNext,
+  validation,
+  clearFieldError,
+}: BasicInfoStepProps) {
   const [regions, setRegions] = React.useState<PSGCRegion[]>([]);
   const [provinces, setProvinces] = React.useState<PSGCProvince[]>([]);
   const [municipalities, setMunicipalities] = React.useState<
@@ -49,47 +57,54 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
     React.useState(false);
   const [isLoadingBarangays, setIsLoadingBarangays] = React.useState(false);
 
-  const form = useForm<BasicInfoFormData>({
-    resolver: zodResolver(basicInfoStepSchema),
-    defaultValues: {
-      businessName: data.businessName || '',
-      taxId: data.taxId || '',
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      businessEmail: (data as any).businessEmail || '',
-      address: {
-        regionPsgc: data.address?.regionPsgc || '',
-        provincePsgc: data.address?.provincePsgc || '',
-        cityMunicipalityPsgc: data.address?.cityMunicipalityPsgc || '',
-        barangayPsgc: data.address?.barangayPsgc || '',
-        streetAddress: data.address?.streetAddress || '',
-        buildingName: data.address?.buildingName || '',
-        unitNumber: data.address?.unitNumber || '',
-        postalCode: data.address?.postalCode || '',
-      },
+  // Simple state management for form data
+  const [formData, setFormData] = React.useState<BasicInfoFormData>({
+    businessName: data.businessName || '',
+    taxId: data.taxId || '',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    businessEmail: (data as any).businessEmail || '',
+    address: {
+      regionPsgc: data.address?.regionPsgc || '',
+      provincePsgc: data.address?.provincePsgc || '',
+      cityMunicipalityPsgc: data.address?.cityMunicipalityPsgc || '',
+      barangayPsgc: data.address?.barangayPsgc || '',
+      streetAddress: data.address?.streetAddress || '',
+      buildingName: data.address?.buildingName || '',
+      unitNumber: data.address?.unitNumber || '',
+      postalCode: data.address?.postalCode || '',
     },
   });
 
+  // Helper function to get field error
+  const getFieldError = (field: string): string | undefined => {
+    const fieldErrors = validation.errors[field];
+    return fieldErrors && fieldErrors.length > 0 ? fieldErrors[0] : undefined;
+  };
+
+  // Helper function to check if field has error
+  const hasFieldError = (field: string): boolean => {
+    return Boolean(
+      validation.errors[field] && validation.errors[field].length > 0
+    );
+  };
+
+  // Update global state whenever form data changes
   React.useEffect(() => {
-    const subscription = form.watch(value => {
-      // Ensure address fields are never undefined, but always a full object with string values
-      const safeAddress = {
-        regionPsgc: value.address?.regionPsgc ?? '',
-        provincePsgc: value.address?.provincePsgc ?? '',
-        cityMunicipalityPsgc: value.address?.cityMunicipalityPsgc ?? '',
-        barangayPsgc: value.address?.barangayPsgc ?? '',
-        streetAddress: value.address?.streetAddress ?? '',
-        buildingName: value.address?.buildingName ?? '',
-        unitNumber: value.address?.unitNumber ?? '',
-        postalCode: value.address?.postalCode ?? '',
-      };
-      onNext({
-        ...data,
-        ...value,
-        address: safeAddress,
-      });
+    const safeAddress = {
+      regionPsgc: formData.address?.regionPsgc || '',
+      provincePsgc: formData.address?.provincePsgc || '',
+      cityMunicipalityPsgc: formData.address?.cityMunicipalityPsgc || '',
+      barangayPsgc: formData.address?.barangayPsgc || '',
+      streetAddress: formData.address?.streetAddress || '',
+      buildingName: formData.address?.buildingName || '',
+      unitNumber: formData.address?.unitNumber || '',
+      postalCode: formData.address?.postalCode || '',
+    };
+    onNext({
+      ...formData,
+      address: safeAddress,
     });
-    return () => subscription.unsubscribe();
-  }, [form, onNext, data]);
+  }, [formData, onNext]);
 
   React.useEffect(() => {
     const loadRegions = async () => {
@@ -104,7 +119,7 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
     loadRegions();
   }, []);
 
-  const selectedRegion = form.watch('address.regionPsgc');
+  const selectedRegion = formData.address?.regionPsgc;
   const prevRegionRef = React.useRef<string | undefined>(undefined);
   React.useEffect(() => {
     if (selectedRegion) {
@@ -117,9 +132,15 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
             prevRegionRef.current &&
             prevRegionRef.current !== selectedRegion
           ) {
-            form.setValue('address.provincePsgc', '');
-            form.setValue('address.cityMunicipalityPsgc', '');
-            form.setValue('address.barangayPsgc', '');
+            setFormData(prev => ({
+              ...prev,
+              address: {
+                ...prev.address,
+                provincePsgc: '',
+                cityMunicipalityPsgc: '',
+                barangayPsgc: '',
+              },
+            }));
             setMunicipalities([]);
             setBarangays([]);
           }
@@ -134,9 +155,9 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
       setMunicipalities([]);
       setBarangays([]);
     }
-  }, [selectedRegion, form]);
+  }, [selectedRegion]);
 
-  const selectedProvince = form.watch('address.provincePsgc');
+  const selectedProvince = formData.address?.provincePsgc;
   const prevProvinceRef = React.useRef<string | undefined>(undefined);
   React.useEffect(() => {
     if (selectedProvince) {
@@ -150,8 +171,14 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
             prevProvinceRef.current &&
             prevProvinceRef.current !== selectedProvince
           ) {
-            form.setValue('address.cityMunicipalityPsgc', '');
-            form.setValue('address.barangayPsgc', '');
+            setFormData(prev => ({
+              ...prev,
+              address: {
+                ...prev.address,
+                cityMunicipalityPsgc: '',
+                barangayPsgc: '',
+              },
+            }));
             setBarangays([]);
           }
           prevProvinceRef.current = selectedProvince;
@@ -164,9 +191,9 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
       setMunicipalities([]);
       setBarangays([]);
     }
-  }, [selectedProvince, form]);
+  }, [selectedProvince]);
 
-  const selectedMunicipality = form.watch('address.cityMunicipalityPsgc');
+  const selectedMunicipality = formData.address?.cityMunicipalityPsgc;
   const prevMunicipalityRef = React.useRef<string | undefined>(undefined);
   React.useEffect(() => {
     if (selectedMunicipality) {
@@ -179,7 +206,13 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
             prevMunicipalityRef.current &&
             prevMunicipalityRef.current !== selectedMunicipality
           ) {
-            form.setValue('address.barangayPsgc', '');
+            setFormData(prev => ({
+              ...prev,
+              address: {
+                ...prev.address,
+                barangayPsgc: '',
+              },
+            }));
           }
           prevMunicipalityRef.current = selectedMunicipality;
         } finally {
@@ -190,7 +223,7 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
     } else {
       setBarangays([]);
     }
-  }, [selectedMunicipality, form]);
+  }, [selectedMunicipality]);
 
   return (
     <motion.div
@@ -201,29 +234,57 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
     >
       <div className="w-full max-w-3xl mx-auto space-y-6">
         <div className="w-full flex flex-col gap-2 justify-center items-center">
-          <h2 className="text-5xl font-bold">Your Business, Your Story</h2>
-          <p className="text-muted-foreground">
-            Tell us the basics to get started.
-          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl">
+            <span>
+              <span className="font-bold">Your</span> Business,
+            </span>
+            <br />
+            <span>
+              <span className="font-bold">Your</span> Story..
+            </span>
+          </h2>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="businessName">Name of Business *</Label>
+          <Label
+            htmlFor="businessName"
+            className="inline-flex items-center gap-0.5"
+          >
+            Name of Business
+            <span className="text-destructive text-base leading-none">*</span>
+          </Label>
           <Input
             id="businessName"
             placeholder="Enter business name"
-            {...form.register('businessName')}
-            className={`bg-white ${form.formState.errors.businessName ? 'border-destructive' : ''}`}
+            value={formData.businessName}
+            onChange={e => {
+              setFormData(prev => ({ ...prev, businessName: e.target.value }));
+              clearFieldError('businessName');
+            }}
+            className={`bg-white ${hasFieldError('businessName') ? 'border-destructive' : ''}`}
           />
+          {getFieldError('businessName') && (
+            <p className="text-sm text-destructive">
+              {getFieldError('businessName')}
+            </p>
+          )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="taxId">TIN *</Label>
-          <Input
-            id="taxId"
-            placeholder="Enter TIN"
-            {...form.register('taxId')}
-            className={`bg-white ${form.formState.errors.taxId ? 'border-destructive' : ''}`}
+          <Label htmlFor="taxId" className="inline-flex items-center gap-0.5">
+            TIN <span className="text-destructive">*</span>
+          </Label>
+          <TINInput
+            value={formData.taxId || ''}
+            onChange={value => {
+              setFormData(prev => ({ ...prev, taxId: value }));
+              clearFieldError('taxId');
+            }}
+            error={hasFieldError('taxId')}
+            placeholder="000-000-000"
           />
+          {getFieldError('taxId') && (
+            <p className="text-sm text-destructive">{getFieldError('taxId')}</p>
+          )}
         </div>
 
         {/* Address */}
@@ -231,20 +292,31 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
           <h3 className="text-lg font-medium">Business Address</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="region">Region *</Label>
+              <Label
+                htmlFor="region"
+                className="inline-flex items-center gap-0.5"
+              >
+                Region <span className="text-destructive">*</span>
+              </Label>
               <Select
-                onValueChange={value =>
-                  form.setValue(
-                    'address.regionPsgc',
-                    PSGC_UTILS.formatRegionCode(value)
-                  )
-                }
+                onValueChange={value => {
+                  setFormData(prev => ({
+                    ...prev,
+                    address: {
+                      ...prev.address,
+                      regionPsgc: PSGC_UTILS.formatRegionCode(value),
+                    },
+                  }));
+                  clearFieldError('address.regionPsgc');
+                }}
                 value={PSGC_UTILS.extractRegionCode(
-                  form.watch('address.regionPsgc') || ''
+                  formData.address?.regionPsgc || ''
                 )}
                 disabled={isLoadingRegions}
               >
-                <SelectTrigger className="bg-white">
+                <SelectTrigger
+                  className={`bg-white ${hasFieldError('address.regionPsgc') ? 'border-destructive' : ''}`}
+                >
                   <SelectValue
                     placeholder={
                       isLoadingRegions ? 'Loading regions...' : 'Select region'
@@ -259,23 +331,39 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
                   ))}
                 </SelectContent>
               </Select>
+              {getFieldError('address.regionPsgc') && (
+                <p className="text-sm text-destructive">
+                  {getFieldError('address.regionPsgc')}
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="province">Province *</Label>
+              <Label
+                htmlFor="province"
+                className="inline-flex items-center gap-0.5"
+              >
+                Province <span className="text-destructive">*</span>
+              </Label>
               <Select
-                onValueChange={value =>
-                  form.setValue(
-                    'address.provincePsgc',
-                    PSGC_UTILS.formatProvinceCode(value)
-                  )
-                }
+                onValueChange={value => {
+                  setFormData(prev => ({
+                    ...prev,
+                    address: {
+                      ...prev.address,
+                      provincePsgc: PSGC_UTILS.formatProvinceCode(value),
+                    },
+                  }));
+                  clearFieldError('address.provincePsgc');
+                }}
                 value={PSGC_UTILS.extractProvinceCode(
-                  form.watch('address.provincePsgc') || ''
+                  formData.address?.provincePsgc || ''
                 )}
                 disabled={!selectedRegion || isLoadingProvinces}
               >
-                <SelectTrigger className="bg-white">
+                <SelectTrigger
+                  className={`bg-white ${hasFieldError('address.provincePsgc') ? 'border-destructive' : ''}`}
+                >
                   <SelectValue
                     placeholder={
                       isLoadingProvinces
@@ -295,23 +383,40 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
                   ))}
                 </SelectContent>
               </Select>
+              {getFieldError('address.provincePsgc') && (
+                <p className="text-sm text-destructive">
+                  {getFieldError('address.provincePsgc')}
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="municipality">City/Municipality *</Label>
+              <Label
+                htmlFor="municipality"
+                className="inline-flex items-center gap-0.5"
+              >
+                City/Municipality <span className="text-destructive">*</span>
+              </Label>
               <Select
-                onValueChange={value =>
-                  form.setValue(
-                    'address.cityMunicipalityPsgc',
-                    PSGC_UTILS.formatMunicipalityCode(value)
-                  )
-                }
+                onValueChange={value => {
+                  setFormData(prev => ({
+                    ...prev,
+                    address: {
+                      ...prev.address,
+                      cityMunicipalityPsgc:
+                        PSGC_UTILS.formatMunicipalityCode(value),
+                    },
+                  }));
+                  clearFieldError('address.cityMunicipalityPsgc');
+                }}
                 value={PSGC_UTILS.extractMunicipalityCode(
-                  form.watch('address.cityMunicipalityPsgc') || ''
+                  formData.address?.cityMunicipalityPsgc || ''
                 )}
                 disabled={!selectedProvince || isLoadingMunicipalities}
               >
-                <SelectTrigger className="bg-white">
+                <SelectTrigger
+                  className={`bg-white ${hasFieldError('address.cityMunicipalityPsgc') ? 'border-destructive' : ''}`}
+                >
                   <SelectValue
                     placeholder={
                       isLoadingMunicipalities
@@ -328,21 +433,37 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
                   ))}
                 </SelectContent>
               </Select>
+              {getFieldError('address.cityMunicipalityPsgc') && (
+                <p className="text-sm text-destructive">
+                  {getFieldError('address.cityMunicipalityPsgc')}
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="barangay">Barangay *</Label>
+              <Label
+                htmlFor="barangay"
+                className="inline-flex items-center gap-0.5"
+              >
+                Barangay <span className="text-destructive">*</span>
+              </Label>
               <Select
-                onValueChange={value =>
-                  form.setValue(
-                    'address.barangayPsgc',
-                    PSGC_UTILS.formatBarangayCode(value)
-                  )
-                }
-                value={form.watch('address.barangayPsgc') || ''}
+                onValueChange={value => {
+                  setFormData(prev => ({
+                    ...prev,
+                    address: {
+                      ...prev.address,
+                      barangayPsgc: PSGC_UTILS.formatBarangayCode(value),
+                    },
+                  }));
+                  clearFieldError('address.barangayPsgc');
+                }}
+                value={formData.address?.barangayPsgc || ''}
                 disabled={!selectedMunicipality || isLoadingBarangays}
               >
-                <SelectTrigger className="bg-white">
+                <SelectTrigger
+                  className={`bg-white ${hasFieldError('address.barangayPsgc') ? 'border-destructive' : ''}`}
+                >
                   <SelectValue
                     placeholder={
                       isLoadingBarangays
@@ -359,40 +480,99 @@ export function BasicInfoStep({ data, onNext }: BasicInfoStepProps) {
                   ))}
                 </SelectContent>
               </Select>
+              {getFieldError('address.barangayPsgc') && (
+                <p className="text-sm text-destructive">
+                  {getFieldError('address.barangayPsgc')}
+                </p>
+              )}
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="streetAddress">Street</Label>
+              <Label
+                htmlFor="streetAddress"
+                className="inline-flex items-center gap-0.5"
+              >
+                Street
+              </Label>
               <Input
                 id="streetAddress"
                 placeholder="Street"
-                {...form.register('address.streetAddress')}
-                className={`bg-white ${form.formState.errors.address?.streetAddress ? 'border-destructive' : ''}`}
+                value={formData.address?.streetAddress || ''}
+                onChange={e => {
+                  setFormData(prev => ({
+                    ...prev,
+                    address: {
+                      ...prev.address,
+                      streetAddress: e.target.value,
+                    },
+                  }));
+                  clearFieldError('address.streetAddress');
+                }}
+                className={`bg-white ${hasFieldError('address.streetAddress') ? 'border-destructive' : ''}`}
               />
+              {getFieldError('address.streetAddress') && (
+                <p className="text-sm text-destructive">
+                  {getFieldError('address.streetAddress')}
+                </p>
+              )}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="postalCode">ZIP</Label>
+              <Label
+                htmlFor="postalCode"
+                className="inline-flex items-center gap-0.5"
+              >
+                ZIP
+              </Label>
               <Input
                 id="postalCode"
                 placeholder="ZIP"
-                {...form.register('address.postalCode')}
-                className={`bg-white ${form.formState.errors.address?.postalCode ? 'border-destructive' : ''}`}
+                value={formData.address?.postalCode || ''}
+                onChange={e => {
+                  setFormData(prev => ({
+                    ...prev,
+                    address: {
+                      ...prev.address,
+                      postalCode: e.target.value,
+                    },
+                  }));
+                  clearFieldError('address.postalCode');
+                }}
+                className={`bg-white ${hasFieldError('address.postalCode') ? 'border-destructive' : ''}`}
               />
+              {getFieldError('address.postalCode') && (
+                <p className="text-sm text-destructive">
+                  {getFieldError('address.postalCode')}
+                </p>
+              )}
             </div>
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="businessEmail">Business Email *</Label>
+          <Label
+            htmlFor="businessEmail"
+            className="inline-flex items-center gap-0.5"
+          >
+            Business Email <span className="text-destructive">*</span>
+          </Label>
           <Input
             id="businessEmail"
             type="email"
             placeholder="business@email.com"
-            {...form.register('businessEmail')}
-            className={`bg-white ${form.formState.errors.businessEmail ? 'border-destructive' : ''}`}
+            value={formData.businessEmail || ''}
+            onChange={e => {
+              setFormData(prev => ({ ...prev, businessEmail: e.target.value }));
+              clearFieldError('businessEmail');
+            }}
+            className={`bg-white ${hasFieldError('businessEmail') ? 'border-destructive' : ''}`}
           />
+          {getFieldError('businessEmail') && (
+            <p className="text-sm text-destructive">
+              {getFieldError('businessEmail')}
+            </p>
+          )}
         </div>
       </div>
     </motion.div>

@@ -2,6 +2,7 @@
 
 // Components
 export { BusinessRegistrationWizard } from './components/business-registration-wizard';
+export { TINInput } from './components/tin-input';
 export { WizardNavigation } from './components/wizard-navigation';
 export { WizardStepIndicator } from './components/wizard-step-indicator';
 

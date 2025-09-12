@@ -73,18 +73,18 @@ export function useBusinessRegistration(
       // Persist to draft
       setDraft(prev => ({ ...prev, data: { ...prev.data, ...updates } }));
 
-      // Clear related errors when data is updated
-      const updatedFields = Object.keys(updates);
-      setErrors(prev => {
-        const newErrors = { ...prev };
-        updatedFields.forEach(field => {
-          delete newErrors[field];
-        });
-        return newErrors;
-      });
+      // Don't clear errors automatically - let validation handle this
     },
     []
   );
+
+  const clearFieldError = useCallback((field: string) => {
+    setErrors(prev => {
+      const newErrors = { ...prev };
+      delete newErrors[field];
+      return newErrors;
+    });
+  }, []);
 
   const validateStep = useCallback(
     async (step: BusinessRegistrationStep): Promise<boolean> => {
@@ -313,6 +313,7 @@ export function useBusinessRegistration(
         validateStep,
         submitRegistration,
         clearErrors,
+        clearFieldError,
         reset,
       },
       utils: {
@@ -331,6 +332,7 @@ export function useBusinessRegistration(
       validateStep,
       submitRegistration,
       clearErrors,
+      clearFieldError,
       reset,
       getFieldError,
       hasFieldError,

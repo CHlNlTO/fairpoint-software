@@ -3,7 +3,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { toast } from 'sonner';
 
 import { useWizardNavigation } from '@/features/business-registration/hooks/use-wizard-navigation';
@@ -34,7 +34,8 @@ export function BusinessRegistrationWizard({
 }: BusinessRegistrationWizardProps) {
   const {
     data,
-    actions: { updateData, submitRegistration },
+    actions: { updateData, submitRegistration, validateStep, clearFieldError },
+    validation,
     submission,
   } = useBusinessRegistration({
     onSuccess: onComplete,
@@ -50,12 +51,25 @@ export function BusinessRegistrationWizard({
     actions: { goToStep, nextStep, prevStep },
   } = useWizardNavigation();
 
-  const handleStepComplete = (stepData: Partial<BusinessRegistrationData>) => {
-    updateData(stepData);
-  };
+  const handleStepComplete = React.useCallback(
+    (stepData: Partial<BusinessRegistrationData>) => {
+      updateData(stepData);
+    },
+    [updateData]
+  );
 
-  const handleNext = async () => {
+  const handleNext = React.useCallback(async () => {
     console.log('handleNext called, currentStep:', currentStep);
+
+    // Validate current step before proceeding
+    const isValid = await validateStep(currentStep);
+
+    if (!isValid) {
+      console.log('Validation failed for step:', currentStep);
+      return; // Don't proceed to next step
+    }
+
+    console.log('Validation passed for step:', currentStep);
 
     if (currentStep === 'chart-of-accounts') {
       // Finalize submission on last step
@@ -83,16 +97,26 @@ export function BusinessRegistrationWizard({
     } else {
       nextStep();
     }
-  };
+  }, [
+    currentStep,
+    validateStep,
+    submitRegistration,
+    data.registrationId,
+    data.governmentAgencies,
+    nextStep,
+  ]);
 
-  const handleBack = () => {
+  const handleBack = React.useCallback(() => {
     prevStep();
-  };
+  }, [prevStep]);
 
-  const handleStepClick = (step: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    goToStep(step as any);
-  };
+  const handleStepClick = React.useCallback(
+    (step: string) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      goToStep(step as any);
+    },
+    [goToStep]
+  );
 
   // Show notifications when submission state changes
   useEffect(() => {
@@ -110,6 +134,8 @@ export function BusinessRegistrationWizard({
       data,
       onNext: handleStepComplete,
       onBack: handleBack,
+      validation,
+      clearFieldError,
     };
 
     switch (currentStep) {
@@ -146,7 +172,7 @@ export function BusinessRegistrationWizard({
       className={`w-full max-w-4xl mx-auto mobile-nav-safe-area ${className || ''}`}
     >
       {/* Step Indicator */}
-      <div className="mb-14">
+      <div className="mb-6 md:mb-14">
         <WizardStepIndicator
           currentStep={currentStep}
           completedSteps={completedSteps}
@@ -175,7 +201,7 @@ export function BusinessRegistrationWizard({
             onNext={handleNext}
             onBack={handleBack}
             onStepClick={handleStepClick}
-            isSubmitting={submission.isSubmitting}
+            isSubmitting={submission.isSubmitting || validation.isValidating}
           />
         </div>
       </div>
@@ -188,7 +214,7 @@ export function BusinessRegistrationWizard({
             onNext={handleNext}
             onBack={handleBack}
             onStepClick={handleStepClick}
-            isSubmitting={submission.isSubmitting}
+            isSubmitting={submission.isSubmitting || validation.isValidating}
           />
         </div>
       </div>

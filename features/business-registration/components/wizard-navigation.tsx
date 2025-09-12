@@ -63,8 +63,8 @@ export function WizardNavigation({
             <span className="hidden sm:inline">
               {isFinalStep ? 'Finish' : 'Next'}
             </span>
-            <span className="sm:hidden">{isFinalStep ? '✓' : '→'}</span>
-            <ChevronRight className="h-4 w-4" />
+            {isFinalStep && <span className="sm:hidden">✓</span>}
+            {!isFinalStep && <ChevronRight className="h-4 w-4" />}
           </>
         )}
       </Button>
