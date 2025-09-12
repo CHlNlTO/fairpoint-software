@@ -25,7 +25,7 @@ export const basicInfoStepSchema = z.object({
   taxId: z
     .string()
     .min(1, 'TIN is required')
-    .regex(/^\d{9}$/, 'TIN must be exactly 9 digits'),
+    .regex(/^\d{12}$/, 'TIN must be exactly 12 digits'),
   businessEmail: z.string().email('Please enter a valid email address'),
   address: z.lazy(() => businessAddressSchema),
 });

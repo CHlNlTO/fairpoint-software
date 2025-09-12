@@ -17,7 +17,7 @@ export function TINInput({
   value,
   onChange,
   className,
-  placeholder = '000-000-000',
+  placeholder = '000-000-000-000',
   disabled = false,
   error = false,
 }: TINInputProps) {
@@ -31,13 +31,14 @@ export function TINInput({
     []
   );
 
-  // Split the value into three parts
+  // Split the value into four parts
   const parts = React.useMemo(() => {
     const cleanValue = value.replace(/\D/g, ''); // Remove non-digits
     return [
       cleanValue.slice(0, 3),
       cleanValue.slice(3, 6),
       cleanValue.slice(6, 9),
+      cleanValue.slice(9, 12),
     ];
   }, [value]);
 
@@ -57,7 +58,7 @@ export function TINInput({
     onChange(newValue);
 
     // Auto-focus next field if current field is full
-    if (limitedValue.length === 3 && index < 2) {
+    if (limitedValue.length === 3 && index < 3) {
       inputRefs.current[index + 1]?.focus();
     }
   };
@@ -75,7 +76,7 @@ export function TINInput({
     if (e.key === 'ArrowLeft' && index > 0) {
       inputRefs.current[index - 1]?.focus();
     }
-    if (e.key === 'ArrowRight' && index < 2) {
+    if (e.key === 'ArrowRight' && index < 3) {
       inputRefs.current[index + 1]?.focus();
     }
   };
@@ -83,7 +84,7 @@ export function TINInput({
   const handlePaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
     const pastedData = e.clipboardData.getData('text').replace(/\D/g, '');
-    const limitedPastedData = pastedData.slice(0, 9);
+    const limitedPastedData = pastedData.slice(0, 12);
     onChange(limitedPastedData);
 
     // Focus the appropriate field based on pasted length
@@ -91,8 +92,10 @@ export function TINInput({
       inputRefs.current[0]?.focus();
     } else if (limitedPastedData.length <= 6) {
       inputRefs.current[1]?.focus();
-    } else {
+    } else if (limitedPastedData.length <= 9) {
       inputRefs.current[2]?.focus();
+    } else {
+      inputRefs.current[3]?.focus();
     }
   };
 
@@ -118,7 +121,7 @@ export function TINInput({
             placeholder={placeholder.split('-')[index]}
             maxLength={3}
           />
-          {index < 2 && (
+          {index < 3 && (
             <span className="text-muted-foreground font-mono text-lg">-</span>
           )}
         </React.Fragment>

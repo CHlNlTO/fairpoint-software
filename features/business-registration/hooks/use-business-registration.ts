@@ -197,26 +197,40 @@ export function useBusinessRegistration(
         return digits;
       };
 
+      // UUID regex for validation
+      const uuidRegex =
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
       // 1) Create draft if we don't have an id yet
       let registrationId = (data as BusinessRegistrationData).registrationId;
       if (!registrationId) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const payload: any = {
+          business_name: data.businessName,
+          tin_number: formatTin(data.taxId),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          business_email: (data as any).businessEmail,
+          barangay_psgc: normalizePsgc(data.address?.barangayPsgc),
+          street_address: data.address?.streetAddress || '',
+          building_name: data.address?.buildingName || '',
+          unit_number: data.address?.unitNumber || '',
+          postal_code: data.address?.postalCode || '',
+          business_types: (data.businessCategories || []) as string[],
+          business_structure: data.businessStructure,
+        };
+
+        // Only include fiscal_year_period_id if it's a valid UUID
+        if (
+          data.fiscalYearPeriodId &&
+          uuidRegex.test(String(data.fiscalYearPeriodId))
+        ) {
+          payload.fiscal_year_period_id = data.fiscalYearPeriodId;
+        }
+
         const res = await fetch('/api/business-registrations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            business_name: data.businessName,
-            tin_number: formatTin(data.taxId),
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            business_email: (data as any).businessEmail,
-            barangay_psgc: normalizePsgc(data.address?.barangayPsgc),
-            street_address: data.address?.streetAddress || '',
-            building_name: data.address?.buildingName || '',
-            unit_number: data.address?.unitNumber || '',
-            postal_code: data.address?.postalCode || '',
-            business_types: (data.businessCategories || []) as string[],
-            business_structure: data.businessStructure,
-            fiscal_year_period_id: data.fiscalYearPeriodId,
-          }),
+          body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error('Failed to create registration');
         const json = await res.json();
@@ -227,8 +241,6 @@ export function useBusinessRegistration(
 
       // 2) Update rest of fields
       if (registrationId) {
-        const uuidRegex =
-          /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
         const patchPayload: Record<string, unknown> = {
           business_types: (data.businessCategories || []) as string[],
           business_structure: data.businessStructure,

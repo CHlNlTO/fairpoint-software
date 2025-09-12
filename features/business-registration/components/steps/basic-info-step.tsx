@@ -280,7 +280,7 @@ export function BasicInfoStep({
               clearFieldError('taxId');
             }}
             error={hasFieldError('taxId')}
-            placeholder="000-000-000"
+            placeholder="000-000-000-000"
           />
           {getFieldError('taxId') && (
             <p className="text-sm text-destructive">{getFieldError('taxId')}</p>
