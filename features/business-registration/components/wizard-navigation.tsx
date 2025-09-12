@@ -7,7 +7,9 @@ import type {
   BusinessRegistrationStep,
   WizardNavigationState,
 } from '@/features/business-registration/lib/types';
+import { useFullPageLoader } from '@/hooks/use-full-page-loader';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface WizardNavigationProps {
   navigation: WizardNavigationState;
@@ -24,19 +26,38 @@ export function WizardNavigation({
   onStepClick,
   isSubmitting = false,
 }: WizardNavigationProps) {
+  const router = useRouter();
+  const { showProcessing, hide } = useFullPageLoader();
+  const isFirstStep = navigation.currentStepIndex === 0;
   const isFinalStep = navigation.currentStepIndex === navigation.totalSteps - 1;
+
+  const handleBackClick = () => {
+    if (isFirstStep) {
+      showProcessing('Returning to dashboard...');
+      router.push('/dashboard');
+      // Hide loader after a short delay to ensure navigation completes
+      setTimeout(() => hide(), 1000);
+    } else {
+      onBack();
+    }
+  };
+
   return (
     <div
-      className="w-full px-4 py-4 md:px-2 md:py-3 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-between gap-2 md:max-w-4xl mx-auto"
+      className={`
+        w-full flex items-center justify-between gap-2 px-4 py-4
+        md:px-2 md:py-3 md:rounded-xl md:bg-card md:border md:border-border/60 md:shadow-sm
+        md:max-w-4xl mx-auto
+      `}
       style={{
         backdropFilter: 'blur(2px)',
       }}
     >
       <Button
-        variant="outline"
-        onClick={onBack}
-        disabled={!navigation.canGoBack || isSubmitting}
-        className="flex items-center gap-2 text-sm md:text-base"
+        variant="secondary"
+        onClick={handleBackClick}
+        disabled={isSubmitting}
+        className="flex items-center gap-2 text-sm md:text-base bg-card"
       >
         <ChevronLeft className="h-4 w-4" />
         <span className="hidden sm:inline">Back</span>
