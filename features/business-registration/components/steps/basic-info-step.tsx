@@ -315,12 +315,13 @@ export function BasicInfoStep({
                 disabled={isLoadingRegions}
               >
                 <SelectTrigger
-                  className={`bg-white ${hasFieldError('address.regionPsgc') ? 'border-destructive' : ''}`}
+                  className={`bg-white w-full max-w-full ${hasFieldError('address.regionPsgc') ? 'border-destructive' : ''}`}
                 >
                   <SelectValue
                     placeholder={
                       isLoadingRegions ? 'Loading regions...' : 'Select region'
                     }
+                    className="truncate"
                   />
                 </SelectTrigger>
                 <SelectContent>
@@ -362,7 +363,7 @@ export function BasicInfoStep({
                 disabled={!selectedRegion || isLoadingProvinces}
               >
                 <SelectTrigger
-                  className={`bg-white ${hasFieldError('address.provincePsgc') ? 'border-destructive' : ''}`}
+                  className={`bg-white w-full max-w-full ${hasFieldError('address.provincePsgc') ? 'border-destructive' : ''}`}
                 >
                   <SelectValue
                     placeholder={
@@ -370,6 +371,7 @@ export function BasicInfoStep({
                         ? 'Loading provinces...'
                         : 'Select province'
                     }
+                    className="truncate"
                   />
                 </SelectTrigger>
                 <SelectContent>
@@ -415,7 +417,7 @@ export function BasicInfoStep({
                 disabled={!selectedProvince || isLoadingMunicipalities}
               >
                 <SelectTrigger
-                  className={`bg-white ${hasFieldError('address.cityMunicipalityPsgc') ? 'border-destructive' : ''}`}
+                  className={`bg-white w-full max-w-full ${hasFieldError('address.cityMunicipalityPsgc') ? 'border-destructive' : ''}`}
                 >
                   <SelectValue
                     placeholder={
@@ -423,6 +425,7 @@ export function BasicInfoStep({
                         ? 'Loading municipalities...'
                         : 'Select city/municipality'
                     }
+                    className="truncate"
                   />
                 </SelectTrigger>
                 <SelectContent>
@@ -462,7 +465,7 @@ export function BasicInfoStep({
                 disabled={!selectedMunicipality || isLoadingBarangays}
               >
                 <SelectTrigger
-                  className={`bg-white ${hasFieldError('address.barangayPsgc') ? 'border-destructive' : ''}`}
+                  className={`bg-white w-full max-w-full ${hasFieldError('address.barangayPsgc') ? 'border-destructive' : ''}`}
                 >
                   <SelectValue
                     placeholder={
@@ -470,6 +473,7 @@ export function BasicInfoStep({
                         ? 'Loading barangays...'
                         : 'Select barangay'
                     }
+                    className="truncate"
                   />
                 </SelectTrigger>
                 <SelectContent>
