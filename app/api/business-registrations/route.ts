@@ -22,6 +22,119 @@ const createSchema = z.object({
   fiscal_year_period_id: z.string().uuid().optional(),
 });
 
+export async function GET() {
+  try {
+    const supabase = await createClient();
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Fetch businesses
+    const { data: businesses, error } = await supabase
+      .from('business_registrations')
+      .select(
+        `
+        id,
+        business_name,
+        business_email,
+        tin_number,
+        business_types,
+        business_structure,
+        is_active,
+        created_at,
+        updated_at,
+        barangay_psgc,
+        street_address,
+        building_name,
+        unit_number,
+        postal_code,
+        business_tax_type,
+        business_tax_exempt,
+        fiscal_year_period_id
+      `
+      )
+      .eq('user_id', user.id)
+      .eq('is_active', true)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      return NextResponse.json(
+        { error: error.message || 'Failed to fetch businesses' },
+        { status: 500 }
+      );
+    }
+
+    // Get unique fiscal year period IDs
+    const fiscalYearIds =
+      businesses
+        ?.map(b => b.fiscal_year_period_id)
+        .filter((id, index, array) => array.indexOf(id) === index) || [];
+
+    // Fetch fiscal year periods in batch
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let fiscalYearPeriods: Record<string, any> = {};
+    if (fiscalYearIds.length > 0) {
+      const { data: periods } = await supabase
+        .from('fiscal_year_periods')
+        .select('id, name, description')
+        .in('id', fiscalYearIds);
+
+      fiscalYearPeriods =
+        periods?.reduce(
+          (acc, period) => {
+            acc[period.id] = period;
+            return acc;
+          },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          {} as Record<string, any>
+        ) || {};
+    }
+
+    // Transform the data to match the expected format
+    const transformedBusinesses =
+      businesses?.map(business => ({
+        id: business.id,
+        name: business.business_name,
+        email: business.business_email,
+        tin: business.tin_number,
+        types: business.business_types,
+        structure: business.business_structure,
+        status: business.is_active ? 'Active' : 'Inactive',
+        createdAt: business.created_at,
+        updatedAt: business.updated_at,
+        address: {
+          barangayPsgc: business.barangay_psgc,
+          streetAddress: business.street_address,
+          buildingName: business.building_name,
+          unitNumber: business.unit_number,
+          postalCode: business.postal_code,
+        },
+        taxInfo: {
+          type: business.business_tax_type,
+          exempt: business.business_tax_exempt,
+        },
+        fiscalYear: {
+          id: business.fiscal_year_period_id || '',
+          name:
+            fiscalYearPeriods[business.fiscal_year_period_id]?.name ||
+            'Unknown Period',
+          description:
+            fiscalYearPeriods[business.fiscal_year_period_id]?.description,
+        },
+      })) || [];
+
+    return NextResponse.json({ businesses: transformedBusinesses });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
