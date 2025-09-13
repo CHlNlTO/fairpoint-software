@@ -15,7 +15,7 @@ CREATE TABLE public.fiscal_year_periods (
   is_active boolean NOT NULL DEFAULT true,
   created_at timestamp with time zone DEFAULT now(),
   updated_at timestamp with time zone DEFAULT now(),
-  
+
   CONSTRAINT fiscal_year_periods_pkey PRIMARY KEY (id),
   CONSTRAINT fiscal_year_periods_start_month_check CHECK (start_month >= 1 AND start_month <= 12),
   CONSTRAINT fiscal_year_periods_start_day_check CHECK (start_day >= 1 AND start_day <= 31),

@@ -40,9 +40,7 @@ export const businessCategoriesStepSchema = z.object({
 // Step 3: Fiscal Year
 export const fiscalYearStepSchema = z
   .object({
-    fiscalYearPeriodId: z
-      .enum(['standard-jan-dec', 'standard-jun-jul', 'custom'])
-      .optional(),
+    fiscalYearPeriodId: z.string().min(1, 'Please select a fiscal year period'),
     fiscalYearCustomStartMonth: z.number().int().min(1).max(12).optional(),
     fiscalYearCustomStartDay: z.number().int().min(1).max(31).optional(),
     fiscalYearCustomEndMonth: z.number().int().min(1).max(12).optional(),
@@ -50,6 +48,7 @@ export const fiscalYearStepSchema = z
   })
   .refine(
     data => {
+      // If custom period is selected, validate custom fields
       if (data.fiscalYearPeriodId === 'custom') {
         return (
           !!data.fiscalYearCustomStartMonth &&
@@ -63,6 +62,52 @@ export const fiscalYearStepSchema = z
     {
       message: 'Please provide complete custom fiscal year dates',
       path: ['fiscalYearPeriodId'],
+    }
+  )
+  .refine(
+    data => {
+      // If custom period is selected, validate BIR-compliant fiscal year rules
+      if (data.fiscalYearPeriodId === 'custom') {
+        const startMonth = data.fiscalYearCustomStartMonth;
+        const startDay = data.fiscalYearCustomStartDay;
+        const endMonth = data.fiscalYearCustomEndMonth;
+        const endDay = data.fiscalYearCustomEndDay;
+
+        // All fields must be present
+        if (!startMonth || !startDay || !endMonth || !endDay) {
+          return false;
+        }
+
+        // BIR Rule 1: Start day must always be 1
+        if (startDay !== 1) {
+          return false;
+        }
+
+        // BIR Rule 2: End day must be the last day of the month
+        const lastDayOfEndMonth = new Date(2024, endMonth, 0).getDate(); // 0 gets last day of previous month
+        if (endDay !== lastDayOfEndMonth) {
+          return false;
+        }
+
+        // BIR Rule 3: Period must be exactly 12 months
+        const monthsDiff = ((endMonth - startMonth + 12) % 12) + 1;
+        if (monthsDiff !== 12) {
+          return false;
+        }
+
+        // BIR Rule 4: End month cannot be December (otherwise it's calendar year)
+        if (endMonth === 12) {
+          return false;
+        }
+
+        return true;
+      }
+      return true;
+    },
+    {
+      message:
+        'Custom fiscal year must follow BIR requirements: start on 1st, end on last day of month, span exactly 12 months, and not end in December',
+      path: ['fiscalYearCustomStartMonth'],
     }
   );
 

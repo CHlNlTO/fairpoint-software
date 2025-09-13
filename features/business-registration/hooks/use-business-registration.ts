@@ -201,6 +201,34 @@ export function useBusinessRegistration(
       const uuidRegex =
         /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
+      // Handle custom fiscal year creation if needed
+      let fiscalYearPeriodId = data.fiscalYearPeriodId;
+      if (data.fiscalYearPeriodId === 'custom') {
+        // Create or find existing custom fiscal year period
+        const customPeriodResponse = await fetch(
+          '/api/fiscal-year-periods/custom',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: `Custom Period (${data.fiscalYearCustomStartMonth}/${data.fiscalYearCustomStartDay} - ${data.fiscalYearCustomEndMonth}/${data.fiscalYearCustomEndDay})`,
+              start_month: data.fiscalYearCustomStartMonth,
+              start_day: data.fiscalYearCustomStartDay,
+              end_month: data.fiscalYearCustomEndMonth,
+              end_day: data.fiscalYearCustomEndDay,
+              description: `Custom fiscal year from ${data.fiscalYearCustomStartMonth}/${data.fiscalYearCustomStartDay} to ${data.fiscalYearCustomEndMonth}/${data.fiscalYearCustomEndDay}`,
+            }),
+          }
+        );
+
+        if (!customPeriodResponse.ok) {
+          throw new Error('Failed to create custom fiscal year period');
+        }
+
+        const customPeriod = await customPeriodResponse.json();
+        fiscalYearPeriodId = customPeriod.id;
+      }
+
       // 1) Create draft if we don't have an id yet
       let registrationId = (data as BusinessRegistrationData).registrationId;
       if (!registrationId) {
@@ -219,12 +247,9 @@ export function useBusinessRegistration(
           business_structure: data.businessStructure,
         };
 
-        // Only include fiscal_year_period_id if it's a valid UUID
-        if (
-          data.fiscalYearPeriodId &&
-          uuidRegex.test(String(data.fiscalYearPeriodId))
-        ) {
-          payload.fiscal_year_period_id = data.fiscalYearPeriodId;
+        // Include fiscal_year_period_id (either hardcoded UUID or custom created UUID)
+        if (fiscalYearPeriodId && uuidRegex.test(String(fiscalYearPeriodId))) {
+          payload.fiscal_year_period_id = fiscalYearPeriodId;
         }
 
         const res = await fetch('/api/business-registrations', {
@@ -249,11 +274,8 @@ export function useBusinessRegistration(
           business_tax_exempt: data.businessTaxExempt || false,
           additional_taxes: data.additionalTaxes || [],
         };
-        if (
-          data.fiscalYearPeriodId &&
-          uuidRegex.test(String(data.fiscalYearPeriodId))
-        ) {
-          patchPayload.fiscal_year_period_id = data.fiscalYearPeriodId;
+        if (fiscalYearPeriodId && uuidRegex.test(String(fiscalYearPeriodId))) {
+          patchPayload.fiscal_year_period_id = fiscalYearPeriodId;
         }
         const updRes = await fetch(
           `/api/business-registrations/${registrationId}`,
