@@ -19,13 +19,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { LogoutButton } from '@/components/ui/logout-button';
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { LogoutButton } from '@/components/ui/logout-button';
 
 export function NavUser({
   user,
@@ -40,7 +40,7 @@ export function NavUser({
 
   return (
     <SidebarMenu>
-      <SidebarMenuItem>
+      <SidebarMenuItem suppressHydrationWarning>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
@@ -63,6 +63,7 @@ export function NavUser({
             side={isMobile ? 'bottom' : 'right'}
             align="end"
             sideOffset={4}
+            suppressHydrationWarning
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">

@@ -50,12 +50,12 @@ export type BusinessCategory =
   | 'services'
   | 'retail'
   | 'manufacturing'
-  | 'import-export';
+  | 'import_export';
 
 // Step 4 structure
 export type BusinessStructure =
   | 'freelancing'
-  | 'sole-proprietorship'
+  | 'sole_proprietorship'
   | 'partnership'
   | 'corporation'
   | 'cooperative';

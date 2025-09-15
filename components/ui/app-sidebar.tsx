@@ -84,8 +84,8 @@ const defaultData: Omit<SidebarData, 'user'> = {
       ],
     },
     {
-      title: 'Business Registration',
-      url: '/business-registration',
+      title: 'Businesses',
+      url: '/businesses',
       icon: Building2,
       items: [
         {

@@ -28,7 +28,7 @@ const OPTIONS: { value: BusinessCategory; label: string; emoji: string }[] = [
   { value: 'services', label: 'Services', emoji: '🧰' },
   { value: 'retail', label: 'Retail', emoji: '🛍️' },
   { value: 'manufacturing', label: 'Manufacturing', emoji: '🏭' },
-  { value: 'import-export', label: 'Import/Export', emoji: '🌎' },
+  { value: 'import_export', label: 'Import/Export', emoji: '🌎' },
 ];
 
 export function BusinessCategoriesStep({

@@ -2,23 +2,12 @@
 
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
 import type {
   BusinessRegistrationData,
   GovernmentAgency,
 } from '@/features/business-registration/lib/types';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { governmentCredentialsStepSchema } from '../../lib/schemas';
 
 interface GovernmentCredentialsStepProps {
   data: Partial<BusinessRegistrationData>;
@@ -27,7 +16,7 @@ interface GovernmentCredentialsStepProps {
 }
 
 interface GovernmentCredentialsFormData {
-  governmentAgencies?: GovernmentAgency[];
+  governmentAgencies: GovernmentAgency[];
 }
 
 const OPTIONS: { value: GovernmentAgency; label: string; emoji: string }[] = [
@@ -38,12 +27,12 @@ const OPTIONS: { value: GovernmentAgency; label: string; emoji: string }[] = [
   { value: 'CDA', label: 'CDA', emoji: '🤝' },
 ];
 
-function getSuggestedAgencies(
+function getFilteredAgencies(
   businessStructure?: BusinessRegistrationData['businessStructure']
 ): GovernmentAgency[] {
   switch (businessStructure) {
     case 'freelancing':
-    case 'sole-proprietorship':
+    case 'sole_proprietorship':
       return ['BIR', 'DTI', 'LGU'];
     case 'partnership':
     case 'corporation':
@@ -51,7 +40,8 @@ function getSuggestedAgencies(
     case 'cooperative':
       return ['BIR', 'CDA'];
     default:
-      return ['BIR', 'DTI', 'LGU'];
+      // Show all agencies if no business structure is selected
+      return ['BIR', 'DTI', 'LGU', 'SEC', 'CDA'];
   }
 }
 
@@ -59,43 +49,33 @@ export function GovernmentCredentialsStep({
   data,
   onNext,
 }: GovernmentCredentialsStepProps) {
-  const suggestedAgencies = React.useMemo(
-    () => getSuggestedAgencies(data.businessStructure),
+  const filteredAgencies = React.useMemo(
+    () => getFilteredAgencies(data.businessStructure),
     [data.businessStructure]
   );
 
-  const form = useForm<GovernmentCredentialsFormData>({
-    resolver: zodResolver(governmentCredentialsStepSchema),
-    defaultValues: {
-      governmentAgencies: data.governmentAgencies || [],
-    },
-  });
+  // Simple state management for form data (matching business-categories-step pattern)
+  const [formData, setFormData] = React.useState<GovernmentCredentialsFormData>(
+    {
+      governmentAgencies: (data.governmentAgencies as GovernmentAgency[]) || [],
+    }
+  );
 
+  // Update global state whenever form data changes
   React.useEffect(() => {
-    const subscription = form.watch(value => {
-      // Ensure governmentAgencies is always GovernmentAgency[] (no undefineds)
-      const cleanedValue = {
-        ...value,
-        governmentAgencies: Array.isArray(value.governmentAgencies)
-          ? value.governmentAgencies.filter(
-              (agency): agency is GovernmentAgency =>
-                typeof agency === 'string' && !!agency
-            )
-          : [],
-      };
-      onNext({ ...data, ...cleanedValue });
-    });
-    return () => subscription.unsubscribe();
-  }, [form.watch, onNext, data]);
+    onNext({ ...data, ...formData });
+  }, [formData, onNext]);
 
   const toggle = (value: GovernmentAgency) => {
-    const current = new Set(form.getValues('governmentAgencies') || []);
+    const current = new Set(formData.governmentAgencies);
     if (current.has(value)) current.delete(value);
     else current.add(value);
-    form.setValue('governmentAgencies', Array.from(current));
+
+    const newAgencies = Array.from(current);
+    setFormData(prev => ({ ...prev, governmentAgencies: newAgencies }));
   };
 
-  const selected = new Set(form.watch('governmentAgencies') || []);
+  const selected = new Set(formData.governmentAgencies);
 
   return (
     <motion.div
@@ -104,19 +84,17 @@ export function GovernmentCredentialsStep({
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="w-full max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle>
-            Which government agencies are you registered with?
-          </CardTitle>
-          <CardDescription>
-            Select all agencies where your business is registered. Based on your
-            business structure, we suggest: {suggestedAgencies.join(', ')}.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {OPTIONS.map(opt => (
+      <div className="w-full max-w-3xl mx-auto space-y-6">
+        <div className="text-center space-y-2">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl">
+            <span className="font-bold">Which government agencies</span> <br />{' '}
+            are you registered with?
+          </h2>
+          <p className="text-muted-foreground">Select all that applies.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {OPTIONS.filter(opt => filteredAgencies.includes(opt.value)).map(
+            opt => (
               <button
                 key={opt.value}
                 type="button"
@@ -124,7 +102,7 @@ export function GovernmentCredentialsStep({
                 className={`rounded-2xl border py-6 px-6 text-lg font-semibold shadow-sm transition-colors text-left ${
                   selected.has(opt.value)
                     ? 'bg-primary text-primary-foreground border-primary'
-                    : 'bg-background hover:bg-accent'
+                    : 'bg-card hover:bg-background'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -134,20 +112,10 @@ export function GovernmentCredentialsStep({
                   <span>{opt.label}</span>
                 </div>
               </button>
-            ))}
-          </div>
-          {form.formState.errors.governmentAgencies && (
-            <p className="text-sm text-destructive">
-              {form.formState.errors.governmentAgencies.message as string}
-            </p>
+            )
           )}
-          <div className="pt-2">
-            <Label className="text-xs text-muted-foreground">
-              Select all agencies where your business is registered
-            </Label>
-          </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </motion.div>
   );
 }

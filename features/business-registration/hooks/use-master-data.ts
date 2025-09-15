@@ -35,6 +35,31 @@ export interface TaxRate {
   is_active: boolean;
 }
 
+export interface ChartOfAccountsTemplate {
+  id: string;
+  template_name: string;
+  business_structure: string;
+  business_types: string[];
+  description?: string | null;
+  is_default: boolean;
+  is_active: boolean;
+}
+
+export interface ChartOfAccountsTemplateItem {
+  id: string;
+  template_id: string;
+  account_code: string;
+  account_name: string;
+  account_type: string;
+  account_category: string;
+  parent_account_id?: string | null;
+  is_active: boolean;
+  is_contra_account: boolean;
+  normal_balance: string;
+  sort_order: number;
+  level: number;
+}
+
 async function fetchFiscalYearPeriods() {
   const supabase = createClient();
   const { data, error } = await supabase
@@ -103,5 +128,71 @@ export function useTaxRates(taxType?: string, businessStructure?: string) {
     queryKey: ['taxRates', taxType || 'all', businessStructure || 'all'],
     queryFn: () => fetchTaxRates({ taxType, businessStructure }),
     staleTime: 5 * 60 * 1000,
+  });
+}
+
+async function fetchChartOfAccountsTemplates(params?: {
+  businessStructure?: string;
+  businessTypes?: string[];
+}) {
+  const supabase = createClient();
+  let query = supabase
+    .from('chart_of_accounts_templates')
+    .select('*')
+    .eq('is_active', true);
+
+  if (params?.businessStructure) {
+    query = query.eq('business_structure', params.businessStructure);
+  }
+
+  if (params?.businessTypes && params.businessTypes.length > 0) {
+    query = query.overlaps('business_types', params.businessTypes);
+  }
+
+  const { data, error } = await query.order('template_name', {
+    ascending: true,
+  });
+  if (error) throw error;
+  return (data || []) as ChartOfAccountsTemplate[];
+}
+
+async function fetchChartOfAccountsTemplateItems(templateId: string) {
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from('chart_of_accounts_template_items')
+    .select('*')
+    .eq('template_id', templateId)
+    .eq('is_active', true)
+    .order('sort_order', { ascending: true });
+
+  if (error) throw error;
+  return (data || []) as ChartOfAccountsTemplateItem[];
+}
+
+export function useChartOfAccountsTemplates(
+  businessStructure?: string,
+  businessTypes?: string[]
+) {
+  return useQuery({
+    queryKey: [
+      'chartOfAccountsTemplates',
+      businessStructure || 'all',
+      businessTypes || [],
+    ],
+    queryFn: () =>
+      fetchChartOfAccountsTemplates({ businessStructure, businessTypes }),
+    staleTime: 5 * 60 * 1000,
+  });
+}
+
+export function useChartOfAccountsTemplateItems(templateId?: string) {
+  return useQuery({
+    queryKey: ['chartOfAccountsTemplateItems', templateId || 'none'],
+    queryFn: () =>
+      templateId
+        ? fetchChartOfAccountsTemplateItems(templateId)
+        : Promise.resolve([]),
+    staleTime: 5 * 60 * 1000,
+    enabled: !!templateId,
   });
 }

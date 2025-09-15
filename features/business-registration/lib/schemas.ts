@@ -33,7 +33,7 @@ export const basicInfoStepSchema = z.object({
 // Step 2: Business Categories
 export const businessCategoriesStepSchema = z.object({
   businessCategories: z
-    .array(z.enum(['services', 'retail', 'manufacturing', 'import-export']))
+    .array(z.enum(['services', 'retail', 'manufacturing', 'import_export']))
     .min(1, 'Select at least one business type'),
 });
 
@@ -115,7 +115,7 @@ export const fiscalYearStepSchema = z
 export const businessStructureStepSchema = z.object({
   businessStructure: z.enum([
     'freelancing',
-    'sole-proprietorship',
+    'sole_proprietorship',
     'partnership',
     'corporation',
     'cooperative',

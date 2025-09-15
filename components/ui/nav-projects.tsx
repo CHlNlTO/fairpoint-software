@@ -41,7 +41,7 @@ export function NavProjects({
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map(item => (
-          <SidebarMenuItem key={item.name}>
+          <SidebarMenuItem key={item.name} suppressHydrationWarning>
             <SidebarMenuButton asChild>
               <a href={item.url}>
                 <item.icon />
@@ -59,6 +59,7 @@ export function NavProjects({
                 className="w-48"
                 side={isMobile ? 'bottom' : 'right'}
                 align={isMobile ? 'end' : 'start'}
+                suppressHydrationWarning
               >
                 <DropdownMenuItem>
                   <Folder className="text-muted-foreground" />
