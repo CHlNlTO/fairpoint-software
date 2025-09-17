@@ -1,5 +1,6 @@
 import { Providers } from '@/components/providers/providers';
 import GoogleOneTap from '@/features/auth/google-one-tap';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Geist } from 'next/font/google';
@@ -40,6 +41,7 @@ export default function RootLayout({
           >
             {children}
             <GoogleOneTap />
+            <Analytics />
           </ThemeProvider>
         </Providers>
       </body>
