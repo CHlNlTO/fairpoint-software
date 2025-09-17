@@ -1,5 +1,6 @@
-import * as React from 'react';
-import { type LucideIcon } from 'lucide-react';
+// features/sidebar/components/nav-secondary.tsx
+
+'use client';
 
 import {
   SidebarGroup,
@@ -7,18 +8,20 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@/components/ui/sidebar';
+} from '@/components/animate-ui/components/radix/sidebar';
+import * as React from 'react';
+import { memo } from 'react';
+import type { SecondaryNavItem } from '../lib/types';
 
-export function NavSecondary({
+interface NavSecondaryProps
+  extends React.ComponentPropsWithoutRef<typeof SidebarGroup> {
+  items: SecondaryNavItem[];
+}
+
+const NavSecondary = memo(function NavSecondary({
   items,
   ...props
-}: {
-  items: {
-    title: string;
-    url: string;
-    icon: LucideIcon;
-  }[];
-} & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
+}: NavSecondaryProps) {
   return (
     <SidebarGroup {...props}>
       <SidebarGroupContent>
@@ -37,4 +40,6 @@ export function NavSecondary({
       </SidebarGroupContent>
     </SidebarGroup>
   );
-}
+});
+
+export { NavSecondary };

@@ -1,4 +1,5 @@
 import { Providers } from '@/components/providers/providers';
+import { Toaster } from '@/components/ui/sonner';
 import GoogleOneTap from '@/features/auth/google-one-tap';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
@@ -42,6 +43,7 @@ export default function RootLayout({
             {children}
             <GoogleOneTap />
             <Analytics />
+            <Toaster />
           </ThemeProvider>
         </Providers>
       </body>
