@@ -26,6 +26,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
+import { ThemeSwitch } from '@/components/ui/theme-switch';
 
 export function NavUser({
   user,
@@ -82,6 +83,10 @@ export function NavUser({
               <DropdownMenuItem>
                 <Sparkles />
                 Upgrade to Pro
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center justify-between">
+                <span>Theme</span>
+                <ThemeSwitch />
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
