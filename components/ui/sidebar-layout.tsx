@@ -77,11 +77,26 @@ function DynamicBreadcrumb({ pathname }: { pathname: string }) {
 interface SidebarLayoutProps {
   user: User;
   children: React.ReactNode;
+  noSidebarRoutes: string[];
 }
 
-export function SidebarLayout({ user, children }: SidebarLayoutProps) {
+export function SidebarLayout({
+  user,
+  children,
+  noSidebarRoutes,
+}: SidebarLayoutProps) {
   const pathname = usePathname();
   const { sidebarOpen, setSidebarOpen } = useSidebarState();
+
+  // Check if current route should have sidebar (client-side)
+  const shouldShowSidebar = !noSidebarRoutes.some(route =>
+    pathname.startsWith(route)
+  );
+
+  // If no sidebar needed, return simple layout
+  if (!shouldShowSidebar) {
+    return <>{children}</>;
+  }
 
   return (
     <SidebarProvider defaultOpen={sidebarOpen} onOpenChange={setSidebarOpen}>
