@@ -136,7 +136,7 @@ function Highlight<T extends React.ElementType = 'div'>({
   React.useImperativeHandle(ref, () => localRef.current as HTMLDivElement);
 
   const [activeValue, setActiveValue] = React.useState<string | null>(
-    value ?? defaultValue ?? null,
+    value ?? defaultValue ?? null
   );
   const [boundsState, setBoundsState] = React.useState<Bounds | null>(null);
   const [activeClassNameState, setActiveClassNameState] =
@@ -144,10 +144,10 @@ function Highlight<T extends React.ElementType = 'div'>({
 
   const safeSetActiveValue = React.useCallback(
     (id: string | null) => {
-      setActiveValue((prev) => (prev === id ? prev : id));
+      setActiveValue(prev => (prev === id ? prev : id));
       if (id !== activeValue) onValueChange?.(id);
     },
-    [activeValue, onValueChange],
+    [activeValue, onValueChange]
   );
 
   const safeSetBounds = React.useCallback(
@@ -170,7 +170,7 @@ function Highlight<T extends React.ElementType = 'div'>({
         height: bounds.height + (boundsOffset.height ?? 0),
       };
 
-      setBoundsState((prev) => {
+      setBoundsState(prev => {
         if (
           prev &&
           prev.top === newBounds.top &&
@@ -183,11 +183,11 @@ function Highlight<T extends React.ElementType = 'div'>({
         return newBounds;
       });
     },
-    [props],
+    [props]
   );
 
   const clearBounds = React.useCallback(() => {
-    setBoundsState((prev) => (prev === null ? prev : null));
+    setBoundsState(prev => (prev === null ? prev : null));
   }, []);
 
   React.useEffect(() => {
@@ -205,7 +205,7 @@ function Highlight<T extends React.ElementType = 'div'>({
     const onScroll = () => {
       if (!activeValue) return;
       const activeEl = container.querySelector<HTMLElement>(
-        `[data-value="${activeValue}"][data-highlight="true"]`,
+        `[data-value="${activeValue}"][data-highlight="true"]`
       );
       if (activeEl) safeSetBounds(activeEl.getBoundingClientRect());
     };
@@ -272,7 +272,7 @@ function Highlight<T extends React.ElementType = 'div'>({
       style,
       className,
       activeClassNameState,
-    ],
+    ]
   );
 
   return (
@@ -306,7 +306,7 @@ function Highlight<T extends React.ElementType = 'div'>({
                 <HighlightItem key={index} className={props?.itemsClassName}>
                   {child}
                 </HighlightItem>
-              )),
+              ))
             )
         : children}
     </HighlightContext.Provider>
@@ -315,7 +315,7 @@ function Highlight<T extends React.ElementType = 'div'>({
 
 function getNonOverridingDataAttributes(
   element: React.ReactElement,
-  dataAttributes: Record<string, unknown>,
+  dataAttributes: Record<string, unknown>
 ): Record<string, unknown> {
   return Object.keys(dataAttributes).reduce<Record<string, unknown>>(
     (acc, key) => {
@@ -324,7 +324,7 @@ function getNonOverridingDataAttributes(
       }
       return acc;
     },
-    {},
+    {}
   );
 }
 
@@ -533,7 +533,7 @@ function HighlightItem<T extends React.ElementType>({
           >
             {children}
           </Component>
-        </>,
+        </>
       );
     }
 

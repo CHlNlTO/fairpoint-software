@@ -39,7 +39,7 @@ const AppSidebar = memo(function AppSidebar({
   );
 
   return (
-    <Sidebar variant="inset" side="left" animateOnHover={false} {...props}>
+    <Sidebar variant="inset" side="left" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

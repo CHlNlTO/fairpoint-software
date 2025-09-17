@@ -57,7 +57,10 @@ export const NAV_SECONDARY: SecondaryNavItem[] = [
 ];
 
 // Routes that should not show sidebar
-export const NO_SIDEBAR_ROUTES = ['/welcome'] as const;
+export const NO_SIDEBAR_ROUTES = [
+  '/welcome',
+  '/business-registration',
+] as const;
 
 // Breadcrumb configuration per route
 export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {

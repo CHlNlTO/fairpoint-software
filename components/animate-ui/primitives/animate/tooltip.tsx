@@ -21,7 +21,10 @@ import {
 } from '@floating-ui/react';
 
 import { getStrictContext } from '@/lib/get-strict-context';
-import { Slot, type WithAsChild } from '@/components/animate-ui/primitives/animate/slot';
+import {
+  Slot,
+  type WithAsChild,
+} from '@/components/animate-ui/primitives/animate/slot';
 
 type Side = 'top' | 'bottom' | 'left' | 'right';
 type Align = 'start' | 'center' | 'end';
@@ -64,7 +67,7 @@ type TooltipContextType = {
 };
 
 const [LocalTooltipProvider, useTooltip] = getStrictContext<TooltipContextType>(
-  'LocalTooltipProvider',
+  'LocalTooltipProvider'
 );
 
 type TooltipPosition = { x: number; y: number };
@@ -116,10 +119,10 @@ function TooltipProvider({
       const delay = now - lastCloseTimeRef.current < closeDelay ? 0 : openDelay;
       timeoutRef.current = window.setTimeout(
         () => setCurrentTooltip(data),
-        delay,
+        delay
       );
     },
-    [openDelay, closeDelay, currentTooltip],
+    [openDelay, closeDelay, currentTooltip]
   );
 
   const hideTooltip = React.useCallback(() => {
@@ -265,7 +268,7 @@ function TooltipOverlay() {
     if (currentTooltip) {
       setRendered({ data: currentTooltip, open: true });
     } else {
-      setRendered((p) => (p.data ? { ...p, open: false } : p));
+      setRendered(p => (p.data ? { ...p, open: false } : p));
     }
   }, [currentTooltip]);
 
@@ -393,12 +396,12 @@ type TooltipContentProps = WithAsChild<HTMLMotionProps<'div'>>;
 
 function shallowEqualWithoutChildren(
   a?: HTMLMotionProps<'div'>,
-  b?: HTMLMotionProps<'div'>,
+  b?: HTMLMotionProps<'div'>
 ) {
   if (a === b) return true;
   if (!a || !b) return false;
-  const keysA = Object.keys(a).filter((k) => k !== 'children');
-  const keysB = Object.keys(b).filter((k) => k !== 'children');
+  const keysA = Object.keys(a).filter(k => k !== 'children');
+  const keysB = Object.keys(b).filter(k => k !== 'children');
   if (keysA.length !== keysB.length) return false;
   for (const k of keysA) {
     // @ts-expect-error index
@@ -410,7 +413,7 @@ function shallowEqualWithoutChildren(
 function TooltipContent({ asChild = false, ...props }: TooltipContentProps) {
   const { setProps, setAsChild } = useTooltip();
   const lastPropsRef = React.useRef<HTMLMotionProps<'div'> | undefined>(
-    undefined,
+    undefined
   );
 
   React.useEffect(() => {
@@ -498,7 +501,7 @@ function TooltipTrigger({
         });
       }
     },
-    [onPointerDown, currentTooltip?.id, id, hideImmediate],
+    [onPointerDown, currentTooltip?.id, id, hideImmediate]
   );
 
   const handleMouseEnter = React.useCallback(
@@ -506,7 +509,7 @@ function TooltipTrigger({
       onMouseEnter?.(e);
       handleOpen();
     },
-    [handleOpen, onMouseEnter],
+    [handleOpen, onMouseEnter]
   );
 
   const handleMouseLeave = React.useCallback(
@@ -514,7 +517,7 @@ function TooltipTrigger({
       onMouseLeave?.(e);
       hideTooltip();
     },
-    [hideTooltip, onMouseLeave],
+    [hideTooltip, onMouseLeave]
   );
 
   const handleFocus = React.useCallback(
@@ -523,7 +526,7 @@ function TooltipTrigger({
       if (suppressNextFocusRef.current) return;
       handleOpen();
     },
-    [handleOpen, onFocus],
+    [handleOpen, onFocus]
   );
 
   const handleBlur = React.useCallback(
@@ -531,7 +534,7 @@ function TooltipTrigger({
       onBlur?.(e);
       hideTooltip();
     },
-    [hideTooltip, onBlur],
+    [hideTooltip, onBlur]
   );
 
   const Component = asChild ? Slot : motion.div;
