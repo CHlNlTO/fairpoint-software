@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Separator } from '@/components/ui/separator';
 import type { User } from '@/lib/types';
+import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 import {
@@ -55,11 +56,29 @@ const DynamicBreadcrumb = memo(function DynamicBreadcrumb({
               {index > 0 && <BreadcrumbSeparator className="hidden md:block" />}
               <BreadcrumbItem className="hidden md:block">
                 {isLast ? (
-                  <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                  // Animate the last breadcrumb label when it changes
+                  <motion.span
+                    key={crumb.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                  </motion.span>
                 ) : (
-                  <BreadcrumbLink href={crumb.href || '#'}>
-                    {crumb.label}
-                  </BreadcrumbLink>
+                  <motion.span
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    style={{ display: 'inline-block' }}
+                  >
+                    <BreadcrumbLink href={crumb.href || '#'}>
+                      {crumb.label}
+                    </BreadcrumbLink>
+                  </motion.span>
                 )}
               </BreadcrumbItem>
             </React.Fragment>
