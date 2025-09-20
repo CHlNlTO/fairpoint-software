@@ -9,6 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/animate-ui/components/radix/sidebar';
+import Link from 'next/link';
 import * as React from 'react';
 import { memo } from 'react';
 import type { SecondaryNavItem } from '../lib/types';
@@ -29,10 +30,10 @@ const NavSecondary = memo(function NavSecondary({
           {items.map(item => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild size="sm">
-                <a href={item.url}>
+                <Link href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

@@ -13,6 +13,7 @@ import {
 } from '@/components/animate-ui/components/radix/sidebar';
 import type { User } from '@/lib/types';
 import { Command } from 'lucide-react';
+import Link from 'next/link';
 import * as React from 'react';
 import { memo } from 'react';
 import { NAV_MAIN, NAV_SECONDARY } from '../lib/constants';
@@ -44,10 +45,10 @@ const AppSidebar = memo(function AppSidebar({
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <a href="/dashboard">
+              <Link href="/dashboard">
                 <Command />
                 <span>Fairpoint</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

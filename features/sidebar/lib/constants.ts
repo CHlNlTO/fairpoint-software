@@ -68,6 +68,14 @@ export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {
     { label: 'Dashboard', href: '/dashboard' },
     { label: 'Overview' },
   ],
+  '/dashboard/tasks': [
+    { label: 'Dashboard', href: '/dashboard' },
+    { label: 'Tasks' },
+  ],
+  '/dashboard/reminders': [
+    { label: 'Dashboard', href: '/dashboard' },
+    { label: 'Reminders' },
+  ],
   '/businesses': [
     { label: 'Dashboard', href: '/dashboard' },
     { label: 'Businesses' },
