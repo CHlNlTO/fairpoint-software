@@ -257,7 +257,7 @@ export default function BusinessesPage() {
       </div>
 
       {businesses.length === 0 ? (
-        <Card>
+        <Card className="bg-gradient-to-t from-foreground/5 to-card dark:bg-card shadow-xs border">
           <CardContent className="flex flex-col items-center justify-center py-12">
             <Building2 className="h-12 w-12 text-muted-foreground mb-4" />
             <h3 className="text-lg font-semibold mb-2">
@@ -280,7 +280,7 @@ export default function BusinessesPage() {
           {businesses.map(business => (
             <Card
               key={business.id}
-              className="hover:shadow-lg transition-shadow"
+              className="bg-gradient-to-t from-foreground/5 to-card dark:bg-card shadow-xs border hover:shadow-lg transition-shadow"
             >
               <CardHeader>
                 <div className="flex items-start justify-between">

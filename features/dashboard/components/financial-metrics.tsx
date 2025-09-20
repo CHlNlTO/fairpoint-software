@@ -20,14 +20,14 @@ interface FinancialMetricsProps {
 
 export function FinancialMetrics({ metrics }: FinancialMetricsProps) {
   return (
-    <div className="*:data-[slot=card]:from-foreground/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-4">
+    <div className="*:data-[slot=card]:from-foreground/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4">
       {metrics.map((metric, index) => (
         <Card key={index} className="@container/card">
           <CardHeader>
-            <CardDescription className="flex justify-between gap-2">
-              {metric.title}{' '}
+            <CardDescription className="flex items-center justify-between gap-2">
+              <span>{metric.title}</span>
               {metric.badge && (
-                <Badge className="text-white text-xs px-2 py-1 mr-2">
+                <Badge className="text-white text-xs px-2 py-1">
                   {metric.badge}
                 </Badge>
               )}
@@ -52,7 +52,7 @@ export function FinancialMetrics({ metrics }: FinancialMetricsProps) {
             <CardFooter className="flex-col items-start gap-1.5 text-sm">
               <div className="line-clamp-1 flex gap-2 font-medium">
                 {metric.trend === 'up' ? 'Trending up' : 'Trending down'} this
-                period
+                period{' '}
                 {metric.trend === 'up' ? (
                   <TrendingUp className="size-4" />
                 ) : (
