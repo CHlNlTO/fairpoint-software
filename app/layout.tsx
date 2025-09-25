@@ -1,8 +1,9 @@
 import { Providers } from '@/components/providers/providers';
+import ServiceWorkerInit from '@/components/pwa/service-worker-init';
 import { Toaster } from '@/components/ui/sonner';
 import GoogleOneTap from '@/features/auth/google-one-tap';
 import { Analytics } from '@vercel/analytics/next';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Geist } from 'next/font/google';
 import './globals.css';
@@ -13,7 +14,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: 'Fairpoint Software - Tax & Accounting Platform',
+  title: 'Fairpoint - Tax & Accounting Platform',
   description: 'Professional tax and accounting software for modern businesses',
 };
 
@@ -22,6 +23,14 @@ const geistSans = Geist({
   display: 'swap',
   subsets: ['latin'],
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: 'cover',
+  userScalable: false,
+};
 
 export default function RootLayout({
   children,
@@ -32,12 +41,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="apple-icon-180.png" />
+        <link rel="apple-touch-icon" href="/apple-icon-180.png" />
+        <meta name="application-name" content="Fairpoint" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Fairpoint" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="theme-color" content="#000000" />
       </head>
       <body
         className={`${geistSans.className} antialiased bg-gradient-to-r from-background to-card`}
@@ -51,6 +64,7 @@ export default function RootLayout({
           >
             {children}
             <GoogleOneTap />
+            <ServiceWorkerInit />
             <Analytics />
             <Toaster />
           </ThemeProvider>
