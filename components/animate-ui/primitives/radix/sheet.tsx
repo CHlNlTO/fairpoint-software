@@ -1,11 +1,11 @@
 'use client';
 
-import * as React from 'react';
-import { Dialog as SheetPrimitive } from 'radix-ui';
 import { AnimatePresence, motion, type HTMLMotionProps } from 'motion/react';
+import { Dialog as SheetPrimitive } from 'radix-ui';
+import * as React from 'react';
 
-import { getStrictContext } from '@/lib/get-strict-context';
 import { useControlledState } from '@/hooks/use-controlled-state';
+import { getStrictContext } from '@/lib/get-strict-context';
 
 type SheetContextType = {
   isOpen: boolean;
@@ -94,7 +94,7 @@ type SheetContentProps = React.ComponentProps<typeof SheetPrimitive.Content> &
   };
 
 function SheetContent({
-  side = 'right',
+  side = 'left',
   transition = { type: 'spring', stiffness: 150, damping: 22 },
   style,
   ...props
@@ -165,25 +165,25 @@ function SheetDescription(props: SheetDescriptionProps) {
 }
 
 export {
-  useSheet,
   Sheet,
-  SheetPortal,
-  SheetOverlay,
-  SheetTrigger,
   SheetClose,
   SheetContent,
-  SheetHeader,
-  SheetFooter,
-  SheetTitle,
   SheetDescription,
-  type SheetProps,
-  type SheetPortalProps,
-  type SheetOverlayProps,
-  type SheetTriggerProps,
+  SheetFooter,
+  SheetHeader,
+  SheetOverlay,
+  SheetPortal,
+  SheetTitle,
+  SheetTrigger,
+  useSheet,
   type SheetCloseProps,
   type SheetContentProps,
-  type SheetHeaderProps,
-  type SheetFooterProps,
-  type SheetTitleProps,
   type SheetDescriptionProps,
+  type SheetFooterProps,
+  type SheetHeaderProps,
+  type SheetOverlayProps,
+  type SheetPortalProps,
+  type SheetProps,
+  type SheetTitleProps,
+  type SheetTriggerProps,
 };

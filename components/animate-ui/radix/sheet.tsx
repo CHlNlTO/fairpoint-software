@@ -1,15 +1,15 @@
 'use client';
 
-import * as React from 'react';
-import { Dialog as SheetPrimitive } from 'radix-ui';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { X } from 'lucide-react';
 import {
   AnimatePresence,
   motion,
   type HTMLMotionProps,
   type Transition,
 } from 'motion/react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { X } from 'lucide-react';
+import { Dialog as SheetPrimitive } from 'radix-ui';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -101,7 +101,7 @@ const sheetVariants = cva('fixed z-50 gap-4 bg-background p-6 shadow-lg', {
     },
   },
   defaultVariants: {
-    side: 'right',
+    side: 'left',
   },
 });
 
@@ -113,7 +113,7 @@ type SheetContentProps = React.ComponentProps<typeof SheetPrimitive.Content> &
   };
 
 function SheetContent({
-  side = 'right',
+  side = 'left',
   className,
   transition = { type: 'spring', stiffness: 150, damping: 25 },
   overlay = true,
@@ -241,25 +241,25 @@ function SheetDescription({ className, ...props }: SheetDescriptionProps) {
 }
 
 export {
-  useSheet,
   Sheet,
-  SheetPortal,
-  SheetOverlay,
-  SheetTrigger,
   SheetClose,
   SheetContent,
-  SheetHeader,
-  SheetFooter,
-  SheetTitle,
   SheetDescription,
-  type SheetProps,
-  type SheetPortalProps,
-  type SheetOverlayProps,
-  type SheetTriggerProps,
+  SheetFooter,
+  SheetHeader,
+  SheetOverlay,
+  SheetPortal,
+  SheetTitle,
+  SheetTrigger,
+  useSheet,
   type SheetCloseProps,
   type SheetContentProps,
-  type SheetHeaderProps,
-  type SheetFooterProps,
-  type SheetTitleProps,
   type SheetDescriptionProps,
+  type SheetFooterProps,
+  type SheetHeaderProps,
+  type SheetOverlayProps,
+  type SheetPortalProps,
+  type SheetProps,
+  type SheetTitleProps,
+  type SheetTriggerProps,
 };

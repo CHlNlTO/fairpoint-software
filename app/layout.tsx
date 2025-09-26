@@ -41,16 +41,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/apple-icon-180.png" />
+        <link rel="apple-touch-icon" href="/manifest-icon-192.maskable.png" />
         <meta name="application-name" content="Fairpoint" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Fairpoint" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="theme-color" content="#000000" />
+        <link
+          rel="apple-touch-startup-image"
+          href="/manifest-icon-192.maskable.png"
+        />
       </head>
       <body
         className={`${geistSans.className} antialiased bg-gradient-to-r from-background to-card`}

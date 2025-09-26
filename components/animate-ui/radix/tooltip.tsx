@@ -1,8 +1,8 @@
 'use client';
 
-import * as React from 'react';
-import { Tooltip as TooltipPrimitive } from 'radix-ui';
 import { AnimatePresence, motion, type Transition } from 'motion/react';
+import { Tooltip as TooltipPrimitive } from 'radix-ui';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -146,13 +146,13 @@ function TooltipContent({
 
 export {
   Tooltip,
-  TooltipTrigger,
   TooltipContent,
   TooltipProvider,
+  TooltipTrigger,
   useTooltip,
+  type TooltipContentProps,
   type TooltipContextType,
   type TooltipProps,
-  type TooltipTriggerProps,
-  type TooltipContentProps,
   type TooltipProviderProps,
+  type TooltipTriggerProps,
 };

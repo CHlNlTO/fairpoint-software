@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { createClient } from '@/lib/supabase/client';
-import { useRouter } from 'next/navigation';
-import type { CredentialResponse } from 'google-one-tap';
-import { isNewlyCreatedUser, getAuthProvider } from '@/lib/utils';
 import { useAuthLoader } from '@/hooks/use-full-page-loader';
+import { createClient } from '@/lib/supabase/client';
+import { getAuthProvider, isNewlyCreatedUser } from '@/lib/utils';
+import type { CredentialResponse } from 'google-one-tap';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 interface GoogleSignInButtonProps {
   className?: string;

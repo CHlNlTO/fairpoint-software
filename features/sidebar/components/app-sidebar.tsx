@@ -56,7 +56,7 @@ const AppSidebar = memo(function AppSidebar({
       <SidebarContent className="sidebar-scrollbar">
         <NavMain items={NAV_MAIN} />
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="mb-4 sm:mb-0">
         <NavSecondary items={NAV_SECONDARY} className="mt-auto" />
         <NavUser user={userData} />
       </SidebarFooter>
