@@ -1,22 +1,23 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { GoogleSignInButton } from "./google-signin-button";
-import Image from "next/image";
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { createClient } from '@/lib/supabase/client';
+import { cn } from '@/lib/utils';
+import { ArrowLeftIcon } from '@radix-ui/react-icons'; // Import the back arrow icon
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { GoogleSignInButton } from './google-signin-button';
 
 export function LoginForm({
   className,
@@ -50,7 +51,17 @@ export function LoginForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={cn('flex flex-col gap-6', className)} {...props}>
+      {/* Back button moved outside the Card */}
+      <Link href="/" className="self-start -mt-4 mb-4">
+        {' '}
+        {/* Added some margin for spacing */}
+        <Button variant="ghost" className="px-2">
+          <ArrowLeftIcon className="h-4 w-4 mr-2" />
+          Home
+        </Button>
+      </Link>
+
       <Card>
         <CardHeader>
           <div className="flex flex-row justify-between">

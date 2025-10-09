@@ -15,12 +15,12 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     ignores: [
-      '**/node_modules/**',
-      '**/dist/**',
-      '**/build/**',
-      '**/.next/**',
-      '**/coverage/**',
-      '**/*.min.js',
+      '*/node_modules/*',
+      '*/dist/*',
+      '*/build/*',
+      '*/.next/*',
+      '*/coverage/*',
+      '*/.min.js',
       'components/animate-ui/**',
     ],
   },
@@ -30,7 +30,7 @@ const eslintConfig = [
       '@tanstack/query': tanstackQuery,
     },
     settings: {
-      'boundaries/include': ['**/*'],
+      'boundaries/include': ['*/'],
       'boundaries/elements': [
         {
           mode: 'full',
@@ -56,7 +56,7 @@ const eslintConfig = [
         {
           mode: 'full',
           type: 'neverImport',
-          pattern: ['*', 'tasks/**/*'],
+          pattern: ['', 'tasks/**/'],
         },
       ],
     },
