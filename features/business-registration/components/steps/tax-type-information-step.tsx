@@ -134,8 +134,8 @@ export function TaxTypeInformationStep({
       <div className="w-full max-w-3xl mx-auto space-y-6">
         <div className="text-center space-y-2">
           <h2 className="text-3xl sm:text-4xl md:text-5xl">
-            <span className="font-bold">What type of</span> <br /> Income Tax do
-            you have?
+            <span className="font-bold">What type of</span> <br /> taxes do you
+            have?
           </h2>
           <p className="text-muted-foreground">
             Select one and any additional options.
@@ -248,8 +248,12 @@ export function TaxTypeInformationStep({
                   <SelectValue placeholder="Select business tax" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="VAT">VAT (Sales {'>'} ₱3M)</SelectItem>
-                  <SelectItem value="Percentage Tax">Percentage Tax</SelectItem>
+                  <SelectItem value="VAT">
+                    VAT (Annual Sales {'>'} ₱3M)
+                  </SelectItem>
+                  <SelectItem value="Percentage Tax">
+                    OPT (Annual Sales {'<'} ₱3M)
+                  </SelectItem>
                 </SelectContent>
               </Select>
             )}
@@ -264,12 +268,11 @@ export function TaxTypeInformationStep({
             <Label>Additional Taxes</Label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {[
-                { code: 'withholding_tax', label: 'Withholding Tax (1601C)' },
+                { code: 'withholding_tax', label: 'With Employees (WTC)' },
                 {
-                  code: 'expanded_withholding_tax',
-                  label: 'Expanded Withholding',
+                  code: 'tamp',
+                  label: 'Top Withholding Agent or Lessee (EWT)',
                 },
-                { code: 'tamp', label: 'TAMP' },
               ].map(opt => {
                 const checked = formData.additionalTaxes.includes(opt.code);
                 return (
