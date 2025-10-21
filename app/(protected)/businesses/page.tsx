@@ -23,6 +23,7 @@ import {
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { useBusinesses } from '@/hooks/use-businesses';
 import type { Business } from '@/lib/types';
+import { motion } from 'framer-motion';
 import {
   AlertCircle,
   Building2,
@@ -84,7 +85,7 @@ export default function BusinessesPage() {
   // Loading state
   if (isLoading) {
     return (
-      <div className="container mx-auto py-8 px-4">
+      <div className="space-y-6 p-4 md:p-6 lg:p-84">
         <div className="flex items-center justify-between mb-8">
           <div>
             <Skeleton className="h-8 w-48 mb-2" />
@@ -168,7 +169,7 @@ export default function BusinessesPage() {
   // Error state
   if (error) {
     return (
-      <div className="container mx-auto py-8 px-4">
+      <div className="space-y-6 p-4 md:p-6 lg:p-84">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold">My Businesses</h1>
@@ -223,7 +224,12 @@ export default function BusinessesPage() {
   }
 
   return (
-    <div className="container mx-auto py-8 px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
+      className="space-y-6 p-4 md:p-6 lg:p-8"
+    >
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-3xl font-bold">My Businesses</h1>
@@ -386,6 +392,6 @@ export default function BusinessesPage() {
           </CardContent>
         </Card>
       )}
-    </div>
+    </motion.div>
   );
 }

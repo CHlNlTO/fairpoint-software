@@ -17,7 +17,7 @@ interface DashboardOverviewProps {
 
 export function DashboardOverview({ user }: DashboardOverviewProps) {
   return (
-    <main className="space-y-6">
+    <main className="space-y-6 p-4 md:p-6 lg:p-8 w-full">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

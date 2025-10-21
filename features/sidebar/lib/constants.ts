@@ -1,6 +1,12 @@
 // features/sidebar/lib/constants.ts
 
-import { Building2, LifeBuoy, Send, SquareTerminal } from 'lucide-react';
+import {
+  Building2,
+  LifeBuoy,
+  ScrollText,
+  Send,
+  SquareTerminal,
+} from 'lucide-react';
 import type { BreadcrumbItem, NavItem, SecondaryNavItem } from './types';
 
 // Main navigation items
@@ -10,20 +16,6 @@ export const NAV_MAIN: NavItem[] = [
     url: '/dashboard',
     icon: SquareTerminal,
     isActive: true,
-    items: [
-      {
-        title: 'Overview',
-        url: '/dashboard',
-      },
-      {
-        title: 'Tasks',
-        url: '/dashboard/tasks',
-      },
-      {
-        title: 'Reminders',
-        url: '/dashboard/reminders',
-      },
-    ],
   },
   {
     title: 'Businesses',
@@ -37,6 +29,29 @@ export const NAV_MAIN: NavItem[] = [
       {
         title: 'My Businesses',
         url: '/businesses',
+      },
+    ],
+  },
+  {
+    title: 'Chart of Accounts',
+    url: '/chart-of-accounts',
+    icon: ScrollText,
+    items: [
+      {
+        title: 'Classes',
+        url: '/chart-of-accounts/classes',
+      },
+      {
+        title: 'Subclasses',
+        url: '/chart-of-accounts/subclasses',
+      },
+      {
+        title: 'Types',
+        url: '/chart-of-accounts/types',
+      },
+      {
+        title: 'Subtypes',
+        url: '/chart-of-accounts/subtypes',
       },
     ],
   },
@@ -68,14 +83,6 @@ export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {
     { label: 'Dashboard', href: '/dashboard' },
     { label: 'Overview' },
   ],
-  '/dashboard/tasks': [
-    { label: 'Dashboard', href: '/dashboard' },
-    { label: 'Tasks' },
-  ],
-  '/dashboard/reminders': [
-    { label: 'Dashboard', href: '/dashboard' },
-    { label: 'Reminders' },
-  ],
   '/businesses': [
     { label: 'Dashboard', href: '/dashboard' },
     { label: 'Businesses' },
@@ -84,5 +91,21 @@ export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {
     { label: 'Dashboard', href: '/dashboard' },
     { label: 'Businesses', href: '/businesses' },
     { label: 'Register Business' },
+  ],
+  '/chart-of-accounts/classes': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Classes', href: '/chart-of-accounts/classes' },
+  ],
+  '/chart-of-accounts/subclasses': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Subclasses', href: '/chart-of-accounts/subclasses' },
+  ],
+  '/chart-of-accounts/types': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Types', href: '/chart-of-accounts/types' },
+  ],
+  '/chart-of-accounts/subtypes': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Subtypes', href: '/chart-of-accounts/subtypes' },
   ],
 };
