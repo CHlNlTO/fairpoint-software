@@ -70,5 +70,55 @@ export const ACCOUNT_TYPE_SYSTEM_OPTIONS = [
   { value: 'user', label: 'User Defined' },
 ] as const;
 
+export const BUSINESS_TYPE_SORT_OPTIONS = [
+  { value: 'name', label: 'Name' },
+  { value: 'created_at', label: 'Created Date' },
+] as const;
+
+export const BUSINESS_TYPE_STATUS_OPTIONS = [
+  { value: 'all', label: 'All Status' },
+  { value: 'active', label: 'Active Only' },
+  { value: 'inactive', label: 'Inactive Only' },
+] as const;
+
+export const INDUSTRY_TYPE_SORT_OPTIONS = [
+  { value: 'name', label: 'Name' },
+  { value: 'created_at', label: 'Created Date' },
+] as const;
+
+export const INDUSTRY_TYPE_STATUS_OPTIONS = [
+  { value: 'all', label: 'All Status' },
+  { value: 'active', label: 'Active Only' },
+  { value: 'inactive', label: 'Inactive Only' },
+] as const;
+
+export const TAX_TYPE_SORT_OPTIONS = [
+  { value: 'name', label: 'Name' },
+  { value: 'created_at', label: 'Created Date' },
+] as const;
+
+export const TAX_TYPE_STATUS_OPTIONS = [
+  { value: 'all', label: 'All Status' },
+  { value: 'active', label: 'Active Only' },
+  { value: 'inactive', label: 'Inactive Only' },
+] as const;
+
+export const COA_TEMPLATE_SORT_OPTIONS = [
+  { value: 'template_name', label: 'Template Name' },
+  { value: 'created_at', label: 'Created Date' },
+] as const;
+
+export const COA_TEMPLATE_STATUS_OPTIONS = [
+  { value: 'all', label: 'All Status' },
+  { value: 'active', label: 'Active Only' },
+  { value: 'inactive', label: 'Inactive Only' },
+] as const;
+
+export const COA_TEMPLATE_DEFAULT_OPTIONS = [
+  { value: 'all', label: 'All Templates' },
+  { value: 'default', label: 'Default Only' },
+  { value: 'non-default', label: 'Non-Default Only' },
+] as const;
+
 export const TABLE_PAGE_SIZE = 10;
 export const TABLE_PAGE_SIZE_OPTIONS = [10, 25, 50, 100];

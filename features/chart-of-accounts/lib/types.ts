@@ -60,6 +60,16 @@ export interface AccountSubtype {
   account_type?: AccountType;
 }
 
+export interface BusinessType {
+  id: string;
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface AccountClassFormData {
   code: number;
   name: string;
@@ -96,6 +106,13 @@ export interface AccountSubclassFormData {
   hint?: string;
 }
 
+export interface BusinessTypeFormData {
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active: boolean;
+}
+
 export interface AccountClassFilters {
   search?: string;
   is_active?: boolean;
@@ -127,6 +144,13 @@ export interface AccountSubtypeFilters {
   account_type_id?: string;
   is_system_defined?: boolean;
   sort_by?: 'code' | 'name' | 'created_at';
+  sort_order?: 'asc' | 'desc';
+}
+
+export interface BusinessTypeFilters {
+  search?: string;
+  is_active?: boolean;
+  sort_by?: 'name' | 'created_at';
   sort_order?: 'asc' | 'desc';
 }
 
@@ -219,6 +243,167 @@ export interface AccountTypeUpdateRequest {
 }
 
 export interface AccountTypeDeleteRequest {
+  id: string;
+}
+
+export interface BusinessTypeCreateRequest {
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active?: boolean;
+}
+
+export interface BusinessTypeUpdateRequest {
+  id: string;
+  name?: string;
+  description?: string;
+  hint?: string;
+  is_active?: boolean;
+}
+
+export interface BusinessTypeDeleteRequest {
+  id: string;
+}
+
+// ============================================================================
+// INDUSTRY TYPE INTERFACES
+// ============================================================================
+
+export interface IndustryType {
+  id: string;
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface IndustryTypeFormData {
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active: boolean;
+}
+
+export interface IndustryTypeFilters {
+  search?: string;
+  is_active?: boolean;
+  sort_by?: 'name' | 'created_at';
+  sort_order?: 'asc' | 'desc';
+}
+
+export interface IndustryTypeCreateRequest {
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active?: boolean;
+}
+
+export interface IndustryTypeUpdateRequest {
+  id: string;
+  name?: string;
+  description?: string;
+  hint?: string;
+  is_active?: boolean;
+}
+
+export interface IndustryTypeDeleteRequest {
+  id: string;
+}
+
+// ============================================================================
+// TAX TYPE INTERFACES
+// ============================================================================
+
+export interface TaxType {
+  id: string;
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface TaxTypeFormData {
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active: boolean;
+}
+
+export interface TaxTypeFilters {
+  search?: string;
+  is_active?: boolean;
+  sort_by?: 'name' | 'created_at';
+  sort_order?: 'asc' | 'desc';
+}
+
+export interface TaxTypeCreateRequest {
+  name: string;
+  description?: string;
+  hint?: string;
+  is_active?: boolean;
+}
+
+export interface TaxTypeUpdateRequest {
+  id: string;
+  name?: string;
+  description?: string;
+  hint?: string;
+  is_active?: boolean;
+}
+
+export interface TaxTypeDeleteRequest {
+  id: string;
+}
+
+// ============================================================================
+// COA TEMPLATE INTERFACES
+// ============================================================================
+
+export interface CoaTemplate {
+  id: string;
+  template_name: string;
+  description?: string;
+  is_default: boolean;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CoaTemplateFormData {
+  template_name: string;
+  description?: string;
+  is_default: boolean;
+  is_active: boolean;
+}
+
+export interface CoaTemplateFilters {
+  search?: string;
+  is_default?: boolean;
+  is_active?: boolean;
+  sort_by?: 'template_name' | 'created_at';
+  sort_order?: 'asc' | 'desc';
+}
+
+export interface CoaTemplateCreateRequest {
+  template_name: string;
+  description?: string;
+  is_default?: boolean;
+  is_active?: boolean;
+}
+
+export interface CoaTemplateUpdateRequest {
+  id: string;
+  template_name?: string;
+  description?: string;
+  is_default?: boolean;
+  is_active?: boolean;
+}
+
+export interface CoaTemplateDeleteRequest {
   id: string;
 }
 

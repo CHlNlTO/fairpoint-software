@@ -68,7 +68,7 @@ export default function RootLayout({
             <GoogleOneTap />
             <ServiceWorkerInit />
             <Analytics />
-            <Toaster />
+            <Toaster richColors position="top-right" />
           </ThemeProvider>
         </Providers>
       </body>

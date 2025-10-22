@@ -53,6 +53,22 @@ export const NAV_MAIN: NavItem[] = [
         title: 'Subtypes',
         url: '/chart-of-accounts/subtypes',
       },
+      {
+        title: 'Business Types',
+        url: '/chart-of-accounts/business-types',
+      },
+      {
+        title: 'Industry Types',
+        url: '/chart-of-accounts/industry-types',
+      },
+      {
+        title: 'Tax Types',
+        url: '/chart-of-accounts/tax-types',
+      },
+      {
+        title: 'Templates',
+        url: '/chart-of-accounts/coa-templates',
+      },
     ],
   },
 ];
@@ -107,5 +123,21 @@ export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {
   '/chart-of-accounts/subtypes': [
     { label: 'Chart of Accounts', href: '/chart-of-accounts' },
     { label: 'Subtypes', href: '/chart-of-accounts/subtypes' },
+  ],
+  '/chart-of-accounts/business-types': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Business Types', href: '/chart-of-accounts/business-types' },
+  ],
+  '/chart-of-accounts/industry-types': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Industry Types', href: '/chart-of-accounts/industry-types' },
+  ],
+  '/chart-of-accounts/tax-types': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Tax Types', href: '/chart-of-accounts/tax-types' },
+  ],
+  '/chart-of-accounts/coa-templates': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Templates', href: '/chart-of-accounts/coa-templates' },
   ],
 };

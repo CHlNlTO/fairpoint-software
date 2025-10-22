@@ -156,6 +156,38 @@ export const accountSubtypeFiltersSchema = z.object({
   sort_order: z.enum(['asc', 'desc']).default('asc'),
 });
 
+// Business Type Schemas
+export const businessTypeSchema = z.object({
+  name: z
+    .string()
+    .min(1, 'Name is required')
+    .max(100, 'Name must be 100 characters or less'),
+  description: z
+    .string()
+    .max(500, 'Description must be 500 characters or less')
+    .optional()
+    .or(z.literal('')),
+  hint: z
+    .string()
+    .max(200, 'Hint must be 200 characters or less')
+    .optional()
+    .or(z.literal('')),
+  is_active: z.boolean(),
+});
+
+export const businessTypeCreateSchema = businessTypeSchema;
+
+export const businessTypeUpdateSchema = businessTypeSchema.partial().extend({
+  id: z.string().uuid('Invalid ID format'),
+});
+
+export const businessTypeFiltersSchema = z.object({
+  search: z.string().optional(),
+  is_active: z.boolean().optional(),
+  sort_by: z.enum(['name', 'created_at']).default('name'),
+  sort_order: z.enum(['asc', 'desc']).default('asc'),
+});
+
 // Export types
 export type AccountClassFormData = z.infer<typeof accountClassSchema>;
 export type AccountClassCreateData = z.infer<typeof accountClassCreateSchema>;
@@ -187,3 +219,125 @@ export type AccountTypeFormData = z.infer<typeof accountTypeSchema>;
 export type AccountTypeCreateData = z.infer<typeof accountTypeCreateSchema>;
 export type AccountTypeUpdateData = z.infer<typeof accountTypeUpdateSchema>;
 export type AccountTypeFiltersData = z.infer<typeof accountTypeFiltersSchema>;
+
+export type BusinessTypeFormData = z.infer<typeof businessTypeSchema>;
+export type BusinessTypeCreateData = z.infer<typeof businessTypeCreateSchema>;
+export type BusinessTypeUpdateData = z.infer<typeof businessTypeUpdateSchema>;
+export type BusinessTypeFiltersData = z.infer<typeof businessTypeFiltersSchema>;
+
+// ============================================================================
+// INDUSTRY TYPE SCHEMAS
+// ============================================================================
+
+export const industryTypeSchema = z.object({
+  name: z
+    .string()
+    .min(1, 'Name is required')
+    .max(100, 'Name must be 100 characters or less'),
+  description: z
+    .string()
+    .max(500, 'Description must be 500 characters or less')
+    .optional()
+    .or(z.literal('')),
+  hint: z
+    .string()
+    .max(200, 'Hint must be 200 characters or less')
+    .optional()
+    .or(z.literal('')),
+  is_active: z.boolean(),
+});
+
+export const industryTypeCreateSchema = industryTypeSchema;
+
+export const industryTypeUpdateSchema = industryTypeSchema.partial().extend({
+  id: z.string().uuid('Invalid ID format'),
+});
+
+export const industryTypeFiltersSchema = z.object({
+  search: z.string().optional(),
+  is_active: z.boolean().optional(),
+  sort_by: z.enum(['name', 'created_at']).default('name'),
+  sort_order: z.enum(['asc', 'desc']).default('asc'),
+});
+
+export type IndustryTypeFormData = z.infer<typeof industryTypeSchema>;
+export type IndustryTypeCreateData = z.infer<typeof industryTypeCreateSchema>;
+export type IndustryTypeUpdateData = z.infer<typeof industryTypeUpdateSchema>;
+export type IndustryTypeFiltersData = z.infer<typeof industryTypeFiltersSchema>;
+
+// ============================================================================
+// TAX TYPE SCHEMAS
+// ============================================================================
+
+export const taxTypeSchema = z.object({
+  name: z
+    .string()
+    .min(1, 'Name is required')
+    .max(100, 'Name must be 100 characters or less'),
+  description: z
+    .string()
+    .max(500, 'Description must be 500 characters or less')
+    .optional()
+    .or(z.literal('')),
+  hint: z
+    .string()
+    .max(200, 'Hint must be 200 characters or less')
+    .optional()
+    .or(z.literal('')),
+  is_active: z.boolean(),
+});
+
+export const taxTypeCreateSchema = taxTypeSchema;
+
+export const taxTypeUpdateSchema = taxTypeSchema.partial().extend({
+  id: z.string().uuid('Invalid ID format'),
+});
+
+export const taxTypeFiltersSchema = z.object({
+  search: z.string().optional(),
+  is_active: z.boolean().optional(),
+  sort_by: z.enum(['name', 'created_at']).default('name'),
+  sort_order: z.enum(['asc', 'desc']).default('asc'),
+});
+
+export type TaxTypeFormData = z.infer<typeof taxTypeSchema>;
+export type TaxTypeCreateData = z.infer<typeof taxTypeCreateSchema>;
+export type TaxTypeUpdateData = z.infer<typeof taxTypeUpdateSchema>;
+export type TaxTypeFiltersData = z.infer<typeof taxTypeFiltersSchema>;
+
+// ============================================================================
+// COA TEMPLATE SCHEMAS
+// ============================================================================
+
+export const coaTemplateSchema = z.object({
+  template_name: z
+    .string()
+    .min(1, 'Template name is required')
+    .max(200, 'Template name must be 200 characters or less'),
+  description: z
+    .string()
+    .max(1000, 'Description must be 1000 characters or less')
+    .optional()
+    .or(z.literal('')),
+  is_default: z.boolean(),
+  is_active: z.boolean(),
+});
+
+export const coaTemplateCreateSchema = coaTemplateSchema;
+
+export const coaTemplateUpdateSchema = coaTemplateSchema.partial().extend({
+  id: z.string().uuid('Invalid ID format'),
+});
+
+export const coaTemplateFiltersSchema = z.object({
+  search: z.string().optional(),
+  is_default: z.boolean().optional(),
+  is_active: z.boolean().optional(),
+  sort_by: z.enum(['template_name', 'created_at']).default('template_name'),
+  sort_order: z.enum(['asc', 'desc']).default('asc'),
+});
+
+export type CoaTemplateFormData = z.infer<typeof coaTemplateSchema>;
+export type CoaTemplateCreateData = z.infer<typeof coaTemplateCreateSchema>;
+export type CoaTemplateUpdateData = z.infer<typeof coaTemplateUpdateSchema>;
+export type CoaTemplateFiltersData = z.infer<typeof coaTemplateFiltersSchema>;

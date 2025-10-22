@@ -3,7 +3,11 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import type { AccountClassFilters, AccountSubclassFilters } from '../lib/types';
+import type {
+  AccountClassFilters,
+  AccountSubclassFilters,
+  CoaTemplateFilters,
+} from '../lib/types';
 
 const DEFAULT_ACCOUNT_CLASS_FILTERS: AccountClassFilters = {
   search: '',
@@ -22,7 +26,7 @@ const DEFAULT_ACCOUNT_SUBCLASS_FILTERS: AccountSubclassFilters = {
 };
 
 export function useCoaFilters<
-  T extends AccountClassFilters | AccountSubclassFilters,
+  T extends AccountClassFilters | AccountSubclassFilters | CoaTemplateFilters,
 >(initialFilters?: Partial<T>) {
   const defaultFilters =
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
