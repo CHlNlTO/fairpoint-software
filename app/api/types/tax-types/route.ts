@@ -205,16 +205,28 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    // Check if there are dependent records (tax_rates)
-    const { data: dependentRecords } = await supabase
+    // Check if there are dependent records (tax_rates and coa_template_rules)
+    const { data: dependentTaxRates } = await supabase
       .from('tax_rates')
       .select('id')
       .eq('tax_type', id)
       .limit(1);
 
-    if (dependentRecords && dependentRecords.length > 0) {
+    const { data: dependentTemplateRules } = await supabase
+      .from('coa_template_rules')
+      .select('id')
+      .eq('tax_type_id', id)
+      .limit(1);
+
+    if (
+      (dependentTaxRates && dependentTaxRates.length > 0) ||
+      (dependentTemplateRules && dependentTemplateRules.length > 0)
+    ) {
       return NextResponse.json(
-        { error: 'Cannot delete tax type with existing tax rates' },
+        {
+          error:
+            'Cannot delete tax type with existing tax rates or template rules',
+        },
         { status: 409 }
       );
     }

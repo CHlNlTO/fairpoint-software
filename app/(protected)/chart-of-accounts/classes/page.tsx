@@ -15,13 +15,14 @@ import {
 import { useCoaFilters } from '@/features/chart-of-accounts/hooks/use-coa-filters';
 import type {
   AccountClass,
+  AccountClassFilters,
   AccountClassFormData,
 } from '@/features/chart-of-accounts/lib/types';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function AccountClassesPage() {
-  const { filters, updateFilters } = useCoaFilters();
+  const { filters, updateFilters } = useCoaFilters<AccountClassFilters>();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [viewDialogOpen, setViewDialogOpen] = useState(false);
   const [dialogMode, setDialogMode] = useState<'create' | 'edit'>('create');

@@ -8,19 +8,19 @@ import { z } from 'zod';
 const createCoaTemplateRuleSchema = z
   .object({
     coa_template_id: z.string().uuid(),
-    tax_type: z.enum(['VAT', 'Non-VAT', 'Any']).optional(),
-    business_structure: z.string().optional(), // This will be validated against the enum in the database
-    industry_type: z.string().max(100).optional(),
+    tax_type_id: z.string().uuid().optional(),
+    business_type_id: z.string().uuid().optional(),
+    industry_type_id: z.string().uuid().optional(),
     is_active: z.boolean().default(true),
   })
   .refine(
     data => {
       // At least one rule criteria must be provided
-      return data.tax_type || data.business_structure || data.industry_type;
+      return data.tax_type_id || data.business_type_id || data.industry_type_id;
     },
     {
       message:
-        'At least one rule criteria (tax_type, business_structure, or industry_type) must be provided',
+        'At least one rule criteria (tax_type_id, business_type_id, or industry_type_id) must be provided',
     }
   );
 
@@ -34,17 +34,17 @@ const updateCoaTemplateRuleSchema = createCoaTemplateRuleSchema
       // If updating, at least one rule criteria must be provided
       const { id, ...updateData } = data;
       return (
-        updateData.tax_type ||
-        updateData.business_structure ||
-        updateData.industry_type ||
-        (updateData.tax_type === null &&
-          updateData.business_structure === null &&
-          updateData.industry_type === null)
+        updateData.tax_type_id ||
+        updateData.business_type_id ||
+        updateData.industry_type_id ||
+        (updateData.tax_type_id === null &&
+          updateData.business_type_id === null &&
+          updateData.industry_type_id === null)
       );
     },
     {
       message:
-        'At least one rule criteria (tax_type, business_structure, or industry_type) must be provided',
+        'At least one rule criteria (tax_type_id, business_type_id, or industry_type_id) must be provided',
     }
   );
 
@@ -55,28 +55,36 @@ export async function GET(request: NextRequest) {
     // Get query parameters
     const { searchParams } = new URL(request.url);
     const coa_template_id = searchParams.get('coa_template_id');
-    const tax_type = searchParams.get('tax_type');
-    const business_structure = searchParams.get('business_structure');
-    const industry_type = searchParams.get('industry_type');
+    const tax_type_id = searchParams.get('tax_type_id');
+    const business_type_id = searchParams.get('business_type_id');
+    const industry_type_id = searchParams.get('industry_type_id');
     const is_active = searchParams.get('is_active');
 
     let query = supabase
       .from('coa_template_rules')
-      .select('*, coa_templates(template_name)')
+      .select(
+        `
+        *,
+        coa_templates(template_name),
+        tax_types(name, description),
+        business_types(name, description),
+        industry_types(name, description)
+      `
+      )
       .order('created_at', { ascending: false });
 
     // Apply filters
     if (coa_template_id) {
       query = query.eq('coa_template_id', coa_template_id);
     }
-    if (tax_type) {
-      query = query.eq('tax_type', tax_type);
+    if (tax_type_id) {
+      query = query.eq('tax_type_id', tax_type_id);
     }
-    if (business_structure) {
-      query = query.eq('business_structure', business_structure);
+    if (business_type_id) {
+      query = query.eq('business_type_id', business_type_id);
     }
-    if (industry_type) {
-      query = query.ilike('industry_type', `%${industry_type}%`);
+    if (industry_type_id) {
+      query = query.eq('industry_type_id', industry_type_id);
     }
     if (is_active !== null) {
       query = query.eq('is_active', is_active === 'true');
@@ -124,9 +132,9 @@ export async function POST(request: NextRequest) {
       .from('coa_template_rules')
       .select('id')
       .eq('coa_template_id', validatedData.coa_template_id)
-      .eq('tax_type', validatedData.tax_type || null)
-      .eq('business_structure', validatedData.business_structure || null)
-      .eq('industry_type', validatedData.industry_type || null)
+      .eq('tax_type_id', validatedData.tax_type_id || null)
+      .eq('business_type_id', validatedData.business_type_id || null)
+      .eq('industry_type_id', validatedData.industry_type_id || null)
       .single();
 
     if (existingRule) {
@@ -142,7 +150,15 @@ export async function POST(request: NextRequest) {
     const { data, error } = await supabase
       .from('coa_template_rules')
       .insert([validatedData])
-      .select('*, coa_templates(template_name)')
+      .select(
+        `
+        *,
+        coa_templates(template_name),
+        tax_types(name, description),
+        business_types(name, description),
+        industry_types(name, description)
+      `
+      )
       .single();
 
     if (error) {
@@ -206,22 +222,24 @@ export async function PUT(request: NextRequest) {
     // Check for duplicate rules (same template with same criteria)
     const templateId =
       updateData.coa_template_id || existingRule.coa_template_id;
-    const taxType =
-      updateData.tax_type !== undefined ? updateData.tax_type : null;
-    const businessStructure =
-      updateData.business_structure !== undefined
-        ? updateData.business_structure
+    const taxTypeId =
+      updateData.tax_type_id !== undefined ? updateData.tax_type_id : null;
+    const businessTypeId =
+      updateData.business_type_id !== undefined
+        ? updateData.business_type_id
         : null;
-    const industryType =
-      updateData.industry_type !== undefined ? updateData.industry_type : null;
+    const industryTypeId =
+      updateData.industry_type_id !== undefined
+        ? updateData.industry_type_id
+        : null;
 
     const { data: conflictingRule } = await supabase
       .from('coa_template_rules')
       .select('id')
       .eq('coa_template_id', templateId)
-      .eq('tax_type', taxType)
-      .eq('business_structure', businessStructure)
-      .eq('industry_type', industryType)
+      .eq('tax_type_id', taxTypeId)
+      .eq('business_type_id', businessTypeId)
+      .eq('industry_type_id', industryTypeId)
       .neq('id', id)
       .single();
 
@@ -239,7 +257,15 @@ export async function PUT(request: NextRequest) {
       .from('coa_template_rules')
       .update(updateData)
       .eq('id', id)
-      .select('*, coa_templates(template_name)')
+      .select(
+        `
+        *,
+        coa_templates(template_name),
+        tax_types(name, description),
+        business_types(name, description),
+        industry_types(name, description)
+      `
+      )
       .single();
 
     if (error) {

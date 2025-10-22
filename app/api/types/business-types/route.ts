@@ -205,18 +205,27 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    // Check if there are dependent records (business_registrations)
-    const { data: dependentRecords } = await supabase
+    // Check if there are dependent records (business_registrations and coa_template_rules)
+    const { data: dependentRegistrations } = await supabase
       .from('business_registrations')
       .select('id')
       .eq('business_type_id', id)
       .limit(1);
 
-    if (dependentRecords && dependentRecords.length > 0) {
+    const { data: dependentTemplateRules } = await supabase
+      .from('coa_template_rules')
+      .select('id')
+      .eq('business_type_id', id)
+      .limit(1);
+
+    if (
+      (dependentRegistrations && dependentRegistrations.length > 0) ||
+      (dependentTemplateRules && dependentTemplateRules.length > 0)
+    ) {
       return NextResponse.json(
         {
           error:
-            'Cannot delete business type with existing business registrations',
+            'Cannot delete business type with existing business registrations or template rules',
         },
         { status: 409 }
       );
