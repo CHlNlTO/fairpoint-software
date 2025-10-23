@@ -128,7 +128,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Transform the data to match the expected structure
-    let transformedItems =
+    const transformedItems =
       data?.map(item => ({
         id: item.id,
         template_id: item.template_id,
