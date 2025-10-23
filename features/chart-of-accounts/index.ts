@@ -311,3 +311,8 @@ export {
   updateIndustryType,
   updateTaxType,
 } from './lib/api-client';
+
+// COA Template Items
+export { CoaTemplateItemsTable as CoaTemplateItemsTableView } from './components/coa-template-items/coa-template-items-table';
+export { useCoaTemplateItems } from './hooks/use-coa-template-items';
+export { fetchCoaTemplateItems } from './lib/api-client';

@@ -7,6 +7,7 @@ import type {
   AccountClassFilters,
   AccountSubclassFilters,
   CoaTemplateFilters,
+  CoaTemplateItemFilters,
 } from '../lib/types';
 
 const DEFAULT_ACCOUNT_CLASS_FILTERS: AccountClassFilters = {
@@ -25,8 +26,20 @@ const DEFAULT_ACCOUNT_SUBCLASS_FILTERS: AccountSubclassFilters = {
   sort_order: 'asc',
 };
 
+const DEFAULT_COA_TEMPLATE_ITEM_FILTERS: CoaTemplateItemFilters = {
+  search: '',
+  is_active: undefined,
+  normal_balance: undefined,
+  sort_by: 'template_name',
+  sort_order: 'asc',
+};
+
 export function useCoaFilters<
-  T extends AccountClassFilters | AccountSubclassFilters | CoaTemplateFilters,
+  T extends
+    | AccountClassFilters
+    | AccountSubclassFilters
+    | CoaTemplateFilters
+    | CoaTemplateItemFilters,
 >(initialFilters?: Partial<T>) {
   const defaultFilters =
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

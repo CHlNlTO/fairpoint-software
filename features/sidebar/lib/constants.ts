@@ -69,6 +69,10 @@ export const NAV_MAIN: NavItem[] = [
         title: 'Templates',
         url: '/chart-of-accounts/coa-templates',
       },
+      {
+        title: 'Template Items',
+        url: '/chart-of-accounts/coa-template-items',
+      },
     ],
   },
 ];
@@ -147,6 +151,10 @@ export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {
       label: 'Create Template',
       href: '/chart-of-accounts/coa-templates/create',
     },
+  ],
+  '/chart-of-accounts/coa-template-items': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Template Items', href: '/chart-of-accounts/coa-template-items' },
   ],
 };
 

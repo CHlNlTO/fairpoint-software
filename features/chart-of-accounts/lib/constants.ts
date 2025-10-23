@@ -120,5 +120,19 @@ export const COA_TEMPLATE_DEFAULT_OPTIONS = [
   { value: 'non-default', label: 'Non-Default Only' },
 ] as const;
 
+export const COA_TEMPLATE_ITEM_SORT_OPTIONS = [
+  { value: 'template_name', label: 'Template Name' },
+  { value: 'account_code', label: 'Account Code' },
+  { value: 'account_name', label: 'Account Name' },
+  { value: 'sort_order', label: 'Sort Order' },
+  { value: 'created_at', label: 'Created Date' },
+] as const;
+
+export const COA_TEMPLATE_ITEM_STATUS_OPTIONS = [
+  { value: 'all', label: 'All Status' },
+  { value: 'active', label: 'Active Only' },
+  { value: 'inactive', label: 'Inactive Only' },
+] as const;
+
 export const TABLE_PAGE_SIZE = 10;
 export const TABLE_PAGE_SIZE_OPTIONS = [10, 25, 50, 100];

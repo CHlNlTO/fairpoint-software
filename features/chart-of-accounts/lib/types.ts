@@ -471,3 +471,59 @@ export interface PaginatedResponse<T> {
   limit: number;
   has_more: boolean;
 }
+
+// ============================================================================
+// COA TEMPLATE ITEMS TABLE INTERFACES
+// ============================================================================
+
+export interface CoaTemplateItem {
+  id: string;
+  template_id: string;
+  account_code: string;
+  account_name: string;
+  account_subtype_id: string;
+  normal_balance: 'debit' | 'credit';
+  is_active: boolean;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+  // Joined data
+  template?: {
+    id: string;
+    template_name: string;
+  };
+  account_subtype?: {
+    id: string;
+    name: string;
+    code: string;
+    account_type?: {
+      id: string;
+      name: string;
+      code: string;
+      account_subclass?: {
+        id: string;
+        name: string;
+        code: string;
+        account_class?: {
+          id: string;
+          name: string;
+          code: string;
+        };
+      };
+    };
+  };
+}
+
+export interface CoaTemplateItemFilters {
+  search?: string;
+  template_id?: string;
+  is_active?: boolean;
+  normal_balance?: 'debit' | 'credit';
+  sort_by?:
+    | 'template_name'
+    | 'account_code'
+    | 'account_name'
+    | 'sort_order'
+    | 'created_at';
+  sort_order?: 'asc' | 'desc';
+}

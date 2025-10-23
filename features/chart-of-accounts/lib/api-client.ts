@@ -31,6 +31,8 @@ import type {
   CoaTemplateCreateRequest,
   CoaTemplateDeleteRequest,
   CoaTemplateFilters,
+  CoaTemplateItem,
+  CoaTemplateItemFilters,
   CoaTemplateUpdateRequest,
   IndustryType,
   IndustryTypeCreateRequest,
@@ -1119,4 +1121,56 @@ export async function deleteCoaTemplate(
 
   const result: ApiResponse<{ message: string }> = await response.json();
   return;
+}
+
+// ============================================================================
+// COA TEMPLATE ITEMS API FUNCTIONS
+// ============================================================================
+
+/**
+ * Fetch all COA template items with optional filters
+ */
+export async function fetchCoaTemplateItems(
+  filters?: CoaTemplateItemFilters
+): Promise<CoaTemplateItem[]> {
+  const params = new URLSearchParams();
+
+  if (filters?.search) {
+    params.append('search', filters.search);
+  }
+  if (filters?.template_id) {
+    params.append('template_id', filters.template_id);
+  }
+  if (filters?.is_active !== undefined) {
+    params.append('is_active', filters.is_active.toString());
+  }
+  if (filters?.normal_balance) {
+    params.append('normal_balance', filters.normal_balance);
+  }
+  if (filters?.sort_by) {
+    params.append('sort_by', filters.sort_by);
+  }
+  if (filters?.sort_order) {
+    params.append('sort_order', filters.sort_order);
+  }
+
+  const response = await fetch(
+    `${COA_API_BASE_URL}/template-items?${params.toString()}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      errorData.error || `HTTP error! status: ${response.status}`
+    );
+  }
+
+  const result: ApiResponse<CoaTemplateItem[]> = await response.json();
+  return result.data;
 }

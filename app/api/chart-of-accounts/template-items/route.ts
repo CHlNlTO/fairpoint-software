@@ -26,37 +26,46 @@ export async function GET(request: NextRequest) {
 
     // Get query parameters
     const { searchParams } = new URL(request.url);
+    const search = searchParams.get('search');
     const template_id = searchParams.get('template_id');
     const account_code = searchParams.get('account_code');
     const account_subtype_id = searchParams.get('account_subtype_id');
     const is_active = searchParams.get('is_active');
+    const normal_balance = searchParams.get('normal_balance');
+    const sort_by = searchParams.get('sort_by') || 'template_name';
+    const sort_order = searchParams.get('sort_order') || 'asc';
 
-    let query = supabase
-      .from('coa_template_items')
-      .select(
-        `
+    let query = supabase.from('coa_template_items').select(
+      `
         *,
-        account_subtypes(
+        account_subtypes!inner(
+          id,
           name,
-          account_types(
+          code,
+          account_types!inner(
+            id,
             name,
-            account_subclasses(
+            code,
+            account_subclasses!inner(
+              id,
               name,
-              account_classes(
+              code,
+              account_classes!inner(
+                id,
                 name,
-                normal_balance
+                code
               )
             )
           )
         ),
-        coa_templates(
+        coa_templates!inner(
+          id,
           template_name,
           description,
           is_default
         )
       `
-      )
-      .order('account_code', { ascending: true });
+    );
 
     // Apply filters
     if (template_id) {
@@ -71,6 +80,46 @@ export async function GET(request: NextRequest) {
     if (is_active !== null) {
       query = query.eq('is_active', is_active === 'true');
     }
+    if (normal_balance) {
+      query = query.eq('normal_balance', normal_balance);
+    }
+
+    // Apply search
+    if (search) {
+      query = query.or(
+        `account_name.ilike.%${search}%,account_code.ilike.%${search}%,coa_templates.template_name.ilike.%${search}%`
+      );
+    }
+
+    // Apply sorting
+    switch (sort_by) {
+      case 'template_name':
+        // For template_name, we'll sort by template_id and then handle template name sorting in the transformation
+        query = query.order('template_id', {
+          ascending: sort_order === 'asc',
+        });
+        break;
+      case 'account_code':
+        query = query.order('account_code', {
+          ascending: sort_order === 'asc',
+        });
+        break;
+      case 'account_name':
+        query = query.order('account_name', {
+          ascending: sort_order === 'asc',
+        });
+        break;
+      case 'sort_order':
+        query = query.order('sort_order', { ascending: sort_order === 'asc' });
+        break;
+      case 'created_at':
+        query = query.order('created_at', { ascending: sort_order === 'asc' });
+        break;
+      default:
+        query = query.order('template_id', {
+          ascending: sort_order === 'asc',
+        });
+    }
 
     const { data, error } = await query;
 
@@ -78,7 +127,62 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: error.message }, { status: 400 });
     }
 
-    return NextResponse.json({ data });
+    // Transform the data to match the expected structure
+    let transformedItems =
+      data?.map(item => ({
+        id: item.id,
+        template_id: item.template_id,
+        account_code: item.account_code,
+        account_name: item.account_name,
+        account_subtype_id: item.account_subtype_id,
+        normal_balance: item.normal_balance,
+        is_active: item.is_active,
+        sort_order: item.sort_order,
+        created_at: item.created_at,
+        updated_at: item.updated_at,
+        template: {
+          id: item.coa_templates.id,
+          template_name: item.coa_templates.template_name,
+        },
+        account_subtype: {
+          id: item.account_subtypes.id,
+          name: item.account_subtypes.name,
+          code: item.account_subtypes.code,
+          account_type: {
+            id: item.account_subtypes.account_types.id,
+            name: item.account_subtypes.account_types.name,
+            code: item.account_subtypes.account_types.code,
+            account_subclass: {
+              id: item.account_subtypes.account_types.account_subclasses.id,
+              name: item.account_subtypes.account_types.account_subclasses.name,
+              code: item.account_subtypes.account_types.account_subclasses.code,
+              account_class: {
+                id: item.account_subtypes.account_types.account_subclasses
+                  .account_classes.id,
+                name: item.account_subtypes.account_types.account_subclasses
+                  .account_classes.name,
+                code: item.account_subtypes.account_types.account_subclasses
+                  .account_classes.code,
+              },
+            },
+          },
+        },
+      })) || [];
+
+    // Handle template_name sorting on the transformed data
+    if (sort_by === 'template_name') {
+      transformedItems.sort((a, b) => {
+        const aValue = a.template.template_name.toLowerCase();
+        const bValue = b.template.template_name.toLowerCase();
+        if (sort_order === 'asc') {
+          return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
+        } else {
+          return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
+        }
+      });
+    }
+
+    return NextResponse.json({ data: transformedItems });
   } catch (error) {
     return NextResponse.json(
       { error: 'Internal server error' },
