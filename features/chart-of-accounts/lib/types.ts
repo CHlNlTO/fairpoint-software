@@ -407,6 +407,57 @@ export interface CoaTemplateDeleteRequest {
   id: string;
 }
 
+// ============================================================================
+// COMBINED COA TEMPLATE FORM INTERFACES
+// ============================================================================
+
+export interface CoaTemplateItemFormData {
+  id?: string; // For editing existing items
+  account_code: string;
+  account_name: string;
+  account_class_id: string;
+  account_subclass_id: string;
+  account_type_id: string;
+  account_subtype_id: string;
+  normal_balance: 'debit' | 'credit';
+  is_active: boolean;
+  sort_order: number;
+}
+
+export interface CoaTemplateRulesFormData {
+  tax_type_id?: string;
+  business_type_id?: string;
+  industry_type_id?: string;
+}
+
+export interface CoaTemplateCombinedFormData {
+  template_name: string;
+  description?: string;
+  is_default: boolean;
+  is_active: boolean;
+  rules: CoaTemplateRulesFormData;
+  items: CoaTemplateItemFormData[];
+}
+
+export interface CoaTemplateCombinedCreateRequest {
+  template_name: string;
+  description?: string;
+  is_default: boolean;
+  is_active: boolean;
+  rules: CoaTemplateRulesFormData;
+  items: Omit<CoaTemplateItemFormData, 'id'>[];
+}
+
+export interface CoaTemplateCombinedUpdateRequest {
+  id: string;
+  template_name: string;
+  description?: string;
+  is_default: boolean;
+  is_active: boolean;
+  rules: CoaTemplateRulesFormData;
+  items: CoaTemplateItemFormData[];
+}
+
 export interface ApiResponse<T> {
   data: T;
   error?: string;

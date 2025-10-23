@@ -2,33 +2,29 @@
 
 'use client';
 
-import { CoaTemplateDialog } from '@/features/chart-of-accounts/components/coa-templates/coa-template-dialog';
 import { CoaTemplateViewDialog } from '@/features/chart-of-accounts/components/coa-templates/coa-template-view-dialog';
 import { CoaTemplatesTable } from '@/features/chart-of-accounts/components/coa-templates/coa-templates-table';
 import { CoaConfirmationDialog } from '@/features/chart-of-accounts/components/shared/coa-confirmation-dialog';
 import { useCoaFilters } from '@/features/chart-of-accounts/hooks/use-coa-filters';
 import {
   useCoaTemplates,
-  useCreateCoaTemplate,
   useDeleteCoaTemplate,
-  useUpdateCoaTemplate,
 } from '@/features/chart-of-accounts/hooks/use-coa-templates';
 import type {
   CoaTemplate,
   CoaTemplateFilters,
-  CoaTemplateFormData,
 } from '@/features/chart-of-accounts/lib/types';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function CoaTemplatesPage() {
+  const router = useRouter();
   const { filters, updateFilters } = useCoaFilters<CoaTemplateFilters>({
     sort_by: 'template_name',
     sort_order: 'asc',
   });
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [viewDialogOpen, setViewDialogOpen] = useState(false);
-  const [dialogMode, setDialogMode] = useState<'create' | 'edit'>('create');
   const [selectedCoaTemplate, setSelectedCoaTemplate] = useState<
     CoaTemplate | undefined
   >();
@@ -41,21 +37,15 @@ export default function CoaTemplatesPage() {
   const { data: coaTemplates, isLoading } = useCoaTemplates(filters);
 
   // Mutations
-  const createMutation = useCreateCoaTemplate();
-  const updateMutation = useUpdateCoaTemplate();
   const deleteMutation = useDeleteCoaTemplate();
 
-  // Dialog handlers
+  // Navigation handlers
   const handleCreate = () => {
-    setSelectedCoaTemplate(undefined);
-    setDialogMode('create');
-    setDialogOpen(true);
+    router.push('/chart-of-accounts/coa-templates/create');
   };
 
   const handleEdit = (coaTemplate: CoaTemplate) => {
-    setSelectedCoaTemplate(coaTemplate);
-    setDialogMode('edit');
-    setDialogOpen(true);
+    router.push(`/chart-of-accounts/coa-templates/edit/${coaTemplate.id}`);
   };
 
   const handleView = (coaTemplate: CoaTemplate) => {
@@ -68,18 +58,6 @@ export default function CoaTemplatesPage() {
     setConfirmationDialogOpen(true);
   };
 
-  // Form submission handlers
-  const handleFormSubmit = async (data: CoaTemplateFormData) => {
-    if (dialogMode === 'create') {
-      await createMutation.mutateAsync(data);
-    } else if (dialogMode === 'edit' && selectedCoaTemplate) {
-      await updateMutation.mutateAsync({
-        id: selectedCoaTemplate.id,
-        ...data,
-      });
-    }
-  };
-
   const handleConfirmDelete = async () => {
     if (coaTemplateToDelete) {
       await deleteMutation.mutateAsync({ id: coaTemplateToDelete.id });
@@ -88,7 +66,6 @@ export default function CoaTemplatesPage() {
     }
   };
 
-  const isLoadingForm = createMutation.isPending || updateMutation.isPending;
   const isLoadingDelete = deleteMutation.isPending;
 
   return (
@@ -115,16 +92,6 @@ export default function CoaTemplatesPage() {
         onDelete={handleDelete}
         onView={handleView}
         onCreate={handleCreate}
-      />
-
-      {/* Create/Edit Dialog */}
-      <CoaTemplateDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-        mode={dialogMode}
-        initialData={selectedCoaTemplate}
-        onSubmit={handleFormSubmit}
-        isLoading={isLoadingForm}
       />
 
       {/* View Dialog */}

@@ -341,3 +341,86 @@ export type CoaTemplateFormData = z.infer<typeof coaTemplateSchema>;
 export type CoaTemplateCreateData = z.infer<typeof coaTemplateCreateSchema>;
 export type CoaTemplateUpdateData = z.infer<typeof coaTemplateUpdateSchema>;
 export type CoaTemplateFiltersData = z.infer<typeof coaTemplateFiltersSchema>;
+
+// ============================================================================
+// COMBINED COA TEMPLATE FORM SCHEMAS
+// ============================================================================
+
+export const coaTemplateItemFormSchema = z.object({
+  id: z.string().uuid().optional(),
+  account_code: z
+    .string()
+    .min(1, 'Account code is required')
+    .regex(/^[0-9]{6}$/, 'Account code must be exactly 6 digits'),
+  account_name: z
+    .string()
+    .min(1, 'Account name is required')
+    .max(200, 'Account name must be 200 characters or less'),
+  account_class_id: z.string().uuid('Invalid account class'),
+  account_subclass_id: z.string().uuid('Invalid account subclass'),
+  account_type_id: z.string().uuid('Invalid account type'),
+  account_subtype_id: z.string().uuid('Invalid account subtype'),
+  normal_balance: z.enum(['debit', 'credit']),
+  is_active: z.boolean(),
+  sort_order: z.number().min(0, 'Sort order must be 0 or greater'),
+});
+
+export const coaTemplateRulesFormSchema = z.object({
+  tax_type_id: z
+    .string()
+    .refine(val => val === 'any' || z.string().uuid().safeParse(val).success, {
+      message: 'Must be "any" or a valid UUID',
+    })
+    .optional(),
+  business_type_id: z
+    .string()
+    .refine(val => val === 'any' || z.string().uuid().safeParse(val).success, {
+      message: 'Must be "any" or a valid UUID',
+    })
+    .optional(),
+  industry_type_id: z
+    .string()
+    .refine(val => val === 'any' || z.string().uuid().safeParse(val).success, {
+      message: 'Must be "any" or a valid UUID',
+    })
+    .optional(),
+});
+
+export const coaTemplateCombinedFormSchema = z.object({
+  template_name: z
+    .string()
+    .min(1, 'Template name is required')
+    .max(200, 'Template name must be 200 characters or less'),
+  description: z
+    .string()
+    .max(1000, 'Description must be 1000 characters or less')
+    .optional()
+    .or(z.literal('')),
+  is_default: z.boolean(),
+  is_active: z.boolean(),
+  rules: coaTemplateRulesFormSchema,
+  items: z
+    .array(coaTemplateItemFormSchema)
+    .min(1, 'At least one item is required'),
+});
+
+export const coaTemplateCombinedCreateSchema = coaTemplateCombinedFormSchema;
+
+export const coaTemplateCombinedUpdateSchema =
+  coaTemplateCombinedFormSchema.extend({
+    id: z.string().uuid('Invalid ID format'),
+  });
+
+export type CoaTemplateItemFormData = z.infer<typeof coaTemplateItemFormSchema>;
+export type CoaTemplateRulesFormData = z.infer<
+  typeof coaTemplateRulesFormSchema
+>;
+export type CoaTemplateCombinedFormData = z.infer<
+  typeof coaTemplateCombinedFormSchema
+>;
+export type CoaTemplateCombinedCreateData = z.infer<
+  typeof coaTemplateCombinedCreateSchema
+>;
+export type CoaTemplateCombinedUpdateData = z.infer<
+  typeof coaTemplateCombinedUpdateSchema
+>;

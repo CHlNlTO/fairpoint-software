@@ -140,4 +140,27 @@ export const BREADCRUMB_CONFIG: Record<string, BreadcrumbItem[]> = {
     { label: 'Chart of Accounts', href: '/chart-of-accounts' },
     { label: 'Templates', href: '/chart-of-accounts/coa-templates' },
   ],
+  '/chart-of-accounts/coa-templates/create': [
+    { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+    { label: 'Templates', href: '/chart-of-accounts/coa-templates' },
+    {
+      label: 'Create Template',
+      href: '/chart-of-accounts/coa-templates/create',
+    },
+  ],
 };
+
+// Dynamic breadcrumb configurations for routes with parameters
+export const DYNAMIC_BREADCRUMB_CONFIG = [
+  {
+    pattern: '/chart-of-accounts/coa-templates/edit/:id',
+    breadcrumbs: [
+      { label: 'Chart of Accounts', href: '/chart-of-accounts' },
+      { label: 'Templates', href: '/chart-of-accounts/coa-templates' },
+      {
+        label: 'Edit Template',
+        href: '/chart-of-accounts/coa-templates/edit/:id',
+      },
+    ],
+  },
+];

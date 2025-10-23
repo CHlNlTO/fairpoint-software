@@ -43,9 +43,12 @@ export { TaxTypeForm } from './components/tax-types/tax-type-form';
 export { TaxTypeViewDialog } from './components/tax-types/tax-type-view-dialog';
 export { TaxTypesTable } from './components/tax-types/tax-types-table';
 
+export { AccountHierarchyDropdowns } from './components/coa-templates/account-hierarchy-dropdowns';
 export { CoaTemplateActions } from './components/coa-templates/coa-template-actions';
+export { CoaTemplateCombinedForm } from './components/coa-templates/coa-template-combined-form';
 export { CoaTemplateDialog } from './components/coa-templates/coa-template-dialog';
 export { CoaTemplateForm } from './components/coa-templates/coa-template-form';
+export { CoaTemplateItemsTable } from './components/coa-templates/coa-template-items-table';
 export { CoaTemplateViewDialog } from './components/coa-templates/coa-template-view-dialog';
 export { CoaTemplatesTable } from './components/coa-templates/coa-templates-table';
 
@@ -90,6 +93,7 @@ export {
   useUpdateBusinessType,
 } from './hooks/use-business-types';
 export { useCoaFilters } from './hooks/use-coa-filters';
+export { useCoaTemplateCombined } from './hooks/use-coa-template-combined';
 export {
   useCoaTemplate,
   useCoaTemplates,

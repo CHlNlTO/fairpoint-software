@@ -29,21 +29,37 @@ import {
   useState,
 } from 'react';
 import { AppSidebar } from '../components/app-sidebar';
-import { BREADCRUMB_CONFIG, NO_SIDEBAR_ROUTES } from '../lib/constants';
+import { findMatchingBreadcrumbConfig } from '../lib/breadcrumb-utils';
+import {
+  BREADCRUMB_CONFIG,
+  DYNAMIC_BREADCRUMB_CONFIG,
+  NO_SIDEBAR_ROUTES,
+} from '../lib/constants';
 
 const DynamicBreadcrumb = memo(function DynamicBreadcrumb({
   pathname,
 }: {
   pathname: string;
 }) {
-  const breadcrumbs = useMemo(
-    () =>
-      BREADCRUMB_CONFIG[pathname] || [
-        { label: 'Dashboard', href: '/dashboard' },
-        { label: 'Page' },
-      ],
-    [pathname]
-  );
+  const breadcrumbs = useMemo(() => {
+    // First, try to find exact match in static config
+    const staticBreadcrumbs = BREADCRUMB_CONFIG[pathname];
+    if (staticBreadcrumbs) {
+      return staticBreadcrumbs;
+    }
+
+    // Then, try to find match in dynamic config
+    const dynamicMatch = findMatchingBreadcrumbConfig(
+      pathname,
+      DYNAMIC_BREADCRUMB_CONFIG
+    );
+    if (dynamicMatch) {
+      return dynamicMatch.breadcrumbs;
+    }
+
+    // Fallback to default breadcrumb
+    return [{ label: 'Dashboard', href: '/dashboard' }, { label: 'Page' }];
+  }, [pathname]);
 
   return (
     <Breadcrumb>
