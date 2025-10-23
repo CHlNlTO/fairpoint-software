@@ -188,7 +188,7 @@ export function CoaTemplateItemsTable({
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[120px]">Code</TableHead>
+                <TableHead className="w-[120px] pl-4">Code</TableHead>
                 <TableHead className="w-[200px]">Name</TableHead>
                 <TableHead className="w-[150px]">Account Class</TableHead>
                 <TableHead className="w-[150px]">Account Subclass</TableHead>
@@ -197,7 +197,7 @@ export function CoaTemplateItemsTable({
                 <TableHead className="w-[120px]">Normal Balance</TableHead>
                 <TableHead className="w-[100px]">Active</TableHead>
                 <TableHead className="w-[100px]">Sort Order</TableHead>
-                <TableHead className="w-[80px]">Actions</TableHead>
+                <TableHead className="w-[80px] pr-4">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

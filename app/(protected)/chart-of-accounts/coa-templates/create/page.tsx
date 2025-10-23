@@ -99,9 +99,9 @@ export default function CreateCoaTemplatePage() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
-      className="min-h-screen bg-background"
+      className="bg-background"
     >
-      <div className="container mx-auto py-8">
+      <div className="space-y-6 p-4 md:p-6 lg:p-8">
         <CoaTemplateCombinedForm
           onSubmit={handleSubmit}
           isLoading={isLoading}
