@@ -468,10 +468,15 @@ export async function PUT(request: NextRequest) {
 
 // Helper function to generate account code
 function generateAccountCode(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   accountClass: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   accountSubclass: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   accountType: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   accountSubtype: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   existingItems: any[]
 ): string {
   // Format: {class}{subclass}{type}{subtype}
@@ -507,6 +512,7 @@ function generateAccountCode(
 }
 
 // Helper function to validate account hierarchy relationships and generate account codes
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function validateAccountHierarchy(supabase: any, items: any[]) {
   const processedItems = [];
 

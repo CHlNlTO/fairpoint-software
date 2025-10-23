@@ -181,7 +181,7 @@ export function CoaTemplateItemsTable({
       {/* Items Table */}
       {items.length === 0 ? (
         <div className="text-center py-8 text-muted-foreground border rounded-lg">
-          No items added yet. Click "Add Item" to get started.
+          No items added yet. Click &quot;Add Item&quot; to get started.
         </div>
       ) : (
         <div className="border rounded-lg overflow-hidden">
